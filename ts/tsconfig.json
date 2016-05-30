@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir":"../js",
+        "module": "commonjs",
+        "target":"es6",
+        "jsx": "react",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    }
+}

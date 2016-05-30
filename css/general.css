@@ -1,0 +1,156 @@
+/*general.css*/
+body {
+	margin:0;
+}
+/* ReactSlider */
+
+.horizontal-slider {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    border: 1px solid grey;
+}
+.vertical-slider {
+    height: 380px;
+    width: 50px;
+    border: 1px solid grey;
+}
+.handle {
+    font-size: 0.9em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.handle.active {
+    background-color: grey;
+}
+.bar {
+    position: relative;
+    background: #ddd;
+}
+.bar.bar-1 {
+    background: #f00;
+}
+.bar.bar-2 {
+    background: #0f0;
+}
+.horizontal-slider .bar {
+    top: 20px;
+    height: 10px;
+}
+.horizontal-slider .handle {
+    top: 1px;
+    width: 50px;
+    height: 48px;
+    line-height: 48px;
+}
+.vertical-slider .handle {
+    left: 1px;
+    width: 48px;
+    line-height: 50px;
+}
+.vertical-slider .bar {
+    left: 20px;
+    width: 10px;
+}
+
+/* Flipcards */
+.ReactFlipCard {
+	display:block;
+	width:100%;
+	height:100%;
+}
+.ReactFlipCard__Flipper {
+	width:100%;
+	height:100%;
+}
+.ReactFlipCard__Front {
+	width:100%;
+	height:100%;
+}
+.ReactFlipCard__Back {
+	width:100%;
+	height:100%;
+}
+.flipcard-frame {
+	position:absolute;
+	width:inherit;
+	height:inherit;
+	overflow:hidden;
+}
+.flipcard-padding {
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: 6px;
+}
+
+.flipcard-border {
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position: absolute;
+	border:2px solid lightskyblue;
+	box-shadow: 4px 4px 4px #CCC;
+	border-radius: 6px;
+}
+.flipcard-content {
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position: absolute;
+	overflow: hidden;
+	padding:3px;
+}
+
+.flipcard-gradient {
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:60px;
+	width:100%;
+	border-radius: 0 0 6px 6px;
+	pointer-events: none;
+}
+.flipcard-gradient.front {
+	background: linear-gradient(to bottom, rgba(255,255,255,0),#e3f2fd);
+}
+.flipcard-gradient.back {
+	background: linear-gradient(to bottom, rgba(255,255,255,0),#fff8e1);
+}
+
+.flipcard-help-icon {
+    z-index: 2;
+    right: 0;
+    top: 0;
+    opacity: 0.8;
+    border-radius: 18px;
+}
+
+.flipcard-return-to-front-icon {
+    z-index: 2;
+    right: 0;
+    top: 0;
+    opacity: 0.8;
+    border-radius: 18px;
+}
+
+.flipcard-expand-icon {
+    z-index: 2;
+    left: calc(50% - 18px);
+    bottom: 0;
+    opacity: 0.8;
+    border-radius: 18px;
+}
+
+.mainpage-enter { opacity: 0; transition: opacity 300ms ease-in; }
+.mainpage-enter.mainpage-enter-active { opacity: 1; transition: opacity 300ms ease-in; }
+/* not used: */
+.mainpage-leave { opacity: 1; transition: opacity 300ms ease-in; }
+.mainpage-leave.mainpage-leave-active { opacity: 0; transition: opacity 300ms ease-in; }
