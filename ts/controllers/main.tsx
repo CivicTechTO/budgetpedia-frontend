@@ -78,6 +78,9 @@ export class Main extends Component<any, any> {
                 <CardText>
                     The long term aim is make this website crowd-sourced and collaborative.
                 </CardText>
+                <CardText>
+                    For more information about this project see <a href="http://civictech.ca/projects">civictech.ca/projects</a>.
+                </CardText>
                 </Card>
             </div>
         )
