@@ -71,6 +71,16 @@ class MainBarClass extends React.Component<any, any> {
                 titleStyle = {{cursor:'pointer'}}
                 style={ { position: "fixed" } }
                 title={ <span>Toronto Budgetpedia</span> }>
+                <div style={{
+                    position:"absolute",
+                    fontSize:"smaller",
+                    color:"white",
+                    top:0,
+                    right:0,
+                    padding:"3px",
+                }}>
+                contact: <a href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a>
+                </div>
 
             </AppBar>
         )

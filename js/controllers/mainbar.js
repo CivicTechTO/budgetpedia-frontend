@@ -13,7 +13,14 @@ class MainBarClass extends React.Component {
         };
     }
     render() {
-        return (React.createElement(AppBar, {onTitleTouchTap: e => { }, titleStyle: { cursor: 'pointer' }, style: { position: "fixed" }, title: React.createElement("span", null, "Toronto Budgetpedia")}));
+        return (React.createElement(AppBar, {onTitleTouchTap: e => { }, titleStyle: { cursor: 'pointer' }, style: { position: "fixed" }, title: React.createElement("span", null, "Toronto Budgetpedia")}, React.createElement("div", {style: {
+            position: "absolute",
+            fontSize: "smaller",
+            color: "white",
+            top: 0,
+            right: 0,
+            padding: "3px",
+        }}, "contact: ", React.createElement("a", {href: "mailto:mail@budgetpedia.ca"}, "mail@budgetpedia.ca"))));
     }
 }
 var MainBar = MainBarClass;
