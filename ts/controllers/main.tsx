@@ -29,10 +29,14 @@ import CardText = require('material-ui/lib/card/card-text')
 
 let hostname = location.hostname
 let targetdomain = null
-if (hostname == 'budgetpedia')
-    targetdomain = 'http://dev.budgetpedia'
-else 
-    targetdomain = 'http://dev.budgetpedia.ca'
+let devdomain = null
+if (hostname == 'budgetpedia') {
+    targetdomain = 'http://staging.budgetpedia'
+    devdomain = 'http://dev.budgetpedia'
+} else {
+    targetdomain = 'http://staging.budgetpedia.ca'
+    devdomain = 'http://dev.budgetpedia.ca'
+}
 
 // const reduxRouterMiddleware = routerMiddleware( browserHistory )
 
@@ -68,7 +72,8 @@ export class Main extends Component<any, any> {
                     Welcome to the future home of the Budgetpedia project
                 </CardTitle>
                 <CardText>
-                    In the meantime see the development version of the coming website at <a href={targetdomain}>dev.budgetpedia.ca</a>
+                    In the meantime see the staging (testing) version of the coming website at <a href={targetdomain}>staging.budgetpedia.ca</a> (recommended).
+                    To see what the developers are working on see <a href={devdomain}>dev.budgetpedia.ca</a> (not recommended for testing, just for the curious)
                 </CardText>
                 <CardText>
                 The mission of the budgetpedia project is to support informed debate about the 
