@@ -76,7 +76,7 @@ export class Main extends Component<any, any> {
                 and process, more accessible to the people of Toronto.
                 </CardText>
                 <CardText>
-                    We also hope to help people find each other. The long term aim is make this website crowd-sourced and collaborative.
+                    We also hope to help people with specific budget interests find each other. The long term aim is make this website crowd-sourced and collaborative.
                 </CardText>
                 <CardText>
                     For more information about this project see <a href="http://civictech.ca/projects">civictech.ca/projects</a>.
