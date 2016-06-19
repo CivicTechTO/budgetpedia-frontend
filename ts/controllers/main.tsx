@@ -69,7 +69,7 @@ export class Main extends Component<any, any> {
                 </div>
                 <Card>
                 <CardTitle>
-                    Welcome to the future home of the Budgetpedia project
+                    Welcome to the future home of the Budgetpedia project -- civic budget analytics and support
                 </CardTitle>
                 <CardText>
                     In the meantime see the staging (testing) version of the coming website at <a href={targetdomain}>staging.budgetpedia.ca</a> (recommended).
