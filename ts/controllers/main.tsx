@@ -87,7 +87,7 @@ export class Main extends Component<any, any> {
                     For more information about this project see <a href="http://civictech.ca/projects">civictech.ca/projects</a>.
                 </CardText>
                 </Card>
-            </div>
+<iframe src="https://calendar.google.com/calendar/embed?title=Budgetpedia%20Media%20Schedule&mode=AGENDA&height=600&wkst=1&bgcolor=%23FFFFFF&src=j43lip15uv9ojnejpre09tqpsc%40group.calendar.google.com&color=%236B3304&ctz=America%2FNew_York" style={{borderWidth:0}} width="500" height="600" frameBorder="0" scrolling="no"></iframe>            </div>
         )
     }
     
