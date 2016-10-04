@@ -71,8 +71,14 @@ export class Main extends Component<any, any> {
                 <CardTitle>
                     Welcome to the future home of the Budgetpedia project -- civic budget analytics and support
                 </CardTitle>
+                <CardText style={{backgroundColor:'LemonChiffon'}}>
+                    We're looking for feedback on what webpages (just a few) this website should contain upon
+                    launch around Dec 1, 2015, and what those pages should say. For details, see some <a 
+                    target="_blank" href= "https://drive.google.com/open?id=1IFayiKuA8t-J_Ef2x4okiRYLRAbefPlaiIIrghn3F0c">notes for our
+                    October 4 hackathon</a>. Send feedback to <a target="_blank" href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a>
+                </CardText>
                 <CardText>
-                    In the meantime see the staging (testing) version of the coming website at <a href={targetdomain}>staging.budgetpedia.ca</a> (recommended).
+                    While we're under development see the staging (testing) version of the coming website at <a href={targetdomain}>staging.budgetpedia.ca</a> (recommended).
                     To see what the developers are working on see <a href={devdomain}>dev.budgetpedia.ca</a> (not recommended for testing, just for the curious)
                 </CardText>
                 <CardText>
