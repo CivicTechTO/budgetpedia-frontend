@@ -92,8 +92,16 @@ export class Main extends Component<any, any> {
                 <CardText>
                     For more information about this project see <a href="http://civictech.ca/projects">civictech.ca/projects</a>.
                 </CardText>
+
+                <CardText>
+<iframe src="http://free.timeanddate.com/countdown/i5eghkcz/n250/cf12/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/tatTime%20left%20before%20launch%20of%20website%20v0.1/tac000/tptTime%20since%20Event%20started%20in/tpc000/mac000/mpc000/iso2016-11-29T17:00:00" allowTransparency="true" frameborder="0" width="349" height="69"></iframe>
+                </CardText>
+<iframe src="https://calendar.google.com/calendar/embed?title=Budgetpedia%20Media%20Schedule&mode=AGENDA&height=600&wkst=1&bgcolor=%23FFFFFF&src=j43lip15uv9ojnejpre09tqpsc%40group.calendar.google.com&color=%236B3304&ctz=America%2FNew_York" style={{borderWidth:0}} width="500" height="600" frameBorder="0" scrolling="no"></iframe>
+                <CardText>
+                </CardText>
                 </Card>
-<iframe src="https://calendar.google.com/calendar/embed?title=Budgetpedia%20Media%20Schedule&mode=AGENDA&height=600&wkst=1&bgcolor=%23FFFFFF&src=j43lip15uv9ojnejpre09tqpsc%40group.calendar.google.com&color=%236B3304&ctz=America%2FNew_York" style={{borderWidth:0}} width="500" height="600" frameBorder="0" scrolling="no"></iframe>            </div>
+
+            </div>
         )
     }
     
