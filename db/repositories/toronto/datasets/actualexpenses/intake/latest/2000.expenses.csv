@@ -1,0 +1,32 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuNEc1aVRRUENuU28
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuZW9OVU5sUVZtVDg
+SOURCE_DOCUMENT_TITLE,"City of Toronto Consolidated Financial Statements For the year ended December 31,2000"
+SOURCE_DOCUMENT_TABLE_LOCATION,p.3 document; p.5 pdf
+SOURCE_DOCUMENT_TABLE_TITLE,CONSOLIDATED STATEMENT OF FINANCIAL ACTIVITIES
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B0nzg-ld6eh_bEV3YmRaOEd2VDg
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Chris
+YEAR,2000
+VERSION,Actual
+ASPECT,Expenses
+NOTES_CONTENT,
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Chris
+COLUMNS_CATEGORIES,Expense:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Community and Neighbourhood Services,1814910
+Works and Emergency Services,1350263
+"Economic Development, Culture and Tourism",273961
+Urban Development Services,79796
+Corporate Services,250197
+Finance,35732
+Other programs,26807
+Non-program and corporate accounts,409505
+"Agencies, Boards and Commissions",2333461

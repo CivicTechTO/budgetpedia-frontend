@@ -1,0 +1,213 @@
+311SERVICE,311 Toronto,750A,Inter-Divisional Recoveries,Revenues,-5293589
+311SERVICE,311 Toronto,920A,Transfers From Capital,Revenues,-2550477
+AFFHOUSING,Affordable Housing Office,750A,Inter-Divisional Recoveries,Revenues,-125076
+AFFHOUSING,Affordable Housing Office,805A,Provincial Subsidies,Revenues,-1045419
+AFFHOUSING,Affordable Housing Office,930A,Contribution From Reserves/Reserve Funds,Revenues,-399000
+ARENAS,Arena Boards of Management,850A,User Fees & Donations,Revenues,-7382943
+ARENAS,Arena Boards of Management,940A,Sundry and Other Revenues,Revenues,-1024225
+COMMCENTRES,Association of Community Centres,850A,User Fees & Donations,Revenues,-252713
+COMMCENTRES,Association of Community Centres,930A,Contribution From Reserves/Reserve Funds,Revenues,-169000
+COMMCENTRES,Association of Community Centres,940A,Sundry and Other Revenues,Revenues,-1500
+CORPFINANCING,Capital & Corporate Financing,750A,Inter-Divisional Recoveries,Revenues,-2777457
+CORPFINANCING,Capital & Corporate Financing,805A,Provincial Subsidies,Revenues,-1431000
+CORPFINANCING,Capital & Corporate Financing,930A,Contribution From Reserves/Reserve Funds,Revenues,-51873000
+CORPFINANCING,Capital & Corporate Financing,940A,Sundry and Other Revenues,Revenues,-2324441
+CHILDSERV,Children's Services,750A,Inter-Divisional Recoveries,Revenues,-9475000
+CHILDSERV,Children's Services,805A,Provincial Subsidies,Revenues,-329669770
+CHILDSERV,Children's Services,850A,User Fees & Donations,Revenues,-19169600
+CHILDSERV,Children's Services,920A,Transfers From Capital,Revenues,-1764361
+CHILDSERV,Children's Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-15639446
+CLERK,City Clerk's Office,750A,Inter-Divisional Recoveries,Revenues,-8766500
+CLERK,City Clerk's Office,850A,User Fees & Donations,Revenues,-580287
+CLERK,City Clerk's Office,920A,Transfers From Capital,Revenues,-1351000
+CLERK,City Clerk's Office,930A,Contribution From Reserves/Reserve Funds,Revenues,-5779510
+CLERK,City Clerk's Office,940A,Sundry and Other Revenues,Revenues,-937920
+COUNCIL,City Council,930A,Contribution From Reserves/Reserve Funds,Revenues,-130000
+CITYMANAGER,City Manager's Office,750A,Inter-Divisional Recoveries,Revenues,-4862408
+CITYMANAGER,City Manager's Office,920A,Transfers From Capital,Revenues,-2323394
+CITYMANAGER,City Manager's Office,930A,Contribution From Reserves/Reserve Funds,Revenues,-1001133
+CITYMANAGER,City Manager's Office,940A,Sundry and Other Revenues,Revenues,-188746
+PLANNING,City Planning,850A,User Fees & Donations,Revenues,-24205978
+PLANNING,City Planning,920A,Transfers From Capital,Revenues,-2372893
+PLANNING,City Planning,940A,Sundry and Other Revenues,Revenues,-898350
+COURTSERV,Court Services,750A,Inter-Divisional Recoveries,Revenues,-6918834
+COURTSERV,Court Services,850A,User Fees & Donations,Revenues,-281999
+COURTSERV,Court Services,940A,Sundry and Other Revenues,Revenues,-47382900
+ECONDEV,Economic Development & Culture,805A,Provincial Subsidies,Revenues,-2775200
+ECONDEV,Economic Development & Culture,810A,Federal Subsidies,Revenues,-1686672
+ECONDEV,Economic Development & Culture,820A,Other Subsidies,Revenues,-37000
+ECONDEV,Economic Development & Culture,850A,User Fees & Donations,Revenues,-2406616
+ECONDEV,Economic Development & Culture,860A,Licences & Permits Revenue,Revenues,-735406
+ECONDEV,Economic Development & Culture,920A,Transfers From Capital,Revenues,-1036000
+ECONDEV,Economic Development & Culture,930A,Contribution From Reserves/Reserve Funds,Revenues,-8909517
+ECONDEV,Economic Development & Culture,940A,Sundry and Other Revenues,Revenues,-6157855
+ENGINEERING,Engineering & Construction Services,750A,Inter-Divisional Recoveries,Revenues,-175570
+ENGINEERING,Engineering & Construction Services,850A,User Fees & Donations,Revenues,-5292538
+ENGINEERING,Engineering & Construction Services,860A,Licences & Permits Revenue,Revenues,-1620000
+ENGINEERING,Engineering & Construction Services,920A,Transfers From Capital,Revenues,-49248456
+ENGINEERING,Engineering & Construction Services,940A,Sundry and Other Revenues,Revenues,-2957407
+EXHIBPLACE,Exhibition Place,850A,User Fees & Donations,Revenues,-35146509
+EXHIBPLACE,Exhibition Place,930A,Contribution From Reserves/Reserve Funds,Revenues,-3284407
+FACILITIES,"Facilities, Real Estate, Environment & Energy",750A,Inter-Divisional Recoveries,Revenues,-50194952
+FACILITIES,"Facilities, Real Estate, Environment & Energy",805A,Provincial Subsidies,Revenues,-250000
+FACILITIES,"Facilities, Real Estate, Environment & Energy",810A,Federal Subsidies,Revenues,-220480
+FACILITIES,"Facilities, Real Estate, Environment & Energy",850A,User Fees & Donations,Revenues,-43046355
+FACILITIES,"Facilities, Real Estate, Environment & Energy",920A,Transfers From Capital,Revenues,-9849244
+FACILITIES,"Facilities, Real Estate, Environment & Energy",930A,Contribution From Reserves/Reserve Funds,Revenues,-11945307
+FACILITIES,"Facilities, Real Estate, Environment & Energy",940A,Sundry and Other Revenues,Revenues,-8052725
+FIRE,Fire Services,750A,Inter-Divisional Recoveries,Revenues,-247406
+FIRE,Fire Services,805A,Provincial Subsidies,Revenues,-400000
+FIRE,Fire Services,850A,User Fees & Donations,Revenues,-13563515
+FIRE,Fire Services,920A,Transfers From Capital,Revenues,-231765
+FIRE,Fire Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-404000
+FIRE,Fire Services,940A,Sundry and Other Revenues,Revenues,-2153500
+FLEET,Fleet Services,750A,Inter-Divisional Recoveries,Revenues,-47687225
+FLEET,Fleet Services,920A,Transfers From Capital,Revenues,-116482
+FLEET,Fleet Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-121000
+FLEET,Fleet Services,940A,Sundry and Other Revenues,Revenues,-2784273
+HERITAGE,Heritage Toronto,805A,Provincial Subsidies,Revenues,-36200
+HERITAGE,Heritage Toronto,810A,Federal Subsidies,Revenues,-70000
+HERITAGE,Heritage Toronto,850A,User Fees & Donations,Revenues,-192500
+HERITAGE,Heritage Toronto,940A,Sundry and Other Revenues,Revenues,-150800
+IT,Information & Technology,750A,Inter-Divisional Recoveries,Revenues,-13508878
+IT,Information & Technology,850A,User Fees & Donations,Revenues,-186103
+IT,Information & Technology,920A,Transfers From Capital,Revenues,-30600915
+IT,Information & Technology,930A,Contribution From Reserves/Reserve Funds,Revenues,-4220064
+IT,Information & Technology,940A,Sundry and Other Revenues,Revenues,-726349
+LEGAL,Legal Services,750A,Inter-Divisional Recoveries,Revenues,-22162478
+LEGAL,Legal Services,850A,User Fees & Donations,Revenues,-2529571
+LEGAL,Legal Services,920A,Transfers From Capital,Revenues,-1162621
+LEGAL,Legal Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-300000
+LEGAL,Legal Services,940A,Sundry and Other Revenues,Revenues,-3106558
+LONGTERMHOME,Long Term Care Homes & Services,750A,Inter-Divisional Recoveries,Revenues,-72800
+LONGTERMHOME,Long Term Care Homes & Services,805A,Provincial Subsidies,Revenues,-146819121
+LONGTERMHOME,Long Term Care Homes & Services,850A,User Fees & Donations,Revenues,-48652700
+LONGTERMHOME,Long Term Care Homes & Services,920A,Transfers From Capital,Revenues,-260000
+LONGTERMHOME,Long Term Care Homes & Services,940A,Sundry and Other Revenues,Revenues,-138000
+LICENCING,Municipal Licensing & Standards,750A,Inter-Divisional Recoveries,Revenues,-1541461
+LICENCING,Municipal Licensing & Standards,850A,User Fees & Donations,Revenues,-3590964
+LICENCING,Municipal Licensing & Standards,860A,Licences & Permits Revenue,Revenues,-24357930
+LICENCING,Municipal Licensing & Standards,930A,Contribution From Reserves/Reserve Funds,Revenues,-10000
+LICENCING,Municipal Licensing & Standards,940A,Sundry and Other Revenues,Revenues,-318881
+CORPEXPENDITURES,Non-Program Expenditures,850A,User Fees & Donations,Revenues,-1952942
+CORPEXPENDITURES,Non-Program Expenditures,930A,Contribution From Reserves/Reserve Funds,Revenues,-159878514
+CORPEXPENDITURES,Non-Program Expenditures,940A,Sundry and Other Revenues,Revenues,-6621288
+CORPREVENUES,Non-Program Revenues,750A,Inter-Divisional Recoveries,Revenues,-35299700
+CORPREVENUES,Non-Program Revenues,805A,Provincial Subsidies,Revenues,-42978535
+CORPREVENUES,Non-Program Revenues,850A,User Fees & Donations,Revenues,-1994876
+CORPREVENUES,Non-Program Revenues,860A,Licences & Permits Revenue,Revenues,-4002823
+CORPREVENUES,Non-Program Revenues,930A,Contribution From Reserves/Reserve Funds,Revenues,-91600000
+CORPREVENUES,Non-Program Revenues,940A,Sundry and Other Revenues,Revenues,-1046900691
+CFO,Office of the Chief Financial Officer,750A,Inter-Divisional Recoveries,Revenues,-2707488
+CFO,Office of the Chief Financial Officer,920A,Transfers From Capital,Revenues,-1925285
+CFO,Office of the Chief Financial Officer,930A,Contribution From Reserves/Reserve Funds,Revenues,-2080839
+CFO,Office of the Chief Financial Officer,940A,Sundry and Other Revenues,Revenues,-67092
+TREASURER,Office of the Treasurer,750A,Inter-Divisional Recoveries,Revenues,-25310556
+TREASURER,Office of the Treasurer,850A,User Fees & Donations,Revenues,-11935933
+TREASURER,Office of the Treasurer,920A,Transfers From Capital,Revenues,-4584859
+TREASURER,Office of the Treasurer,930A,Contribution From Reserves/Reserve Funds,Revenues,-1677671
+TREASURER,Office of the Treasurer,940A,Sundry and Other Revenues,Revenues,-3400934
+PARKS,"Parks, Forestry & Recreation",750A,Inter-Divisional Recoveries,Revenues,-7561289
+PARKS,"Parks, Forestry & Recreation",805A,Provincial Subsidies,Revenues,-789972
+PARKS,"Parks, Forestry & Recreation",810A,Federal Subsidies,Revenues,-3500000
+PARKS,"Parks, Forestry & Recreation",850A,User Fees & Donations,Revenues,-76683270
+PARKS,"Parks, Forestry & Recreation",860A,Licences & Permits Revenue,Revenues,-8325925
+PARKS,"Parks, Forestry & Recreation",920A,Transfers From Capital,Revenues,-6532799
+PARKS,"Parks, Forestry & Recreation",930A,Contribution From Reserves/Reserve Funds,Revenues,-22867536
+PARKS,"Parks, Forestry & Recreation",940A,Sundry and Other Revenues,Revenues,-3706003
+POLICYADMIN,"Policy, Planning, Finance & Administration",750A,Inter-Divisional Recoveries,Revenues,-9367334
+POLICYADMIN,"Policy, Planning, Finance & Administration",805A,Provincial Subsidies,Revenues,-225000
+POLICYADMIN,"Policy, Planning, Finance & Administration",920A,Transfers From Capital,Revenues,-2389912
+POLICYADMIN,"Policy, Planning, Finance & Administration",930A,Contribution From Reserves/Reserve Funds,Revenues,-875
+POLICYADMIN,"Policy, Planning, Finance & Administration",940A,Sundry and Other Revenues,Revenues,-231165
+PROPERTYTAX,Property Tax,940A,Property Tax,Revenues,-3848634765
+PROPERTYTAX,Property Tax,940A,Special Levy for Scarborough Subway (Reserve Contribution),Revenues,-24846399
+SHELTERADMIN,"Shelter, Support & Housing Administration",750A,Inter-Divisional Recoveries,Revenues,-11250
+SHELTERADMIN,"Shelter, Support & Housing Administration",805A,Provincial Subsidies,Revenues,-147308363
+SHELTERADMIN,"Shelter, Support & Housing Administration",810A,Federal Subsidies,Revenues,-157339042
+SHELTERADMIN,"Shelter, Support & Housing Administration",820A,Other Subsidies,Revenues,1
+SHELTERADMIN,"Shelter, Support & Housing Administration",850A,User Fees & Donations,Revenues,-472800
+SHELTERADMIN,"Shelter, Support & Housing Administration",920A,Transfers From Capital,Revenues,-169289
+SHELTERADMIN,"Shelter, Support & Housing Administration",930A,Contribution From Reserves/Reserve Funds,Revenues,-35588655
+SHELTERADMIN,"Shelter, Support & Housing Administration",940A,Sundry and Other Revenues,Revenues,-37045
+SOCIALDEV,"Social Development, Finance & Administration",750A,Inter-Divisional Recoveries,Revenues,-498300
+SOCIALDEV,"Social Development, Finance & Administration",805A,Provincial Subsidies,Revenues,-4876422
+SOCIALDEV,"Social Development, Finance & Administration",810A,Federal Subsidies,Revenues,-2039101
+SOCIALDEV,"Social Development, Finance & Administration",930A,Contribution From Reserves/Reserve Funds,Revenues,-10523580
+SOCIALDEV,"Social Development, Finance & Administration",940A,Sundry and Other Revenues,Revenues,-108149
+SOLIDWASTE,Solid Waste Management Services,750A,Inter-Divisional Recoveries,Revenues,-5984239
+SOLIDWASTE,Solid Waste Management Services,805A,Provincial Subsidies,Revenues,-22015403
+SOLIDWASTE,Solid Waste Management Services,850A,User Fees & Donations,Revenues,-272189187
+SOLIDWASTE,Solid Waste Management Services,920A,Transfers From Capital,Revenues,-3327207
+SOLIDWASTE,Solid Waste Management Services,940A,Sundry and Other Revenues,Revenues,-67269113
+THEATRES,Theatres,850A,User Fees & Donations,Revenues,-12827713
+THEATRES,Theatres,930A,Contribution From Reserves/Reserve Funds,Revenues,-2062340
+THEATRES,Theatres,940A,Sundry and Other Revenues,Revenues,-3088390
+REGIONCONSERV,Toronto & Region Conservation Authority,805A,Provincial Subsidies,Revenues,-1835000
+REGIONCONSERV,Toronto & Region Conservation Authority,850A,User Fees & Donations,Revenues,-24799000
+REGIONCONSERV,Toronto & Region Conservation Authority,930A,Contribution From Reserves/Reserve Funds,Revenues,-4598000
+REGIONCONSERV,Toronto & Region Conservation Authority,940A,Sundry and Other Revenues,Revenues,-5231000
+ATMOSPHERE,Toronto Atmospheric Fund,850A,User Fees & Donations,Revenues,-650000
+ATMOSPHERE,Toronto Atmospheric Fund,940A,Sundry and Other Revenues,Revenues,-1925000
+BUILDINGS,Toronto Building,750A,Inter-Divisional Recoveries,Revenues,-923845
+BUILDINGS,Toronto Building,850A,User Fees & Donations,Revenues,-1628951
+BUILDINGS,Toronto Building,860A,Licences & Permits Revenue,Revenues,-58172825
+BUILDINGS,Toronto Building,920A,Transfers From Capital,Revenues,-434264
+BUILDINGS,Toronto Building,940A,Sundry and Other Revenues,Revenues,-40000
+SOCIALSERV,Toronto Employment & Social Services,750A,Inter-Divisional Recoveries,Revenues,-354355
+SOCIALSERV,Toronto Employment & Social Services,805A,Provincial Subsidies,Revenues,-916636763
+SOCIALSERV,Toronto Employment & Social Services,820A,Other Subsidies,Revenues,-6799500
+SOCIALSERV,Toronto Employment & Social Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-15233031
+SOCIALSERV,Toronto Employment & Social Services,940A,Sundry and Other Revenues,Revenues,-17800000
+PARAMEDIC,Toronto Paramedic Services,750A,Inter-Divisional Recoveries,Revenues,-894158
+PARAMEDIC,Toronto Paramedic Services,805A,Provincial Subsidies,Revenues,-118547465
+PARAMEDIC,Toronto Paramedic Services,850A,User Fees & Donations,Revenues,-1141716
+PARAMEDIC,Toronto Paramedic Services,920A,Transfers From Capital,Revenues,-75000
+PARAMEDIC,Toronto Paramedic Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-409503
+PARAMEDIC,Toronto Paramedic Services,940A,Sundry and Other Revenues,Revenues,-2344532
+PARKING,Toronto Parking Authority,850A,User Fees & Donations,Revenues,-128878837
+PARKING,Toronto Parking Authority,930A,Contribution From Reserves/Reserve Funds,Revenues,-770000
+PARKING,Toronto Parking Authority,940A,Sundry and Other Revenues,Revenues,-4580603
+POLICE,Toronto Police Service,750A,Inter-Divisional Recoveries,Revenues,-9956100
+POLICE,Toronto Police Service,805A,Provincial Subsidies,Revenues,-112245200
+POLICE,Toronto Police Service,850A,User Fees & Donations,Revenues,-47018800
+POLICE,Toronto Police Service,930A,Contribution From Reserves/Reserve Funds,Revenues,-22534000
+POLICE,Toronto Police Service,940A,Sundry and Other Revenues,Revenues,-900000
+POLICEBOARD,Toronto Police Services Board,930A,Contribution From Reserves/Reserve Funds,Revenues,-750000
+PUBLICHEALTH,Toronto Public Health,750A,Inter-Divisional Recoveries,Revenues,-10541886
+PUBLICHEALTH,Toronto Public Health,805A,Provincial Subsidies,Revenues,-179589213
+PUBLICHEALTH,Toronto Public Health,810A,Federal Subsidies,Revenues,-387429
+PUBLICHEALTH,Toronto Public Health,850A,User Fees & Donations,Revenues,-1021746
+PUBLICHEALTH,Toronto Public Health,920A,Transfers From Capital,Revenues,-3638536
+PUBLICHEALTH,Toronto Public Health,930A,Contribution From Reserves/Reserve Funds,Revenues,-174281
+PUBLICHEALTH,Toronto Public Health,940A,Sundry and Other Revenues,Revenues,-1698906
+LIBRARY,Toronto Public Library,805A,Provincial Subsidies,Revenues,-5695400
+LIBRARY,Toronto Public Library,810A,Federal Subsidies,Revenues,-20000
+LIBRARY,Toronto Public Library,850A,User Fees & Donations,Revenues,-5031700
+LIBRARY,Toronto Public Library,920A,Transfers From Capital,Revenues,-312000
+LIBRARY,Toronto Public Library,930A,Contribution From Reserves/Reserve Funds,Revenues,-3559400
+LIBRARY,Toronto Public Library,940A,Sundry and Other Revenues,Revenues,-1897600
+TTCCONV,Toronto Transit Commission - Conventional,850A,User Fees & Donations,Revenues,-1206687700
+TTCCONV,Toronto Transit Commission - Conventional,930A,Contribution From Reserves/Reserve Funds,Revenues,-9897500
+TTCCONV,Toronto Transit Commission - Conventional,940A,Sundry and Other Revenues,Revenues,-3504300
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,850A,User Fees & Donations,Revenues,-6214300
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,930A,Contribution From Reserves/Reserve Funds,Revenues,-300000
+WATER,Toronto Water,750A,Inter-Divisional Recoveries,Revenues,-25000
+WATER,Toronto Water,850A,User Fees & Donations,Revenues,-39831361
+WATER,Toronto Water,920A,Transfers From Capital,Revenues,-2667146
+WATER,Toronto Water,930A,Contribution From Reserves/Reserve Funds,Revenues,-195000
+WATER,Toronto Water,940A,Sundry and Other Revenues,Revenues,-1038416542
+ZOO,Toronto Zoo,805A,Provincial Subsidies,Revenues,-1011500
+ZOO,Toronto Zoo,850A,User Fees & Donations,Revenues,-36565403
+ZOO,Toronto Zoo,920A,Transfers From Capital,Revenues,-171000
+ZOO,Toronto Zoo,930A,Contribution From Reserves/Reserve Funds,Revenues,-386000
+ZOO,Toronto Zoo,940A,Sundry and Other Revenues,Revenues,-721200
+TRANSPORTATION,Transportation Services,750A,Inter-Divisional Recoveries,Revenues,-8728149
+TRANSPORTATION,Transportation Services,850A,User Fees & Donations,Revenues,-37562485
+TRANSPORTATION,Transportation Services,860A,Licences & Permits Revenue,Revenues,-6176070
+TRANSPORTATION,Transportation Services,920A,Transfers From Capital,Revenues,-26997481
+TRANSPORTATION,Transportation Services,930A,Contribution From Reserves/Reserve Funds,Revenues,-22414099
+TRANSPORTATION,Transportation Services,940A,Sundry and Other Revenues,Revenues,-40961343
+YONGEDUNDAS,Yonge-Dundas Square,850A,User Fees & Donations,Revenues,-1000000
+YONGEDUNDAS,Yonge-Dundas Square,860A,Licences & Permits Revenue,Revenues,-345000
+YONGEDUNDAS,Yonge-Dundas Square,940A,Sundry and Other Revenues,Revenues,-527649

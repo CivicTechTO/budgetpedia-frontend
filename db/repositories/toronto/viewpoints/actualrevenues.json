@@ -1,0 +1,115 @@
+{
+    "Index": 0,
+    "NamingConfigRef": "AUDITED",
+    "Components": {
+        "GENERAL": {
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "DEVELOPMENT": {
+                    "Index": 0,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                },
+                "ENTERPRISES": {
+                    "Index": 1,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                },
+                "INVESTMENT": {
+                    "Index": 2,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                },
+                "RENTS": {
+                    "Index": 3,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                },
+                "OTHER": {
+                    "Index": 4,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                }
+            }
+        },
+        "LOCAL": {
+            "Index": 1,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "PROPERTYTAX": {
+                    "Index": 0,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                },
+                "USERCHARGES": {
+                    "Index": 1,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                },
+                "LANDTRANSFER": {
+                    "Index": 2,
+                    "NamingConfigRef": "REVENUE",
+                    "Baseline": true
+                }
+            }
+        },
+        "OTHERGOV": {
+            "Index": 2,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "TRANSFERS": {
+                    "Index": 0,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "OTHERGOVTAX": {
+                    "Index": 1,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                }
+            }
+        }
+    },
+    "Meta":{
+        "Lookups": {
+            "Taxonomy": {
+                "OTHERGOV": "Other government",
+                "GENERAL": "General revenue",
+                "LOCAL": "Local revenue"
+            }
+        },
+        "NamingConfigurations": {
+            "AUDITED": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Expenses",
+                    "Alias": "Audited Revenue Statement"
+                }
+            },
+            "CATEGORY": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Expenses",
+                    "Alias": "Audited Revenues"
+                }
+            },
+            "REVENUE": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Revenue"
+                },
+                "Contents": {
+                    "Name": "Revenues",
+                    "Alias": "Audited Revenues"
+                }
+            }
+        }
+    }
+}

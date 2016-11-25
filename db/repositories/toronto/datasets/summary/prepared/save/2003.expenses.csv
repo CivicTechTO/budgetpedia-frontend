@@ -1,0 +1,78 @@
+_META_START_,,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0BzB3t6aSc9bDZHpfQks3QmdjV3c,,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OubHdZVEpCZmdfNlE,,,,
+SOURCE_DOCUMENT_TITLE,City of Toronto 2003 Operating Budget - Gross Expenditures,,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,,,,,
+SOURCE_DOCUMENT_TABLE_TITLE,,,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuR1BCWnlDRTAzM3c,,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,,
+YEAR,2003,,,,
+VERSION,Summary,,,,
+ASPECT,Expenses,,,,
+NOTES_CONTENT,,,,,
+NOTES_SEVERITY,,,,,
+UNITS_NAME,Dollar,,,,
+UNITS_CODE,DOLLAR,,,,
+UNITS_MULTIPLIER,1000,,,,
+TOTAL_AMOUNT,7050552.7,,,,
+INTAKE_DATETIME,2016-10-14-14-16-42,,,,
+INTAKE_OPERATOR_ID,Henrik,,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME",,,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,
+_META_END_,,,,,
+AUDITGEN,Auditor General's Office,3003.2,,,
+CFO,Office of the Chief Financial Officer,68975.3,,,"Original amount was null, plus:
+Allocation from: FINANCE,Finance,68975.3 (org chart)"
+CHILDSERV,Children's Services,299449.8,,,
+CITYMANAGER,City Manager's Office,43046.7,,,"Original amount was 5625.5, plus:
+Allocation from: CORPCOMMS,Corporate Communications,6439.6 (Guess)
+Allocation from: EMERGPLAN,Emergency Management Plan,1854.3 (org chart)
+Allocation from: HUMANRESOURCES,Human Resources,26472.7 (org chart)
+Allocation from: INNOVATION,Service Improvement & Innovation,2654.6 (guess)"
+CLERK,City Clerk's Office,44435.9,,,
+COMMCENTRES,Association of Community Centres,4961.8,,,
+CORPEXPENDITURES,Non-Program Expenditures,297345,,,"Original amount was 236357.3, plus:
+Allocation from: GRANTPROGRAM,Consolidated Grant Program,39562.7 (guess)
+Allocation from: KVC,Keele Valley Closure (KVC),21425 (consolidate)"
+CORPFINANCING,Capital & Corporate Financing,391078.9,,,
+COUNCIL,City Council,17615.7,,,
+COURTSERV,Court Services,27339.7,,,
+ECONDEV,Economic Development & Culture,51941.700000000004,,,"Original amount was null, plus:
+Allocation from: BIZSUPPORT,Customer & Business Support,19368.9 (Guess)
+Allocation from: CULTURE,Culture,12190.4 (Guess, by name ‘Culture’)
+Allocation from: TOURISM,Tourism,12068.1 (guess)"
+ENGINEERING,Engineering & Construction Services,48132.1,,,"Original amount was null, plus:
+Allocation from: TECH,WES - Technical Services,48132.1 (toronto.ca)"
+EXHIBPLACE,Exhibition Place,40778.3,,,
+FACILITIES,"Facilities, Real Estate, Environment & Energy",84241.2,,,
+FIRE,Fire Services,278450,,,
+FLEET,Fleet Services,31297,,,
+IT,Information & Technology,40411.5,,,
+LEGAL,Legal Services,24353.2,,,
+LIBRARY,Toronto Public Library,134832.7,,,
+LONGTERMHOME,Long Term Care Homes & Services,159418.9,,,"Original amount was null, plus:
+Allocation from: AGEDHOMES,Homes for the Aged,159418.9 (logical)"
+MAYOR,Mayor's Office,1763.7,,,
+PARAMEDIC,Toronto Paramedic Services,114268.1,,,"Original amount was null, plus:
+Allocation from: EMERG,Emergency Medical Services,114268.1 (logical)"
+PARKING,Toronto Parking Authority,91055.5,,,
+PARKS,"Parks, Forestry & Recreation",219745.6,,,
+PLANNING,City Planning,92332.2,,,
+POLICE,Toronto Police Service,659680,,,"Original amount was null, plus:
+Allocation from: TOTALPOLICE,Toronto Police Service & Board,659680 (later split out board)"
+PUBLICHEALTH,Toronto Public Health,170100.8,,,
+REGIONCONSERV,Toronto & Region Conservation Authority,23912.5,,,
+SHELTERADMIN,"Shelter, Support & Housing Administration",672668.5,,,"Original amount was 638854.6, plus:
+Allocation from: SUPPORTSERV,WES - Support Services,33813.9 (budget jumped after WES support services discontinued)"
+SOCIALDEV,"Social Development, Finance & Administration",17486.1,,,
+SOCIALSERV,Toronto Employment & Social Services,934105,,,
+SOLIDWASTE,Solid Waste Management Services,182689,,,
+THEATRES,Theatres,20502.3,,,
+TRANSPORTATION,Transportation Services,242915.8,,,
+TTCCONV,Toronto Transit Commission - Conventional,957167.2,,,"Original amount was null, plus:
+Allocation from: TOTALTTC,Toronto Transit Commission (Incl. Wheel Trans),957167.2 (later split out wheel trans)"
+WATER,Toronto Water,520142.9,,,
+YONGEDUNDAS,Yonge-Dundas Square,1030.5,,,
+ZOO,Toronto Zoo,32857.1,,,
+ARENAS,Arena Boards of Management,5021.3,,,

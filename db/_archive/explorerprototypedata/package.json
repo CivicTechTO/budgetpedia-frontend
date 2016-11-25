@@ -1,0 +1,17 @@
+{
+  "name": "explorerprototype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "preprocess.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^0.4.6",
+    "csvtojson": "^0.5.3",
+    "fs": "0.0.2",
+    "jsonfile": "^2.2.3"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/d036b5253c1ef89d4e3310516d2fa2117d0db555/react-tap-event-plugin/react-tap-event-plugin.d.ts",
+    "raw": "registry:dt/react-tap-event-plugin#0.0.0+20160226083632",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/d036b5253c1ef89d4e3310516d2fa2117d0db555/react-tap-event-plugin/react-tap-event-plugin.d.ts"
+  }
+}

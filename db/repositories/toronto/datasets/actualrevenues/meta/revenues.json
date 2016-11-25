@@ -1,0 +1,25 @@
+{
+    "InflationAdjustable": true,
+    "DatasetName":"Revenues",
+    "DatasetTitle": "Audited Operating Revenues",
+    "Dataseries": [
+        {
+            "Type": "Components"
+        }
+    ],
+    "Dimensions":["Revenue"],
+    "DimensionNames":{
+        "Program":{
+            "Instance":"Revenue",
+            "Collection":"Actual Revenues"
+        }
+    },
+    "CellTitles": {
+        "Components": "Revenues"
+    },
+    "Units": "DOLLAR",
+    "UnitsAlias": "$000's",
+    "UnitRatio": 1000,
+    "CommonDimension":false
+}
+

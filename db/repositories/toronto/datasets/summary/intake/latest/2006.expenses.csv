@@ -1,0 +1,77 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuaVZNRkVPZ0h0M1E
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OubHdZVEpCZmdfNlE
+SOURCE_DOCUMENT_TITLE,2006 OPERATING BUDGET SUMMARY BY PROGRAM
+SOURCE_DOCUMENT_TABLE_LOCATION,
+SOURCE_DOCUMENT_TABLE_TITLE,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OubHhPS2ZsQ0hyRlU
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2006
+VERSION,Summary
+ASPECT,Expenses
+NOTES_CONTENT,used content from 2007 version as it seemed more accurate: here is the 2006 version https://drive.google.com/open?id=0BzB3t6aSc9bDWWpVRmRPN25IQW
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Program:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Affordable Housing Office ,3018.1
+Children’s Services ,379350.7
+Court Services ,32459.3
+"Economic Development, Culture & Tourism ",36509.4
+Emergency Medical Services ,142528.2
+Homes for the Aged ,186005.2
+"Parks, Forestry & Recreation ",289166.3
+"Shelter, Support & Housing Administration ",717764.9
+"Social Development, Finance & Administration ",27954.9
+Social Services ,1037486.7
+3-1-1 Customer Service Strategy ,4579.5
+City Planning ,32237.2
+Clean and Beautiful City Secretariat ,
+Fire Services ,335386.4
+Municipal Licensing & Standards ,33610.3
+"Policy, Planning, Finance and Administration ",13720.3
+Solid Waste Management Services ,228849.4
+Technical Services ,58462.5
+Toronto Building ,38853.6
+Transportation Services ,275894.4
+Waterfront Secretariat ,
+Office of the Chief Financial Officer ,13215.5
+Office of the Treasurer ,63157.7
+Pubic Information & Creative Services ,4808.4
+Facilities & Real Estate ,117761.2
+Fleet Services ,34688.2
+Information & Technology ,52661.6
+City Manager’s Office ,39518.5
+City Clerk’s Office ,48655.3
+Legal Services ,29420.5
+Mayor’s Office ,1886.2
+City Council ,18761.5
+Auditor General’s Office ,3881.2
+Lobbyist Registrar ,
+Toronto Public Health ,211898.4
+Toronto Public Library ,158572.6
+Association of Community Centres ,6304.7
+Exhibition Place ,47230.6
+Heritage Toronto ,
+Theatres ,29836.9
+Toronto Zoo ,37423.1
+Arena Boards of Management ,5680.8
+Yonge-Dundas Square ,1073.1
+Toronto & Region Conservation Authority ,33979.3
+Toronto Transit Commission – Conventional ,1037991.9
+Toronto Transit Commission – Wheel-Trans ,63009.1
+Toronto Police Service ,796906.6
+Toronto Police Services Board ,1784.6
+Community Partnership and Investment Program ,40443.9
+Capital & Corporate Financing ,477442.3
+Non-Program Expenditures ,352400.9
+Non-Program Revenues ,
+Toronto Parking Authority ,54801.3
+Toronto Water ,610450.7

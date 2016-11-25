@@ -1,0 +1,21 @@
+Chart.txt
+summary revenues
+
+September 11, 2016
+
+Downloaded Derek's 'FINAL' csv's from GDrive from https://drive.google.com/open?id=0B208oCU9D8OuTDNnOUhiWGdWVDQ
+
+Separating code column from amount column for intake process
+Code column will form maps_names; amount columns will form precursors
+
+renamed Derek's files form <year>_operating_revenues.csv 
+to <year>.revenues.research.csv
+
+make two copies of each of Derek's files
+change one to maps_names (embedded in file name)
+change the other to precursor (embedded in file name)
+retain notes column in precursor
+
+move maps_names files to archive; using expense versions instead - likely more complete
+
+copy precursor files to pending dir for addition of meta headers. remove precursor portion of file name.

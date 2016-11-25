@@ -18,7 +18,7 @@ var b = watchify(browserify({
   // packageCache: {},
   output:'bundle.js'
   // delay: 100
-  }).transform(babelify, {presets: ["es2015", "react"]}),{
+  }).transform(babelify, {presets: ["es2015", "react"],plugins:["transform-object-assign"]}),{
   ignoreWatch: ['**/node_modules/**'],
   poll: 100
 }); 

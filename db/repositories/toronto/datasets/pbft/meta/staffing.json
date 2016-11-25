@@ -1,0 +1,32 @@
+{
+    "InflationAdjustable": false,
+    "DatasetName":"Staffing",
+    "DatasetTitle": "Staff Positions",
+    "Dataseries": [
+        {
+            "Type": "Components"
+        },
+        {
+            "Type": "CommonDimension"
+        }
+    ],
+    "Dimensions":["Program", "Permanence"],
+    "DimensionNames":{
+        "Program":{
+            "Instance":"Program",
+            "Collection":"Budgeted Programs"
+        },
+        "Permanence":{
+            "Instance":"Permanence",
+            "Collection":"Budgeted Permanence"
+        }
+    },
+    "CellTitles": {
+        "Components": "Programs",
+        "CommonDimension": "Permanence"
+    },
+    "Units": "FTE",
+    "UnitsAlias": "$000's",
+    "UnitRatio": 1,
+    "CommonDimension":"Permanence"
+}

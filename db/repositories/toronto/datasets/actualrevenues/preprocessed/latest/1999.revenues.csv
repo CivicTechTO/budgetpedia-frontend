@@ -1,0 +1,30 @@
+_META_START_,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuUTIwWDY5bzRlTUk,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuZW9OVU5sUVZtVDg,
+SOURCE_DOCUMENT_TITLE,City of Toronto Consolidated Financial Statements for the year ended December 31 1999,
+SOURCE_DOCUMENT_TABLE_LOCATION,p.3 document; p.5 pdf,
+SOURCE_DOCUMENT_TABLE_TITLE,"Analysis of Consolidated Current Operations For the Year Ended December 31, 1999",
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B0nzg-ld6eh_WTlQTUstRHY5M2M,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Chris,
+YEAR,1999,
+VERSION,Actual,
+ASPECT,Revenues,
+NOTES_CONTENT,,
+NOTES_SEVERITY,,
+UNITS_NAME,Dollar,
+UNITS_CODE,DOLLAR,
+UNITS_MULTIPLIER,1000,
+TOTAL_AMOUNT,6316052,
+INTAKE_DATETIME,2016-10-19-16-33-30,
+INTAKE_OPERATOR_ID,Chris,
+COLUMNS_CATEGORIES,"Revenue:CODE,Revenue:NAME",
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE",
+_META_END_,,
+PROPERTYTAX,Residential and commercial taxation,4496744
+OTHERGOVTAX,Taxation from other governments,194578
+SCHOOLBOARDS,Deduct: Amounts relating to school boards,-1892758
+USERCHARGES,User charges (Notes 2 and 3),2357980
+CANADA,Government of Canada,2652
+ONTARIO,Province of Ontario,982968
+OTHERMUNICIPALITIES,Other municipalities,173888

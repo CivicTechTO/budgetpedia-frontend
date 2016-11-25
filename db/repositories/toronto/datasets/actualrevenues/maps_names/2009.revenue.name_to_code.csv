@@ -1,0 +1,9 @@
+_COLUMNS_,"Category:NAME,Category:CODE,Note:DESCRIPTION,Count:VALUE",,
+Development Charges,DEVELOPMENT,,1
+Funding transfers from other governments,TRANSFERS,,1
+Investment Income,INVESTMENT,,1
+Net Government Business Enterprise Earnings,ENTERPRISES,,1
+Other,OTHER,,1
+Taxation,TAXATION,,1
+Taxation from other governments,OTHERGOVTAX,,1
+User Charges,USERCHARGES,,1

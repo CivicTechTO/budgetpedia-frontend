@@ -1,0 +1,25 @@
+{
+    "InflationAdjustable": true,
+    "DatasetName":"Expenses",
+    "DatasetTitle": "Audited Operating Expenses",
+    "Dataseries": [
+        {
+            "Type": "Components"
+        }
+    ],
+    "Dimensions":["Expense"],
+    "DimensionNames":{
+        "Program":{
+            "Instance":"Expense",
+            "Collection":"Actual Expenses"
+        }
+    },
+    "CellTitles": {
+        "Components": "Expenses"
+    },
+    "Units": "DOLLAR",
+    "UnitsAlias": "$000's",
+    "UnitRatio": 1000,
+    "CommonDimension":false
+}
+

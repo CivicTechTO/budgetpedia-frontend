@@ -1,0 +1,465 @@
+{
+    "Index": 1,
+    "NamingConfigRef": "BUDGET",
+    "Components": {
+        "ADMINOPS": {
+            "Index": 0,
+            "NamingConfigRef": "STRUCTURETYPE",
+            "Components": {
+                "COUNCILOPS": {
+                    "Index": 0,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "COUNCIL": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "MAYOR": {
+                            "Index": 1,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "CLERK": {
+                            "Index": 2,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "LEGAL": {
+                            "Index": 3,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "ACCOUNTABILITYAPPEAL2": {
+                            "Index": 4,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "AUDITGEN": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "INTEGRITYCOMM": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "LOBBYREG": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "OMBUDSMAN": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "MANAGEMENTOPS": {
+                    "Index": 1,
+                    "NamingConfigRef": "SUPERCLUSTER",
+                    "Components": {
+                        "MANAGEMENTOFFICES": {
+                            "Index": 0,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "CITYMANAGER": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "CFO": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "TREASURER": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        },
+                        "CORPORATESERVICES": {
+                            "Index": 0,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "FACILITIES": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "FLEET": {
+                                    "Index": 4,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "IT": {
+                                    "Index": 5,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "311SERVICE": {
+                                    "Index": 6,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "CITIZENOPS": {
+            "Index": 1,
+            "NamingConfigRef": "STRUCTURETYPE",
+            "Components": {
+                "CITIZENSERVICESA": {
+                    "Index": 0,
+                    "NamingConfigRef": "SUPERCLUSTER",
+                    "Components": {
+                        "FIELDSERVICESA": {
+                            "Index": 0,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "CHILDSERV": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "COURTSERV": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "PARAMEDIC": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "PARKS": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "LONGTERMHOME": {
+                                    "Index": 4,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        },
+                        "CORESERVICESA": {
+                            "Index": 1,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "ECONDEV": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "SOCIALDEV": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "SOCIALSERV": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "SHELTERADMIN": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "AFFHOUSING": {
+                                    "Index": 4,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "CITIZENSERVICESB": {
+                    "Index": 1,
+                    "NamingConfigRef": "SUPERCLUSTER",
+                    "Components": {
+                        "FIELDSERVICESB": {
+                            "Index": 0,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "SOLIDWASTE": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "WATER": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "FIRE": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "TRANSPORTATION": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        },
+                        "CORESERVICESB": {
+                            "Index": 1,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "ENGINEERING": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "PLANNING": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "POLICYADMIN": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "LICENCING": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "BUILDINGS": {
+                                    "Index": 4,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "AGENCIES": {
+            "Index": 2,
+            "NamingConfigRef": "STRUCTURETYPE",
+            "Components": {
+                "POLICESERV": {
+                    "Index": 0,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "POLICE": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "POLICEBOARD": {
+                            "Index": 1,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        }
+                    }
+                },
+                "TRANSITSERV": {
+                    "Index": 1,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "TTCCONV": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "TTCWHEEL": {
+                            "Index": 1,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        }
+                    }
+                },
+                "PUBLICHEALTH": {
+                    "Index": 2,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "LIBRARY": {
+                    "Index": 3,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "PARKING": {
+                    "Index": 2,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "SPECIALIZED": {
+                    "Index": 4,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "COMMCENTRES": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "ARENAS": {
+                            "Index": 1,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "HERITAGE": {
+                            "Index": 2,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "REGIONCONSERV": {
+                            "Index": 3,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "DESTINATIONS2": {
+                            "Index": 5,
+                            "NamingConfigRef": "CLUSTER",
+                            "Components": {
+                                "EXHIBPLACE": {
+                                    "Index": 0,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "THEATRES": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "ZOO": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "YONGEDUNDAS": {
+                                    "Index": 3,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "CORPORATEACCOUNTS2": {
+            "Index": 3,
+            "NamingConfigRef": "CLUSTER",
+            "Components": {
+                "CORPFINANCING": {
+                    "Index": 0,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "CORPEXPENDITURES": {
+                    "Index": 1,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "CORPREVENUES": {
+                    "Index": 2,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "PARKINGTAGS": {
+                    "Index": 1,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                }
+            }
+        }
+    },
+    "Meta":{
+        "Lookups": {
+            "Taxonomy": {
+                "ACCOUNTABILITYAPPEAL2": "Accountability & Appeal Offices",
+                "ADMINOPS": "Administrative Operations",
+                "AGENCIES": "Agencies",
+                "CITIZENOPS": "Citizen Centered Operations",
+                "CITIZENSERVICESA": "Human and Social Services",
+                "CITIZENSERVICESB": "Building and Infrastructure Services",
+                "CORESERVICESA": "Office Services: Human and Social",
+                "CORESERVICESB": "Office Services: Building and Infrastructure",
+                "CORPORATEACCOUNTS2": "Corporate Accounts",
+                "COUNCILOPS": "Council Domain",
+                "DESTINATIONS2": "Public Destinations",
+                "FIELDSERVICESA": "Field Services: Human and Social",
+                "FIELDSERVICESB": "Field Services: Building and Infrastructure",
+                "MANAGEMENTOFFICES": "Management Offices",
+                "CORPORATESERVICES": "Corporate Services",
+                "MANAGEMENTOPS": "City Manager Domain",
+                "POLICESERV": "Police Services",
+                "RATESUPPORTED": "Rate Supported Services",
+                "SPECIALIZED": "Specialized Agencies",
+                "TRANSITSERV": "Transit Services"
+            }
+        },
+        "NamingConfigurations": {
+            "BUDGET": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Budget"
+                },
+                "Contents": {
+                    "Name": "Structural",
+                    "Alias": "Structure Types"
+                }
+            },
+            "STRUCTURETYPE": {
+                "Instance": {
+                    "Name": "Structure Type"
+                },
+                "Contents": {
+                    "Name": "Clusters"
+                }
+            },
+            "SUPERCLUSTER": {
+                "Instance": {
+                    "Name": "Cluster"
+                },
+                "Contents": {
+                    "Name": "Clusters"
+                }
+            },
+            "CLUSTER": {
+                "Instance": {
+                    "Name": "Cluster",
+                    "Alias": "Cluster"
+                },
+                "Contents": {
+                    "Name": "Clusters",
+                    "Alias": "Programs"
+                }
+            },
+            "PROGRAM": {
+                "Instance": {
+                    "Name": "Program"
+                },
+                "Contents": {
+                    "Name": "Services"
+                }
+            },
+            "SERVICE": {
+                "Instance": {
+                    "Name": "Service"
+                },
+                "Contents": {
+                    "Name": "Activities"
+                }
+            }
+        }
+    }
+}

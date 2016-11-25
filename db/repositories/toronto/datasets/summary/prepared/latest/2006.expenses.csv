@@ -1,0 +1,81 @@
+_META_START_,,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0BzB3t6aSc9bDWWpVRmRPN25IQWs,,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OubHdZVEpCZmdfNlE,,,,
+SOURCE_DOCUMENT_TITLE,2006 OPERATING BUDGET SUMMARY BY PROGRAM,,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,,,,,
+SOURCE_DOCUMENT_TABLE_TITLE,,,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OubHhPS2ZsQ0hyRlU,,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,,
+YEAR,2006,,,,
+VERSION,Summary,,,,
+ASPECT,Expenses,,,,
+NOTES_CONTENT,,,,,
+NOTES_SEVERITY,,,,,
+UNITS_NAME,Dollar,,,,
+UNITS_CODE,DOLLAR,,,,
+UNITS_MULTIPLIER,1000,,,,
+TOTAL_AMOUNT,8283224,,,,
+INTAKE_DATETIME,2016-09-16-15-42-52,,,,
+INTAKE_OPERATOR_ID,Henrik,,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME",,,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,
+_META_END_,,,,,
+AFFHOUSING,Affordable Housing Office,3014,,,
+ARENAS,Arena Boards of Management,5674.2,,,
+AUDITGEN,Auditor General's Office,3880.4,,,
+BUILDINGS,Toronto Building,39276,,,
+CFO,Office of the Chief Financial Officer,16885.7,,,
+CHILDSERV,Children's Services,415589,,,
+CITYMANAGER,City Manager's Office,44360.399999999994,,,"Original amount was 6532.7, plus:
+Allocation from: CORPCOMMS,Corporate Communications,7189.4 (Guess)
+Allocation from: HUMANRESOURCES,Human Resources,29644.8 (org chart)
+Allocation from: WATERFRONT,Waterfront Secretariat,993.5 (org chart)"
+CLERK,City Clerk's Office,47005.3,,,
+COMMCENTRES,Association of Community Centres,6008.6,,,
+CORPEXPENDITURES,Non-Program Expenditures,409576.4,,,"Original amount was 361780, plus:
+Allocation from: COMMPARTNER,Community Partnership and Investment Program,47796.4 (should be divided between expenditures and revenues)"
+CORPFINANCING,Capital & Corporate Financing,481477.8,,,
+COUNCIL,City Council,18791.1,,,
+COURTSERV,Court Services,32415.3,,,
+ECONDEV,Economic Development & Culture,45106.5,,,"Original amount was null, plus:
+Allocation from: BIZSUPPORT,Business Support Services,10340.7 (Guess)
+Allocation from: CULTURE,Culture,15917.8 (Guess, by name ‘Culture’)
+Allocation from: TOURISM,Tourism,8977.5 (guess)"
+ENGINEERING,Engineering & Construction Services,60585.4,,,"Original amount was null, plus:
+Allocation from: TECH,Technical Services,60585.4 (toronto.ca)"
+EXHIBPLACE,Exhibition Place,47511.9,,,
+FACILITIES,"Facilities, Real Estate, Environment & Energy",116478.4,,,
+FIRE,Fire Services,317211.5,,,
+FLEET,Fleet Services,34697.5,,,
+HERITAGE,Heritage Toronto,670.4,,,
+IT,Information & Technology,51108.5,,,
+LEGAL,Legal Services,28584.7,,,
+LIBRARY,Toronto Public Library,158328.7,,,
+LICENCING,Municipal Licensing & Standards,28821.5,,,
+LONGTERMHOME,Long Term Care Homes & Services,186171.3,,,"Original amount was null, plus:
+Allocation from: AGEDHOMES,Homes for the Aged,186171.3 (logical)"
+MAYOR,Mayor's Office,1888.2,,,
+PARAMEDIC,Toronto Paramedic Services,142384.1,,,"Original amount was null, plus:
+Allocation from: EMERG,Emergency Medical Services,142384.1 (logical)"
+PARKING,Toronto Parking Authority,54801.4,,,
+PARKS,"Parks, Forestry & Recreation",283643.4,,,
+PLANNING,City Planning,31938.6,,,
+POLICE,Toronto Police Service,796170.4,,,
+POLICEBOARD,Toronto Police Services Board,1784.6,,,
+PUBLICHEALTH,Toronto Public Health,210572.2,,,
+REGIONCONSERV,Toronto & Region Conservation Authority,33979.3,,,
+SHELTERADMIN,"Shelter, Support & Housing Administration",698078.3,,,
+SOCIALDEV,"Social Development, Finance & Administration",32832.8,,,
+SOCIALSERV,Toronto Employment & Social Services,1036471.8,,,
+SOLIDWASTE,Solid Waste Management Services,230076.5,,,
+THEATRES,Theatres,29798.1,,,
+TRANSPORTATION,Transportation Services,285838,,,"Original amount was null, plus:
+Allocation from: BEAUTY,Clean and Beautiful City Secretariat,317.2 (Guess)"
+TREASURER,Office of the Treasurer,63152.3,,,
+TTCCONV,Toronto Transit Commission - Conventional,1037991.9,,,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,63009.1,,,
+WATER,Toronto Water,610450.7,,,
+YONGEDUNDAS,Yonge-Dundas Square,1072.4,,,
+ZOO,Toronto Zoo,37444.1,,,
+311SERVICE,311 Toronto,615.3,,,

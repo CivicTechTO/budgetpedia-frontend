@@ -1,0 +1,75 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuOXV6bnlOY0N4dW8
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OubHdZVEpCZmdfNlE
+SOURCE_DOCUMENT_TITLE,CITY OF TORONTO 2016 COUNCIL APPROVED OPERATING BUDGET NET EXPENDITURE
+SOURCE_DOCUMENT_TABLE_LOCATION,p.5 
+SOURCE_DOCUMENT_TABLE_TITLE,CITY OF TORONTO 2016 COUNCIL APPROVED OPERATING BUDGET REVENUE
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuRHo2YnA0UTZ6Y1E
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2016
+VERSION,Summary
+ASPECT,Revenues
+NOTES_CONTENT,
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Program:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Affordable Housing Office ,1777
+Children's Services ,394467
+Court Services ,41428
+Economic Development & Culture ,16255
+Toronto Paramedic Services ,125447
+Long Term Care Homes & Services ,206077
+"Parks, Forestry & Recreation ",134204
+"Shelter, Support & Housing Administration ",328775
+"Social Development, Finance & Administration ",20962
+Toronto Employment & Social Services ,963137
+City Planning ,27982
+Fire Services ,15329
+Municipal Licensing & Standards ,30513
+"Policy, Planning, Finance & Administration ",12448
+Engineering & Construction Services ,63287
+Toronto Building ,64580
+Transportation Services ,180869
+Office of the Chief Financial Officer ,6904
+Office of the Treasurer ,48778
+"Facilities, Real Estate, Environment & Energy ",127467
+Fleet Services ,51612
+311 Toronto ,8318
+Information & Technology ,51584
+City Manager's Office ,7889
+City Clerk's Office ,17591
+Legal Services ,30432
+Mayor's Office ,
+City Council ,40
+Auditor General's Office ,
+Integrity Commissioner's Office ,
+Office of the Lobbyist Registrar ,
+Office of the Ombudsman ,
+Toronto Public Health ,184585
+Toronto Public Library ,17593
+Association of Community Centres ,273
+Exhibition Place ,36671
+Heritage Toronto ,460
+Theatres ,17627
+Toronto Zoo ,39180
+Arena Boards of Management ,8652
+Yonge-Dundas Square ,1945
+Toronto & Region Conservation Authority ,36976
+Toronto Transit Commission - Conventional ,1243130
+Toronto Transit Commission - Wheel Trans ,6954
+Toronto Police Service ,127464
+Toronto Police Services Board ,750
+Capital & Corporate Financing ,23306
+Non-Program Expenditures ,175079
+Non-Program Revenues ,1237399
+Solid Waste Management Services ,389009
+Toronto Parking Authority ,136988
+Toronto Water ,1158479

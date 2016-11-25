@@ -1,0 +1,326 @@
+311SERVICE,311 Toronto,100A,Salaries And Benefits,Expenses,15371796
+311SERVICE,311 Toronto,200A,Materials & Supplies,Expenses,16258
+311SERVICE,311 Toronto,300A,Equipment,Expenses,25357
+311SERVICE,311 Toronto,400A,Service And Rent,Expenses,1461339
+311SERVICE,311 Toronto,510A,Contribution To Reserves/Reserve Funds,Expenses,25905
+311SERVICE,311 Toronto,700A,Inter-Divisional Charges,Expenses,192020
+AFFHOUSING,Affordable Housing Office,100A,Salaries And Benefits,Expenses,2244944
+AFFHOUSING,Affordable Housing Office,200A,Materials & Supplies,Expenses,12923
+AFFHOUSING,Affordable Housing Office,300A,Equipment,Expenses,2044
+AFFHOUSING,Affordable Housing Office,400A,Service And Rent,Expenses,168672
+AFFHOUSING,Affordable Housing Office,510A,Contribution To Reserves/Reserve Funds,Expenses,5647
+AFFHOUSING,Affordable Housing Office,700A,Inter-Divisional Charges,Expenses,329221
+ARENAS,Arena Boards of Management,100A,Salaries And Benefits,Expenses,4348489
+ARENAS,Arena Boards of Management,200A,Materials & Supplies,Expenses,2147208
+ARENAS,Arena Boards of Management,300A,Equipment,Expenses,43508
+ARENAS,Arena Boards of Management,400A,Service And Rent,Expenses,1031504
+ARENAS,Arena Boards of Management,505A,Contribution To Capital,Expenses,559519
+ARENAS,Arena Boards of Management,510A,Contribution To Reserves/Reserve Funds,Expenses,270175
+COMMCENTRES,Association of Community Centres,100A,Salaries And Benefits,Expenses,6620822
+COMMCENTRES,Association of Community Centres,200A,Materials & Supplies,Expenses,449823
+COMMCENTRES,Association of Community Centres,300A,Equipment,Expenses,3337
+COMMCENTRES,Association of Community Centres,400A,Service And Rent,Expenses,789847
+COMMCENTRES,Association of Community Centres,510A,Contribution To Reserves/Reserve Funds,Expenses,29231
+COMMCENTRES,Association of Community Centres,650A,Other Expenditures,Expenses,7000
+AUDITGEN,Auditor General's Office,100A,Salaries And Benefits,Expenses,4520927
+AUDITGEN,Auditor General's Office,200A,Materials & Supplies,Expenses,15950
+AUDITGEN,Auditor General's Office,300A,Equipment,Expenses,8121
+AUDITGEN,Auditor General's Office,400A,Service And Rent,Expenses,142383
+AUDITGEN,Auditor General's Office,510A,Contribution To Reserves/Reserve Funds,Expenses,7681
+AUDITGEN,Auditor General's Office,700A,Inter-Divisional Charges,Expenses,22272
+CORPFINANCING,Capital & Corporate Financing,505A,Contribution To Capital,Expenses,227642150
+CORPFINANCING,Capital & Corporate Financing,510A,Contribution To Reserves/Reserve Funds,Expenses,18911638
+CORPFINANCING,Capital & Corporate Financing,650A,Other Expenditures,Expenses,454045125
+CORPFINANCING,Capital & Corporate Financing,700A,Inter-Divisional Charges,Expenses,933106
+CHILDSERV,Children's Services,100A,Salaries And Benefits,Expenses,86275556
+CHILDSERV,Children's Services,200A,Materials & Supplies,Expenses,2522376
+CHILDSERV,Children's Services,300A,Equipment,Expenses,725526
+CHILDSERV,Children's Services,400A,Service And Rent,Expenses,356236607
+CHILDSERV,Children's Services,510A,Contribution To Reserves/Reserve Funds,Expenses,1280749
+CHILDSERV,Children's Services,650A,Other Expenditures,Expenses,715176
+CHILDSERV,Children's Services,700A,Inter-Divisional Charges,Expenses,4724215
+CLERK,City Clerk's Office,100A,Salaries And Benefits,Expenses,39264578
+CLERK,City Clerk's Office,200A,Materials & Supplies,Expenses,1343848
+CLERK,City Clerk's Office,300A,Equipment,Expenses,69057
+CLERK,City Clerk's Office,400A,Service And Rent,Expenses,7001637
+CLERK,City Clerk's Office,510A,Contribution To Reserves/Reserve Funds,Expenses,464633
+CLERK,City Clerk's Office,650A,Other Expenditures,Expenses,32517
+CLERK,City Clerk's Office,700A,Inter-Divisional Charges,Expenses,1082271
+COUNCIL,City Council,100A,Salaries And Benefits,Expenses,18672088
+COUNCIL,City Council,200A,Materials & Supplies,Expenses,1253604
+COUNCIL,City Council,300A,Equipment,Expenses,182000
+COUNCIL,City Council,400A,Service And Rent,Expenses,371500
+COUNCIL,City Council,510A,Contribution To Reserves/Reserve Funds,Expenses,99217
+COUNCIL,City Council,700A,Inter-Divisional Charges,Expenses,244219
+CITYMANAGER,City Manager's Office,100A,Salaries And Benefits,Expenses,50442411
+CITYMANAGER,City Manager's Office,200A,Materials & Supplies,Expenses,195103
+CITYMANAGER,City Manager's Office,300A,Equipment,Expenses,115286
+CITYMANAGER,City Manager's Office,400A,Service And Rent,Expenses,4640064
+CITYMANAGER,City Manager's Office,510A,Contribution To Reserves/Reserve Funds,Expenses,107750
+CITYMANAGER,City Manager's Office,700A,Inter-Divisional Charges,Expenses,256587
+PLANNING,City Planning,100A,Salaries And Benefits,Expenses,39656303
+PLANNING,City Planning,200A,Materials & Supplies,Expenses,187728
+PLANNING,City Planning,300A,Equipment,Expenses,163544
+PLANNING,City Planning,400A,Service And Rent,Expenses,1572966
+PLANNING,City Planning,510A,Contribution To Reserves/Reserve Funds,Expenses,81224
+PLANNING,City Planning,650A,Other Expenditures,Expenses,400700
+PLANNING,City Planning,700A,Inter-Divisional Charges,Expenses,1013623
+COURTSERV,Court Services,100A,Salaries And Benefits,Expenses,19782539
+COURTSERV,Court Services,200A,Materials & Supplies,Expenses,157746
+COURTSERV,Court Services,300A,Equipment,Expenses,105375
+COURTSERV,Court Services,400A,Service And Rent,Expenses,8147390
+COURTSERV,Court Services,510A,Contribution To Reserves/Reserve Funds,Expenses,84376
+COURTSERV,Court Services,650A,Other Expenditures,Expenses,1820187
+COURTSERV,Court Services,700A,Inter-Divisional Charges,Expenses,19433482
+ECONDEV,Economic Development & Culture,100A,Salaries And Benefits,Expenses,28715391
+ECONDEV,Economic Development & Culture,200A,Materials & Supplies,Expenses,1443392
+ECONDEV,Economic Development & Culture,300A,Equipment,Expenses,127604
+ECONDEV,Economic Development & Culture,400A,Service And Rent,Expenses,14890084
+ECONDEV,Economic Development & Culture,510A,Contribution To Reserves/Reserve Funds,Expenses,964012
+ECONDEV,Economic Development & Culture,650A,Other Expenditures,Expenses,30911122
+ECONDEV,Economic Development & Culture,700A,Inter-Divisional Charges,Expenses,601526
+ENGINEERING,Engineering & Construction Services,100A,Salaries And Benefits,Expenses,58244161
+ENGINEERING,Engineering & Construction Services,200A,Materials & Supplies,Expenses,392605
+ENGINEERING,Engineering & Construction Services,300A,Equipment,Expenses,255308
+ENGINEERING,Engineering & Construction Services,400A,Service And Rent,Expenses,3342054
+ENGINEERING,Engineering & Construction Services,510A,Contribution To Reserves/Reserve Funds,Expenses,797047
+ENGINEERING,Engineering & Construction Services,700A,Inter-Divisional Charges,Expenses,3807792
+EXHIBPLACE,Exhibition Place,100A,Salaries And Benefits,Expenses,33109005
+EXHIBPLACE,Exhibition Place,200A,Materials & Supplies,Expenses,3658325
+EXHIBPLACE,Exhibition Place,300A,Equipment,Expenses,176840
+EXHIBPLACE,Exhibition Place,400A,Service And Rent,Expenses,13739282
+EXHIBPLACE,Exhibition Place,510A,Contribution To Reserves/Reserve Funds,Expenses,2097145
+EXHIBPLACE,Exhibition Place,650A,Other Expenditures,Expenses,-14601989
+FACILITIES,"Facilities, Real Estate, Environment & Energy",100A,Salaries And Benefits,Expenses,94290567
+FACILITIES,"Facilities, Real Estate, Environment & Energy",200A,Materials & Supplies,Expenses,30446859
+FACILITIES,"Facilities, Real Estate, Environment & Energy",300A,Equipment,Expenses,543894
+FACILITIES,"Facilities, Real Estate, Environment & Energy",400A,Service And Rent,Expenses,54589232
+FACILITIES,"Facilities, Real Estate, Environment & Energy",510A,Contribution To Reserves/Reserve Funds,Expenses,2096530
+FACILITIES,"Facilities, Real Estate, Environment & Energy",650A,Other Expenditures,Expenses,6460904
+FACILITIES,"Facilities, Real Estate, Environment & Energy",700A,Inter-Divisional Charges,Expenses,1448432
+FIRE,Fire Services,100A,Salaries And Benefits,Expenses,400338209
+FIRE,Fire Services,200A,Materials & Supplies,Expenses,7836460
+FIRE,Fire Services,300A,Equipment,Expenses,1028345
+FIRE,Fire Services,400A,Service And Rent,Expenses,6413115
+FIRE,Fire Services,510A,Contribution To Reserves/Reserve Funds,Expenses,9583968
+FIRE,Fire Services,700A,Inter-Divisional Charges,Expenses,7688615
+FLEET,Fleet Services,100A,Salaries And Benefits,Expenses,17472775
+FLEET,Fleet Services,200A,Materials & Supplies,Expenses,24234118
+FLEET,Fleet Services,300A,Equipment,Expenses,116437
+FLEET,Fleet Services,400A,Service And Rent,Expenses,7643296
+FLEET,Fleet Services,510A,Contribution To Reserves/Reserve Funds,Expenses,660028
+FLEET,Fleet Services,700A,Inter-Divisional Charges,Expenses,582328
+HERITAGE,Heritage Toronto,100A,Salaries And Benefits,Expenses,550300
+HERITAGE,Heritage Toronto,200A,Materials & Supplies,Expenses,70400
+HERITAGE,Heritage Toronto,400A,Service And Rent,Expenses,133500
+HERITAGE,Heritage Toronto,510A,Contribution To Reserves/Reserve Funds,Expenses,1266
+HERITAGE,Heritage Toronto,650A,Other Expenditures,Expenses,6000
+IT,Information & Technology,100A,Salaries And Benefits,Expenses,94653797
+IT,Information & Technology,200A,Materials & Supplies,Expenses,122495
+IT,Information & Technology,300A,Equipment,Expenses,1243247
+IT,Information & Technology,400A,Service And Rent,Expenses,24903595
+IT,Information & Technology,510A,Contribution To Reserves/Reserve Funds,Expenses,126565
+IT,Information & Technology,650A,Other Expenditures,Expenses,396
+IT,Information & Technology,700A,Inter-Divisional Charges,Expenses,490951
+INTEGRITYCOMM,Integrity Commissioner's Office,100A,Salaries And Benefits,Expenses,387754
+INTEGRITYCOMM,Integrity Commissioner's Office,200A,Materials & Supplies,Expenses,1556
+INTEGRITYCOMM,Integrity Commissioner's Office,300A,Equipment,Expenses,6452
+INTEGRITYCOMM,Integrity Commissioner's Office,400A,Service And Rent,Expenses,27242
+INTEGRITYCOMM,Integrity Commissioner's Office,510A,Contribution To Reserves/Reserve Funds,Expenses,4365
+INTEGRITYCOMM,Integrity Commissioner's Office,700A,Inter-Divisional Charges,Expenses,400
+LEGAL,Legal Services,100A,Salaries And Benefits,Expenses,40463694
+LEGAL,Legal Services,200A,Materials & Supplies,Expenses,407331
+LEGAL,Legal Services,300A,Equipment,Expenses,109558
+LEGAL,Legal Services,400A,Service And Rent,Expenses,1410603
+LEGAL,Legal Services,510A,Contribution To Reserves/Reserve Funds,Expenses,69502
+LEGAL,Legal Services,700A,Inter-Divisional Charges,Expenses,7107200
+LONGTERMHOME,Long Term Care Homes & Services,100A,Salaries And Benefits,Expenses,197781300
+LONGTERMHOME,Long Term Care Homes & Services,200A,Materials & Supplies,Expenses,18590200
+LONGTERMHOME,Long Term Care Homes & Services,300A,Equipment,Expenses,2873400
+LONGTERMHOME,Long Term Care Homes & Services,400A,Service And Rent,Expenses,20187422
+LONGTERMHOME,Long Term Care Homes & Services,510A,Contribution To Reserves/Reserve Funds,Expenses,1901532
+LONGTERMHOME,Long Term Care Homes & Services,650A,Other Expenditures,Expenses,114850
+LONGTERMHOME,Long Term Care Homes & Services,700A,Inter-Divisional Charges,Expenses,689923
+MAYOR,Mayor's Office,100A,Salaries And Benefits,Expenses,2199586
+MAYOR,Mayor's Office,200A,Materials & Supplies,Expenses,5000
+MAYOR,Mayor's Office,400A,Service And Rent,Expenses,87524
+MAYOR,Mayor's Office,700A,Inter-Divisional Charges,Expenses,5000
+LICENCING,Municipal Licensing & Standards,100A,Salaries And Benefits,Expenses,42021565
+LICENCING,Municipal Licensing & Standards,200A,Materials & Supplies,Expenses,1118858
+LICENCING,Municipal Licensing & Standards,300A,Equipment,Expenses,407381
+LICENCING,Municipal Licensing & Standards,400A,Service And Rent,Expenses,1744319
+LICENCING,Municipal Licensing & Standards,510A,Contribution To Reserves/Reserve Funds,Expenses,749348
+LICENCING,Municipal Licensing & Standards,650A,Other Expenditures,Expenses,250000
+LICENCING,Municipal Licensing & Standards,700A,Inter-Divisional Charges,Expenses,4566991
+CORPEXPENDITURES,Non-Program Expenditures,100A,Salaries And Benefits,Expenses,55041113
+CORPEXPENDITURES,Non-Program Expenditures,200A,Materials & Supplies,Expenses,1125600
+CORPEXPENDITURES,Non-Program Expenditures,400A,Service And Rent,Expenses,307964120
+CORPEXPENDITURES,Non-Program Expenditures,510A,Contribution To Reserves/Reserve Funds,Expenses,76162600
+CORPEXPENDITURES,Non-Program Expenditures,650A,Other Expenditures,Expenses,149396573
+CORPEXPENDITURES,Non-Program Expenditures,700A,Inter-Divisional Charges,Expenses,18504182
+CORPREVENUES,Non-Program Revenues,400A,Service And Rent,Expenses,5767329
+CORPREVENUES,Non-Program Revenues,510A,Contribution To Reserves/Reserve Funds,Expenses,107481000
+CORPREVENUES,Non-Program Revenues,650A,Other Expenditures,Expenses,304500
+CORPREVENUES,Non-Program Revenues,700A,Inter-Divisional Charges,Expenses,3368131
+CFO,Office of the Chief Financial Officer,100A,Salaries And Benefits,Expenses,15431315
+CFO,Office of the Chief Financial Officer,200A,Materials & Supplies,Expenses,66041
+CFO,Office of the Chief Financial Officer,300A,Equipment,Expenses,9246
+CFO,Office of the Chief Financial Officer,400A,Service And Rent,Expenses,710987
+CFO,Office of the Chief Financial Officer,510A,Contribution To Reserves/Reserve Funds,Expenses,77406
+CFO,Office of the Chief Financial Officer,650A,Other Expenditures,Expenses,500
+CFO,Office of the Chief Financial Officer,700A,Inter-Divisional Charges,Expenses,263067
+LOBBYREG,Office of the Lobbyist Registrar,100A,Salaries And Benefits,Expenses,1036130
+LOBBYREG,Office of the Lobbyist Registrar,200A,Materials & Supplies,Expenses,7517
+LOBBYREG,Office of the Lobbyist Registrar,300A,Equipment,Expenses,280
+LOBBYREG,Office of the Lobbyist Registrar,400A,Service And Rent,Expenses,78000
+LOBBYREG,Office of the Lobbyist Registrar,510A,Contribution To Reserves/Reserve Funds,Expenses,1578
+LOBBYREG,Office of the Lobbyist Registrar,700A,Inter-Divisional Charges,Expenses,600
+OMBUDSMAN,Office of the Ombudsman,100A,Salaries And Benefits,Expenses,1493782
+OMBUDSMAN,Office of the Ombudsman,200A,Materials & Supplies,Expenses,12569
+OMBUDSMAN,Office of the Ombudsman,300A,Equipment,Expenses,13468
+OMBUDSMAN,Office of the Ombudsman,400A,Service And Rent,Expenses,221685
+OMBUDSMAN,Office of the Ombudsman,510A,Contribution To Reserves/Reserve Funds,Expenses,2082
+OMBUDSMAN,Office of the Ombudsman,700A,Inter-Divisional Charges,Expenses,11800
+TREASURER,Office of the Treasurer,100A,Salaries And Benefits,Expenses,64410453
+TREASURER,Office of the Treasurer,200A,Materials & Supplies,Expenses,296975
+TREASURER,Office of the Treasurer,300A,Equipment,Expenses,114130
+TREASURER,Office of the Treasurer,400A,Service And Rent,Expenses,8103462
+TREASURER,Office of the Treasurer,510A,Contribution To Reserves/Reserve Funds,Expenses,128997
+TREASURER,Office of the Treasurer,650A,Other Expenditures,Expenses,1482918
+TREASURER,Office of the Treasurer,700A,Inter-Divisional Charges,Expenses,2300659
+PARKS,"Parks, Forestry & Recreation",100A,Salaries And Benefits,Expenses,288071988
+PARKS,"Parks, Forestry & Recreation",200A,Materials & Supplies,Expenses,37019576
+PARKS,"Parks, Forestry & Recreation",300A,Equipment,Expenses,3416294
+PARKS,"Parks, Forestry & Recreation",400A,Service And Rent,Expenses,67650366
+PARKS,"Parks, Forestry & Recreation",510A,Contribution To Reserves/Reserve Funds,Expenses,10416236
+PARKS,"Parks, Forestry & Recreation",650A,Other Expenditures,Expenses,10087526
+PARKS,"Parks, Forestry & Recreation",700A,Inter-Divisional Charges,Expenses,21514490
+POLICYADMIN,"Policy, Planning, Finance & Administration",100A,Salaries And Benefits,Expenses,18994536
+POLICYADMIN,"Policy, Planning, Finance & Administration",200A,Materials & Supplies,Expenses,1092616
+POLICYADMIN,"Policy, Planning, Finance & Administration",300A,Equipment,Expenses,87989
+POLICYADMIN,"Policy, Planning, Finance & Administration",400A,Service And Rent,Expenses,881232
+POLICYADMIN,"Policy, Planning, Finance & Administration",510A,Contribution To Reserves/Reserve Funds,Expenses,125721
+POLICYADMIN,"Policy, Planning, Finance & Administration",700A,Inter-Divisional Charges,Expenses,774878
+PROPERTYTAX,Property Tax,510A,Special Levy for Scarborough Subway,Expenses,24846399
+SHELTERADMIN,"Shelter, Support & Housing Administration",100A,Salaries And Benefits,Expenses,68280876
+SHELTERADMIN,"Shelter, Support & Housing Administration",200A,Materials & Supplies,Expenses,4238261
+SHELTERADMIN,"Shelter, Support & Housing Administration",300A,Equipment,Expenses,173051
+SHELTERADMIN,"Shelter, Support & Housing Administration",400A,Service And Rent,Expenses,70154451
+SHELTERADMIN,"Shelter, Support & Housing Administration",510A,Contribution To Reserves/Reserve Funds,Expenses,4841870
+SHELTERADMIN,"Shelter, Support & Housing Administration",650A,Other Expenditures,Expenses,513551595
+SHELTERADMIN,"Shelter, Support & Housing Administration",700A,Inter-Divisional Charges,Expenses,1169167
+SOCIALDEV,"Social Development, Finance & Administration",100A,Salaries And Benefits,Expenses,14694532
+SOCIALDEV,"Social Development, Finance & Administration",200A,Materials & Supplies,Expenses,92479
+SOCIALDEV,"Social Development, Finance & Administration",300A,Equipment,Expenses,17609
+SOCIALDEV,"Social Development, Finance & Administration",400A,Service And Rent,Expenses,4713298
+SOCIALDEV,"Social Development, Finance & Administration",510A,Contribution To Reserves/Reserve Funds,Expenses,121704
+SOCIALDEV,"Social Development, Finance & Administration",650A,Other Expenditures,Expenses,29060900
+SOCIALDEV,"Social Development, Finance & Administration",700A,Inter-Divisional Charges,Expenses,307196
+SOLIDWASTE,Solid Waste Management Services,100A,Salaries And Benefits,Expenses,93897682
+SOLIDWASTE,Solid Waste Management Services,200A,Materials & Supplies,Expenses,5508906
+SOLIDWASTE,Solid Waste Management Services,300A,Equipment,Expenses,387100
+SOLIDWASTE,Solid Waste Management Services,400A,Service And Rent,Expenses,125369831
+SOLIDWASTE,Solid Waste Management Services,510A,Contribution To Reserves/Reserve Funds,Expenses,37469158
+SOLIDWASTE,Solid Waste Management Services,650A,Other Expenditures,Expenses,73035119
+SOLIDWASTE,Solid Waste Management Services,700A,Inter-Divisional Charges,Expenses,35117352
+THEATRES,Theatres,100A,Salaries And Benefits,Expenses,10652574
+THEATRES,Theatres,200A,Materials & Supplies,Expenses,2032922
+THEATRES,Theatres,300A,Equipment,Expenses,436163
+THEATRES,Theatres,400A,Service And Rent,Expenses,6606268
+THEATRES,Theatres,505A,Contribution To Capital,Expenses,952151
+THEATRES,Theatres,510A,Contribution To Reserves/Reserve Funds,Expenses,1708104
+THEATRES,Theatres,650A,Other Expenditures,Expenses,935489
+REGIONCONSERV,Toronto & Region Conservation Authority,100A,Salaries And Benefits,Expenses,32520000
+REGIONCONSERV,Toronto & Region Conservation Authority,200A,Materials & Supplies,Expenses,4211000
+REGIONCONSERV,Toronto & Region Conservation Authority,300A,Equipment,Expenses,1252000
+REGIONCONSERV,Toronto & Region Conservation Authority,400A,Service And Rent,Expenses,1936000
+ATMOSPHERE,Toronto Atmospheric Fund,100A,Salaries And Benefits,Expenses,953000
+ATMOSPHERE,Toronto Atmospheric Fund,200A,Materials & Supplies,Expenses,20000
+ATMOSPHERE,Toronto Atmospheric Fund,400A,Service And Rent,Expenses,1102000
+ATMOSPHERE,Toronto Atmospheric Fund,650A,Other Expenditures,Expenses,500000
+BUILDINGS,Toronto Building,100A,Salaries And Benefits,Expenses,44512469
+BUILDINGS,Toronto Building,200A,Materials & Supplies,Expenses,202876
+BUILDINGS,Toronto Building,300A,Equipment,Expenses,286047
+BUILDINGS,Toronto Building,400A,Service And Rent,Expenses,1206912
+BUILDINGS,Toronto Building,510A,Contribution To Reserves/Reserve Funds,Expenses,3303580
+BUILDINGS,Toronto Building,650A,Other Expenditures,Expenses,278488
+BUILDINGS,Toronto Building,700A,Inter-Divisional Charges,Expenses,654965
+SOCIALSERV,Toronto Employment & Social Services,100A,Salaries And Benefits,Expenses,187755901
+SOCIALSERV,Toronto Employment & Social Services,200A,Materials & Supplies,Expenses,14773718
+SOCIALSERV,Toronto Employment & Social Services,300A,Equipment,Expenses,876541
+SOCIALSERV,Toronto Employment & Social Services,400A,Service And Rent,Expenses,91476581
+SOCIALSERV,Toronto Employment & Social Services,510A,Contribution To Reserves/Reserve Funds,Expenses,7828197
+SOCIALSERV,Toronto Employment & Social Services,650A,Other Expenditures,Expenses,786426895
+SOCIALSERV,Toronto Employment & Social Services,700A,Inter-Divisional Charges,Expenses,24115059
+PARAMEDIC,Toronto Paramedic Services,100A,Salaries And Benefits,Expenses,164585965
+PARAMEDIC,Toronto Paramedic Services,200A,Materials & Supplies,Expenses,6466792
+PARAMEDIC,Toronto Paramedic Services,300A,Equipment,Expenses,1013209
+PARAMEDIC,Toronto Paramedic Services,400A,Service And Rent,Expenses,9875558
+PARAMEDIC,Toronto Paramedic Services,505A,Contribution To Capital,Expenses,756000
+PARAMEDIC,Toronto Paramedic Services,510A,Contribution To Reserves/Reserve Funds,Expenses,5966232
+PARAMEDIC,Toronto Paramedic Services,650A,Other Expenditures,Expenses,8937
+PARAMEDIC,Toronto Paramedic Services,700A,Inter-Divisional Charges,Expenses,9436306
+PARKING,Toronto Parking Authority,100A,Salaries And Benefits,Expenses,23278828
+PARKING,Toronto Parking Authority,200A,Materials & Supplies,Expenses,9203872
+PARKING,Toronto Parking Authority,300A,Equipment,Expenses,7370051
+PARKING,Toronto Parking Authority,400A,Service And Rent,Expenses,23006365
+PARKING,Toronto Parking Authority,650A,Other Expenditures,Expenses,71370324
+POLICE,Toronto Police Service,100A,Salaries And Benefits,Expenses,1028821700
+POLICE,Toronto Police Service,200A,Materials & Supplies,Expenses,19807600
+POLICE,Toronto Police Service,300A,Equipment,Expenses,3105400
+POLICE,Toronto Police Service,400A,Service And Rent,Expenses,62565888
+POLICE,Toronto Police Service,510A,Contribution To Reserves/Reserve Funds,Expenses,37797489
+POLICE,Toronto Police Service,700A,Inter-Divisional Charges,Expenses,20218912
+POLICEBOARD,Toronto Police Services Board,100A,Salaries And Benefits,Expenses,969200
+POLICEBOARD,Toronto Police Services Board,200A,Materials & Supplies,Expenses,7300
+POLICEBOARD,Toronto Police Services Board,400A,Service And Rent,Expenses,883300
+POLICEBOARD,Toronto Police Services Board,505A,Contribution To Capital,Expenses,610600
+POLICEBOARD,Toronto Police Services Board,700A,Inter-Divisional Charges,Expenses,645400
+PUBLICHEALTH,Toronto Public Health,100A,Salaries And Benefits,Expenses,181685344
+PUBLICHEALTH,Toronto Public Health,200A,Materials & Supplies,Expenses,3767314
+PUBLICHEALTH,Toronto Public Health,300A,Equipment,Expenses,1520758
+PUBLICHEALTH,Toronto Public Health,400A,Service And Rent,Expenses,40090641
+PUBLICHEALTH,Toronto Public Health,510A,Contribution To Reserves/Reserve Funds,Expenses,1487521
+PUBLICHEALTH,Toronto Public Health,650A,Other Expenditures,Expenses,8537753
+PUBLICHEALTH,Toronto Public Health,700A,Inter-Divisional Charges,Expenses,16890139
+LIBRARY,Toronto Public Library,100A,Salaries And Benefits,Expenses,141221781
+LIBRARY,Toronto Public Library,200A,Materials & Supplies,Expenses,26496300
+LIBRARY,Toronto Public Library,300A,Equipment,Expenses,566799
+LIBRARY,Toronto Public Library,400A,Service And Rent,Expenses,18152446
+LIBRARY,Toronto Public Library,505A,Contribution To Capital,Expenses,1378000
+LIBRARY,Toronto Public Library,510A,Contribution To Reserves/Reserve Funds,Expenses,892981
+TTCCONV,Toronto Transit Commission - Conventional,100A,Salaries And Benefits,Expenses,1212667300
+TTCCONV,Toronto Transit Commission - Conventional,200A,Materials & Supplies,Expenses,318563899
+TTCCONV,Toronto Transit Commission - Conventional,300A,Equipment,Expenses,32345400
+TTCCONV,Toronto Transit Commission - Conventional,400A,Service And Rent,Expenses,78515300
+TTCCONV,Toronto Transit Commission - Conventional,505A,Contribution To Capital,Expenses,13936000
+TTCCONV,Toronto Transit Commission - Conventional,650A,Other Expenditures,Expenses,34216000
+TTCCONV,Toronto Transit Commission - Conventional,700A,Inter-Divisional Charges,Expenses,3576400
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,100A,Salaries And Benefits,Expenses,57920300
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,200A,Materials & Supplies,Expenses,14507100
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,400A,Service And Rent,Expenses,42200900
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,650A,Other Expenditures,Expenses,684800
+WATER,Toronto Water,100A,Salaries And Benefits,Expenses,171294425
+WATER,Toronto Water,200A,Materials & Supplies,Expenses,101530390
+WATER,Toronto Water,300A,Equipment,Expenses,2343378
+WATER,Toronto Water,400A,Service And Rent,Expenses,67032605
+WATER,Toronto Water,510A,Contribution To Reserves/Reserve Funds,Expenses,667049840
+WATER,Toronto Water,650A,Other Expenditures,Expenses,19958366
+WATER,Toronto Water,700A,Inter-Divisional Charges,Expenses,67445885
+ZOO,Toronto Zoo,100A,Salaries And Benefits,Expenses,28944770
+ZOO,Toronto Zoo,200A,Materials & Supplies,Expenses,8137539
+ZOO,Toronto Zoo,300A,Equipment,Expenses,335899
+ZOO,Toronto Zoo,400A,Service And Rent,Expenses,12135532
+ZOO,Toronto Zoo,510A,Contribution To Reserves/Reserve Funds,Expenses,1040427
+TRANSPORTATION,Transportation Services,100A,Salaries And Benefits,Expenses,99098510
+TRANSPORTATION,Transportation Services,200A,Materials & Supplies,Expenses,42961268
+TRANSPORTATION,Transportation Services,300A,Equipment,Expenses,601528
+TRANSPORTATION,Transportation Services,400A,Service And Rent,Expenses,168520132
+TRANSPORTATION,Transportation Services,510A,Contribution To Reserves/Reserve Funds,Expenses,23841701
+TRANSPORTATION,Transportation Services,650A,Other Expenditures,Expenses,795009
+TRANSPORTATION,Transportation Services,700A,Inter-Divisional Charges,Expenses,14538393
+YONGEDUNDAS,Yonge-Dundas Square,100A,Salaries And Benefits,Expenses,569957
+YONGEDUNDAS,Yonge-Dundas Square,200A,Materials & Supplies,Expenses,189493
+YONGEDUNDAS,Yonge-Dundas Square,300A,Equipment,Expenses,40000
+YONGEDUNDAS,Yonge-Dundas Square,400A,Service And Rent,Expenses,1463723
+YONGEDUNDAS,Yonge-Dundas Square,510A,Contribution To Reserves/Reserve Funds,Expenses,2773

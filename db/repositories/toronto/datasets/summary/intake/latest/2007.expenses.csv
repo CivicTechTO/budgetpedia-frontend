@@ -1,0 +1,77 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0BzB3t6aSc9bDdEpsZkJVUjVqUlU
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OubHdZVEpCZmdfNlE
+SOURCE_DOCUMENT_TITLE,2007 COUNCIL APPROVED OPERATING BUDGET SUMMARY BY CITY PROGRAM
+SOURCE_DOCUMENT_TABLE_LOCATION,
+SOURCE_DOCUMENT_TABLE_TITLE,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuRUdxZ3lKNEhLaUU
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2007
+VERSION,Summary
+ASPECT,Expenses
+NOTES_CONTENT,
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Program:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+3-1-1 Customer Service Strategy,3016.8
+Affordable Housing Office,3185.9
+Homes for the Aged,192320.2
+Arena Boards of Management,5969.3
+Auditor General's Office,3988.4
+Clean and Beautiful City Secretariat,1066.3
+Toronto Building,39699.5
+Office of the Chief Financial Officer,13546.4
+Children's Services,336738.5
+City Manager's Office,39591.2
+City Clerk's Office,44301.1
+Association of Community Centres,6394
+Non-Program Expenditures,341622.8
+Capital & Corporate Financing,547052.5
+Non-Program Revenues,513.3
+City Council,19649.2
+Court Services,35097.3
+Community Partnership and Investment Program,41961.2
+Pubic Information & Creative Services,4765.3
+"Economic Development, Culture & Tourism",33676.8
+Emergency Medical Services,149196.5
+Exhibition Place,53381.7
+Facilities & Real Estate,122421
+Fire Services,344750.7
+Fleet Services,35821.4
+Heritage Toronto,606
+Information & Technology,56689.5
+Legal Services,31808.3
+Toronto Public Library,164347.9
+Municipal Licensing & Standards,33638.2
+Lobbyist Registrar,241
+Mayor's Office,2447.1
+Toronto Parking Authority,57804.7
+"Parks, Forestry & Recreation",303909.2
+City Planning,33885.4
+Toronto Police Service,830178.2
+Toronto Police Services Board,2238.3
+"Policy, Planning, Finance and Administration",13939.3
+Toronto Public Health,210506.6
+Toronto & Region Conservation Authority,36625.7
+"Shelter, Support & Housing Administration",692492.5
+"Social Development, Finance & Administration",28365
+Social Services,1071336.1
+Solid Waste Management Services,237796.3
+Technical Services,62496.1
+Theatres,30604.4
+Transportation Services,274181.6
+Office of the Treasurer,66694.3
+Toronto Transit Commission - Conventional,1082893.5
+Toronto Transit Commission - Wheel-Trans,68771.3
+Toronto Water,648221.3
+Waterfront Secretariat,1315.9
+Yonge-Dundas Square,1166.5
+Toronto Zoo,38458.2

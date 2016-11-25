@@ -1,0 +1,87 @@
+_COLUMNS_,"Category:CODE,Category:NAME,Start:VALUE,End:Value,AllocateTo:CODE,AllocateTo:NAME,Note:DESCRIPTION",,,,,
+311SERVICE,311 Toronto,2005,,,,
+AFFHOUSING,Affordable Housing Office,2006,,,,
+AGEDHOMES,Homes for the Aged,2003,2008,LONGTERMHOME,Long Term Care Homes & Services,logical
+ARENAS,Arena Boards of Management,2003,,,,
+ASSESSMENT,Assessment Change,2003,2014,CORPEXPENDITURES,Non-Program Expenditures,
+ATMOSPHERE,Toronto Atmospheric Fund,2004,,,,
+AUDITGEN,Auditor General's Office,2003,,,,
+BEAUTY,Clean and Beautiful City Secretariat,2006,2007,TRANSPORTATION,Transportation Services,Guess
+BIZSUPPORT,Business Support Services,2003,2006,ECONDEV,Economic Development & Culture,Guess
+BUILDINGS,Toronto Building,2006,,,,
+CFO,Office of the Chief Financial Officer,2006,,,,
+CHARITYREBATE,C & I Charity Rebate - Special Levy,2003,2004,CORPREVENUES,Non-Program Revenues,consolidate
+CHILDSERV,Children's Services,2003,,,,
+CITYMANAGER,City Manager's Office,2003,,,,
+CLERK,City Clerk's Office,2003,,,,
+COMMCENTRES,Association of Community Centres,2003,,,,
+COMMPARTNER,Community Partnership and Investment Program,2004,2013,CORPEXPENDITURES,Non-Program Expenditures,should be divided between expenditures and revenues
+COMMPARTNERREV,Community Partnership and Investment Program revenue,2004,2011,CORPREVENUES,Non-Program Revenues,
+CORPCOMMS,Corporate Communications,2003,2006,CITYMANAGER,City Manager's Office,Guess
+CORPEXPENDITURES,Non-Program Expenditures,2003,,,,
+CORPFINANCING,Capital & Corporate Financing,2003,,,,
+CORPREVENUES,Non-Program Revenues,2003,,,,
+COUNCIL,City Council,2003,,,,
+COURTSERV,Court Services,2003,,,,
+CREATIVEINFO,Pubic Information & Creative Services,2007,2008,CITYMANAGER,City Manager's Office,Guess
+CULTURE,Culture,2003,2006,ECONDEV,Economic Development & Culture,"Guess, by name ‘Culture’"
+ECONDEV,Economic Development & Culture,2003,,,,
+ECONRECOV,Economic Recovery,2004,2005,CITYMANAGER,,
+EMERG,Emergency Medical Services,2003,2014,PARAMEDIC,Toronto Paramedic Services,logical
+EMERGPLAN,Emergency Management Plan,2003,2005,CITYMANAGER,City Manager's Office,org chart
+ENGINEERING,Engineering & Construction Services,2013,,,,
+ENV,Toronto Environment Office,2009,2014,CFO,Office of the Chief Financial Officer,org chart
+EXHIBPLACE,Exhibition Place,2003,,,,
+FACILITIES,"Facilities, Real Estate, Environment & Energy",2003,,,,
+FINANCE,Finance,2003,2005,CFO,Office of the Chief Financial Officer,org chart
+FIRE,Fire Services,2003,,,,
+FLEET,Fleet Services,2003,,,,
+GRANTPROGRAM,Consolidated Grant Program,2003,2003,CORPEXPENDITURES,Non-Program Expenditures,guess
+HERITAGE,Heritage Toronto,2004,,,,
+HUMANRESOURCES,Human Resources,2003,2006,CITYMANAGER,City Manager's Office,org chart
+INNOVATION,Service Improvement & Innovation,2003,2005,CITYMANAGER,City Manager's Office,guess
+INTEGRITYCOMM,Integrity Commissioner's Office,2008,,,,
+IT,Information & Technology,2003,,,,
+KVC,Keele Valley Closure (KVC),2003,2003,CORPEXPENDITURES,Non-Program Expenditures,consolidate
+LEGAL,Legal Services,2003,,,,
+LIBRARY,Toronto Public Library,2003,,,,
+LICENCING,Municipal Licensing & Standards,2006,,,,
+LOBBYIST,Lobbyist Registrar,2006,2006,LOBBYREG,,
+LOBBYREG,Office of the Lobbyist Registrar,2006,,,,
+LOCALAPPEAL,Local Appeal Body,2015,2015,COURTSERV,Court Services,admin doc
+LONGTERMHOME,Long Term Care Homes & Services,2009,,,,
+MAYOR,Mayor's Office,2003,,,,
+NONPROGRAM,Non Program,2004,2005,CORPEXPENDITURES,Non-Program Expenditures,consolidate
+OMBUDSMAN,Office of the Ombudsman,2008,,,,
+PARAMEDIC,Toronto Paramedic Services,2015,,,,
+PARKING,Toronto Parking Authority,2003,,,,
+PARKINGTAGS,Parking Tag Enforcement & Operations,2004,,,,
+PARKS,"Parks, Forestry & Recreation",2003,,,,
+PLANNING,City Planning,2003,,,,
+POLICE,Toronto Police Service,2004,,,,
+POLICEBOARD,Toronto Police Services Board,2004,,,,
+POLICYADMIN,"Policy, Planning, Finance & Administration",2006,,,,
+PUBLICHEALTH,Toronto Public Health,2003,,,,
+PUBLICINFORMATION,Pubic Information & Creative Services,2006,2006,CITYMANAGER,,
+REGIONCONSERV,Toronto & Region Conservation Authority,2003,,,,
+SHELTERADMIN,"Shelter, Support & Housing Administration",2003,,,,
+SOCIALDEV,"Social Development, Finance & Administration",2003,,,,
+SOCIALSERV,Toronto Employment & Social Services,2003,,,,
+SOLIDWASTE,Solid Waste Management Services,2003,,,,
+SUBWAYLEVY,Special Levy for Scarborough Subway,2015,2015,CORPREVENUES,Temporary Revenue Line Item (by Budgetpedia),Temporary
+SUPPORTSERV,Support Services,2003,2006,SHELTERADMIN,"Shelter, Support & Housing Administration",budget jumped after WES support services discontinued
+TCHCEXEMPT,TCHC Exempt,2014,2014,CORPEXPENDITURES,Non-Program Expenditures,Temporary
+TECH,Technical Services,2003,2013,ENGINEERING,Engineering & Construction Services,toronto.ca
+THEATRES,Theatres,2003,,,,
+TOTALPOLICE,Toronto Police Service & Board,2003,2003,POLICE,Toronto Police Service,later split out board
+TOTALTTC,Toronto Transit Commission (Incl. Wheel Trans),2003,2003,TTCCONV,Toronto Transit Commission - Conventional,later split out wheel trans
+TOURISM,Tourism,2003,2006,ECONDEV,Economic Development & Culture,guess
+TRANSPORTATION,Transportation Services,2003,,,,
+TREASURER,Office of the Treasurer,2006,,,,
+TTCCONV,Toronto Transit Commission - Conventional,2004,,,,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,2004,,,,
+WATER,Toronto Water,2003,,,,
+WATERFRONT,Waterfront Secretariat,2006,2012,CITYMANAGER,,
+WORLDYOUTH,World Youth Day,2003,2003,ECONDEV,Economic Development & Culture,guess
+YONGEDUNDAS,Yonge-Dundas Square,2003,,,,
+ZOO,Toronto Zoo,2003,,,,

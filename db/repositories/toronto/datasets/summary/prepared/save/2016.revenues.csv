@@ -1,0 +1,75 @@
+_META_START_,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuOXV6bnlOY0N4dW8,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OubHdZVEpCZmdfNlE,
+SOURCE_DOCUMENT_TITLE,CITY OF TORONTO 2016 COUNCIL APPROVED OPERATING BUDGET NET EXPENDITURE,
+SOURCE_DOCUMENT_TABLE_LOCATION,p.5 ,
+SOURCE_DOCUMENT_TABLE_TITLE,CITY OF TORONTO 2016 COUNCIL APPROVED OPERATING BUDGET REVENUE,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuRHo2YnA0UTZ6Y1E,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,
+YEAR,2016,
+VERSION,Summary,
+ASPECT,Revenues,
+NOTES_CONTENT,,
+NOTES_SEVERITY,,
+UNITS_NAME,Dollar,
+UNITS_CODE,DOLLAR,
+UNITS_MULTIPLIER,1000,
+TOTAL_AMOUNT,7820672,
+INTAKE_DATETIME,2016-10-14-14-16-42,
+INTAKE_OPERATOR_ID,Henrik,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME",
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",
+_META_END_,,
+AFFHOUSING,Affordable Housing Office,1777
+CHILDSERV,Children's Services,394467
+COURTSERV,Court Services,41428
+ECONDEV,Economic Development & Culture,16255
+PARAMEDIC,Toronto Paramedic Services,125447
+LONGTERMHOME,Long Term Care Homes & Services,206077
+PARKS,"Parks, Forestry & Recreation",134204
+SHELTERADMIN,"Shelter, Support & Housing Administration",328775
+SOCIALDEV,"Social Development, Finance & Administration",20962
+SOCIALSERV,Toronto Employment & Social Services,963137
+PLANNING,City Planning,27982
+FIRE,Fire Services,15329
+LICENCING,Municipal Licensing & Standards,30513
+POLICYADMIN,"Policy, Planning, Finance & Administration",12448
+ENGINEERING,Engineering & Construction Services,63287
+BUILDINGS,Toronto Building,64580
+TRANSPORTATION,Transportation Services,180869
+CFO,Office of the Chief Financial Officer,6904
+TREASURER,Office of the Treasurer,48778
+FACILITIES,"Facilities, Real Estate, Environment & Energy",127467
+FLEET,Fleet Services,51612
+311SERVICE,311 Toronto,8318
+IT,Information & Technology,51584
+CITYMANAGER,City Manager's Office,7889
+CLERK,City Clerk's Office,17591
+LEGAL,Legal Services,30432
+MAYOR,Mayor's Office,
+COUNCIL,City Council,40
+AUDITGEN,Auditor General's Office,
+INTEGRITYCOMM,Integrity Commissioner's Office,
+LOBBYREG,Office of the Lobbyist Registrar,
+OMBUDSMAN,Office of the Ombudsman,
+PUBLICHEALTH,Toronto Public Health,184585
+LIBRARY,Toronto Public Library,17593
+COMMCENTRES,Association of Community Centres,273
+EXHIBPLACE,Exhibition Place,36671
+HERITAGE,Heritage Toronto,460
+THEATRES,Theatres,17627
+ZOO,Toronto Zoo,39180
+ARENAS,Arena Boards of Management,8652
+YONGEDUNDAS,Yonge-Dundas Square,1945
+REGIONCONSERV,Toronto & Region Conservation Authority,36976
+TTCCONV,Toronto Transit Commission - Conventional,1243130
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,6954
+POLICE,Toronto Police Service,127464
+POLICEBOARD,Toronto Police Services Board,750
+CORPFINANCING,Capital & Corporate Financing,23306
+CORPEXPENDITURES,Non-Program Expenditures,175079
+CORPREVENUES,Non-Program Revenues,1237399
+SOLIDWASTE,Solid Waste Management Services,389009
+PARKING,Toronto Parking Authority,136988
+WATER,Toronto Water,1158479

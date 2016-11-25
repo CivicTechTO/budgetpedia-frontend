@@ -1,0 +1,110 @@
+{
+    "Index": 0,
+    "NamingConfigRef": "AUDITED",
+    "Components": {
+        "MUNICIPAL": {
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "GOVERNMENT": {
+                    "Index": 0,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "PLANNING": {
+                    "Index": 1,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                }
+            }
+        },
+        "SHARED": {
+            "Index": 1,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "CULTURE": {
+                    "Index": 1,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "ENVIRONMENT": {
+                    "Index": 2,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "TRANSPORTATION": {
+                    "Index": 3,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                }
+            }
+        },
+        "SUPPORT": {
+            "Index": 2,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "HEALTH": {
+                    "Index": 0,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "PROTECTION": {
+                    "Index": 1,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "HOUSING": {
+                    "Index": 2,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "SOCIALSERVICES": {
+                    "Index": 3,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                }
+            }
+        }
+    },
+    "Meta":{
+        "Lookups": {
+            "Taxonomy": {
+                "MUNICIPAL": "Municipal operations",
+                "SHARED": "Shared operations",
+                "SUPPORT": "Support operations"
+            }
+        },
+        "NamingConfigurations": {
+            "AUDITED": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Expenses",
+                    "Alias": "Audited Expense Statement"
+                }
+            },
+            "CATEGORY": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Expenses",
+                    "Alias": "Audited Expenses"
+                }
+            },
+            "EXPENSE": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Expense"
+                },
+                "Contents": {
+                    "Name": "Expenses",
+                    "Alias": "Audited Expenses"
+                }
+            }
+        }
+    }
+}

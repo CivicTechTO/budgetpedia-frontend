@@ -1,0 +1,42 @@
+_META_START_,,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuYk9XZnpWNFZ1ZWc,,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuZW9OVU5sUVZtVDg,,,,
+SOURCE_DOCUMENT_TITLE,City of Toronto 2001 Consolidated Financial Statements,,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,p.2 document; p.4 pdf,,,,
+SOURCE_DOCUMENT_TABLE_TITLE,n/a,,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B0nzg-ld6eh_VE5EX1NmbExpU1U,,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Chris,,,,
+YEAR,2001,,,,
+VERSION,Actual,,,,
+ASPECT,Expenses,,,,
+NOTES_CONTENT,,,,,
+NOTES_SEVERITY,,,,,
+UNITS_NAME,Dollar,,,,
+UNITS_CODE,DOLLAR,,,,
+UNITS_MULTIPLIER,1000,,,,
+TOTAL_AMOUNT,6845850,,,,
+INTAKE_DATETIME,2016-10-01-21-58-58,,,,
+INTAKE_OPERATOR_ID,Chris,,,,
+COLUMNS_CATEGORIES,"Expense:CODE,Expense:NAME",,,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,
+_META_END_,,,,,
+ENVIRONMENT,Environmental services,624048.42,,,"Original amount was null, plus:
+Allocation from: WORKS,Works and Emergency Services,1356627"
+GOVERNMENT,General government,644092.64,,,
+HEALTH,Health services,263110.2,,,"Original amount was null, plus:
+Allocation from: AGENCIES,Agencies, Boards and Commissions (Note 12),2631102"
+HOUSING,Social housing,700406.52,,,"Original amount was null, plus:
+Allocation from: ECONDEV,Economic Development, Culture and Tourism,288438
+Allocation from: CORPORATE,Corporate Services,243612
+Allocation from: AGENCIES,Agencies, Boards and Commissions (Note 12),2631102"
+PLANNING,Planning and development,47115.200000000004,,,"Original amount was null, plus:
+Allocation from: URBANDEV,Urban Development Services,85664"
+PROTECTION,Protection to persons and property,1087788.54,,,
+SOCIALSERVICES,Social and family services,1319927.2000000002,,,
+TRANSPORTATION,Transportation,1618116.54,,,"Original amount was null, plus:
+Allocation from: WORKS,Works and Emergency Services,1356627
+Allocation from: AGENCIES,Agencies, Boards and Commissions (Note 12),2631102"
+CULTURE,Recreation and cultural services,541244.7400000001,,,"Original amount was null, plus:
+Allocation from: COMMUNITY,Community and Neighbourhood Services,1649909
+Allocation from: AGENCIES,Agencies, Boards and Commissions (Note 12),2631102"

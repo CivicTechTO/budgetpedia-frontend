@@ -1,0 +1,70 @@
+[
+  {
+    "Expenditure":"100A",
+    "Name":"Salaries And Benefits"
+  },
+  {
+    "Expenditure":"200A",
+    "Name":"Materials & Supplies"
+  },
+  {
+    "Expenditure":"300A",
+    "Name":"Equipment"
+  },
+  {
+    "Expenditure":"400A",
+    "Name":"Service And Rent"
+  },
+  {
+    "Expenditure":"505A",
+    "Name":"Contribution To Capital"
+  },
+  {
+    "Expenditure":"510A",
+    "Name":"Contribution To Reserves/Reserve Funds"
+  },
+  {
+    "Expenditure":"650A",
+    "Name":"Other Expenditures"
+  },
+  {
+    "Expenditure":"700A",
+    "Name":"Inter-Divisional Charges"
+  },
+  {
+    "Expenditure":"750A",
+    "Name":"Inter-Divisional Recoveries"
+  },
+  {
+    "Expenditure":"805A",
+    "Name":"Provincial Subsidies"
+  },
+  {
+    "Expenditure":"810A",
+    "Name":"Federal Subsidies"
+  },
+  {
+    "Expenditure":"820A",
+    "Name":"Other Subsidies"
+  },
+  {
+    "Expenditure":"850A",
+    "Name":"User Fees & Donations"
+  },
+  {
+    "Expenditure":"860A",
+    "Name":"Licences & Permits Revenue"
+  },
+  {
+    "Expenditure":"920A",
+    "Name":"Transfers From Capital"
+  },
+  {
+    "Expenditure":"930A",
+    "Name":"Contribution From Reserves/Reserve Funds"
+  },
+  {
+    "Expenditure":"940A",
+    "Name":"Property Tax"
+  }
+]

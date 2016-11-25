@@ -1,0 +1,76 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0BzB3t6aSc9bDd3BkUnU5V1BDeTA
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuRDNTajhMcnV6RTg
+SOURCE_DOCUMENT_TITLE,City of Toronto 2003 Operating Budget - Revenues
+SOURCE_DOCUMENT_TABLE_LOCATION,
+SOURCE_DOCUMENT_TABLE_TITLE,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuRWhLb1I0ekxJc2c
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2003
+VERSION,Summary
+ASPECT,Revenues
+NOTES_CONTENT,
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Program:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Homes for the Aged,131228.4
+Arena Boards of Management,4963.9
+Assessment Growth/Shift,32760
+Auditor General,116.3
+Customer & Business Support,2374.9
+Children's Services,236974.4
+Chief Administrator's Office (CAO),0
+City Clerk's,23495.5
+Association of Community Centers,169.5
+Corporate Communications,102.6
+Non-Program Expenditures,55086.5
+Capital & Corporate Financing,4249.1
+Non-Program Revenues,481314.9
+Council,0
+Court Services,31762.5
+Culture,3385.7
+Economic Development,901.3
+Emergency Medical Services,68364.6
+Emergency Management Plan,0
+Exhibition Place,41027.8
+Facilities & Real Estate,52704.5
+Finance,32889.7
+Fire Services,3776.1
+Fleet Services,31297
+Consolidated Grant Program,4582.7
+Human Resources,1317.3
+Service Improvement & Innovation,490
+Information & Technology,1312.4
+Keele Valley Closure (KVC),-18791
+Legal,6315.3
+Toronto Public Library,13065.6
+Mayor's Office,0
+Parking Authority,91055.5
+Parks & Recreation,69343
+Urban Development Services,76403.4
+Toronto Public Health,100484.1
+Toronto & Region Conservation Authority,18275.8
+"Shelter, Housing & Support",364873
+Social Development & Administration,9163.7
+Social Services,712191.9
+Solid Waste Management Services,73540.1
+WES - Support Services,33813.9
+C&I Tax Increase re Registered Charities Rebate,875
+WES - Technical Services,43971.8
+Theatres,17548.8
+Toronto Police Service & Board,23728.8
+Toronto Transit Commission (Incl. Wheel Trans),729264.2
+Tourism,3216.9
+Transportation Services,67810.8
+Water & Waste Water,520142.9
+World Youth Day,0
+Yonge/Dundas Square,485
+Toronto Zoo,24601.5

@@ -1,0 +1,16 @@
+Chart.txt
+
+2016.backgroundfile-95905.pdf load into tabula, extract p. 27
+2015.backgroundfile-94333.pdf extract p.26
+2014.backgroundfile-79453.pdf extract p.25, an image and must be manually transcribed
+2013.backgroundfile-70915.pdf extract p.22, an image and must be manually transcribed
+2012.staffing.recommended.backgroundfile-58042.pdf (from previous year 2013 recommended) p. 13
+    remove header and total rows; apply regex to format columns (2012.staffing.format.csv)
+2011.operating.backgroundfile-35804.pdf extract p.31
+2010.briefingnote_2010_staffrec.pdf p.11 extract, remove unnecessary rows and columns, use regex to format
+2009.bn_2009_staff_rec_approved_positions.pdf p.21 extract, remove unnecessary rows and columns, use regex to format
+2008.op08_bn_positions2.pdf extract p.9, remove unnecessary rows and columns, use regex to format
+2007.bn_oppositions.pdf, extract p.11, remove unnecessary rows and columns, use regex to format
+2006.bnop2006_cfo_approvedpositions.pdf extract p.9, remove unnecessary rows and columns, use regex to format
+2005.corpiss_approvedpostions.pdf extract p 7-8, combine, remove unnecessary rows and columns, use regex to format
+same for 2004

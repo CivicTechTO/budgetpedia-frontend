@@ -1,0 +1,77 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0BzB3t6aSc9bDZmdsN3ZpYUItNnM
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuRDNTajhMcnV6RTg
+SOURCE_DOCUMENT_TITLE,2015 COUNCIL APPROVED OPERATING BUDGET – GROSS REVENUE
+SOURCE_DOCUMENT_TABLE_LOCATION,
+SOURCE_DOCUMENT_TABLE_TITLE,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuMklXOC02MjZfLTQ
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2015
+VERSION,Summary
+ASPECT,Revenues
+NOTES_CONTENT,
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Program:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+311 Toronto,8330
+Affordable Housing Office,1569
+Arena Boards of Management,8407
+Auditor General's Office,0
+Toronto Buildings,61200
+Office of the Chief Financial Officer,6781
+Children's Services,375688
+City Manager's Office,8139
+City Clerk's Office,17415
+Association of Community Centres,398
+Non-Program Expenditures,165347
+Capital & Corporate Financing,28603
+Non-Program Revenues,1112317
+City Council,130
+Court Services,54584
+Economic Development & Culture,25744
+Engineering & Construction Services,59294
+Exhibition Place,38431
+"Facilities, Real Estate, Environment & Energy",123891
+Fire Services,17000
+Fleet Services,52397
+Heritage Toronto,449
+Integrity Commissioner's Office,0
+Information & Technology,49242
+Legal Services,29261
+Toronto Public Library,16516
+Municipal Licensing & Standards,29819
+Office of the Lobbyist Registrar,0
+Local Appeal Body,50
+Long Term Care Homes & Services,195943
+Mayor's Office,0
+Office of the Ombudsman,0
+Toronto Paramedic Services,123101
+Toronto Parking Authority,134229
+"Parks, Forestry & Recreation",129777
+City Planning,27477
+Toronto Police Service,196873
+Toronto Police Services Board,750
+"Policy, Planning, Finance & Administration",12352
+Toronto Public Health,195329
+Toronto & Region Conservation Authority,36731
+Special Levy for Scarborough Subway,6028411
+"Shelter, Support & Housing Administration",367046
+"Social Development, Finance & Administration",16421
+Toronto Employment & Social Services,961824
+Solid Waste Management Services,370785
+Theatres,17978
+Transportation Services,141565
+Office of the Treasurer,46910
+Toronto Transit Commission - Conventional,1220090
+Toronto Transit Commission - Wheel Trans,6514
+Toronto Water,1080673
+Yonge-Dundas Square,1873
+Toronto Zoo,38855

@@ -1,0 +1,67 @@
+[
+{
+    "Type":"Shared Services",
+    "Group":"Waste & Water Services",
+    "Amount":null
+},
+{
+    "Type":"Shared Services",
+    "Group":"Transportation & Transit Services",
+    "Amount":null
+},
+{
+    "Type":"Shared Services",
+    "Group":"City Commons",
+    "Amount":null
+},
+{
+    "Type":"Shared Services",
+    "Group":"Public Destinations",
+    "Amount":null
+},
+{
+    "Type":"Shared Services",
+    "Group":"Specialized Commons Services",
+    "Amount":null
+},
+{
+    "Type":"Citizen Support Services",
+    "Group":"Emergency Services",
+    "Amount":null
+},
+{
+    "Type":"Citizen Support Services",
+    "Group":"Health & Welfare Services",
+    "Amount":null
+},
+{
+    "Type":"Municipal Services",
+    "Group":"Corporate Management",
+    "Amount":null
+},
+{
+    "Type":"Municipal Services",
+    "Group":"Accountability Offices",
+    "Amount":null
+},
+{
+    "Type":"Municipal Services",
+    "Group":"Maintenance & Standards Services",
+    "Amount":null
+},
+{
+    "Type":"Municipal Services",
+    "Group":"Planning & Development Services",
+    "Amount":null
+},
+{
+    "Type":"Municipal Services",
+    "Group":"Internal Services",
+    "Amount":null
+},
+{
+    "Type":"Municipal Services",
+    "Group":"Corporate Accounts",
+    "Amount":null
+}
+]

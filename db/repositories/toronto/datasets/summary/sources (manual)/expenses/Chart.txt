@@ -1,0 +1,14 @@
+Chart.txt
+
+September 11, 2016 - Henrik Bechmann
+
+See chart for revenues for origins
+
+Rename Derek's files to
+<year>.expenses.research.csv
+
+make two copies of each, one for maps_names; the other for precursor, embedded in file name
+
+copy maps_names files to maps_names dir; rename to <year>.program.name_to_code.csv
+
+copy precursors to pending for addition of meta headers; remove precursor part of name

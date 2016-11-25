@@ -1,0 +1,77 @@
+_META_START_,,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0BzB3t6aSc9bDcTdNeC1rUGNEN28,,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuRDNTajhMcnV6RTg,,,,
+SOURCE_DOCUMENT_TITLE,Adjusted 2004 Council Approved Operating Budget – Revenues,,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,,,,,
+SOURCE_DOCUMENT_TABLE_TITLE,,,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuSGlDaVFGVEpwdjg,,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,,
+YEAR,2004,,,,
+VERSION,Summary,,,,
+ASPECT,Revenues,,,,
+NOTES_CONTENT,,,,,
+NOTES_SEVERITY,,,,,
+UNITS_NAME,Dollar,,,,
+UNITS_CODE,DOLLAR,,,,
+UNITS_MULTIPLIER,1000,,,,
+TOTAL_AMOUNT,4380763.699999999,,,,
+INTAKE_DATETIME,2016-10-14-14-16-42,,,,
+INTAKE_OPERATOR_ID,Henrik,,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME",,,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,
+_META_END_,,,,,
+CFO,Office of the Chief Financial Officer,33376.8,,,"Original amount was null, plus:
+Allocation from: FINANCE,Finance,33376.8, (org chart)"
+CHILDSERV,Children's Services,225065.9,,,
+CITYMANAGER,City Manager's Office,3279.7,,,"Original amount was 157.4, plus:
+Allocation from: CORPCOMMS,Corporate Communications,109.6, (Guess)
+Allocation from: EMERGPLAN,Emergency Management Plan,760, (org chart)
+Allocation from: HUMANRESOURCES,Human Resources,1796.2, (org chart)
+Allocation from: INNOVATION,Service Improvement & Innovation,456.5, (guess)"
+CLERK,City Clerk's Office,20368.2,,,
+COMMCENTRES,Association of Community Centres,166.8,,,
+CORPEXPENDITURES,Non-Program Expenditures,52729,,,"Original amount was null, plus:
+Allocation from: ASSESSMENT,Assessment Growth - 2004,26570.3,"
+CORPFINANCING,Capital & Corporate Financing,8134,,,
+CORPREVENUES,Non-Program Revenues,506716.7,,,"Original amount was 499357.2, plus:
+Allocation from: COMMPARTNERREV,Community Partnership & Investment Program revenue,5208.2,
+Allocation from: CHARITYREBATE,C & I Charity Rebate - Special Levy,2151.3, (consolidate)"
+COURTSERV,Court Services,37300,,,
+ECONDEV,Economic Development & Culture,10781.300000000001,,,"Original amount was null, plus:
+Allocation from: BIZSUPPORT,Customer & Business Support,2203.5, (Guess)
+Allocation from: CULTURE,Culture,3806.6, (Guess, by name ‘Culture’)
+Allocation from: TOURISM,Tourism,3471.9, (guess)"
+ENGINEERING,Engineering & Construction Services,45985.8,,,"Original amount was null, plus:
+Allocation from: TECH,WES - Technical Services,45985.8, (toronto.ca)"
+EXHIBPLACE,Exhibition Place,42656.4,,,
+FACILITIES,"Facilities, Real Estate, Environment & Energy",55249.8,,,
+FIRE,Fire Services,4577.9,,,
+FLEET,Fleet Services,31189.6,,,
+HERITAGE,Heritage Toronto,166.1,,,
+IT,Information & Technology,5281.2,,,
+LEGAL,Legal Services,7687.9,,,
+LIBRARY,Toronto Public Library,14705.9,,,
+LONGTERMHOME,Long Term Care Homes & Services,140979.7,,,"Original amount was null, plus:
+Allocation from: AGEDHOMES,Homes for the Aged,140979.7, (logical)"
+PARAMEDIC,Toronto Paramedic Services,74144.4,,,"Original amount was null, plus:
+Allocation from: EMERG,Emergency Medical Services,74144.4, (logical)"
+PARKING,Toronto Parking Authority,95335.1,"Parking Authority (TPA):  Net revenue has been distributed according to City's Revenue Sharing Agreement: 25% retained by TPA, 75% to the City (with $4.679 m to Transportation and the balance to Non-program).",,
+PARKS,"Parks, Forestry & Recreation",78283,,,
+PLANNING,City Planning,77986.2,,,
+POLICE,Toronto Police Service,28461.7,,,
+PUBLICHEALTH,Toronto Public Health,109227.9,,,
+REGIONCONSERV,Toronto & Region Conservation Authority,23906.2,,,
+SHELTERADMIN,"Shelter, Support & Housing Administration",395987,,,"Original amount was 360469.9, plus:
+Allocation from: SUPPORTSERV,WES - Support Services,35517.1, (budget jumped after WES support services discontinued)"
+SOCIALDEV,"Social Development, Finance & Administration",9822,,,
+SOCIALSERV,Toronto Employment & Social Services,720475.1,,,
+SOLIDWASTE,Solid Waste Management Services,58041.5,,,
+THEATRES,Theatres,17336.8,,,
+TRANSPORTATION,Transportation Services,78981.8,,,
+TTCCONV,Toronto Transit Commission - Conventional,779052.4,,,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,2702.6,,,
+WATER,Toronto Water,555185.5,,,
+YONGEDUNDAS,Yonge-Dundas Square,359.4,,,
+ZOO,Toronto Zoo,23833.5,,,
+ARENAS,Arena Boards of Management,5242.9,,,

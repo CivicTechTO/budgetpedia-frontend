@@ -1,0 +1,41 @@
+{
+    "InflationAdjustable": true,
+    "DatasetName":"Expenses",
+    "DatasetTitle": "Gross Operating Expenses",
+    "Dataseries": [
+        {
+            "Type": "Components"
+        },
+        {
+            "Type": "CommonDimension"
+        }
+    ],
+    "Dimensions":["Program", "Service","Activity","Expense"],
+    "DimensionNames":{
+        "Program":{
+            "Instance":"Program",
+            "Collection":"Programs"
+        },
+        "Service":{
+            "Instance":"Service",
+            "Collection":"Budgeted Services"
+        },
+        "Activity":{
+            "Instance":"Activity",
+            "Collection":"Budgeted Activities"
+        },
+        "Expense":{
+            "Instance":"Expenditure",
+            "Collection":"Budgeted Expenditures"
+        }
+    },
+    "CellTitles": {
+        "Components": "Programs",
+        "CommonDimension": "Expenditures"
+    },
+    "Units": "DOLLAR",
+    "UnitsAlias": "$000's",
+    "UnitRatio": 1000,
+    "CommonDimension":"Expense"
+}
+

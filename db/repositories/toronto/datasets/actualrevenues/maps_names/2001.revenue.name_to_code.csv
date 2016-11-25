@@ -1,0 +1,8 @@
+_COLUMNS_,"Category:NAME,Category:CODE,Note:DESCRIPTION,Count:VALUE",,
+Deduct: taxation relating to school boards,SCHOOLBOARDS,,1
+Grants,GRANTS,,1
+Other,OTHER,,1
+Residential and commercial taxation,PROPERTYTAX,,1
+Taxation from other governments,OTHERGOVTAX,,1
+Transfer payments,TRANSFERS,,1
+User charges (Note 11),USERCHARGES,,1

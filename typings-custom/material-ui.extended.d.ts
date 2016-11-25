@@ -48,6 +48,8 @@ declare namespace __MaterialUI {
     }
     export class Divider extends React.Component<any, {}> {
     }
+    export class Subheader extends React.Component<any, {}> {
+    }
 }
 declare module 'material-ui/lib/svg-icons/navigation/close' {
     import NavigationClose = __MaterialUI.NavigationClose;
@@ -61,6 +63,10 @@ declare module 'material-ui/lib/svg-icons/navigation/more-vert' {
 declare module 'material-ui/lib/divider' {
     import Divider = __MaterialUI.Divider;
     export = Divider;
+}
+declare module 'material-ui/Subheader' {
+    import Subheader = __MaterialUI.Subheader;
+    export = Subheader;
 }
 // for react-tap-event-plugin, allow div to hold onTouchTap
 declare module __React {

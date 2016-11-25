@@ -1,0 +1,40 @@
+{
+    "InflationAdjustable": true,
+    "DatasetName":"Revenues",
+    "DatasetTitle": "Gross Operating Revenue",
+    "Dataseries": [
+        {
+            "Type": "Components"
+        },
+        {
+            "Type": "CommonDimension"
+        }
+    ],
+    "Dimensions":["Program", "Service","Activity","Revenue"],
+    "CellTitles": {
+        "Components": "Programs",
+        "CommonDimension": "Receipts"
+    },
+    "DimensionNames":{
+        "Program":{
+            "Instance":"Program",
+            "Collection":"Budgeted Programs"
+        },
+        "Service":{
+            "Instance":"Service",
+            "Collection":"Budgeted Services"
+        },
+        "Activity":{
+            "Instance":"Activity",
+            "Collection":"Budgeted Activities"
+        },
+        "Revenue":{
+            "Instance":"Receipt",
+            "Collection":"Budgeted Receipts"
+        }
+    },
+    "Units": "DOLLAR",
+    "UnitsAlias": "$000's",
+    "UnitRatio": 1000,
+    "CommonDimension":"Revenue"
+}

@@ -1,0 +1,76 @@
+_META_START_,,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuYk5Yb1o0d2ZXdVU,,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuTDRIWm1BVU9mT0k,,,,
+SOURCE_DOCUMENT_TITLE,2005 BUDGET BRIEFING NOTE - Summary of 2005 Staff Recommended Approved Positions,,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,p. 7-8,,,,
+SOURCE_DOCUMENT_TABLE_TITLE,CITY OF TORONTO 2005 STAFF RECOMMENDED OPERATING BUDGET CORPORATE SUMMARY OF APPROVED POSITIONS PERMANENT VS TEMPORARY,,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuN2lnOE1aWWdVREU,,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,,
+YEAR,2005,,,,
+VERSION,Summary,,,,
+ASPECT,Staffing,,,,
+NOTES_CONTENT,,,,,
+NOTES_SEVERITY,,,,,
+UNITS_NAME,Full Time Equivalent,,,,
+UNITS_CODE,FTE,,,,
+UNITS_MULTIPLIER,1,,,,
+TOTAL_AMOUNT,48381.299999999996,,,,
+INTAKE_DATETIME,2016-10-14-14-16-42,,,,
+INTAKE_OPERATOR_ID,Henrik,,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME",,,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,
+_META_END_,,,,,
+AUDITGEN,Auditor General's Office,28,,,
+CFO,Office of the Chief Financial Officer,817,,,"Original amount was null, plus:
+Allocation from: FINANCE,Finance,813, (org chart)
+Allocation from: ATMOSPHERE,Toronto Atmospheric Fund,4, (Org chart environment)"
+CHILDSERV,Children's Services,921.6,,,
+CITYMANAGER,City Manager's Office,536,,,"Original amount was null, plus:
+Allocation from: INNOVATION,Service Improvement & Innovation,84, (guess)
+Allocation from: CORPCOMMS,Corporate Communications,84, (Guess)
+Allocation from: HUMANRESOURCES,Human Resources,309, (org chart)"
+CLERK,City Clerk's Office,382,,,
+COMMCENTRES,Association of Community Centres,85.6,,,
+CORPEXPENDITURES,Non-Program Expenditures,1,,,"Original amount was null, plus:
+Allocation from: NONPROGRAM,Non Program,1, (consolidate)"
+COUNCIL,City Council,177,,,
+COURTSERV,Court Services,221,,,
+ECONDEV,Economic Development & Culture,535.0999999999999,,,"Original amount was null, plus:
+Allocation from: CULTURE,Culture,157.7, (Guess, by name ‘Culture’)
+Allocation from: BIZSUPPORT,Customer & Business Support,251.1, (Guess)
+Allocation from: TOURISM,Tourism,43.3, (guess)"
+ENGINEERING,Engineering & Construction Services,587.3,,,"Original amount was null, plus:
+Allocation from: TECH,WES - Technical Services,587.3, (toronto.ca)"
+EXHIBPLACE,Exhibition Place,427,,,
+FACILITIES,"Facilities, Real Estate, Environment & Energy",757,,,
+FIRE,Fire Services,3143,,,
+FLEET,Fleet Services,202,,,
+HERITAGE,Heritage Toronto,5,,,
+IT,Information & Technology,335,,,
+LEGAL,Legal Services,239,,,
+LIBRARY,Toronto Public Library,1817.7,,,
+LONGTERMHOME,Long Term Care Homes & Services,2106.5,,,"Original amount was null, plus:
+Allocation from: AGEDHOMES,Homes for the Aged,2106.5, (logical)"
+MAYOR,Mayor's Office,19,,,
+PARAMEDIC,Toronto Paramedic Services,1164,,,"Original amount was null, plus:
+Allocation from: EMERG,Emergency Medical Services,1164, (logical)"
+PARKING,Toronto Parking Authority,315.1,,,
+PARKINGTAGS,Parking Tag Enforcement & Operations,395,,,
+PARKS,"Parks, Forestry & Recreation",3718.6,,,
+PLANNING,City Planning,1149.5,,,
+POLICE,Toronto Police Service,7296,,,
+PUBLICHEALTH,Toronto Public Health,1822.5,,,
+REGIONCONSERV,Toronto & Region Conservation Authority,371.2,,,
+SHELTERADMIN,"Shelter, Support & Housing Administration",1180.5,,,"Original amount was 702.6, plus:
+Allocation from: SUPPORTSERV,WES - Support Services,477.9, (budget jumped after WES support services discontinued)"
+SOCIALDEV,"Social Development, Finance & Administration",160,,,
+SOCIALSERV,Toronto Employment & Social Services,1953,,,
+SOLIDWASTE,Solid Waste Management Services,1357,,,
+THEATRES,Theatres,198.1,,,
+TRANSPORTATION,Transportation Services,1190,,,
+TTCCONV,Toronto Transit Commission - Conventional,10649,,,
+WATER,Toronto Water,1700,extrapolated (and rounded down) from 2006,,
+YONGEDUNDAS,Yonge-Dundas Square,3,,,
+ZOO,Toronto Zoo,352.5,,,
+ARENAS,Arena Boards of Management,63.5,,,

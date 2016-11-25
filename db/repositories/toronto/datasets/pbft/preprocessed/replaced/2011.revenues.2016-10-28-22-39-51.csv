@@ -1,0 +1,521 @@
+_META_START_,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=96c98f90dba60310VgnVCM1000003dd60f89RCRD&vgnextchannel=1a66e03bb8d1e310VgnVCM10000071d60f89RCRD,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuSkpsNjl2QTBXWDQ,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuM0VvWDZnRDRVcGc,,,
+SOURCE_DOCUMENT_TITLE,Budget - Operating Budget Program Summary by Expenditure Category,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,Data Download,,,
+SOURCE_DOCUMENT_TABLE_TITLE,Approved Operating Budget Summary 2011,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuV0w4YWtaNGNERTg,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,
+YEAR,2011,,,
+VERSION,PBFT,,,
+ASPECT,Revenues,,,
+NOTES_CONTENT,,,,
+NOTES_SEVERITY,,,,
+UNITS_NAME,Dollar,,,
+UNITS_CODE,DOLLAR,,,
+UNITS_MULTIPLIER,1000,,,
+TOTAL_AMOUNT,7096506.992871097,,,
+INTAKE_DATETIME,2016-10-28-22-36-04,,,
+INTAKE_OPERATOR_ID,Henrik,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME,Revenue:CODE,Revenue:NAME",,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE",,,
+_META_END_,,,,
+311SERVICE,311 Toronto,750A,Interdivisional Recoveries,5107.9
+311SERVICE,311 Toronto,805A,Provincial Subsidies,
+311SERVICE,311 Toronto,810A,Federal Subsidies,
+311SERVICE,311 Toronto,820A,Other Subsidies,
+311SERVICE,311 Toronto,850A,User Fees & Donations,
+311SERVICE,311 Toronto,920A,Transfers from Capital Fund,4358.7
+311SERVICE,311 Toronto,930A,Contribution from Reserve Funds,
+311SERVICE,311 Toronto,930A,Contribution from Reserve,
+311SERVICE,311 Toronto,940A,Sundry Revenues,
+COMMCENTRES,Association of Community Centres,750A,Interdivisional Recoveries, 
+COMMCENTRES,Association of Community Centres,805A,Provincial Subsidies,
+COMMCENTRES,Association of Community Centres,810A,Federal Subsidies,
+COMMCENTRES,Association of Community Centres,820A,Other Subsidies,
+COMMCENTRES,Association of Community Centres,850A,User Fees & Donations,192.4
+COMMCENTRES,Association of Community Centres,920A,Transfers from Capital Fund, 
+COMMCENTRES,Association of Community Centres,930A,Contribution from Reserve Funds,
+COMMCENTRES,Association of Community Centres,930A,Contribution from Reserve,9.3
+COMMCENTRES,Association of Community Centres,940A,Sundry Revenues, 
+AFFHOUSING,Affordable Housing Office,750A,Interdivisional Recoveries,238.3
+AFFHOUSING,Affordable Housing Office,805A,Provincial Subsidies,625
+AFFHOUSING,Affordable Housing Office,810A,Federal Subsidies,
+AFFHOUSING,Affordable Housing Office,820A,Other Subsidies,
+AFFHOUSING,Affordable Housing Office,850A,User Fees & Donations,300
+AFFHOUSING,Affordable Housing Office,920A,Transfers from Capital Fund,
+AFFHOUSING,Affordable Housing Office,930A,Contribution from Reserve Funds,444.5
+AFFHOUSING,Affordable Housing Office,930A,Contribution from Reserve,
+AFFHOUSING,Affordable Housing Office,940A,Sundry Revenues,
+ARENAS,Arena Boards of Management,750A,Interdivisional Recoveries (Leaside Pool),259.624
+ARENAS,Arena Boards of Management,805A,Provincial Subsidies,
+ARENAS,Arena Boards of Management,810A,Federal Subsidies,
+ARENAS,Arena Boards of Management,820A,Other Subsidies,
+ARENAS,Arena Boards of Management,850A,User Fees & Donations,5315.492
+ARENAS,Arena Boards of Management,920A,Transfers from Capital Fund,
+ARENAS,Arena Boards of Management,930A,Contribution from Reserve Funds,
+ARENAS,Arena Boards of Management,930A,Contribution from Reserve,
+ARENAS,Arena Boards of Management,940A,Sundry Revenues,966.944
+AUDITGEN,Auditor General's Office,750A,Interdivisional Recoveries,
+AUDITGEN,Auditor General's Office,805A,Provincial Subsidies,
+AUDITGEN,Auditor General's Office,810A,Federal Subsidies,
+AUDITGEN,Auditor General's Office,820A,Other Subsidies,
+AUDITGEN,Auditor General's Office,850A,User Fees & Donations,
+AUDITGEN,Auditor General's Office,920A,Transfers from Capital Fund,
+AUDITGEN,Auditor General's Office,930A,Contribution from Reserve Funds,
+AUDITGEN,Auditor General's Office,930A,Contribution from Reserve,
+AUDITGEN,Auditor General's Office,940A,Sundry Revenues,
+CHILDSERV,Children's Services,750A,Interdivisional Recoveries,10300
+CHILDSERV,Children's Services,805A,Provincial Subsidies,267449.3
+CHILDSERV,Children's Services,810A,Federal Subsidies,
+CHILDSERV,Children's Services,820A,Other Subsidies,
+CHILDSERV,Children's Services,850A,User Fees & Donations,15871.5
+CHILDSERV,Children's Services,920A,Transfers from Capital Fund,
+CHILDSERV,Children's Services,930A,Contribution from Reserve Funds,20008.8
+CHILDSERV,Children's Services,930A,Contribution from Reserve,
+CHILDSERV,Children's Services,940A,Sundry Revenues,
+CFO,Office of the Chief Financial Officer,750A,Interdivisional Recoveries,2052.8
+CFO,Office of the Chief Financial Officer,805A,Provincial Subsidies,
+CFO,Office of the Chief Financial Officer,810A,Federal Subsidies,
+CFO,Office of the Chief Financial Officer,820A,Other Subsidies,
+CFO,Office of the Chief Financial Officer,850A,User Fees & Donations,
+CFO,Office of the Chief Financial Officer,920A,Transfers from Capital Fund,2889.2
+CFO,Office of the Chief Financial Officer,930A,Contribution from Reserve Funds,1311.5
+CFO,Office of the Chief Financial Officer,930A,Contribution from Reserve,190.5
+CFO,Office of the Chief Financial Officer,940A,Sundry Revenues,138.1
+CLERK,City Clerk's Office,750A,Interdivisional Recoveries,12442.4
+CLERK,City Clerk's Office,805A,Provincial Subsidies,
+CLERK,City Clerk's Office,810A,Federal Subsidies,5
+CLERK,City Clerk's Office,820A,Other Subsidies,
+CLERK,City Clerk's Office,850A,User Fees & Donations,743.7
+CLERK,City Clerk's Office,920A,Transfers from Capital Fund,1592.9
+CLERK,City Clerk's Office,930A,Contribution from Reserve Funds,3921
+CLERK,City Clerk's Office,930A,Contribution from Reserve,0
+CLERK,City Clerk's Office,940A,Sundry Revenues,275.7
+COUNCIL,City Council,750A,Interdivisional Recoveries,
+COUNCIL,City Council,805A,Provincial Subsidies,
+COUNCIL,City Council,810A,Federal Subsidies,
+COUNCIL,City Council,820A,Other Subsidies,
+COUNCIL,City Council,850A,User Fees & Donations,
+COUNCIL,City Council,920A,Transfers from Capital Fund,
+COUNCIL,City Council,930A,Contribution from Reserve Funds,
+COUNCIL,City Council,930A,Contribution from Reserve,0
+COUNCIL,City Council,940A,Sundry Revenues,
+CITYMANAGER,City Manager's Office,750A,Interdivisional Recoveries,3481.9
+CITYMANAGER,City Manager's Office,805A,Provincial Subsidies,19.7
+CITYMANAGER,City Manager's Office,810A,Federal Subsidies,274.7
+CITYMANAGER,City Manager's Office,820A,Other Subsidies,
+CITYMANAGER,City Manager's Office,850A,User Fees & Donations,15.9
+CITYMANAGER,City Manager's Office,920A,Transfers from Capital Fund,2456.4
+CITYMANAGER,City Manager's Office,930A,Contribution from Reserve Funds,
+CITYMANAGER,City Manager's Office,930A,Contribution from Reserve,
+CITYMANAGER,City Manager's Office,940A,Sundry Revenues,29.3
+PLANNING,City Planning,750A,Interdivisional Recoveries,
+PLANNING,City Planning,805A,Provincial Subsidies,
+PLANNING,City Planning,810A,Federal Subsidies,
+PLANNING,City Planning,820A,Other Subsidies,
+PLANNING,City Planning,850A,User Fees & Donations,21295.1
+PLANNING,City Planning,920A,Transfers from Capital Fund,0
+PLANNING,City Planning,930A,Contribution from Reserve Funds,0
+PLANNING,City Planning,930A,Contribution from Reserve,0
+PLANNING,City Planning,940A,Sundry Revenues,2727.9
+COURTSERV,Court Services,750A,Interdivisional Recoveries,5096.15987
+COURTSERV,Court Services,805A,Provincial Subsidies,0
+COURTSERV,Court Services,810A,Federal Subsidies,0
+COURTSERV,Court Services,820A,Other Subsidies,0
+COURTSERV,Court Services,850A,User Fees & Donations,432
+COURTSERV,Court Services,920A,Transfers from Capital Fund,0
+COURTSERV,Court Services,930A,Contribution from Reserve Funds,0
+COURTSERV,Court Services,930A,Contribution from Reserve,0
+COURTSERV,Court Services,940A,Sundry Revenues,60948.40013
+COMMPARTNER,Community Partnership and Investment Program,750A,Interdivisional Recoveries,
+COMMPARTNER,Community Partnership and Investment Program,805A,Provincial Subsidies,
+COMMPARTNER,Community Partnership and Investment Program,810A,Federal Subsidies,
+COMMPARTNER,Community Partnership and Investment Program,820A,Other Subsidies,
+COMMPARTNER,Community Partnership and Investment Program,850A,User Fees & Donations,
+COMMPARTNER,Community Partnership and Investment Program,920A,Transfers from Capital Fund,
+COMMPARTNER,Community Partnership and Investment Program,930A,Contribution from Reserve Funds,
+COMMPARTNER,Community Partnership and Investment Program,930A,Contribution from Reserve,80
+COMMPARTNER,Community Partnership and Investment Program,940A,Sundry Revenues,
+ECONDEV,Economic Development and Culture,750A,Interdivisional Recoveries,0
+ECONDEV,Economic Development and Culture,805A,Provincial Subsidies,519.7
+ECONDEV,Economic Development and Culture,810A,Federal Subsidies,194.7
+ECONDEV,Economic Development and Culture,820A,Other Subsidies,132.9
+ECONDEV,Economic Development and Culture,850A,User Fees & Donations,2221.8
+ECONDEV,Economic Development and Culture,920A,Transfers from Capital Fund,1014.4
+ECONDEV,Economic Development and Culture,930A,Contribution from Reserve Funds,710
+ECONDEV,Economic Development and Culture,930A,Contribution from Reserve,0
+ECONDEV,Economic Development and Culture,940A,Sundry Revenues,4619.8
+PARAMEDIC,Emergency Medical Services,750A,Interdivisional Recoveries,1060.659
+PARAMEDIC,Emergency Medical Services,805A,Provincial Subsidies,101576.3915
+PARAMEDIC,Emergency Medical Services,810A,Federal Subsidies,
+PARAMEDIC,Emergency Medical Services,820A,Other Subsidies,
+PARAMEDIC,Emergency Medical Services,850A,User Fees & Donations,572.58
+PARAMEDIC,Emergency Medical Services,920A,Transfers from Capital Fund,374
+PARAMEDIC,Emergency Medical Services,930A,Contribution from Reserve Funds,
+PARAMEDIC,Emergency Medical Services,930A,Contribution from Reserve,
+PARAMEDIC,Emergency Medical Services,940A,Sundry Revenues,1179.629
+EXHIBPLACE,Exhibition Place,750A,Interdivisional Recoveries,
+EXHIBPLACE,Exhibition Place,805A,Provincial Subsidies,
+EXHIBPLACE,Exhibition Place,810A,Federal Subsidies,
+EXHIBPLACE,Exhibition Place,820A,Other Subsidies,
+EXHIBPLACE,Exhibition Place,850A,User Fees & Donations,61061.9
+EXHIBPLACE,Exhibition Place,920A,Transfers from Capital Fund,437.1
+EXHIBPLACE,Exhibition Place,930A,Contribution from Reserve Funds,2726.1
+EXHIBPLACE,Exhibition Place,940A,Sundry Revenues,
+FACILITIES,Facilities Management and Real Estate,750A,Interdivisional Recoveries,49669.7405357883
+FACILITIES,Facilities Management and Real Estate,805A,Provincial Subsidies,
+FACILITIES,Facilities Management and Real Estate,810A,Federal Subsidies,220.48
+FACILITIES,Facilities Management and Real Estate,820A,Other Subsidies,
+FACILITIES,Facilities Management and Real Estate,850A,User Fees & Donations,37976.4798604704
+FACILITIES,Facilities Management and Real Estate,920A,Transfers from Capital Fund,8004.478
+FACILITIES,Facilities Management and Real Estate,930A,Contribution from Reserve Funds,11077.04034
+FACILITIES,Facilities Management and Real Estate,930A,Contribution from Reserve,
+FACILITIES,Facilities Management and Real Estate,940A,Sundry Revenues,8967.993
+FIRE,Fire Services,750A,Interdivisional Recoveries,362.05404
+FIRE,Fire Services,805A,Provincial Subsidies,400
+FIRE,Fire Services,810A,Federal Subsidies,0
+FIRE,Fire Services,820A,Other Subsidies,0
+FIRE,Fire Services,850A,User Fees & Donations,14491.86155
+FIRE,Fire Services,920A,Transfers from Capital Fund,0
+FIRE,Fire Services,930A,Contribution from Reserve Funds,0
+FIRE,Fire Services,930A,Contribution from Reserve,0
+FIRE,Fire Services,940A,Sundry Revenues,176.25
+FLEET,Fleet Services,750A,Interdivisional Recoveries,47211.5
+FLEET,Fleet Services,805A,Provincial Subsidies,
+FLEET,Fleet Services,810A,Federal Subsidies,
+FLEET,Fleet Services,820A,Other Subsidies,
+FLEET,Fleet Services,850A,User Fees & Donations,
+FLEET,Fleet Services,920A,Transfers from Capital Fund,121.4
+FLEET,Fleet Services,930A,Contribution from Reserve Funds,
+FLEET,Fleet Services,930A,Contribution from Reserve,
+FLEET,Fleet Services,940A,Sundry Revenues,677.4
+HERITAGE,Heritage Toronto,750A,Interdivisional Recoveries,147
+HERITAGE,Heritage Toronto,805A,Provincial Subsidies,
+HERITAGE,Heritage Toronto,810A,Federal Subsidies,
+HERITAGE,Heritage Toronto,820A,Other Subsidies,
+HERITAGE,Heritage Toronto,850A,User Fees & Donations,200.3
+HERITAGE,Heritage Toronto,920A,Transfers from Capital Fund, 
+HERITAGE,Heritage Toronto,930A,Contribution from Reserve Funds,
+HERITAGE,Heritage Toronto,930A,Contribution from Reserve,
+HERITAGE,Heritage Toronto,940A,Sundry Revenues,151.6
+IT,Information and Technology,750A,Interdivisional Recoveries,7290.1
+IT,Information and Technology,805A,Provincial Subsidies,
+IT,Information and Technology,810A,Federal Subsidies,
+IT,Information and Technology,820A,Other Subsidies,
+IT,Information and Technology,850A,User Fees & Donations,170.3
+IT,Information and Technology,920A,Transfers from Capital Fund,17627.8
+IT,Information and Technology,930A,Contribution from Reserve Funds,
+IT,Information and Technology,930A,Contribution from Reserve,2388
+IT,Information and Technology,940A,Sundry Revenues,569.6
+INTEGRITYCOMM,The Integrity Commissioner's Office,750A,Interdivisional Recoveries,
+INTEGRITYCOMM,The Integrity Commissioner's Office,805A,Provincial Subsidies,
+INTEGRITYCOMM,The Integrity Commissioner's Office,810A,Federal Subsidies,
+INTEGRITYCOMM,The Integrity Commissioner's Office,820A,Other Subsidies,
+INTEGRITYCOMM,The Integrity Commissioner's Office,850A,User Fees & Donations,
+INTEGRITYCOMM,The Integrity Commissioner's Office,920A,Transfers from Capital Fund,
+INTEGRITYCOMM,The Integrity Commissioner's Office,930A,Contribution from Reserve Funds,
+INTEGRITYCOMM,The Integrity Commissioner's Office,930A,Contribution from Reserve,
+INTEGRITYCOMM,The Integrity Commissioner's Office,940A,Sundry Revenues,
+LEGAL,Legal Services,750A,Interdivisional Recoveries,17737.4
+LEGAL,Legal Services,805A,Provincial Subsidies,
+LEGAL,Legal Services,810A,Federal Subsidies,
+LEGAL,Legal Services,820A,Other Subsidies,
+LEGAL,Legal Services,850A,User Fees & Donations,1740.4
+LEGAL,Legal Services,920A,Transfers from Capital Fund,839.2
+LEGAL,Legal Services,930A,Contribution from Reserve Funds,300
+LEGAL,Legal Services,930A,Contribution from Local Boards,171.3
+LEGAL,Legal Services,940A,Sundry Revenues,1099.7
+LOBBYREG,The Lobbyist Registrar's Office,750A,Interdivisional Recoveries,
+LOBBYREG,The Lobbyist Registrar's Office,805A,Provincial Subsidies,
+LOBBYREG,The Lobbyist Registrar's Office,810A,Federal Subsidies,
+LOBBYREG,The Lobbyist Registrar's Office,820A,Other Subsidies,
+LOBBYREG,The Lobbyist Registrar's Office,850A,User Fees & Donations,
+LOBBYREG,The Lobbyist Registrar's Office,920A,Transfers from Capital Fund,
+LOBBYREG,The Lobbyist Registrar's Office,930A,Contribution from Reserve Funds,
+LOBBYREG,The Lobbyist Registrar's Office,930A,Contribution from Reserve,
+LOBBYREG,The Lobbyist Registrar's Office,940A,Sundry Revenues,
+LONGTERMHOME,Long Term Care Homes & Services,750A,Interdivisional Recoveries,174.4
+LONGTERMHOME,Long Term Care Homes & Services,805A,Provincial Subsidies,128372.1
+LONGTERMHOME,Long Term Care Homes & Services,810A,Federal Subsidies,
+LONGTERMHOME,Long Term Care Homes & Services,820A,Other Subsidies,
+LONGTERMHOME,Long Term Care Homes & Services,850A,User Fees & Donations,48524.3
+LONGTERMHOME,Long Term Care Homes & Services,920A,Transfers from Capital Fund,
+LONGTERMHOME,Long Term Care Homes & Services,930A,Contribution from Reserve Funds,
+LONGTERMHOME,Long Term Care Homes & Services,930A,Contribution from Reserve,
+LONGTERMHOME,Long Term Care Homes & Services,940A,Sundry Revenues,392
+MAYOR,The Mayor's Office,750A,Interdivisional Recoveries,
+MAYOR,The Mayor's Office,805A,Provincial Subsidies,
+MAYOR,The Mayor's Office,810A,Federal Subsidies,
+MAYOR,The Mayor's Office,820A,Other Subsidies,
+MAYOR,The Mayor's Office,850A,User Fees & Donations,
+MAYOR,The Mayor's Office,920A,Transfers from Capital Fund,
+MAYOR,The Mayor's Office,930A,Contribution from Reserve Funds,
+MAYOR,The Mayor's Office,930A,Contribution from Reserve,
+MAYOR,The Mayor's Office,940A,Sundry Revenues,
+LICENCING,Municipal Licensing and Standards,750A,Interdivisional Recoveries,1628
+LICENCING,Municipal Licensing and Standards,805A,Provincial Subsidies,
+LICENCING,Municipal Licensing and Standards,810A,Federal Subsidies,
+LICENCING,Municipal Licensing and Standards,820A,Other Subsidies,
+LICENCING,Municipal Licensing and Standards,850A,User Fees & Donations,3074.1
+LICENCING,Municipal Licensing and Standards,920A,Transfers from Capital Fund,
+LICENCING,Municipal Licensing and Standards,930A,Contribution from Reserve Funds,
+LICENCING,Municipal Licensing and Standards,930A,Contribution from Reserve,
+LICENCING,Municipal Licensing and Standards,940A,Sundry Revenues,23331.8
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,750A,Interdivisional Recoveries,35299.7
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,805A,Provincial Subsidies,3200.44842
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,810A,Federal Subsidies,0
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,820A,Other Subsidies,0
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,850A,User Fees & Donations,2250
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,920A,Transfers from Capital Fund,0
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,930A,Contribution from Reserve Funds,198506.075
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,930A,Contribution from Reserve,0
+CORPFINANCING,CAPITAL & CORPORATE FINANCE / NON-PROGRAM,940A,Sundry Revenues,1074498.318
+TREASURER,Office of the Treasurer,750A,Interdivisional Recoveries,30677.3
+TREASURER,Office of the Treasurer,805A,Provincial Subsidies,
+TREASURER,Office of the Treasurer,810A,Federal Subsidies,
+TREASURER,Office of the Treasurer,820A,Other Subsidies,
+TREASURER,Office of the Treasurer,850A,User Fees & Donations,8119.8
+TREASURER,Office of the Treasurer,920A,Transfers from Capital Fund,2691.6
+TREASURER,Office of the Treasurer,930A,Contribution from Reserve Funds,
+TREASURER,Office of the Treasurer,930A,Contribution from Reserve,632.7
+TREASURER,Office of the Treasurer,940A,Sundry Revenues,2940.9
+PARKS,"Parks, Forestry and Recreation",750A,Interdivisional Recoveries,5013.76704
+PARKS,"Parks, Forestry and Recreation",805A,Provincial Subsidies,760
+PARKS,"Parks, Forestry and Recreation",810A,Federal Subsidies,4066
+PARKS,"Parks, Forestry and Recreation",820A,Other Subsidies,
+PARKS,"Parks, Forestry and Recreation",850A,User Fees & Donations,69101.5292
+PARKS,"Parks, Forestry and Recreation",920A,Transfers from Capital Fund,3409.42559
+PARKS,"Parks, Forestry and Recreation",930A,Contribution from Reserve Funds,7210.72021
+PARKS,"Parks, Forestry and Recreation",940A,Other Revenues,11400.858
+POLICYADMIN,"Policy, Planning, Finance and Administration",750A,Interdivisional Recoveries,10728.3
+POLICYADMIN,"Policy, Planning, Finance and Administration",805A,Provincial Subsidies,
+POLICYADMIN,"Policy, Planning, Finance and Administration",810A,Federal Subsidies,
+POLICYADMIN,"Policy, Planning, Finance and Administration",820A,Other Subsidies,
+POLICYADMIN,"Policy, Planning, Finance and Administration",850A,User Fees & Donations,
+POLICYADMIN,"Policy, Planning, Finance and Administration",920A,Transfers from Capital Fund,2292.3
+POLICYADMIN,"Policy, Planning, Finance and Administration",930A,Contribution from Reserve Funds,
+POLICYADMIN,"Policy, Planning, Finance and Administration",930A,Contribution from Reserve,
+POLICYADMIN,"Policy, Planning, Finance and Administration",940A,Sundry Revenues,10
+SHELTERADMIN,"Shelter, Support and Housing Administration",750A,Interdivisional Recoveries,6.2
+SHELTERADMIN,"Shelter, Support and Housing Administration",805A,Provincial Subsidies,372130.8
+SHELTERADMIN,"Shelter, Support and Housing Administration",810A,Federal Subsidies,180312.3
+SHELTERADMIN,"Shelter, Support and Housing Administration",820A,Other Subsidies,26501
+SHELTERADMIN,"Shelter, Support and Housing Administration",850A,User Fees & Donations,922.4
+SHELTERADMIN,"Shelter, Support and Housing Administration",920A,Transfers from Capital Fund,1200
+SHELTERADMIN,"Shelter, Support and Housing Administration",930A,Contribution from Reserve Funds,37636.2
+SHELTERADMIN,"Shelter, Support and Housing Administration",930A,Contribution from Reserve,3348.6
+SHELTERADMIN,"Shelter, Support and Housing Administration",940A,Sundry Revenues,2797.9
+SOCIALDEV,"Social Development, Finance and Administration",750A,Interdivisional Recoveries,749.357
+SOCIALDEV,"Social Development, Finance and Administration",805A,Provincial Subsidies,6722.9983
+SOCIALDEV,"Social Development, Finance and Administration",810A,Federal Subsidies,5086.29902
+SOCIALDEV,"Social Development, Finance and Administration",820A,Other Subsidies,
+SOCIALDEV,"Social Development, Finance and Administration",850A,User Fees & Donations,
+SOCIALDEV,"Social Development, Finance and Administration",920A,Transfers from Capital Fund,
+SOCIALDEV,"Social Development, Finance and Administration",930A,Contribution from Reserve Funds,
+SOCIALDEV,"Social Development, Finance and Administration",930A,Contribution from Reserve,
+SOCIALDEV,"Social Development, Finance and Administration",940A,Sundry Revenues,
+SOLIDWASTE,Solid Waste Management Services,750A,Interdivisional Recoveries,5766.8
+SOLIDWASTE,Solid Waste Management Services,805A,Provincial Subsidies,14732.9
+SOLIDWASTE,Solid Waste Management Services,810A,Federal Subsidies,
+SOLIDWASTE,Solid Waste Management Services,820A,Other Subsidies,
+SOLIDWASTE,Solid Waste Management Services,850A,User Fees & Donations,257462.1
+SOLIDWASTE,Solid Waste Management Services,920A,Transfers from Capital Fund,2226.4
+SOLIDWASTE,Solid Waste Management Services,930A,Contribution from Reserve Funds,
+SOLIDWASTE,Solid Waste Management Services,930A,Contribution from Reserve,
+SOLIDWASTE,Solid Waste Management Services,940A,Sundry Revenues,62443.2
+ENGINEERING,Technical Services,750A,Interdivisional Recoveries,
+ENGINEERING,Technical Services,805A,Provincial Subsidies,
+ENGINEERING,Technical Services,810A,Federal Subsidies,
+ENGINEERING,Technical Services,820A,Other Subsidies,
+ENGINEERING,Technical Services,850A,User Fees & Donations,1800.061
+ENGINEERING,Technical Services,920A,Transfers from Capital Fund,48927.376
+ENGINEERING,Technical Services,930A,Contribution from Reserve Funds,
+ENGINEERING,Technical Services,930A,Contribution from Reserve,
+ENGINEERING,Technical Services,940A,Sundry Revenues,6371.062
+OMBUDSMAN,The Ombudsman's Office,750A,Interdivisional Recoveries,
+OMBUDSMAN,The Ombudsman's Office,805A,Provincial Subsidies,
+OMBUDSMAN,The Ombudsman's Office,810A,Federal Subsidies,
+OMBUDSMAN,The Ombudsman's Office,820A,Other Subsidies,
+OMBUDSMAN,The Ombudsman's Office,850A,User Fees & Donations,
+OMBUDSMAN,The Ombudsman's Office,920A,Transfers from Capital Fund,
+OMBUDSMAN,The Ombudsman's Office,930A,Contribution from Reserve Funds,
+OMBUDSMAN,The Ombudsman's Office,930A,Contribution from Reserve,
+OMBUDSMAN,The Ombudsman's Office,940A,Sundry Revenues,
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,750A,Interdivisional Recoveries, 
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,805A,Provincial Subsidies,
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,810A,Federal Subsidies,
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,820A,Other Subsidies,
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,850A,User Fees & Donations,15631.1
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,920A,Transfers from Capital Fund, 
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,930A,Contribution from Reserve Funds,
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,930A,Contribution from Reserve,1326.8
+SONYCENTRE,Theatres - Sony Centre for the Performing Arts,940A,Sundry Revenues, 
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,750A,Interdivisional Recoveries, 
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,805A,Provincial Subsidies,
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,810A,Federal Subsidies,
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,820A,Other Subsidies,
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,850A,User Fees & Donations,2190.5
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,920A,Transfers from Capital Fund, 
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,930A,Contribution from Reserve Funds,
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,930A,Contribution from Reserve,75
+STLAWRENCECENTRE,Theatres - St. Lawrence Centre for the Arts,940A,Sundry Revenues,33.6
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,750A,Interdivisional Recoveries, 
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,805A,Provincial Subsidies,
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,810A,Federal Subsidies,
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,820A,Other Subsidies,
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,850A,User Fees & Donations,3789.8
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,920A,Transfers from Capital Fund, 
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,930A,Contribution from Reserve Funds,600
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,930A,Contribution from Reserve, 
+TORONTOCENTRE,Theatres - Toronto Centre for the Arts,940A,Sundry Revenues, 
+REGIONCONSERV,Toronto and Region Conservation Authority,750A,Interdivisional Recoveries,
+REGIONCONSERV,Toronto and Region Conservation Authority,805A,Provincial Subsidies,2096
+REGIONCONSERV,Toronto and Region Conservation Authority,810A,Federal Subsidies,
+REGIONCONSERV,Toronto and Region Conservation Authority,820A,Other Subsidies,
+REGIONCONSERV,Toronto and Region Conservation Authority,850A,User Fees & Donations,22351
+REGIONCONSERV,Toronto and Region Conservation Authority,920A,Transfers from Capital Fund,
+REGIONCONSERV,Toronto and Region Conservation Authority,930A,Contribution from Reserve Funds,4270.2
+REGIONCONSERV,Toronto and Region Conservation Authority,930A,Contribution from Reserve,
+REGIONCONSERV,Toronto and Region Conservation Authority,940A,Sundry Revenues,4246.5
+ATMOSPHERE,Toronto Atmospheric Fund,750A,Interdivisional Recoveries, 
+ATMOSPHERE,Toronto Atmospheric Fund,805A,Provincial Subsidies,
+ATMOSPHERE,Toronto Atmospheric Fund,810A,Federal Subsidies,
+ATMOSPHERE,Toronto Atmospheric Fund,940A,External Funding & Donations,500
+ATMOSPHERE,Toronto Atmospheric Fund,850A,User Fees & Donations,
+ATMOSPHERE,Toronto Atmospheric Fund,920A,Transfers from Capital Fund,233.7
+ATMOSPHERE,Toronto Atmospheric Fund,930A,Contribution from Reserve Funds,
+ATMOSPHERE,Toronto Atmospheric Fund,930A,Contribution from Reserve,
+ATMOSPHERE,Toronto Atmospheric Fund,940A,Other Revenues,1502.5
+BUILDINGS,Toronto Buildings,750A,Interdivisional Recoveries,1459.5
+BUILDINGS,Toronto Buildings,805A,Provincial Subsidies,
+BUILDINGS,Toronto Buildings,810A,Federal Subsidies,
+BUILDINGS,Toronto Buildings,820A,Other Subsidies,
+BUILDINGS,Toronto Buildings,850A,User Fees & Donations,663.9
+BUILDINGS,Toronto Buildings,920A,Transfers from Capital Fund,
+BUILDINGS,Toronto Buildings,930A,Contribution from Reserve Funds,
+BUILDINGS,Toronto Buildings,930A,Contribution from Reserve,
+BUILDINGS,Toronto Buildings,940A,Sundry Revenues,55364.9
+SOCIALSERV,Toronto Employment and Social Services,750A,Interdivisional Recoveries,
+SOCIALSERV,Toronto Employment and Social Services,805A,Provincial Subsidies,878113.9
+SOCIALSERV,Toronto Employment and Social Services,810A,Federal Subsidies,
+SOCIALSERV,Toronto Employment and Social Services,820A,Other Subsidies,76979.5
+SOCIALSERV,Toronto Employment and Social Services,850A,User Fees & Donations,
+SOCIALSERV,Toronto Employment and Social Services,920A,Transfers from Capital Fund,556.5
+SOCIALSERV,Toronto Employment and Social Services,930A,Contribution from Reserve Funds,36612.692
+SOCIALSERV,Toronto Employment and Social Services,930A,Contribution from Reserve,
+SOCIALSERV,Toronto Employment and Social Services,940A,Sundry Revenues,15000
+ENVIRONMENTOFFICE,Toronto Environment Office,750A,Interdivisional Recoveries,
+ENVIRONMENTOFFICE,Toronto Environment Office,805A,Provincial Subsidies,328
+ENVIRONMENTOFFICE,Toronto Environment Office,810A,Federal Subsidies,
+ENVIRONMENTOFFICE,Toronto Environment Office,820A,Other Subsidies,
+ENVIRONMENTOFFICE,Toronto Environment Office,850A,User Fees & Donations,432
+ENVIRONMENTOFFICE,Toronto Environment Office,920A,Transfers from Capital Fund,
+ENVIRONMENTOFFICE,Toronto Environment Office,930A,Contribution from Reserve Funds,7544.8
+ENVIRONMENTOFFICE,Toronto Environment Office,930A,Contribution from Reserve,
+ENVIRONMENTOFFICE,Toronto Environment Office,940A,Sundry Revenues,10
+PARKING,Toronto Parking Authority,750A,Interdivisional Recoveries,
+PARKING,Toronto Parking Authority,805A,Provincial Subsidies,
+PARKING,Toronto Parking Authority,810A,Federal Subsidies,
+PARKING,Toronto Parking Authority,820A,Other Subsidies,
+PARKING,Toronto Parking Authority,850A,User Fees & Donations,122900.4
+PARKING,Toronto Parking Authority,920A,Transfers from Capital Fund,
+PARKING,Toronto Parking Authority,930A,Contribution from Reserve Funds,
+PARKING,Toronto Parking Authority,930A,Contribution from Reserve,
+PARKING,Toronto Parking Authority,940A,Sundry Revenues,4397.2
+POLICEBOARD,Toronto Police Service Board,750A,Interdivisional Recoveries,
+POLICEBOARD,Toronto Police Service Board,805A,Provincial Subsidies,
+POLICEBOARD,Toronto Police Service Board,810A,Federal Subsidies,
+POLICEBOARD,Toronto Police Service Board,820A,Other Subsidies,
+POLICEBOARD,Toronto Police Service Board,850A,User Fees & Donations,
+POLICEBOARD,Toronto Police Service Board,920A,Transfers from Capital Fund,
+POLICEBOARD,Toronto Police Service Board,930A,Contribution from Reserve Funds,
+POLICEBOARD,Toronto Police Service Board,930A,Contribution from Reserve,610.6
+POLICEBOARD,Toronto Police Service Board,940A,Sundry Revenues,
+POLICE,Toronto Police Service,750A,Interdivisional Recoveries,21109.9
+POLICE,Toronto Police Service,805A,Provincial Subsidies,
+POLICE,Toronto Police Service,810A,Federal Subsidies,
+POLICE,Toronto Police Service,820A,Other Subsidies,22123.1
+POLICE,Toronto Police Service,850A,User Fees & Donations,7870.8
+POLICE,Toronto Police Service,920A,Transfers from Capital Fund,
+POLICE,Toronto Police Service,930A,Contribution from Reserve Funds,
+POLICE,Toronto Police Service,930A,Contribution from Reserve,16372.8
+POLICE,Toronto Police Service,940A,Sundry Revenues,896.5
+PUBLICHEALTH,Toronto Public Health,750A,Interdivisional Recoveries,12034.653
+PUBLICHEALTH,Toronto Public Health,805A,Provincial Subsidies,170852.3
+PUBLICHEALTH,Toronto Public Health,810A,Federal Subsidies,185.90704
+PUBLICHEALTH,Toronto Public Health,820A,Other Subsidies,0
+PUBLICHEALTH,Toronto Public Health,850A,User Fees & Donations,1035.9
+PUBLICHEALTH,Toronto Public Health,920A,Transfers from Capital Fund,3521
+PUBLICHEALTH,Toronto Public Health,930A,Contribution from Reserve Funds,0
+PUBLICHEALTH,Toronto Public Health,930A,Contribution from Reserve,0
+PUBLICHEALTH,Toronto Public Health,940A,Sundry Revenues,1459.97304
+LIBRARY,Toronto Public Library,750A,Interdivisional Recoveries,
+LIBRARY,Toronto Public Library,805A,Provincial Subsidies,5654.7
+LIBRARY,Toronto Public Library,810A,Federal Subsidies,44
+LIBRARY,Toronto Public Library,820A,Other Subsidies,43.2
+LIBRARY,Toronto Public Library,850A,User Fees & Donations,4334.9
+LIBRARY,Toronto Public Library,920A,Transfers from Capital Fund,564.8
+LIBRARY,Toronto Public Library,930A,Contribution from Reserve Funds,1000
+LIBRARY,Toronto Public Library,930A,Contribution from Reserve,
+LIBRARY,Toronto Public Library,940A,Sundry Revenues,1791.2
+WATER,Toronto Water,750A,Interdivisional Recoveries,3.2
+WATER,Toronto Water,805A,Provincial Subsidies,
+WATER,Toronto Water,810A,Federal Subsidies,
+WATER,Toronto Water,820A,Other Subsidies,
+WATER,Toronto Water,850A,User Fees & Donations,816157.5
+WATER,Toronto Water,920A,Transfers from Capital Fund,1973.8
+WATER,Toronto Water,930A,Contribution from Reserve Funds,
+WATER,Toronto Water,930A,Contribution from Reserve,
+WATER,Toronto Water,940A,Sundry Revenues,2785.3
+ZOO,Toronto Zoo,940A,Grants from Others,1039.6
+ZOO,Toronto Zoo,850A,User Fees & Donations,31806.4
+ZOO,Toronto Zoo,920A,Transfers from Capital Fund,
+ZOO,Toronto Zoo,930A,Contribution from Reserve Funds,136
+ZOO,Toronto Zoo,940A,Sundry Revenues,1845.7
+TRANSPORTATION,Transportation Services,750A,Interdivisional Recoveries,9550.79764
+TRANSPORTATION,Transportation Services,805A,Provincial Subsidies,
+TRANSPORTATION,Transportation Services,810A,Federal Subsidies,
+TRANSPORTATION,Transportation Services,820A,Other Subsidies,
+TRANSPORTATION,Transportation Services,850A,User Fees & Donations,26134.4990827239
+TRANSPORTATION,Transportation Services,920A,Transfers from Capital Fund,17468.98012
+TRANSPORTATION,Transportation Services,930A,Contribution from Reserve Funds,18196.29252
+TRANSPORTATION,Transportation Services,930A,Contribution from Reserve,
+TRANSPORTATION,Transportation Services,940A,Sundry Revenues,46271.4458221149
+TTCCONV,Toronto Transit Commission - Conventional,750A,Interdivisional Recoveries,
+TTCCONV,Toronto Transit Commission - Conventional,805A,Provincial Subsidies,
+TTCCONV,Toronto Transit Commission - Conventional,810A,Federal Subsidies,547.5
+TTCCONV,Toronto Transit Commission - Conventional,820A,Other Subsidies,
+TTCCONV,Toronto Transit Commission - Conventional,850A,User Fees & Donations,1006781.4
+TTCCONV,Toronto Transit Commission - Conventional,920A,Transfers from Capital Fund,
+TTCCONV,Toronto Transit Commission - Conventional,930A,Contribution from Reserve Funds,
+TTCCONV,Toronto Transit Commission - Conventional,930A,Contribution from Reserve,
+TTCCONV,Toronto Transit Commission - Conventional,940A,Sundry Revenues,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,750A,Interdivisional Recoveries,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,805A,Provincial Subsidies,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,810A,Federal Subsidies,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,820A,Other Subsidies,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,850A,User Fees & Donations,5610.9
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,920A,Transfers from Capital Fund,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,930A,Contribution from Reserve Funds,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,930A,Contribution from Reserve,
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,940A,Sundry Revenues,
+WATERFRONT,Waterfront Secretariat,750A,Interdivisional Recoveries,
+WATERFRONT,Waterfront Secretariat,805A,Provincial Subsidies,
+WATERFRONT,Waterfront Secretariat,810A,Federal Subsidies,
+WATERFRONT,Waterfront Secretariat,820A,Other Subsidies,
+WATERFRONT,Waterfront Secretariat,850A,User Fees & Donations,
+WATERFRONT,Waterfront Secretariat,920A,Transfers from Capital Fund,600
+WATERFRONT,Waterfront Secretariat,930A,Contribution from Reserve Funds,
+WATERFRONT,Waterfront Secretariat,930A,Contribution from Reserve,
+WATERFRONT,Waterfront Secretariat,940A,Sundry Revenues,
+YONGEDUNDAS,Yonge-Dundas Square,750A,Interdivisional Recoveries,
+YONGEDUNDAS,Yonge-Dundas Square,805A,Provincial Subsidies,
+YONGEDUNDAS,Yonge-Dundas Square,810A,Federal Subsidies,
+YONGEDUNDAS,Yonge-Dundas Square,820A,Other Subsidies,
+YONGEDUNDAS,Yonge-Dundas Square,850A,User Fees & Donations,990
+YONGEDUNDAS,Yonge-Dundas Square,920A,Transfers from Capital Fund,
+YONGEDUNDAS,Yonge-Dundas Square,930A,Contribution from Reserve Funds,
+YONGEDUNDAS,Yonge-Dundas Square,930A,Contribution from Reserve,
+YONGEDUNDAS,Yonge-Dundas Square,940A,Sundry Revenues,382.001

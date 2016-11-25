@@ -1,0 +1,5 @@
+2015.README.txt
+
+file flow is
+
+pdf -> xlsx (tabula) -> ods -> csv -> 2015.staffing.manual.csv

@@ -1,0 +1,18 @@
+_COLUMNS_,"Category:CODE,Category:NAME,Start:VALUE,End:Value,AllocateTo:CODE,AllocateTo:NAME,Note:DESCRIPTION",,,
+CANADA,Government of Canada,1999,1999,TRANSFERS
+DEVELOPMENT,Development charges,2009,,
+ENTERPRISES,Government business enterprise earnings,2003,,
+ENWAVE,Gain on sale of Enwave,2012,2013,OTHER
+GRANTS,Grants,1998,2001,TRANSFERS
+INVESTMENT,Investment income,2009,,
+LANDTRANSFER,Municipal land transfer tax,2012,,
+ONTARIO,Province of Ontario,1999,1999,TRANSFERS
+OTHER,Other,1998,,
+OTHERGOVTAX,Taxation from other governments,1998,,
+OTHERMUNICIPALITIES,Other municipalities,1999,1999,OTHER
+PROPERTYTAX,Property taxation,1998,,
+RENTS,Rent and concessions,2010,,
+SCHOOLBOARDS,Deduct: taxation relating to school boards,1998,2002,PROPERTYTAX
+TAXATION,Taxation,2009,2010,PROPERTYTAX
+TRANSFERS,Funding transfers from other governments,2001,,
+USERCHARGES,User charges,1998,,

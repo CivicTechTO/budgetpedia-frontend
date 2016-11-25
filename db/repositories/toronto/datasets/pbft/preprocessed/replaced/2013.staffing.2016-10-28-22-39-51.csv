@@ -1,0 +1,123 @@
+_META_START_,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuaXNFVEpDbTRJdDQ,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuaUJtdGpFb0lVWlE,,,
+SOURCE_DOCUMENT_TITLE,CITY OF TORONTO 2014 COUNCIL APPROVED OPERATING BUDGET TOTAL OPERATING AND CAPITAL POSITIONS,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,p. 2,,,
+SOURCE_DOCUMENT_TABLE_TITLE,CITY OF TORONTO 2014 COUNCIL APPROVED OPERATING BUDGET OPERATING POSITIONS,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuWXN0S3dMaGd3NmM,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,
+YEAR,2013,,,
+VERSION,Summary,,,
+ASPECT,Staffing,,,
+NOTES_CONTENT,"Taken from 2014 document, previous year columns",,,
+NOTES_SEVERITY,,,,
+UNITS_NAME,Full Time Equivalent,,,
+UNITS_CODE,FTE,,,
+UNITS_MULTIPLIER,1,,,
+TOTAL_AMOUNT,49167.100000000006,,,
+INTAKE_DATETIME,2016-10-28-22-36-04,,,
+INTAKE_OPERATOR_ID,Henrik,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME,Permanence:CODE,Permanence:NAME",,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE",,,
+_META_END_,,,,
+311SERVICE,311 Toronto,PERM,Permanent,154
+311SERVICE,311 Toronto,TEMP,Temporary,0
+AFFHOUSING,Affordable Housing Office,PERM,Permanent,15
+AFFHOUSING,Affordable Housing Office,TEMP,Temporary,4
+ARENAS,Arena Boards of Management,PERM,Permanent,43
+ARENAS,Arena Boards of Management,TEMP,Temporary,25.2
+COMMCENTRES,Association of Community Centres,PERM,Permanent,48.1
+COMMCENTRES,Association of Community Centres,TEMP,Temporary,29.3
+AUDITGEN,Auditor General's Office,PERM,Permanent,29
+AUDITGEN,Auditor General's Office,TEMP,Temporary,0
+CHILDSERV,Children's Services,PERM,Permanent,731
+CHILDSERV,Children's Services,TEMP,Temporary,191.4
+CLERK,City Clerk's Office,PERM,Permanent,391.3
+CLERK,City Clerk's Office,TEMP,Temporary,11.5
+COUNCIL,City Council,PERM,Permanent,44
+COUNCIL,City Council,TEMP,Temporary,132
+CITYMANAGER,City Manager's Office,PERM,Permanent,395.5
+CITYMANAGER,City Manager's Office,TEMP,Temporary,11
+PLANNING,City Planning,PERM,Permanent,326
+PLANNING,City Planning,TEMP,Temporary,13
+COURTSERV,Court Services,PERM,Permanent,282
+COURTSERV,Court Services,TEMP,Temporary,0
+ECONDEV,Economic Development & Culture,PERM,Permanent,213
+ECONDEV,Economic Development & Culture,TEMP,Temporary,51.8
+PARAMEDIC,Emergency Medical Services,PERM,Permanent,1257.5
+PARAMEDIC,Emergency Medical Services,TEMP,Temporary,6.5
+ENGINEERING,Engineering & Construction Services,PERM,Permanent,135.8
+ENGINEERING,Engineering & Construction Services,TEMP,Temporary,4
+EXHIBPLACE,Exhibition Place,PERM,Permanent,392.5
+EXHIBPLACE,Exhibition Place,TEMP,Temporary,0
+FACILITIES,Facilities Management & Real Estate (incl TE,PERM,Permanent,727.9
+FACILITIES,Facilities Management & Real Estate (incl TE,TEMP,Temporary,42.3
+FIRE,Fire Services,PERM,Permanent,3169.5
+FIRE,Fire Services,TEMP,Temporary,1.3
+FLEET,Fleet Services,PERM,Permanent,174
+FLEET,Fleet Services,TEMP,Temporary,0
+HERITAGE,Heritage Toronto,PERM,Permanent,6
+HERITAGE,Heritage Toronto,TEMP,Temporary,0
+IT,Information & Technology,PERM,Permanent,584
+IT,Information & Technology,TEMP,Temporary,3
+INTEGRITYCOMM,Integrity Commissioner's Office,PERM,Permanent,2
+INTEGRITYCOMM,Integrity Commissioner's Office,TEMP,Temporary,0
+LEGAL,Legal Services,PERM,Permanent,266
+LEGAL,Legal Services,TEMP,Temporary,28
+LOBBYREG,Lobbyist Registrar,PERM,Permanent,8
+LOBBYREG,Lobbyist Registrar,TEMP,Temporary,0.3
+LONGTERMHOME,Long Term Care Homes & Services,PERM,Permanent,2151.3
+LONGTERMHOME,Long Term Care Homes & Services,TEMP,Temporary,0
+MAYOR,Mayor's Office,PERM,Permanent,1
+MAYOR,Mayor's Office,TEMP,Temporary,8
+LICENCING,Municipal Licensing and Standards,PERM,Permanent,451.6
+LICENCING,Municipal Licensing and Standards,TEMP,Temporary,1
+CFO,Office of the Chief Financial Officer,PERM,Permanent,96
+CFO,Office of the Chief Financial Officer,TEMP,Temporary,0
+OMBUDSMAN,Office of the Ombudsman,PERM,Permanent,11
+OMBUDSMAN,Office of the Ombudsman,TEMP,Temporary,0
+TREASURER,Office of the Treasurer,PERM,Permanent,659
+TREASURER,Office of the Treasurer,TEMP,Temporary,23
+PARKINGTAGS,Parking Tag Enforcement & Operations,PERM,Permanent,394
+PARKINGTAGS,Parking Tag Enforcement & Operations,TEMP,Temporary,0
+PARKS,"Parks, Forestry & Recreation",PERM,Permanent,1841
+PARKS,"Parks, Forestry & Recreation",TEMP,Temporary,2365
+POLICYADMIN,"Policy, Planning, Finance and Administration",PERM,Permanent,196.4
+POLICYADMIN,"Policy, Planning, Finance and Administration",TEMP,Temporary,2.8
+SHELTERADMIN,"Shelter, Support & Housing Administration",PERM,Permanent,543
+SHELTERADMIN,"Shelter, Support & Housing Administration",TEMP,Temporary,180.9
+SOCIALDEV,"Social Development, Finance & Administratio",PERM,Permanent,118.5
+SOCIALDEV,"Social Development, Finance & Administratio",TEMP,Temporary,9.1
+SOLIDWASTE,Solid Waste Management Services,PERM,Permanent,970.5
+SOLIDWASTE,Solid Waste Management Services,TEMP,Temporary,121.2
+THEATRES,Theatres,PERM,Permanent,76.9
+THEATRES,Theatres,TEMP,Temporary,88.3
+ATMOSPHERE,Toronto Atmospheric Fund,PERM,Permanent,7
+ATMOSPHERE,Toronto Atmospheric Fund,TEMP,Temporary,0
+BUILDINGS,Toronto Building,PERM,Permanent,418
+BUILDINGS,Toronto Building,TEMP,Temporary,7
+SOCIALSERV,Toronto Employment & Social Services,PERM,Permanent,2029
+SOCIALSERV,Toronto Employment & Social Services,TEMP,Temporary,157
+PARKING,Toronto Parking Authority,PERM,Permanent,241
+PARKING,Toronto Parking Authority,TEMP,Temporary,54.7
+POLICE,Toronto Police Service,PERM,Permanent,7658
+POLICE,Toronto Police Service,TEMP,Temporary,211
+POLICEBOARD,Toronto Police Services Board,PERM,Permanent,8
+POLICEBOARD,Toronto Police Services Board,TEMP,Temporary,0
+PUBLICHEALTH,Toronto Public Health,PERM,Permanent,1795.5
+PUBLICHEALTH,Toronto Public Health,TEMP,Temporary,40.7
+LIBRARY,Toronto Public Library,PERM,Permanent,1713.4
+LIBRARY,Toronto Public Library,TEMP,Temporary,0
+TTCCONV,Toronto Transit Commission - Conventional,PERM,Permanent,10878
+TTCCONV,Toronto Transit Commission - Conventional,TEMP,Temporary,4
+TTCWHEEL,Toronto Transit Commission - Wheel-Trans,PERM,Permanent,531
+TTCWHEEL,Toronto Transit Commission - Wheel-Trans,TEMP,Temporary,0
+WATER,Toronto Water,PERM,Permanent,1612
+WATER,Toronto Water,TEMP,Temporary,84.3
+ZOO,Toronto Zoo,PERM,Permanent,278
+ZOO,Toronto Zoo,TEMP,Temporary,141.4
+TRANSPORTATION,Transportation Services,PERM,Permanent,996
+TRANSPORTATION,Transportation Services,TEMP,Temporary,36.4
+YONGEDUNDAS,Yonge-Dundas Square,PERM,Permanent,5
+YONGEDUNDAS,Yonge-Dundas Square,TEMP,Temporary,1.5

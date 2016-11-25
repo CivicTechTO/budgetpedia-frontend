@@ -1,0 +1,14 @@
+{
+    "Year":2016,
+    "Budget":"2016 Staff Recommended Expenditures",
+    "Source":"2016_Recommend.xlsx (toronto.ca/open)",
+    "Amount":null,
+    "Status":"Errors",
+    "Meta":[
+        {"Name":"Budget","Children":"Types"},
+        {"Name":"Type","Children":"Groups"},
+        {"Name":"Group","Children":"Divisions"},
+        {"Name":"Division","Children":"Expenditures"},
+        {"Name":"Expenditure","Children":null}
+    ]
+}

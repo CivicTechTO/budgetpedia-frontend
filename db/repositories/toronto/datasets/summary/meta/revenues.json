@@ -1,0 +1,24 @@
+{
+    "InflationAdjustable": true,
+    "DatasetName":"Revenues",
+    "DatasetTitle": "Gross Operating Revenue",
+    "Dataseries": [
+        {
+            "Type": "Components"
+        }
+    ],
+    "Dimensions":["Program"],
+    "DimensionNames":{
+        "Program":{
+            "Instance":"Program",
+            "Collection":"Budgeted Programs"
+        }
+    },
+    "CellTitles": {
+        "Components":"Programs"
+    },
+    "Units": "DOLLAR",
+    "UnitsAlias": "$000's",
+    "UnitRatio": 1000,
+    "CommonDimension":false
+}

@@ -1,0 +1,73 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuNUMyYm43VmpWUWM
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuaUJtdGpFb0lVWlE
+SOURCE_DOCUMENT_TITLE,CITY OF TORONTO 2015 COUNCIL APPROVED OPERATING BUDGET TOTAL OPERATING AND CAPITAL POSITIONS
+SOURCE_DOCUMENT_TABLE_LOCATION,p.2
+SOURCE_DOCUMENT_TABLE_TITLE,CITY OF TORONTO 2015 COUNCIL APPROVED OPERATING BUDGET OPERATING POSITIONS
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuMzE0QXpEa09FMmc
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2015
+VERSION,Summary
+ASPECT,Staffing
+NOTES_CONTENT,
+NOTES_SEVERITY,
+UNITS_NAME,Full Time Equivalent
+UNITS_CODE,FTE
+UNITS_MULTIPLIER,1
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Program:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Affordable Housing Office,19
+Children's Services,967.6
+Court Services,282
+Economic Development & Culture,300.6
+Toronto Paramedic Services,1391.3
+Long Term Care Homes & Services,2225.9
+"Parks, Forestry & Recreation",4454.8
+"Shelter, Support & Housing Administration",707.2
+"Social Development, Finance & Administratio",127.5
+Toronto Employment & Social Services,2092
+City Planning,360
+Fire Services,3154.8
+Municipal Licensing and Standards,460
+"Policy, Planning, Finance and Administration",199.4
+Engineering & Construction Services,133
+Toronto Building,442
+Transportation Services,1028.8
+Office of the Chief Financial Officer,102
+Office of the Treasurer,693
+"Facilities, Real Estate, Environment & Energy",925.5
+Fleet Services,176
+Information & Technology,587
+311 Toronto,157
+City Manager's Office,424.5
+City Clerk's Office,403.9
+Legal Services,302.4
+Mayor's Office,20
+City Council,176
+Auditor General's Office,29.5
+Lobbyist Registrar,8.3
+Integrity Commissioner's Office,3
+Office of the Ombudsman,12
+Toronto Public Health,1841.6
+Toronto Public Library,1739.9
+Association of Community Centres,77.9
+Exhibition Place,390
+Heritage Toronto,7
+Theatres,163.1
+Toronto Zoo,402.5
+Arena Boards of Management,66.6
+Yonge-Dundas Square,6.5
+Parking Tag Enforcement & Operations,394
+Toronto Atmospheric Fund,8
+Toronto Transit Commission - Conventional,11691
+Toronto Transit Commission - Wheel-Trans,562
+Toronto Police Service,7883
+Toronto Police Services Board,7
+Solid Waste Management Services,1081.7
+Toronto Water,1710.3
+Toronto Parking Authority,299.4
