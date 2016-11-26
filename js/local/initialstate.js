@@ -102,8 +102,8 @@ let hometiles = [
     {
         id: 10,
         content: {
-            title: `Join Us!`,
-            subtitle: `Join one of our teams`,
+            title: `Our Teams`,
+            subtitle: `Join us!`,
             image: '../../public/icons/ic_group_48px.svg',
             category: 'get involved',
         },

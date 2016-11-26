@@ -9,7 +9,7 @@ class JoinUs extends Component<any, any> {
     render() {
         return <div>
         <Card>
-<CardTitle title="Join Us! Help us Make Budgetpedia Better!" />
+<CardTitle title="Our Teams. Join Us! Help us Make Budgetpedia Better." />
 
 <CardText>
     Budgetpedia is a volunteer-driven project.  We've gotten where we are thanks
@@ -29,7 +29,7 @@ just to make sure. Check with Civic Tech TO <a target="_blank" href="http://www.
 Or just email us your interests and we'll take it from there.
 </CardText>
 <CardText>
-<h3>How</h3>
+<h3>Our Teams</h3>
 <p>
     These are the main working groups we've set up. Feel free to get involved
     with one of them.  Or suggest something else you'd like to do.  We're
@@ -116,12 +116,12 @@ Or just email us your interests and we'll take it from there.
         </ul>
     </li>
     <li><strong>Advisory Board</strong><br/>
-        <p>We'd really like to develop an advisory board to help guide the project, and develop connections among user groups.</p>
+        <p>We're working on organizing an advisory board to help guide the project, and develop connections among user groups.</p>
     </li>
 </ul>
 </CardText>
 <CardText>
-<h3>Who</h3>
+<h3>People</h3>
 <p>
     These are just a few of the people involved in Budgetpedia (alphabetical).  If you've got
     questions, or want to know more, please reach out to one of us at <a target="_blank" href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a> .
