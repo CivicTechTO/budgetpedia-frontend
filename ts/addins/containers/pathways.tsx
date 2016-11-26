@@ -13,19 +13,11 @@ class Pathways extends Component<any, any> {
                 subtitle = "How to make change"
             />
             <CardText>
-            <p>Making change is hard. Making change in government is harder. Here we want to collect stories 
-            of what's worked.</p>
+            <p>Making change is hard. Making change in government is harder. Here we want to collect stories of what's worked.</p>
 
-            <p>... because the purpose of this section of the Budgetpedia website is to direct you, dear
-            social activist, to places where you can learn what others before you, or around you,
-            did to make positive changes in their communities, or within their governments. If you've
-            succeeded in making some changes, perhaps you could see your way to letting us link to
-            your story so that others can learn from it.</p>
+            <p>The purpose of this section of the Budgetpedia website is to direct you, dear social activist, to places where you can learn what others before you, or around you, did to make positive changes in their communities, and within their governments. If you've succeeded in making some changes, perhaps you could see your way to letting us link to your story so that others can learn from it. Because we love a celebration story, particularly when Toronto is the grounds for this celebration.</p>
 
-            <p>We love a celebration story, and we love when Toronto is the grounds for this 
-            celebration. We are inspired by those who want to see change, and by those who make 
-            the moves to see that through. No matter how big, or how small, dedication to a cause 
-            is motivating - and who can't use a push every now and then?
+            <p>We are inspired by those who want to see change, and by those who make the moves to see that through. No matter how big, or how small, dedication to a cause is motivating - and who can't use a push every now and then?
             </p>
 
             <p>If you're looking for a home for your story, consider <a
@@ -39,16 +31,6 @@ class Pathways extends Component<any, any> {
             href="mailto:mail@budgetpedia.ca"
             >mail@budgetpedia.ca</a>
             </p>
-            <hr />
-            <div style={
-                {
-                    textAlign:"center"
-                }
-            } >
-                "Alone we can do so little; together we can do so much" <br />
-                - Helen Keller
-            </div>
-            <hr />
             <p>
                 For example (click to expand):
             </p>
