@@ -2,6 +2,7 @@
 const React = require('react');
 const Card_1 = require('material-ui/Card');
 var { Component } = React;
+const FontIcon_1 = require('material-ui/FontIcon');
 class JoinUs extends Component {
     render() {
         return React.createElement("div", null, 
@@ -84,12 +85,29 @@ class JoinUs extends Component {
                             React.createElement("p", null, "We'd really like to develop an advisory board to help guide the project, and develop connections among user groups.")))), 
                 React.createElement(Card_1.CardText, null, 
                     React.createElement("h3", null, "Who"), 
-                    React.createElement("p", null, "These are just a few of the people involved in Budgetpedia.  If you've got" + ' ' + "questions, or want to know more, please reach out to one of us."), 
+                    React.createElement("p", null, 
+                        "These are just a few of the people involved in Budgetpedia (alphabetical).  If you've got" + ' ' + "questions, or want to know more, please reach out to one of us at ", 
+                        React.createElement("a", {target: "_blank", href: "mailto:mail@budgetpedia.ca"}, "mail@budgetpedia.ca"), 
+                        " ."), 
                     React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
                         React.createElement("img", {src: "./public/avatars/HenrikHeadshotSquare.jpg", style: { borderRadius: "50%", float: "left", height: "40px", marginRight: "3px" }}), 
-                        React.createElement("p", null, 
-                            "Henrik Bechmann is the project lead and lead developer. ", 
-                            React.createElement("a", {href: "mailto:henrik@budgetpedia.ca", target: "_blank"}, "henrik@budgetpedia.ca")), 
+                        React.createElement("p", null, "Henrik Bechmann is the project lead and lead developer."), 
+                        React.createElement("div", {style: { clear: "left" }})), 
+                    React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
+                        React.createElement("img", {src: "./public/avatars/lindadow.png", style: { borderRadius: "50%", float: "left", height: "40px", marginRight: "3px" }}), 
+                        React.createElement("p", null, "Lindamarleny Dow is the project's communications lead."), 
+                        React.createElement("div", {style: { clear: "left" }})), 
+                    React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
+                        React.createElement("img", {src: "./public/avatars/chrisgraham.png", style: { borderRadius: "50%", float: "left", height: "40px", marginRight: "3px" }}), 
+                        React.createElement("p", null, "Christopher Graham is involved with research and project development."), 
+                        React.createElement("div", {style: { clear: "left" }})), 
+                    React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
+                        React.createElement(FontIcon_1.default, {className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', marginRight: "3px", color: 'rgba(0,0,0,0.4)' }}, "person"), 
+                        React.createElement("p", null, "Arthur Gron is a writer and one of our Medium publication editors."), 
+                        React.createElement("div", {style: { clear: "left" }})), 
+                    React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
+                        React.createElement(FontIcon_1.default, {className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', marginRight: "3px", color: 'rgba(0,0,0,0.4)' }}, "person"), 
+                        React.createElement("p", null, "Kira McCutcheon is involved with content development, communications, and project development."), 
                         React.createElement("div", {style: { clear: "left" }}))))
         );
     }

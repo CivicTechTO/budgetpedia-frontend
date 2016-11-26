@@ -3,6 +3,7 @@
 import * as React from 'react'
 import {Card, CardTitle, CardText} from 'material-ui/Card'
 var { Component } = React
+import FontIcon from 'material-ui/FontIcon'
 
 class JoinUs extends Component<any, any> {
     render() {
@@ -122,14 +123,39 @@ Or just email us your interests and we'll take it from there.
 <CardText>
 <h3>Who</h3>
 <p>
-    These are just a few of the people involved in Budgetpedia.  If you've got
-    questions, or want to know more, please reach out to one of us.
+    These are just a few of the people involved in Budgetpedia (alphabetical).  If you've got
+    questions, or want to know more, please reach out to one of us at <a target="_blank" href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a> .
 </p>
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-<img src="./public/avatars/HenrikHeadshotSquare.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
-<p>Henrik Bechmann is the project lead and lead developer. <a href="mailto:henrik@budgetpedia.ca" target="_blank">henrik@budgetpedia.ca</a></p>
-<div style={{clear:"left"}} ></div>
+    <img src="./public/avatars/HenrikHeadshotSquare.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <p>Henrik Bechmann is the project lead and lead developer.</p>
+    <div style={{clear:"left"}} ></div>
 </div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/lindadow.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <p>Lindamarleny Dow is the project's communications lead.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/chrisgraham.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <p>Christopher Graham is involved with research and project development.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <p>Arthur Gron is a writer and one of our Medium publication editors.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <p>Kira McCutcheon is involved with content development, communications, and project development.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
 </CardText>
 </Card>
 </div>
