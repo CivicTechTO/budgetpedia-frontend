@@ -5,12 +5,12 @@ var { Component } = React;
 class About extends Component {
     render() {
         return React.createElement("div", null, 
-            React.createElement(Card_1.Card, null, 
-                React.createElement(Card_1.CardText, null, 
+            React.createElement(Card_1.Card, {initiallyExpanded: true}, 
+                React.createElement(Card_1.CardTitle, {title: "Teams", actAsExpander: true, showExpandableButton: true}), 
+                React.createElement(Card_1.CardText, {expandable: true}, 
                     "For a list of our teams and some of the people involved, see ", 
                     React.createElement("a", {href: "./joinus"}, "Our Teams"), 
-                    ".")
-            ), 
+                    ".")), 
             React.createElement(Card_1.Card, {initiallyExpanded: true}, 
                 React.createElement(Card_1.CardTitle, {title: "1. The Start", actAsExpander: true, showExpandableButton: true}), 
                 React.createElement(Card_1.CardText, {expandable: true}, 

@@ -19,7 +19,7 @@ let routedata = [
     { path: "*", component: nomatch_1.default },
 ];
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_1.Route, {key: 'coreroute' + index, path: item.path, component: item.component})));
-let routes = (React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
+let routes = (React.createElement(react_router_1.Router, {onUpdate: () => window.scrollTo(0, 0), history: react_router_1.browserHistory}, 
     React.createElement(react_router_1.Route, {path: "/", component: app_1.default}, 
         React.createElement(react_router_1.IndexRoute, {component: hometiles_1.default}), 
         approutes_1.default, 

@@ -133,6 +133,12 @@ Or just email us your interests and we'll take it from there.
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/kejobuchanan.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <p>Kejo Buchanan is with our advisory board, and an expert at resource and information structures and access.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/lindadow.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
     <p>Lindamarleny Dow is the project's communications lead.</p>
     <div style={{clear:"left"}} ></div>

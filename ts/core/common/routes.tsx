@@ -37,7 +37,7 @@ let coreroutes = routedata.map((item, index) => (
 // TODO: see https://github.com/reactjs/react-router-redux
 //    for enhanced history link
 let routes = (
-    <Router history={ browserHistory }>
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={ browserHistory }>
         <Route path="/" component={ App } >
             <IndexRoute component={ HomeTiles } />
             {approutes}

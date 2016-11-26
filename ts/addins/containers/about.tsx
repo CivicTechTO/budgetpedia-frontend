@@ -5,12 +5,17 @@ var { Component } = React
 
 class About extends Component<any, any> {
     render() { return <div>
-    <Card>
-    <CardText>
-    For a list of our teams and some of the people involved, see <a href="./joinus">Our Teams</a>.
-    </CardText>
-    </Card>
-    <Card initiallyExpanded>
+<Card initiallyExpanded>
+<CardTitle 
+    title = "Teams"
+    actAsExpander={true}
+    showExpandableButton={true}
+/>
+<CardText expandable>
+For a list of our teams and some of the people involved, see <a href="./joinus">Our Teams</a>.
+</CardText>
+</Card>
+<Card initiallyExpanded>
 <CardTitle 
     title = "1. The Start"
     actAsExpander={true}
