@@ -34,6 +34,7 @@ class AppTile extends React.Component {
             backgroundColor: 'white',
             border: '2px solid silver',
             borderRadius: '8px',
+            cursor: 'pointer',
         }, onTouchTap: tile.transitionTo, title: this.props.content.title, subtitle: this.props.content.subtitle, cols: this.props.content.cols || 1}, 
             React.createElement("div", {style: wrapperstyle}, 
                 React.createElement("div", {style: { position: "absolute", top: 3, left: 3, color: "silver", fontStyle: "italic", fontSize: "smaller" }}, this.props.content.category), 

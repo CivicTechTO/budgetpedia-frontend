@@ -55,6 +55,7 @@ export class AppTile extends React.Component<any, any> {
                         backgroundColor:'white',
                         border:'2px solid silver',
                         borderRadius: '8px',
+                        cursor:'pointer',
                     }
                 }
                 onTouchTap={ tile.transitionTo }
