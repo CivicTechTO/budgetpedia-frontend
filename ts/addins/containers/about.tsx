@@ -14,6 +14,9 @@ class About extends Component<any, any> {
 <CardText expandable>
 For a list of our teams and some of the people involved, see <a href="./joinus">Our Teams</a>.
 </CardText>
+<CardText>
+For some more background, see the <a target="_blank" href="https://docs.google.com/presentation/d/1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY">slide deck</a> that was used for out launch Nov 29, 016.
+</CardText>
 </Card>
 <Card initiallyExpanded>
 <CardTitle 
