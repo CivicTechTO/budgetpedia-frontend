@@ -112,6 +112,10 @@ class Teams extends Component {
                     React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
                         React.createElement(FontIcon_1.default, {className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', marginRight: "3px", color: 'rgba(0,0,0,0.4)' }}, "person"), 
                         React.createElement("p", null, "Kira McCutcheon is involved with content development, communications, and project development."), 
+                        React.createElement("div", {style: { clear: "left" }})), 
+                    React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
+                        React.createElement(FontIcon_1.default, {className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', marginRight: "3px", color: 'rgba(0,0,0,0.4)' }}, "person"), 
+                        React.createElement("p", null, "Jim Rootham is a computer scientist, and has taken on the challenge of reviewing the current codebase to prepare for the next development phase."), 
                         React.createElement("div", {style: { clear: "left" }}))))
         );
     }

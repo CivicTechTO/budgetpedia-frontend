@@ -162,6 +162,12 @@ Or just email us your interests and we'll take it from there.
     <div style={{clear:"left"}} ></div>
 </div>
 
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <p>Jim Rootham is a computer scientist, and has taken on the challenge of reviewing the current codebase to prepare for the next development phase.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
 </CardText>
 </Card>
 </div>
