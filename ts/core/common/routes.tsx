@@ -6,7 +6,8 @@
 import * as React from 'react'
 
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-
+let ReactGA = require('react-ga')
+ReactGA.initialize('UA-4105209-11')
 import App from './app'
 
 // TODO: isolate hometiles as plugin
@@ -20,6 +21,13 @@ import UserProfile from '../containers/userprofile'
 import NoMatch  from '../containers/nomatch'
 
 import approutes from '../../addins/approutes'
+
+let logPageView = () => {
+    if (window.location.hostname == 'budgetpedia.ca') {
+        ReactGA.set({ page: window.location.pathname });
+        ReactGA.pageview(window.location.pathname);
+    }
+}
 
 let routedata = [
 
@@ -37,7 +45,12 @@ let coreroutes = routedata.map((item, index) => (
 // TODO: see https://github.com/reactjs/react-router-redux
 //    for enhanced history link
 let routes = (
-    <Router onUpdate={() => window.scrollTo(0, 0)} history={ browserHistory }>
+    <Router onUpdate={ () => 
+        { 
+            window.scrollTo(0, 0)
+            logPageView()
+        }
+    } history={ browserHistory }>
         <Route path="/" component={ App } >
             <IndexRoute component={ HomeTiles } />
             {approutes}
