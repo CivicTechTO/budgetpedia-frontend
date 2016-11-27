@@ -9,7 +9,7 @@ class About extends Component {
                 React.createElement(Card_1.CardTitle, {title: "Teams", actAsExpander: true, showExpandableButton: true}), 
                 React.createElement(Card_1.CardText, {expandable: true}, 
                     "For a list of our teams and some of the people involved, see ", 
-                    React.createElement("a", {href: "./joinus"}, "Our Teams"), 
+                    React.createElement("a", {href: "./teams"}, "Our Teams"), 
                     "."), 
                 React.createElement(Card_1.CardText, null, 
                     "For some more background, see the ", 

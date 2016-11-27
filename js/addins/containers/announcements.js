@@ -31,7 +31,7 @@ class Announcements extends Component {
                             React.createElement("p", null, "Additional meetings may be scheduled. This is where Budgetpedia was born and raised to its current early state." + ' ' + "It's also where a lot of the brainstorming, development and creative" + ' ' + "processes happen." + ' ' + "Anyone with an interest in this project is welcome.  No coding or" + ' ' + "technical skills required!"), 
                             React.createElement("p", null, 
                                 "For more details, check out the ", 
-                                React.createElement("a", {href: "joinus"}, "Join Us!"), 
+                                React.createElement("a", {href: "./teams"}, "Teams"), 
                                 " page" + ' ' + "of this website, or the ", 
                                 React.createElement("a", {target: "_blank", href: "http://www.civictech.ca"}, "Civic Tech website home Page"), 
                                 ".")))), 

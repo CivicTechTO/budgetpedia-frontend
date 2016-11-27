@@ -166,7 +166,7 @@ let hometiles: [Object] = [
         },
         index: 7,
         tier:'secondary',
-        route: 'joinus',
+        route: 'teams',
     },
 /*    {
         id: 1,

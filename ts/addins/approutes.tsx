@@ -15,7 +15,7 @@ import Communities from './containers/communities'
 import SocialMedia from './containers/socialmedia'
 import Newsletter from './containers/newsletter'
 import Resources from './containers/resources'
-import JoinUs from './containers/joinus'
+import Teams from './containers/teams'
 import Stories from './containers/stories'
 import Demos from './containers/demos'
 import Announcements from './containers/announcements'
@@ -30,7 +30,7 @@ let routedata = [
     { path: "socialmedia", component: SocialMedia },
     { path: "newsletter", component: Newsletter },
     { path: "resources", component: Resources },
-    { path: "joinus", component: JoinUs },
+    { path: "teams", component: Teams },
     { path: "stories", component: Stories },
     { path: "demos", component: Demos },
     { path: "announcements", component: Announcements },

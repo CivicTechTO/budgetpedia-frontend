@@ -9,7 +9,7 @@ const communities_1 = require('./containers/communities');
 const socialmedia_1 = require('./containers/socialmedia');
 const newsletter_1 = require('./containers/newsletter');
 const resources_1 = require('./containers/resources');
-const joinus_1 = require('./containers/joinus');
+const teams_1 = require('./containers/teams');
 const stories_1 = require('./containers/stories');
 const demos_1 = require('./containers/demos');
 const announcements_1 = require('./containers/announcements');
@@ -23,7 +23,7 @@ let routedata = [
     { path: "socialmedia", component: socialmedia_1.default },
     { path: "newsletter", component: newsletter_1.default },
     { path: "resources", component: resources_1.default },
-    { path: "joinus", component: joinus_1.default },
+    { path: "teams", component: teams_1.default },
     { path: "stories", component: stories_1.default },
     { path: "demos", component: demos_1.default },
     { path: "announcements", component: announcements_1.default },

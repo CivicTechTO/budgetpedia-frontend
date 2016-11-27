@@ -5,7 +5,7 @@ import {Card, CardTitle, CardText} from 'material-ui/Card'
 var { Component } = React
 import FontIcon from 'material-ui/FontIcon'
 
-class JoinUs extends Component<any, any> {
+class Teams extends Component<any, any> {
     render() {
         return <div>
         <Card>
@@ -168,5 +168,5 @@ Or just email us your interests and we'll take it from there.
     }
 }
 
-export default JoinUs
+export default Teams
 

@@ -38,7 +38,7 @@ class Announcements extends Component<any, any> {
         processes happen.
         Anyone with an interest in this project is welcome.  No coding or
         technical skills required!</p>
-        <p>For more details, check out the <a href="joinus">Join Us!</a> page
+        <p>For more details, check out the <a href="./teams">Teams</a> page
         of this website, or the <a target = "_blank" href="http://www.civictech.ca">Civic Tech website home Page</a>.</p>
     </li>
 </ul>
