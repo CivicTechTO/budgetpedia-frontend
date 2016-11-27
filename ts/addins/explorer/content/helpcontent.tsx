@@ -14,6 +14,9 @@ let content =
     The best way to become familiar with the explorer is to <span style={{fontStyle:'italic'}}>play with it</span> (experiment).
     Once in a while, review the lists below. Click on any title below for details.
     </CardText>
+    <CardText>
+    For some explanatory screencasts, see our <a target="_blank" href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig">YouTube channel</a>.
+    </CardText>
 </Card>
 <Card>
     <CardTitle

@@ -1608,9 +1608,24 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             type="button"
             onTouchTap = { this.handleDialogOpen } 
             labelPosition="before"
-            icon = {<FontIcon 
-                style={{color:'rgba(0,0,0,0.5'}}
-                className="material-icons">help_outline</FontIcon>}
+            icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
+                className="material-icons">help_outline</FontIcon>
+            }
+            />
+        :null
+
+    let showvideos = (branchDeclaration.showOptions)
+        ?<RaisedButton
+            label = "Videos"
+            style={{margin:'3px 6px 0 0'}}
+            type="button"
+            onTouchTap = { () =>{
+                window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig','_blank')
+            } } 
+            labelPosition="before"
+            icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
+                className="material-icons">videocam</FontIcon>
+            }
             />
         :null
 
@@ -1668,6 +1683,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         { technotes }
 
         { showhelp }
+
+        { showvideos }
 
         </div>:null}
 

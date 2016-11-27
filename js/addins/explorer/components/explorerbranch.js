@@ -982,6 +982,11 @@ class ExplorerBranch extends Component {
         let showhelp = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, {label: "Help", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, {style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons"}, "help_outline")})
             : null;
+        let showvideos = (branchDeclaration.showOptions)
+            ? React.createElement(RaisedButton_1.default, {label: "Videos", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
+                window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig', '_blank');
+            }, labelPosition: "before", icon: React.createElement(FontIcon_1.default, {style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons"}, "videocam")})
+            : null;
         let search = (branchDeclaration.showOptions) ?
             React.createElement(RaisedButton_1.default, {label: "Find", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, {style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons"}, "search")})
             : null;
@@ -1003,7 +1008,8 @@ class ExplorerBranch extends Component {
                         search, 
                         shareurl, 
                         technotes, 
-                        showhelp) : null, 
+                        showhelp, 
+                        showvideos) : null, 
                     governmentselection, 
                     showcontrols), 
                 React.createElement("div", null, 
