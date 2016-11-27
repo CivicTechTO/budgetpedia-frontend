@@ -125,7 +125,6 @@ class Resources extends Component {
                 console.log('response error', response);
             }
         }).then(json => {
-            console.log('json', json);
             this.setState({
                 resources: json
             });
@@ -136,7 +135,6 @@ class Resources extends Component {
     render() {
         this.prepareLists();
         let resources = this.getResources();
-        console.log('lists', this.lists);
         return React.createElement("div", null, 
             this.resourcesintro, 
             resources);

@@ -64,7 +64,7 @@ and ways to move forward. This booklet is a realists musings on a commons projec
 to wrangle public space away from corporate control -  to see it shine as a space inherited 
 and created jointly, that will (hopefully) last for generations to come 
 (<a
-    traget="_blank"
+    target="_blank"
     href="http://www.onthecommons.org/about-commons">www.onthecommons.org/about-commons</a>).</p>
 
 

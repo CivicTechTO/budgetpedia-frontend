@@ -25,7 +25,7 @@ For a list of our teams and some of the people involved, see <a href="./joinus">
 
 <p>The founding mission of the budgetpedia.ca project is to make the Toronto budget more accessible to the people of Toronto, by supporting informed debate about the budget.</p>
 
-<p>The project was fostered by <a target="_blank" href="http://civictech.ca/">Civic Tech Toronto</a>, as part of its weekly <a traget="_blank" href="https://en.wikipedia.org/wiki/Civic_technology">hacknights</a>, beginning in July of 2015. Several people from <a target="_blank" href="http://www.betterbudget.ca/">betterbudget.ca</a>, and others, were convened weekly by <a target="_blank" href="https://www.linkedin.com/in/henrikbechmann">Henrik Bechmann</a>, a software developer and occasional civic activist who had an interest in city budgets. After 16 of these meetings, much more volunteer input, and a formal workshop, a series of guiding principles for the project emerged. These included</p>
+<p>The project was fostered by <a target="_blank" href="http://civictech.ca/">Civic Tech Toronto</a>, as part of its weekly <a target="_blank" href="https://en.wikipedia.org/wiki/Civic_technology">hacknights</a>, beginning in July of 2015. Several people from <a target="_blank" href="http://www.betterbudget.ca/">betterbudget.ca</a>, and others, were convened weekly by <a target="_blank" href="https://www.linkedin.com/in/henrikbechmann">Henrik Bechmann</a>, a software developer and occasional civic activist who had an interest in city budgets. After 16 of these meetings, much more volunteer input, and a formal workshop, a series of guiding principles for the project emerged. These included</p>
 
 <ul>
     <li>use of clear terminology (clarity)</li>

@@ -20,7 +20,6 @@ class Resources extends Component<any, any> {
                 console.log('response error',response)
             }
         }).then( json => {
-            console.log('json',json)
             this.setState({
                 resources:json
             })
@@ -167,7 +166,6 @@ class Resources extends Component<any, any> {
 
         this.prepareLists()
         let resources = this.getResources()
-        console.log('lists',this.lists)
 
         return <div>
             {this.resourcesintro}

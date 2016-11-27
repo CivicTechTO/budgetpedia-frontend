@@ -19,7 +19,7 @@ class About extends Component {
                         "The project was fostered by ", 
                         React.createElement("a", {target: "_blank", href: "http://civictech.ca/"}, "Civic Tech Toronto"), 
                         ", as part of its weekly ", 
-                        React.createElement("a", {traget: "_blank", href: "https://en.wikipedia.org/wiki/Civic_technology"}, "hacknights"), 
+                        React.createElement("a", {target: "_blank", href: "https://en.wikipedia.org/wiki/Civic_technology"}, "hacknights"), 
                         ", beginning in July of 2015. Several people from ", 
                         React.createElement("a", {target: "_blank", href: "http://www.betterbudget.ca/"}, "betterbudget.ca"), 
                         ", and others, were convened weekly by ", 

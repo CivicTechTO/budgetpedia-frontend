@@ -29,7 +29,7 @@ class Pathways extends Component {
                         " In her new booklet project, ", 
                         React.createElement("a", {target: "_blank", href: "http://www.celos.ca/wiki/uploads/CELOSBooklets/dgpcommons.pdf"}, "\"Dufferin Grove Park as a neighborhood commons, 1993 to 2015\""), 
                         "," + ' ' + "Mason reflects on the Dufferin Park - the faces behind the project and it's trials, successes," + ' ' + "and ways to move forward. This booklet is a realists musings on a commons project. An attempt" + ' ' + "to wrangle public space away from corporate control -  to see it shine as a space inherited" + ' ' + "and created jointly, that will (hopefully) last for generations to come" + ' ' + "(", 
-                        React.createElement("a", {traget: "_blank", href: "http://www.onthecommons.org/about-commons"}, "www.onthecommons.org/about-commons"), 
+                        React.createElement("a", {target: "_blank", href: "http://www.onthecommons.org/about-commons"}, "www.onthecommons.org/about-commons"), 
                         ")."), 
                     React.createElement("p", null, 
                         " From the onset of the project, Mason sets the tone for a cooperative commons, asking" + ' ' + "friends and neighbours - \"", 
