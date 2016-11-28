@@ -127,6 +127,12 @@ Or just email us your interests and we'll take it from there.
     questions, or want to know more, please reach out to one of us at <a target="_blank" href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a> .
 </p>
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <p>Don Altman is with our advisory board, and has just retired from being the Manager of Corporate Financial Strategies at the City of Toronto.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/HenrikHeadshotSquare.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
     <p>Henrik Bechmann is the project lead and lead developer.</p>
     <div style={{clear:"left"}} ></div>
