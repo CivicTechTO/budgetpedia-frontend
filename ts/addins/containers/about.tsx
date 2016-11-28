@@ -7,7 +7,7 @@ class About extends Component<any, any> {
     render() { return <div>
 <Card initiallyExpanded>
 <CardTitle 
-    title = "Teams"
+    title = "About Us"
     actAsExpander={true}
     showExpandableButton={true}
 />
