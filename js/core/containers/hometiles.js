@@ -100,7 +100,13 @@ class HomeTilesClass extends React.Component {
                                     React.createElement("img", {style: { height: "16px", verticalAlign: "middle" }, src: "./public/icons/g-logo.png"})
                                 ), 
                                 " For" + ' ' + "technical discussions: ", 
-                                React.createElement("a", {href: "http://groups.google.com/d/forum/budgetpedia", target: "_blank"}, "our Google forum"))), 
+                                React.createElement("a", {href: "http://groups.google.com/d/forum/budgetpedia", target: "_blank"}, "our Google forum")), 
+                            React.createElement("li", null, 
+                                React.createElement("a", {href: "https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig", target: "_blank"}, 
+                                    React.createElement("img", {style: { height: "16px", verticalAlign: "middle" }, src: "./public/icons/YouTube-icon-full_color.png"})
+                                ), 
+                                " Videos: ", 
+                                React.createElement("a", {href: "https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig", target: "_blank"}, "YouTube"))), 
                         React.createElement("hr", null), 
                         React.createElement("p", null, "Below are tiles leading to more information about the Budgetpedia Project.")))
             ), 
