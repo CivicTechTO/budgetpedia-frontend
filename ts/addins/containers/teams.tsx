@@ -127,49 +127,49 @@ Or just email us your interests and we'll take it from there.
     questions, or want to know more, please reach out to one of us at <a target="_blank" href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a> .
 </p>
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <img src="./public/avatars/donaltman.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Don Altman is with our advisory board, and has just retired from being the Manager of Corporate Financial Strategies at the City of Toronto.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <img src="./public/avatars/HenrikHeadshotSquare.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <img src="./public/avatars/HenrikHeadshotSquare.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Henrik Bechmann is the project lead and lead developer.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <img src="./public/avatars/kejobuchanan.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <img src="./public/avatars/kejobuchanan.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Kejo Buchanan is with our advisory board, and an expert at resource and information structures and access.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <img src="./public/avatars/lindadow.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <img src="./public/avatars/lindadow.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Lindamarleny Dow is the project's communications lead.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <img src="./public/avatars/chrisgraham.png" style = {{borderRadius:"50%",float:"left",height:"40px",marginRight:"3px"}} />
+    <img src="./public/avatars/chrisgraham.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Christopher Graham is involved with research and project development.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',margin:"6px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
     <p>Arthur Gron is a writer and one of our Medium publication editors.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',margin:"6px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
     <p>Kira McCutcheon is involved with content development, communications, and project development.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',marginRight:"3px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
+    <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',margin:"6px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
     <p>Jim Rootham is a computer scientist, and has taken on the challenge of reviewing the current codebase to prepare for the next development phase.</p>
     <div style={{clear:"left"}} ></div>
 </div>
