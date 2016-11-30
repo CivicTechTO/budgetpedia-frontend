@@ -163,6 +163,12 @@ Or just email us your interests and we'll take it from there.
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/robertjarvis.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
+    <p>Robert Jarvis has a background in international management and is involved with our management team.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/kiramccutcheon.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Kira McCutcheon is involved with content development, communications, and project development.</p>
     <div style={{clear:"left"}} ></div>

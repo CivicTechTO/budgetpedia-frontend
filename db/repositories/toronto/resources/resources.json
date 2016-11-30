@@ -509,12 +509,6 @@
             "link":"http://www.socialplanningtoronto.org/"
         },
         {
-            "title":"SPPG City Hall Task Force",
-            "description":"An informal task force about city council deliberations and decision making",
-            "section":"CIVILSOCIETY",
-            "link":"http://publicpolicy.utoronto.ca/cityhalltaskforce/"
-        },
-        {
             "title":"Social Planning Council updates",
             "description":"",
             "section":"CIVILSOCIETY",
@@ -525,6 +519,24 @@
             "description":"",
             "section":"CIVILSOCIETY",
             "link":"http://www.socialplanningtoronto.org/c2c"
+        },
+        {
+            "title":"SPPG City Hall Task Force",
+            "description":"An informal task force about city council deliberations and decision making",
+            "section":"CIVILSOCIETY",
+            "link":"http://publicpolicy.utoronto.ca/cityhalltaskforce/"
+        },
+        {
+            "title":"betterbudget.ca",
+            "description":"support for better engagement in Toronto's budget",
+            "section":"CIVILSOCIETY",
+            "link":"http://betterbudget.ca"
+        },
+        {
+            "title":"Better Budget Report",
+            "description":"Review of Toronto's 2015 budget process, with recommendations",
+            "section":"CIVILSOCIETY",
+            "link":"http://www.betterbudget.ca/wp-content/uploads/2015/05/Review-of-the-Budget-Process-2015.pdf"
         },
         {
             "title":"Public Commons",
