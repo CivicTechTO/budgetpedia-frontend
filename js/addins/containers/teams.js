@@ -114,12 +114,16 @@ class Teams extends Component {
                         React.createElement("p", null, "Arthur Gron is a writer and one of our Medium publication editors."), 
                         React.createElement("div", {style: { clear: "left" }})), 
                     React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
-                        React.createElement(FontIcon_1.default, {className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', margin: "6px", color: 'rgba(0,0,0,0.4)' }}, "person"), 
+                        React.createElement("img", {src: "./public/avatars/kiramccutcheon.png", style: { borderRadius: "50%", float: "left", height: "40px", margin: "6px" }}), 
                         React.createElement("p", null, "Kira McCutcheon is involved with content development, communications, and project development."), 
                         React.createElement("div", {style: { clear: "left" }})), 
                     React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
                         React.createElement(FontIcon_1.default, {className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', margin: "6px", color: 'rgba(0,0,0,0.4)' }}, "person"), 
                         React.createElement("p", null, "Jim Rootham is a computer scientist, and has taken on the challenge of reviewing the current codebase to prepare for the next development phase."), 
+                        React.createElement("div", {style: { clear: "left" }})), 
+                    React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
+                        React.createElement("img", {src: "./public/avatars/asherzafar.jpg", style: { borderRadius: "50%", float: "left", height: "40px", margin: "6px" }}), 
+                        React.createElement("p", null, "Asher Zafar is an economist, strategy and analytics professional, currently helping us with data analysis."), 
                         React.createElement("div", {style: { clear: "left" }}))))
         );
     }
