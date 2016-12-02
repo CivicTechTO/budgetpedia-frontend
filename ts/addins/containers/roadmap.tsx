@@ -100,8 +100,10 @@ class Roadmap extends Component<any, State> {
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11968"> video</a>)
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11065">November 18</a> (<a
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11065"> video</a>)</li>
-                <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=966">Executive Committee</a
-                    >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10995">December 1</a></li>
+                <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=966">Executive Committee</a>
+                        : <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10995">December 1</a> (<a
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=10995"> video</a>)
+                    </li>
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961">City Council</a
                     >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10878">December 13 & 14</a></li>
             </ul>
