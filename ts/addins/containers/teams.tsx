@@ -115,8 +115,8 @@ Or just email us your interests and we'll take it from there.
             <li>Funding, including grants and possibly a service-for-fee plan</li>
         </ul>
     </li>
-    <li><strong>Advisory Board</strong><br/>
-        <p>We're working on organizing an advisory board to help guide the project, and develop connections among user groups.</p>
+    <li><strong>Advisory Group</strong><br/>
+        <p>We're working on organizing an advisory group to help guide the project, and develop connections among user groups.</p>
     </li>
 </ul>
 </CardText>
@@ -128,7 +128,7 @@ Or just email us your interests and we'll take it from there.
 </p>
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/donaltman.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Don Altman is with our advisory board, and has just retired from being the Manager of Corporate Financial Strategies at the City of Toronto.</p>
+    <p>Don Altman is with our advisory group, and has just retired from being the Manager of Corporate Financial Strategies at the City of Toronto.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
@@ -140,7 +140,7 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/kejobuchanan.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Kejo Buchanan is with our advisory board, and an expert at resource and information structures and access.</p>
+    <p>Kejo Buchanan is with our advisory group, and an expert at resource and information structures and access.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
