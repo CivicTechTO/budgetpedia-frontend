@@ -1125,7 +1125,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             let url = json.data.url
 
-            let toastrComponent = ( <div style={{width:"300px"}}>
+            let toastrComponent = () =>  ( <div style={{width:"300px"}}>
                     <p style={{width:"290px"}}>To share the selected row of charts, copy the url below, and send it to a friend.</p>
                     <input 
                         ref = {node => {
