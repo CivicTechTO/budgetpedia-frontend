@@ -633,7 +633,6 @@ class ExplorerBranch extends Component {
                     icon: (React.createElement(FontIcon_1.default, {className: "material-icons"}, "share")),
                     component: toastrComponent
                 };
-                console.log('toastroptions', toastrOptions, react_redux_toastr_1.toastr);
                 react_redux_toastr_1.toastr.message('Share charts', toastrOptions);
             }).catch(error => {
                 console.log('error getting bitly', error);

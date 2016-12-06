@@ -1146,7 +1146,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
                 component: toastrComponent
             }
-            console.log('toastroptions',toastrOptions,toastr)
             toastr.message('Share charts',toastrOptions)
         }).catch(error => {
             console.log('error getting bitly',error)
