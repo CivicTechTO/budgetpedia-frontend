@@ -134,7 +134,7 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/HenrikHeadshotSquare.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Henrik Bechmann is the project lead and lead developer.</p>
+    <p>Henrik Bechmann is the project lead and co-lead of our software team.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
@@ -145,14 +145,8 @@ Or just email us your interests and we'll take it from there.
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
-    <img src="./public/avatars/lindadow.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Lindamarleny Dow is the project's communications lead.</p>
-    <div style={{clear:"left"}} ></div>
-</div>
-
-<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/chrisgraham.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Christopher Graham is involved with research and project development.</p>
+    <p>Christopher Graham is our product champion, and is involved with research and project development.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
@@ -164,25 +158,33 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/robertjarvis.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Robert Jarvis has a background in international management and is involved with our management team.</p>
+    <p>Robert Jarvis has a background in international management and is co-lead of our management team.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/kiramccutcheon.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Kira McCutcheon is involved with content development, communications, and project development.</p>
+    <p>Kira McCutcheon is involved with content development, communications, and project development, and is co-lead of our management team.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',margin:"6px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
-    <p>Jim Rootham is a computer scientist, and has taken on the challenge of reviewing the current codebase to prepare for the next development phase.</p>
+    <p>Jim Rootham is a computer scientist, has taken on the challenge of reviewing the current codebase to prepare for the next development phase, and is co-lead of our software team.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/asherzafar.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Asher Zafar is an economist, strategy and analytics professional, currently helping us with data analysis.</p>
+    <p>Asher Zafar is an economist, strategy and analytics professional, currently helping us with data analysis, and is with our advisory group.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<h3>Past Helpers</h3>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/lindadow.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
+    <p>Lindamarleny Dow was the project's communications lead.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
