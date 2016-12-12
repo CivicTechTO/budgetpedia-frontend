@@ -877,7 +877,7 @@ class ExplorerBranch extends Component {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
                 case "STRUCTURAL":
-                    return [React.createElement(MenuItem_1.default, {key: 1, value: 'SUMMARY', primaryText: "Summary PDF reports 2003 - 2016"}),
+                    return [React.createElement(MenuItem_1.default, {key: 1, value: 'SUMMARY', primaryText: "Summary PDF reports 2003 - 2017"}),
                         React.createElement(MenuItem_1.default, {key: 2, value: 'PBFT', primaryText: "Detailed open data files 2011 - 2016"}),
                         React.createElement(MenuItem_1.default, {key: 3, disabled: true, value: 'VARIANCE', primaryText: "PDF Variance Reports"})];
                 case 'ACTUALEXPENSES':
