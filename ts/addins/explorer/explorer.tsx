@@ -7,6 +7,7 @@
         such as when staff aspect is selected and max depth is reached
     BUG: navigating to dialog help box loses bar selection
     TODO: 
+    - change terms Expenditures and Receipts to Cost Elements and Revenue Elements
     - scroll down to new branch after hitting + sign
     - do systematic check for error handling requirements; protect against 
         unexpected data (extrenal)
