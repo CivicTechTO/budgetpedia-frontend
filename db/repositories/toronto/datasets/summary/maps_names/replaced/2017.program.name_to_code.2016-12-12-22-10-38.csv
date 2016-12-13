@@ -1,4 +1,3 @@
-_COLUMNS_,"Category:NAME,Category:CODE,Note:DESCRIPTION,Count:VALUE",,
 311 Toronto,311SERVICE,,2
 Affordable Housing Office,AFFHOUSING,,2
 Arena Boards of Management,ARENAS,,2
@@ -26,20 +25,16 @@ Mayor's Office,MAYOR,,2
 Municipal Licensing & Standards,LICENCING,,2
 Non-Program Expenditures,CORPEXPENDITURES,,2
 Non-Program Revenues,CORPREVENUES,,2
-Office of the CFO,CFO,,
 Office of the Chief Financial Officer,CFO,,2
 Office of the Lobbyist Registrar,LOBBYREG,,2
 Office of the Ombudsman,OMBUDSMAN,,2
 Office of the Treasurer,TREASURER,,2
-Parking Tag Enforcement,PARKINGTAGS,,
 "Parks, Forestry & Recreation",PARKS,,2
 "Policy, Planning, Finance & Administration",POLICYADMIN,,2
 "Shelter, Support & Housing Administration",SHELTERADMIN,,2
 "Social Development, Finance & Administration",SOCIALDEV,,2
 Solid Waste Management Services,SOLIDWASTE,,2
 Special Levy for Scarborough Subway,SUBWAYLEVY,,1
-TTC - Conventional,TTCCONV,,
-TTC - Wheel Trans,TTCWHEEL,,
 Theatres,THEATRES,,2
 Toronto & Region Conservation Authority,REGIONCONSERV,,2
 Toronto Building,BUILDINGS,,2
