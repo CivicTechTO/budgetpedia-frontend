@@ -51,6 +51,9 @@ Or just email us your interests and we'll take it from there.
             <li>Visualization</li>
         </ul>
     </li>
+    <li><strong>UX (user experience)</strong>
+        <p>The UX team conducts user research, and develops ux designs which pleases users, and motivates them to return to our site for more.</p>
+    </li>
     <li><strong>Web Development</strong>
         <p>
           Budgetpedia is an open source project, and we welcome contributions.
