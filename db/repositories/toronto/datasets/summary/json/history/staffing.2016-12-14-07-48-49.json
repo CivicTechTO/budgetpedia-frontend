@@ -1239,6 +1239,6 @@
         }
     },
     "Messages": {
-        "WARNING": "Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years. 2017 staffing figures currently include both operating and capital positions. We will replace those with operating-only positions once the City releases that data."
+        "WARNING": "Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years. 2017 staffing figures currently include both operating and capital positions. We will replace that with operating-only positions once the City releases that data."
     }
 }
