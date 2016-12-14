@@ -139,6 +139,12 @@ Or just email us your interests and we'll take it from there.
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/alexbellet.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
+    <p>Alexis Bellet is a web developer with a background in digital marketing and is co-lead of our communications team.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/kejobuchanan.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Kejo Buchanan is with our advisory group, and an expert at resource and information structures and access.</p>
     <div style={{clear:"left"}} ></div>
@@ -146,13 +152,13 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/chrisgraham.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Christopher Graham is our product champion, and is involved with research and project development.</p>
+    <p>Christopher Graham is our product champion, lead of our UX team, and is involved with research and project development.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <FontIcon className = "material-icons" style = {{borderRadius:"50%",float:"left",height:"40px",fontSize:'40px',margin:"6px",color:'rgba(0,0,0,0.4)'}}>person</FontIcon>
-    <p>Arthur Gron is a writer and one of our Medium publication editors.</p>
+    <p>Arthur Gron is a writer, our blogger-in-chief and co-lead of our communications team.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
@@ -164,7 +170,7 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/amadoukebe.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Amadou Kebe is a policy and communications advisor who is involved with our communications team.</p>
+    <p>Amadou Kebe is a policy and communications advisor and is co-lead of our communications team.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
