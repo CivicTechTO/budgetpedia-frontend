@@ -143,6 +143,11 @@ class HomeTilesClass extends React.Component<any, any> {
                     <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/YouTube-icon-full_color.png"/></a> Videos: <a
                      href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
                     target="_blank">YouTube</a></li>
+                <li><a href="http://budgetpedia.blogspot.ca/"
+                    target="_blank">
+                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/blogspot.jpeg"/></a> Blog: <a
+                     href="http://budgetpedia.blogspot.ca/"
+                    target="_blank">Blogspot</a></li>
                 </ul>
                 <hr />
                 <p>Below are tiles leading to more information about the Budgetpedia Project.</p>
