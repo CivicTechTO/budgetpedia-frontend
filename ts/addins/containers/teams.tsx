@@ -173,7 +173,7 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/meghanhellstern.jpg" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Meghan Hellstern is a human-centered designer and communicator, and is a member of our advisory group helping us with organizational development.</p>
+    <p>Meghan Hellstern is a human-centered designer and communicator, and is a member of our advisory group helping with organizational development.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 

@@ -122,7 +122,7 @@ class Teams extends Component {
                         React.createElement("div", {style: { clear: "left" }})), 
                     React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
                         React.createElement("img", {src: "./public/avatars/meghanhellstern.jpg", style: { borderRadius: "50%", float: "left", height: "40px", margin: "6px" }}), 
-                        React.createElement("p", null, "Meghan Hellstern is a human-centered designer and communicator, and is a member of our advisory group helping us with organizational development."), 
+                        React.createElement("p", null, "Meghan Hellstern is a human-centered designer and communicator, and is a member of our advisory group helping with organizational development."), 
                         React.createElement("div", {style: { clear: "left" }})), 
                     React.createElement("div", {style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" }}, 
                         React.createElement("img", {src: "./public/avatars/robertjarvis.jpg", style: { borderRadius: "50%", float: "left", height: "40px", margin: "6px" }}), 
