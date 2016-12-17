@@ -104,8 +104,9 @@ class Roadmap extends Component<any, State> {
                         : <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10995">December 1</a> (<a
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=10995"> video</a>)
                     </li>
-                <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961">City Council</a
-                    >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10878">December 13 & 14</a></li>
+                <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961">City Council</a>
+                    : <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10878">December 13, 14, 15</a> (<a
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=10878">video</a>)</li>
             </ul>
             <h3>Tax supported budgets (eveything else)</h3>
             <ul>
