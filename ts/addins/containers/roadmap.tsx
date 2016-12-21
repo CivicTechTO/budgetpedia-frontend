@@ -97,12 +97,12 @@ class Roadmap extends Component<any, State> {
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=1022">
                     Budget Committee</a>
                     : <a target = "_blank" href = "http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11968">November 4</a> (<a 
-                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11968"> video</a>)
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11968">video</a>)
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11065">November 18</a> (<a
-                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11065"> video</a>)</li>
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11065">video</a>)</li>
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=966">Executive Committee</a>
                         : <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10995">December 1</a> (<a
-                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=10995"> video</a>)
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=10995">video</a>)
                     </li>
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961">City Council</a>
                     : <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10878">December 13, 14, 15</a> (<a
@@ -113,8 +113,9 @@ class Roadmap extends Component<any, State> {
 
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=1022">Budget Committee</a
                     >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11948">December 6</a> (<a 
-                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11948"> video</a>)
-                    , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11969">December 16, 19 & 20, possibly 21</a>
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11948">video</a>)
+                    , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11969">December 16, 19 & 20</a> (<a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11969">video</a>)
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11815">January 5, 9 & 10</a>
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11816">January 12</a>
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11817">January 24</a></li>
