@@ -1,12 +1,12 @@
 'use strict';
-const redux_1 = require('redux');
-const flux_standard_action_1 = require('flux-standard-action');
-const redux_actions_1 = require('redux-actions');
-const react_router_redux_1 = require('react-router-redux');
-const react_redux_toastr_1 = require('react-redux-toastr');
-const Actions = require('../actions/actions');
+const redux_1 = require("redux");
+const flux_standard_action_1 = require("flux-standard-action");
+const redux_actions_1 = require("redux-actions");
+const react_router_redux_1 = require("react-router-redux");
+const react_redux_toastr_1 = require("react-redux-toastr");
+const Actions = require("../actions/actions");
 const initialstate_1 = require("../../local/initialstate");
-const reducers_1 = require('../../addins/explorer/reducers');
+const reducers_1 = require("../../addins/explorer/reducers");
 let theme = (state = initialstate_1.default.theme) => {
     return state;
 };

@@ -1,5 +1,5 @@
 "use strict";
-const setviewpointdata_1 = require('./databaseapi/setviewpointdata');
+const setviewpointdata_1 = require("./databaseapi/setviewpointdata");
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 class Database {
     constructor() {

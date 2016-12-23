@@ -30,7 +30,7 @@ interface Roadmap {
 }
 
 interface State {
-    roadmap:Roadmap
+    roadmap:any // Roadmap
 }
 
 class Roadmap extends Component<any, State> {

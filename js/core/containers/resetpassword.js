@@ -1,5 +1,5 @@
 "use strict";
-const React = require('react');
+const React = require("react");
 var { Component } = React;
 class ResetPassword extends Component {
     render() {

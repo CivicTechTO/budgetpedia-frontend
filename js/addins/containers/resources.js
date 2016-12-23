@@ -1,7 +1,7 @@
 "use strict";
-const React = require('react');
+const React = require("react");
 var { Component } = React;
-const Card_1 = require('material-ui/Card');
+const Card_1 = require("material-ui/Card");
 let moment = require('moment');
 let validurl = require('valid-url');
 class Resources extends Component {
@@ -10,14 +10,13 @@ class Resources extends Component {
         this.state = {
             resources: null
         };
-        this.resourcesintro = React.createElement("div", null, 
-            React.createElement(Card_1.Card, null, 
-                React.createElement(Card_1.CardTitle, {title: "Budget Resources", subtitle: "A starter kit of external links"}), 
-                React.createElement(Card_1.CardText, null, 
-                    "We've assembled some web links to get you started. Click on a class of links below, to see details." + ' ' + "If you find something that should be added to this list, let us know at ", 
-                    React.createElement("a", {target: "_blank", href: "mailto:mail@budgetpedia.ca"}, "mail@budgetpedia.ca"), 
-                    "."))
-        );
+        this.resourcesintro = React.createElement("div", null,
+            React.createElement(Card_1.Card, null,
+                React.createElement(Card_1.CardTitle, { title: "Budget Resources", subtitle: "A starter kit of external links" }),
+                React.createElement(Card_1.CardText, null,
+                    "We've assembled some web links to get you started. Click on a class of links below, to see details." + " " + "If you find something that should be added to this list, let us know at ",
+                    React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
+                    ".")));
         this.lists = null;
         this.prepareLists = () => {
             if (!this.state.resources)
@@ -51,26 +50,26 @@ class Resources extends Component {
                 else {
                     displaylink = link;
                 }
-                return React.createElement("div", {key: index, style: {
-                    border: "1px dashed silver",
-                    margin: "0 3px 8px 3px",
-                    padding: "3px",
-                    borderRadius: "8px",
-                }}, 
-                    React.createElement("div", null, 
-                        React.createElement("em", null, "Title:"), 
-                        " ", 
-                        title), 
-                    description ? React.createElement("div", null, 
-                        React.createElement("em", null, "Description:"), 
-                        " ", 
-                        description, 
-                        " ") : null, 
+                return React.createElement("div", { key: index, style: {
+                        border: "1px dashed silver",
+                        margin: "0 3px 8px 3px",
+                        padding: "3px",
+                        borderRadius: "8px",
+                    } },
+                    React.createElement("div", null,
+                        React.createElement("em", null, "Title:"),
+                        " ",
+                        title),
+                    description ? React.createElement("div", null,
+                        React.createElement("em", null, "Description:"),
+                        " ",
+                        description,
+                        " ") : null,
                     React.createElement("div", null, displaylink ?
-                        React.createElement("span", null, 
-                            React.createElement("em", null, "See"), 
-                            " ", 
-                            React.createElement("a", {target: "_blank", href: displaylink}, "web page")) :
+                        React.createElement("span", null,
+                            React.createElement("em", null, "See"),
+                            " ",
+                            React.createElement("a", { target: "_blank", href: displaylink }, "web page")) :
                         React.createElement("em", null, "Link not available")));
             });
             return linkslist;
@@ -88,23 +87,22 @@ class Resources extends Component {
                         if (!isvalidurl) {
                             console.log('invalidurl for section', section);
                         }
-                        link = React.createElement("span", null, 
-                            "See ", 
-                            React.createElement("a", {target: "_blank", href: section.link}, "website"));
+                        link = React.createElement("span", null,
+                            "See ",
+                            React.createElement("a", { target: "_blank", href: section.link }, "website"));
                     }
                     if (section.note) {
                         note = section.note + '. ';
                     }
-                    intro = React.createElement(Card_1.CardText, {expandable: true}, 
-                        React.createElement("p", null, 
-                            note, 
-                            link)
-                    );
+                    intro = React.createElement(Card_1.CardText, { expandable: true },
+                        React.createElement("p", null,
+                            note,
+                            link));
                 }
-                return React.createElement(Card_1.Card, {key: index}, 
-                    React.createElement(Card_1.CardTitle, {actAsExpander: true, showExpandableButton: true, title: section.title, subtitle: section.description || null}), 
-                    intro, 
-                    React.createElement(Card_1.CardText, {expandable: true}, content));
+                return React.createElement(Card_1.Card, { key: index },
+                    React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true, title: section.title, subtitle: section.description || null }),
+                    intro,
+                    React.createElement(Card_1.CardText, { expandable: true }, content));
             });
             return sections;
         };
@@ -135,8 +133,8 @@ class Resources extends Component {
     render() {
         this.prepareLists();
         let resources = this.getResources();
-        return React.createElement("div", null, 
-            this.resourcesintro, 
+        return React.createElement("div", null,
+            this.resourcesintro,
             resources);
     }
 }

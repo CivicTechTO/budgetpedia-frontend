@@ -1,6 +1,6 @@
 'use strict';
-const React = require('react');
-const GridList_1 = require('material-ui/GridList');
+const React = require("react");
+const GridList_1 = require("material-ui/GridList");
 class AppTile extends React.Component {
     constructor(props) {
         super(props);
@@ -10,8 +10,8 @@ class AppTile extends React.Component {
             }
             e.stopPropagation();
             e.preventDefault();
-            var _this = this;
-            _this.props.transitionTo(_this.props.route);
+            var self = this;
+            self.props.transitionTo(self.props.route);
         };
     }
     render() {
@@ -29,18 +29,17 @@ class AppTile extends React.Component {
                 pointerEvens: "none"
             };
         }
-        return (React.createElement(GridList_1.GridTile, {style: {
-            textAlign: "center",
-            backgroundColor: 'white',
-            border: '2px solid silver',
-            borderRadius: '8px',
-            cursor: 'pointer',
-        }, onTouchTap: tile.transitionTo, title: this.props.content.title, subtitle: this.props.content.subtitle, cols: this.props.content.cols || 1}, 
-            React.createElement("div", {style: wrapperstyle}, 
-                React.createElement("div", {style: { position: "absolute", top: 3, left: 3, color: "silver", fontStyle: "italic", fontSize: "smaller" }}, this.props.content.category), 
-                React.createElement("img", {src: this.props.content.image, style: { height: "120px" }}), 
-                React.createElement("div", {style: { position: "abolute", height: "30px", bottom: 0, width: "100%" }}))
-        ));
+        return (React.createElement(GridList_1.GridTile, { style: {
+                textAlign: "center",
+                backgroundColor: 'white',
+                border: '2px solid silver',
+                borderRadius: '8px',
+                cursor: 'pointer',
+            }, onTouchTap: tile.transitionTo, title: this.props.content.title, subtitle: this.props.content.subtitle, cols: this.props.content.cols || 1 },
+            React.createElement("div", { style: wrapperstyle },
+                React.createElement("div", { style: { position: "absolute", top: 3, left: 3, color: "silver", fontStyle: "italic", fontSize: "smaller" } }, this.props.content.category),
+                React.createElement("img", { src: this.props.content.image, style: { height: "120px" } }),
+                React.createElement("div", { style: { position: "abolute", height: "30px", bottom: 0, width: "100%" } }))));
     }
 }
 exports.AppTile = AppTile;

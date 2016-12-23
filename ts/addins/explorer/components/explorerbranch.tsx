@@ -19,6 +19,7 @@ var { Component } = React
 
 import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
+import Divider from 'material-ui/Divider'
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 import Subheader from 'material-ui/Subheader'
 import FontIcon from 'material-ui/FontIcon'
@@ -1116,7 +1117,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     shareBranch = () => {
         let longurl = this._getShareUrl()
         // console.log('long url',longurl)
-        this._getBitlyUrl(longurl).then((json)=>{
+        this._getBitlyUrl(longurl).then((json:any)=>{
             // console.log('result',json)
             if (json.status_code != 200) {
                 let errmessage = json.status_txt + '(' + json.status_code + ')'
@@ -1369,6 +1370,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
             <MenuItem value={'FUNCTIONAL'} primaryText="Functional (operating budgets)"/>
             <MenuItem value={'STRUCTURAL'} primaryText="Structural (operating budgets)"/>
+            <Divider />
             <MenuItem value={'ACTUALEXPENSES'} primaryText="Audited Expenses"/>
             <MenuItem value={'ACTUALREVENUES'} primaryText="Audited Revenues"/>
             <MenuItem value={'EXPENDITURES'} primaryText="Audited Expenses by Object"/>
@@ -1689,8 +1691,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         { governmentselection }
 
-        { showcontrols }
-
         </div>
 
         <div>
@@ -1720,6 +1720,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         { inflationadjustment }
         </div>:null}
+
+        { showcontrols }
 
     </div>
 

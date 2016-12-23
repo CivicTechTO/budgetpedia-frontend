@@ -1,10 +1,10 @@
 "use strict";
+var TimeScope;
 (function (TimeScope) {
     TimeScope[TimeScope["OneYear"] = 0] = "OneYear";
     TimeScope[TimeScope["TwoYears"] = 1] = "TwoYears";
     TimeScope[TimeScope["AllYears"] = 2] = "AllYears";
-})(exports.TimeScope || (exports.TimeScope = {}));
-var TimeScope = exports.TimeScope;
+})(TimeScope = exports.TimeScope || (exports.TimeScope = {}));
 exports.GoogleChartColors = [
     "#3366CC",
     "#DC3912",

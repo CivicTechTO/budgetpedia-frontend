@@ -22,8 +22,8 @@ export class AppTile extends React.Component<any, any> {
         }
         e.stopPropagation()
         e.preventDefault()
-        var _this = this;
-        _this.props.transitionTo(_this.props.route)
+        var self = this;
+        self.props.transitionTo(self.props.route)
     }
     
     render() {

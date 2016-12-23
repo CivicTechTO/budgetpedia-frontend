@@ -1,8 +1,8 @@
 "use strict";
-const databaseapi_1 = require('./databaseapi');
-const getbudgetnode_1 = require('../modules/getbudgetnode');
-const node_class_1 = require('./node.class');
-const constants_1 = require('../constants');
+const databaseapi_1 = require("./databaseapi");
+const getbudgetnode_1 = require("../modules/getbudgetnode");
+const node_class_1 = require("./node.class");
+const constants_1 = require("../constants");
 class BudgetBranch {
     constructor(parms) {
         this.getInitialBranchNodeParms = () => {

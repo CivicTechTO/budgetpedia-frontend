@@ -1,10 +1,10 @@
 'use strict';
-const React = require('react');
+const React = require("react");
 var { Component } = React;
-const Tabs_1 = require('material-ui/Tabs');
-const explorercell_1 = require('./explorercell');
-const actions_1 = require('../actions');
-const Utilities = require('../modules/utilities');
+const Tabs_1 = require("material-ui/Tabs");
+const explorercell_1 = require("./explorercell");
+const actions_1 = require("../actions");
+const Utilities = require("../modules/utilities");
 class ExplorerNode extends Component {
     constructor() {
         super(...arguments);
@@ -109,15 +109,14 @@ class ExplorerNode extends Component {
             let portalSettings = budgetNode.portalConfig;
             let cellTabs = budgetCells.map((budgetCell, cellIndex) => {
                 let { cellTitle } = budgetCell;
-                return React.createElement(Tabs_1.Tab, {style: {
-                    fontSize: "12px",
-                }, label: cellTitle, value: cellIndex, key: cellIndex}, 
-                    React.createElement(explorercell_1.default, {declarationData: this.props.declarationData, callbackid: cellIndex, budgetCell: budgetCell, globalStateActions: {
-                        updateCellTimeScope: this.props.globalStateActions.updateCellTimeScope,
-                        updateCellChartCode: this.props.globalStateActions.updateCellChartCode,
-                        updateCellYearSelections: this.props.globalStateActions.updateCellYearSelections,
-                    }, showControls: this.props.showControls, callbacks: this.props.callbacks, urlparms: this.urlparms})
-                );
+                return React.createElement(Tabs_1.Tab, { style: {
+                        fontSize: "12px",
+                    }, label: cellTitle, value: cellIndex, key: cellIndex },
+                    React.createElement(explorercell_1.default, { declarationData: this.props.declarationData, callbackid: cellIndex, budgetCell: budgetCell, globalStateActions: {
+                            updateCellTimeScope: this.props.globalStateActions.updateCellTimeScope,
+                            updateCellChartCode: this.props.globalStateActions.updateCellChartCode,
+                            updateCellYearSelections: this.props.globalStateActions.updateCellYearSelections,
+                        }, showControls: this.props.showControls, callbacks: this.props.callbacks, urlparms: this.urlparms }));
             });
             return cellTabs;
         };
@@ -125,16 +124,16 @@ class ExplorerNode extends Component {
             let nodeDeclaration = this.props.declarationData.nodesById[this.props.budgetNode.uid];
             let tabSelection = nodeDeclaration.cellIndex;
             if (chartTabs.length == 0) {
-                return React.createElement("div", {style: {
-                    height: "400px",
-                    textAlign: "center",
-                    verticalAlign: "middle",
-                    lineHeight: "400px"
-                }}, "Waiting for data...");
+                return React.createElement("div", { style: {
+                        height: "400px",
+                        textAlign: "center",
+                        verticalAlign: "middle",
+                        lineHeight: "400px"
+                    } }, "Waiting for data...");
             }
-            return (React.createElement(Tabs_1.Tabs, {value: tabSelection, onChange: (tabref) => {
-                this.onChangeTab(tabref);
-            }}, chartTabs));
+            return (React.createElement(Tabs_1.Tabs, { value: tabSelection, onChange: (tabref) => {
+                    this.onChangeTab(tabref);
+                } }, chartTabs));
         };
     }
     componentWillMount() {
@@ -223,28 +222,28 @@ class ExplorerNode extends Component {
         let chartTabs = this.getChartTabs();
         let tabobject = this.getTabObject(chartTabs);
         let { portalConfig: portalSettings } = this.props.budgetNode;
-        return React.createElement("div", {style: {
-            position: "relative",
-            display: "inline-block",
-            padding: "10px",
-            backgroundColor: "Beige",
-            verticalAlign: "top",
-            width: "400px",
-            borderRight: "1px solid silver",
-        }}, 
-            React.createElement("div", {style: {
-                position: "absolute",
-                top: 0,
-                left: "10px",
-                padding: "3px 20px 3px 20px",
-                borderRadius: "6px",
-                border: "1px solid silver",
-                fontSize: "12px",
-                color: "lightgreen",
-                fontWeight: "bold",
+        return React.createElement("div", { style: {
+                position: "relative",
                 display: "inline-block",
-                backgroundColor: "#00bcd4",
-            }}, ("#" + (this.props.budgetNode.nodeIndex + 1)) + ". " + portalSettings.portalName), 
+                padding: "10px",
+                backgroundColor: "Beige",
+                verticalAlign: "top",
+                width: "400px",
+                borderRight: "1px solid silver",
+            } },
+            React.createElement("div", { style: {
+                    position: "absolute",
+                    top: 0,
+                    left: "10px",
+                    padding: "3px 20px 3px 20px",
+                    borderRadius: "6px",
+                    border: "1px solid silver",
+                    fontSize: "12px",
+                    color: "lightgreen",
+                    fontWeight: "bold",
+                    display: "inline-block",
+                    backgroundColor: "#00bcd4",
+                } }, ("#" + (this.props.budgetNode.nodeIndex + 1)) + ". " + portalSettings.portalName),
             tabobject);
     }
 }

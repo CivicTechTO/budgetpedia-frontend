@@ -1,8 +1,8 @@
 "use strict";
-const redux_1 = require('redux');
+const redux_1 = require("redux");
 const initialstate_1 = require("../../local/initialstate");
-const actions_1 = require('./actions');
-const constants_1 = require('./constants');
+const actions_1 = require("./actions");
+const constants_1 = require("./constants");
 let generationcounter = 0;
 let defaults = (state = initialstate_1.default.explorer.defaults, action) => {
     return state;

@@ -1,7 +1,7 @@
 "use strict";
-const redux_actions_1 = require('redux-actions');
-const react_router_redux_1 = require('react-router-redux');
-const utilities_1 = require('../utilities/utilities');
+const redux_actions_1 = require("redux-actions");
+const react_router_redux_1 = require("react-router-redux");
+const utilities_1 = require("../utilities/utilities");
 exports.SET_TILECOLS = 'SET_TILECOLS';
 exports.SET_HOMETILECOLS = 'SET_HOMETILECOLS';
 exports.ADD_TILE = 'ADD_TILE';

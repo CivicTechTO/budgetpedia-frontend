@@ -1,28 +1,28 @@
 'use strict';
-const React = require('react');
+const React = require("react");
 var { Component } = React;
-const react_redux_1 = require('react-redux');
-const Card_1 = require('material-ui/Card');
-const FontIcon_1 = require('material-ui/FontIcon');
-const IconButton_1 = require('material-ui/IconButton');
-const Dialog_1 = require('material-ui/Dialog');
-const FloatingActionButton_1 = require('material-ui/FloatingActionButton');
-const AutoComplete_1 = require('material-ui/AutoComplete');
-const MenuItem_1 = require('material-ui/MenuItem');
-const RadioButton_1 = require('material-ui/RadioButton');
-const RaisedButton_1 = require('material-ui/RaisedButton');
-const add_1 = require('material-ui/svg-icons/content/add');
-const remove_1 = require('material-ui/svg-icons/content/remove');
-const react_redux_toastr_1 = require('react-redux-toastr');
+const react_redux_1 = require("react-redux");
+const Card_1 = require("material-ui/Card");
+const FontIcon_1 = require("material-ui/FontIcon");
+const IconButton_1 = require("material-ui/IconButton");
+const Dialog_1 = require("material-ui/Dialog");
+const FloatingActionButton_1 = require("material-ui/FloatingActionButton");
+const AutoComplete_1 = require("material-ui/AutoComplete");
+const MenuItem_1 = require("material-ui/MenuItem");
+const RadioButton_1 = require("material-ui/RadioButton");
+const RaisedButton_1 = require("material-ui/RaisedButton");
+const add_1 = require("material-ui/svg-icons/content/add");
+const remove_1 = require("material-ui/svg-icons/content/remove");
+const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
-const explorerbranch_1 = require('./components/explorerbranch');
-const Actions = require('../../core/actions/actions');
-const ExplorerActions = require('./actions');
-const branch_class_1 = require('./classes/branch.class');
-const reducers_1 = require('./reducers');
-const helpcontent_1 = require('./content/helpcontent');
-const Utilities = require('./modules/utilities');
+const explorerbranch_1 = require("./components/explorerbranch");
+const Actions = require("../../core/actions/actions");
+const ExplorerActions = require("./actions");
+const branch_class_1 = require("./classes/branch.class");
+const reducers_1 = require("./reducers");
+const helpcontent_1 = require("./content/helpcontent");
+const Utilities = require("./modules/utilities");
 let Explorer = class extends Component {
     constructor() {
         super(...arguments);
@@ -404,26 +404,22 @@ let Explorer = class extends Component {
                             dimension: dimensionname,
                             code,
                             name,
-                            value: (React.createElement(MenuItem_1.default, {style: { whiteSpace: 'normal', lineHeight: '150%' }}, 
-                                React.createElement("div", null, 
-                                    React.createElement("span", {style: { fontWeight: "bold" }}, name)
-                                ), 
-                                React.createElement("div", {style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' }}, 
-                                    React.createElement("span", {style: { fontStyle: "italic", color: "gray" }}, 
-                                        "viewpoint: ", 
-                                        dictionary[sourceviewpoints[datasetname]])
-                                ), 
-                                React.createElement("div", {style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' }}, 
-                                    React.createElement("span", {style: { fontStyle: "italic", color: "gray" }}, 
-                                        "level: ", 
-                                        dictionary[dimensionlookupname], 
-                                        " ")
-                                ), 
-                                React.createElement("div", {style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' }}, 
-                                    React.createElement("span", {style: { fontStyle: "italic", color: "gray" }}, 
-                                        "source: ", 
-                                        dictionary[datasetname])
-                                )))
+                            value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
+                                React.createElement("div", null,
+                                    React.createElement("span", { style: { fontWeight: "bold" } }, name)),
+                                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                    React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                        "viewpoint: ",
+                                        dictionary[sourceviewpoints[datasetname]])),
+                                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                    React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                        "level: ",
+                                        dictionary[dimensionlookupname],
+                                        " ")),
+                                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                    React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                        "source: ",
+                                        dictionary[datasetname]))))
                         };
                         lookups.push(selection);
                     }
@@ -456,26 +452,22 @@ let Explorer = class extends Component {
                             dimension: dimensionname,
                             code,
                             name,
-                            value: (React.createElement(MenuItem_1.default, {style: { whiteSpace: 'normal', lineHeight: '150%' }}, 
-                                React.createElement("div", null, 
-                                    React.createElement("span", {style: { fontWeight: "bold" }}, name)
-                                ), 
-                                React.createElement("div", {style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' }}, 
-                                    React.createElement("span", {style: { fontStyle: "italic", color: "gray" }}, 
-                                        "viewpoint: ", 
-                                        dictionary[viewpointname])
-                                ), 
-                                React.createElement("div", {style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' }}, 
-                                    React.createElement("span", {style: { fontStyle: "italic", color: "gray" }}, 
-                                        "level: ", 
-                                        dictionary[dimensionname], 
-                                        " ")
-                                ), 
-                                React.createElement("div", {style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' }}, 
-                                    React.createElement("span", {style: { fontStyle: "italic", color: "gray" }}, 
-                                        "source: ", 
-                                        dictionary[viewpointsources[viewpointname]])
-                                )))
+                            value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
+                                React.createElement("div", null,
+                                    React.createElement("span", { style: { fontWeight: "bold" } }, name)),
+                                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                    React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                        "viewpoint: ",
+                                        dictionary[viewpointname])),
+                                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                    React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                        "level: ",
+                                        dictionary[dimensionname],
+                                        " ")),
+                                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                    React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                        "source: ",
+                                        dictionary[viewpointsources[viewpointname]]))))
                         };
                         lookups.push(selection);
                     }
@@ -584,40 +576,39 @@ let Explorer = class extends Component {
                 this.forceUpdate();
             }
         };
-        this.findDialog = () => (React.createElement(Dialog_1.default, {title: React.createElement("div", {style: { padding: '12px 0 0 12px' }}, "Find a Chart"), modal: false, open: this.state.findDialogOpen, onRequestClose: this.handleFindDialogClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false}, 
-            React.createElement("div", null, 
-                React.createElement(AutoComplete_1.default, {style: { width: '100%' }, ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, menuStyle: { maxHeight: "300px" }, openOnFocus: false, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput}), 
-                React.createElement(RadioButton_1.RadioButtonGroup, {valueSelected: this.state.findDialogAspect, name: "findchart", onChange: this.onChangeFindAspect}, 
-                    React.createElement(RadioButton_1.RadioButton, {style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenses"}), 
-                    React.createElement(RadioButton_1.RadioButton, {style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "revenues"}), 
-                    React.createElement(RadioButton_1.RadioButton, {style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing"}))), 
-            React.createElement(IconButton_1.default, {style: {
-                top: 0,
-                right: 0,
-                padding: 0,
-                height: "36px",
-                width: "36px",
-                position: "absolute",
-                zIndex: 2,
-            }, onTouchTap: this.handleFindDialogClose}, 
-                React.createElement(FontIcon_1.default, {className: "material-icons", style: { cursor: "pointer" }}, "close")
-            ), 
-            React.createElement("div", {style: { padding: "8px" }}, 
-                React.createElement("div", {style: { whiteSpace: 'nowrap', display: 'inline-block' }}, 
-                    React.createElement("span", {style: { color: 'silver', fontStyle: 'italic' }}, "viewpoint: "), 
-                    React.createElement("span", {style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' }}, this.findSelection.viewpointdisplay)), 
-                React.createElement("div", {style: { whiteSpace: 'nowrap', display: 'inline-block' }}, 
-                    React.createElement("span", {style: { color: 'silver', fontStyle: 'italic' }}, "level: "), 
-                    React.createElement("span", {style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' }}, this.findSelection.leveldisplay)), 
-                React.createElement("div", {style: { whiteSpace: 'nowrap', display: 'inline-block' }}, 
-                    React.createElement("span", {style: { color: 'silver', fontStyle: 'italic' }}, "source: "), 
-                    React.createElement("span", {style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' }}, this.findSelection.sourcedisplay))), 
-            React.createElement("div", null, 
-                React.createElement(RaisedButton_1.default, {disabled: !this.findSelection.known, onTouchTap: () => {
-                    this.findApplyChart();
-                }, label: "Apply", primary: true, style: { marginRight: "50px" }}), 
-                React.createElement(RaisedButton_1.default, {disabled: false, onTouchTap: () => (this.handleFindDialogClose()), label: "Cancel", secondary: true})), 
-            React.createElement("div", {style: { height: '200px' }})));
+        this.findDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.findDialogOpen, onRequestClose: this.handleFindDialogClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+            React.createElement("div", null,
+                React.createElement(AutoComplete_1.default, { style: { width: '100%' }, ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, menuStyle: { maxHeight: "300px" }, openOnFocus: false, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput }),
+                React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.findDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
+                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenses" }),
+                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "revenues" }),
+                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
+            React.createElement(IconButton_1.default, { style: {
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }, onTouchTap: this.handleFindDialogClose },
+                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+            React.createElement("div", { style: { padding: "8px" } },
+                React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "viewpoint: "),
+                    React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.viewpointdisplay)),
+                React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "level: "),
+                    React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.leveldisplay)),
+                React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "source: "),
+                    React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.sourcedisplay))),
+            React.createElement("div", null,
+                React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onTouchTap: () => {
+                        this.findApplyChart();
+                    }, label: "Apply", primary: true, style: { marginRight: "50px" } }),
+                React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: () => (this.handleFindDialogClose()), label: "Cancel", secondary: true })),
+            React.createElement("div", { style: { height: '200px' } })));
     }
     componentWillMount() {
         if (!this.props.declarationData.onetimenotification) {
@@ -691,18 +682,17 @@ let Explorer = class extends Component {
         if (this.state.findDialogOpen && !this.findAspectChartLookups) {
             this.getFindAspectLookups();
         }
-        let dialogbox = React.createElement(Dialog_1.default, {title: "Budget Explorer Options", modal: false, open: explorer.state.dialogOpen, onRequestClose: explorer.handleDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' }}, 
-            React.createElement(IconButton_1.default, {style: {
-                top: 0,
-                right: 0,
-                padding: 0,
-                height: "36px",
-                width: "36px",
-                position: "absolute",
-                zIndex: 2,
-            }, onTouchTap: explorer.handleDialogClose}, 
-                React.createElement(FontIcon_1.default, {className: "material-icons", style: { cursor: "pointer" }}, "close")
-            ), 
+        let dialogbox = React.createElement(Dialog_1.default, { title: "Budget Explorer Options", modal: false, open: explorer.state.dialogOpen, onRequestClose: explorer.handleDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
+            React.createElement(IconButton_1.default, { style: {
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }, onTouchTap: explorer.handleDialogClose },
+                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             helpcontent_1.default);
         let branchSegments = () => {
             let budgetBranches = explorer.state.budgetBranches;
@@ -738,67 +728,60 @@ let Explorer = class extends Component {
                 let displayCallbackFunctions = {
                     workingStatus: explorer.workingStatus,
                 };
-                return React.createElement(Card_1.Card, {initiallyExpanded: true, key: budgetBranch.uid, onExpandChange: (expanded) => {
-                    this.onExpandChange(expanded);
-                }}, 
-                    React.createElement(Card_1.CardTitle, {actAsExpander: false, showExpandableButton: false}, 
-                        "Row " + (branchIndex + 1) + " ", 
-                        React.createElement("input", {type: "text", onTouchTap: (ev) => { ev.stopPropagation(); }}), 
-                        React.createElement(IconButton_1.default, {style: {
-                            float: "right",
-                            marginRight: "30px"
-                        }, disabled: (branchIndex == (budgetBranches.length - 1)), onTouchTap: (uid => ev => {
-                            ev.stopPropagation();
-                            this.branchMoveDown(uid);
-                        })(budgetBranch.uid), tooltip: "Move down"}, 
-                            React.createElement(FontIcon_1.default, {className: "material-icons", style: { cursor: "pointer" }}, "arrow_downward")
-                        ), 
-                        React.createElement(IconButton_1.default, {style: {
-                            float: "right"
-                        }, disabled: (branchIndex == 0), onTouchTap: (uid => ev => {
-                            ev.stopPropagation();
-                            this.branchMoveUp(uid);
-                        })(budgetBranch.uid), tooltip: "Move up"}, 
-                            React.createElement(FontIcon_1.default, {className: "material-icons", style: { cursor: "pointer" }}, "arrow_upward")
-                        )), 
-                    React.createElement(Card_1.CardText, {expandable: false}, 
-                        React.createElement(explorerbranch_1.default, {budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen})
-                    ), 
-                    React.createElement(Card_1.CardActions, {expandable: false}, 
-                        React.createElement(FloatingActionButton_1.default, {onTouchTap: (uid => () => {
-                            this.addBranch(uid);
-                        })(budgetBranch.uid)}, 
-                            React.createElement(add_1.default, null)
-                        ), 
-                        (budgetBranches.length > 1) ? React.createElement(FloatingActionButton_1.default, {onTouchTap: (uid => () => {
-                            this.removeBranch(uid);
-                        })(budgetBranch.uid), secondary: true}, 
-                            React.createElement(remove_1.default, null)
-                        ) : null));
+                return React.createElement(Card_1.Card, { initiallyExpanded: true, key: budgetBranch.uid, onExpandChange: (expanded) => {
+                        this.onExpandChange(expanded);
+                    } },
+                    React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
+                        "Row " + (branchIndex + 1) + " ",
+                        React.createElement("input", { type: "text", onTouchTap: (ev) => { ev.stopPropagation(); } }),
+                        React.createElement(IconButton_1.default, { style: {
+                                float: "right",
+                                marginRight: "30px"
+                            }, disabled: (branchIndex == (budgetBranches.length - 1)), onTouchTap: (uid => ev => {
+                                ev.stopPropagation();
+                                this.branchMoveDown(uid);
+                            })(budgetBranch.uid), tooltip: "Move down" },
+                            React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_downward")),
+                        React.createElement(IconButton_1.default, { style: {
+                                float: "right"
+                            }, disabled: (branchIndex == 0), onTouchTap: (uid => ev => {
+                                ev.stopPropagation();
+                                this.branchMoveUp(uid);
+                            })(budgetBranch.uid), tooltip: "Move up" },
+                            React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
+                    React.createElement(Card_1.CardText, { expandable: false },
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen })),
+                    React.createElement(Card_1.CardActions, { expandable: false },
+                        React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
+                                this.addBranch(uid);
+                            })(budgetBranch.uid) },
+                            React.createElement(add_1.default, null)),
+                        (budgetBranches.length > 1) ? React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
+                                this.removeBranch(uid);
+                            })(budgetBranch.uid), secondary: true },
+                            React.createElement(remove_1.default, null)) : null));
             });
             return segments;
         };
         let branches = branchSegments();
-        return React.createElement("div", null, 
-            React.createElement("div", {style: {
-                backgroundColor: "lemonchiffon",
-                padding: "3px",
-                margin: "3px",
-                borderRadius: "8px",
-                fontFamily: "Roboto,sans-serif",
-                fontSize: "12px",
-            }}, "Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations." + ' ' + "There are numerous data source quality and continuity issues, the intake process has not been" + ' ' + "validated, and the data presented has not been rigorously verified against source data."), 
-            React.createElement(Card_1.Card, {expanded: this.state.showdashboard}, 
-                React.createElement(Card_1.CardTitle, null, "Budget Explorer"), 
-                React.createElement(Card_1.CardText, {expandable: true}, 
-                    React.createElement("span", {style: { fontStyle: 'italic' }}, "[content to be determined]")
-                )), 
-            dialogbox, 
-            this.findDialog(), 
+        return React.createElement("div", null,
+            React.createElement("div", { style: {
+                    backgroundColor: "lemonchiffon",
+                    padding: "3px",
+                    margin: "3px",
+                    borderRadius: "8px",
+                    fontFamily: "Roboto,sans-serif",
+                    fontSize: "12px",
+                } }, "Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations." + " " + "There are numerous data source quality and continuity issues, the intake process has not been" + " " + "validated, and the data presented has not been rigorously verified against source data."),
+            React.createElement(Card_1.Card, { expanded: this.state.showdashboard },
+                React.createElement(Card_1.CardTitle, null, "Budget Explorer"),
+                React.createElement(Card_1.CardText, { expandable: true },
+                    React.createElement("span", { style: { fontStyle: 'italic' } }, "[content to be determined]"))),
+            dialogbox,
+            this.findDialog(),
             branches);
     }
-}
-;
+};
 let mapStateToProps = state => ({
     declarationData: reducers_1.getExplorerDeclarationData(state),
 });
