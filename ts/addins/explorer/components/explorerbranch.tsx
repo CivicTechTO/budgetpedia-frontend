@@ -1382,8 +1382,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     // <span style={{ fontStyle: "italic" }}>Government: </span>
     let governmentselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
         <DropDownMenu
-            value={"Toronto"}
-            disabled
+                value={"Toronto"}
+                disabled
             >
 
             <MenuItem value={'Toronto'} primaryText="Toronto, Ontario"/>

@@ -47,6 +47,7 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import ContentRemove from 'material-ui/svg-icons/content/remove'
+import DropDownMenu from 'material-ui/DropDownMenu'
 // import Popover from 'material-ui/Popover'
 import Toggle from 'material-ui/Toggle'
 import {toastr} from 'react-redux-toastr'
@@ -131,7 +132,6 @@ interface ExplorerState {
     dialogOpen?: boolean,
     findDialogOpen?:boolean,
     findDialogAspect?:string,
-    showdashboard?: boolean
 }
 
 let Explorer = class extends Component< ExplorerProps, ExplorerState > 
@@ -142,7 +142,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     state = {
         budgetBranches:[],
         dialogOpen: false,
-        showdashboard:false,
         findDialogOpen: false,
         findDialogAspect:'expenses',
     }
@@ -1276,34 +1275,29 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         There are numerous data source quality and continuity issues, the intake process has not been
         validated, and the data presented has not been rigorously verified against source data.</div>
 
-        <Card expanded = {this.state.showdashboard}>
+        <Card 
+        initiallyExpanded
+        >
 
-            <CardTitle>
-
-                {
-                // <Toggle 
-                //     label={'Show dashboard:'} 
-                //     toggled = {this.state.showdashboard}
-                //     style={{
-                //         height:'32px', float:"right",
-                //         display:"inline-block",
-                //         width:'auto',
-                //     }} 
-                //     labelStyle = {{fontStyle:'italic'}} 
-                //     onToggle = { (e,value) => {
-                //         e.stopPropagation()
-                //         this.setState({
-                //             showdashboard:value
-                //         })
-                //     }}/>
-                }
+            <CardTitle
+                actAsExpander
+                showExpandableButton >
 
                 Budget Explorer
 
             </CardTitle>
             <CardText expandable >
 
-                <span style= {{fontStyle:'italic'}}>[content to be determined]</span>
+                Explore charts below, or select an area of interest: 
+            <DropDownMenu
+                value = {'SELECT'}
+            >
+
+                <MenuItem value={'SELECT'} primaryText="Select"/>
+                <MenuItem value={'Toronto'} primaryText="Toronto, Ontario"/>
+            
+            </DropDownMenu>
+
             </CardText>
         </Card>
         

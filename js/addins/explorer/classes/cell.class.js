@@ -279,7 +279,7 @@ class BudgetCell {
                 }
             }
             if (budgetCell.prorataControls.isprorata) {
-                title += ', ' + budgetCell.prorataControls.proratastring;
+                title += '; ' + budgetCell.prorataControls.proratastring;
             }
             let options = {
                 animation: {

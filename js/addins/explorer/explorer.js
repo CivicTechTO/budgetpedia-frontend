@@ -13,6 +13,7 @@ const RadioButton_1 = require("material-ui/RadioButton");
 const RaisedButton_1 = require("material-ui/RaisedButton");
 const add_1 = require("material-ui/svg-icons/content/add");
 const remove_1 = require("material-ui/svg-icons/content/remove");
+const DropDownMenu_1 = require("material-ui/DropDownMenu");
 const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
@@ -29,7 +30,6 @@ let Explorer = class extends Component {
         this.state = {
             budgetBranches: [],
             dialogOpen: false,
-            showdashboard: false,
             findDialogOpen: false,
             findDialogAspect: 'expenses',
         };
@@ -773,10 +773,13 @@ let Explorer = class extends Component {
                     fontFamily: "Roboto,sans-serif",
                     fontSize: "12px",
                 } }, "Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations." + " " + "There are numerous data source quality and continuity issues, the intake process has not been" + " " + "validated, and the data presented has not been rigorously verified against source data."),
-            React.createElement(Card_1.Card, { expanded: this.state.showdashboard },
-                React.createElement(Card_1.CardTitle, null, "Budget Explorer"),
+            React.createElement(Card_1.Card, { initiallyExpanded: true },
+                React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Budget Explorer"),
                 React.createElement(Card_1.CardText, { expandable: true },
-                    React.createElement("span", { style: { fontStyle: 'italic' } }, "[content to be determined]"))),
+                    "Explore charts below, or select an area of interest:",
+                    React.createElement(DropDownMenu_1.default, { value: 'SELECT' },
+                        React.createElement(MenuItem_1.default, { value: 'SELECT', primaryText: "Select" }),
+                        React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" })))),
             dialogbox,
             this.findDialog(),
             branches);
