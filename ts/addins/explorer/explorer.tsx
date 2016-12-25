@@ -43,6 +43,7 @@ import Dialog from 'material-ui/Dialog'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AutoComplete from 'material-ui/AutoComplete'
 import MenuItem from 'material-ui/MenuItem'
+import Menu from 'material-ui/Menu'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
@@ -132,6 +133,7 @@ interface ExplorerState {
     dialogOpen?: boolean,
     findDialogOpen?:boolean,
     findDialogAspect?:string,
+    selectStoryboard?:string,
 }
 
 let Explorer = class extends Component< ExplorerProps, ExplorerState > 
@@ -144,6 +146,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         dialogOpen: false,
         findDialogOpen: false,
         findDialogAspect:'expenses',
+        selectStoryboard:'SELECT',
     }
 
     toastrmessages = {
@@ -1044,6 +1047,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             <div style={{height:'200px'}}></div>
         </Dialog >)
 
+    onSelectStoryboard = (value) => {
+        this.setState({
+            selectStoryboard:value,
+        })
+    }
 
     // ===================================================================
     // ---------------------------[ Render ]------------------------------ 
@@ -1289,14 +1297,25 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             <CardText expandable >
 
                 Explore charts below, or select an area of interest: 
-            <DropDownMenu
-                value = {'SELECT'}
-            >
+                <DropDownMenu
+                        value = {this.state.selectStoryboard}
+                        onChange = {(event, index, value) => {
+                            this.onSelectStoryboard(value)
+                        }}
+                    >
 
-                <MenuItem value={'SELECT'} primaryText="Select"/>
-                <MenuItem value={'Toronto'} primaryText="Toronto, Ontario"/>
-            
-            </DropDownMenu>
+                    <MenuItem value = {'SELECT'} primaryText = "Select" />
+                    <MenuItem value={'SHARED'} primaryText="Shared Services" />
+                    <MenuItem value={"WASTE"} primaryText = {
+                        <div style={{paddingLeft:"20px"}} >Solid Waste Management Services</div>
+                    }/>
+                    <MenuItem value={"WATER"} primaryText = {
+                        <div style={{paddingLeft:"20px"}} >Toronto Water</div>
+                    }/>
+                    <MenuItem value={'SUPPORT'} primaryText="Support Services"/>
+                    <MenuItem value={'ADMINISTRATIVE'} primaryText="Administrative Services"/>
+
+                </DropDownMenu>
 
             </CardText>
         </Card>
