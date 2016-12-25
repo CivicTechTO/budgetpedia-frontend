@@ -582,265 +582,266 @@
             "section":"OTHER",
             "link":"https://talks.ontario.ca/"
         },
+
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"summary spreadsheet of fpars documents",
+            "description":"document, title, description, completion data target, cost target and notes columns",
             "filename":"_fparsdocs.ods",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuM1VLYnBKUllqYXc"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"City of Toronto Glossary of Terms",
+            "description":"FPARS SAP glossary",
             "filename":"00.00.00.Glossary of Terms.pdf",
             "link":"https://drive.google.com/open?id=0B208oCU9D8OuaFdWYWpuVVRBRkE"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"SA Public Budget Formulation 8.1",
+            "description":"SAP website pbf (public budget formulation tool) description",
             "filename":"00.00.00.SAP Public Budget Formulation 8.1 – SAP Help Portal Page.webloc",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuZVpSRE5TeGRKOEk"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Financial Planning, Analysis and Reporting System",
+            "description":"staff report to budget committee re fpars",
             "filename":"2008.09.12.backgroundfile-15575.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuYTNfY0xFNFdWNGs"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"FINANCIAL PLANNING AND REPORTING SYSTEM (FPARS)",
+            "description":"FPARS vision, goal, and objectives",
             "filename":"2011.00.00.fpars (1).pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuN1ZUOWxVSHEwMTg"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"FINANCIAL PLANNING, ANALYSIS AND REPORTING SYSTEM (FPARS)",
+            "description":"FPARS mandate, vision, goals, objectives, and history",
             "filename":"2011.00.00.fpars (2).pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuM3R0cURrNklweEk"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"City Budget 2012, Financial Services, Capital Budget Analyst Notes",
+            "description":"explain delayed implementation plans due to failure of rfp",
             "filename":"2011.11.08.backgroundfile-44101.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuSEtySEJLWTlIWHM"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"City Budget 2013 Financial Services Capital Program Summary",
+            "description":"capital budget; fpars financial and development targets",
             "filename":"2012.00.00.cap13_an_financialservices.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuOFpTSXF4dlN3dmM"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Financial Services 2014 – 2023 Capital Budget and Plan Overview",
+            "description":"capital budget; includes fpars plans, delay of enterprise performance management",
             "filename":"2013.00.00.backgroundfile-65955.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuNDM4OXQwMG5aNW8"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Auditor General’s report: Delay in Issuing Audit Report Relating to the Financial Planning Analysis and Reporting System (FPARS)",
+            "description":"auditor general report – problems obtaining information",
             "filename":"2013.01.28.backgroundfile-55723.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuU1JqZjlsaW9IRm8"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"AUDITOR GENERAL’S REPORT Financial Planning Analysis and Reporting System (FPARS) – A Large Scale Business Transformation/Information Technology Project",
+            "description":"auditor general report – many issues identified",
             "filename":"2013.05.02.backgroundfile-58424.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuSGtZNTJkS2RnNFk"
         },
 
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Audit committee meeting, auditor general’s report, fpars",
+            "description":"auditor general report slide deck",
             "filename":"2013.05.29.backgroundfile-58689.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuNngzZjRudzRqM3c"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"FPARS Project overview, audit committee",
+            "description":"project review, slide deck",
             "filename":"2013.05.29.backgroundfile-58694.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuTEtpOFI1ckU3Tlk"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Advancing Council's Strategic Plan -- Strategic Actions for 2013 - 2018",
+            "description":"strategic plan includes fpars",
             "filename":"2013.09.10.backgroundfile-61590.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuMnZjYzlhejd1RUU"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"The Financial Planning Analysis and Reporting System (FPARS) Project: Costs and Benefits",
+            "description":"cost benefit analysis, report to government mangement committee",
             "filename":"2013.11.01.backgroundfile-63237.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuUDhCVkZjd3hYZnc"
         },
         {
-            "section":"FPARS",
-            "title":"",
-            "description":"",
+            "section":"FPRS",
+            "title":"FPARS Costs and Benefits",
+            "description":"cost benefit analysis; slide deck",
             "filename":"2013.11.21.backgroundfile-64193.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OudlJjWHRNUE9RcGs"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"2014 CAPITAL BUDGET BRIEFING NOTE Financial Planning Analysis and Reporting System (FPARS) Project Update",
+            "description":"update status",
             "filename":"2013.12.08.backgroundfile-65902.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuQ2NhT2cwSzMwdWs"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Financial Services 2015 – 2024 CAPITAL BUDGET AND PLAN OVERVIEW",
+            "description":"financial services cap plan",
             "filename":"2014.00.00.backgroundfile-77498.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuaFVPMWZtQW5mZ1U"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Financial Planning Analysis Reporting System (FPARS)",
+            "description":"program description: mandate, vision, goals, objectives, history",
             "filename":"2014.00.00.FPARS.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8Ouc0JYWExjbTdReUk"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"IT Portfolio of ProjectsVacancies Impact",
+            "description":"status note",
             "filename":"2014.02.14.backgroundfile-67180.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuRThDZnhqYTYzMzA"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"The Financial Planning Analysis and Reporting System (FPARS) Project: Implementation Status Update",
+            "description":"status update to the government management committee",
             "filename":"2014.03.24.backgroundfile-67879.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuZXRCemlrUElpWVE"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Capital Variance Report for the Five Month Period Ended May 31, 2014",
+            "description":"variance report mentions fpars",
             "filename":"2014.07.21.backgroundfile-72331.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuTmh6MnRGOFVzWXM"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Financial Services 2016 – 2025 CAPITAL BUDGET AND PLAN OVERVIEW",
+            "description":"2016 cap budget; includes fpars",
             "filename":"2015.00.00.backgroundfile-89247.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuNU9qdFRDNmhpZWs"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"City’s Contract with IBM Canada Ltd.",
+            "description":"contract dispute with IBM, report to city council, involves fpars",
             "filename":"2015.06.01.backgroundfile-81820.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OueUlRLUp1NHgwaWs"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"City’s Contract with IBM Canada Ltd. relating to the FPARS Project",
+            "description":"contract dispute with IBM",
             "filename":"2015.10.30.backgroundfile-85436.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuUEdtaXFsdGFyWEE"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"SPIRIT Service & Performance Integrated Reporting In Toronto",
+            "description":"presentation slides to Ontario association of municipalities",
             "filename":"2016.00.00.05_Toronto_SPIRIT_Dashboards.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuMG4yaVJpaW16VGc"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"CITY DIVISIONS PUBLIC RECOMMENDATIONS – NOT FULLY IMPLEMENTED",
+            "description":"auditor summary of o/s items",
             "filename":"2016.00.00.backgroundfile-94508.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8Oud2RUbE5JN3FSVW8"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Enabling The eCity Modernization Strategy January 2016 A Collaborative Point-of-View",
+            "description":"sap enabling city modernization slides",
             "filename":"2016.01.00.backgroundfile-92965.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuSW9sNi1zaTEtNXM"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Provision of Proprietary Software Licenses from SAP Canada for the SAP HANA Solution of City's Enterprise Performance Management Project",
+            "description":"support for epm",
             "filename":"2016.04.25.backgroundfile-92557.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuMDZMVjVNMFFJR3M"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Provision of SAP Ariba - Proprietary Software as a Service from SAP Canada for Supply Chain Management Transformation",
+            "description":"related software project",
             "filename":"2016.04.25.backgroundfile-92559.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuWEtNaUJEckNCSGM"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Capital Variance Report for the Three-Month Period Ended March 31, 2016",
+            "description":"fpars entries in variance reports phase 1 and 2 on track",
             "filename":"2016.05.09.backgroundfile-92934.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuNll5VGsxc21BTW8"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Letter from Ombudsman to City Council",
+            "description":"Contains samples of cost element codes from ombudsman’s report",
             "filename":"2016.05.31.cost.elements.backgroundfile-94788.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuenppZjhVQTBqS1E"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Variance Report – Major Capital Projects",
+            "description":"variance report mentioning fpars – on track",
             "filename":"2016.09.19.backgroundfile-96065.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OueXI0WEJhU1VQd0E"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Variance Report – Major Capital Projects",
+            "description":"variance report mentioning fpars – on track",
             "filename":"2016.10.06.backgroundfile-96183.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuWFNQVXV2NjBoVU0"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Capital Variance Summary",
+            "description":"capital variance summary mentioning fpars",
             "filename":"2016.11.18.backgroundfile-98395.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuOVdUbnp5bVhCLWM"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Information & Technology 2017 – 2026 CAPITAL BUDGET AND PLAN OVERVIEW",
+            "description":"IT capital plan mentions fpars",
             "filename":"2016.12.16.backgroundfile-98900.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuOTV1MzFmWHBJNHc"
         },
         {
             "section":"FPARS",
-            "title":"",
-            "description":"",
+            "title":"Financial Services 2017 – 2026 CAPITAL BUDGET AND PLAN OVERVIEW",
+            "description":"financial services cap plan 2017, includes fpars",
             "filename":"2016.12.16.backgroundfile-98970.pdf",
-            "link":""
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuX292V2ZHVG5sNGM"
         }
     ]
 }
