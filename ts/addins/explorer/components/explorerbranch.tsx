@@ -1358,7 +1358,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
     let viewpointselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <span style={{ fontStyle: "italic" }}>Viewpoint: </span>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'4px' }}>
+            <span style={{lineHeight:'44px'}} >Viewpoint:</span>
+        </div>
         <DropDownMenu
             value={branchDeclaration.viewpoint}
             onChange={

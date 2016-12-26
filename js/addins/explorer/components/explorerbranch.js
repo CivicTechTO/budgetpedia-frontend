@@ -860,7 +860,8 @@ class ExplorerBranch extends Component {
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
         let viewpointselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("span", { style: { fontStyle: "italic" } }, "Viewpoint: "),
+            React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '4px' } },
+                React.createElement("span", { style: { lineHeight: '44px' } }, "Viewpoint:")),
             React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                     branch.switchViewpoint(value);
                 } },
