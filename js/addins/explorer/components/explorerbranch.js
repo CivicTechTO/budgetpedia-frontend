@@ -859,18 +859,19 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewpointselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '4px' } },
-                React.createElement("span", { style: { lineHeight: '44px' } }, "Viewpoint:")),
-            React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
-                    branch.switchViewpoint(value);
-                } },
-                React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Functional (operating budgets)" }),
-                React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Structural (operating budgets)" }),
-                React.createElement(Divider_1.default, null),
-                React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Audited Expenses" }),
-                React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Audited Revenues" }),
-                React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Audited Expenses by Object" }))) : null;
+        let viewpointselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Viewpoint:")),
+                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
+                        branch.switchViewpoint(value);
+                    } },
+                    React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Functional (operating budgets)" }),
+                    React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Structural (operating budgets)" }),
+                    React.createElement(Divider_1.default, null),
+                    React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Audited Expenses" }),
+                    React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Audited Revenues" }),
+                    React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Audited Expenses by Object" }))) : null;
         let governmentselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
             React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
                 React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;
@@ -889,11 +890,13 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2015" })];
             }
         };
-        let versionselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("span", { style: { fontStyle: "italic" } }, "Source: "),
-            React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
-                    branch.switchVersion(value);
-                } }, versionchoices())) : null;
+        let versionselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Source:")),
+                React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
+                        branch.switchVersion(value);
+                    } }, versionchoices())) : null;
         const aspectchoices = () => {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
@@ -909,33 +912,33 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Expenditure', primaryText: "Expenditures" })];
             }
         };
-        let aspectselection = (branchDeclaration.showOptions)
-            ?
-                React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-                    React.createElement("span", { style: { fontStyle: "italic" } }, "Aspect: "),
-                    React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
-                            branch.switchAspect(value);
-                        } }, aspectchoices()))
-            :
-                null;
-        let byunitselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("span", { style: { fontStyle: "italic" } }, "Prorated: "),
-            React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
-                    this.switchComparator(value);
-                } },
-                React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
-                React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
-                React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
-                React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
-                React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
-                React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
-                React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" }))) : null;
+        let aspectselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Aspect:")),
+                React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
+                        branch.switchAspect(value);
+                    } }, aspectchoices())) : null;
+        let byunitselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Prorated:")),
+                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
+                        this.switchComparator(value);
+                    } },
+                    React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
+                    React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
+                    React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" }))) : null;
         let inflationadjustment = (branchDeclaration.showOptions)
             ?
                 React.createElement("div", { style: {
                         display: 'inline-block',
                         whiteSpace: "nowrap",
-                        verticalAlign: "bottom",
+                        verticalAlign: "top",
                         marginRight: '16px',
                     } },
                     React.createElement(Toggle_1.default, { label: 'Inflation adjusted:', style: {
@@ -952,7 +955,7 @@ class ExplorerBranch extends Component {
         let showcontrols = React.createElement("div", { style: {
                 display: 'inline-block',
                 whiteSpace: "nowrap",
-                verticalAlign: "bottom"
+                verticalAlign: "top"
             } },
             React.createElement(Toggle_1.default, { label: 'Show options:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
                     this.toggleShowOptions(value);
@@ -1018,8 +1021,9 @@ class ExplorerBranch extends Component {
                         backgroundColor: "#ebfaf9",
                         border: "1px solid silver",
                         borderRadius: "8px",
-                        margin: "3px",
+                        marginRight: "6px",
                         paddingLeft: "6px",
+                        height: '48px',
                     } },
                     byunitselection,
                     inflationadjustment) : null,

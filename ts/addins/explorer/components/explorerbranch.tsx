@@ -1357,8 +1357,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
-    let viewpointselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'4px' }}>
+    let viewpointselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Viewpoint:</span>
         </div>
         <DropDownMenu
@@ -1412,8 +1413,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     // TODO: add contitional logic depending on viewpoint selection
-    let versionselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <span style={{ fontStyle: "italic" }}>Source: </span>
+    let versionselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Source:</span>
+        </div>
         <DropDownMenu
             disabled = {versionchoices().length < 2}
             value = {branchDeclaration.version}
@@ -1447,32 +1451,34 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     // TODO: add conditional logic depending on version selection
-    let aspectselection = (branchDeclaration.showOptions)
-        ?
-        <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    let aspectselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
 
-            <span style={{ fontStyle: "italic" }}>Aspect: </span>
-
-            <DropDownMenu
-                disabled = { aspectchoices().length < 2}
-                value={branchDeclaration.aspect}
-                onChange={
-                    (e, index, value) => {
-                        branch.switchAspect(value)
-                    }
-                }
-                >
-
-                { aspectchoices() }
-
-            </DropDownMenu>
-
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Aspect:</span>
         </div>
-        :
-        null
 
-    let byunitselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <span style={{ fontStyle: "italic" }}>Prorated: </span>
+        <DropDownMenu
+            disabled = { aspectchoices().length < 2}
+            value={branchDeclaration.aspect}
+            onChange={
+                (e, index, value) => {
+                    branch.switchAspect(value)
+                }
+            }
+            >
+
+            { aspectchoices() }
+
+        </DropDownMenu>
+
+    </div>:null
+
+    let byunitselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Prorated:</span>
+        </div>
         <DropDownMenu
             value={branchDeclaration.prorata}
             onChange={
@@ -1500,7 +1506,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 {
                     display:'inline-block', 
                     whiteSpace:"nowrap", 
-                    verticalAlign:"bottom", 
+                    verticalAlign:"top", 
                     marginRight:'16px',
                 }
             }>
@@ -1533,7 +1539,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 {
                     display:'inline-block', 
                     whiteSpace:"nowrap", 
-                    verticalAlign:"bottom"
+                    verticalAlign:"top"
                 }
             }>
             <Toggle 
@@ -1713,8 +1719,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     backgroundColor:"#ebfaf9",
                     border:"1px solid silver",
                     borderRadius:"8px",
-                    margin:"3px",
+                    marginRight:"6px",
                     paddingLeft:"6px",
+                    height:'48px',
                 }
             }
         >
