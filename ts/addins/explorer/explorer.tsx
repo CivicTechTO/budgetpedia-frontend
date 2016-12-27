@@ -1330,13 +1330,16 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             }/>
                             <Divider inset />
                             <MenuItem value={"PFR"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Parks, Forestry & Recreation</div>
+                                <div style={{paddingLeft:"20px"}} >Parks, Forestry & Activity Centres</div>
                             }/>
                             <MenuItem value={"LIBRARY"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Toronto Public Library</div>
                             }/>
                             <MenuItem value={"ATTRACTIONS"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Public Attractions</div>
+                            }/>
+                            <MenuItem value={"CONSERVHERITAGE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Conservation & Heritage</div>
                             }/>
 
                         <MenuItem value={'SUPPORT'} primaryText={
@@ -1348,7 +1351,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <div style={{paddingLeft:"20px"}} >Paramedics</div>
                             }/>
                             <MenuItem value={"POLICE"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Police</div>
+                                <div style={{paddingLeft:"20px"}} >Policing & Court Services</div>
                             }/>
                             <Divider inset />
                             <MenuItem value={"HEALTH"} primaryText = {
@@ -1362,10 +1365,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             }/>
                             <Divider inset />
                             <MenuItem value={"EMPLOYMENT"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Income Support</div>
+                                <div style={{paddingLeft:"20px"}} >Income Support Services</div>
                             }/>
                             <MenuItem value={"HOUSING"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Housing Support</div>
+                                <div style={{paddingLeft:"20px"}} >Housing Support Services</div>
                             }/>
                         <MenuItem value={'ADMINISTRATIVE'} primaryText={
                             <div style={{fontWeight:'bold'}} >Administrative Services</div>} />
