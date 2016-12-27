@@ -1323,7 +1323,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <div style={{paddingLeft:"20px"}} >Wheel Trans</div>
                             }/>
                             <MenuItem value={"TRANSPORTATION"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Transportation Division</div>
+                                <div style={{paddingLeft:"20px"}} >Transportation (Roads)</div>
                             }/>
                             <MenuItem value={"PARKING"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Parking</div>
@@ -1362,10 +1362,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             }/>
                             <Divider inset />
                             <MenuItem value={"EMPLOYMENT"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Employment & Social Services</div>
+                                <div style={{paddingLeft:"20px"}} >Income Support</div>
                             }/>
                             <MenuItem value={"HOUSING"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Shelter, Support & Housing</div>
+                                <div style={{paddingLeft:"20px"}} >Housing Support</div>
                             }/>
                         <MenuItem value={'ADMINISTRATIVE'} primaryText={
                             <div style={{fontWeight:'bold'}} >Administrative Services</div>} />
@@ -1383,7 +1383,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <div style={{paddingLeft:"20px"}} >Internal Services</div>
                             }/>
                             <MenuItem value={"CORPORATE"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Corporate Accounts</div>
+                                <div style={{paddingLeft:"20px"}} >Corporate Accounts (Finance)</div>
                             }/>
                         <MenuItem disabled value={'SPECIAL'} primaryText={
                             <div style={{fontWeight:'bold'}} >Special Analytics</div>} />
