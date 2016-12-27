@@ -1450,7 +1450,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
-    // TODO: add conditional logic depending on version selection
     let aspectselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
 

@@ -782,16 +782,18 @@ let Explorer = class extends Component {
             React.createElement(Card_1.Card, { initiallyExpanded: true },
                 React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Budget Explorer"),
                 React.createElement(Card_1.CardText, { expandable: true },
-                    "Explore charts below, or select an area of interest:",
-                    React.createElement(DropDownMenu_1.default, { value: this.state.selectStoryboard, onChange: (event, index, value) => {
-                            this.onSelectStoryboard(value);
-                        } },
-                        React.createElement(MenuItem_1.default, { value: 'SELECT', primaryText: "Select" }),
-                        React.createElement(MenuItem_1.default, { value: 'SHARED', primaryText: "Shared Services" }),
-                        React.createElement(MenuItem_1.default, { value: "WASTE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Solid Waste Management Services") }),
-                        React.createElement(MenuItem_1.default, { value: "WATER", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Water") }),
-                        React.createElement(MenuItem_1.default, { value: 'SUPPORT', primaryText: "Support Services" }),
-                        React.createElement(MenuItem_1.default, { value: 'ADMINISTRATIVE', primaryText: "Administrative Services" })))),
+                    React.createElement("div", { style: { display: 'inline-block', verticalAlign: 'top' } },
+                        React.createElement("span", { style: { lineHeight: '48px', verticalAlign: '23px' } }, "Explore charts below, or select an area of interest: "),
+                        React.createElement(DropDownMenu_1.default, { value: this.state.selectStoryboard, onChange: (event, index, value) => {
+                                this.onSelectStoryboard(value);
+                            } },
+                            React.createElement(MenuItem_1.default, { value: 'SELECT', primaryText: "Select" }),
+                            React.createElement(MenuItem_1.default, { value: 'SHARED', primaryText: "Shared Services" }),
+                            React.createElement(MenuItem_1.default, { value: "WASTE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Solid Waste Management Services") }),
+                            React.createElement(MenuItem_1.default, { value: "WATER", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Water") }),
+                            React.createElement(MenuItem_1.default, { value: 'SUPPORT', primaryText: "Support Services" }),
+                            React.createElement(MenuItem_1.default, { value: 'ADMINISTRATIVE', primaryText: "Administrative Services" }))),
+                    React.createElement("div", null))),
             dialogbox,
             this.findDialog(),
             branches);

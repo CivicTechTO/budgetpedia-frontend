@@ -1296,27 +1296,29 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             </CardTitle>
             <CardText expandable >
 
-                Explore charts below, or select an area of interest: 
-                <DropDownMenu
-                        value = {this.state.selectStoryboard}
-                        onChange = {(event, index, value) => {
-                            this.onSelectStoryboard(value)
-                        }}
-                    >
+                <div style={{ display:'inline-block',verticalAlign:'top'}}>
+                    <span style={{lineHeight:'48px',verticalAlign:'23px'}} >Explore charts below, or select an area of interest: </span>
+                    <DropDownMenu
+                            value = {this.state.selectStoryboard}
+                            onChange = {(event, index, value) => {
+                                this.onSelectStoryboard(value)
+                            }}
+                        >
 
-                    <MenuItem value = {'SELECT'} primaryText = "Select" />
-                    <MenuItem value={'SHARED'} primaryText="Shared Services" />
-                    <MenuItem value={"WASTE"} primaryText = {
-                        <div style={{paddingLeft:"20px"}} >Solid Waste Management Services</div>
-                    }/>
-                    <MenuItem value={"WATER"} primaryText = {
-                        <div style={{paddingLeft:"20px"}} >Toronto Water</div>
-                    }/>
-                    <MenuItem value={'SUPPORT'} primaryText="Support Services"/>
-                    <MenuItem value={'ADMINISTRATIVE'} primaryText="Administrative Services"/>
+                        <MenuItem value = {'SELECT'} primaryText = "Select" />
+                        <MenuItem value={'SHARED'} primaryText="Shared Services" />
+                        <MenuItem value={"WASTE"} primaryText = {
+                            <div style={{paddingLeft:"20px"}} >Solid Waste Management Services</div>
+                        }/>
+                        <MenuItem value={"WATER"} primaryText = {
+                            <div style={{paddingLeft:"20px"}} >Toronto Water</div>
+                        }/>
+                        <MenuItem value={'SUPPORT'} primaryText="Support Services"/>
+                        <MenuItem value={'ADMINISTRATIVE'} primaryText="Administrative Services"/>
 
-                </DropDownMenu>
-
+                    </DropDownMenu>
+                </div>
+                <div></div>
             </CardText>
         </Card>
         
