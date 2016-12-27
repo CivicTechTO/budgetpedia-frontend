@@ -14,6 +14,7 @@ const RaisedButton_1 = require("material-ui/RaisedButton");
 const add_1 = require("material-ui/svg-icons/content/add");
 const remove_1 = require("material-ui/svg-icons/content/remove");
 const DropDownMenu_1 = require("material-ui/DropDownMenu");
+const Divider_1 = require("material-ui/Divider");
 const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
@@ -788,11 +789,38 @@ let Explorer = class extends Component {
                                 this.onSelectStoryboard(value);
                             } },
                             React.createElement(MenuItem_1.default, { value: 'SELECT', primaryText: "Select" }),
-                            React.createElement(MenuItem_1.default, { value: 'SHARED', primaryText: "Shared Services" }),
-                            React.createElement(MenuItem_1.default, { value: "WASTE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Solid Waste Management Services") }),
+                            React.createElement(MenuItem_1.default, { value: 'SHARED', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "General Services") }),
+                            React.createElement(MenuItem_1.default, { value: "WASTE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Solid Waste Management") }),
                             React.createElement(MenuItem_1.default, { value: "WATER", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Water") }),
-                            React.createElement(MenuItem_1.default, { value: 'SUPPORT', primaryText: "Support Services" }),
-                            React.createElement(MenuItem_1.default, { value: 'ADMINISTRATIVE', primaryText: "Administrative Services" }))),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "TTC", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "TTC") }),
+                            React.createElement(MenuItem_1.default, { value: "WHEELTRANS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Wheel Trans") }),
+                            React.createElement(MenuItem_1.default, { value: "TRANSPORTATION", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Transportation Division") }),
+                            React.createElement(MenuItem_1.default, { value: "PARKING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parking") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "PFR", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parks, Forestry & Recreation") }),
+                            React.createElement(MenuItem_1.default, { value: "LIBRARY", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Public Library") }),
+                            React.createElement(MenuItem_1.default, { value: "ATTRACTIONS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Public Attractions") }),
+                            React.createElement(MenuItem_1.default, { value: 'SUPPORT', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Support Services") }),
+                            React.createElement(MenuItem_1.default, { value: "FIRE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Fire") }),
+                            React.createElement(MenuItem_1.default, { value: "PARAMEDICES", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Paramedics") }),
+                            React.createElement(MenuItem_1.default, { value: "POLICE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Police") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "HEALTH", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Public Health") }),
+                            React.createElement(MenuItem_1.default, { value: "LONGTERMCARE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Long Term Care") }),
+                            React.createElement(MenuItem_1.default, { value: "CHILDREN", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Children's Services") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "EMPLOYMENT", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Employment & Social Services") }),
+                            React.createElement(MenuItem_1.default, { value: "HOUSING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Shelter, Support & Housing") }),
+                            React.createElement(MenuItem_1.default, { value: 'ADMINISTRATIVE', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Administrative Services") }),
+                            React.createElement(MenuItem_1.default, { value: "COUNCIL", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Council & Corporate Officers") }),
+                            React.createElement(MenuItem_1.default, { value: "PLANNING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Planning & Development") }),
+                            React.createElement(MenuItem_1.default, { value: "PERMITS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Permits, Licencing & Standards") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "INTERNAL", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Internal Services") }),
+                            React.createElement(MenuItem_1.default, { value: "CORPORATE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Corporate Accounts") }),
+                            React.createElement(MenuItem_1.default, { disabled: true, value: 'SPECIAL', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Special Analytics") }),
+                            React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") }))),
                     React.createElement("div", null))),
             dialogbox,
             this.findDialog(),

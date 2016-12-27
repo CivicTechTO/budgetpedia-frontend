@@ -49,6 +49,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import ContentRemove from 'material-ui/svg-icons/content/remove'
 import DropDownMenu from 'material-ui/DropDownMenu'
+import Divider from 'material-ui/Divider'
 // import Popover from 'material-ui/Popover'
 import Toggle from 'material-ui/Toggle'
 import {toastr} from 'react-redux-toastr'
@@ -1306,15 +1307,89 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         >
 
                         <MenuItem value = {'SELECT'} primaryText = "Select" />
-                        <MenuItem value={'SHARED'} primaryText="Shared Services" />
-                        <MenuItem value={"WASTE"} primaryText = {
-                            <div style={{paddingLeft:"20px"}} >Solid Waste Management Services</div>
-                        }/>
-                        <MenuItem value={"WATER"} primaryText = {
-                            <div style={{paddingLeft:"20px"}} >Toronto Water</div>
-                        }/>
-                        <MenuItem value={'SUPPORT'} primaryText="Support Services"/>
-                        <MenuItem value={'ADMINISTRATIVE'} primaryText="Administrative Services"/>
+                        <MenuItem value={'SHARED'} primaryText={
+                            <div style={{fontWeight:'bold'}} >General Services</div>} />
+                            <MenuItem value={"WASTE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Solid Waste Management</div>
+                            }/>
+                            <MenuItem value={"WATER"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Toronto Water</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"TTC"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >TTC</div>
+                            }/>
+                            <MenuItem value={"WHEELTRANS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Wheel Trans</div>
+                            }/>
+                            <MenuItem value={"TRANSPORTATION"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Transportation Division</div>
+                            }/>
+                            <MenuItem value={"PARKING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Parking</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"PFR"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Parks, Forestry & Recreation</div>
+                            }/>
+                            <MenuItem value={"LIBRARY"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Toronto Public Library</div>
+                            }/>
+                            <MenuItem value={"ATTRACTIONS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Public Attractions</div>
+                            }/>
+
+                        <MenuItem value={'SUPPORT'} primaryText={
+                            <div style={{fontWeight:'bold'}} >Support Services</div>} />
+                            <MenuItem value={"FIRE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Fire</div>
+                            }/>
+                            <MenuItem value={"PARAMEDICES"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Paramedics</div>
+                            }/>
+                            <MenuItem value={"POLICE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Police</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"HEALTH"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Public Health</div>
+                            }/>
+                            <MenuItem value={"LONGTERMCARE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Long Term Care</div>
+                            }/>
+                            <MenuItem value={"CHILDREN"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Children's Services</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"EMPLOYMENT"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Employment & Social Services</div>
+                            }/>
+                            <MenuItem value={"HOUSING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Shelter, Support & Housing</div>
+                            }/>
+                        <MenuItem value={'ADMINISTRATIVE'} primaryText={
+                            <div style={{fontWeight:'bold'}} >Administrative Services</div>} />
+                            <MenuItem value={"COUNCIL"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Council & Corporate Officers</div>
+                            }/>
+                            <MenuItem value={"PLANNING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Planning & Development</div>
+                            }/>
+                            <MenuItem value={"PERMITS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Permits, Licencing & Standards</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"INTERNAL"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Internal Services</div>
+                            }/>
+                            <MenuItem value={"CORPORATE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Corporate Accounts</div>
+                            }/>
+                        <MenuItem disabled value={'SPECIAL'} primaryText={
+                            <div style={{fontWeight:'bold'}} >Special Analytics</div>} />
+                            <MenuItem value={"STAFFING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Staffing costs</div>
+                            }/>
 
                     </DropDownMenu>
                 </div>
