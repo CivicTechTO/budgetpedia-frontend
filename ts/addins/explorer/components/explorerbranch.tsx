@@ -498,6 +498,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
                 explorerbranch.onPortalCreation()
                 this.props.onBranchUpdate(budgetBranch.uid)
+                
             },1000)
 
         }).catch(reason => {

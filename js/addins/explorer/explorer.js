@@ -481,7 +481,6 @@ let Explorer = class extends Component {
             return lookups;
         };
         this.findChart = () => {
-            let findParms = {};
             this.setState({
                 findDialogOpen: true
             });
@@ -614,10 +613,59 @@ let Explorer = class extends Component {
                     }, label: "Apply", primary: true, style: { marginRight: "50px" } }),
                 React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: () => (this.handleFindDialogClose()), label: "Cancel", secondary: true })),
             React.createElement("div", { style: { height: '200px' } })));
+        this.storyBoards = null;
+        this.getStoryboardsPromise = () => {
+            let filespec = './db/repositories/toronto/storyboards/storyboards.json';
+            let promise = new Promise((resolve, reject) => {
+                fetch(filespec).then(response => {
+                    if (response.ok) {
+                        try {
+                            let json = response.json().then(json => {
+                                resolve(json);
+                            }).catch(reason => {
+                                let msg = 'failure to resolve ' + filespec + ' ' + reason;
+                                console.log(msg);
+                                reject(msg);
+                            });
+                        }
+                        catch (e) {
+                            console.log('error ' + filespec, e.message);
+                            reject('failure to load ' + filespec);
+                        }
+                    }
+                    else {
+                        reject('could not load file ' + filespec);
+                    }
+                }).catch(reason => {
+                    reject(reason + ' ' + filespec);
+                });
+            });
+            return promise;
+        };
         this.onSelectStoryboard = (value) => {
             this.setState({
                 selectStoryboard: value,
             });
+            if (value == 'SELECT')
+                return;
+            this.processStoryBoardSelection(value);
+        };
+        this.processStoryBoardSelection = selection => {
+            if (!this.storyBoards) {
+                let promise = this.getStoryboardsPromise();
+                promise.then(json => {
+                    this.storyBoards = json;
+                    this._doProcessStoryBoardSelection(selection);
+                }).catch(reason => {
+                });
+            }
+            else {
+                this._doProcessStoryBoardSelection(selection);
+            }
+        };
+        this._doProcessStoryBoardSelection = selection => {
+            let storyboard = this.storyBoards.storyboards[selection];
+            console.log('processing story board', selection, storyboard);
         };
         this.onBranchUpdate = (branchuid) => {
             console.log('onBranchUpdate', branchuid);
@@ -820,7 +868,7 @@ let Explorer = class extends Component {
                             React.createElement(MenuItem_1.default, { value: "CONSERVHERITAGE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Conservation & Heritage") }),
                             React.createElement(MenuItem_1.default, { value: 'SUPPORT', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Support Services") }),
                             React.createElement(MenuItem_1.default, { value: "FIRE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Fire") }),
-                            React.createElement(MenuItem_1.default, { value: "PARAMEDICES", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Paramedics") }),
+                            React.createElement(MenuItem_1.default, { value: "PARAMEDICS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Paramedics") }),
                             React.createElement(MenuItem_1.default, { value: "POLICE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Policing & Court Services") }),
                             React.createElement(Divider_1.default, { inset: true }),
                             React.createElement(MenuItem_1.default, { value: "HEALTH", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Public Health") }),

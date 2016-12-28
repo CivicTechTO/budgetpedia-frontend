@@ -843,7 +843,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     findChart = () => {
-        let findParms:{} = {}
+        // let findParms:{} = {}
         this.setState({
             findDialogOpen: true
         })
@@ -1051,20 +1051,66 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             <div style={{height:'200px'}}></div>
         </Dialog >)
 
+    // =======================[ Storyboard Creation ]=====================
+
+
+    storyBoards:any = null
+
+    private getStoryboardsPromise = () => {
+        let filespec = './db/repositories/toronto/storyboards/storyboards.json'
+        let promise = new Promise((resolve,reject) => {
+            fetch(filespec).then( response => {
+                if (response.ok) {
+                    // console.log('response for ' + path,response)
+                    try {
+                        let json = response.json().then(json => {
+                            resolve(json)
+                        }).catch(reason => {
+                            let msg = 'failure to resolve ' + filespec + ' ' + reason
+                            console.log(msg)
+                            reject(msg)
+                        })
+                    } catch (e) {
+                        console.log('error ' + filespec, e.message)
+                        reject('failure to load ' + filespec)
+                    }
+                } else {
+                    reject('could not load file ' + filespec)
+                }
+
+            }).catch(reason => {
+                reject(reason + ' ' + filespec)
+            })
+        })
+        return promise
+    }
+
     onSelectStoryboard = (value:string) => {
         this.setState({
             selectStoryboard:value,
         })
+        if (value == 'SELECT') return
+        this.processStoryBoardSelection(value)
     }
 
-    // =======================[ Storyboard Creation ]=====================
+    processStoryBoardSelection = selection => {
+        if (!this.storyBoards) {
+            let promise = this.getStoryboardsPromise()
+            promise.then(json => {
+                this.storyBoards = json
+                this._doProcessStoryBoardSelection(selection)
+            }).catch(reason => {
 
-    /*
+            }) 
+        } else {
+            this._doProcessStoryBoardSelection(selection)
+        }
+    }
 
-        TODO: investigate possible side effects on selecting storyboard
-        in presence of url parameters for branch (should be OK - cleared by clearUrlParms)
-
-    */
+    _doProcessStoryBoardSelection = selection => {
+        let storyboard = this.storyBoards.storyboards[selection]
+        console.log('processing story board',selection,storyboard)
+    }
 
     onBranchUpdate = (branchuid) => {
         console.log('onBranchUpdate',branchuid)
@@ -1375,7 +1421,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             <MenuItem value={"FIRE"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Fire</div>
                             }/>
-                            <MenuItem value={"PARAMEDICES"} primaryText = {
+                            <MenuItem value={"PARAMEDICS"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Paramedics</div>
                             }/>
                             <MenuItem value={"POLICE"} primaryText = {
