@@ -477,8 +477,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     addBranch = refbranchuid => {
         let cloneSettings = this._getBranchCloneSettings(refbranchuid)
 
-        // console.log('branch clone',refbranchuid,cloneSettings)
-
         this.props.cloneBranchDeclaration( refbranchuid, cloneSettings )
         this.onCloneCreation()
 
@@ -1054,6 +1052,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         })
     }
 
+    // =======================[ Storyboard Creation ]=====================
+
+    onBranchUpdate = (branchuid) => {
+        console.log('onBranchUpdate',branchuid)
+        return branchuid
+    }
+
     // ===================================================================
     // ---------------------------[ Render ]------------------------------ 
 
@@ -1236,6 +1241,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         clearUrlParms = {this.clearUrlParms}
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
+                        onBranchUpdate = {this.onBranchUpdate}
                     />
                     </CardText>
                     <CardActions expandable = {false}>
@@ -1395,6 +1401,15 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             }/>
 
                     </DropDownMenu>
+                    <RaisedButton
+                        style = {{ verticalAlign:'25px' }}
+                        type="button"
+                        label="Reset"
+                        onTouchTap={
+                            () => {
+                            }
+                        } 
+                    />                
                 </div>
                 <div></div>
             </CardText>

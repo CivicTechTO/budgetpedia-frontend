@@ -616,6 +616,10 @@ let Explorer = class extends Component {
                 selectStoryboard: value,
             });
         };
+        this.onBranchUpdate = (branchuid) => {
+            console.log('onBranchUpdate', branchuid);
+            return branchuid;
+        };
     }
     componentWillMount() {
         if (!this.props.declarationData.onetimenotification) {
@@ -757,7 +761,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onBranchUpdate: this.onBranchUpdate })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);
@@ -821,7 +825,9 @@ let Explorer = class extends Component {
                             React.createElement(MenuItem_1.default, { value: "INTERNAL", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Internal Services") }),
                             React.createElement(MenuItem_1.default, { value: "CORPORATE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Corporate Accounts (Finance)") }),
                             React.createElement(MenuItem_1.default, { disabled: true, value: 'SPECIAL', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Special Analytics") }),
-                            React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") }))),
+                            React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") })),
+                        React.createElement(RaisedButton_1.default, { style: { verticalAlign: '25px' }, type: "button", label: "Reset", onTouchTap: () => {
+                            } })),
                     React.createElement("div", null))),
             dialogbox,
             this.findDialog(),

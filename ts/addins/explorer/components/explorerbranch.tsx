@@ -89,6 +89,7 @@ interface ExplorerBranchProps {
     clearUrlParms: Function,
     setToast: Function,
     handleFindDialogOpen: Function,
+    onBranchUpdate: Function,
 }
 
 interface ExplorerBranchState {
@@ -341,6 +342,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         if (!this.harmonizeNodesToState(branchNodes, nodeList, nodesById, budgetBranch)) {
 
             this._respondToGlobalStateChange()
+
         }
 
     }
@@ -487,13 +489,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             let settingslist = this._getFinderNodeSettingsList()
             this._stateActions.addNodeDeclarations(settingslist)
 
-            let explorer = this
+            let explorerbranch = this
 
             setTimeout(()=>{
-                explorer._updateCellChartSelections()
+                explorerbranch._updateCellChartSelections()
             })
             setTimeout(()=>{
-                explorer.onPortalCreation()
+
+                explorerbranch.onPortalCreation()
+                this.props.onBranchUpdate(budgetBranch.uid)
             },1000)
 
         }).catch(reason => {
