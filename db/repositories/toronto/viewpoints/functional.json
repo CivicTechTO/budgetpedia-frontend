@@ -200,15 +200,21 @@
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "SHELTERADMIN": {
-                            "Index": 1,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "AFFHOUSING": {
-                            "Index": 2,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
+                        "HOUSING" : {
+                            "Index": 0,
+                            "NamingConfigRef":"CLUSTER",
+                            "Components": {
+                                "SHELTERADMIN": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "AFFHOUSING": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
                         }
                     }
                 }
@@ -421,6 +427,7 @@
                 "TRANSTRANSIT": "Transportation & Transit Services",
                 "WASTEWATER": "Waste & Water Services",
                 "WELFARE": "Income & Housing Services",
+                "HOUSING": "Housing Support Services",
                 "WELLBEING": "Health & Education Services"
             }
         },
