@@ -112,6 +112,7 @@ interface MappedExplorerActions extends MappedBranchActions {
     addBranchDeclaration:Function, // dispatcher from ExplorerActions through connect
     cloneBranchDeclaration:Function,
     removeBranchDeclaration:Function,
+    removeBranches:Function,
     resetLastAction:Function,
     branchMoveUp: Function,
     branchMoveDown: Function,
@@ -517,6 +518,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     removeBranch = branchuid => {
         this.props.removeBranchDeclaration(branchuid)
+    }
+
+    removeBranches = () => {
+        this.props.removeBranches()
     }
 
     // ==================[ FIND CHART ]=======================
@@ -1407,6 +1412,9 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         label="Reset"
                         onTouchTap={
                             () => {
+                                this.removeBranches()
+                                let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch))
+                                this.props.addBranchDeclaration(null,defaultSettings) // change state
                             }
                         } 
                     />                
@@ -1445,6 +1453,7 @@ Explorer = connect(mapStateToProps, {
     addBranchDeclaration:ExplorerActions.addBranchDeclaration,
     cloneBranchDeclaration:ExplorerActions.cloneBranchDeclaration,
     removeBranchDeclaration: ExplorerActions.removeBranchDeclaration,
+    removeBranches: ExplorerActions.removeBranches,
     addNodeDeclaration:ExplorerActions.addNodeDeclaration,
     addNodeDeclarations: ExplorerActions.addNodeDeclarations,
     removeNodeDeclarations:ExplorerActions.removeNodeDeclarations,

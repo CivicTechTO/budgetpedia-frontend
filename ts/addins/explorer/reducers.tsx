@@ -60,6 +60,11 @@ let branchList = (state = [], action) => {
             return newstate
         }
 
+        case actiontypes.REMOVE_BRANCHES: {
+            newstate = []
+            return newstate
+        }
+
         case actiontypes.BRANCH_MOVE_UP: {
             newstate = [...state]
             let { branchuid } = action.payload
@@ -129,6 +134,11 @@ let branchesById:{[index:string]:any} = (state = { }, action) => {
         case actiontypes.REMOVE_BRANCH: {
             newstate = Object.assign({},state)
             delete newstate[action.payload.branchuid]
+            return newstate
+        }
+
+        case actiontypes.REMOVE_BRANCHES: {
+            newstate = {}
             return newstate
         }
         
@@ -558,9 +568,13 @@ let lastTargetedAction = (state = {counter:null} , action) => {
         case actiontypes.REMOVE_BRANCH:
             delete newstate[payload.branchuid]
             return newstate
+        case actiontypes.REMOVE_BRANCHES: 
+            newstate = {counter:null}
+            return newstate
         case actiontypes.REMOVE_NODES:
-            delete newstate[payload.nodeuid]
+            // delete newstate[payload.branchuid]
             for (let removeitem of payload.items) {
+                delete newstate[removeitem.nodeuid]
                 for (let celluid of removeitem.cellList)
                     delete newstate[celluid]
             }

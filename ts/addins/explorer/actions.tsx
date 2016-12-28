@@ -15,6 +15,7 @@ export namespace types {
     export const CLONE_BRANCH = 'CLONE_BRANCH'
     export const UPDATE_BRANCH = 'UPDATE_BRANCH'
     export const REMOVE_BRANCH = 'REMOVE_BRANCH'
+    export const REMOVE_BRANCHES = 'REMOVE_BRANCHES'
     export const CHANGE_VIEWPOINT = 'CHANGE_VIEWPOINT'
     export const CHANGE_VERSION = 'CHANGE_VERSION'
     export const CHANGE_ASPECT = 'CHANGE_ASPECT'
@@ -109,6 +110,13 @@ export const cloneBranchDeclaration = createAction(
 export const removeBranchDeclaration = createAction(
     types.REMOVE_BRANCH,branchuid => ({
         branchuid, 
+    }), () => ({
+        explorer:false
+    })
+)
+
+export const removeBranches = createAction(
+    types.REMOVE_BRANCHES, () => ({
     }), () => ({
         explorer:false
     })

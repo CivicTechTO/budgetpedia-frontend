@@ -8,6 +8,7 @@ var types;
     types.CLONE_BRANCH = 'CLONE_BRANCH';
     types.UPDATE_BRANCH = 'UPDATE_BRANCH';
     types.REMOVE_BRANCH = 'REMOVE_BRANCH';
+    types.REMOVE_BRANCHES = 'REMOVE_BRANCHES';
     types.CHANGE_VIEWPOINT = 'CHANGE_VIEWPOINT';
     types.CHANGE_VERSION = 'CHANGE_VERSION';
     types.CHANGE_ASPECT = 'CHANGE_ASPECT';
@@ -80,6 +81,9 @@ exports.cloneBranchDeclaration = redux_actions_1.createAction(types.CLONE_BRANCH
 exports.removeBranchDeclaration = redux_actions_1.createAction(types.REMOVE_BRANCH, branchuid => ({
     branchuid,
 }), () => ({
+    explorer: false
+}));
+exports.removeBranches = redux_actions_1.createAction(types.REMOVE_BRANCHES, () => ({}), () => ({
     explorer: false
 }));
 exports.changeViewpoint = redux_actions_1.createAction(types.CHANGE_VIEWPOINT, (branchuid, viewpointname) => ({
