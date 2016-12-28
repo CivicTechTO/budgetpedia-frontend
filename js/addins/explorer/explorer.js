@@ -623,6 +623,15 @@ let Explorer = class extends Component {
             console.log('onBranchUpdate', branchuid);
             return branchuid;
         };
+        this.resetBranches = () => {
+            let value = 'SELECT';
+            this.setState({
+                selectStoryboard: value,
+            });
+            this.removeBranches();
+            let defaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch));
+            this.props.addBranchDeclaration(null, defaultSettings);
+        };
     }
     componentWillMount() {
         if (!this.props.declarationData.onetimenotification) {
@@ -830,9 +839,7 @@ let Explorer = class extends Component {
                             React.createElement(MenuItem_1.default, { disabled: true, value: 'SPECIAL', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Special Analytics") }),
                             React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") })),
                         React.createElement(RaisedButton_1.default, { style: { verticalAlign: '25px' }, type: "button", label: "Reset", onTouchTap: () => {
-                                this.removeBranches();
-                                let defaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch));
-                                this.props.addBranchDeclaration(null, defaultSettings);
+                                this.resetBranches();
                             } })),
                     React.createElement("div", null))),
             dialogbox,

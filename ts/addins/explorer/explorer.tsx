@@ -1051,7 +1051,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             <div style={{height:'200px'}}></div>
         </Dialog >)
 
-    onSelectStoryboard = (value) => {
+    onSelectStoryboard = (value:string) => {
         this.setState({
             selectStoryboard:value,
         })
@@ -1062,6 +1062,16 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     onBranchUpdate = (branchuid) => {
         console.log('onBranchUpdate',branchuid)
         return branchuid
+    }
+
+    resetBranches = () => {
+        let value:string = 'SELECT'
+        this.setState({
+            selectStoryboard:value,
+        })
+        this.removeBranches()
+        let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch))
+        this.props.addBranchDeclaration(null,defaultSettings) // change state        
     }
 
     // ===================================================================
@@ -1412,9 +1422,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         label="Reset"
                         onTouchTap={
                             () => {
-                                this.removeBranches()
-                                let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch))
-                                this.props.addBranchDeclaration(null,defaultSettings) // change state
+                                this.resetBranches()
                             }
                         } 
                     />                
