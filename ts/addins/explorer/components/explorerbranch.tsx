@@ -907,7 +907,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     handleSearch = (e) => {
-        this.props.handleFindDialogOpen(e,this.applySearch)
+        this.props.handleFindDialogOpen(e,this.applySearchBranchSettings)
     }
 
     finderParms:any = null
@@ -940,13 +940,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
-    applySearch = parms => {
-        let explorer = this
+    applySearchBranchSettings = parms => {
+        let explorerbranch = this
         if (parms.viewpoint == 'expenditures') {
             parms.aspect = 'expenditures'
         }
-        explorer.finderParms = parms
-        let { budgetBranch } = explorer.props
+        explorerbranch.finderParms = parms
+        let { budgetBranch } = explorerbranch.props
         let { nodes:branchNodes } = budgetBranch
 
         // branchNodes is just a copy of the component state's BranchNodes
@@ -955,11 +955,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             return {nodeuid:item.uid, cellList:item.cellDeclarationList}
         })
         // this will trigger render cycle that will delete the component state's stored nodes
-        let globalStateActions = explorer._stateActions
+        let globalStateActions = explorerbranch._stateActions
         globalStateActions.removeNodeDeclarations(removeditems)
 
 
-        let settings = explorer._getNewBranchSettings(parms)
+        let settings = explorerbranch._getNewBranchSettings(parms)
 
         globalStateActions.updateBranch(budgetBranch.uid, settings)
 

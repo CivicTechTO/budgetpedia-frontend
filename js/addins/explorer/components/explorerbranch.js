@@ -484,7 +484,7 @@ class ExplorerBranch extends Component {
             this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
         };
         this.handleSearch = (e) => {
-            this.props.handleFindDialogOpen(e, this.applySearch);
+            this.props.handleFindDialogOpen(e, this.applySearchBranchSettings);
         };
         this.finderParms = null;
         this.findParmsToStateDictionary = {
@@ -514,21 +514,21 @@ class ExplorerBranch extends Component {
                 permanence: 'Permanence',
             }
         };
-        this.applySearch = parms => {
-            let explorer = this;
+        this.applySearchBranchSettings = parms => {
+            let explorerbranch = this;
             if (parms.viewpoint == 'expenditures') {
                 parms.aspect = 'expenditures';
             }
-            explorer.finderParms = parms;
-            let { budgetBranch } = explorer.props;
+            explorerbranch.finderParms = parms;
+            let { budgetBranch } = explorerbranch.props;
             let { nodes: branchNodes } = budgetBranch;
             let removed = branchNodes.splice(0);
             let removeditems = removed.map((item) => {
                 return { nodeuid: item.uid, cellList: item.cellDeclarationList };
             });
-            let globalStateActions = explorer._stateActions;
+            let globalStateActions = explorerbranch._stateActions;
             globalStateActions.removeNodeDeclarations(removeditems);
-            let settings = explorer._getNewBranchSettings(parms);
+            let settings = explorerbranch._getNewBranchSettings(parms);
             globalStateActions.updateBranch(budgetBranch.uid, settings);
         };
         this._getNewBranchSettings = parms => {

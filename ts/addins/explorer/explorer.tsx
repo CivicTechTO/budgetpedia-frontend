@@ -862,18 +862,18 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             name:selection.name,
         }
         explorer.findParameters.parms = parms
-        explorer.findParameters.callback(parms)
+        explorer.findParameters.applySearchBranchSettings(parms)
     }
 
     findParameters = {
-        callback:null,
+        applySearchBranchSettings:null,
         parms:null,
     }   
 
-    handleFindDialogOpen = (e,callback) => {
+    handleFindDialogOpen = (e,applySearchBranchSettings) => {
         e.stopPropagation()
         e.preventDefault()
-        this.findParameters.callback = callback
+        this.findParameters.applySearchBranchSettings = applySearchBranchSettings
         this.findResetSelection()
         this.findChart()
     }
@@ -1058,6 +1058,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     // =======================[ Storyboard Creation ]=====================
+
+    /*
+
+        TODO: investigate possible side effects on selecting storyboard
+        in presence of url parameters for branch (should be OK - cleared by clearUrlParms)
+
+    */
 
     onBranchUpdate = (branchuid) => {
         console.log('onBranchUpdate',branchuid)

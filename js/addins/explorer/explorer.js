@@ -499,16 +499,16 @@ let Explorer = class extends Component {
                 name: selection.name,
             };
             explorer.findParameters.parms = parms;
-            explorer.findParameters.callback(parms);
+            explorer.findParameters.applySearchBranchSettings(parms);
         };
         this.findParameters = {
-            callback: null,
+            applySearchBranchSettings: null,
             parms: null,
         };
-        this.handleFindDialogOpen = (e, callback) => {
+        this.handleFindDialogOpen = (e, applySearchBranchSettings) => {
             e.stopPropagation();
             e.preventDefault();
-            this.findParameters.callback = callback;
+            this.findParameters.applySearchBranchSettings = applySearchBranchSettings;
             this.findResetSelection();
             this.findChart();
         };

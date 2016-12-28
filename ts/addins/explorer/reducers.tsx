@@ -110,6 +110,7 @@ let branchesById:{[index:string]:any} = (state = { }, action) => {
     let { type } = action
     let newstate
     switch (type) {
+        
         case actiontypes.ADD_BRANCH: {
             newstate = Object.assign({},state,{[action.payload.branchuid]:action.payload.settings})
             return newstate
