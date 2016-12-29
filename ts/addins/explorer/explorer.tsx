@@ -1107,9 +1107,58 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
+/*
+    each story consists of the following properties
+    {
+        viewpoint:"", FUNCTIONAL, STRUCTURAL, ACTUALEXPENSES, ACTUALREVENUES, EXPENDITURES
+        source:"", 
+            for FUNCTIONAL or STRUCTURAL:
+                SUMMARY, PBFT, VARIANCE
+            otherwise source = viewpoint
+        level:"",
+
+            for FUNCTIONAL or STRUCTURAL Expenses:
+                Taxonomy, Program, Service, Activity, Expense
+
+            for FUNCTIONAL or STRUCTURAL Revenues:
+                Taxonomy, Program, Service, Activity, Revenue
+
+            for FUNCTIONAL or STRUCTURAL Staffing:
+                Taxonomy, Program, Permanence
+
+            for ACTUALEXPENSES Expenses
+                Taxonomy, Expense
+
+            for ACTUALREVENUES Revenues
+                Taxonomy, Revenue
+
+            for EXPENDITURES Expenditure
+                Taxonomy, Expenditure
+        code:"",
+        aspect:"",
+            for FUNCTIONAL or STRUCTURAL:
+                Expenses, Revenues, Staffing
+            for ACTUALEXPENSES,
+                Expenses
+            for ACTUALREVENUES:
+                Revenues
+            for EXPENDITURES:
+                Expenditure
+        name:""
+    }
+*/    
+
     _doProcessStoryBoardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
         console.log('processing story board',selection,storyboard)
+        let stories = storyboard.stories
+        if (!stories) return
+        // clear all branches
+        this.removeBranches()
+        for (let story of stories) {
+            // create branch
+            // populate branch
+        }
     }
 
     onBranchUpdate = (branchuid) => {

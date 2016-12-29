@@ -1,6 +1,17 @@
 {
     "storyboards": {
-        "SHARED":{},
+        "SHARED":{
+            "stories":[
+                {
+                    "viewpoint":"",
+                    "source":"",
+                    "level":"",
+                    "code":"",
+                    "aspect":"",
+                    "name":""
+                }
+            ]
+        },
         "WASTE":{},
         "WATER":{},
         "TTC":{},

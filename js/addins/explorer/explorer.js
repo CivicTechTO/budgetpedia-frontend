@@ -666,6 +666,12 @@ let Explorer = class extends Component {
         this._doProcessStoryBoardSelection = selection => {
             let storyboard = this.storyBoards.storyboards[selection];
             console.log('processing story board', selection, storyboard);
+            let stories = storyboard.stories;
+            if (!stories)
+                return;
+            this.removeBranches();
+            for (let story of stories) {
+            }
         };
         this.onBranchUpdate = (branchuid) => {
             console.log('onBranchUpdate', branchuid);
