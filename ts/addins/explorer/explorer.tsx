@@ -1475,7 +1475,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             }/>
 
                         <MenuItem value={'SUPPORT'} primaryText={
-                            <div style={{fontWeight:'bold'}} >Support Services</div>} />
+                            <div style={{fontWeight:'bold'}} >Citizen Support Services</div>} />
                             <MenuItem value={"FIRE"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Fire</div>
                             }/>

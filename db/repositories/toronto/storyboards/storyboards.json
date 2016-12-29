@@ -18,7 +18,8 @@
                     "aspect":"Expenses",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "name":"Budget: Gross operating expenses",
+                    "name":"General Services Budget: Gross operating expenses",
+                    "title":"Expenses by program",
                     "tab":0,
                     "chart":"OneYear:ColumnChart"
                 },
@@ -28,7 +29,7 @@
                     "aspect":"Expenses",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "name":"Budget: Gross operating expenses",
+                    "name":"General Services Budget: Gross operating expenses",
                     "tab":1,
                     "chart":"OneYear:ColumnChart"
                 },
@@ -38,7 +39,7 @@
                     "aspect":"Revenues",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "name":"Budget: Gross operating expenses",
+                    "name":"General Services Budget: Gross revenues",
                     "tab":0,
                     "chart":"OneYear:ColumnChart"
                 },
@@ -48,7 +49,7 @@
                     "aspect":"Revenues",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "name":"Budget: Gross operating expenses",
+                    "name":"General Services Budget: Gross revenues",
                     "tab":1,
                     "chart":"OneYear:ColumnChart"
                 },
@@ -58,7 +59,7 @@
                     "aspect":"Staffing",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "name":"Budget: Gross operating expenses",
+                    "name":"General Services Budget: Operating staffing complement",
                     "tab":0,
                     "chart":"OneYear:ColumnChart"
                 },
@@ -68,7 +69,7 @@
                     "aspect":"Staffing",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "name":"Budget: Gross operating expenses",
+                    "name":"General Services Budget: Operating staffing complement",
                     "tab":1,
                     "chart":"OneYear:ColumnChart"
                 }
