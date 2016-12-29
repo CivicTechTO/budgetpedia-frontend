@@ -1,14 +1,76 @@
 {
+    "template": {
+        "viewpoint":"FUNCTIONAL, STRUCTURAL, ACTUALEXPENSES, ACTUALREVENUES, EXPENDITURES",
+        "source":"for FUNCTIONAL or STRUCTURAL: SUMMARY, PBFT, VARIANCE otherwise source = viewpoint",
+        "level":"for FUNCTIONAL or STRUCTURAL Expenses: Taxonomy, Program, Service, Activity, Expense for FUNCTIONAL or STRUCTURAL Revenues: Taxonomy, Program, Service, Activity, Revenue for FUNCTIONAL or STRUCTURAL Staffing: Taxonomy, Program, Permanence for ACTUALEXPENSES Expenses Taxonomy, Expense for ACTUALREVENUES Revenues Taxonomy, Revenue for EXPENDITURES Expenditure Taxonomy, Expenditure",
+        "code":"",
+        "aspect":"for FUNCTIONAL or STRUCTURAL: Expenses, Revenues, Staffing for ACTUALEXPENSES, Expenses for ACTUALREVENUES: Revenues for EXPENDITURES: Expenditure",
+        "name":"",
+        "tab":"0 or 1",
+        "chart":"OneYear/TwoYears/AllYears:ColumnChart/DonutChart;DiffColumnChart/DiffPieChart;Timeline/StackedArea/Proportional"
+    },
     "storyboards": {
         "SHARED":{
             "stories":[
                 {
-                    "viewpoint":"",
-                    "source":"",
-                    "level":"",
-                    "code":"",
-                    "aspect":"",
-                    "name":""
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
+                    "code":"SHARED",
+                    "name":"Budget: Gross operating expenses",
+                    "tab":0,
+                    "chart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
+                    "code":"SHARED",
+                    "name":"Budget: Gross operating expenses",
+                    "tab":1,
+                    "chart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
+                    "code":"SHARED",
+                    "name":"Budget: Gross operating expenses",
+                    "tab":0,
+                    "chart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
+                    "code":"SHARED",
+                    "name":"Budget: Gross operating expenses",
+                    "tab":1,
+                    "chart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Staffing",
+                    "level":"Taxonomy",
+                    "code":"SHARED",
+                    "name":"Budget: Gross operating expenses",
+                    "tab":0,
+                    "chart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Staffing",
+                    "level":"Taxonomy",
+                    "code":"SHARED",
+                    "name":"Budget: Gross operating expenses",
+                    "tab":1,
+                    "chart":"OneYear:ColumnChart"
                 }
             ]
         },

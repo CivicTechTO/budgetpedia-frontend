@@ -671,6 +671,14 @@ let Explorer = class extends Component {
                 return;
             this.removeBranches();
             for (let story of stories) {
+                let defaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch));
+                let settings = Object.assign(defaultSettings, {
+                    viewpoint: story.viewpoint,
+                    version: story.source,
+                    aspect: story.aspect,
+                });
+                console.log('settings', settings);
+                this.props.addBranchDeclaration(null, settings);
             }
         };
         this.onBranchUpdate = (branchuid) => {
@@ -810,7 +818,7 @@ let Explorer = class extends Component {
                     } },
                     React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
                         "Row " + (branchIndex + 1) + " ",
-                        React.createElement("input", { type: "text", onTouchTap: (ev) => { ev.stopPropagation(); } }),
+                        React.createElement("input", { type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right",
                                 marginRight: "30px"

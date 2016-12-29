@@ -1157,6 +1157,14 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.removeBranches()
         for (let story of stories) {
             // create branch
+            let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch))
+            let settings = Object.assign(defaultSettings,{
+                viewpoint:story.viewpoint,
+                version:story.source,
+                aspect:story.aspect,
+            })
+            console.log('settings',settings)
+            this.props.addBranchDeclaration(null,settings) // change state        
             // populate branch
         }
     }
@@ -1290,6 +1298,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         {"Row " + (branchIndex + 1 ) + " "} 
                         <input 
                             type="text" 
+                            style={{width:'350px',fontWeight:'bold',fontSize:'14px'}}
                             onTouchTap = {(ev) => {ev.stopPropagation()}}
                         /> 
 
