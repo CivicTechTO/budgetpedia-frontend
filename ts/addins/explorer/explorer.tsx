@@ -96,6 +96,7 @@ export interface MappedBranchActions extends MappedNodeActions {
     updateProrata: Function,
     toggleShowOptions: Function,
     incrementBranchDataVersion: Function,
+    clearBranchStory: Function,
     updateCellChartSelection:Function,
     updateCellTimeScope:Function,
     updateCellYearSelections: Function,
@@ -1090,20 +1091,20 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             selectStoryboard:value,
         })
         if (value == 'SELECT') return
-        this.processStoryBoardSelection(value)
+        this.processStoryboardSelection(value)
     }
 
-    processStoryBoardSelection = selection => {
+    processStoryboardSelection = selection => {
         if (!this.storyBoards) {
             let promise = this.getStoryboardsPromise()
             promise.then(json => {
                 this.storyBoards = json
-                this._doProcessStoryBoardSelection(selection)
+                this._doProcessStoryboardSelection(selection)
             }).catch(reason => {
 
             }) 
         } else {
-            this._doProcessStoryBoardSelection(selection)
+            this._doProcessStoryboardSelection(selection)
         }
     }
 
@@ -1148,7 +1149,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 */    
 
-    _doProcessStoryBoardSelection = selection => {
+    _doProcessStoryboardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
         console.log('processing story board',selection,storyboard)
         let stories = storyboard.stories
@@ -1162,12 +1163,17 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 viewpoint:story.viewpoint,
                 version:story.source,
                 aspect:story.aspect,
+                story:story,
             })
-            console.log('settings',settings)
-            this.props.addBranchDeclaration(null,settings) // change state        
+            this.props.addBranchDeclaration(null,settings) // change state 
             // populate branch
         }
     }
+
+    applyStorySettings = (parms) => {
+
+    }
+
 
     onBranchUpdate = (branchuid) => {
         console.log('onBranchUpdate',branchuid)
@@ -1271,6 +1277,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     updateProrata:this.props.updateProrata,
                     changeAspect: this.props.changeAspect,
                     incrementBranchDataVersion: this.props.incrementBranchDataVersion,
+                    clearBranchStory: this.props.clearBranchStory,
                     toggleShowOptions: this.props.toggleShowOptions,
                     updateCellsDataseriesName: this.props.updateCellsDataseriesName,
                     resetLastAction: this.props.resetLastAction,
@@ -1589,6 +1596,7 @@ Explorer = connect(mapStateToProps, {
     toggleInflationAdjusted: ExplorerActions.toggleInflationAdjusted,
     updateProrata: ExplorerActions.updateProrata,
     incrementBranchDataVersion: ExplorerActions.incrementBranchDataVersion,
+    clearBranchStory: ExplorerActions.clearBranchStory,
     toggleShowOptions: ExplorerActions.toggleShowOptions,
     resetLastAction: ExplorerActions.resetLastAction,
     // toggleInflationAdjustment

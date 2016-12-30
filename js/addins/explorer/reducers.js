@@ -212,6 +212,13 @@ let branchesById = (state = {}, action) => {
             newstate[branchuid].branchDataGeneration++;
             return newstate;
         }
+        case actions_1.types.CLEAR_BRANCH_STORY: {
+            let { branchuid } = action.payload;
+            newstate = Object.assign({}, state);
+            newstate[branchuid] = Object.assign({}, newstate[branchuid]);
+            delete newstate[branchuid].story;
+            return newstate;
+        }
         default:
             return state;
     }

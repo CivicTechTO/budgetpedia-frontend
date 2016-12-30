@@ -47,6 +47,7 @@ class ExplorerBranch extends Component {
                 this.urlparmscleared = [];
             }
         };
+        this._story = null;
         this._geturlsettingslist = urlparms => {
             let nodesettings = urlparms.settingsdata;
             let branch = urlparms.branchdata;
@@ -787,9 +788,15 @@ class ExplorerBranch extends Component {
     componentWillMount() {
         this._initialize();
         let { budgetBranch, declarationData } = this.props;
+        let branchDeclarationData = declarationData.branchesById[budgetBranch.uid];
+        if (branchDeclarationData.story) {
+            this._story = branchDeclarationData.story;
+            this._stateActions.clearBranchStory(budgetBranch.uid);
+        }
         budgetBranch.getViewpointData().then(() => {
+            console.log('branch story var', this._story);
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
-            if (declarationData.branchesById[budgetBranch.uid].nodeList.length == 0) {
+            if (branchDeclarationData.nodeList.length == 0) {
                 let { urlparms } = this.props;
                 if (urlparms) {
                     this.urlparms = urlparms;

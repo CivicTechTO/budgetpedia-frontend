@@ -22,6 +22,7 @@ var types;
     types.BRANCH_MOVE_UP = 'BRANCH_MOVE_UP';
     types.BRANCH_MOVE_DOWN = 'BRANCH_MOVE_DOWN';
     types.CHANGE_BRANCH_DATA = 'CHANGE_BRANCH_DATA';
+    types.CLEAR_BRANCH_STORY = 'CLEAR_BRANCH_STORY';
     types.NORMALIZE_CELL_YEAR_DEPENDENCIES = 'NORMALIZE_CELL_YEAR_DEPENDENCIES';
     types.HARMONIZE_CELLS = 'HARMONIZE_CELLS';
     types.ADD_CELLS = 'ADD_CELLS';
@@ -46,6 +47,7 @@ var branchTypes;
     branchTypes.UPDATE_PRORATA = types.UPDATE_PRORATA;
     branchTypes.TOGGLE_SHOW_OPTIONS = types.TOGGLE_SHOW_OPTIONS;
     branchTypes.CHANGE_BRANCH_DATA = types.CHANGE_BRANCH_DATA;
+    branchTypes.CLEAR_BRANCH_STORY = types.CLEAR_BRANCH_STORY;
     branchTypes.HARMONIZE_CELLS = types.HARMONIZE_CELLS;
 })(branchTypes = exports.branchTypes || (exports.branchTypes = {}));
 var nodeTypes;
@@ -138,6 +140,11 @@ exports.toggleShowOptions = redux_actions_1.createAction(types.TOGGLE_SHOW_OPTIO
     explorer: true
 }));
 exports.incrementBranchDataVersion = redux_actions_1.createAction(types.CHANGE_BRANCH_DATA, (branchuid) => ({
+    branchuid,
+}), () => ({
+    explorer: false
+}));
+exports.clearBranchStory = redux_actions_1.createAction(types.CLEAR_BRANCH_STORY, (branchuid) => ({
     branchuid,
 }), () => ({
     explorer: false

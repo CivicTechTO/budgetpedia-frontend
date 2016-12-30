@@ -29,6 +29,7 @@ export namespace types {
     export const BRANCH_MOVE_UP = 'BRANCH_MOVE_UP'
     export const BRANCH_MOVE_DOWN = 'BRANCH_MOVE_DOWN'
     export const CHANGE_BRANCH_DATA = 'CHANGE_BRANCH_DATA'
+    export const CLEAR_BRANCH_STORY = 'CLEAR_BRANCH_STORY'
     export const NORMALIZE_CELL_YEAR_DEPENDENCIES = 'NORMALIZE_CELL_YEAR_DEPENDENCIES'
     export const HARMONIZE_CELLS = 'HARMONIZE_CELLS'
 
@@ -57,6 +58,7 @@ export namespace branchTypes {
     export import UPDATE_PRORATA = types.UPDATE_PRORATA
     export import TOGGLE_SHOW_OPTIONS = types.TOGGLE_SHOW_OPTIONS
     export import CHANGE_BRANCH_DATA = types.CHANGE_BRANCH_DATA 
+    export import CLEAR_BRANCH_STORY = types.CLEAR_BRANCH_STORY
     export import HARMONIZE_CELLS = types.HARMONIZE_CELLS   
 }
 
@@ -207,6 +209,13 @@ export const incrementBranchDataVersion = createAction(
     })
 )
 
+export const clearBranchStory = createAction(
+    types.CLEAR_BRANCH_STORY, (branchuid) => ({
+        branchuid,
+    }), () => ({
+        explorer:false
+    })
+)
 // ----------------------[ Node ]-----------------------------
 
 export const changeTab = createAction(

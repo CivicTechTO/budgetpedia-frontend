@@ -243,6 +243,14 @@ let branchesById:{[index:string]:any} = (state = { }, action) => {
             return newstate
         }
 
+        case actiontypes.CLEAR_BRANCH_STORY: {
+            let { branchuid } = action.payload
+            newstate = Object.assign({},state)
+            newstate[branchuid] = Object.assign({},newstate[branchuid])
+            delete newstate[branchuid].story
+            return newstate
+        }
+
         default:
             return state
     }

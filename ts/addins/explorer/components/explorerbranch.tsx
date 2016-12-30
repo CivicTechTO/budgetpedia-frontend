@@ -150,6 +150,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
+    private _story:any = null
     // finish initialization of budgetBranch and branch explorer objects
     componentWillMount() {
 
@@ -157,13 +158,20 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         let { budgetBranch, declarationData } = this.props
 
+        let branchDeclarationData = declarationData.branchesById[budgetBranch.uid]
+
+        if (branchDeclarationData.story) {
+            this._story = branchDeclarationData.story
+            this._stateActions.clearBranchStory(budgetBranch.uid)
+        }
+
         budgetBranch.getViewpointData().then(() => {
 
-            // console.log('viewpointdata',this.state.viewpointData)
+            console.log('branch story var',this._story)
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid) // change data generation counter for child compare
 
-            if (declarationData.branchesById[budgetBranch.uid].nodeList.length == 0) {
+            if (branchDeclarationData.nodeList.length == 0) {
 
                 let { urlparms } = this.props
 
