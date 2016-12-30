@@ -1166,14 +1166,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 story:story,
             })
             this.props.addBranchDeclaration(null,settings) // change state 
-            // populate branch
         }
     }
-
-    applyStorySettings = (parms) => {
-
-    }
-
 
     onBranchUpdate = (branchuid) => {
         console.log('onBranchUpdate',branchuid)
