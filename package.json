@@ -27,7 +27,7 @@
     "jsonpack": "^1.1.5",
     "lodash": "^4.17.3",
     "lodash.assign": "^4.2.0",
-    "material-ui": "^0.16.6",
+    "material-ui": "^0.16.4",
     "moment": "^2.17.1",
     "node-uuid": "^1.4.7",
     "normalizr": "^2.3.1",
