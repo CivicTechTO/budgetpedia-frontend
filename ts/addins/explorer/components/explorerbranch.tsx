@@ -170,6 +170,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             console.log('branch story var',this._story)
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid) // change data generation counter for child compare
+            let story
+            if (this._story) {
+                story = this._story
+                this._story = null
+                // return
+            }
 
             if (branchDeclarationData.nodeList.length == 0) {
 

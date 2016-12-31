@@ -796,6 +796,11 @@ class ExplorerBranch extends Component {
         budgetBranch.getViewpointData().then(() => {
             console.log('branch story var', this._story);
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
+            let story;
+            if (this._story) {
+                story = this._story;
+                this._story = null;
+            }
             if (branchDeclarationData.nodeList.length == 0) {
                 let { urlparms } = this.props;
                 if (urlparms) {

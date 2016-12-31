@@ -681,8 +681,6 @@ let Explorer = class extends Component {
                 this.props.addBranchDeclaration(null, settings);
             }
         };
-        this.applyStorySettings = (parms) => {
-        };
         this.onBranchUpdate = (branchuid) => {
             console.log('onBranchUpdate', branchuid);
             return branchuid;
