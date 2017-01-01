@@ -47,10 +47,14 @@ class ExplorerBranch extends Component {
                 this.urlparmscleared = [];
             }
         };
-        this._story = null;
+        this.story = null;
         this._createStoryNodes = story => {
             let path = this._getStoryPath(story);
             console.log('story path', path);
+            story.path = path;
+            let settingslist = this._getStorySettingsList(story);
+            console.log('settingslist', settingslist);
+            this._stateActions.addNodeDeclarations(settingslist);
         };
         this._getStoryPath = story => {
             let path = [];
@@ -60,6 +64,31 @@ class ExplorerBranch extends Component {
                 this._getPath(path, story.code, viewpoint.Components);
             }
             return path;
+        };
+        this._getStorySettingsList = story => {
+            let settingslist = [];
+            let path = story.path;
+            let nodeCount = path.length + 1;
+            for (let n = 0; n < nodeCount; n++) {
+                let nodeDefaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.node));
+                let nodeSettings = {
+                    aspectName: story.aspect,
+                    cellIndex: (n == (nodeCount - 1)) ? story.tab : 0,
+                    cellList: null,
+                    dataPath: (n == 0) ? [] : path.slice(n - 1, n),
+                    nodeIndex: n,
+                    viewpointName: story.viewpoint,
+                    yearsRange: {
+                        firstYear: null,
+                        lastYear: null,
+                    },
+                };
+                let settings = Object.assign(nodeDefaultSettings, nodeSettings);
+                settingslist.push({
+                    settings,
+                });
+            }
+            return settingslist;
         };
         this._getPath = (path, targetcode, components) => {
             for (let code in components) {
@@ -664,7 +693,7 @@ class ExplorerBranch extends Component {
                 actions.updateCellChartSelection = branch._stateActions.updateCellChartSelection(budgetNode.uid);
                 actions.updateCellChartCode = branch._stateActions.updateCellChartCode(budgetNode.uid);
                 actions.updateCellYearSelections = branch._stateActions.updateCellYearSelections(budgetNode.uid);
-                return React.createElement(explorernode_1.ExplorerNode, { key: budgetNode.uid, callbackid: nodeindex, budgetNode: budgetNode, declarationData: branch.props.declarationData, globalStateActions: actions, showControls: branchDeclaration.showOptions, dataGenerationCounter: branchDeclaration.branchDataGeneration, callbacks: { harmonizeCells: branch.harmonizeCells }, urlparms: this.urlparms, clearUrlParms: this.clearUrlParms });
+                return React.createElement(explorernode_1.ExplorerNode, { key: budgetNode.uid, callbackid: nodeindex, budgetNode: budgetNode, declarationData: branch.props.declarationData, globalStateActions: actions, showControls: branchDeclaration.showOptions, dataGenerationCounter: branchDeclaration.branchDataGeneration, callbacks: { harmonizeCells: branch.harmonizeCells }, urlparms: this.urlparms, story: this.story, clearUrlParms: this.clearUrlParms });
             });
             return portals;
         };
@@ -843,17 +872,17 @@ class ExplorerBranch extends Component {
         let { budgetBranch, declarationData } = this.props;
         let branchDeclarationData = declarationData.branchesById[budgetBranch.uid];
         if (branchDeclarationData.story) {
-            this._story = branchDeclarationData.story;
+            this.story = branchDeclarationData.story;
             this._stateActions.clearBranchStory(budgetBranch.uid);
         }
         budgetBranch.getViewpointData().then(() => {
-            console.log('branch story var', this._story);
+            console.log('branch story var', this.story);
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
             let story;
-            if (this._story) {
-                story = this._story;
-                this._story = null;
+            if (this.story) {
+                story = this.story;
                 this._createStoryNodes(story);
+                return;
             }
             if (branchDeclarationData.nodeList.length == 0) {
                 let { urlparms } = this.props;

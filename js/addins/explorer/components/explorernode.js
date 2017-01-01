@@ -138,6 +138,7 @@ class ExplorerNode extends Component {
     }
     componentWillMount() {
         let { budgetNode, declarationData, urlparms } = this.props;
+        console.log('componentWillMount story', this.props.story);
         if (urlparms) {
             this.urlparms = urlparms;
         }

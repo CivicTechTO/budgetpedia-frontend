@@ -38,6 +38,7 @@ interface ExplorerNodeProps {
     dataGenerationCounter: number,
     callbacks: any,
     urlparms: any,
+    story: any,
     clearUrlParms: Function,
 }
 
@@ -60,6 +61,8 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
     componentWillMount() {
         let { budgetNode, declarationData, urlparms } = this.props
         // console.log('componentWillMount for',budgetNode)
+
+        console.log('componentWillMount story',this.props.story)
 
         if (urlparms) {
             this.urlparms = urlparms

@@ -150,7 +150,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
-    private _story:any = null
+    private story:any = null
+    private storycleared = []
     // finish initialization of budgetBranch and branch explorer objects
     componentWillMount() {
 
@@ -161,21 +162,20 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         let branchDeclarationData = declarationData.branchesById[budgetBranch.uid]
 
         if (branchDeclarationData.story) {
-            this._story = branchDeclarationData.story
+            this.story = branchDeclarationData.story
             this._stateActions.clearBranchStory(budgetBranch.uid)
         }
 
         budgetBranch.getViewpointData().then(() => {
 
-            console.log('branch story var',this._story)
+            console.log('branch story var',this.story)
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid) // change data generation counter for child compare
             let story
-            if (this._story) {
-                story = this._story
-                this._story = null
+            if (this.story) {
+                story = this.story
                 this._createStoryNodes(story)
-                // return // should never fail as it is internal
+                return // should never fail as it is internal
             } // else
 
             if (branchDeclarationData.nodeList.length == 0) {
@@ -214,7 +214,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         console.log('story path',path)
         story.path = path
         let settingslist = this._getStorySettingsList(story)
-
+        console.log('settingslist',settingslist)
         this._stateActions.addNodeDeclarations(settingslist)
     }
 
@@ -233,29 +233,27 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     private _getStorySettingsList = story => {
         let settingslist = []
-
-        // for (let nodeindex in nodesettings) {
-        //     let node = nodesettings[nodeindex]
-        //     let settings = {
-        //         aspectName:branch.as,
-        //         cellIndex:node.ci,
-        //         cellList:null,
-        //         dataPath: branch.pa.slice(0,parseInt(nodeindex)),
-        //         nodeIndex:parseInt(nodeindex),
-        //         viewpointName:branch.vi,
-        //         yearSelections:{
-        //             leftYear:node.ys.ly,
-        //             rightYear:node.ys.ry,
-        //         },
-        //         yearsRange:{
-        //             firstYear:null,
-        //             lastYear:null,
-        //         },
-        //     }
-        //     settingslist.push({
-        //         settings,
-        //     })
-        // }
+        let path = story.path
+        let nodeCount = path.length + 1
+        for (let n = 0; n < nodeCount; n++) {
+            let nodeDefaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.node))
+            let nodeSettings = {
+                aspectName:story.aspect,
+                cellIndex:(n==(nodeCount - 1))? story.tab:0,
+                cellList:null,
+                dataPath: (n==0)? []:path.slice(n - 1,n),
+                nodeIndex:n,
+                viewpointName:story.viewpoint,
+                yearsRange:{
+                    firstYear:null,
+                    lastYear:null,
+                },
+            }
+            let settings = Object.assign(nodeDefaultSettings,nodeSettings)
+            settingslist.push({
+                settings,
+            })
+        }
 
 
         return settingslist
@@ -1200,6 +1198,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 dataGenerationCounter = { branchDeclaration.branchDataGeneration }
                 callbacks = { {harmonizeCells:branch.harmonizeCells} }
                 urlparms = {this.urlparms}
+                story = {this.story}
                 clearUrlParms = {this.clearUrlParms}
             />
         })
