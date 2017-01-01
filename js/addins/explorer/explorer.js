@@ -48,6 +48,10 @@ let Explorer = class extends Component {
         this.clearUrlParms = () => {
             this.urlparms = null;
         };
+        this.stories = null;
+        this.clearStories = () => {
+            this.stories = null;
+        };
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;
             let newBranches = budgetBranches.filter((branch) => {
@@ -663,10 +667,12 @@ let Explorer = class extends Component {
                 this._doProcessStoryboardSelection(selection);
             }
         };
+        this._stories = null;
         this._doProcessStoryboardSelection = selection => {
             let storyboard = this.storyBoards.storyboards[selection];
             console.log('processing story board', selection, storyboard);
             let stories = storyboard.stories;
+            this._stories = stories;
             if (!stories)
                 return;
             this.removeBranches();
@@ -819,7 +825,7 @@ let Explorer = class extends Component {
                     } },
                     React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
                         "Row " + (branchIndex + 1) + " ",
-                        React.createElement("input", { type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
+                        React.createElement("input", { defaultValue: this._stories ? this._stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right",
                                 marginRight: "30px"

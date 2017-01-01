@@ -174,7 +174,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             let story
             if (this.story) {
                 story = this.story
-                this._createStoryNodes(story)
+                this._createStoryNodes(story, this.state.viewpointData)
                 return // should never fail as it is internal
             } // else
 
@@ -209,11 +209,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         })
     }
 
-    private _createStoryNodes = story => {
+    private _createStoryNodes = (story,viewpointdata) => {
         let path = this._getStoryPath(story) 
         console.log('story path',path)
         story.path = path
-        let settingslist = this._getStorySettingsList(story)
+        let settingslist = this._getStorySettingsList(story, viewpointdata)
         console.log('settingslist',settingslist)
         this._stateActions.addNodeDeclarations(settingslist)
     }
@@ -231,7 +231,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    private _getStorySettingsList = story => {
+    private _getStorySettingsList = (story, viewpointdata) => {
         let settingslist = []
         let path = story.path
         let nodeCount = path.length + 1
@@ -244,9 +244,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 dataPath: (n==0)? []:path.slice(n - 1,n),
                 nodeIndex:n,
                 viewpointName:story.viewpoint,
+                yearSelections: {
+                    leftYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    rightYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
                 yearsRange:{
-                    firstYear:null,
-                    lastYear:null,
+                    firstYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    lastYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
                 },
             }
             let settings = Object.assign(nodeDefaultSettings,nodeSettings)

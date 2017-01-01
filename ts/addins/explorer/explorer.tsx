@@ -171,6 +171,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.urlparms = null
     }
 
+    stories:any = null
+    clearStories = () => {
+        this.stories = null
+    }
+
     componentWillMount() {
 
         // console.log('explorer props location.query',this.props.location.query)
@@ -1147,12 +1152,15 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 Expenditure
         name:""
     }
-*/    
+*/   
+
+    private _stories:any = null 
 
     _doProcessStoryboardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
         console.log('processing story board',selection,storyboard)
         let stories = storyboard.stories
+        this._stories = stories
         if (!stories) return
         // clear all branches
         this.removeBranches()
@@ -1244,8 +1252,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 let urlparms = null
                 if (branchIndex == 0 && this.urlparms) {
                     urlparms = this.urlparms
-                    // this.urlparms = null // pass once only
-                    // console.log('branchIndex, urlparms in explorer map branches',branchIndex,urlparms)
                 }
                 // collect functions to pass down to nested components
                 let actionFunctions:MappedBranchActions = {
@@ -1298,6 +1304,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
                         {"Row " + (branchIndex + 1 ) + " "} 
                         <input 
+                            defaultValue = {this._stories?this._stories[branchIndex].title:''}
                             type="text" 
                             style={{width:'350px',fontWeight:'bold',fontSize:'14px'}}
                             onTouchTap = {(ev) => {ev.stopPropagation()}}
