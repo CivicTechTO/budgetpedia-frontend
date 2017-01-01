@@ -174,46 +174,17 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             if (this._story) {
                 story = this._story
                 this._story = null
-                // return
-            }
+                this._createStoryNodes(story)
+                // return // should never fail as it is internal
+            } // else
 
             if (branchDeclarationData.nodeList.length == 0) {
 
                 let { urlparms } = this.props
 
                 if (urlparms) {
-                    this.urlparms = urlparms
-                    this.props.clearUrlParms()
 
-                    try {
-
-                        let path = urlparms.branchdata.pa
-
-                        // TODO: validate data path
-                        let dataNode = getBudgetNode(this.state.viewpointData, path)
-                        // let dataNode = null
-
-                        if (dataNode) {
-
-                            let settingslist = this._geturlsettingslist(urlparms)
-
-                            this._stateActions.addNodeDeclarations(settingslist)
-
-                            return
-
-                        } else {
-
-                            this.props.setToast('error','unable to locate data requested by url parameter. Using defaults...')
-
-                        }
-
-                    } catch (e) {
-
-                        console.log('urlparms failure',urlparms)
-                        this.urlparms = null
-
-                    }
-
+                    if (this._createUrlNodes(urlparms)) return
                 }
 
                 let budgetNodeParms:BudgetNodeDeclarationParms = budgetBranch.getInitialBranchNodeParms()
@@ -236,6 +207,78 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             console.error('error in data fetch, componentWillMount (branch)', reason)
 
         })
+    }
+
+    private _createStoryNodes = story => {
+        let path = this._getStoryPath(story) 
+        console.log('story path',path)
+    }
+
+    private _getStoryPath = story => {
+        let path = []
+        let viewpoint = this.state.viewpointData
+        console.log('story viewpoint data',viewpoint)
+        if (viewpoint.Components) {
+            this._getPath(path,story.code,viewpoint.Components)
+        }
+        return path
+    }
+
+    private _getPath = (path, targetcode, components) => {
+        for (let code in components) {
+            if (code == targetcode) {
+                path.push(code)
+                return true
+            }
+            let subcomponents = components[code].Components
+            if (subcomponents) {
+                path.push(code)
+                if (this._getPath(path,targetcode,subcomponents)) {
+                    return true
+                } else {
+                    path.pop()
+                }
+            }
+        }
+        return false
+    }
+
+    private _createUrlNodes = urlparms => {
+
+        this.urlparms = urlparms
+        this.props.clearUrlParms()
+
+        try {
+
+            let path = urlparms.branchdata.pa
+
+            // TODO: validate data path
+            let dataNode = getBudgetNode(this.state.viewpointData, path)
+            // let dataNode = null
+
+            if (dataNode) {
+
+                let settingslist = this._geturlsettingslist(urlparms)
+
+                this._stateActions.addNodeDeclarations(settingslist)
+
+                return true
+
+            } else {
+
+                this.props.setToast('error','unable to locate data requested by url parameter. Using defaults...')
+
+            }
+
+        } catch (e) {
+
+            console.log('urlparms failure',urlparms)
+            this.urlparms = null
+
+        }
+
+        return false
+
     }
 
     private _geturlsettingslist = urlparms => {

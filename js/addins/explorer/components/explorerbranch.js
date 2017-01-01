@@ -48,6 +48,59 @@ class ExplorerBranch extends Component {
             }
         };
         this._story = null;
+        this._createStoryNodes = story => {
+            let path = this._getStoryPath(story);
+            console.log('story path', path);
+        };
+        this._getStoryPath = story => {
+            let path = [];
+            let viewpoint = this.state.viewpointData;
+            console.log('story viewpoint data', viewpoint);
+            if (viewpoint.Components) {
+                this._getPath(path, story.code, viewpoint.Components);
+            }
+            return path;
+        };
+        this._getPath = (path, targetcode, components) => {
+            for (let code in components) {
+                if (code == targetcode) {
+                    path.push(code);
+                    return true;
+                }
+                let subcomponents = components[code].Components;
+                if (subcomponents) {
+                    path.push(code);
+                    if (this._getPath(path, targetcode, subcomponents)) {
+                        return true;
+                    }
+                    else {
+                        path.pop();
+                    }
+                }
+            }
+            return false;
+        };
+        this._createUrlNodes = urlparms => {
+            this.urlparms = urlparms;
+            this.props.clearUrlParms();
+            try {
+                let path = urlparms.branchdata.pa;
+                let dataNode = getbudgetnode_1.default(this.state.viewpointData, path);
+                if (dataNode) {
+                    let settingslist = this._geturlsettingslist(urlparms);
+                    this._stateActions.addNodeDeclarations(settingslist);
+                    return true;
+                }
+                else {
+                    this.props.setToast('error', 'unable to locate data requested by url parameter. Using defaults...');
+                }
+            }
+            catch (e) {
+                console.log('urlparms failure', urlparms);
+                this.urlparms = null;
+            }
+            return false;
+        };
         this._geturlsettingslist = urlparms => {
             let nodesettings = urlparms.settingsdata;
             let branch = urlparms.branchdata;
@@ -800,28 +853,13 @@ class ExplorerBranch extends Component {
             if (this._story) {
                 story = this._story;
                 this._story = null;
+                this._createStoryNodes(story);
             }
             if (branchDeclarationData.nodeList.length == 0) {
                 let { urlparms } = this.props;
                 if (urlparms) {
-                    this.urlparms = urlparms;
-                    this.props.clearUrlParms();
-                    try {
-                        let path = urlparms.branchdata.pa;
-                        let dataNode = getbudgetnode_1.default(this.state.viewpointData, path);
-                        if (dataNode) {
-                            let settingslist = this._geturlsettingslist(urlparms);
-                            this._stateActions.addNodeDeclarations(settingslist);
-                            return;
-                        }
-                        else {
-                            this.props.setToast('error', 'unable to locate data requested by url parameter. Using defaults...');
-                        }
-                    }
-                    catch (e) {
-                        console.log('urlparms failure', urlparms);
-                        this.urlparms = null;
-                    }
+                    if (this._createUrlNodes(urlparms))
+                        return;
                 }
                 let budgetNodeParms = budgetBranch.getInitialBranchNodeParms();
                 this._stateActions.addNodeDeclaration(budgetNodeParms);
