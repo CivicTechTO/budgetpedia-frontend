@@ -51,16 +51,13 @@ class ExplorerBranch extends Component {
         this.storycleared = [];
         this._createStoryNodes = (story, viewpointdata) => {
             let path = this._getStoryPath(story);
-            console.log('story path', path);
             story.path = path;
             let settingslist = this._getStorySettingsList(story, viewpointdata);
-            console.log('settingslist', settingslist);
             this._stateActions.addNodeDeclarations(settingslist);
         };
         this._getStoryPath = story => {
             let path = [];
             let viewpoint = this.state.viewpointData;
-            console.log('story viewpoint data', viewpoint);
             if (viewpoint.Components) {
                 this._getPath(path, story.code, viewpoint.Components);
             }
@@ -881,7 +878,6 @@ class ExplorerBranch extends Component {
             this._stateActions.clearBranchStory(budgetBranch.uid);
         }
         budgetBranch.getViewpointData().then(() => {
-            console.log('branch story var', this.story);
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
             let story;
             if (this.story) {

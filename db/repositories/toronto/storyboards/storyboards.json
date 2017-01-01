@@ -7,7 +7,7 @@
         "aspect":"for FUNCTIONAL or STRUCTURAL: Expenses, Revenues, Staffing for ACTUALEXPENSES, Expenses for ACTUALREVENUES: Revenues for EXPENDITURES: Expenditure",
         "name":"",
         "tab":"0 or 1",
-        "chart":"OneYear/TwoYears/AllYears:ColumnChart/DonutChart;DiffColumnChart/DiffPieChart;Timeline/StackedArea/Proportional"
+        "chart":"OneYear/TwoYears/AllYears:ColumnChart/DonutChart;DiffColumnChart/DiffPieChart;TimeLine/StackedArea/Proportional"
     },
     "storyboards": {
         "SHARED":{
@@ -21,7 +21,7 @@
                     "name":"General Services Budget: Gross operating expenses",
                     "title":"Expenses by program",
                     "tab":0,
-                    "chart":"OneYear:ColumnChart"
+                    "leafchart":"OneYear:ColumnChart"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -32,7 +32,7 @@
                     "name":"General Services Budget: Gross operating expenses",
                     "title":"Expenses by type",
                     "tab":1,
-                    "chart":"OneYear:ColumnChart"
+                    "leafchart":"OneYear:ColumnChart"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -43,7 +43,7 @@
                     "name":"General Services Budget: Gross operating expenses",
                     "title":"Expenses trends",
                     "tab":0,
-                    "chart":"AllYears:Timeline"
+                    "leafchart":"AllYears:TimeLine"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -54,7 +54,7 @@
                     "name":"General Services Budget: Gross revenues",
                     "title":"Revenues by program",
                     "tab":0,
-                    "chart":"OneYear:ColumnChart"
+                    "leafchart":"OneYear:ColumnChart"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -65,7 +65,7 @@
                     "name":"General Services Budget: Gross revenues",
                     "title":"Revenues by type",
                     "tab":1,
-                    "chart":"OneYear:ColumnChart"
+                    "leafchart":"OneYear:ColumnChart"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -76,7 +76,7 @@
                     "name":"General Services Budget: Gross revenues",
                     "title":"Revenues trends",
                     "tab":0,
-                    "chart":"AllYears:Timeline"
+                    "leafchart":"AllYears:TimeLine"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -87,7 +87,7 @@
                     "name":"General Services Budget: Operating staffing complement",
                     "title":"Staffing by program",
                     "tab":0,
-                    "chart":"OneYear:ColumnChart"
+                    "leafchart":"OneYear:ColumnChart"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -98,7 +98,7 @@
                     "name":"General Services Budget: Operating staffing complement",
                     "title":"Staffing by type",
                     "tab":1,
-                    "chart":"OneYear:ColumnChart"
+                    "leafchart":"OneYear:ColumnChart"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -109,7 +109,7 @@
                     "name":"General Services Budget: Operating staffing complement",
                     "title":"Staffing trends",
                     "tab":0,
-                    "chart":"AllYears:Timeline"
+                    "leafchart":"AllYears:TimeLine"
                 }
             ]
         },
