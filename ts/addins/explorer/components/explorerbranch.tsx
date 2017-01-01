@@ -212,16 +212,54 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     private _createStoryNodes = story => {
         let path = this._getStoryPath(story) 
         console.log('story path',path)
+        story.path = path
+        let settingslist = this._getStorySettingsList(story)
+
+        this._stateActions.addNodeDeclarations(settingslist)
     }
 
     private _getStoryPath = story => {
         let path = []
         let viewpoint = this.state.viewpointData
         console.log('story viewpoint data',viewpoint)
+
         if (viewpoint.Components) {
             this._getPath(path,story.code,viewpoint.Components)
         }
+
         return path
+
+    }
+
+    private _getStorySettingsList = story => {
+        let settingslist = []
+
+        // for (let nodeindex in nodesettings) {
+        //     let node = nodesettings[nodeindex]
+        //     let settings = {
+        //         aspectName:branch.as,
+        //         cellIndex:node.ci,
+        //         cellList:null,
+        //         dataPath: branch.pa.slice(0,parseInt(nodeindex)),
+        //         nodeIndex:parseInt(nodeindex),
+        //         viewpointName:branch.vi,
+        //         yearSelections:{
+        //             leftYear:node.ys.ly,
+        //             rightYear:node.ys.ry,
+        //         },
+        //         yearsRange:{
+        //             firstYear:null,
+        //             lastYear:null,
+        //         },
+        //     }
+        //     settingslist.push({
+        //         settings,
+        //     })
+        // }
+
+
+        return settingslist
+
     }
 
     private _getPath = (path, targetcode, components) => {
