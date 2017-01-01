@@ -190,6 +190,8 @@ class ExplorerNode extends Component {
                         }
                     }
                 }
+                this.story = null;
+                this.props.clearStory(budgetNode.nodeIndex);
             }
             if (urlparms) {
                 let cellurlparms = urlparms.settingsdata[budgetNode.nodeIndex];

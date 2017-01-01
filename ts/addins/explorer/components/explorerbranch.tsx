@@ -87,6 +87,7 @@ interface ExplorerBranchProps {
         settingsdata: any,
     },
     clearUrlParms: Function,
+    clearStories: Function,
     setToast: Function,
     handleFindDialogOpen: Function,
     onBranchUpdate: Function,
@@ -151,7 +152,22 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     private story:any = null
-    private storycleared = []
+    private storiescleared = []
+    private storysettings = []
+
+    clearStory = nodeIndex => {
+        if (!this.story) {
+            console.error('call to remove expired story', nodeIndex)
+        }
+        this.storiescleared.push(nodeIndex)
+        if (this.storiescleared.length == this.storysettings.length) {
+            this.story = null
+            this.storiescleared = []
+        }
+    }
+
+
+
     // finish initialization of budgetBranch and branch explorer objects
     componentWillMount() {
 
@@ -212,8 +228,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     private _createStoryNodes = (story,viewpointdata) => {
         let path = this._getStoryPath(story) 
         // console.log('story path',path)
+        this.props.clearStories(BudgetBranch)
         story.path = path
         let settingslist = this._getStorySettingsList(story, viewpointdata)
+        this.storysettings = settingslist
         // console.log('settingslist',settingslist)
         this._stateActions.addNodeDeclarations(settingslist)
     }
@@ -1204,6 +1222,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 urlparms = {this.urlparms}
                 story = {this.story}
                 clearUrlParms = {this.clearUrlParms}
+                clearStory = {this.clearStory}
             />
         })
 

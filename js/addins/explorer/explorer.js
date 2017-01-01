@@ -49,8 +49,13 @@ let Explorer = class extends Component {
             this.urlparms = null;
         };
         this.stories = null;
-        this.clearStories = () => {
-            this.stories = null;
+        this.storiescleared = [];
+        this.clearStories = (branch) => {
+            this.storiescleared.push(branch);
+            if (this.storiescleared.length == this.stories.length) {
+                this.stories = null;
+                this.storiescleared = [];
+            }
         };
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;
@@ -667,12 +672,11 @@ let Explorer = class extends Component {
                 this._doProcessStoryboardSelection(selection);
             }
         };
-        this._stories = null;
         this._doProcessStoryboardSelection = selection => {
             let storyboard = this.storyBoards.storyboards[selection];
             console.log('processing story board', selection, storyboard);
             let stories = storyboard.stories;
-            this._stories = stories;
+            this.stories = stories;
             if (!stories)
                 return;
             this.removeBranches();
@@ -825,7 +829,7 @@ let Explorer = class extends Component {
                     } },
                     React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
                         "Row " + (branchIndex + 1) + " ",
-                        React.createElement("input", { defaultValue: this._stories ? this._stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
+                        React.createElement("input", { defaultValue: this.stories ? this.stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right",
                                 marginRight: "30px"
@@ -842,7 +846,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onBranchUpdate: this.onBranchUpdate })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onBranchUpdate: this.onBranchUpdate })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);

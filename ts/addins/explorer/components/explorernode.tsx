@@ -40,6 +40,7 @@ interface ExplorerNodeProps {
     urlparms: any,
     story: any,
     clearUrlParms: Function,
+    clearStory: Function,
 }
 
 class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]}> {
@@ -127,8 +128,8 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
                         }
                     }
                 }
-                // this.urlparms = null
-                // this.props.clearUrlParms(budgetNode.nodeIndex)
+                this.story = null
+                this.props.clearStory(budgetNode.nodeIndex)
             }
             if (urlparms) { // apply imported parms
                 let cellurlparms = urlparms.settingsdata[budgetNode.nodeIndex]

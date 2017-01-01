@@ -18,6 +18,7 @@ const onchartcomponentselection_1 = require("../modules/onchartcomponentselectio
 const getbudgetnode_1 = require("../modules/getbudgetnode");
 const explorernode_1 = require("./explorernode");
 const actions_1 = require("../actions");
+const branch_class_1 = require("../classes/branch.class");
 const Utilities = require("../modules/utilities");
 class ExplorerBranch extends Component {
     constructor() {
@@ -48,11 +49,24 @@ class ExplorerBranch extends Component {
             }
         };
         this.story = null;
-        this.storycleared = [];
+        this.storiescleared = [];
+        this.storysettings = [];
+        this.clearStory = nodeIndex => {
+            if (!this.story) {
+                console.error('call to remove expired story', nodeIndex);
+            }
+            this.storiescleared.push(nodeIndex);
+            if (this.storiescleared.length == this.storysettings.length) {
+                this.story = null;
+                this.storiescleared = [];
+            }
+        };
         this._createStoryNodes = (story, viewpointdata) => {
             let path = this._getStoryPath(story);
+            this.props.clearStories(branch_class_1.default);
             story.path = path;
             let settingslist = this._getStorySettingsList(story, viewpointdata);
+            this.storysettings = settingslist;
             this._stateActions.addNodeDeclarations(settingslist);
         };
         this._getStoryPath = story => {
@@ -695,7 +709,7 @@ class ExplorerBranch extends Component {
                 actions.updateCellChartSelection = branch._stateActions.updateCellChartSelection(budgetNode.uid);
                 actions.updateCellChartCode = branch._stateActions.updateCellChartCode(budgetNode.uid);
                 actions.updateCellYearSelections = branch._stateActions.updateCellYearSelections(budgetNode.uid);
-                return React.createElement(explorernode_1.ExplorerNode, { key: budgetNode.uid, callbackid: nodeindex, budgetNode: budgetNode, declarationData: branch.props.declarationData, globalStateActions: actions, showControls: branchDeclaration.showOptions, dataGenerationCounter: branchDeclaration.branchDataGeneration, callbacks: { harmonizeCells: branch.harmonizeCells }, urlparms: this.urlparms, story: this.story, clearUrlParms: this.clearUrlParms });
+                return React.createElement(explorernode_1.ExplorerNode, { key: budgetNode.uid, callbackid: nodeindex, budgetNode: budgetNode, declarationData: branch.props.declarationData, globalStateActions: actions, showControls: branchDeclaration.showOptions, dataGenerationCounter: branchDeclaration.branchDataGeneration, callbacks: { harmonizeCells: branch.harmonizeCells }, urlparms: this.urlparms, story: this.story, clearUrlParms: this.clearUrlParms, clearStory: this.clearStory });
             });
             return portals;
         };

@@ -172,8 +172,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     stories:any = null
-    clearStories = () => {
-        this.stories = null
+    storiescleared = []
+    clearStories = (branch) => {
+        this.storiescleared.push(branch)
+        if (this.storiescleared.length == this.stories.length) {
+            this.stories = null
+            this.storiescleared = []
+        }
     }
 
     componentWillMount() {
@@ -1154,13 +1159,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 */   
 
-    private _stories:any = null 
-
     _doProcessStoryboardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
         console.log('processing story board',selection,storyboard)
         let stories = storyboard.stories
-        this._stories = stories
+        this.stories = stories
         if (!stories) return
         // clear all branches
         this.removeBranches()
@@ -1304,7 +1307,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
                         {"Row " + (branchIndex + 1 ) + " "} 
                         <input 
-                            defaultValue = {this._stories?this._stories[branchIndex].title:''}
+                            defaultValue = {this.stories?this.stories[branchIndex].title:''}
                             type="text" 
                             style={{width:'350px',fontWeight:'bold',fontSize:'14px'}}
                             onTouchTap = {(ev) => {ev.stopPropagation()}}
@@ -1373,6 +1376,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         handleDialogOpen = {this.handleDialogOpen}
                         urlparms = { urlparms }
                         clearUrlParms = {this.clearUrlParms}
+                        clearStories = {this.clearStories}
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
                         onBranchUpdate = {this.onBranchUpdate}
