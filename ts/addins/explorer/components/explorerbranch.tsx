@@ -87,6 +87,7 @@ interface ExplorerBranchProps {
         settingsdata: any,
     },
     clearUrlParms: Function,
+    clearStories: Function,
     setToast: Function,
     handleFindDialogOpen: Function,
 }
@@ -147,6 +148,27 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             this.urlparms = null
             this.urlparmscleared = []
         }
+        setTimeout(()=>{
+            this.onPortalCreation()
+        },1000)
+    }
+
+    private story:any = null
+    private storiescleared = []
+    private storysettings = []
+
+    clearStory = nodeIndex => {
+        if (!this.story) {
+            console.error('call to remove expired story', nodeIndex)
+        }
+        this.storiescleared.push(nodeIndex)
+        if (this.storiescleared.length == this.storysettings.length) {
+            this.story = null
+            this.storiescleared = []
+            setTimeout(()=>{
+                this.onPortalCreation()
+            },1000)
+        }
     }
 
     // finish initialization of budgetBranch and branch explorer objects
@@ -156,49 +178,35 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         let { budgetBranch, declarationData } = this.props
 
+        let branchDeclarationData = declarationData.branchesById[budgetBranch.uid]
+
+        if (branchDeclarationData.story) {
+            this.story = branchDeclarationData.story
+            this._stateActions.clearBranchStory(budgetBranch.uid)
+        }
+
         budgetBranch.getViewpointData().then(() => {
 
-            // console.log('viewpointdata',this.state.viewpointData)
+            // console.log('branch story var',this.story)
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid) // change data generation counter for child compare
+            let story
+            let explorerbranch = this
+            if (this.story) {
 
-            if (declarationData.branchesById[budgetBranch.uid].nodeList.length == 0) {
+                story = explorerbranch.story
+                explorerbranch._createStoryNodes(story, explorerbranch.state.viewpointData)
+
+                return // should never fail as it is internal
+            } // else
+
+            if (branchDeclarationData.nodeList.length == 0) {
 
                 let { urlparms } = this.props
 
                 if (urlparms) {
-                    this.urlparms = urlparms
-                    this.props.clearUrlParms()
 
-                    try {
-
-                        let path = urlparms.branchdata.pa
-
-                        // TODO: validate data path
-                        let dataNode = getBudgetNode(this.state.viewpointData, path)
-                        // let dataNode = null
-
-                        if (dataNode) {
-
-                            let settingslist = this._geturlsettingslist(urlparms)
-
-                            this._stateActions.addNodeDeclarations(settingslist)
-
-                            return
-
-                        } else {
-
-                            this.props.setToast('error','unable to locate data requested by url parameter. Using defaults...')
-
-                        }
-
-                    } catch (e) {
-
-                        console.log('urlparms failure',urlparms)
-                        this.urlparms = null
-
-                    }
-
+                    if (this._createUrlNodes(urlparms)) return
                 }
 
                 let budgetNodeParms:BudgetNodeDeclarationParms = budgetBranch.getInitialBranchNodeParms()
@@ -221,6 +229,128 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             console.error('error in data fetch, componentWillMount (branch)', reason)
 
         })
+    }
+
+    private _createStoryNodes = (story,viewpointdata) => {
+        let path = this._getStoryPath(story) 
+        // console.log('story path',story.code,path)
+        this.props.clearStories(BudgetBranch)
+        story.path = path
+        let settingslist = this._getStorySettingsList(story, viewpointdata)
+        this.storysettings = settingslist
+        // console.log('settingslist',settingslist)
+        let explorerbranch = this
+        explorerbranch._stateActions.addNodeDeclarations(settingslist)
+
+    }
+
+    private _getStoryPath = story => {
+        let path = []
+        let viewpoint = this.state.viewpointData
+        // console.log('story viewpoint data',viewpoint)
+
+        if (viewpoint.Components && story.code) {
+            this._getPath(path,story.code,viewpoint.Components)
+        }
+
+        return path
+
+    }
+
+    private _getStorySettingsList = (story, viewpointdata) => {
+        let settingslist = []
+        let path = story.path
+        let nodeCount = path.length + 1
+        for (let n = 0; n < nodeCount; n++) {
+            let nodeDefaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.node))
+            let nodeSettings = {
+                aspectName:story.aspect,
+                cellIndex:(n==(nodeCount - 1))? story.tab:0,
+                cellList:null,
+                dataPath: path.slice(0,n),
+                nodeIndex:n,
+                viewpointName:story.viewpoint,
+                yearSelections: {
+                    leftYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    rightYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
+                yearsRange:{
+                    firstYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    lastYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
+            }
+            let settings = Object.assign(nodeDefaultSettings,nodeSettings)
+            settingslist.push({
+                settings,
+            })
+        }
+
+
+        return settingslist
+
+    }
+
+    private _getPath = (path, targetcode, components) => {
+        for (let code in components) {
+            if (code == targetcode) {
+                let subcomponents = components[code].Components
+                if (!subcomponents) {
+                    subcomponents = components[code].CommonDimension
+                }
+                if (subcomponents) {
+                    path.push(code)
+                }
+                return true
+            }
+            let subcomponents = components[code].Components
+            if (subcomponents) {
+                path.push(code)
+                if (this._getPath(path,targetcode,subcomponents)) {
+                    return true
+                } else {
+                    path.pop()
+                }
+            }
+        }
+        return false
+    }
+
+    private _createUrlNodes = urlparms => {
+
+        this.urlparms = urlparms
+        this.props.clearUrlParms()
+
+        try {
+
+            let path = urlparms.branchdata.pa
+
+            // TODO: validate data path
+            let dataNode = getBudgetNode(this.state.viewpointData, path)
+            // let dataNode = null
+
+            if (dataNode) {
+
+                let settingslist = this._geturlsettingslist(urlparms)
+
+                this._stateActions.addNodeDeclarations(settingslist)
+
+                return true
+
+            } else {
+
+                this.props.setToast('error','unable to locate data requested by url parameter. Using defaults...')
+
+            }
+
+        } catch (e) {
+
+            console.log('urlparms failure',urlparms)
+            this.urlparms = null
+
+        }
+
+        return false
+
     }
 
     private _geturlsettingslist = urlparms => {
@@ -341,6 +471,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         if (!this.harmonizeNodesToState(branchNodes, nodeList, nodesById, budgetBranch)) {
 
             this._respondToGlobalStateChange()
+
         }
 
     }
@@ -487,13 +618,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             let settingslist = this._getFinderNodeSettingsList()
             this._stateActions.addNodeDeclarations(settingslist)
 
-            let explorer = this
+            let explorerbranch = this
 
             setTimeout(()=>{
-                explorer._updateCellChartSelections()
+                explorerbranch._updateCellChartSelections()
             })
             setTimeout(()=>{
-                explorer.onPortalCreation()
+
+                explorerbranch.onPortalCreation()
+                
             },1000)
 
         }).catch(reason => {
@@ -903,7 +1036,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     handleSearch = (e) => {
-        this.props.handleFindDialogOpen(e,this.applySearch)
+        this.props.handleFindDialogOpen(e,this.applySearchBranchSettings)
     }
 
     finderParms:any = null
@@ -936,13 +1069,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
-    applySearch = parms => {
-        let explorer = this
+    applySearchBranchSettings = parms => {
+        let explorerbranch = this
         if (parms.viewpoint == 'expenditures') {
             parms.aspect = 'expenditures'
         }
-        explorer.finderParms = parms
-        let { budgetBranch } = explorer.props
+        explorerbranch.finderParms = parms
+        let { budgetBranch } = explorerbranch.props
         let { nodes:branchNodes } = budgetBranch
 
         // branchNodes is just a copy of the component state's BranchNodes
@@ -951,11 +1084,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             return {nodeuid:item.uid, cellList:item.cellDeclarationList}
         })
         // this will trigger render cycle that will delete the component state's stored nodes
-        let globalStateActions = explorer._stateActions
+        let globalStateActions = explorerbranch._stateActions
         globalStateActions.removeNodeDeclarations(removeditems)
 
 
-        let settings = explorer._getNewBranchSettings(parms)
+        let settings = explorerbranch._getNewBranchSettings(parms)
 
         globalStateActions.updateBranch(budgetBranch.uid, settings)
 
@@ -1100,7 +1233,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 dataGenerationCounter = { branchDeclaration.branchDataGeneration }
                 callbacks = { {harmonizeCells:branch.harmonizeCells} }
                 urlparms = {this.urlparms}
+                story = {this.story}
                 clearUrlParms = {this.clearUrlParms}
+                clearStory = {this.clearStory}
             />
         })
 
@@ -1357,8 +1492,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
-    let viewpointselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <span style={{ fontStyle: "italic" }}>Viewpoint: </span>
+    let viewpointselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Viewpoint:</span>
+        </div>
         <DropDownMenu
             value={branchDeclaration.viewpoint}
             onChange={
@@ -1382,8 +1520,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     // <span style={{ fontStyle: "italic" }}>Government: </span>
     let governmentselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
         <DropDownMenu
-            value={"Toronto"}
-            disabled
+                value={"Toronto"}
+                disabled
             >
 
             <MenuItem value={'Toronto'} primaryText="Toronto, Ontario"/>
@@ -1410,8 +1548,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     // TODO: add contitional logic depending on viewpoint selection
-    let versionselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <span style={{ fontStyle: "italic" }}>Source: </span>
+    let versionselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Source:</span>
+        </div>
         <DropDownMenu
             disabled = {versionchoices().length < 2}
             value = {branchDeclaration.version}
@@ -1444,33 +1585,34 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
-    // TODO: add conditional logic depending on version selection
-    let aspectselection = (branchDeclaration.showOptions)
-        ?
-        <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    let aspectselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
 
-            <span style={{ fontStyle: "italic" }}>Aspect: </span>
-
-            <DropDownMenu
-                disabled = { aspectchoices().length < 2}
-                value={branchDeclaration.aspect}
-                onChange={
-                    (e, index, value) => {
-                        branch.switchAspect(value)
-                    }
-                }
-                >
-
-                { aspectchoices() }
-
-            </DropDownMenu>
-
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Aspect:</span>
         </div>
-        :
-        null
 
-    let byunitselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <span style={{ fontStyle: "italic" }}>Prorated: </span>
+        <DropDownMenu
+            disabled = { aspectchoices().length < 2}
+            value={branchDeclaration.aspect}
+            onChange={
+                (e, index, value) => {
+                    branch.switchAspect(value)
+                }
+            }
+            >
+
+            { aspectchoices() }
+
+        </DropDownMenu>
+
+    </div>:null
+
+    let byunitselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Prorated:</span>
+        </div>
         <DropDownMenu
             value={branchDeclaration.prorata}
             onChange={
@@ -1498,7 +1640,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 {
                     display:'inline-block', 
                     whiteSpace:"nowrap", 
-                    verticalAlign:"bottom", 
+                    verticalAlign:"top", 
                     marginRight:'16px',
                 }
             }>
@@ -1531,7 +1673,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 {
                     display:'inline-block', 
                     whiteSpace:"nowrap", 
-                    verticalAlign:"bottom"
+                    verticalAlign:"top"
                 }
             }>
             <Toggle 
@@ -1711,8 +1853,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     backgroundColor:"#ebfaf9",
                     border:"1px solid silver",
                     borderRadius:"8px",
-                    margin:"3px",
+                    marginRight:"6px",
                     paddingLeft:"6px",
+                    height:'48px',
                 }
             }
         >

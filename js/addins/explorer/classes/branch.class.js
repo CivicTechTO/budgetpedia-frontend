@@ -36,6 +36,9 @@ class BudgetBranch {
             if (!viewpointData)
                 return;
             let treeNodeData = getbudgetnode_1.default(viewpointData, dataPath);
+            if (!treeNodeData) {
+                console.error('failure to find treenode data', dataPath, viewpointData);
+            }
             let branchNodes = budgetBranch.nodes;
             let parentNode = (nodeIndex === 0) ? null : branchNodes[branchNodes.length - 1];
             let budgetNode = new node_class_1.default(budgetNodeParms, budgetNodeUid, treeNodeData, parentNode);

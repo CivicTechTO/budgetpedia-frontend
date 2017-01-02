@@ -859,7 +859,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
         let yearselection = 
             <div style={{paddingBottom:"3px"}}>
-                <span style={{ fontStyle: "italic" }}>Select {
+                <span style={{ fontStyle: "italic",verticalAlign:'25px',lineHeight:'48px' }}>Select {
                     (yearScope == TimeScope[TimeScope.OneYear])? 'year': 'years'}: </span>
                     
                 {(yearScope != TimeScope[TimeScope.OneYear])?(

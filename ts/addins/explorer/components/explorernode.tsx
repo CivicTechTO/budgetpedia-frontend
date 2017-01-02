@@ -38,7 +38,9 @@ interface ExplorerNodeProps {
     dataGenerationCounter: number,
     callbacks: any,
     urlparms: any,
+    story: any,
     clearUrlParms: Function,
+    clearStory: Function,
 }
 
 class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]}> {
@@ -57,9 +59,17 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
 
     urlparms:any = null
 
+    story:any = null
+
     componentWillMount() {
-        let { budgetNode, declarationData, urlparms } = this.props
+        let { budgetNode, declarationData, urlparms, story } = this.props
         // console.log('componentWillMount for',budgetNode)
+
+        // console.log('componentWillMount story',story)
+
+        if (story) {
+            this.story = story
+        }
 
         if (urlparms) {
             this.urlparms = urlparms
@@ -78,13 +88,59 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
             // get controlData for cellList
             // TODO: cloning with JSON is required here to avoid cross linking chartType - shoud be traced
             let cellDeclarationParms = JSON.parse(JSON.stringify(budgetNode.getCellDeclarationParms()))
+            if (story) {
+                // console.log('node cellDeclarationParms for story',cellDeclarationParms,budgetNode.nodeIndex,story)
+                if ((story.charts === true) || ((budgetNode.nodeIndex == (story.path.length)) && story.leafchart)) {
+                    let cellparms = cellDeclarationParms[story.tab]
+                    if (!cellparms) {
+                        console.error('error:cellparms failed',story,cellDeclarationParms,budgetNode)
+                    }
+                    let chartspecs = story.leafchart.split(':')
+                    cellparms.yearScope = chartspecs[0]
+                    cellparms.chartConfigs[cellparms.yearScope].explorerChartCode = chartspecs[1]
+                }
+                // set chartSelection value for drilldown cell if required
+                let { nodeIndex } = budgetNode
+                let { path } = story
+                // console.log('cellparms',nodeIndex,cellIndex,cellparms)
+                if (nodeIndex < path.length) {
+                    let code = path[nodeIndex]
+                    let { datasetConfig } = budgetNode.viewpointConfigPack
+                    let { Dataseries } = datasetConfig
+                    let drilldownindex = null
+                    for (let itemindex in Dataseries) {
+                        let item = Dataseries[itemindex]
+                        if (item.Type == 'Components') {
+                            drilldownindex = parseInt(itemindex)
+                            break
+                        }
+                    }
+                    if (drilldownindex !== null) {
+                        let drilldownparms = cellDeclarationParms[drilldownindex]
+                        let nodeDataList = budgetNode.treeNodeData.SortedComponents
+                        let chartSelection = null
+                        for (let index in nodeDataList) {
+                            let item = nodeDataList[index]
+                            if (item.Code == code) {
+                                chartSelection = parseInt(index)
+                                break
+                            }
+                        }
+                        if (chartSelection !== null) {
+                            drilldownparms.chartSelection = chartSelection
+                        }
+                    }
+                }
+                this.story = null
+                this.props.clearStory(budgetNode.nodeIndex)
+            }
             if (urlparms) { // apply imported parms
                 let cellurlparms = urlparms.settingsdata[budgetNode.nodeIndex]
                 let cellIndex = cellurlparms.ci
                 let cellparms = cellDeclarationParms[cellIndex]
                 cellparms.yearScope = cellurlparms.c.ys
                 cellparms.chartConfigs[cellparms.yearScope].explorerChartCode = cellurlparms.c.ct
-                // set chartSelectionValue for drilldown cell if required
+                // set chartSelection value for drilldown cell if required
                 let { nodeIndex } = budgetNode
                 // console.log('cellparms',nodeIndex,cellIndex,cellparms)
                 if (nodeIndex < urlparms.branchdata.pa.length) {

@@ -15,6 +15,7 @@ class ExplorerNode extends Component {
         this.getState = () => this.state;
         this.getProps = () => this.props;
         this.urlparms = null;
+        this.story = null;
         this.oldDataGenerationCounter = null;
         this.lastactiongeneration = 0;
         this._respondToGlobalStateChange = () => {
@@ -137,7 +138,10 @@ class ExplorerNode extends Component {
         };
     }
     componentWillMount() {
-        let { budgetNode, declarationData, urlparms } = this.props;
+        let { budgetNode, declarationData, urlparms, story } = this.props;
+        if (story) {
+            this.story = story;
+        }
         if (urlparms) {
             this.urlparms = urlparms;
         }
@@ -149,6 +153,49 @@ class ExplorerNode extends Component {
         let nodeDeclaration = declarationData.nodesById[budgetNode.uid];
         if (nodeDeclaration.cellList == null) {
             let cellDeclarationParms = JSON.parse(JSON.stringify(budgetNode.getCellDeclarationParms()));
+            if (story) {
+                if ((story.charts === true) || ((budgetNode.nodeIndex == (story.path.length)) && story.leafchart)) {
+                    let cellparms = cellDeclarationParms[story.tab];
+                    if (!cellparms) {
+                        console.error('error:cellparms failed', story, cellDeclarationParms, budgetNode);
+                    }
+                    let chartspecs = story.leafchart.split(':');
+                    cellparms.yearScope = chartspecs[0];
+                    cellparms.chartConfigs[cellparms.yearScope].explorerChartCode = chartspecs[1];
+                }
+                let { nodeIndex } = budgetNode;
+                let { path } = story;
+                if (nodeIndex < path.length) {
+                    let code = path[nodeIndex];
+                    let { datasetConfig } = budgetNode.viewpointConfigPack;
+                    let { Dataseries } = datasetConfig;
+                    let drilldownindex = null;
+                    for (let itemindex in Dataseries) {
+                        let item = Dataseries[itemindex];
+                        if (item.Type == 'Components') {
+                            drilldownindex = parseInt(itemindex);
+                            break;
+                        }
+                    }
+                    if (drilldownindex !== null) {
+                        let drilldownparms = cellDeclarationParms[drilldownindex];
+                        let nodeDataList = budgetNode.treeNodeData.SortedComponents;
+                        let chartSelection = null;
+                        for (let index in nodeDataList) {
+                            let item = nodeDataList[index];
+                            if (item.Code == code) {
+                                chartSelection = parseInt(index);
+                                break;
+                            }
+                        }
+                        if (chartSelection !== null) {
+                            drilldownparms.chartSelection = chartSelection;
+                        }
+                    }
+                }
+                this.story = null;
+                this.props.clearStory(budgetNode.nodeIndex);
+            }
             if (urlparms) {
                 let cellurlparms = urlparms.settingsdata[budgetNode.nodeIndex];
                 let cellIndex = cellurlparms.ci;

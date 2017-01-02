@@ -13,6 +13,9 @@ const RadioButton_1 = require("material-ui/RadioButton");
 const RaisedButton_1 = require("material-ui/RaisedButton");
 const add_1 = require("material-ui/svg-icons/content/add");
 const remove_1 = require("material-ui/svg-icons/content/remove");
+const DropDownMenu_1 = require("material-ui/DropDownMenu");
+const Divider_1 = require("material-ui/Divider");
+const LinearProgress_1 = require("material-ui/LinearProgress");
 const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
@@ -29,9 +32,10 @@ let Explorer = class extends Component {
         this.state = {
             budgetBranches: [],
             dialogOpen: false,
-            showdashboard: false,
             findDialogOpen: false,
+            storyboardDialogOpen: false,
             findDialogAspect: 'expenses',
+            selectStoryboard: 'SELECT',
         };
         this.toastrmessages = {
             error: null,
@@ -46,6 +50,22 @@ let Explorer = class extends Component {
         this.clearUrlParms = () => {
             this.urlparms = null;
         };
+        this.stories = null;
+        this.storiescleared = [];
+        this.clearStories = (branch) => {
+            this.storiescleared.push(branch);
+            if (this.storiescleared.length == this.stories.length) {
+                this.stories = null;
+                this.storiescleared = [];
+                this.setState({
+                    storyboardDialogOpen: false,
+                });
+            }
+        };
+        this.storyboardDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Your storyboard is being created"), modal: true, open: this.state.storyboardDialogOpen, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+            React.createElement("div", null,
+                "please wait while the charts are being rendered...",
+                React.createElement(LinearProgress_1.default, { mode: "indeterminate" }))));
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;
             let newBranches = budgetBranches.filter((branch) => {
@@ -216,6 +236,9 @@ let Explorer = class extends Component {
         };
         this.removeBranch = branchuid => {
             this.props.removeBranchDeclaration(branchuid);
+        };
+        this.removeBranches = () => {
+            this.props.removeBranches();
         };
         this.finderLookupPromise = path => {
             let root = './db/repositories/toronto/';
@@ -476,7 +499,6 @@ let Explorer = class extends Component {
             return lookups;
         };
         this.findChart = () => {
-            let findParms = {};
             this.setState({
                 findDialogOpen: true
             });
@@ -494,16 +516,16 @@ let Explorer = class extends Component {
                 name: selection.name,
             };
             explorer.findParameters.parms = parms;
-            explorer.findParameters.callback(parms);
+            explorer.findParameters.applySearchBranchSettings(parms);
         };
         this.findParameters = {
-            callback: null,
+            applySearchBranchSettings: null,
             parms: null,
         };
-        this.handleFindDialogOpen = (e, callback) => {
+        this.handleFindDialogOpen = (e, applySearchBranchSettings) => {
             e.stopPropagation();
             e.preventDefault();
-            this.findParameters.callback = callback;
+            this.findParameters.applySearchBranchSettings = applySearchBranchSettings;
             this.findResetSelection();
             this.findChart();
         };
@@ -578,7 +600,7 @@ let Explorer = class extends Component {
         };
         this.findDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.findDialogOpen, onRequestClose: this.handleFindDialogClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
             React.createElement("div", null,
-                React.createElement(AutoComplete_1.default, { style: { width: '100%' }, ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, menuStyle: { maxHeight: "300px" }, openOnFocus: false, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput }),
+                React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput }),
                 React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.findDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
                     React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenses" }),
                     React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "revenues" }),
@@ -609,6 +631,90 @@ let Explorer = class extends Component {
                     }, label: "Apply", primary: true, style: { marginRight: "50px" } }),
                 React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: () => (this.handleFindDialogClose()), label: "Cancel", secondary: true })),
             React.createElement("div", { style: { height: '200px' } })));
+        this.storyBoards = null;
+        this.getStoryboardsPromise = () => {
+            let filespec = './db/repositories/toronto/storyboards/storyboards.json';
+            let promise = new Promise((resolve, reject) => {
+                fetch(filespec).then(response => {
+                    if (response.ok) {
+                        try {
+                            let json = response.json().then(json => {
+                                resolve(json);
+                            }).catch(reason => {
+                                let msg = 'failure to resolve ' + filespec + ' ' + reason;
+                                console.log(msg);
+                                reject(msg);
+                            });
+                        }
+                        catch (e) {
+                            console.log('error ' + filespec, e.message);
+                            reject('failure to load ' + filespec);
+                        }
+                    }
+                    else {
+                        reject('could not load file ' + filespec);
+                    }
+                }).catch(reason => {
+                    reject(reason + ' ' + filespec);
+                });
+            });
+            return promise;
+        };
+        this.onSelectStoryboard = (value) => {
+            this.setState({
+                selectStoryboard: value,
+                storyboardDialogOpen: true,
+            });
+            if (value == 'SELECT')
+                return;
+            this.processStoryboardSelection(value);
+        };
+        this.processStoryboardSelection = selection => {
+            if (!this.storyBoards) {
+                let promise = this.getStoryboardsPromise();
+                promise.then(json => {
+                    this.storyBoards = json;
+                    this._doProcessStoryboardSelection(selection);
+                }).catch(reason => {
+                });
+            }
+            else {
+                this._doProcessStoryboardSelection(selection);
+            }
+        };
+        this._doProcessStoryboardSelection = selection => {
+            let storyboard = this.storyBoards.storyboards[selection];
+            let stories = storyboard.stories;
+            this.stories = stories;
+            if (!stories)
+                return;
+            this.removeBranches();
+            this.setState({
+                budgetBranches: []
+            });
+            let explorer = this;
+            setTimeout(() => {
+                for (let story of stories) {
+                    let defaultSettings = JSON.parse(JSON.stringify(explorer.props.declarationData.defaults.branch));
+                    let settings = Object.assign(defaultSettings, {
+                        viewpoint: story.viewpoint,
+                        version: story.source,
+                        aspect: story.aspect,
+                        story: story,
+                    });
+                    explorer.props.addBranchDeclaration(null, settings);
+                }
+            });
+        };
+        this.resetBranches = () => {
+            let value = 'SELECT';
+            this.setState({
+                selectStoryboard: value,
+            });
+            this.removeBranches();
+            let defaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch));
+            this.props.addBranchDeclaration(null, defaultSettings);
+        };
     }
     componentWillMount() {
         if (!this.props.declarationData.onetimenotification) {
@@ -720,6 +826,7 @@ let Explorer = class extends Component {
                     updateProrata: this.props.updateProrata,
                     changeAspect: this.props.changeAspect,
                     incrementBranchDataVersion: this.props.incrementBranchDataVersion,
+                    clearBranchStory: this.props.clearBranchStory,
                     toggleShowOptions: this.props.toggleShowOptions,
                     updateCellsDataseriesName: this.props.updateCellsDataseriesName,
                     resetLastAction: this.props.resetLastAction,
@@ -733,7 +840,7 @@ let Explorer = class extends Component {
                     } },
                     React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
                         "Row " + (branchIndex + 1) + " ",
-                        React.createElement("input", { type: "text", onTouchTap: (ev) => { ev.stopPropagation(); } }),
+                        React.createElement("input", { defaultValue: this.stories ? this.stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right",
                                 marginRight: "30px"
@@ -750,7 +857,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);
@@ -773,12 +880,55 @@ let Explorer = class extends Component {
                     fontFamily: "Roboto,sans-serif",
                     fontSize: "12px",
                 } }, "Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations." + " " + "There are numerous data source quality and continuity issues, the intake process has not been" + " " + "validated, and the data presented has not been rigorously verified against source data."),
-            React.createElement(Card_1.Card, { expanded: this.state.showdashboard },
-                React.createElement(Card_1.CardTitle, null, "Budget Explorer"),
+            React.createElement(Card_1.Card, { initiallyExpanded: true },
+                React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Budget Explorer"),
                 React.createElement(Card_1.CardText, { expandable: true },
-                    React.createElement("span", { style: { fontStyle: 'italic' } }, "[content to be determined]"))),
+                    React.createElement("div", { style: { display: 'inline-block', verticalAlign: 'top' } },
+                        React.createElement("span", { style: { lineHeight: '48px', verticalAlign: '23px' } }, "Explore charts below, or select an area of interest: "),
+                        React.createElement(DropDownMenu_1.default, { value: this.state.selectStoryboard, onChange: (event, index, value) => {
+                                this.onSelectStoryboard(value);
+                            } },
+                            React.createElement(MenuItem_1.default, { value: 'SELECT', primaryText: "Select" }),
+                            React.createElement(MenuItem_1.default, { value: 'SHARED', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "General Services") }),
+                            React.createElement(MenuItem_1.default, { value: "WASTE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Solid Waste Management") }),
+                            React.createElement(MenuItem_1.default, { value: "WATER", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Water") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "TTC", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "TTC") }),
+                            React.createElement(MenuItem_1.default, { value: "WHEELTRANS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Wheel Trans") }),
+                            React.createElement(MenuItem_1.default, { value: "TRANSPORTATION", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Transportation (Roads)") }),
+                            React.createElement(MenuItem_1.default, { value: "PARKING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parking") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "PFR", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parks, Forestry & Activity Centres") }),
+                            React.createElement(MenuItem_1.default, { value: "LIBRARY", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Public Library") }),
+                            React.createElement(MenuItem_1.default, { value: "ATTRACTIONS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Public Attractions") }),
+                            React.createElement(MenuItem_1.default, { value: "CONSERVHERITAGE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Conservation & Heritage") }),
+                            React.createElement(MenuItem_1.default, { value: 'SUPPORT', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Citizen Support Services") }),
+                            React.createElement(MenuItem_1.default, { value: "FIRE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Fire") }),
+                            React.createElement(MenuItem_1.default, { value: "PARAMEDICS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Paramedics") }),
+                            React.createElement(MenuItem_1.default, { value: "POLICE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Policing & Court Services") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "HEALTH", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Public Health") }),
+                            React.createElement(MenuItem_1.default, { value: "LONGTERMCARE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Long Term Care") }),
+                            React.createElement(MenuItem_1.default, { value: "CHILDREN", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Children's Services") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "EMPLOYMENT", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Income Support Services") }),
+                            React.createElement(MenuItem_1.default, { value: "HOUSING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Housing Support Services") }),
+                            React.createElement(MenuItem_1.default, { value: 'ADMINISTRATIVE', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Administrative Services") }),
+                            React.createElement(MenuItem_1.default, { value: "COUNCIL", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Corporate Management") }),
+                            React.createElement(MenuItem_1.default, { value: "PLANNING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Planning & Development") }),
+                            React.createElement(MenuItem_1.default, { value: "PERMITS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Permits, Licencing & Standards") }),
+                            React.createElement(Divider_1.default, { inset: true }),
+                            React.createElement(MenuItem_1.default, { value: "INTERNAL", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Internal Services") }),
+                            React.createElement(MenuItem_1.default, { value: "CORPORATE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Corporate Accounts (Finance)") }),
+                            React.createElement(MenuItem_1.default, { disabled: true, value: 'SPECIAL', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Special Analytics") }),
+                            React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") })),
+                        React.createElement(RaisedButton_1.default, { style: { verticalAlign: '25px' }, type: "button", label: "Reset", onTouchTap: () => {
+                                this.resetBranches();
+                            } })),
+                    React.createElement("div", null))),
             dialogbox,
             this.findDialog(),
+            this.storyboardDialog(),
             branches);
     }
 };
@@ -792,6 +942,7 @@ Explorer = react_redux_1.connect(mapStateToProps, {
     addBranchDeclaration: ExplorerActions.addBranchDeclaration,
     cloneBranchDeclaration: ExplorerActions.cloneBranchDeclaration,
     removeBranchDeclaration: ExplorerActions.removeBranchDeclaration,
+    removeBranches: ExplorerActions.removeBranches,
     addNodeDeclaration: ExplorerActions.addNodeDeclaration,
     addNodeDeclarations: ExplorerActions.addNodeDeclarations,
     removeNodeDeclarations: ExplorerActions.removeNodeDeclarations,
@@ -805,6 +956,7 @@ Explorer = react_redux_1.connect(mapStateToProps, {
     toggleInflationAdjusted: ExplorerActions.toggleInflationAdjusted,
     updateProrata: ExplorerActions.updateProrata,
     incrementBranchDataVersion: ExplorerActions.incrementBranchDataVersion,
+    clearBranchStory: ExplorerActions.clearBranchStory,
     toggleShowOptions: ExplorerActions.toggleShowOptions,
     resetLastAction: ExplorerActions.resetLastAction,
     branchMoveUp: ExplorerActions.branchMoveUp,

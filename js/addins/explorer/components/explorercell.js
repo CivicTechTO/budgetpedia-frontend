@@ -540,7 +540,7 @@ class ExplorerCell extends Component {
             return years;
         };
         let yearselection = React.createElement("div", { style: { paddingBottom: "3px" } },
-            React.createElement("span", { style: { fontStyle: "italic" } },
+            React.createElement("span", { style: { fontStyle: "italic", verticalAlign: '25px', lineHeight: '48px' } },
                 "Select ",
                 (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? 'year' : 'years',
                 ": "),

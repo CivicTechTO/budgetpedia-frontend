@@ -43,12 +43,16 @@ import Dialog from 'material-ui/Dialog'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import AutoComplete from 'material-ui/AutoComplete'
 import MenuItem from 'material-ui/MenuItem'
+import Menu from 'material-ui/Menu'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import ContentRemove from 'material-ui/svg-icons/content/remove'
+import DropDownMenu from 'material-ui/DropDownMenu'
+import Divider from 'material-ui/Divider'
 // import Popover from 'material-ui/Popover'
 import Toggle from 'material-ui/Toggle'
+import LinearProgress from 'material-ui/LinearProgress'
 import {toastr} from 'react-redux-toastr'
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
@@ -93,6 +97,7 @@ export interface MappedBranchActions extends MappedNodeActions {
     updateProrata: Function,
     toggleShowOptions: Function,
     incrementBranchDataVersion: Function,
+    clearBranchStory: Function,
     updateCellChartSelection:Function,
     updateCellTimeScope:Function,
     updateCellYearSelections: Function,
@@ -109,6 +114,7 @@ interface MappedExplorerActions extends MappedBranchActions {
     addBranchDeclaration:Function, // dispatcher from ExplorerActions through connect
     cloneBranchDeclaration:Function,
     removeBranchDeclaration:Function,
+    removeBranches:Function,
     resetLastAction:Function,
     branchMoveUp: Function,
     branchMoveDown: Function,
@@ -131,7 +137,8 @@ interface ExplorerState {
     dialogOpen?: boolean,
     findDialogOpen?:boolean,
     findDialogAspect?:string,
-    showdashboard?: boolean
+    selectStoryboard?:string,
+    storyboardDialogOpen?:boolean,
 }
 
 let Explorer = class extends Component< ExplorerProps, ExplorerState > 
@@ -142,9 +149,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     state = {
         budgetBranches:[],
         dialogOpen: false,
-        showdashboard:false,
         findDialogOpen: false,
+        storyboardDialogOpen: false,
         findDialogAspect:'expenses',
+        selectStoryboard:'SELECT',
     }
 
     toastrmessages = {
@@ -165,6 +173,35 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     clearUrlParms = () => {
         this.urlparms = null
     }
+
+    stories:any = null
+    storiescleared = []
+    clearStories = (branch) => {
+        this.storiescleared.push(branch)
+        if (this.storiescleared.length == this.stories.length) {
+            this.stories = null
+            this.storiescleared = []
+            this.setState({
+                storyboardDialogOpen:false,
+            })
+        }
+    }
+
+    storyboardDialog = () => (
+        <Dialog
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Your storyboard is being created</div>}
+            modal = { true }
+            open = { this.state.storyboardDialogOpen }
+            autoScrollBodyContent = {false}
+            contentStyle = {{maxWidth:'600px'}}
+            autoDetectWindowHeight = {false}
+        >
+            <div>
+            please wait while the charts are being rendered...
+            <LinearProgress mode="indeterminate" />
+            </div>
+        </Dialog>
+    )
 
     componentWillMount() {
 
@@ -474,8 +511,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     addBranch = refbranchuid => {
         let cloneSettings = this._getBranchCloneSettings(refbranchuid)
 
-        // console.log('branch clone',refbranchuid,cloneSettings)
-
         this.props.cloneBranchDeclaration( refbranchuid, cloneSettings )
         this.onCloneCreation()
 
@@ -516,6 +551,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     removeBranch = branchuid => {
         this.props.removeBranchDeclaration(branchuid)
+    }
+
+    removeBranches = () => {
+        this.props.removeBranches()
     }
 
     // ==================[ FIND CHART ]=======================
@@ -837,7 +876,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     findChart = () => {
-        let findParms:{} = {}
+        // let findParms:{} = {}
         this.setState({
             findDialogOpen: true
         })
@@ -856,18 +895,18 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             name:selection.name,
         }
         explorer.findParameters.parms = parms
-        explorer.findParameters.callback(parms)
+        explorer.findParameters.applySearchBranchSettings(parms)
     }
 
     findParameters = {
-        callback:null,
+        applySearchBranchSettings:null,
         parms:null,
     }   
 
-    handleFindDialogOpen = (e,callback) => {
+    handleFindDialogOpen = (e,applySearchBranchSettings) => {
         e.stopPropagation()
         e.preventDefault()
-        this.findParameters.callback = callback
+        this.findParameters.applySearchBranchSettings = applySearchBranchSettings
         this.findResetSelection()
         this.findChart()
     }
@@ -960,15 +999,15 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         >
             <div>
                 <AutoComplete
-                  style = {{width:'100%'}}
                   ref={'autocomplete'}
                   floatingLabelText="type in a key word, then select a list item"
                   filter={AutoComplete.caseInsensitiveFilter}
                   dataSource={this.findAspectChartLookups || []}
                   dataSourceConfig = {{text:'name',value:'value'}}
                   fullWidth = {true}
-                  menuStyle = {{maxHeight:"300px"}}
                   openOnFocus = {false}
+                  style = {{width:'100%'}}
+                  menuStyle = {{maxHeight:"300px",overflowY:'auto'}}
                   maxSearchResults = {60}
                   onNewRequest = {this.findOnNewRequest}
                   onUpdateInput = {this.findOnUpdateInput}
@@ -1045,6 +1084,142 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             <div style={{height:'200px'}}></div>
         </Dialog >)
 
+    // =======================[ Storyboard Creation ]=====================
+
+
+    storyBoards:any = null
+
+    private getStoryboardsPromise = () => {
+        let filespec = './db/repositories/toronto/storyboards/storyboards.json'
+        let promise = new Promise((resolve,reject) => {
+            fetch(filespec).then( response => {
+                if (response.ok) {
+                    // console.log('response for ' + path,response)
+                    try {
+                        let json = response.json().then(json => {
+                            resolve(json)
+                        }).catch(reason => {
+                            let msg = 'failure to resolve ' + filespec + ' ' + reason
+                            console.log(msg)
+                            reject(msg)
+                        })
+                    } catch (e) {
+                        console.log('error ' + filespec, e.message)
+                        reject('failure to load ' + filespec)
+                    }
+                } else {
+                    reject('could not load file ' + filespec)
+                }
+
+            }).catch(reason => {
+                reject(reason + ' ' + filespec)
+            })
+        })
+        return promise
+    }
+
+    onSelectStoryboard = (value:string) => {
+        this.setState({
+            selectStoryboard:value,
+            storyboardDialogOpen:true,
+        })
+        if (value == 'SELECT') return
+        this.processStoryboardSelection(value)
+    }
+
+    processStoryboardSelection = selection => {
+        if (!this.storyBoards) {
+            let promise = this.getStoryboardsPromise()
+            promise.then(json => {
+                this.storyBoards = json
+                this._doProcessStoryboardSelection(selection)
+            }).catch(reason => {
+
+            }) 
+        } else {
+            this._doProcessStoryboardSelection(selection)
+        }
+    }
+
+/*
+    each story consists of the following properties
+    {
+        viewpoint:"", FUNCTIONAL, STRUCTURAL, ACTUALEXPENSES, ACTUALREVENUES, EXPENDITURES
+        source:"", 
+            for FUNCTIONAL or STRUCTURAL:
+                SUMMARY, PBFT, VARIANCE
+            otherwise source = viewpoint
+        level:"",
+
+            for FUNCTIONAL or STRUCTURAL Expenses:
+                Taxonomy, Program, Service, Activity, Expense
+
+            for FUNCTIONAL or STRUCTURAL Revenues:
+                Taxonomy, Program, Service, Activity, Revenue
+
+            for FUNCTIONAL or STRUCTURAL Staffing:
+                Taxonomy, Program, Permanence
+
+            for ACTUALEXPENSES Expenses
+                Taxonomy, Expense
+
+            for ACTUALREVENUES Revenues
+                Taxonomy, Revenue
+
+            for EXPENDITURES Expenditure
+                Taxonomy, Expenditure
+        code:"",
+        aspect:"",
+            for FUNCTIONAL or STRUCTURAL:
+                Expenses, Revenues, Staffing
+            for ACTUALEXPENSES,
+                Expenses
+            for ACTUALREVENUES:
+                Revenues
+            for EXPENDITURES:
+                Expenditure
+        name:""
+    }
+*/   
+
+    _doProcessStoryboardSelection = selection => {
+        let storyboard = this.storyBoards.storyboards[selection]
+        // console.log('processing story board',selection,storyboard)
+        let stories = storyboard.stories
+        this.stories = stories
+        if (!stories) return
+        // clear all branches
+        this.removeBranches()
+        this.setState({
+            budgetBranches:[]
+        })
+
+        let explorer = this
+        setTimeout(()=>{
+
+            for (let story of stories) {
+                // create branch
+                let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(explorer.props.declarationData.defaults.branch))
+                let settings = Object.assign(defaultSettings,{
+                    viewpoint:story.viewpoint,
+                    version:story.source,
+                    aspect:story.aspect,
+                    story:story,
+                })
+                explorer.props.addBranchDeclaration(null,settings) // change state 
+            }
+        })
+    }
+
+    resetBranches = () => {
+        let value:string = 'SELECT'
+        this.setState({
+            selectStoryboard:value,
+        })
+        this.removeBranches()
+        let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch))
+        this.props.addBranchDeclaration(null,defaultSettings) // change state        
+    }
 
     // ===================================================================
     // ---------------------------[ Render ]------------------------------ 
@@ -1106,8 +1281,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 let urlparms = null
                 if (branchIndex == 0 && this.urlparms) {
                     urlparms = this.urlparms
-                    // this.urlparms = null // pass once only
-                    // console.log('branchIndex, urlparms in explorer map branches',branchIndex,urlparms)
                 }
                 // collect functions to pass down to nested components
                 let actionFunctions:MappedBranchActions = {
@@ -1133,6 +1306,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     updateProrata:this.props.updateProrata,
                     changeAspect: this.props.changeAspect,
                     incrementBranchDataVersion: this.props.incrementBranchDataVersion,
+                    clearBranchStory: this.props.clearBranchStory,
                     toggleShowOptions: this.props.toggleShowOptions,
                     updateCellsDataseriesName: this.props.updateCellsDataseriesName,
                     resetLastAction: this.props.resetLastAction,
@@ -1145,6 +1319,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 }
 
                 // ----------------[ Contains ExplorerBranch ]-------------------------
+
+                // console.log('explorer branchindex and stories',branchIndex,this.stories)
 
                 return <Card initiallyExpanded 
                     key = {budgetBranch.uid}
@@ -1159,7 +1335,9 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
                         {"Row " + (branchIndex + 1 ) + " "} 
                         <input 
+                            defaultValue = {this.stories?this.stories[branchIndex].title:''}
                             type="text" 
+                            style={{width:'350px',fontWeight:'bold',fontSize:'14px'}}
                             onTouchTap = {(ev) => {ev.stopPropagation()}}
                         /> 
 
@@ -1226,6 +1404,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         handleDialogOpen = {this.handleDialogOpen}
                         urlparms = { urlparms }
                         clearUrlParms = {this.clearUrlParms}
+                        clearStories = {this.clearStories}
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
                     />
@@ -1276,40 +1455,137 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         There are numerous data source quality and continuity issues, the intake process has not been
         validated, and the data presented has not been rigorously verified against source data.</div>
 
-        <Card expanded = {this.state.showdashboard}>
+        <Card 
+        initiallyExpanded
+        >
 
-            <CardTitle>
-
-                {
-                // <Toggle 
-                //     label={'Show dashboard:'} 
-                //     toggled = {this.state.showdashboard}
-                //     style={{
-                //         height:'32px', float:"right",
-                //         display:"inline-block",
-                //         width:'auto',
-                //     }} 
-                //     labelStyle = {{fontStyle:'italic'}} 
-                //     onToggle = { (e,value) => {
-                //         e.stopPropagation()
-                //         this.setState({
-                //             showdashboard:value
-                //         })
-                //     }}/>
-                }
+            <CardTitle
+                actAsExpander
+                showExpandableButton >
 
                 Budget Explorer
 
             </CardTitle>
             <CardText expandable >
 
-                <span style= {{fontStyle:'italic'}}>[content to be determined]</span>
+                <div style={{ display:'inline-block',verticalAlign:'top'}}>
+                    <span style={{lineHeight:'48px',verticalAlign:'23px'}} >Explore charts below, or select an area of interest: </span>
+                    <DropDownMenu
+                            value = {this.state.selectStoryboard}
+                            onChange = {(event, index, value) => {
+                                this.onSelectStoryboard(value)
+                            }}
+                        >
+
+                        <MenuItem value = {'SELECT'} primaryText = "Select" />
+                        <MenuItem value={'SHARED'} primaryText={
+                            <div style={{fontWeight:'bold'}} >General Services</div>} />
+                            <MenuItem value={"WASTE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Solid Waste Management</div>
+                            }/>
+                            <MenuItem value={"WATER"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Toronto Water</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"TTC"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >TTC</div>
+                            }/>
+                            <MenuItem value={"WHEELTRANS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Wheel Trans</div>
+                            }/>
+                            <MenuItem value={"TRANSPORTATION"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Transportation (Roads)</div>
+                            }/>
+                            <MenuItem value={"PARKING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Parking</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"PFR"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Parks, Forestry & Activity Centres</div>
+                            }/>
+                            <MenuItem value={"LIBRARY"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Toronto Public Library</div>
+                            }/>
+                            <MenuItem value={"ATTRACTIONS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Public Attractions</div>
+                            }/>
+                            <MenuItem value={"CONSERVHERITAGE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Conservation & Heritage</div>
+                            }/>
+
+                        <MenuItem value={'SUPPORT'} primaryText={
+                            <div style={{fontWeight:'bold'}} >Citizen Support Services</div>} />
+                            <MenuItem value={"FIRE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Fire</div>
+                            }/>
+                            <MenuItem value={"PARAMEDICS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Paramedics</div>
+                            }/>
+                            <MenuItem value={"POLICE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Policing & Court Services</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"HEALTH"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Public Health</div>
+                            }/>
+                            <MenuItem value={"LONGTERMCARE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Long Term Care</div>
+                            }/>
+                            <MenuItem value={"CHILDREN"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Children's Services</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"EMPLOYMENT"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Income Support Services</div>
+                            }/>
+                            <MenuItem value={"HOUSING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Housing Support Services</div>
+                            }/>
+                        <MenuItem value={'ADMINISTRATIVE'} primaryText={
+                            <div style={{fontWeight:'bold'}} >Administrative Services</div>} />
+                            <MenuItem value={"COUNCIL"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Corporate Management</div>
+                            }/>
+                            <MenuItem value={"PLANNING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Planning & Development</div>
+                            }/>
+                            <MenuItem value={"PERMITS"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Permits, Licencing & Standards</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"INTERNAL"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Internal Services</div>
+                            }/>
+                            <MenuItem value={"CORPORATE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Corporate Accounts (Finance)</div>
+                            }/>
+                        <MenuItem disabled value={'SPECIAL'} primaryText={
+                            <div style={{fontWeight:'bold'}} >Special Analytics</div>} />
+                            <MenuItem value={"STAFFING"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Staffing costs</div>
+                            }/>
+
+                    </DropDownMenu>
+                    <RaisedButton
+                        style = {{ verticalAlign:'25px' }}
+                        type="button"
+                        label="Reset"
+                        onTouchTap={
+                            () => {
+                                this.resetBranches()
+                            }
+                        } 
+                    />                
+                </div>
+                <div></div>
             </CardText>
         </Card>
         
             { dialogbox }
 
             { this.findDialog() }
+
+            { this.storyboardDialog() }
 
             { branches }
 
@@ -1337,6 +1613,7 @@ Explorer = connect(mapStateToProps, {
     addBranchDeclaration:ExplorerActions.addBranchDeclaration,
     cloneBranchDeclaration:ExplorerActions.cloneBranchDeclaration,
     removeBranchDeclaration: ExplorerActions.removeBranchDeclaration,
+    removeBranches: ExplorerActions.removeBranches,
     addNodeDeclaration:ExplorerActions.addNodeDeclaration,
     addNodeDeclarations: ExplorerActions.addNodeDeclarations,
     removeNodeDeclarations:ExplorerActions.removeNodeDeclarations,
@@ -1353,6 +1630,7 @@ Explorer = connect(mapStateToProps, {
     toggleInflationAdjusted: ExplorerActions.toggleInflationAdjusted,
     updateProrata: ExplorerActions.updateProrata,
     incrementBranchDataVersion: ExplorerActions.incrementBranchDataVersion,
+    clearBranchStory: ExplorerActions.clearBranchStory,
     toggleShowOptions: ExplorerActions.toggleShowOptions,
     resetLastAction: ExplorerActions.resetLastAction,
     // toggleInflationAdjustment

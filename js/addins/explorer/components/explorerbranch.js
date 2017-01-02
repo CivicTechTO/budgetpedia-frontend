@@ -18,6 +18,7 @@ const onchartcomponentselection_1 = require("../modules/onchartcomponentselectio
 const getbudgetnode_1 = require("../modules/getbudgetnode");
 const explorernode_1 = require("./explorernode");
 const actions_1 = require("../actions");
+const branch_class_1 = require("../classes/branch.class");
 const Utilities = require("../modules/utilities");
 class ExplorerBranch extends Component {
     constructor() {
@@ -46,6 +47,117 @@ class ExplorerBranch extends Component {
                 this.urlparms = null;
                 this.urlparmscleared = [];
             }
+            setTimeout(() => {
+                this.onPortalCreation();
+            }, 1000);
+        };
+        this.story = null;
+        this.storiescleared = [];
+        this.storysettings = [];
+        this.clearStory = nodeIndex => {
+            if (!this.story) {
+                console.error('call to remove expired story', nodeIndex);
+            }
+            this.storiescleared.push(nodeIndex);
+            if (this.storiescleared.length == this.storysettings.length) {
+                this.story = null;
+                this.storiescleared = [];
+                setTimeout(() => {
+                    this.onPortalCreation();
+                }, 1000);
+            }
+        };
+        this._createStoryNodes = (story, viewpointdata) => {
+            let path = this._getStoryPath(story);
+            this.props.clearStories(branch_class_1.default);
+            story.path = path;
+            let settingslist = this._getStorySettingsList(story, viewpointdata);
+            this.storysettings = settingslist;
+            let explorerbranch = this;
+            explorerbranch._stateActions.addNodeDeclarations(settingslist);
+        };
+        this._getStoryPath = story => {
+            let path = [];
+            let viewpoint = this.state.viewpointData;
+            if (viewpoint.Components && story.code) {
+                this._getPath(path, story.code, viewpoint.Components);
+            }
+            return path;
+        };
+        this._getStorySettingsList = (story, viewpointdata) => {
+            let settingslist = [];
+            let path = story.path;
+            let nodeCount = path.length + 1;
+            for (let n = 0; n < nodeCount; n++) {
+                let nodeDefaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.node));
+                let nodeSettings = {
+                    aspectName: story.aspect,
+                    cellIndex: (n == (nodeCount - 1)) ? story.tab : 0,
+                    cellList: null,
+                    dataPath: path.slice(0, n),
+                    nodeIndex: n,
+                    viewpointName: story.viewpoint,
+                    yearSelections: {
+                        leftYear: viewpointdata.Meta.datasetConfig.YearsRange.start,
+                        rightYear: viewpointdata.Meta.datasetConfig.YearsRange.end,
+                    },
+                    yearsRange: {
+                        firstYear: viewpointdata.Meta.datasetConfig.YearsRange.start,
+                        lastYear: viewpointdata.Meta.datasetConfig.YearsRange.end,
+                    },
+                };
+                let settings = Object.assign(nodeDefaultSettings, nodeSettings);
+                settingslist.push({
+                    settings,
+                });
+            }
+            return settingslist;
+        };
+        this._getPath = (path, targetcode, components) => {
+            for (let code in components) {
+                if (code == targetcode) {
+                    let subcomponents = components[code].Components;
+                    if (!subcomponents) {
+                        subcomponents = components[code].CommonDimension;
+                    }
+                    if (subcomponents) {
+                        path.push(code);
+                    }
+                    return true;
+                }
+                let subcomponents = components[code].Components;
+                if (subcomponents) {
+                    path.push(code);
+                    if (this._getPath(path, targetcode, subcomponents)) {
+                        return true;
+                    }
+                    else {
+                        path.pop();
+                    }
+                }
+            }
+            return false;
+        };
+        this._createUrlNodes = urlparms => {
+            this.urlparms = urlparms;
+            this.props.clearUrlParms();
+            try {
+                let path = urlparms.branchdata.pa;
+                let dataNode = getbudgetnode_1.default(this.state.viewpointData, path);
+                if (dataNode) {
+                    let settingslist = this._geturlsettingslist(urlparms);
+                    this._stateActions.addNodeDeclarations(settingslist);
+                    return true;
+                }
+                else {
+                    this.props.setToast('error', 'unable to locate data requested by url parameter. Using defaults...');
+                }
+            }
+            catch (e) {
+                console.log('urlparms failure', urlparms);
+                this.urlparms = null;
+            }
+            return false;
         };
         this._geturlsettingslist = urlparms => {
             let nodesettings = urlparms.settingsdata;
@@ -175,12 +287,12 @@ class ExplorerBranch extends Component {
                 this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
                 let settingslist = this._getFinderNodeSettingsList();
                 this._stateActions.addNodeDeclarations(settingslist);
-                let explorer = this;
+                let explorerbranch = this;
                 setTimeout(() => {
-                    explorer._updateCellChartSelections();
+                    explorerbranch._updateCellChartSelections();
                 });
                 setTimeout(() => {
-                    explorer.onPortalCreation();
+                    explorerbranch.onPortalCreation();
                 }, 1000);
             }).catch(reason => {
                 console.error('error in data fetch, update branch', reason);
@@ -483,7 +595,7 @@ class ExplorerBranch extends Component {
             this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
         };
         this.handleSearch = (e) => {
-            this.props.handleFindDialogOpen(e, this.applySearch);
+            this.props.handleFindDialogOpen(e, this.applySearchBranchSettings);
         };
         this.finderParms = null;
         this.findParmsToStateDictionary = {
@@ -513,21 +625,21 @@ class ExplorerBranch extends Component {
                 permanence: 'Permanence',
             }
         };
-        this.applySearch = parms => {
-            let explorer = this;
+        this.applySearchBranchSettings = parms => {
+            let explorerbranch = this;
             if (parms.viewpoint == 'expenditures') {
                 parms.aspect = 'expenditures';
             }
-            explorer.finderParms = parms;
-            let { budgetBranch } = explorer.props;
+            explorerbranch.finderParms = parms;
+            let { budgetBranch } = explorerbranch.props;
             let { nodes: branchNodes } = budgetBranch;
             let removed = branchNodes.splice(0);
             let removeditems = removed.map((item) => {
                 return { nodeuid: item.uid, cellList: item.cellDeclarationList };
             });
-            let globalStateActions = explorer._stateActions;
+            let globalStateActions = explorerbranch._stateActions;
             globalStateActions.removeNodeDeclarations(removeditems);
-            let settings = explorer._getNewBranchSettings(parms);
+            let settings = explorerbranch._getNewBranchSettings(parms);
             globalStateActions.updateBranch(budgetBranch.uid, settings);
         };
         this._getNewBranchSettings = parms => {
@@ -609,7 +721,7 @@ class ExplorerBranch extends Component {
                 actions.updateCellChartSelection = branch._stateActions.updateCellChartSelection(budgetNode.uid);
                 actions.updateCellChartCode = branch._stateActions.updateCellChartCode(budgetNode.uid);
                 actions.updateCellYearSelections = branch._stateActions.updateCellYearSelections(budgetNode.uid);
-                return React.createElement(explorernode_1.ExplorerNode, { key: budgetNode.uid, callbackid: nodeindex, budgetNode: budgetNode, declarationData: branch.props.declarationData, globalStateActions: actions, showControls: branchDeclaration.showOptions, dataGenerationCounter: branchDeclaration.branchDataGeneration, callbacks: { harmonizeCells: branch.harmonizeCells }, urlparms: this.urlparms, clearUrlParms: this.clearUrlParms });
+                return React.createElement(explorernode_1.ExplorerNode, { key: budgetNode.uid, callbackid: nodeindex, budgetNode: budgetNode, declarationData: branch.props.declarationData, globalStateActions: actions, showControls: branchDeclaration.showOptions, dataGenerationCounter: branchDeclaration.branchDataGeneration, callbacks: { harmonizeCells: branch.harmonizeCells }, urlparms: this.urlparms, story: this.story, clearUrlParms: this.clearUrlParms, clearStory: this.clearStory });
             });
             return portals;
         };
@@ -786,29 +898,25 @@ class ExplorerBranch extends Component {
     componentWillMount() {
         this._initialize();
         let { budgetBranch, declarationData } = this.props;
+        let branchDeclarationData = declarationData.branchesById[budgetBranch.uid];
+        if (branchDeclarationData.story) {
+            this.story = branchDeclarationData.story;
+            this._stateActions.clearBranchStory(budgetBranch.uid);
+        }
         budgetBranch.getViewpointData().then(() => {
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
-            if (declarationData.branchesById[budgetBranch.uid].nodeList.length == 0) {
+            let story;
+            let explorerbranch = this;
+            if (this.story) {
+                story = explorerbranch.story;
+                explorerbranch._createStoryNodes(story, explorerbranch.state.viewpointData);
+                return;
+            }
+            if (branchDeclarationData.nodeList.length == 0) {
                 let { urlparms } = this.props;
                 if (urlparms) {
-                    this.urlparms = urlparms;
-                    this.props.clearUrlParms();
-                    try {
-                        let path = urlparms.branchdata.pa;
-                        let dataNode = getbudgetnode_1.default(this.state.viewpointData, path);
-                        if (dataNode) {
-                            let settingslist = this._geturlsettingslist(urlparms);
-                            this._stateActions.addNodeDeclarations(settingslist);
-                            return;
-                        }
-                        else {
-                            this.props.setToast('error', 'unable to locate data requested by url parameter. Using defaults...');
-                        }
-                    }
-                    catch (e) {
-                        console.log('urlparms failure', urlparms);
-                        this.urlparms = null;
-                    }
+                    if (this._createUrlNodes(urlparms))
+                        return;
                 }
                 let budgetNodeParms = budgetBranch.getInitialBranchNodeParms();
                 this._stateActions.addNodeDeclaration(budgetNodeParms);
@@ -859,17 +967,19 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewpointselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("span", { style: { fontStyle: "italic" } }, "Viewpoint: "),
-            React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
-                    branch.switchViewpoint(value);
-                } },
-                React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Functional (operating budgets)" }),
-                React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Structural (operating budgets)" }),
-                React.createElement(Divider_1.default, null),
-                React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Audited Expenses" }),
-                React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Audited Revenues" }),
-                React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Audited Expenses by Object" }))) : null;
+        let viewpointselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Viewpoint:")),
+                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
+                        branch.switchViewpoint(value);
+                    } },
+                    React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Functional (operating budgets)" }),
+                    React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Structural (operating budgets)" }),
+                    React.createElement(Divider_1.default, null),
+                    React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Audited Expenses" }),
+                    React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Audited Revenues" }),
+                    React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Audited Expenses by Object" }))) : null;
         let governmentselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
             React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
                 React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;
@@ -888,11 +998,13 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2015" })];
             }
         };
-        let versionselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("span", { style: { fontStyle: "italic" } }, "Source: "),
-            React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
-                    branch.switchVersion(value);
-                } }, versionchoices())) : null;
+        let versionselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Source:")),
+                React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
+                        branch.switchVersion(value);
+                    } }, versionchoices())) : null;
         const aspectchoices = () => {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
@@ -908,33 +1020,33 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Expenditure', primaryText: "Expenditures" })];
             }
         };
-        let aspectselection = (branchDeclaration.showOptions)
-            ?
-                React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-                    React.createElement("span", { style: { fontStyle: "italic" } }, "Aspect: "),
-                    React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
-                            branch.switchAspect(value);
-                        } }, aspectchoices()))
-            :
-                null;
-        let byunitselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement("span", { style: { fontStyle: "italic" } }, "Prorated: "),
-            React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
-                    this.switchComparator(value);
-                } },
-                React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
-                React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
-                React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
-                React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
-                React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
-                React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
-                React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" }))) : null;
+        let aspectselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Aspect:")),
+                React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
+                        branch.switchAspect(value);
+                    } }, aspectchoices())) : null;
+        let byunitselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Prorated:")),
+                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
+                        this.switchComparator(value);
+                    } },
+                    React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
+                    React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
+                    React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
+                    React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" }))) : null;
         let inflationadjustment = (branchDeclaration.showOptions)
             ?
                 React.createElement("div", { style: {
                         display: 'inline-block',
                         whiteSpace: "nowrap",
-                        verticalAlign: "bottom",
+                        verticalAlign: "top",
                         marginRight: '16px',
                     } },
                     React.createElement(Toggle_1.default, { label: 'Inflation adjusted:', style: {
@@ -951,7 +1063,7 @@ class ExplorerBranch extends Component {
         let showcontrols = React.createElement("div", { style: {
                 display: 'inline-block',
                 whiteSpace: "nowrap",
-                verticalAlign: "bottom"
+                verticalAlign: "top"
             } },
             React.createElement(Toggle_1.default, { label: 'Show options:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
                     this.toggleShowOptions(value);
@@ -1017,8 +1129,9 @@ class ExplorerBranch extends Component {
                         backgroundColor: "#ebfaf9",
                         border: "1px solid silver",
                         borderRadius: "8px",
-                        margin: "3px",
+                        marginRight: "6px",
                         paddingLeft: "6px",
+                        height: '48px',
                     } },
                     byunitselection,
                     inflationadjustment) : null,
