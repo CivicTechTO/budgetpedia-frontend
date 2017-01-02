@@ -64,7 +64,6 @@ class ExplorerBranch extends Component {
                 this.storiescleared = [];
                 setTimeout(() => {
                     this.onPortalCreation();
-                    this.props.onStoryUpdate(this.props.budgetBranch.uid);
                 }, 1000);
             }
         };

@@ -52,6 +52,7 @@ import DropDownMenu from 'material-ui/DropDownMenu'
 import Divider from 'material-ui/Divider'
 // import Popover from 'material-ui/Popover'
 import Toggle from 'material-ui/Toggle'
+import LinearProgress from 'material-ui/LinearProgress'
 import {toastr} from 'react-redux-toastr'
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
@@ -137,6 +138,7 @@ interface ExplorerState {
     findDialogOpen?:boolean,
     findDialogAspect?:string,
     selectStoryboard?:string,
+    storyboardDialogOpen?:boolean,
 }
 
 let Explorer = class extends Component< ExplorerProps, ExplorerState > 
@@ -148,6 +150,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         budgetBranches:[],
         dialogOpen: false,
         findDialogOpen: false,
+        storyboardDialogOpen: false,
         findDialogAspect:'expenses',
         selectStoryboard:'SELECT',
     }
@@ -178,8 +181,27 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         if (this.storiescleared.length == this.stories.length) {
             this.stories = null
             this.storiescleared = []
+            this.setState({
+                storyboardDialogOpen:false,
+            })
         }
     }
+
+    storyboardDialog = () => (
+        <Dialog
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Your storyboard is being created</div>}
+            modal = { true }
+            open = { this.state.storyboardDialogOpen }
+            autoScrollBodyContent = {false}
+            contentStyle = {{maxWidth:'600px'}}
+            autoDetectWindowHeight = {false}
+        >
+            <div>
+            please wait while the charts are being rendered...
+            <LinearProgress mode="indeterminate" />
+            </div>
+        </Dialog>
+    )
 
     componentWillMount() {
 
@@ -1099,6 +1121,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     onSelectStoryboard = (value:string) => {
         this.setState({
             selectStoryboard:value,
+            storyboardDialogOpen:true,
         })
         if (value == 'SELECT') return
         this.processStoryboardSelection(value)
@@ -1161,7 +1184,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     _doProcessStoryboardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
-        console.log('processing story board',selection,storyboard)
+        // console.log('processing story board',selection,storyboard)
         let stories = storyboard.stories
         this.stories = stories
         if (!stories) return
@@ -1186,11 +1209,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 explorer.props.addBranchDeclaration(null,settings) // change state 
             }
         })
-    }
-
-    onStoryUpdate = (branchuid) => {
-        console.log('onStoryUpdate',branchuid)
-        return branchuid
     }
 
     resetBranches = () => {
@@ -1389,7 +1407,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         clearStories = {this.clearStories}
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
-                        onStoryUpdate = {this.onStoryUpdate}
                     />
                     </CardText>
                     <CardActions expandable = {false}>
@@ -1567,6 +1584,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             { dialogbox }
 
             { this.findDialog() }
+
+            { this.storyboardDialog() }
 
             { branches }
 

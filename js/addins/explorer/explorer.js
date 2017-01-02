@@ -15,6 +15,7 @@ const add_1 = require("material-ui/svg-icons/content/add");
 const remove_1 = require("material-ui/svg-icons/content/remove");
 const DropDownMenu_1 = require("material-ui/DropDownMenu");
 const Divider_1 = require("material-ui/Divider");
+const LinearProgress_1 = require("material-ui/LinearProgress");
 const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
@@ -32,6 +33,7 @@ let Explorer = class extends Component {
             budgetBranches: [],
             dialogOpen: false,
             findDialogOpen: false,
+            storyboardDialogOpen: false,
             findDialogAspect: 'expenses',
             selectStoryboard: 'SELECT',
         };
@@ -55,8 +57,15 @@ let Explorer = class extends Component {
             if (this.storiescleared.length == this.stories.length) {
                 this.stories = null;
                 this.storiescleared = [];
+                this.setState({
+                    storyboardDialogOpen: false,
+                });
             }
         };
+        this.storyboardDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Your storyboard is being created"), modal: true, open: this.state.storyboardDialogOpen, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+            React.createElement("div", null,
+                "please wait while the charts are being rendered...",
+                React.createElement(LinearProgress_1.default, { mode: "indeterminate" }))));
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;
             let newBranches = budgetBranches.filter((branch) => {
@@ -654,6 +663,7 @@ let Explorer = class extends Component {
         this.onSelectStoryboard = (value) => {
             this.setState({
                 selectStoryboard: value,
+                storyboardDialogOpen: true,
             });
             if (value == 'SELECT')
                 return;
@@ -674,7 +684,6 @@ let Explorer = class extends Component {
         };
         this._doProcessStoryboardSelection = selection => {
             let storyboard = this.storyBoards.storyboards[selection];
-            console.log('processing story board', selection, storyboard);
             let stories = storyboard.stories;
             this.stories = stories;
             if (!stories)
@@ -696,10 +705,6 @@ let Explorer = class extends Component {
                     explorer.props.addBranchDeclaration(null, settings);
                 }
             });
-        };
-        this.onStoryUpdate = (branchuid) => {
-            console.log('onStoryUpdate', branchuid);
-            return branchuid;
         };
         this.resetBranches = () => {
             let value = 'SELECT';
@@ -852,7 +857,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onStoryUpdate: this.onStoryUpdate })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);
@@ -923,6 +928,7 @@ let Explorer = class extends Component {
                     React.createElement("div", null))),
             dialogbox,
             this.findDialog(),
+            this.storyboardDialog(),
             branches);
     }
 };

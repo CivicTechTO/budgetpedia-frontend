@@ -90,7 +90,6 @@ interface ExplorerBranchProps {
     clearStories: Function,
     setToast: Function,
     handleFindDialogOpen: Function,
-    onStoryUpdate: Function,
 }
 
 interface ExplorerBranchState {
@@ -168,7 +167,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             this.storiescleared = []
             setTimeout(()=>{
                 this.onPortalCreation()
-                this.props.onStoryUpdate(this.props.budgetBranch.uid)
             },1000)
         }
     }
