@@ -89,7 +89,7 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
             // TODO: cloning with JSON is required here to avoid cross linking chartType - shoud be traced
             let cellDeclarationParms = JSON.parse(JSON.stringify(budgetNode.getCellDeclarationParms()))
             if (story) {
-                // console.log('node cellDeclarationParms for story',cellDeclarationParms,budgetNode.nodeIndex,story.path.length)
+                // console.log('node cellDeclarationParms for story',cellDeclarationParms,budgetNode.nodeIndex,story)
                 if ((story.charts === true) || ((budgetNode.nodeIndex == (story.path.length)) && story.leafchart)) {
                     let cellparms = cellDeclarationParms[story.tab]
                     let chartspecs = story.leafchart.split(':')

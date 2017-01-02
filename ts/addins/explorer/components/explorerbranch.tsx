@@ -90,7 +90,7 @@ interface ExplorerBranchProps {
     clearStories: Function,
     setToast: Function,
     handleFindDialogOpen: Function,
-    onBranchUpdate: Function,
+    onStoryUpdate: Function,
 }
 
 interface ExplorerBranchState {
@@ -149,6 +149,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             this.urlparms = null
             this.urlparmscleared = []
         }
+        setTimeout(()=>{
+            this.onPortalCreation()
+        },1000)
     }
 
     private story:any = null
@@ -163,6 +166,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         if (this.storiescleared.length == this.storysettings.length) {
             this.story = null
             this.storiescleared = []
+            setTimeout(()=>{
+                this.onPortalCreation()
+                this.props.onStoryUpdate(this.props.budgetBranch.uid)
+            },1000)
         }
     }
 
@@ -188,9 +195,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid) // change data generation counter for child compare
             let story
+            let explorerbranch = this
             if (this.story) {
-                story = this.story
-                this._createStoryNodes(story, this.state.viewpointData)
+
+                story = explorerbranch.story
+                explorerbranch._createStoryNodes(story, explorerbranch.state.viewpointData)
+
                 return // should never fail as it is internal
             } // else
 
@@ -227,13 +237,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     private _createStoryNodes = (story,viewpointdata) => {
         let path = this._getStoryPath(story) 
-        // console.log('story path',path)
+        // console.log('story path',story.code,path)
         this.props.clearStories(BudgetBranch)
         story.path = path
         let settingslist = this._getStorySettingsList(story, viewpointdata)
         this.storysettings = settingslist
         // console.log('settingslist',settingslist)
-        this._stateActions.addNodeDeclarations(settingslist)
+        let explorerbranch = this
+        explorerbranch._stateActions.addNodeDeclarations(settingslist)
+
     }
 
     private _getStoryPath = story => {
@@ -259,7 +271,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 aspectName:story.aspect,
                 cellIndex:(n==(nodeCount - 1))? story.tab:0,
                 cellList:null,
-                dataPath: (n==0)? []:path.slice(n - 1,n),
+                dataPath: path.slice(0,n),
                 nodeIndex:n,
                 viewpointName:story.viewpoint,
                 yearSelections: {
@@ -285,7 +297,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     private _getPath = (path, targetcode, components) => {
         for (let code in components) {
             if (code == targetcode) {
-                path.push(code)
+                let subcomponents = components[code].Components
+                if (!subcomponents) {
+                    subcomponents = components[code].CommonDimension
+                }
+                if (subcomponents) {
+                    path.push(code)
+                }
                 return true
             }
             let subcomponents = components[code].Components
@@ -612,7 +630,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             setTimeout(()=>{
 
                 explorerbranch.onPortalCreation()
-                this.props.onBranchUpdate(budgetBranch.uid)
                 
             },1000)
 

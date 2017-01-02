@@ -1180,8 +1180,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
-    onBranchUpdate = (branchuid) => {
-        console.log('onBranchUpdate',branchuid)
+    onStoryUpdate = (branchuid) => {
+        console.log('onStoryUpdate',branchuid)
         return branchuid
     }
 
@@ -1379,7 +1379,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         clearStories = {this.clearStories}
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
-                        onBranchUpdate = {this.onBranchUpdate}
+                        onStoryUpdate = {this.onStoryUpdate}
                     />
                     </CardText>
                     <CardActions expandable = {false}>

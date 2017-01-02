@@ -47,6 +47,9 @@ class ExplorerBranch extends Component {
                 this.urlparms = null;
                 this.urlparmscleared = [];
             }
+            setTimeout(() => {
+                this.onPortalCreation();
+            }, 1000);
         };
         this.story = null;
         this.storiescleared = [];
@@ -59,6 +62,10 @@ class ExplorerBranch extends Component {
             if (this.storiescleared.length == this.storysettings.length) {
                 this.story = null;
                 this.storiescleared = [];
+                setTimeout(() => {
+                    this.onPortalCreation();
+                    this.props.onStoryUpdate(this.props.budgetBranch.uid);
+                }, 1000);
             }
         };
         this._createStoryNodes = (story, viewpointdata) => {
@@ -67,7 +74,8 @@ class ExplorerBranch extends Component {
             story.path = path;
             let settingslist = this._getStorySettingsList(story, viewpointdata);
             this.storysettings = settingslist;
-            this._stateActions.addNodeDeclarations(settingslist);
+            let explorerbranch = this;
+            explorerbranch._stateActions.addNodeDeclarations(settingslist);
         };
         this._getStoryPath = story => {
             let path = [];
@@ -87,7 +95,7 @@ class ExplorerBranch extends Component {
                     aspectName: story.aspect,
                     cellIndex: (n == (nodeCount - 1)) ? story.tab : 0,
                     cellList: null,
-                    dataPath: (n == 0) ? [] : path.slice(n - 1, n),
+                    dataPath: path.slice(0, n),
                     nodeIndex: n,
                     viewpointName: story.viewpoint,
                     yearSelections: {
@@ -109,7 +117,13 @@ class ExplorerBranch extends Component {
         this._getPath = (path, targetcode, components) => {
             for (let code in components) {
                 if (code == targetcode) {
-                    path.push(code);
+                    let subcomponents = components[code].Components;
+                    if (!subcomponents) {
+                        subcomponents = components[code].CommonDimension;
+                    }
+                    if (subcomponents) {
+                        path.push(code);
+                    }
                     return true;
                 }
                 let subcomponents = components[code].Components;
@@ -280,7 +294,6 @@ class ExplorerBranch extends Component {
                 });
                 setTimeout(() => {
                     explorerbranch.onPortalCreation();
-                    this.props.onBranchUpdate(budgetBranch.uid);
                 }, 1000);
             }).catch(reason => {
                 console.error('error in data fetch, update branch', reason);
@@ -894,9 +907,10 @@ class ExplorerBranch extends Component {
         budgetBranch.getViewpointData().then(() => {
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
             let story;
+            let explorerbranch = this;
             if (this.story) {
-                story = this.story;
-                this._createStoryNodes(story, this.state.viewpointData);
+                story = explorerbranch.story;
+                explorerbranch._createStoryNodes(story, explorerbranch.state.viewpointData);
                 return;
             }
             if (branchDeclarationData.nodeList.length == 0) {

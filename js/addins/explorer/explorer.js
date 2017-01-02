@@ -691,8 +691,8 @@ let Explorer = class extends Component {
                 this.props.addBranchDeclaration(null, settings);
             }
         };
-        this.onBranchUpdate = (branchuid) => {
-            console.log('onBranchUpdate', branchuid);
+        this.onStoryUpdate = (branchuid) => {
+            console.log('onStoryUpdate', branchuid);
             return branchuid;
         };
         this.resetBranches = () => {
@@ -846,7 +846,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onBranchUpdate: this.onBranchUpdate })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, handleDialogOpen: this.handleDialogOpen, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onStoryUpdate: this.onStoryUpdate })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);

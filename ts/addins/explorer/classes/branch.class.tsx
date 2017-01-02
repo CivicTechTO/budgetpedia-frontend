@@ -130,6 +130,9 @@ class BudgetBranch {
         let viewpointData = budgetBranch.state.viewpointData
         if (!viewpointData) return
         let treeNodeData = getBudgetNode(viewpointData, dataPath)
+        if (!treeNodeData) {
+            console.error('failure to find treenode data',dataPath,viewpointData)
+        }
         let branchNodes = budgetBranch.nodes
         let parentNode = (nodeIndex === 0)? null: branchNodes[branchNodes.length - 1]
         // TODO: obtain and pass cell configurations - yearScope and chartConfigs
