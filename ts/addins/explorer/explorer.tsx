@@ -999,15 +999,15 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         >
             <div>
                 <AutoComplete
-                  style = {{width:'100%'}}
                   ref={'autocomplete'}
                   floatingLabelText="type in a key word, then select a list item"
                   filter={AutoComplete.caseInsensitiveFilter}
                   dataSource={this.findAspectChartLookups || []}
                   dataSourceConfig = {{text:'name',value:'value'}}
                   fullWidth = {true}
-                  menuStyle = {{maxHeight:"300px"}}
                   openOnFocus = {false}
+                  style = {{width:'100%'}}
+                  menuStyle = {{maxHeight:"300px",overflowY:'auto'}}
                   maxSearchResults = {60}
                   onNewRequest = {this.findOnNewRequest}
                   onUpdateInput = {this.findOnUpdateInput}
