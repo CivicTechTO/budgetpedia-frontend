@@ -1167,17 +1167,25 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         if (!stories) return
         // clear all branches
         this.removeBranches()
-        for (let story of stories) {
-            // create branch
-            let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch))
-            let settings = Object.assign(defaultSettings,{
-                viewpoint:story.viewpoint,
-                version:story.source,
-                aspect:story.aspect,
-                story:story,
-            })
-            this.props.addBranchDeclaration(null,settings) // change state 
-        }
+        this.setState({
+            budgetBranches:[]
+        })
+
+        let explorer = this
+        setTimeout(()=>{
+
+            for (let story of stories) {
+                // create branch
+                let defaultSettings:BranchSettings = JSON.parse(JSON.stringify(explorer.props.declarationData.defaults.branch))
+                let settings = Object.assign(defaultSettings,{
+                    viewpoint:story.viewpoint,
+                    version:story.source,
+                    aspect:story.aspect,
+                    story:story,
+                })
+                explorer.props.addBranchDeclaration(null,settings) // change state 
+            }
+        })
     }
 
     onStoryUpdate = (branchuid) => {
@@ -1293,6 +1301,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 }
 
                 // ----------------[ Contains ExplorerBranch ]-------------------------
+
+                // console.log('explorer branchindex and stories',branchIndex,this.stories)
 
                 return <Card initiallyExpanded 
                     key = {budgetBranch.uid}

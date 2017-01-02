@@ -19,7 +19,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Gross operating expenses",
-                    "title":"Expenses by program",
+                    "title":"General Services: Expenses by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -30,7 +30,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Gross operating expenses",
-                    "title":"Expenses by type",
+                    "title":"General Services: Expenses by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -41,7 +41,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Gross operating expenses",
-                    "title":"Expenses trends",
+                    "title":"General Services: Expense trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 },
@@ -52,7 +52,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Gross revenues",
-                    "title":"Revenues by program",
+                    "title":"General Services: Revenues by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -63,7 +63,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Gross revenues",
-                    "title":"Revenues by type",
+                    "title":"General Services: Revenues by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -74,7 +74,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Gross revenues",
-                    "title":"Revenues trends",
+                    "title":"General Services: Revenue trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 },
@@ -85,7 +85,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Operating staffing complement",
-                    "title":"Staffing by program",
+                    "title":"General Services: Staffing by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -96,7 +96,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Operating staffing complement",
-                    "title":"Staffing by type",
+                    "title":"General Services: Staffing by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -107,7 +107,7 @@
                     "level":"Taxonomy",
                     "code":"SHARED",
                     "name":"General Services Budget: Operating staffing complement",
-                    "title":"Staffing trends",
+                    "title":"General Services: Staffing trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 }
@@ -122,7 +122,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Gross operating expenses",
-                    "title":"Expenses by program",
+                    "title":"Waste: Expenses by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -133,7 +133,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Gross operating expenses",
-                    "title":"Expenses by type",
+                    "title":"Waste: Expenses by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -144,7 +144,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Gross operating expenses",
-                    "title":"Expenses trends",
+                    "title":"Waste: Expense trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 },
@@ -155,7 +155,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Gross revenues",
-                    "title":"Revenues by program",
+                    "title":"Waste: Revenues by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -166,7 +166,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Gross revenues",
-                    "title":"Revenues by type",
+                    "title":"Waste: Revenues by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -177,7 +177,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Gross revenues",
-                    "title":"Revenues trends",
+                    "title":"Waste: Revenue trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 },
@@ -188,7 +188,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Operating staffing complement",
-                    "title":"Staffing by program and type",
+                    "title":"Waste: Staffing by program and type",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -199,7 +199,7 @@
                     "level":"Taxonomy",
                     "code":"SOLIDWASTE",
                     "name":"General Services Budget: Operating staffing complement",
-                    "title":"Staffing trends",
+                    "title":"Waste: Staffing trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 }

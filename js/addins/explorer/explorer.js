@@ -680,16 +680,22 @@ let Explorer = class extends Component {
             if (!stories)
                 return;
             this.removeBranches();
-            for (let story of stories) {
-                let defaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch));
-                let settings = Object.assign(defaultSettings, {
-                    viewpoint: story.viewpoint,
-                    version: story.source,
-                    aspect: story.aspect,
-                    story: story,
-                });
-                this.props.addBranchDeclaration(null, settings);
-            }
+            this.setState({
+                budgetBranches: []
+            });
+            let explorer = this;
+            setTimeout(() => {
+                for (let story of stories) {
+                    let defaultSettings = JSON.parse(JSON.stringify(explorer.props.declarationData.defaults.branch));
+                    let settings = Object.assign(defaultSettings, {
+                        viewpoint: story.viewpoint,
+                        version: story.source,
+                        aspect: story.aspect,
+                        story: story,
+                    });
+                    explorer.props.addBranchDeclaration(null, settings);
+                }
+            });
         };
         this.onStoryUpdate = (branchuid) => {
             console.log('onStoryUpdate', branchuid);
