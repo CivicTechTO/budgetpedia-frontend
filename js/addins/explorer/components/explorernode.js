@@ -156,6 +156,9 @@ class ExplorerNode extends Component {
             if (story) {
                 if ((story.charts === true) || ((budgetNode.nodeIndex == (story.path.length)) && story.leafchart)) {
                     let cellparms = cellDeclarationParms[story.tab];
+                    if (!cellparms) {
+                        console.error('error:cellparms failed', story, cellDeclarationParms, budgetNode);
+                    }
                     let chartspecs = story.leafchart.split(':');
                     cellparms.yearScope = chartspecs[0];
                     cellparms.chartConfigs[cellparms.yearScope].explorerChartCode = chartspecs[1];

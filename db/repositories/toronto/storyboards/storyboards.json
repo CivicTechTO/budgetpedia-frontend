@@ -105,7 +105,7 @@
                     "source":"SUMMARY",
                     "aspect":"Staffing",
                     "level":"Taxonomy",
-                    "code":"CFO",
+                    "code":"SHARED",
                     "name":"General Services Budget: Operating staffing complement",
                     "title":"Staffing trends",
                     "tab":0,
@@ -113,7 +113,98 @@
                 }
             ]
         },
-        "WASTE":{},
+        "WASTE":{
+            "stories":[
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Gross operating expenses",
+                    "title":"Expenses by program",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Gross operating expenses",
+                    "title":"Expenses by type",
+                    "tab":1,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"SUMMARY",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Gross operating expenses",
+                    "title":"Expenses trends",
+                    "tab":0,
+                    "leafchart":"AllYears:TimeLine"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Gross revenues",
+                    "title":"Revenues by program",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Gross revenues",
+                    "title":"Revenues by type",
+                    "tab":1,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"SUMMARY",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Gross revenues",
+                    "title":"Revenues trends",
+                    "tab":0,
+                    "leafchart":"AllYears:TimeLine"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Staffing",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Operating staffing complement",
+                    "title":"Staffing by program and type",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"SUMMARY",
+                    "aspect":"Staffing",
+                    "level":"Taxonomy",
+                    "code":"SOLIDWASTE",
+                    "name":"General Services Budget: Operating staffing complement",
+                    "title":"Staffing trends",
+                    "tab":0,
+                    "leafchart":"AllYears:TimeLine"
+                }
+            ]
+        },
         "WATER":{},
         "TTC":{},
         "WHEELTRANS":{},
