@@ -624,6 +624,16 @@
                     "source":"PBFT",
                     "aspect":"Expenses",
                     "level":"Taxonomy",
+                    "code":"PARKS",
+                    "title":"PFR Only: Expenses by program",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
                     "code":"PARKSACTIVITIES",
                     "title":"Parks Activities: Expenses by type",
                     "tab":1,
@@ -1674,6 +1684,16 @@
                     "level":"Taxonomy",
                     "code":"HOUSING",
                     "title":"Housing Support: Expenses by program",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Expenses",
+                    "level":"Taxonomy",
+                    "code":"SHELTERADMIN",
+                    "title":"SSHA Only: Expenses by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
