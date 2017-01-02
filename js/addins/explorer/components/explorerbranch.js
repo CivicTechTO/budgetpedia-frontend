@@ -79,7 +79,7 @@ class ExplorerBranch extends Component {
         this._getStoryPath = story => {
             let path = [];
             let viewpoint = this.state.viewpointData;
-            if (viewpoint.Components) {
+            if (viewpoint.Components && story.code) {
                 this._getPath(path, story.code, viewpoint.Components);
             }
             return path;

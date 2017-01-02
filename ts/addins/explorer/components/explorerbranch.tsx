@@ -171,8 +171,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
-
-
     // finish initialization of budgetBranch and branch explorer objects
     componentWillMount() {
 
@@ -251,7 +249,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         let viewpoint = this.state.viewpointData
         // console.log('story viewpoint data',viewpoint)
 
-        if (viewpoint.Components) {
+        if (viewpoint.Components && story.code) {
             this._getPath(path,story.code,viewpoint.Components)
         }
 
