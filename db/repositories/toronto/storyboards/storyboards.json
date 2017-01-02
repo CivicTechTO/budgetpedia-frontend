@@ -664,6 +664,16 @@
                     "source":"PBFT",
                     "aspect":"Revenues",
                     "level":"Taxonomy",
+                    "code":"PARKS",
+                    "title":"PFR Only: Revenues by program",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
                     "code":"PARKSACTIVITIES",
                     "title":"Parks Activities: Revenues by type",
                     "tab":1,
@@ -718,7 +728,7 @@
                     "source":"PBFT",
                     "aspect":"Expenses",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Expenses by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
@@ -728,7 +738,7 @@
                     "source":"PBFT",
                     "aspect":"Expenses",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Expenses by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
@@ -738,7 +748,7 @@
                     "source":"SUMMARY",
                     "aspect":"Expenses",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Expense trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
@@ -748,7 +758,7 @@
                     "source":"PBFT",
                     "aspect":"Revenues",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Revenues by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
@@ -758,7 +768,7 @@
                     "source":"PBFT",
                     "aspect":"Revenues",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Revenues by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
@@ -768,7 +778,7 @@
                     "source":"SUMMARY",
                     "aspect":"Revenues",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Revenue trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
@@ -778,7 +788,7 @@
                     "source":"PBFT",
                     "aspect":"Staffing",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Staffing by program and type",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
@@ -788,7 +798,7 @@
                     "source":"SUMMARY",
                     "aspect":"Staffing",
                     "level":"Taxonomy",
-                    "code":"PARKSACTIVITIES",
+                    "code":"LIBRARY",
                     "title":"Library: Staffing trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
@@ -1724,6 +1734,16 @@
                     "level":"Taxonomy",
                     "code":"HOUSING",
                     "title":"Housing Support: Revenues by program",
+                    "tab":0,
+                    "leafchart":"OneYear:ColumnChart"
+                },
+                {
+                    "viewpoint":"FUNCTIONAL",
+                    "source":"PBFT",
+                    "aspect":"Revenues",
+                    "level":"Taxonomy",
+                    "code":"SHELTERADMIN",
+                    "title":"SSHA Only: Revenues by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
