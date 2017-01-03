@@ -14,18 +14,6 @@ class Announcements extends Component<any, any> {
 <h3>Key Upcoming Events</h3>
 
 <ul style = {{marginBottom:"16px"}} >
-    <li><p>
-        <strong>Tuesday, November 29 6:30-9:00 pm Budgetpedia v0.1 Launch!</strong><br />
-        <em>Location:</em> <a target="_blank" href="https://www.meetup.com/Civic-Tech-Toronto/events/235306439/">Civic Tech Toronto Meetup</a>
-        </p>
-        <p>
-        Join us for the official launch of Budgetpedia version 0.1 at
-        Civic Tech's weekly meetup. See Budgetpedia in action, gain insights
-        into the city budget and generally celebrate our going live. See the <a
-        target="_blank"
-        href="https://drive.google.com/open?id=1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY"
-        >slide deck</a> for the meetup.</p>
-    </li>
     <li><p><strong>Regular Meetups: First Tuesday of each month 6:30-9:00 pm </strong><br />
         <em> Location:</em> <a target = "_blank"
         href="http://www.meetup.com/Civic-Tech-Toronto/">
@@ -46,6 +34,26 @@ class Announcements extends Component<any, any> {
 
 <CardText>
 <h3>Key Past Events</h3>
+<ul style = {{marginBottom:"16px"}} >
+    <li><p><strong>Monday, January 2, 2017 Budgetpedia upgrade v0.1.1 released</strong><br />
+        This release adds a major feature: "select an area of interest" which creates a "storyboard" of 
+        charts related to one of the main areas of budget activities, as selected by the user. This is 
+        intended to be a precursor to more configurable, narrared user storyboards in the future.
+        </p>
+    </li>
+    <li><p>
+        <strong>Tuesday, November 29, 2016 6:30-9:00 pm Budgetpedia v0.1 Launch!</strong><br />
+        <em>Location:</em> <a target="_blank" href="https://www.meetup.com/Civic-Tech-Toronto/events/235306439/">Civic Tech Toronto Meetup</a>
+        </p>
+        <p>
+        Join us for the official launch of Budgetpedia version 0.1 at
+        Civic Tech's weekly meetup. See Budgetpedia in action, gain insights
+        into the city budget and generally celebrate our going live. See the <a
+        target="_blank"
+        href="https://drive.google.com/open?id=1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY"
+        >slide deck</a> for the meetup.</p>
+    </li>
+</ul>
 </CardText>
 
 </Card>
