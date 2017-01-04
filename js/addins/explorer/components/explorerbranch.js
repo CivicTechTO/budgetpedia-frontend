@@ -888,9 +888,6 @@ class ExplorerBranch extends Component {
                 React.createElement(Subheader_1.default, null, DatasetTitle),
                 itemlist);
         };
-        this.handleDialogOpen = (e) => {
-            this.props.handleDialogOpen(e);
-        };
         this.handleFindDialogOpen = (e) => {
             this.props.handleFindDialogOpen(e);
         };
@@ -1087,14 +1084,6 @@ class ExplorerBranch extends Component {
             React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories" + " " + "for continuity -- to make the numbers more easily comparable. We plan to disclose" + " " + "continuity details here."));
         let technotes = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
-        let showhelp = (branchDeclaration.showOptions)
-            ? React.createElement(RaisedButton_1.default, { label: "Help", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "help_outline") })
-            : null;
-        let showvideos = (branchDeclaration.showOptions)
-            ? React.createElement(RaisedButton_1.default, { label: "Videos", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
-                    window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig', '_blank');
-                }, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "videocam") })
-            : null;
         let search = (branchDeclaration.showOptions) ?
             React.createElement(RaisedButton_1.default, { label: "Find", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") })
             : null;
@@ -1112,12 +1101,11 @@ class ExplorerBranch extends Component {
                             margin: "3px",
                             paddingLeft: "6px",
                             paddingBottom: "3px",
+                            verticalAlign: "top",
                         } },
                         search,
                         shareurl,
-                        technotes,
-                        showhelp,
-                        showvideos) : null,
+                        technotes) : null,
                     governmentselection),
                 React.createElement("div", null,
                     technotesdialog,

@@ -1221,10 +1221,36 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.props.addBranchDeclaration(null,defaultSettings) // change state        
     }
 
+
+
     // ===================================================================
     // ---------------------------[ Render ]------------------------------ 
 
     render() {
+
+        let showhelp = <RaisedButton
+                label = "Help"
+                style={{margin:'3px 6px 0 6px'}}
+                type="button"
+                onTouchTap = { this.handleDialogOpen } 
+                labelPosition="before"
+                icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
+                    className="material-icons">help_outline</FontIcon>
+                }
+                />
+
+        let showvideos = <RaisedButton
+                label = "Videos"
+                style={{margin:'3px 6px 0 6px'}}
+                type="button"
+                onTouchTap = { () =>{
+                    window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig','_blank')
+                } } 
+                labelPosition="before"
+                icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
+                    className="material-icons">videocam</FontIcon>
+                }
+                />
 
         let explorer = this
 
@@ -1401,7 +1427,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         declarationData = { explorer.props.declarationData }
                         globalStateActions = { actionFunctions }
                         displayCallbacks = { displayCallbackFunctions }
-                        handleDialogOpen = {this.handleDialogOpen}
                         urlparms = { urlparms }
                         clearUrlParms = {this.clearUrlParms}
                         clearStories = {this.clearStories}
@@ -1469,6 +1494,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             <CardText expandable >
 
                 <div style={{ display:'inline-block',verticalAlign:'top'}}>
+                    <div>
                     <span style={{lineHeight:'48px',verticalAlign:'23px'}} >Explore charts below, or select an area of interest: </span>
                     <DropDownMenu
                             value = {this.state.selectStoryboard}
@@ -1575,7 +1601,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 this.resetBranches()
                             }
                         } 
-                    />                
+                    />    
+                    </div>
+                    <div>
+                    For some background see {showhelp} or {showvideos}
+                    </div>            
                 </div>
                 <div></div>
             </CardText>

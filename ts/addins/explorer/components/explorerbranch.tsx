@@ -81,7 +81,6 @@ interface ExplorerBranchProps {
     },
     globalStateActions: ExplorerBranchActions,
     declarationData: DeclarationData,
-    handleDialogOpen: Function,
     urlparms: {
         branchdata: any,
         settingsdata: any,
@@ -1473,10 +1472,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    handleDialogOpen = (e) => {
-        this.props.handleDialogOpen(e)
-    }
-
     handleFindDialogOpen = (e) => {
         this.props.handleFindDialogOpen(e)
     }
@@ -1744,34 +1739,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 className="material-icons">cloud</FontIcon>}
         />:null
 
-    let showhelp = (branchDeclaration.showOptions)
-        ?<RaisedButton
-            label = "Help"
-            style={{margin:'3px 6px 0 0'}}
-            type="button"
-            onTouchTap = { this.handleDialogOpen } 
-            labelPosition="before"
-            icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
-                className="material-icons">help_outline</FontIcon>
-            }
-            />
-        :null
-
-    let showvideos = (branchDeclaration.showOptions)
-        ?<RaisedButton
-            label = "Videos"
-            style={{margin:'3px 6px 0 0'}}
-            type="button"
-            onTouchTap = { () =>{
-                window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig','_blank')
-            } } 
-            labelPosition="before"
-            icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
-                className="material-icons">videocam</FontIcon>
-            }
-            />
-        :null
-
     let search = (branchDeclaration.showOptions)?
         <RaisedButton 
             label = "Find"
@@ -1815,6 +1782,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     margin:"3px",
                     paddingLeft:"6px",
                     paddingBottom:"3px",
+                    verticalAlign:"top",
                 }
             }
         >
@@ -1824,10 +1792,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         { shareurl }
 
         { technotes }
-
-        { showhelp }
-
-        { showvideos }
 
         </div>:null}
 
