@@ -250,7 +250,7 @@ let branchDefaults:BranchSettings = {
     // chartType: "ColumnChart",
     inflationAdjusted: true,
     nodeList:[],
-    showOptions: false,
+    showOptions: true,
     prorata:'OFF',
 }
 

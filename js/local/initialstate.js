@@ -135,7 +135,7 @@ let branchDefaults = {
     },
     inflationAdjusted: true,
     nodeList: [],
-    showOptions: false,
+    showOptions: true,
     prorata: 'OFF',
 };
 let explorer = {
