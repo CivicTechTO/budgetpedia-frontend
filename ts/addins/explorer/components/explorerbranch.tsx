@@ -1501,8 +1501,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             >
 
-            <MenuItem value={'FUNCTIONAL'} primaryText="Functional (operating budgets)"/>
-            <MenuItem value={'STRUCTURAL'} primaryText="Structural (operating budgets)"/>
+            <MenuItem value={'FUNCTIONAL'} primaryText="Functional scheme (operating budgets)"/>
+            <MenuItem value={'STRUCTURAL'} primaryText="Structural scheme (operating budgets)"/>
             <Divider />
             <MenuItem value={'ACTUALEXPENSES'} primaryText="Audited Expenses"/>
             <MenuItem value={'ACTUALREVENUES'} primaryText="Audited Revenues"/>

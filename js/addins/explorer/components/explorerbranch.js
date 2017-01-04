@@ -971,8 +971,8 @@ class ExplorerBranch extends Component {
                 React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                         branch.switchViewpoint(value);
                     } },
-                    React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Functional (operating budgets)" }),
-                    React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Structural (operating budgets)" }),
+                    React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Functional scheme (operating budgets)" }),
+                    React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Structural scheme (operating budgets)" }),
                     React.createElement(Divider_1.default, null),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Audited Expenses" }),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Audited Revenues" }),
