@@ -1923,7 +1923,7 @@
                     "code":"CORPMANAGEMENT",
                     "title":"Corporate Management: Expense trends",
                     "tab":0,
-                    "leafchart":"AllYears:TimeLine"
+                    "leafchart":"AllYears:StackedArea"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -1953,7 +1953,7 @@
                     "code":"CORPMANAGEMENT",
                     "title":"Corporate Management: Revenue trends",
                     "tab":0,
-                    "leafchart":"AllYears:TimeLine"
+                    "leafchart":"AllYears:StackedArea"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -1983,7 +1983,7 @@
                     "code":"CORPMANAGEMENT",
                     "title":"Corporate Management: Staffing trends",
                     "tab":0,
-                    "leafchart":"AllYears:TimeLine"
+                    "leafchart":"AllYears:StackedArea"
                 }
             ]
         },
@@ -2017,7 +2017,7 @@
                     "code":"INITIATIVES",
                     "title":"Planning & Development: Expense trends",
                     "tab":0,
-                    "leafchart":"AllYears:TimeLine"
+                    "leafchart":"AllYears:StackedArea"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -2047,7 +2047,7 @@
                     "code":"INITIATIVES",
                     "title":"Planning & Development: Revenue trends",
                     "tab":0,
-                    "leafchart":"AllYears:TimeLine"
+                    "leafchart":"AllYears:StackedArea"
                 },
                 {
                     "viewpoint":"FUNCTIONAL",
@@ -2077,7 +2077,7 @@
                     "code":"INITIATIVES",
                     "title":"Planning & Development: Staffing trends",
                     "tab":0,
-                    "leafchart":"AllYears:TimeLine"
+                    "leafchart":"AllYears:StackedArea"
                 }
             ]
         },
