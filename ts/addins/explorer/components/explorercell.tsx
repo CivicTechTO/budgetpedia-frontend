@@ -875,14 +875,14 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     { yearsoptions() }
 
                 </DropDownMenu>):null}
-
+                
                 {
                     (yearScope == TimeScope[TimeScope.OneYear])?null
-                    : (
-                        (yearScope == TimeScope[TimeScope.TwoYears])? ':'
-                        :'-'
+                    : ( 
+                        (yearScope == TimeScope[TimeScope.TwoYears])? <span style={{ verticalAlign:'25px',lineHeight:'48px' }}>:</span>
+                        :<span style={{ verticalAlign:'25px',lineHeight:'48px' }}>-</span>
                     )
-                }
+                } 
 
                 <DropDownMenu
                     value={rightYear}

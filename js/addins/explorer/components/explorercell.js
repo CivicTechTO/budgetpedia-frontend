@@ -548,8 +548,8 @@ class ExplorerCell extends Component {
                     this.onChangeChartYears(payload, rightYear);
                 } }, yearsoptions())) : null,
             (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? null
-                : ((yearScope == constants_1.TimeScope[constants_1.TimeScope.TwoYears]) ? ':'
-                    : '-'),
+                : ((yearScope == constants_1.TimeScope[constants_1.TimeScope.TwoYears]) ? React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, ":")
+                    : React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, "-")),
             React.createElement(DropDownMenu_1.default, { value: rightYear, style: {}, onChange: (e, key, payload) => {
                     this.onChangeChartYears(leftYear, payload);
                 } }, yearsoptions()));
