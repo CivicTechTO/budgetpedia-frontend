@@ -85,6 +85,16 @@ class HomeTilesClass extends React.Component<any, any> {
                 <div style = {{float:"right",margin:"9px 3px 3px 3px",borderRadius:"8px"}}>
                     <img style={{width:"100px"}} src= "./public/icons/budgetpedia-logo.png" />
                 </div>
+                <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
+                    <span style={{fontStyle:'italic',fontSize:'9px'}} >fostered by:</span><br />
+                    <a target = "_blank" href="http://civictech.ca">
+                    <img style={{width:"100px"}} src= "./public/icons/CTTO-logo-sm.png" /></a>
+                </div>
+                <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
+                    <span style={{fontStyle:'italic',fontSize:'9px'}} >collaborating with:</span><br />
+                    <a target = "_blank" href="http://betterbudget.ca">
+                    <img style={{width:"100px"}} src= "./public/icons/bbtoLogo_04.jpg" /></a>
+                </div>
                 <CardTitle>
                 Welcome to Budgetpedia.
                 </CardTitle>
@@ -106,7 +116,7 @@ class HomeTilesClass extends React.Component<any, any> {
                     src={'./public/icons/ic_library_books_48px.svg'}/><a
                     href="javascript:void(0);"
                     onTouchTap={ e => {this.transitionTo(e,'resources')}}>Resources</a></span>.</p>
-                    <hr style={{clear:"right"}} />
+                    <hr />
                 <p>We also welcome you to join us (and contribute!) on any of our digital platforms:</p>
                 <ul>
                 <li><a 
