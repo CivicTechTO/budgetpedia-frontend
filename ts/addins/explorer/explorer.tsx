@@ -223,7 +223,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
         let {query} = this.props.location
 
-        console.log('query',query)
+        // console.log('query',query)
 
         let branchdata, settingsdata, hash
 
@@ -1153,7 +1153,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     processStoryboardSelection = selection => {
-        console.log('processing selection',selection)
+        // console.log('processing selection',selection)
         if (!this.storyBoards) {
             let promise = this.getStoryboardsPromise()
             promise.then(json => {
@@ -1163,6 +1163,9 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         selectStoryboard:'SELECT',
                         storyboardDialogOpen:false,
                     })
+                    if (this.state.budgetBranches.length == 0) {
+                        this.resetBranches()
+                    }
                 }
             }).catch(reason => {
                 console.error('error in processStoryboardSelection',reason)
@@ -1172,7 +1175,12 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 })
             }) 
         } else {
-            this._doProcessStoryboardSelection(selection)
+            if (!this._doProcessStoryboardSelection(selection)) {
+                this.setState({
+                    selectStoryboard:'SELECT',
+                    storyboardDialogOpen:false,
+                })
+            }
         }
     }
 
@@ -1299,7 +1307,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             component: toastrComponent
         }
-        toastr.message('Share storyboard',toastrOptions)
+        toastr.message('Share',toastrOptions)
     }
 
     private _getShareUrl = () => {

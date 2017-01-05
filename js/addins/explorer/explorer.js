@@ -675,7 +675,6 @@ let Explorer = class extends Component {
             this.processStoryboardSelection(value);
         };
         this.processStoryboardSelection = selection => {
-            console.log('processing selection', selection);
             if (!this.storyBoards) {
                 let promise = this.getStoryboardsPromise();
                 promise.then(json => {
@@ -685,6 +684,9 @@ let Explorer = class extends Component {
                             selectStoryboard: 'SELECT',
                             storyboardDialogOpen: false,
                         });
+                        if (this.state.budgetBranches.length == 0) {
+                            this.resetBranches();
+                        }
                     }
                 }).catch(reason => {
                     console.error('error in processStoryboardSelection', reason);
@@ -695,7 +697,12 @@ let Explorer = class extends Component {
                 });
             }
             else {
-                this._doProcessStoryboardSelection(selection);
+                if (!this._doProcessStoryboardSelection(selection)) {
+                    this.setState({
+                        selectStoryboard: 'SELECT',
+                        storyboardDialogOpen: false,
+                    });
+                }
             }
         };
         this._doProcessStoryboardSelection = selection => {
@@ -754,7 +761,7 @@ let Explorer = class extends Component {
                 icon: (React.createElement(FontIcon_1.default, { className: "material-icons" }, "share")),
                 component: toastrComponent
             };
-            react_redux_toastr_1.toastr.message('Share storyboard', toastrOptions);
+            react_redux_toastr_1.toastr.message('Share', toastrOptions);
         };
         this._getShareUrl = () => {
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
@@ -771,7 +778,6 @@ let Explorer = class extends Component {
             react_redux_toastr_1.toastr.error('Error loading finder lookups: ' + reason);
         });
         let { query } = this.props.location;
-        console.log('query', query);
         let branchdata, settingsdata, hash;
         if (query.branch && query.settings && query.hash) {
             branchdata = jsonpack.unpack(query.branch);
