@@ -223,7 +223,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
         let {query} = this.props.location
 
-        // console.log('query',query)
+        console.log('query',query)
 
         let branchdata, settingsdata, hash
 
@@ -268,6 +268,16 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
         }
 
+        if (query && query.storyboard) {
+            let value = query.storyboard
+            this.setState({
+                selectStoryboard:value,
+                storyboardDialogOpen:true,
+            })
+            this.processStoryboardSelection(value)
+            return
+        }
+
         let { branchList, branchesById } = this.props.declarationData
 
         if (branchList.length == 0) { // initialize explorer with first branch
@@ -284,6 +294,15 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             this.harmonizeBranchesToState(budgetBranches, branchList, branchesById)
         }
     }
+
+    // componentDidMount() {
+    //     let query = this.props.location
+    //     if (query && query.query && query.query.storyboard) {
+    //         setTimeout(()=>{
+    //             this.onSelectStoryboard(query.query.storyboard)
+    //         },5000)
+    //     }
+    // }
 
     // start with open reminder to user that click on charts drills down
 
@@ -1134,6 +1153,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     processStoryboardSelection = selection => {
+        console.log('processing selection',selection)
         if (!this.storyBoards) {
             let promise = this.getStoryboardsPromise()
             promise.then(json => {
@@ -1145,7 +1165,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     })
                 }
             }).catch(reason => {
-                console.error('error in processStoryboardSelecgtion',reason)
+                console.error('error in processStoryboardSelection',reason)
                 this.setState({
                     selectStoryboard:'SELECT',
                     storyboardDialogOpen:false,
@@ -1199,16 +1219,24 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     _doProcessStoryboardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
-        if (!storyboard) return false
+        if (!storyboard) {
+            toastr.error('storyboard not found for ' + selection)
+            return false
+        }
         // console.log('processing story board',selection,storyboard)
         let stories = storyboard.stories
         this.stories = stories
-        if (!stories) return false
+        if (!stories) {
+            toastr.error('stories not found for storyboard ' + selection)
+            return false
+        }
         // clear all branches
-        this.removeBranches()
-        this.setState({
-            budgetBranches:[]
-        })
+        if (this.state.budgetBranches.length > 0) {
+            this.removeBranches()
+            this.setState({
+                budgetBranches:[]
+            })
+        }
 
         let explorer = this
         setTimeout(()=>{

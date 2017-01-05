@@ -675,6 +675,7 @@ let Explorer = class extends Component {
             this.processStoryboardSelection(value);
         };
         this.processStoryboardSelection = selection => {
+            console.log('processing selection', selection);
             if (!this.storyBoards) {
                 let promise = this.getStoryboardsPromise();
                 promise.then(json => {
@@ -686,7 +687,7 @@ let Explorer = class extends Component {
                         });
                     }
                 }).catch(reason => {
-                    console.error('error in processStoryboardSelecgtion', reason);
+                    console.error('error in processStoryboardSelection', reason);
                     this.setState({
                         selectStoryboard: 'SELECT',
                         storyboardDialogOpen: false,
@@ -699,16 +700,22 @@ let Explorer = class extends Component {
         };
         this._doProcessStoryboardSelection = selection => {
             let storyboard = this.storyBoards.storyboards[selection];
-            if (!storyboard)
+            if (!storyboard) {
+                react_redux_toastr_1.toastr.error('storyboard not found for ' + selection);
                 return false;
+            }
             let stories = storyboard.stories;
             this.stories = stories;
-            if (!stories)
+            if (!stories) {
+                react_redux_toastr_1.toastr.error('stories not found for storyboard ' + selection);
                 return false;
-            this.removeBranches();
-            this.setState({
-                budgetBranches: []
-            });
+            }
+            if (this.state.budgetBranches.length > 0) {
+                this.removeBranches();
+                this.setState({
+                    budgetBranches: []
+                });
+            }
             let explorer = this;
             setTimeout(() => {
                 for (let story of stories) {
@@ -764,6 +771,7 @@ let Explorer = class extends Component {
             react_redux_toastr_1.toastr.error('Error loading finder lookups: ' + reason);
         });
         let { query } = this.props.location;
+        console.log('query', query);
         let branchdata, settingsdata, hash;
         if (query.branch && query.settings && query.hash) {
             branchdata = jsonpack.unpack(query.branch);
@@ -792,6 +800,15 @@ let Explorer = class extends Component {
                 this.toastrmessages.error = 'the url parameters have apparently been damaged. Using defaults instead...';
                 console.error('url hash no match', react_redux_toastr_1.toastr, query.hash, newhash);
             }
+        }
+        if (query && query.storyboard) {
+            let value = query.storyboard;
+            this.setState({
+                selectStoryboard: value,
+                storyboardDialogOpen: true,
+            });
+            this.processStoryboardSelection(value);
+            return;
         }
         let { branchList, branchesById } = this.props.declarationData;
         if (branchList.length == 0) {
