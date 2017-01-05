@@ -1062,7 +1062,7 @@ class ExplorerBranch extends Component {
                 whiteSpace: "nowrap",
                 verticalAlign: "top"
             } },
-            React.createElement(Toggle_1.default, { label: 'Show options:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
+            React.createElement(Toggle_1.default, { label: 'Show chart options:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
                     this.toggleShowOptions(value);
                 } }));
         let technotesdialog = React.createElement(Dialog_1.default, { title: "Row Data Sources", modal: false, open: branch.state.techDialogOpen, onRequestClose: branch.handleTechDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },

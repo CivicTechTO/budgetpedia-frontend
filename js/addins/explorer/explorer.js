@@ -65,6 +65,8 @@ let Explorer = class extends Component {
         this.storyboardDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Your storyboard is being prepared"), modal: true, open: this.state.storyboardDialogOpen, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
             React.createElement("div", null,
                 "please wait while the charts are rendered...",
+                React.createElement("br", null),
+                "Toggle any row's \"Show chart options\" to experiment with settings for that row",
                 React.createElement(LinearProgress_1.default, { mode: "indeterminate" }))));
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;
@@ -732,6 +734,7 @@ let Explorer = class extends Component {
                         version: story.source,
                         aspect: story.aspect,
                         story: story,
+                        showOptions: false,
                     });
                     explorer.props.addBranchDeclaration(null, settings);
                 }

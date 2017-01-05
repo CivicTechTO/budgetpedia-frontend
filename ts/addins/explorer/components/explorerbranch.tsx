@@ -1672,7 +1672,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 }
             }>
             <Toggle 
-                label={'Show options:'} 
+                label={'Show chart options:'} 
                 style={{height:'32px', marginTop:'16px'}} 
                 labelStyle = {{fontStyle:'italic'}} 
                 defaultToggled={branchDeclaration.showOptions}

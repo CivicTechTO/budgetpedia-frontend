@@ -189,7 +189,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     storyboardDialog = () => (
         <Dialog
-            title = {<div style = {{padding:'12px 0 0 12px'}} >Your storyboard is being prepared</div>}
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Your storyboard is being prepared
+            </div>}
             modal = { true }
             open = { this.state.storyboardDialogOpen }
             autoScrollBodyContent = {false}
@@ -197,7 +198,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             autoDetectWindowHeight = {false}
         >
             <div>
-            please wait while the charts are rendered...
+            please wait while the charts are rendered...<br />
+            Toggle any row's "Show chart options" to experiment with settings for that row
             <LinearProgress mode="indeterminate" />
             </div>
         </Dialog>
@@ -1257,6 +1259,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     version:story.source,
                     aspect:story.aspect,
                     story:story,
+                    showOptions:false,
                 })
                 explorer.props.addBranchDeclaration(null,settings) // change state 
             }
