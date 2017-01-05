@@ -57,7 +57,7 @@ class HomeTilesClass extends React.Component {
                         React.createElement("a", { target: "_blank", href: "http://civictech.ca" },
                             React.createElement("img", { style: { width: "100px" }, src: "./public/icons/CTTO-logo-sm.png" }))),
                     React.createElement("div", { style: { clear: 'right', float: "right", margin: "0px 3px 3px 3px", borderRadius: "8px", lineHeight: '9px' } },
-                        React.createElement("span", { style: { fontStyle: 'italic', fontSize: '9px' } }, "collaborating with:"),
+                        React.createElement("span", { style: { fontStyle: 'italic', fontSize: '9px' } }, "in collaboration with:"),
                         React.createElement("br", null),
                         React.createElement("a", { target: "_blank", href: "http://betterbudget.ca" },
                             React.createElement("img", { style: { width: "100px" }, src: "./public/icons/bbtoLogo_04.jpg" }))),

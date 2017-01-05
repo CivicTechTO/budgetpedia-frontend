@@ -607,7 +607,7 @@
                 }
             ]
         },
-        "PFR":{
+        "PFRACTIVITIES":{
             "stories":[
                 {
                     "viewpoint":"FUNCTIONAL",

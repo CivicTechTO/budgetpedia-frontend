@@ -1119,11 +1119,17 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     onSelectStoryboard = (value:string) => {
+        let showdialog = true
+        if (value == 'SELECT') {
+            showdialog = false
+        }
         this.setState({
             selectStoryboard:value,
-            storyboardDialogOpen:true,
+            storyboardDialogOpen:showdialog,
         })
-        if (value == 'SELECT') return
+        if (value == 'SELECT') {
+            return
+        }
         this.processStoryboardSelection(value)
     }
 
@@ -1132,9 +1138,18 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             let promise = this.getStoryboardsPromise()
             promise.then(json => {
                 this.storyBoards = json
-                this._doProcessStoryboardSelection(selection)
+                if (!this._doProcessStoryboardSelection(selection)) {
+                    this.setState({
+                        selectStoryboard:'SELECT',
+                        storyboardDialogOpen:false,
+                    })
+                }
             }).catch(reason => {
-
+                console.error('error in processStoryboardSelecgtion',reason)
+                this.setState({
+                    selectStoryboard:'SELECT',
+                    storyboardDialogOpen:false,
+                })
             }) 
         } else {
             this._doProcessStoryboardSelection(selection)
@@ -1184,10 +1199,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     _doProcessStoryboardSelection = selection => {
         let storyboard = this.storyBoards.storyboards[selection]
+        if (!storyboard) return false
         // console.log('processing story board',selection,storyboard)
         let stories = storyboard.stories
         this.stories = stories
-        if (!stories) return
+        if (!stories) return false
         // clear all branches
         this.removeBranches()
         this.setState({
@@ -1209,6 +1225,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 explorer.props.addBranchDeclaration(null,settings) // change state 
             }
         })
+        return true 
     }
 
     resetBranches = () => {
@@ -1221,7 +1238,45 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.props.addBranchDeclaration(null,defaultSettings) // change state        
     }
 
+    private _inputfieldref
 
+    private _inputonfocus = () => {
+        this._inputfieldref.setSelectionRange(0, this._inputfieldref.value.length)
+    }
+
+
+    shareStoryboard = () => {
+        let longurl = this._getShareUrl()
+        // console.log('long url',longurl)
+        let toastrComponent = () =>  ( <div style={{width:"300px"}}>
+                <p style={{width:"240px"}}>To share this storyboard 
+                (not including any changes you may have made), 
+                copy the url below, and send it to a friend.</p>
+                <input 
+                    ref = {node => {
+                        this._inputfieldref = node
+                    }}
+                    onFocus= {this._inputonfocus}
+                    style={{width:"310px",marginLeft:'-60px'}} value = {longurl} readOnly />
+        </div> )
+
+        let toastrOptions = {
+            icon: (<FontIcon
+                className="material-icons"
+                >
+
+                share
+
+            </FontIcon>),
+
+            component: toastrComponent
+        }
+        toastr.message('Share storyboard',toastrOptions)
+    }
+
+    private _getShareUrl = () => {
+        return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard
+    }
 
     // ===================================================================
     // ---------------------------[ Render ]------------------------------ 
@@ -1526,7 +1581,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <div style={{paddingLeft:"20px"}} >Parking</div>
                             }/>
                             <Divider inset />
-                            <MenuItem value={"PFR"} primaryText = {
+                            <MenuItem value={"PFRACTIVITIES"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Parks, Forestry & Activity Centres</div>
                             }/>
                             <MenuItem value={"LIBRARY"} primaryText = {
@@ -1592,6 +1647,17 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             }/>
 
                     </DropDownMenu>
+                    <RaisedButton
+                        disabled = {this.state.selectStoryboard=='SELECT'}
+                        type="button"
+                        style={{margin:'3px 6px 0 0',verticalAlign:'23px'}}
+                        label="Share"
+                        onTouchTap={this.shareStoryboard} 
+                        labelPosition="before"
+                        icon = {<FontIcon 
+                            style={{color:'rgba(0,0,0,0.5)'}}
+                            className="material-icons">share</FontIcon>}
+                    />
                     <RaisedButton
                         style = {{ verticalAlign:'25px' }}
                         type="button"

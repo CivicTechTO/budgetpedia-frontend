@@ -661,12 +661,17 @@ let Explorer = class extends Component {
             return promise;
         };
         this.onSelectStoryboard = (value) => {
+            let showdialog = true;
+            if (value == 'SELECT') {
+                showdialog = false;
+            }
             this.setState({
                 selectStoryboard: value,
-                storyboardDialogOpen: true,
+                storyboardDialogOpen: showdialog,
             });
-            if (value == 'SELECT')
+            if (value == 'SELECT') {
                 return;
+            }
             this.processStoryboardSelection(value);
         };
         this.processStoryboardSelection = selection => {
@@ -674,8 +679,18 @@ let Explorer = class extends Component {
                 let promise = this.getStoryboardsPromise();
                 promise.then(json => {
                     this.storyBoards = json;
-                    this._doProcessStoryboardSelection(selection);
+                    if (!this._doProcessStoryboardSelection(selection)) {
+                        this.setState({
+                            selectStoryboard: 'SELECT',
+                            storyboardDialogOpen: false,
+                        });
+                    }
                 }).catch(reason => {
+                    console.error('error in processStoryboardSelecgtion', reason);
+                    this.setState({
+                        selectStoryboard: 'SELECT',
+                        storyboardDialogOpen: false,
+                    });
                 });
             }
             else {
@@ -684,10 +699,12 @@ let Explorer = class extends Component {
         };
         this._doProcessStoryboardSelection = selection => {
             let storyboard = this.storyBoards.storyboards[selection];
+            if (!storyboard)
+                return false;
             let stories = storyboard.stories;
             this.stories = stories;
             if (!stories)
-                return;
+                return false;
             this.removeBranches();
             this.setState({
                 budgetBranches: []
@@ -705,6 +722,7 @@ let Explorer = class extends Component {
                     explorer.props.addBranchDeclaration(null, settings);
                 }
             });
+            return true;
         };
         this.resetBranches = () => {
             let value = 'SELECT';
@@ -714,6 +732,25 @@ let Explorer = class extends Component {
             this.removeBranches();
             let defaultSettings = JSON.parse(JSON.stringify(this.props.declarationData.defaults.branch));
             this.props.addBranchDeclaration(null, defaultSettings);
+        };
+        this._inputonfocus = () => {
+            this._inputfieldref.setSelectionRange(0, this._inputfieldref.value.length);
+        };
+        this.shareStoryboard = () => {
+            let longurl = this._getShareUrl();
+            let toastrComponent = () => (React.createElement("div", { style: { width: "300px" } },
+                React.createElement("p", { style: { width: "240px" } }, "To share this storyboard" + " " + "(not including any changes you may have made)," + " " + "copy the url below, and send it to a friend."),
+                React.createElement("input", { ref: node => {
+                        this._inputfieldref = node;
+                    }, onFocus: this._inputonfocus, style: { width: "310px", marginLeft: '-60px' }, value: longurl, readOnly: true })));
+            let toastrOptions = {
+                icon: (React.createElement(FontIcon_1.default, { className: "material-icons" }, "share")),
+                component: toastrComponent
+            };
+            react_redux_toastr_1.toastr.message('Share storyboard', toastrOptions);
+        };
+        this._getShareUrl = () => {
+            return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
     }
     componentWillMount() {
@@ -903,7 +940,7 @@ let Explorer = class extends Component {
                                 React.createElement(MenuItem_1.default, { value: "TRANSPORTATION", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Transportation (Roads)") }),
                                 React.createElement(MenuItem_1.default, { value: "PARKING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parking") }),
                                 React.createElement(Divider_1.default, { inset: true }),
-                                React.createElement(MenuItem_1.default, { value: "PFR", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parks, Forestry & Activity Centres") }),
+                                React.createElement(MenuItem_1.default, { value: "PFRACTIVITIES", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Parks, Forestry & Activity Centres") }),
                                 React.createElement(MenuItem_1.default, { value: "LIBRARY", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Toronto Public Library") }),
                                 React.createElement(MenuItem_1.default, { value: "ATTRACTIONS", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Public Attractions") }),
                                 React.createElement(MenuItem_1.default, { value: "CONSERVHERITAGE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Conservation & Heritage") }),
@@ -927,6 +964,7 @@ let Explorer = class extends Component {
                                 React.createElement(MenuItem_1.default, { value: "CORPORATE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Corporate Accounts (Finance)") }),
                                 React.createElement(MenuItem_1.default, { disabled: true, value: 'SPECIAL', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Special Analytics") }),
                                 React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") })),
+                            React.createElement(RaisedButton_1.default, { disabled: this.state.selectStoryboard == 'SELECT', type: "button", style: { margin: '3px 6px 0 0', verticalAlign: '23px' }, label: "Share", onTouchTap: this.shareStoryboard, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }),
                             React.createElement(RaisedButton_1.default, { style: { verticalAlign: '25px' }, type: "button", label: "Reset", onTouchTap: () => {
                                     this.resetBranches();
                                 } })),

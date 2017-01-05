@@ -91,7 +91,7 @@ class HomeTilesClass extends React.Component<any, any> {
                     <img style={{width:"100px"}} src= "./public/icons/CTTO-logo-sm.png" /></a>
                 </div>
                 <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
-                    <span style={{fontStyle:'italic',fontSize:'9px'}} >collaborating with:</span><br />
+                    <span style={{fontStyle:'italic',fontSize:'9px'}} >in collaboration with:</span><br />
                     <a target = "_blank" href="http://betterbudget.ca">
                     <img style={{width:"100px"}} src= "./public/icons/bbtoLogo_04.jpg" /></a>
                 </div>
