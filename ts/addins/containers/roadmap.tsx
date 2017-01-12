@@ -90,8 +90,12 @@ class Roadmap extends Component<any, State> {
             > 
             <p>Toronto's 2017 public budget process schedule is published <a 
                 target="_blank" href="http://bit.ly/2eKcrfK">here.</a></p>
-            <p>Follow events in these committees using the City's <a target = "_blank" href="http://app.toronto.ca/tmmis/index.do">TMMIS</a> (Toronto Meeting Management Information System).
-            Live streams can be seen <a target="_blank" href="https://www.youtube.com/channel/UCfe2rzOnQzgEDvNzRRPUJsA">here</a>. Each committee's agendas, minutes, and background documents can be found through these links:</p>
+            <p>Follow events in these committees using the City's <a 
+                target = "_blank" href="http://app.toronto.ca/tmmis/index.do">TMMIS
+                </a> (Toronto Meeting Management Information System).
+            Live streams can be seen <a 
+            target="_blank" href="https://www.youtube.com/channel/UCfe2rzOnQzgEDvNzRRPUJsA">here</a>.
+             Each committee's agendas, minutes, background documents, and meeting videos can be found through these links:</p>
             <h3>Rate supported budgets (waste, water, parking)</h3>
             <ul>
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=1022">
@@ -116,7 +120,26 @@ class Roadmap extends Component<any, State> {
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11948">video</a>)
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11969">December 16, 19 & 20</a> (<a 
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11969">video</a>)
-                    , <a target = "_blank" href="http://bit.ly/2eKcrfK">January 5, 9 & 10</a> (deputations - see schedule for locations)
+                    , <a target = "_blank" href="http://bit.ly/2eKcrfK">January 5, 9 & 10</a> (deputation videos:
+                        Etobicoke Civic Center <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12330">afternoon</a>, <a
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12344">evening</a>; 
+                        Scarborough Civic Center <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12324">afternoon</a>, <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12333">evening</a>; 
+                        North York Civic Center <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12331">afternoon</a>, <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12345">evening</a>;
+                        East York Civic Center <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12326">afternoon</a>, <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12327">evening</a>; 
+                        York Civic Center <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12332">afternoon</a>, <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12346">evening</a>;
+                        City Hall <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12328">morning</a>, <a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12329">evening</a>
+                        )
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11816">January 12</a>
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11817">January 24</a></li>
 
