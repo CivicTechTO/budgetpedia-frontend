@@ -415,12 +415,12 @@
                 },
                 "Contents": {
                     "Name": "Structural",
-                    "Alias": "Structure Types"
+                    "Alias": "Organization Types"
                 }
             },
             "STRUCTURETYPE": {
                 "Instance": {
-                    "Name": "Structure Type"
+                    "Name": "Organization Type"
                 },
                 "Contents": {
                     "Name": "Clusters"
