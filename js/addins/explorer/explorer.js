@@ -434,7 +434,7 @@ let Explorer = class extends Component {
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "viewpoint: ",
+                                        "taxonomy: ",
                                         dictionary[sourceviewpoints[datasetname]])),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
@@ -443,7 +443,7 @@ let Explorer = class extends Component {
                                         " ")),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "source: ",
+                                        "dataset: ",
                                         dictionary[datasetname]))))
                         };
                         lookups.push(selection);
@@ -482,7 +482,7 @@ let Explorer = class extends Component {
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "viewpoint: ",
+                                        "taxonomy: ",
                                         dictionary[viewpointname])),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
@@ -491,7 +491,7 @@ let Explorer = class extends Component {
                                         " ")),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "source: ",
+                                        "dataset: ",
                                         dictionary[viewpointsources[viewpointname]]))))
                         };
                         lookups.push(selection);
@@ -619,13 +619,13 @@ let Explorer = class extends Component {
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", { style: { padding: "8px" } },
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "viewpoint: "),
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "taxonomy: "),
                     React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.viewpointdisplay)),
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
                     React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "level: "),
                     React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.leveldisplay)),
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "source: "),
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),
                     React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.sourcedisplay))),
             React.createElement("div", null,
                 React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onTouchTap: () => {

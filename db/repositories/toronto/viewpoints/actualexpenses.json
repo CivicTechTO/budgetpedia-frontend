@@ -69,8 +69,8 @@
     "Meta":{
         "Lookups": {
             "Taxonomy": {
-                "MUNICIPAL": "Municipal operations",
-                "SHARED": "Shared operations",
+                "MUNICIPAL": "Administrative operations",
+                "SHARED": "General operations",
                 "SUPPORT": "Support operations"
             }
         },

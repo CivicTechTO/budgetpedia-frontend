@@ -1490,7 +1490,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let viewpointselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Viewpoint:</span>
+            <span style={{lineHeight:'44px'}} >Taxonomy:</span>
         </div>
         <DropDownMenu
             value={branchDeclaration.viewpoint}
@@ -1501,12 +1501,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             >
 
-            <MenuItem value={'FUNCTIONAL'} primaryText="Functional scheme (operating budgets)"/>
-            <MenuItem value={'STRUCTURAL'} primaryText="Structural scheme (operating budgets)"/>
+            <MenuItem value={'FUNCTIONAL'} primaryText="Programs by function (budget)"/>
+            <MenuItem value={'STRUCTURAL'} primaryText="Programs by org type (budget)"/>
             <Divider />
-            <MenuItem value={'ACTUALEXPENSES'} primaryText="Audited Expenses"/>
-            <MenuItem value={'ACTUALREVENUES'} primaryText="Audited Revenues"/>
-            <MenuItem value={'EXPENDITURES'} primaryText="Audited Expenses by Object"/>
+            <MenuItem value={'ACTUALEXPENSES'} primaryText="Expenses by function (actual)"/>
+            <MenuItem value={'ACTUALREVENUES'} primaryText="Revenues by type (actual)"/>
+            <MenuItem value={'EXPENDITURES'} primaryText="Expenses by type (actual)"/>
 
         </DropDownMenu>
 
@@ -1546,7 +1546,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let versionselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Source:</span>
+            <span style={{lineHeight:'44px'}} >Dataset:</span>
         </div>
         <DropDownMenu
             disabled = {versionchoices().length < 2}
@@ -1576,7 +1576,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             case 'ACTUALREVENUES':
                 return [<MenuItem key = {4} value={'Revenues'} primaryText="Revenues"/>]
             case 'EXPENDITURES':
-                return [<MenuItem key = {4} value={'Expenditure'} primaryText="Expenditures"/>]
+                return [<MenuItem key = {4} value={'Expenditure'} primaryText="Expenses"/>]
         }
     }
 
@@ -1584,7 +1584,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
 
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Aspect:</span>
+            <span style={{lineHeight:'44px'}} >Category:</span>
         </div>
 
         <DropDownMenu

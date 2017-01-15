@@ -802,13 +802,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 >
                                 <div><span style={{fontWeight:"bold"}}>{name}</span></div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>viewpoint: {dictionary[sourceviewpoints[datasetname]]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}}>taxonomy: {dictionary[sourceviewpoints[datasetname]]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                 <span style={{fontStyle:"italic",color:"gray"}}>level: {dictionary[dimensionlookupname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}} >source: {dictionary[datasetname]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
                                 </div>
                             </MenuItem>
                             )
@@ -876,13 +876,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <span style={{fontWeight:"bold"}}>{name}</span> 
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>viewpoint: {dictionary[viewpointname]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}}>taxonomy: {dictionary[viewpointname]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                 <span style={{fontStyle:"italic",color:"gray"}}>level: {dictionary[dimensionname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}} >source: {dictionary[viewpointsources[viewpointname]]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[viewpointsources[viewpointname]]}</span>
                                 </div>
                             </MenuItem>
                             )
@@ -1079,7 +1079,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             <div style={{padding:"8px"}} >
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>viewpoint: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>taxonomy: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.viewpointdisplay }</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
@@ -1087,7 +1087,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.leveldisplay}</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>source: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>dataset: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.sourcedisplay}</span>
                 </div> 
             </div>

@@ -27,14 +27,14 @@ let content =
     <CardText expandable style={{paddingTop:"0px"}}>
     <p>There are several dataset options available for charts:</p>
     <dl>
-        <dt><strong>Viewpoint</strong></dt>
-        <dd> a viewpoint is a classification scheme (taxonomy) of a set of accounts. 
+        <dt><strong>Taxonomy</strong></dt>
+        <dd> a taxonomy is a classification scheme of a set of accounts. 
         </dd>
-        <dt><strong>Source</strong></dt>
-        <dd>alternate detailed datasets available for the selected Viewpoint (see the Budgetpedia
+        <dt><strong>Dataset</strong></dt>
+        <dd>alternate detailed datasets available for the selected Taxonomy (see the Budgetpedia
             project's <a target = "_blank" href="https://drive.google.com/drive/u/0/folders/0B208oCU9D8OuM2NmUk9XR1VCbEU">research repository)</a></dd>
-        <dt><strong>Aspect</strong></dt>
-        <dd> particular aspects of the dataset, such as Revenue, Expenses or Staffing</dd>
+        <dt><strong>Category</strong></dt>
+        <dd> particular aspects of the dataset, including Revenue, Expenses or Staffing</dd>
         <dt><strong>Prorated</strong></dt>
         <dd> the beginnings of diagnostic analytics, using simple math to view the 
             data compared with relevant related metrics, such as per person or per household</dd>
@@ -51,26 +51,26 @@ let content =
 
     <hr />
 
-    <p><strong><em>Viewpoint</em></strong> choices include:</p>
+    <p><strong><em>Taxonomy</em></strong> choices include:</p>
     <dl>
-        <dt><strong>Functional (operating budgets)</strong></dt>
+        <dt><strong>Programs by function (budget)</strong></dt>
         <dd>combines City of Toronto Agencies and Divisions into groups according to the nature of 
             the services delivered (this is the default). The classification scheme above the 
             Division/Agency level was developed by Budgetpedia project contributors.
         </dd>
-        <dt><strong>Structural (operating budgets)</strong></dt>
+        <dt><strong>Programs by org type (budget)</strong></dt>
         <dd>more traditional: separates Agencies from Divisions, and generally by organizational
             structures. Groupings are closer to those found in City annual Budget Summaries.</dd>
-        <dt><strong>Audited Expenses, and Audited Revenues</strong></dt>
+        <dt><strong>Expenses by function (actual), and Revenues by type (actual)</strong></dt>
         <dd>
             These reporting structures are manadated by the province (and GAAP -- Generally Accepted
-            Accounting Principles). They are functional, and are comparable to other municipalities in the 
+            Accounting Principles). They are comparable to other municipalities in the 
             province. Summary groupings above the statment levels are added by the Budgetpedia project
             for easier access.
         </dd>
-        <dt><strong>Audited Expenses by Object</strong></dt>
+        <dt><strong>Expenses by type (actual)</strong></dt>
         <dd>
-            Expenses by Object is a restatement of expenses by object of expenditure, such as materials,
+            Expenses by type is a restatement of expenses by object of expenditure, such as materials,
             or Wages & Salaries. These categories cross all Divisions and Agencies, and therefore provide a 
             general picture of the ways that money is spent.
         </dd>
@@ -79,12 +79,12 @@ let content =
     <hr />
 
     <p>
-        <strong><em>Source</em></strong> choices depend on the Viewpoint that is chosen.
+        <strong><em>Dataset</em></strong> choices depend on the Taxonomy that is chosen.
     </p>
 
     <dl>
 
-    <dt><em>For Viewpoint = Budget (both functional and structural), Versions</em> include:</dt>
+    <dt><em>For budget taxonomies (both functional and org type), Versions</em> include:</dt>
     <dd>
         <dl>
         <dt><strong>Summary PDF Reports 2003 - 2016</strong></dt>
@@ -111,12 +111,12 @@ let content =
     <hr />
 
     <p>
-        <strong><em>Aspect</em></strong> choices depend on the Viewpoint and Version that is chosen.
+        <strong><em>CAtegory</em></strong> choices depend on the Taxonomy and Version that is chosen.
     </p>
     <dl>
 
-        <dt><em>For Viewpoint = Budget (both functional and structural), Version = Summary or Detailed, 
-            Aspects</em> include:
+        <dt><em>For Taxonomy = Budget (both functional and structural), Version = Summary or Detailed, 
+            Categories</em> include:
         </dt>
 
         <dd>
@@ -127,10 +127,10 @@ let content =
             </dl>
 
         </dd>
-        <dd> All of these are based on City documents which have similar line items across all aspects. This 
+        <dd> All of these are based on City documents which have similar line items across all catagories. This 
             makes the figures from all sources comparable.
         </dd>
-        <dt style={{marginTop:"20px"}}><em>For Viewpoint = Consolidated Statements, any Version, Aspects</em> include:</dt>
+        <dt style={{marginTop:"20px"}}><em>For Taxononmies based on actuals, any Version, Categories</em> include:</dt>
         <dd>
             <dl>
                 <dt><strong>Revenue (actual), or</strong></dt>
@@ -141,8 +141,8 @@ let content =
         <dd>The classification schemes for these are different for each, and therefore they cannot be 
             combined.
         </dd>
-        <dt style={{marginTop:"20px"}}><em>For Viewpoint = Expenses by Object, Source = 
-            Audited Statements, Aspects</em> include:
+        <dt style={{marginTop:"20px"}}><em>For Taxonomy = Expenses by type, Dataset = 
+            Audited Statements, Categories</em> include:
         </dt>
         <dd>
             <dl>
