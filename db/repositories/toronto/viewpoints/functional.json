@@ -403,6 +403,11 @@
                             "Index": 4,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
+                        },
+                        "CORPACCOUNTS": {
+                            "Index": 4,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
                         }
                     }
                 }
@@ -418,6 +423,7 @@
                 "CONSERVATION": "Conservation & Heritage",
                 "CORPMANAGEMENT": "Corporate Management",
                 "CORPORATEACCOUNTS": "Corporate Accounts",
+                "CORPACCOUNTS":"Corporate Accounts",
                 "DESTINATIONS": "Public Attractions",
                 "EMERGSERV": "Emergency Services",
                 "INITIATIVES": "Planning & Development",

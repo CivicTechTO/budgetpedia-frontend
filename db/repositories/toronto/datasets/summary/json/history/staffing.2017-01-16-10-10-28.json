@@ -80,7 +80,7 @@
                 "2014": 100,
                 "2015": 102,
                 "2016": 103,
-                "2017": 104
+                "2017": 116
             }
         },
         "CHILDSERV": {
@@ -98,7 +98,7 @@
                 "2014": 942.7,
                 "2015": 967.6,
                 "2016": 977.8,
-                "2017": 973.5
+                "2017": 982.5
             }
         },
         "CITYMANAGER": {
@@ -116,7 +116,7 @@
                 "2014": 410.5,
                 "2015": 424.5,
                 "2016": 413,
-                "2017": 408
+                "2017": 428
             }
         },
         "CLERK": {
@@ -134,7 +134,7 @@
                 "2014": 439.7,
                 "2015": 403.9,
                 "2016": 403.6,
-                "2017": 386.3
+                "2017": 402.6
             }
         },
         "COMMCENTRES": {
@@ -212,7 +212,7 @@
                 "2014": 289,
                 "2015": 300.6,
                 "2016": 297.5,
-                "2017": 284.5
+                "2017": 300.5
             }
         },
         "ENGINEERING": {
@@ -230,7 +230,7 @@
                 "2014": 133.8,
                 "2015": 133,
                 "2016": 131.9,
-                "2017": 124.9
+                "2017": 570.1
             }
         },
         "EXHIBPLACE": {
@@ -248,7 +248,7 @@
                 "2014": 392.5,
                 "2015": 390,
                 "2016": 356,
-                "2017": 354
+                "2017": 359
             }
         },
         "FACILITIES": {
@@ -266,7 +266,7 @@
                 "2014": 799.7,
                 "2015": 925.5,
                 "2016": 927.5,
-                "2017": 917
+                "2017": 1000
             }
         },
         "FIRE": {
@@ -284,7 +284,7 @@
                 "2014": 3126.8,
                 "2015": 3154.8,
                 "2016": 3168.3,
-                "2017": 3175.3
+                "2017": 3176.3
             }
         },
         "FLEET": {
@@ -302,7 +302,7 @@
                 "2014": 174,
                 "2015": 176,
                 "2016": 176,
-                "2017": 178
+                "2017": 181
             }
         },
         "HERITAGE": {
@@ -338,7 +338,7 @@
                 "2014": 593,
                 "2015": 587,
                 "2016": 619,
-                "2017": 628
+                "2017": 846
             }
         },
         "LEGAL": {
@@ -356,7 +356,7 @@
                 "2014": 297,
                 "2015": 302.4,
                 "2016": 305.9,
-                "2017": 349.4
+                "2017": 351.9
             }
         },
         "LIBRARY": {
@@ -428,7 +428,7 @@
                 "2014": 1325,
                 "2015": 1391.3,
                 "2016": 1444.8,
-                "2017": 1445.8
+                "2017": 1446.3
             }
         },
         "PARKING": {
@@ -464,7 +464,7 @@
                 "2014": 394,
                 "2015": 394,
                 "2016": 394,
-                "2017": 394
+                "2017": 397
             }
         },
         "PARKS": {
@@ -482,7 +482,7 @@
                 "2014": 4347.6,
                 "2015": 4454.8,
                 "2016": 4503.5,
-                "2017": 4267.6
+                "2017": 4416.7
             }
         },
         "PLANNING": {
@@ -500,7 +500,7 @@
                 "2014": 352,
                 "2015": 360,
                 "2016": 368,
-                "2017": 367.5
+                "2017": 377
             }
         },
         "POLICE": {
@@ -536,7 +536,7 @@
                 "2014": 1838.7,
                 "2015": 1841.6,
                 "2016": 1850,
-                "2017": 1813.3
+                "2017": 1830.5
             }
         },
         "REGIONCONSERV": {
@@ -564,7 +564,7 @@
                 "2014": 718.6,
                 "2015": 707.2,
                 "2016": 756.5,
-                "2017": 739.1
+                "2017": 758.1
             }
         },
         "SOCIALDEV": {
@@ -654,7 +654,7 @@
                 "2014": 1055.4,
                 "2015": 1028.8,
                 "2016": 1030.5,
-                "2017": 1013.1
+                "2017": 1120
             }
         },
         "TTCCONV": {
@@ -672,7 +672,7 @@
                 "2014": 11179,
                 "2015": 11691,
                 "2016": 11870,
-                "2017": 11793
+                "2017": 14005
             }
         },
         "WATER": {
@@ -690,7 +690,7 @@
                 "2014": 1702.3,
                 "2015": 1710.3,
                 "2016": 1753.7,
-                "2017": 1752.7
+                "2017": 1752.6
             }
         },
         "YONGEDUNDAS": {
@@ -776,7 +776,7 @@
                 "2014": 425,
                 "2015": 442,
                 "2016": 456,
-                "2017": 467
+                "2017": 468
             }
         },
         "LICENCING": {
@@ -792,7 +792,7 @@
                 "2014": 456,
                 "2015": 460,
                 "2016": 460,
-                "2017": 470.5
+                "2017": 473.5
             }
         },
         "LOBBYREG": {
@@ -839,7 +839,7 @@
                 "2014": 684,
                 "2015": 693,
                 "2016": 680.2,
-                "2017": 646.2
+                "2017": 655.2
             }
         },
         "311SERVICE": {
@@ -855,7 +855,7 @@
                 "2014": 158,
                 "2015": 157,
                 "2016": 145,
-                "2017": 160
+                "2017": 173
             }
         },
         "OMBUDSMAN": {
@@ -907,19 +907,11 @@
                 "2016": 7,
                 "2017": 7
             }
-        },
-        "CORPACCOUNTS": {
-            "years": {
-                "2017": 3
-            }
         }
     },
     "Notes": {
         "2004.1.WATER.": "extrapolated (and rounded down) from 2006",
-        "2005.1.WATER.": "extrapolated (and rounded down) from 2006",
-        "2017.1.WATER.": "backgroundfile-98489.pdf",
-        "2017.1.SOLIDWASTE.": "backgroundfile-98496.pdf",
-        "2017.1.PARKING.": "Backgroundfile-98499.pdf"
+        "2005.1.WATER.": "extrapolated (and rounded down) from 2006"
     },
     "Allocations": {},
     "Headers": {
@@ -1224,12 +1216,12 @@
         },
         "2017": {
             "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
-            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=0B208oCU9D8OuX3NMSlJCYWZuVW8",
-            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=0B208oCU9D8OuWTRDakxKYk42bFk",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=0B208oCU9D8OuYkp6aWxEUE1nMkU",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=0B208oCU9D8OuTzItQm9wVDZRcjg",
             "SOURCE_DOCUMENT_TITLE": "2016 Budget Committee Recommended Tax Supported Operating Budget",
             "SOURCE_DOCUMENT_TABLE_LOCATION": "CITY OF TORONTO 2017 PRELIMINARY OPERATING BUDGET SUMMARY",
             "SOURCE_DOCUMENT_TABLE_TITLE": "",
-            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=0B208oCU9D8OuOUhYVlB2NlBuS2s",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=0B208oCU9D8OuX0RMdlB6cDZCWTQ",
             "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
             "YEAR": 2017,
             "VERSION": "Summary",
@@ -1239,14 +1231,14 @@
             "UNITS_NAME": "Full Time Equivalent",
             "UNITS_CODE": "FTE",
             "UNITS_MULTIPLIER": 1,
-            "TOTAL_AMOUNT": 51243.7,
-            "INTAKE_DATETIME": "2017-01-16-10-07-10",
+            "TOTAL_AMOUNT": 54614.8,
+            "INTAKE_DATETIME": "2016-12-12-22-12-15",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
         }
     },
     "Messages": {
-        "WARNING": "Source: City of Toronto summary budget documents. The general quality and availability of this data source is poor. We were unable to obtain matching staffing complement data for 2013. Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years."
+        "WARNING": "Source: City of Toronto summary budget documents. The general quality and availability of this data source is poor. We were unable to obtain matching staffing complement data for 2013. Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years. 2017 staffing figures currently include both operating and capital positions. We will replace those with operating-only positions once the City releases that data."
     }
 }

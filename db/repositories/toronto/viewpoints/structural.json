@@ -388,6 +388,11 @@
                     "Index": 4,
                     "NamingConfigRef": "PROGRAM",
                     "Baseline": true
+                },
+                "CORPACCOUNTS": {
+                    "Index": 4,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
                 }
             }
         }
@@ -404,6 +409,7 @@
                 "CORESERVICESA": "Human and Social Services Administrative Programs",
                 "CORESERVICESB": "Building and Infrastructure Services Administrative Programs",
                 "CORPORATEACCOUNTS2": "Corporate Accounts",
+                "CORPACCOUNTS":"Corporate Accounts",
                 "COUNCILOPS": "Council Administration",
                 "DESTINATIONS2": "Public Destinations",
                 "FIELDSERVICESA": "Human and Social Services Field Programs",
