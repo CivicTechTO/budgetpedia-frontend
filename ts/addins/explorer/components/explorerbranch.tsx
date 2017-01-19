@@ -32,6 +32,7 @@ import {List, ListItem} from 'material-ui/List'
 import {toastr} from 'react-redux-toastr'
 let jsonpack = require('jsonpack')
 let validurl = require('valid-url')
+let ReactGA = require('react-ga')
 
 // ------------------------[ modules ]-----------------------------
 import { 
@@ -150,6 +151,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         setTimeout(()=>{
             this.onPortalCreation()
         },1000)
+    }
+
+    logEvent = (parms) => {
+        if (window.location.hostname == 'budgetpedia.ca') {
+            ReactGA.event(parms);
+        }
     }
 
     private story:any = null
@@ -1249,6 +1256,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     shareBranch = () => {
+        this.logEvent({
+            category:'ExplorerBranch',
+            action:'Share branch',
+        })
         let longurl = this._getShareUrl()
         // console.log('long url',longurl)
         this._getBitlyUrl(longurl).then((json:any)=>{
@@ -1367,6 +1378,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     handleTechDialogOpen = (e) => {
         e.stopPropagation()
         e.preventDefault()
+        this.logEvent({
+            category:'ExplorerBranch',
+            action:'Show sources',
+        })
         this.setState({
             techDialogOpen: true
         })

@@ -14,6 +14,7 @@ const RaisedButton_1 = require("material-ui/RaisedButton");
 const react_redux_toastr_1 = require("react-redux-toastr");
 let jsonpack = require('jsonpack');
 let validurl = require('valid-url');
+let ReactGA = require('react-ga');
 const onchartcomponentselection_1 = require("../modules/onchartcomponentselection");
 const getbudgetnode_1 = require("../modules/getbudgetnode");
 const explorernode_1 = require("./explorernode");
@@ -50,6 +51,11 @@ class ExplorerBranch extends Component {
             setTimeout(() => {
                 this.onPortalCreation();
             }, 1000);
+        };
+        this.logEvent = (parms) => {
+            if (window.location.hostname == 'budgetpedia.ca') {
+                ReactGA.event(parms);
+            }
         };
         this.story = null;
         this.storiescleared = [];
@@ -729,6 +735,10 @@ class ExplorerBranch extends Component {
             this._inputfieldref.setSelectionRange(0, this._inputfieldref.value.length);
         };
         this.shareBranch = () => {
+            this.logEvent({
+                category: 'ExplorerBranch',
+                action: 'Share branch',
+            });
             let longurl = this._getShareUrl();
             this._getBitlyUrl(longurl).then((json) => {
                 if (json.status_code != 200) {
@@ -820,6 +830,10 @@ class ExplorerBranch extends Component {
         this.handleTechDialogOpen = (e) => {
             e.stopPropagation();
             e.preventDefault();
+            this.logEvent({
+                category: 'ExplorerBranch',
+                action: 'Show sources',
+            });
             this.setState({
                 techDialogOpen: true
             });

@@ -56,6 +56,7 @@ import LinearProgress from 'material-ui/LinearProgress'
 import {toastr} from 'react-redux-toastr'
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
+let ReactGA = require('react-ga')
 
 import ExplorerBranch from './components/explorerbranch'
 
@@ -160,6 +161,29 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         warning:null,
         success:null,
         info:null,
+    }
+
+    // Value    Notes
+    // args.category    String. Required. A top level category for these events. 
+    //     E.g. 'User', 'Navigation', 'App Editing', etc.
+    // args.action    String. Required. A description of the behaviour. 
+    //     E.g. 'Clicked Delete', 'Added a component', 'Deleted account', etc.
+    // args.label    String. Optional. More precise labelling of the related action. 
+    //     E.g. alongside the 'Added a component' action, we could add the name of a component as the label. E.g. 'Survey', 'Heading', 'Button', etc.
+    // args.value    Int. Optional. A means of recording a numerical value against an event. 
+    //     E.g. a rating, a score, etc.
+    // args.nonInteraction    Boolean. Optional. If an event is not triggered by a user interaction, 
+    //     but instead by our code 
+    //     (e.g. on page load, 
+    //         it should be flagged as a nonInteraction event to avoid skewing bounce rate data.
+    // args.transport    String. Optional. 
+    //     This specifies the transport mechanism with which hits will be sent. 
+    //     Valid values include 'beacon', 'xhr', or 'image'.
+
+    logEvent = (parms) => {
+        if (window.location.hostname == 'budgetpedia.ca') {
+            ReactGA.event(parms);
+        }
     }
 
     setToast = (version,message) => {
@@ -396,6 +420,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     handleDialogOpen = (e) => {
         e.stopPropagation()
         e.preventDefault()
+        this.logEvent({
+            category:'Explorer',
+            action:'Show help',
+        })
         this.setState({
             dialogOpen: true
         })
@@ -532,6 +560,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     addBranch = refbranchuid => {
         let cloneSettings = this._getBranchCloneSettings(refbranchuid)
 
+        this.logEvent({
+            category:'ExplorerBranch',
+            action:'Add branch',
+        })
         this.props.cloneBranchDeclaration( refbranchuid, cloneSettings )
         this.onCloneCreation()
 
@@ -915,6 +947,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             aspect:explorer.state.findDialogAspect,
             name:selection.name,
         }
+        this.logEvent({
+            category:'ExplorerBranch',
+            action:'Find chart',
+            label:'parms.name'
+        })
         explorer.findParameters.parms = parms
         explorer.findParameters.applySearchBranchSettings(parms)
     }
@@ -1144,6 +1181,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         if (value == 'SELECT') {
             showdialog = false
         }
+        this.logEvent({
+            category:'Explorer',
+            action:'Select storyboard',
+            label:value,
+        })
         this.setState({
             selectStoryboard:value,
             storyboardDialogOpen:showdialog,
@@ -1314,6 +1356,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     private _getShareUrl = () => {
+        this.logEvent({
+            category:'Explorer',
+            action:'Share storyboard',
+            label:this.state.selectStoryboard,
+        })
         return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard
     }
 
@@ -1338,6 +1385,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 style={{margin:'3px 6px 0 6px'}}
                 type="button"
                 onTouchTap = { () =>{
+                    this.logEvent({
+                        category:'Explorer',
+                        action:'Show videos',
+                    })
                     window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig','_blank')
                 } } 
                 labelPosition="before"

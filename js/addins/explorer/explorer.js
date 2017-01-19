@@ -19,6 +19,7 @@ const LinearProgress_1 = require("material-ui/LinearProgress");
 const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
+let ReactGA = require('react-ga');
 const explorerbranch_1 = require("./components/explorerbranch");
 const Actions = require("../../core/actions/actions");
 const ExplorerActions = require("./actions");
@@ -42,6 +43,11 @@ let Explorer = class extends Component {
             warning: null,
             success: null,
             info: null,
+        };
+        this.logEvent = (parms) => {
+            if (window.location.hostname == 'budgetpedia.ca') {
+                ReactGA.event(parms);
+            }
         };
         this.setToast = (version, message) => {
             this.toastrmessages[version] = message;
@@ -119,6 +125,10 @@ let Explorer = class extends Component {
         this.handleDialogOpen = (e) => {
             e.stopPropagation();
             e.preventDefault();
+            this.logEvent({
+                category: 'Explorer',
+                action: 'Show help',
+            });
             this.setState({
                 dialogOpen: true
             });
@@ -209,6 +219,10 @@ let Explorer = class extends Component {
         };
         this.addBranch = refbranchuid => {
             let cloneSettings = this._getBranchCloneSettings(refbranchuid);
+            this.logEvent({
+                category: 'ExplorerBranch',
+                action: 'Add branch',
+            });
             this.props.cloneBranchDeclaration(refbranchuid, cloneSettings);
             this.onCloneCreation();
         };
@@ -517,6 +531,11 @@ let Explorer = class extends Component {
                 aspect: explorer.state.findDialogAspect,
                 name: selection.name,
             };
+            this.logEvent({
+                category: 'ExplorerBranch',
+                action: 'Find chart',
+                label: 'parms.name'
+            });
             explorer.findParameters.parms = parms;
             explorer.findParameters.applySearchBranchSettings(parms);
         };
@@ -667,6 +686,11 @@ let Explorer = class extends Component {
             if (value == 'SELECT') {
                 showdialog = false;
             }
+            this.logEvent({
+                category: 'Explorer',
+                action: 'Select storyboard',
+                label: value,
+            });
             this.setState({
                 selectStoryboard: value,
                 storyboardDialogOpen: showdialog,
@@ -767,6 +791,11 @@ let Explorer = class extends Component {
             react_redux_toastr_1.toastr.message('Share', toastrOptions);
         };
         this._getShareUrl = () => {
+            this.logEvent({
+                category: 'Explorer',
+                action: 'Share storyboard',
+                label: this.state.selectStoryboard,
+            });
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
     }
@@ -849,6 +878,10 @@ let Explorer = class extends Component {
     render() {
         let showhelp = React.createElement(RaisedButton_1.default, { label: "Help", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: this.handleDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "help_outline") });
         let showvideos = React.createElement(RaisedButton_1.default, { label: "Videos", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: () => {
+                this.logEvent({
+                    category: 'Explorer',
+                    action: 'Show videos',
+                });
                 window.open('https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig', '_blank');
             }, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "videocam") });
         let explorer = this;
