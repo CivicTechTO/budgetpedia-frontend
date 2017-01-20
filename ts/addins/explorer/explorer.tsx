@@ -950,7 +950,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.logEvent({
             category:'ExplorerBranch',
             action:'Find chart',
-            label:'parms.name'
+            label:parms.name,
         })
         explorer.findParameters.parms = parms
         explorer.findParameters.applySearchBranchSettings(parms)
