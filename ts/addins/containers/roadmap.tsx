@@ -140,7 +140,8 @@ class Roadmap extends Component<any, State> {
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12328">morning</a>, <a 
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=12329">evening</a>
                         )
-                    , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11816">January 12</a>
+                    , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11816">January 12</a> (<a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11816">video</a>)
                     , <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11817">January 24</a></li>
 
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=966">Executive Committee</a
