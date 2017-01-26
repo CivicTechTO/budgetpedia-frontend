@@ -309,13 +309,8 @@
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "311SERVICE": {
-                                    "Index": 3,
-                                    "NamingConfigRef": "PROGRAM",
-                                    "Baseline": true
-                                },
                                 "POLICYADMIN": {
-                                    "Index": 4,
+                                    "Index": 3,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 }
@@ -365,6 +360,11 @@
                         },
                         "LEGAL": {
                             "Index": 4,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "311SERVICE": {
+                            "Index": 5,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         }
