@@ -845,6 +845,32 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
             { drilldownmessage }
             </div>
 
+        let informationprompt = 
+            <div style={{
+                position:"absolute",
+                top:"8px",
+                right:"3px",
+                fontSize:"9px",
+                fontStyle:"italic",
+                zIndex:10,
+            }}>
+
+                <IconButton tooltip="Information"
+                    tooltipPosition="top-center"
+                    style = {
+                        {
+                            padding:"0",
+                            height:"36px",
+                            width:"36px",
+                            marginRight:"3px",                                
+                        }
+                    }
+                    >
+                    <FontIcon className="material-icons">info_outline</FontIcon>
+                </IconButton>
+
+            </div>
+
         // ----------------------[ year selections ]---------------------------------
 
         let yearsoptions = () => {
@@ -905,6 +931,8 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                 { timescopes }
 
                 { chartoptions }
+
+                { informationprompt }
 
             </div>:null}
 

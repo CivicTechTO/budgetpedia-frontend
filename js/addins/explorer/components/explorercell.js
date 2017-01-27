@@ -531,6 +531,21 @@ class ExplorerCell extends Component {
                 fontSize: "9px",
                 fontStyle: "italic",
             } }, drilldownmessage);
+        let informationprompt = React.createElement("div", { style: {
+                position: "absolute",
+                top: "8px",
+                right: "3px",
+                fontSize: "9px",
+                fontStyle: "italic",
+                zIndex: 10,
+            } },
+            React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", style: {
+                    padding: "0",
+                    height: "36px",
+                    width: "36px",
+                    marginRight: "3px",
+                } },
+                React.createElement(FontIcon_1.default, { className: "material-icons" }, "info_outline")));
         let yearsoptions = () => {
             let years = [];
             for (let year = startYear; year <= endYear; year++) {
@@ -556,7 +571,8 @@ class ExplorerCell extends Component {
         return React.createElement("div", null,
             (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },
                 timescopes,
-                chartoptions) : null,
+                chartoptions,
+                informationprompt) : null,
             React.createElement("div", { style: { position: "relative" } },
                 chart,
                 drilldownprompt),
