@@ -117,7 +117,7 @@ class ExplorerNode extends Component {
                             updateCellTimeScope: this.props.globalStateActions.updateCellTimeScope,
                             updateCellChartCode: this.props.globalStateActions.updateCellChartCode,
                             updateCellYearSelections: this.props.globalStateActions.updateCellYearSelections,
-                        }, showControls: this.props.showControls, callbacks: this.props.callbacks, urlparms: this.urlparms }));
+                        }, showControls: this.props.showControls, callbacks: this.props.callbacks, urlparms: this.urlparms, onCallAnalystNotes: this.props.onCallAnalystNotes }));
             });
             return cellTabs;
         };

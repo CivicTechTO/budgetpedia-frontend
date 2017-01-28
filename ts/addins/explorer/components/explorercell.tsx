@@ -40,6 +40,7 @@ interface ExplorerCellProps {
     showControls: boolean,
     callbacks: any,
     urlparms: any,
+    onCallAnalystNotes: Function,
 }
 
 class ExplorerCell extends Component<ExplorerCellProps, any> {
@@ -74,7 +75,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
         setTimeout(() =>{ // give time for chart to be assigned to budgetCell
             budgetCell.refreshSelection() // for re-creation; last pie chart is missed
         })
-
+        // console.log('budgetCell',this.props.budgetCell)
     }
 
     private lastactiongeneration: number = 0
@@ -845,7 +846,12 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
             { drilldownmessage }
             </div>
 
-        let informationprompt = 
+        let informationprompt = () => {
+
+            let viewpoint = this.props.budgetCell.nodeDataPack.budgetNode.branchSettings.viewpoint
+            let nodepath = this.props.budgetCell.nodeDataPack.budgetNode.dataPath
+
+            return (viewpoint == 'FUNCTIONAL' || viewpoint == 'STRUCTURAL')?
             <div style={{
                 position:"absolute",
                 top:"8px",
@@ -857,6 +863,9 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
                 <IconButton tooltip="Information"
                     tooltipPosition="top-center"
+                    onTouchTap = {() => {
+                        this.props.onCallAnalystNotes(viewpoint,nodepath)
+                    }}
                     style = {
                         {
                             padding:"0",
@@ -869,7 +878,8 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     <FontIcon className="material-icons">info_outline</FontIcon>
                 </IconButton>
 
-            </div>
+            </div>:null
+        }
 
         // ----------------------[ year selections ]---------------------------------
 
@@ -932,7 +942,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
                 { chartoptions }
 
-                { informationprompt }
+                { informationprompt() }
 
             </div>:null}
 

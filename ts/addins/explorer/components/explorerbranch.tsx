@@ -90,6 +90,7 @@ interface ExplorerBranchProps {
     clearStories: Function,
     setToast: Function,
     handleFindDialogOpen: Function,
+    onCallAnalystNotes: Function,
 }
 
 interface ExplorerBranchState {
@@ -1242,6 +1243,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 story = {this.story}
                 clearUrlParms = {this.clearUrlParms}
                 clearStory = {this.clearStory}
+                onCallAnalystNotes = {this.props.onCallAnalystNotes}
             />
         })
 

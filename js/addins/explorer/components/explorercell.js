@@ -531,21 +531,28 @@ class ExplorerCell extends Component {
                 fontSize: "9px",
                 fontStyle: "italic",
             } }, drilldownmessage);
-        let informationprompt = React.createElement("div", { style: {
-                position: "absolute",
-                top: "8px",
-                right: "3px",
-                fontSize: "9px",
-                fontStyle: "italic",
-                zIndex: 10,
-            } },
-            React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", style: {
-                    padding: "0",
-                    height: "36px",
-                    width: "36px",
-                    marginRight: "3px",
-                } },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "info_outline")));
+        let informationprompt = () => {
+            let viewpoint = this.props.budgetCell.nodeDataPack.budgetNode.branchSettings.viewpoint;
+            let nodepath = this.props.budgetCell.nodeDataPack.budgetNode.dataPath;
+            return (viewpoint == 'FUNCTIONAL' || viewpoint == 'STRUCTURAL') ?
+                React.createElement("div", { style: {
+                        position: "absolute",
+                        top: "8px",
+                        right: "3px",
+                        fontSize: "9px",
+                        fontStyle: "italic",
+                        zIndex: 10,
+                    } },
+                    React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", onTouchTap: () => {
+                            this.props.onCallAnalystNotes(viewpoint, nodepath);
+                        }, style: {
+                            padding: "0",
+                            height: "36px",
+                            width: "36px",
+                            marginRight: "3px",
+                        } },
+                        React.createElement(FontIcon_1.default, { className: "material-icons" }, "info_outline"))) : null;
+        };
         let yearsoptions = () => {
             let years = [];
             for (let year = startYear; year <= endYear; year++) {
@@ -572,7 +579,7 @@ class ExplorerCell extends Component {
             (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },
                 timescopes,
                 chartoptions,
-                informationprompt) : null,
+                informationprompt()) : null,
             React.createElement("div", { style: { position: "relative" } },
                 chart,
                 drilldownprompt),

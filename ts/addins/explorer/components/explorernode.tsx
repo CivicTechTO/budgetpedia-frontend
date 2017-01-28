@@ -41,6 +41,7 @@ interface ExplorerNodeProps {
     story: any,
     clearUrlParms: Function,
     clearStory: Function,
+    onCallAnalystNotes: Function,
 }
 
 class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]}> {
@@ -384,6 +385,7 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
                     showControls = {this.props.showControls}
                     callbacks = {this.props.callbacks}
                     urlparms = {this.urlparms}
+                    onCallAnalystNotes = {this.props.onCallAnalystNotes}
                 />
             </Tab>
         })

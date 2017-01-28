@@ -35,6 +35,7 @@ let Explorer = class extends Component {
             dialogOpen: false,
             findDialogOpen: false,
             storyboardDialogOpen: false,
+            analystNotesDialogOpen: false,
             findDialogAspect: 'expenses',
             selectStoryboard: 'SELECT',
         };
@@ -798,6 +799,26 @@ let Explorer = class extends Component {
             });
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
+        this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen },
+            React.createElement("div", null, "Notes go here")));
+        this.onSelectAnalystNotes = (code, index) => {
+            if (code !== null) {
+                this.logEvent({
+                    category: 'Explorer',
+                    action: 'Select analyst notes',
+                    label: code,
+                });
+            }
+            this.setState({
+                analystNotesDialogOpen: false,
+            });
+        };
+        this.onCallAnalystNotes = (taxonomycode, nodepath) => {
+            console.log('taxonomy code for call analyst notes', taxonomycode, nodepath);
+            this.setState({
+                analystNotesDialogOpen: true,
+            });
+        };
     }
     componentWillMount() {
         if (!this.props.declarationData.onetimenotification) {
@@ -877,6 +898,7 @@ let Explorer = class extends Component {
     }
     render() {
         let showhelp = React.createElement(RaisedButton_1.default, { label: "Help", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: this.handleDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "help_outline") });
+        let showanalystnotes = React.createElement(RaisedButton_1.default, { label: "Latest Analyst Notes", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: () => { this.onCallAnalystNotes('FUNCTIONAL', []); } });
         let showvideos = React.createElement(RaisedButton_1.default, { label: "Videos", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: () => {
                 this.logEvent({
                     category: 'Explorer',
@@ -957,7 +979,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);
@@ -1031,11 +1053,14 @@ let Explorer = class extends Component {
                             "For some background see ",
                             showhelp,
                             " or ",
-                            showvideos)),
+                            showvideos,
+                            " or ",
+                            showanalystnotes)),
                     React.createElement("div", null))),
             dialogbox,
             this.findDialog(),
             this.storyboardDialog(),
+            this.analystNotesDialog(),
             branches);
     }
 };

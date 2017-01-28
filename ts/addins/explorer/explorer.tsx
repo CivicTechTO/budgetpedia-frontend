@@ -140,6 +140,7 @@ interface ExplorerState {
     findDialogAspect?:string,
     selectStoryboard?:string,
     storyboardDialogOpen?:boolean,
+    analystNotesDialogOpen?:boolean,
 }
 
 let Explorer = class extends Component< ExplorerProps, ExplorerState > 
@@ -152,6 +153,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         dialogOpen: false,
         findDialogOpen: false,
         storyboardDialogOpen: false,
+        analystNotesDialogOpen: false,
         findDialogAspect:'expenses',
         selectStoryboard:'SELECT',
     }
@@ -1325,7 +1327,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this._inputfieldref.setSelectionRange(0, this._inputfieldref.value.length)
     }
 
-
     shareStoryboard = () => {
         let longurl = this._getShareUrl()
         // console.log('long url',longurl)
@@ -1365,6 +1366,44 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     // ===================================================================
+    // ---------------------------[ Analyst Notes ]-----------------------
+
+    analystNotesDialog = () => (
+        <Dialog
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Latest Budget Analyst Notes
+            </div>}
+            modal = {false}
+            onRequestClose = { () => { this.onSelectAnalystNotes(null,null)} }
+            open = { this.state.analystNotesDialogOpen }
+        >
+            <div>
+                Notes go here
+            </div>
+        </Dialog>
+    )
+
+    onSelectAnalystNotes = (code:string, index:number) => {
+        if (code !== null) {
+            this.logEvent({
+                category:'Explorer',
+                action:'Select analyst notes',
+                label:code,
+            })
+        }
+        this.setState({
+            analystNotesDialogOpen:false,
+        })
+        // open window for analyst notes
+    }
+
+    onCallAnalystNotes = (taxonomycode, nodepath) => {
+        console.log('taxonomy code for call analyst notes',taxonomycode, nodepath)
+        this.setState({
+            analystNotesDialogOpen:true,
+        })
+    }
+
+    // ===================================================================
     // ---------------------------[ Render ]------------------------------ 
 
     render() {
@@ -1378,6 +1417,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
                     className="material-icons">help_outline</FontIcon>
                 }
+                />
+
+        let showanalystnotes = <RaisedButton
+                label = "Latest Analyst Notes"
+                style={{margin:'3px 6px 0 6px'}}
+                type="button"
+                onTouchTap = { () => {this.onCallAnalystNotes('FUNCTIONAL',[])} } 
                 />
 
         let showvideos = <RaisedButton
@@ -1577,6 +1623,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         clearStories = {this.clearStories}
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
+                        onCallAnalystNotes = {this.onCallAnalystNotes}
                     />
                     </CardText>
                     <CardActions expandable = {false}>
@@ -1760,7 +1807,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     />    
                     </div>
                     <div>
-                    For some background see {showhelp} or {showvideos}
+                    For some background see {showhelp} or {showvideos} or {showanalystnotes}
                     </div>            
                 </div>
                 <div></div>
@@ -1772,6 +1819,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             { this.findDialog() }
 
             { this.storyboardDialog() }
+
+            { this.analystNotesDialog() }
 
             { branches }
 
