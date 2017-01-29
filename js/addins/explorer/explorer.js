@@ -814,11 +814,13 @@ let Explorer = class extends Component {
             });
         };
         this.analystnotes = {
+            nodepath: null,
             taxonomies: {},
             analystnoteslist: null,
-            subset: {}
+            displaylist: {}
         };
         this.onCallAnalystNotes = (taxonomycode, nodepath) => {
+            this.analystnotes.nodepath = nodepath;
             console.log('taxonomy code for call analyst notes', taxonomycode, nodepath);
             if (this.analystnotes.taxonomies[taxonomycode]) {
                 let json = this.analystnotes.taxonomies[taxonomycode];
@@ -837,23 +839,92 @@ let Explorer = class extends Component {
         this.processTaxonomyTree = (taxonomyTree) => {
             console.log('taxonomy tree', taxonomyTree);
             if (this.analystnotes.analystnoteslist) {
-                this.displayAnalystChoices(taxonomyTree, this.analystnotes.analystnoteslist);
+                this.displayAnalystChoices(taxonomyTree);
             }
             else {
                 let listPromise = this.filePromise('resources/analystnotes.json');
                 let explorer = this;
                 listPromise.then(json => {
-                    this.displayAnalystChoices(taxonomyTree, json);
+                    this.analystnotes.analystnoteslist = json;
+                    console.log('analyst notes loaded', json);
+                    this.displayAnalystChoices(taxonomyTree);
                 }).catch(reason => {
                     react_redux_toastr_1.toastr.error('could not find analyst notes list:' + reason);
                 });
             }
         };
-        this.displayAnalystChoices = (taxonomytree, analystnotes) => {
-            console.log('analyst notes', analystnotes);
+        this.displayAnalystChoices = (taxonomytree) => {
+            let nodepath = this.analystnotes.nodepath;
+            let headnode = null;
+            let count = 0;
+            let tailbranch = taxonomytree;
+            while (true) {
+                if (count == nodepath.length)
+                    break;
+                headnode = nodepath[count];
+                if (tailbranch.Components[headnode]) {
+                    tailbranch = tailbranch.Components[headnode];
+                }
+                else {
+                    tailbranch = null;
+                    break;
+                }
+                count++;
+            }
+            if (!tailbranch) {
+                react_redux_toastr_1.toastr.error('unable to find path in taxononmy');
+                return;
+            }
+            console.log('headnode, tailbranch', headnode, tailbranch);
+            let displaylist = this.getDisplayList(headnode, tailbranch, taxonomytree);
+            console.log('displaylist', displaylist);
             this.setState({
                 analystNotesDialogOpen: true,
             });
+        };
+        this.getDisplayList = (headnode, tailbranch, taxonomytree) => {
+            let analystnotes = this.analystnotes.analystnoteslist;
+            let displaylist = [];
+            let displayset = this.getDisplaySet(headnode, tailbranch, taxonomytree, analystnotes);
+            displaylist.push(displayset);
+            return displaylist;
+        };
+        this.getDisplaySet = (headnode, tailbranch, taxonomytree, analystnotes) => {
+            let displayset = {};
+            try {
+                if (tailbranch.Baseline) {
+                    let noteset = analystnotes[headnode];
+                    displayset.code = headnode;
+                    if (!noteset) {
+                        displayset.name = headnode;
+                        displayset.notes = [];
+                    }
+                    else {
+                        displayset.name = noteset.name;
+                        displayset.notes = noteset.links;
+                    }
+                }
+                else {
+                    let subset = [];
+                    for (let subcode in tailbranch.Components) {
+                        let displayset = this.getDisplaySet(subcode, tailbranch.Components[subcode], taxonomytree, analystnotes);
+                        subset.push(displayset);
+                    }
+                    displayset.code = headnode;
+                    if (!headnode) {
+                        let contents = taxonomytree.Meta.NamingConfigurations[taxonomytree.NamingConfigRef].Contents;
+                        displayset.name = contents.Alias || contents.Name;
+                    }
+                    else {
+                        displayset.name = taxonomytree.Meta.Lookups.Taxonomy[headnode];
+                    }
+                    displayset.subset = subset;
+                }
+            }
+            catch (e) {
+                console.error('error!', e);
+            }
+            return displayset;
         };
         this.filePromise = (path) => {
             let root = './db/repositories/toronto/';
