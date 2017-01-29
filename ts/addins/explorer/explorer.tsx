@@ -1377,10 +1377,47 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             open = { this.state.analystNotesDialogOpen }
         >
             <div>
-                Notes go here
+                {this.getAnalystNotesDisplay()}
             </div>
         </Dialog>
     )
+
+    getAnalystNotesDisplay = () => {
+        let display = []
+        display.push(this.getDisplayRoot())
+        return display
+    }
+
+    getDisplayRoot = () => {
+        let display = this.analystnotes.displaylist
+        let displayroot = display[0] || {}
+        return <div key="main">
+            <h2>{displayroot.name}</h2>
+            {this.getDisplayTail(displayroot)}
+        </div>
+    }
+
+    getDisplayTail = (displayobj) => {
+        if (displayobj.subset) {
+            return this.getDisplaySubset(displayobj.subset)
+        } else if (displayobj.notes) {
+            return this.getDisplayNotes(displayobj.notes)
+        } else {
+            return <div>no notes to display</div>
+        }
+    }
+
+    getDisplaySubset = subset => {
+        let elements = []
+
+        return elements
+    }
+
+    getDisplayNotes = notes => {
+        let elements = []
+
+        return elements
+    }
 
     onSelectAnalystNotes = (code:string, index:number) => {
         if (code !== null) {
@@ -1405,7 +1442,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     onCallAnalystNotes = (taxonomycode, nodepath) => {
         this.analystnotes.nodepath = nodepath
-        console.log('taxonomy code for call analyst notes',taxonomycode, nodepath)
+        // console.log('taxonomy code for call analyst notes',taxonomycode, nodepath)
         if (this.analystnotes.taxonomies[taxonomycode]) {
             let json = this.analystnotes.taxonomies[taxonomycode]
             this.processTaxonomyTree(json)
@@ -1423,7 +1460,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     private processTaxonomyTree = (taxonomyTree) => {
-        console.log('taxonomy tree', taxonomyTree)
+        // console.log('taxonomy tree', taxonomyTree)
         if (this.analystnotes.analystnoteslist) {
             this.displayAnalystChoices(taxonomyTree)
         } else {
@@ -1432,7 +1469,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             listPromise.then(json => 
             {
                 this.analystnotes.analystnoteslist = json
-                console.log('analyst notes loaded', json)
+                // console.log('analyst notes loaded', json)
                 this.displayAnalystChoices(taxonomyTree)
             }).catch(reason => {
                 toastr.error('could not find analyst notes list:' + reason)
@@ -1447,6 +1484,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         let tailbranch = taxonomytree
         while (true) {
             if (count == nodepath.length) break
+            if (!tailbranch.Components) break
             headnode = nodepath[count]
             // console.log('headnode, tailbranch', headnode, tailbranch)
             if (tailbranch.Components[headnode]) {
@@ -1462,9 +1500,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             toastr.error('unable to find path in taxononmy')
             return
         }
-        console.log('headnode, tailbranch',headnode,tailbranch)
+        // console.log('headnode, tailbranch',headnode,tailbranch)
         let displaylist = this.getDisplayList(headnode,tailbranch,taxonomytree)
         console.log('displaylist',displaylist)
+        this.analystnotes.displaylist = displaylist
         this.setState({
             analystNotesDialogOpen:true,
         })

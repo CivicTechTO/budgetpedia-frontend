@@ -800,7 +800,38 @@ let Explorer = class extends Component {
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
         this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen },
-            React.createElement("div", null, "Notes go here")));
+            React.createElement("div", null, this.getAnalystNotesDisplay())));
+        this.getAnalystNotesDisplay = () => {
+            let display = [];
+            display.push(this.getDisplayRoot());
+            return display;
+        };
+        this.getDisplayRoot = () => {
+            let display = this.analystnotes.displaylist;
+            let displayroot = display[0] || {};
+            return React.createElement("div", { key: "main" },
+                React.createElement("h2", null, displayroot.name),
+                this.getDisplayTail(displayroot));
+        };
+        this.getDisplayTail = (displayobj) => {
+            if (displayobj.subset) {
+                return this.getDisplaySubset(displayobj.subset);
+            }
+            else if (displayobj.notes) {
+                return this.getDisplayNotes(displayobj.notes);
+            }
+            else {
+                return React.createElement("div", null, "no notes to display");
+            }
+        };
+        this.getDisplaySubset = subset => {
+            let elements = [];
+            return elements;
+        };
+        this.getDisplayNotes = notes => {
+            let elements = [];
+            return elements;
+        };
         this.onSelectAnalystNotes = (code, index) => {
             if (code !== null) {
                 this.logEvent({
@@ -821,7 +852,6 @@ let Explorer = class extends Component {
         };
         this.onCallAnalystNotes = (taxonomycode, nodepath) => {
             this.analystnotes.nodepath = nodepath;
-            console.log('taxonomy code for call analyst notes', taxonomycode, nodepath);
             if (this.analystnotes.taxonomies[taxonomycode]) {
                 let json = this.analystnotes.taxonomies[taxonomycode];
                 this.processTaxonomyTree(json);
@@ -837,7 +867,6 @@ let Explorer = class extends Component {
             }
         };
         this.processTaxonomyTree = (taxonomyTree) => {
-            console.log('taxonomy tree', taxonomyTree);
             if (this.analystnotes.analystnoteslist) {
                 this.displayAnalystChoices(taxonomyTree);
             }
@@ -846,7 +875,6 @@ let Explorer = class extends Component {
                 let explorer = this;
                 listPromise.then(json => {
                     this.analystnotes.analystnoteslist = json;
-                    console.log('analyst notes loaded', json);
                     this.displayAnalystChoices(taxonomyTree);
                 }).catch(reason => {
                     react_redux_toastr_1.toastr.error('could not find analyst notes list:' + reason);
@@ -860,6 +888,8 @@ let Explorer = class extends Component {
             let tailbranch = taxonomytree;
             while (true) {
                 if (count == nodepath.length)
+                    break;
+                if (!tailbranch.Components)
                     break;
                 headnode = nodepath[count];
                 if (tailbranch.Components[headnode]) {
@@ -875,9 +905,9 @@ let Explorer = class extends Component {
                 react_redux_toastr_1.toastr.error('unable to find path in taxononmy');
                 return;
             }
-            console.log('headnode, tailbranch', headnode, tailbranch);
             let displaylist = this.getDisplayList(headnode, tailbranch, taxonomytree);
             console.log('displaylist', displaylist);
+            this.analystnotes.displaylist = displaylist;
             this.setState({
                 analystNotesDialogOpen: true,
             });
