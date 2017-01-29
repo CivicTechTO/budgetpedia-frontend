@@ -1375,7 +1375,35 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             modal = {false}
             onRequestClose = { () => { this.onSelectAnalystNotes(null,null)} }
             open = { this.state.analystNotesDialogOpen }
+            autoScrollBodyContent = {true}
         >
+            <IconButton
+                style={{
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }}
+                onTouchTap={ 
+                    () => {
+                        this.setState({
+                            analystNotesDialogOpen:false,
+                        })
+                    }
+                } >
+
+                <FontIcon
+                    className="material-icons"
+                    style = {{ cursor: "pointer" }} >
+
+                    close
+
+                </FontIcon>
+
+            </IconButton>
             <div>
                 {this.getAnalystNotesDisplay()}
             </div>
@@ -1392,7 +1420,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         let display = this.analystnotes.displaylist
         let displayroot = display[0] || {}
         return <div key="main">
-            <h2>{displayroot.name}</h2>
+            <h3>{displayroot.name}</h3>
             {this.getDisplayTail(displayroot)}
         </div>
     }
@@ -1409,13 +1437,37 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     getDisplaySubset = subset => {
         let elements = []
-
+        for (let index in subset) {
+            let displayobj = subset[index]
+            elements.push(
+                <div key = {index} style = {
+                    {
+                        borderLeft:'1px solid silver',
+                        marginLeft:'3px',
+                        paddingLeft:'3px',
+                    }
+                } >
+                <h4 style={displayobj.notes?{fontStyle:'italic'}:null} >{displayobj.name}</h4>
+                {this.getDisplayTail(displayobj)}
+                </div>
+            )
+        }
         return elements
     }
 
     getDisplayNotes = notes => {
         let elements = []
-
+        for (let index in notes) {
+            let note = notes[index]
+            elements.push(
+                <div key={index}>
+                - <a target="_blank" href={note.link}>{note.title}</a>
+                </div>
+            )
+        }
+        if (elements.length == 0) {
+            elements.push(<div key="none" style={{fontStyle:'italic'}} >(no notes)</div>)
+        }
         return elements
     }
 

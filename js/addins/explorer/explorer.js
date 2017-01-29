@@ -799,7 +799,21 @@ let Explorer = class extends Component {
             });
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
-        this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen },
+        this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen, autoScrollBodyContent: true },
+            React.createElement(IconButton_1.default, { style: {
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }, onTouchTap: () => {
+                    this.setState({
+                        analystNotesDialogOpen: false,
+                    });
+                } },
+                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", null, this.getAnalystNotesDisplay())));
         this.getAnalystNotesDisplay = () => {
             let display = [];
@@ -810,7 +824,7 @@ let Explorer = class extends Component {
             let display = this.analystnotes.displaylist;
             let displayroot = display[0] || {};
             return React.createElement("div", { key: "main" },
-                React.createElement("h2", null, displayroot.name),
+                React.createElement("h3", null, displayroot.name),
                 this.getDisplayTail(displayroot));
         };
         this.getDisplayTail = (displayobj) => {
@@ -826,10 +840,29 @@ let Explorer = class extends Component {
         };
         this.getDisplaySubset = subset => {
             let elements = [];
+            for (let index in subset) {
+                let displayobj = subset[index];
+                elements.push(React.createElement("div", { key: index, style: {
+                        borderLeft: '1px solid silver',
+                        marginLeft: '3px',
+                        paddingLeft: '3px',
+                    } },
+                    React.createElement("h4", { style: displayobj.notes ? { fontStyle: 'italic' } : null }, displayobj.name),
+                    this.getDisplayTail(displayobj)));
+            }
             return elements;
         };
         this.getDisplayNotes = notes => {
             let elements = [];
+            for (let index in notes) {
+                let note = notes[index];
+                elements.push(React.createElement("div", { key: index },
+                    "- ",
+                    React.createElement("a", { target: "_blank", href: note.link }, note.title)));
+            }
+            if (elements.length == 0) {
+                elements.push(React.createElement("div", { key: "none", style: { fontStyle: 'italic' } }, "(no notes)"));
+            }
             return elements;
         };
         this.onSelectAnalystNotes = (code, index) => {
