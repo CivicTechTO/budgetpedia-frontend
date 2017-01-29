@@ -1396,11 +1396,81 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         // open window for analyst notes
     }
 
+    analystnotes = {
+        taxonomies: {},
+        analystnoteslist:null,
+        subset:{}
+    }
+
     onCallAnalystNotes = (taxonomycode, nodepath) => {
         console.log('taxonomy code for call analyst notes',taxonomycode, nodepath)
+        if (this.analystnotes.taxonomies[taxonomycode]) {
+            let json = this.analystnotes.taxonomies[taxonomycode]
+            this.processTaxonomyTree(json)
+        } else {
+
+            let taxonomyPromise = this.filePromise('viewpoints/' + taxonomycode.toLowerCase() + '.json')
+            let explorer = this
+            taxonomyPromise.then(json => 
+            {
+                this.processTaxonomyTree(json)
+            }).catch(reason => {
+                toastr.error('could not find analyst notes framework:' + reason)
+            })
+        }
+    }
+
+    private processTaxonomyTree = (taxonomyTree) => {
+        console.log('taxonomy tree', taxonomyTree)
+        if (this.analystnotes.analystnoteslist) {
+            this.displayAnalystChoices(taxonomyTree, this.analystnotes.analystnoteslist)
+        } else {
+            let listPromise = this.filePromise('resources/analystnotes.json')
+            let explorer = this
+            listPromise.then(json => 
+            {
+                this.displayAnalystChoices(taxonomyTree,json)
+            }).catch(reason => {
+                toastr.error('could not find analyst notes list:' + reason)
+            })
+        }
+    }
+
+    private displayAnalystChoices = (taxonomytree, analystnotes) => {
+        console.log('analyst notes', analystnotes)
         this.setState({
             analystNotesDialogOpen:true,
         })
+    }
+
+    private filePromise = (path:string) => {
+        let root = './db/repositories/toronto/'
+        let filespec = root + path
+        let promise = new Promise((resolve,reject) => {
+            fetch(filespec).then( response => {
+                if (response.ok) {
+                    // console.log('response for ' + path,response)
+                    try {
+                        let json = response.json().then(json => {
+                            resolve(json)
+                        }).catch(reason => {
+                            let msg = 'failure to resolve ' + path + ' ' + reason
+                            console.log(msg)
+                            reject(msg)
+                        })
+                    } catch (e) {
+                        console.log('error ' + path, e.message)
+                        reject('failure to load ' + path)
+                    }
+                } else {
+                    reject('could not load file ' + path)
+                }
+
+            }).catch(reason => {
+                reject(reason + ' ' + path)
+            })
+        })
+        return promise
     }
 
     // ===================================================================
