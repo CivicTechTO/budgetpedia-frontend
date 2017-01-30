@@ -1494,6 +1494,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         this.props.handleFindDialogOpen(e)
     }
 
+    taxonomychoices = {
+        FUNCTIONAL:"Programs by function (budget)",
+        STRUCTURAL:"Programs by org type (budget)",
+        ACTUALEXPENSES:"Expenses by function (actual)",
+        ACTUALREVENUES:"Revenues by type (actual)",
+        EXPENDITURES:"Expenses by type (actual)",
+    }
+
+
     render() {
 
     let branch = this
@@ -1509,7 +1518,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         label = "View"
         style={{margin:'3px 24px 0 0',verticalAlign:'23px'}}
         type="button"
-        onTouchTap = { () => {this.props.onCallViewTaxonomy(this.state.viewpointData)} } 
+        onTouchTap = { () => {
+            let viewpointselection = {
+                viewpoint:branchDeclaration.viewpoint,
+                name:this.taxonomychoices[branchDeclaration.viewpoint]
+            }
+            this.props.onCallViewTaxonomy(this.state.viewpointData,viewpointselection)} 
+        } 
         labelPosition="before"
         icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
         }
@@ -1530,12 +1545,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             >
 
-            <MenuItem value={'FUNCTIONAL'} primaryText="Programs by function (budget)"/>
-            <MenuItem value={'STRUCTURAL'} primaryText="Programs by org type (budget)"/>
+            <MenuItem value={'FUNCTIONAL'} primaryText={this.taxonomychoices.FUNCTIONAL}/>
+            <MenuItem value={'STRUCTURAL'} primaryText={this.taxonomychoices.STRUCTURAL}/>
             <Divider />
-            <MenuItem value={'ACTUALEXPENSES'} primaryText="Expenses by function (actual)"/>
-            <MenuItem value={'ACTUALREVENUES'} primaryText="Revenues by type (actual)"/>
-            <MenuItem value={'EXPENDITURES'} primaryText="Expenses by type (actual)"/>
+            <MenuItem value={'ACTUALEXPENSES'} primaryText={this.taxonomychoices.ACTUALEXPENSES}/>
+            <MenuItem value={'ACTUALREVENUES'} primaryText={this.taxonomychoices.ACTUALREVENUES}/>
+            <MenuItem value={'EXPENDITURES'} primaryText={this.taxonomychoices.EXPENDITURES}/>
 
         </DropDownMenu>
         </div>

@@ -905,6 +905,13 @@ class ExplorerBranch extends Component {
         this.handleFindDialogOpen = (e) => {
             this.props.handleFindDialogOpen(e);
         };
+        this.taxonomychoices = {
+            FUNCTIONAL: "Programs by function (budget)",
+            STRUCTURAL: "Programs by org type (budget)",
+            ACTUALEXPENSES: "Expenses by function (actual)",
+            ACTUALREVENUES: "Revenues by type (actual)",
+            EXPENDITURES: "Expenses by type (actual)",
+        };
     }
     componentWillMount() {
         this._initialize();
@@ -978,7 +985,13 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "View", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => { this.props.onCallViewTaxonomy(this.state.viewpointData); }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
+        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "View", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => {
+                let viewpointselection = {
+                    viewpoint: branchDeclaration.viewpoint,
+                    name: this.taxonomychoices[branchDeclaration.viewpoint]
+                };
+                this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection);
+            }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
         let viewpointselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap' } },
@@ -987,12 +1000,12 @@ class ExplorerBranch extends Component {
                     React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                             branch.switchViewpoint(value);
                         } },
-                        React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Programs by function (budget)" }),
-                        React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Programs by org type (budget)" }),
+                        React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
+                        React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
                         React.createElement(Divider_1.default, null),
-                        React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Expenses by function (actual)" }),
-                        React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Revenues by type (actual)" }),
-                        React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Expenses by type (actual)" }))),
+                        React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
+                        React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
+                        React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }))),
                 viewtaxonomy) : null;
         let governmentselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
             React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },

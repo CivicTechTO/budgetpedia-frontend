@@ -807,8 +807,9 @@ let Explorer = class extends Component {
                 allowCollapse: true,
             }
         };
-        this.onCallViewTaxonomy = viewpointdata => {
+        this.onCallViewTaxonomy = (viewpointdata, viewpointselection) => {
             this.viewtaxonomydata.viewpointdata = viewpointdata;
+            this.viewtaxonomydata.viewpointselection = viewpointselection;
             this.setViewTaxonomyData();
             this.setState({
                 viewTaxonomyDialogOpen: true,
@@ -848,28 +849,47 @@ let Explorer = class extends Component {
         this.taxonomychart = () => {
             return this.viewtaxonomydata.data ? React.createElement(Chart, { chartType: 'OrgChart', options: this.viewtaxonomydata.options, data: this.viewtaxonomydata.data }) : null;
         };
-        this.viewTaxonomyDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Current Taxonomy Structure"), modal: false, onRequestClose: () => {
-                this.setState({
-                    viewTaxonomyDialogOpen: false,
-                });
-            }, open: this.state.viewTaxonomyDialogOpen, contentStyle: { width: '90%', maxWidth: 'none', height: '90%', maxHeight: 'none' }, autoScrollBodyContent: true },
-            React.createElement(IconButton_1.default, { style: {
-                    top: 0,
-                    right: 0,
-                    padding: 0,
-                    height: "36px",
-                    width: "36px",
-                    position: "absolute",
-                    zIndex: 2,
-                }, onTouchTap: () => {
+        this.viewTaxonomyDialog = () => {
+            if (!this.viewtaxonomydata.viewpointdata)
+                return null;
+            let taxonomyselection = this.viewtaxonomydata.viewpointselection.viewpoint;
+            return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } },
+                    "Chart view of selected taxonomy (",
+                    React.createElement("span", { style: { fontStyle: 'italic' } }, this.viewtaxonomydata.viewpointselection.name),
+                    ")"), modal: false, onRequestClose: () => {
                     this.setState({
                         viewTaxonomyDialogOpen: false,
                     });
-                } },
-                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
-            React.createElement("div", { style: { height: window.innerHeight } },
-                React.createElement("div", { style: { fontStyle: 'italic' } }, "double-click on a cell to collapse its children"),
-                this.taxonomychart())));
+                }, open: this.state.viewTaxonomyDialogOpen, contentStyle: { width: '90%', maxWidth: 'none', height: '90%', maxHeight: 'none' }, autoScrollBodyContent: true },
+                React.createElement(IconButton_1.default, { style: {
+                        top: 0,
+                        right: 0,
+                        padding: 0,
+                        height: "36px",
+                        width: "36px",
+                        position: "absolute",
+                        zIndex: 2,
+                    }, onTouchTap: () => {
+                        this.setState({
+                            viewTaxonomyDialogOpen: false,
+                        });
+                    } },
+                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                React.createElement("div", { style: { height: window.innerHeight } },
+                    React.createElement("div", { style: { fontStyle: 'italic', fontSize: 'smaller' } },
+                        "double-click on a cell to collapse its children. ",
+                        React.createElement("div", { style: {
+                                display: 'inline-block',
+                                height: '9px',
+                                width: '9px',
+                                backgroundColor: 'pink',
+                                border: '1px solid gray',
+                            } }),
+                        " = ",
+                        (taxonomyselection == 'FUNCTIONAL' || taxonomyselection == 'STRUCTURAL') ?
+                            'City Divisions and Agencies' : 'Source document base categories'),
+                    this.taxonomychart()));
+        };
         this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen, autoScrollBodyContent: true },
             React.createElement(IconButton_1.default, { style: {
                     top: 0,

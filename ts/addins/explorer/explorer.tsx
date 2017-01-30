@@ -1378,9 +1378,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
-    onCallViewTaxonomy = viewpointdata => {
+    onCallViewTaxonomy = (viewpointdata,viewpointselection) => {
         // console.log('viewpointdata',viewpointdata)
         this.viewtaxonomydata.viewpointdata = viewpointdata
+        this.viewtaxonomydata.viewpointselection = viewpointselection
         this.setViewTaxonomyData()
         this.setState({
             viewTaxonomyDialogOpen:true,
@@ -1429,9 +1430,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         data = { this.viewtaxonomydata.data }
     />:null }
 
-    viewTaxonomyDialog = () => (
-        <Dialog
-            title = {<div style = {{padding:'12px 0 0 12px'}} >Current Taxonomy Structure
+    viewTaxonomyDialog = () => {
+        if (!this.viewtaxonomydata.viewpointdata) return null
+        let taxonomyselection = this.viewtaxonomydata.viewpointselection.viewpoint
+         return <Dialog
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Chart view of selected taxonomy (<span style={{fontStyle:'italic'}}>{this.viewtaxonomydata.viewpointselection.name}</span>)
             </div>}
             modal = {false}
             onRequestClose = { () => {  
@@ -1470,11 +1473,25 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             </IconButton>
             <div style={{height:window.innerHeight}}>
-                <div style={{fontStyle:'italic'}} >double-click on a cell to collapse its children</div>
+                <div style={{fontStyle:'italic',fontSize:'smaller'}} >
+                double-click on a cell to collapse its children. <div
+                    style ={
+                        {
+                            display:'inline-block',
+                            height:'9px',
+                            width:'9px',
+                            backgroundColor:'pink',
+                            border:'1px solid gray',
+                        }
+                    } ></div> = {
+                        (taxonomyselection == 'FUNCTIONAL' || taxonomyselection == 'STRUCTURAL')? 
+                        'City Divisions and Agencies':'Source document base categories'
+                    }
+                </div>
                 {this.taxonomychart()}
             </div>
         </Dialog>
-    )
+    }
 
     // ===================================================================
     // ---------------------------[ Analyst Notes ]-----------------------
