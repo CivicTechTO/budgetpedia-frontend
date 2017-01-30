@@ -36,6 +36,7 @@ let Explorer = class extends Component {
             findDialogOpen: false,
             storyboardDialogOpen: false,
             analystNotesDialogOpen: false,
+            viewTaxonomyDialogOpen: false,
             findDialogAspect: 'expenses',
             selectStoryboard: 'SELECT',
         };
@@ -799,6 +800,28 @@ let Explorer = class extends Component {
             });
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
+        this.onCallViewTaxonomy = viewpointdata => {
+            console.log('viewpointdata', viewpointdata);
+            this.setState({
+                viewTaxonomyDialogOpen: true,
+            });
+        };
+        this.viewTaxonomyDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Current Taxonomy Structure"), modal: false, onRequestClose: () => { }, open: this.state.viewTaxonomyDialogOpen, autoScrollBodyContent: true },
+            React.createElement(IconButton_1.default, { style: {
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }, onTouchTap: () => {
+                    this.setState({
+                        viewTaxonomyDialogOpen: false,
+                    });
+                } },
+                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+            React.createElement("div", null, "taxonomy data")));
         this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen, autoScrollBodyContent: true },
             React.createElement(IconButton_1.default, { style: {
                     top: 0,
@@ -1177,7 +1200,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: this.handleFindDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);
@@ -1259,6 +1282,7 @@ let Explorer = class extends Component {
             this.findDialog(),
             this.storyboardDialog(),
             this.analystNotesDialog(),
+            this.viewTaxonomyDialog(),
             branches);
     }
 };

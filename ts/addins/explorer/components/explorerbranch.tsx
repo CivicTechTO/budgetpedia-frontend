@@ -91,6 +91,7 @@ interface ExplorerBranchProps {
     setToast: Function,
     handleFindDialogOpen: Function,
     onCallAnalystNotes: Function,
+    onCallViewTaxonomy: Function,
 }
 
 interface ExplorerBranchState {
@@ -1508,12 +1509,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         label = "View"
         style={{margin:'3px 24px 0 0',verticalAlign:'23px'}}
         type="button"
-        onTouchTap = { () => {} } 
+        onTouchTap = { () => {this.props.onCallViewTaxonomy(this.state.viewpointData)} } 
         labelPosition="before"
         icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
         }
-        />
-
+    />
 
     let viewpointselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block'}}>

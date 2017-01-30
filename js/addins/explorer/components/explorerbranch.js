@@ -978,7 +978,7 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "View", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => { }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
+        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "View", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => { this.props.onCallViewTaxonomy(this.state.viewpointData); }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
         let viewpointselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap' } },

@@ -141,6 +141,7 @@ interface ExplorerState {
     selectStoryboard?:string,
     storyboardDialogOpen?:boolean,
     analystNotesDialogOpen?:boolean,
+    viewTaxonomyDialogOpen?:boolean,
 }
 
 let Explorer = class extends Component< ExplorerProps, ExplorerState > 
@@ -154,6 +155,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         findDialogOpen: false,
         storyboardDialogOpen: false,
         analystNotesDialogOpen: false,
+        viewTaxonomyDialogOpen: false,
         findDialogAspect:'expenses',
         selectStoryboard:'SELECT',
     }
@@ -1366,6 +1368,58 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     // ===================================================================
+    // ---------------------------[ View Taxonomy ]-----------------------
+
+    onCallViewTaxonomy = viewpointdata => {
+        console.log('viewpointdata',viewpointdata)
+        this.setState({
+            viewTaxonomyDialogOpen:true,
+        })
+    }
+
+    viewTaxonomyDialog = () => (
+        <Dialog
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Current Taxonomy Structure
+            </div>}
+            modal = {false}
+            onRequestClose = { () => {  } }
+            open = { this.state.viewTaxonomyDialogOpen }
+            autoScrollBodyContent = {true}
+        >
+            <IconButton
+                style={{
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }}
+                onTouchTap={ 
+                    () => {
+                        this.setState({
+                            viewTaxonomyDialogOpen:false,
+                        })
+                    }
+                } >
+
+                <FontIcon
+                    className="material-icons"
+                    style = {{ cursor: "pointer" }} >
+
+                    close
+
+                </FontIcon>
+
+            </IconButton>
+            <div>
+                taxonomy data
+            </div>
+        </Dialog>
+    )
+
+    // ===================================================================
     // ---------------------------[ Analyst Notes ]-----------------------
 
     analystNotesDialog = () => (
@@ -1863,6 +1917,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         setToast = {this.setToast}
                         handleFindDialogOpen = {this.handleFindDialogOpen}
                         onCallAnalystNotes = {this.onCallAnalystNotes}
+                        onCallViewTaxonomy = {this.onCallViewTaxonomy}
                     />
                     </CardText>
                     <CardActions expandable = {false}>
@@ -2060,6 +2115,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             { this.storyboardDialog() }
 
             { this.analystNotesDialog() }
+
+            { this.viewTaxonomyDialog() }
 
             { branches }
 
