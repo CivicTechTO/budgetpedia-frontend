@@ -1379,7 +1379,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     onCallViewTaxonomy = viewpointdata => {
-        console.log('viewpointdata',viewpointdata)
+        // console.log('viewpointdata',viewpointdata)
         this.viewtaxonomydata.viewpointdata = viewpointdata
         this.setViewTaxonomyData()
         this.setState({
@@ -1398,16 +1398,31 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     setViewTaxonomyRow = (parentcode,components,data) => {
+        let baselines:any = {string:''}
         for (let code in components) {
             let component = components[code]
-            if (component.Baseline) continue
-            data.push([{v:code,f:component.Name},parentcode,''])
-            this.setViewTaxonomyRow(code,component.Components,data)
+            if (component.Baseline) {
+                // console.log('single baseline',component)
+                if (!baselines.code) {
+                    baselines.code = code
+                }
+                baselines.string += '<div style="border:2px solid gray;margin-bottom:3px;border-radius:6px;font-size:smaller">'+component.Name+'</div>'
+            } else {
+                data.push([{v:code,f:component.Name},parentcode,''])
+                this.setViewTaxonomyRow(code,component.Components,data)
+            }
+        }
+        // console.log('baselines',baselines)
+        if (baselines.code) {
+            data.push([
+                {v:baselines.code,f:'<div style="background-color:pink;height:100%">'+
+                    baselines.string+'</div>'},parentcode,''
+            ])
         }
     }
 
     taxonomychart = () => {
-        console.log('viewtaxonomydata',this.viewtaxonomydata)
+        // console.log('viewtaxonomydata',this.viewtaxonomydata)
         return this.viewtaxonomydata.data?<Chart 
         chartType = 'OrgChart'
         options = { this.viewtaxonomydata.options }
@@ -1455,6 +1470,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             </IconButton>
             <div style={{height:window.innerHeight}}>
+                <div style={{fontStyle:'italic'}} >double-click on a cell to collapse its children</div>
                 {this.taxonomychart()}
             </div>
         </Dialog>
