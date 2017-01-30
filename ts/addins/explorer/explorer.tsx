@@ -57,6 +57,7 @@ import {toastr} from 'react-redux-toastr'
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
 let ReactGA = require('react-ga')
+var { Chart } = require('../../../forked/react-google-charts/Chart.js')
 
 import ExplorerBranch from './components/explorerbranch'
 
@@ -1370,20 +1371,60 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     // ===================================================================
     // ---------------------------[ View Taxonomy ]-----------------------
 
+    viewtaxonomydata:any = {
+        options:{
+            allowHtml:true,
+            allowCollapse:true,
+        }
+    }
+
     onCallViewTaxonomy = viewpointdata => {
         console.log('viewpointdata',viewpointdata)
+        this.viewtaxonomydata.viewpointdata = viewpointdata
+        this.setViewTaxonomyData()
         this.setState({
             viewTaxonomyDialogOpen:true,
         })
     }
+
+    setViewTaxonomyData = () => {
+        let viewpointdata = this.viewtaxonomydata.viewpointdata
+        let data = []
+        data.push(['Code','Parent','Tooltip'])
+        let code = viewpointdata.NamingConfigRef
+        data.push([{v:code,f:viewpointdata.Meta.NamingConfigurations[code].Contents.Alias},'',''])
+        this.setViewTaxonomyRow(code,viewpointdata.Components,data)
+        this.viewtaxonomydata.data = data
+    }
+
+    setViewTaxonomyRow = (parentcode,components,data) => {
+        for (let code in components) {
+            let component = components[code]
+            if (component.Baseline) continue
+            data.push([{v:code,f:component.Name},parentcode,''])
+            this.setViewTaxonomyRow(code,component.Components,data)
+        }
+    }
+
+    taxonomychart = () => {
+        console.log('viewtaxonomydata',this.viewtaxonomydata)
+        return this.viewtaxonomydata.data?<Chart 
+        chartType = 'OrgChart'
+        options = { this.viewtaxonomydata.options }
+        data = { this.viewtaxonomydata.data }
+    />:null }
 
     viewTaxonomyDialog = () => (
         <Dialog
             title = {<div style = {{padding:'12px 0 0 12px'}} >Current Taxonomy Structure
             </div>}
             modal = {false}
-            onRequestClose = { () => {  } }
+            onRequestClose = { () => {  
+                this.setState({
+                    viewTaxonomyDialogOpen: false,
+                })} }
             open = { this.state.viewTaxonomyDialogOpen }
+            contentStyle = {{width:'90%',maxWidth:'none',height:'90%',maxHeight:'none'}}
             autoScrollBodyContent = {true}
         >
             <IconButton
@@ -1413,8 +1454,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 </FontIcon>
 
             </IconButton>
-            <div>
-                taxonomy data
+            <div style={{height:window.innerHeight}}>
+                {this.taxonomychart()}
             </div>
         </Dialog>
     )

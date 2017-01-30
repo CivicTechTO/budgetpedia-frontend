@@ -20,6 +20,7 @@ const react_redux_toastr_1 = require("react-redux-toastr");
 let uuid = require('node-uuid');
 let jsonpack = require('jsonpack');
 let ReactGA = require('react-ga');
+var { Chart } = require('../../../forked/react-google-charts/Chart.js');
 const explorerbranch_1 = require("./components/explorerbranch");
 const Actions = require("../../core/actions/actions");
 const ExplorerActions = require("./actions");
@@ -800,13 +801,47 @@ let Explorer = class extends Component {
             });
             return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard;
         };
+        this.viewtaxonomydata = {
+            options: {
+                allowHtml: true,
+                allowCollapse: true,
+            }
+        };
         this.onCallViewTaxonomy = viewpointdata => {
             console.log('viewpointdata', viewpointdata);
+            this.viewtaxonomydata.viewpointdata = viewpointdata;
+            this.setViewTaxonomyData();
             this.setState({
                 viewTaxonomyDialogOpen: true,
             });
         };
-        this.viewTaxonomyDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Current Taxonomy Structure"), modal: false, onRequestClose: () => { }, open: this.state.viewTaxonomyDialogOpen, autoScrollBodyContent: true },
+        this.setViewTaxonomyData = () => {
+            let viewpointdata = this.viewtaxonomydata.viewpointdata;
+            let data = [];
+            data.push(['Code', 'Parent', 'Tooltip']);
+            let code = viewpointdata.NamingConfigRef;
+            data.push([{ v: code, f: viewpointdata.Meta.NamingConfigurations[code].Contents.Alias }, '', '']);
+            this.setViewTaxonomyRow(code, viewpointdata.Components, data);
+            this.viewtaxonomydata.data = data;
+        };
+        this.setViewTaxonomyRow = (parentcode, components, data) => {
+            for (let code in components) {
+                let component = components[code];
+                if (component.Baseline)
+                    continue;
+                data.push([{ v: code, f: component.Name }, parentcode, '']);
+                this.setViewTaxonomyRow(code, component.Components, data);
+            }
+        };
+        this.taxonomychart = () => {
+            console.log('viewtaxonomydata', this.viewtaxonomydata);
+            return this.viewtaxonomydata.data ? React.createElement(Chart, { chartType: 'OrgChart', options: this.viewtaxonomydata.options, data: this.viewtaxonomydata.data }) : null;
+        };
+        this.viewTaxonomyDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Current Taxonomy Structure"), modal: false, onRequestClose: () => {
+                this.setState({
+                    viewTaxonomyDialogOpen: false,
+                });
+            }, open: this.state.viewTaxonomyDialogOpen, contentStyle: { width: '90%', maxWidth: 'none', height: '90%', maxHeight: 'none' }, autoScrollBodyContent: true },
             React.createElement(IconButton_1.default, { style: {
                     top: 0,
                     right: 0,
@@ -821,7 +856,7 @@ let Explorer = class extends Component {
                     });
                 } },
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
-            React.createElement("div", null, "taxonomy data")));
+            React.createElement("div", { style: { height: window.innerHeight } }, this.taxonomychart())));
         this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen, autoScrollBodyContent: true },
             React.createElement(IconButton_1.default, { style: {
                     top: 0,
