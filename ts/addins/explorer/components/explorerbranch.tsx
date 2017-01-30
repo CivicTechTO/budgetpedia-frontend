@@ -1504,9 +1504,21 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
+    let viewtaxonomy = <RaisedButton
+        label = "View"
+        style={{margin:'3px 24px 0 0',verticalAlign:'23px'}}
+        type="button"
+        onTouchTap = { () => {} } 
+        labelPosition="before"
+        icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
+        }
+        />
+
+
     let viewpointselection = (branchDeclaration.showOptions)?
-    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
-        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+    <div style={{display:'inline-block'}}>
+        <div style = {{display:'inline-block',whiteSpace:'nowrap'}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'23px' }}>
             <span style={{lineHeight:'44px'}} >Taxonomy:</span>
         </div>
         <DropDownMenu
@@ -1526,6 +1538,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'EXPENDITURES'} primaryText="Expenses by type (actual)"/>
 
         </DropDownMenu>
+        </div>
+
+        {viewtaxonomy}
 
     </div>:null
 
@@ -1780,7 +1795,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 style={{color:'rgba(0,0,0,0.5)'}}
                 className="material-icons">share</FontIcon>}
         />:null
-
 
     return <div >
     <div>

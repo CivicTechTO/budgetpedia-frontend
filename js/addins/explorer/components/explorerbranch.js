@@ -978,19 +978,22 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
+        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "View", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => { }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
         let viewpointselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Taxonomy:")),
-                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
-                        branch.switchViewpoint(value);
-                    } },
-                    React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Programs by function (budget)" }),
-                    React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Programs by org type (budget)" }),
-                    React.createElement(Divider_1.default, null),
-                    React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Expenses by function (actual)" }),
-                    React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Revenues by type (actual)" }),
-                    React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Expenses by type (actual)" }))) : null;
+            React.createElement("div", { style: { display: 'inline-block' } },
+                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap' } },
+                    React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: '23px' } },
+                        React.createElement("span", { style: { lineHeight: '44px' } }, "Taxonomy:")),
+                    React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
+                            branch.switchViewpoint(value);
+                        } },
+                        React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: "Programs by function (budget)" }),
+                        React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: "Programs by org type (budget)" }),
+                        React.createElement(Divider_1.default, null),
+                        React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: "Expenses by function (actual)" }),
+                        React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: "Revenues by type (actual)" }),
+                        React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: "Expenses by type (actual)" }))),
+                viewtaxonomy) : null;
         let governmentselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
             React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
                 React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;

@@ -939,7 +939,6 @@ let Explorer = class extends Component {
                 return;
             }
             let displaylist = this.getDisplayList(headnode, tailbranch, taxonomytree);
-            console.log('displaylist', displaylist);
             this.analystnotes.displaylist = displaylist;
             this.setState({
                 analystNotesDialogOpen: true,

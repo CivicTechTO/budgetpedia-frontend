@@ -1554,7 +1554,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
         // console.log('headnode, tailbranch',headnode,tailbranch)
         let displaylist = this.getDisplayList(headnode,tailbranch,taxonomytree)
-        console.log('displaylist',displaylist)
+        // console.log('displaylist',displaylist)
         this.analystnotes.displaylist = displaylist
         this.setState({
             analystNotesDialogOpen:true,
