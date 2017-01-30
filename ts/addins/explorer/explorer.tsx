@@ -1378,6 +1378,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
+    // TODO: should log event for google analytics
     onCallViewTaxonomy = (viewpointdata,viewpointselection) => {
         // console.log('viewpointdata',viewpointdata)
         this.viewtaxonomydata.viewpointdata = viewpointdata
@@ -1599,6 +1600,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         return elements
     }
 
+
+    // TODO: This needs to be hooked into event that opens analyst notes window!!
     onSelectAnalystNotes = (code:string, index:number) => {
         if (code !== null) {
             this.logEvent({
@@ -1620,6 +1623,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         displaylist:{}
     }
 
+    // TODO: should log this for google analytics
     onCallAnalystNotes = (taxonomycode, nodepath) => {
         this.analystnotes.nodepath = nodepath
         // console.log('taxonomy code for call analyst notes',taxonomycode, nodepath)
