@@ -15,12 +15,15 @@ import Main from './core/containers/main'
 // install fetch as global function for browsers (eg Safari) that don't have it
 // require('isomorphic-fetch')
 
+// TODO concept of globalmessage needs to be fleshed out
 let globalmessage = null
+// TODO the following is redundant
 //  (
 //     <div>THIS IS THE SOFTWARE DEVELOPER'S COPY OF BUDGETPEDIA.
 //     </div>
 // )
 try {
+// TODO implement {version} as controlling variable, for example for google analytics
 render(
 	<Main globalmessage = {globalmessage} version={"DEVELOPMENT"}/>,
 	document.getElementById('main')
