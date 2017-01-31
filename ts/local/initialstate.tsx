@@ -1,6 +1,7 @@
 // initialstate.tsx
 /*
     TODO: purge system of navitiles - old wordy tiles = maintiles
+    TODO: break file into backend config bundle and frontend package bundle components; merge in index.tsx?
 */
 
 'use strict'
@@ -69,6 +70,7 @@ let system = {
 let homecols: number = 2 // default
 let homepadding: number = 20
 
+// review apporpriateness of the following typescript type notation
 let hometiles: [Object] = [
     {
         id: 9,
