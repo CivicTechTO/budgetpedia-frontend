@@ -24,6 +24,7 @@ let globalmessage = null
 // )
 try {
 // TODO implement {version} as controlling variable, for example for google analytics
+// TODO refine error handling here
 render(
 	<Main globalmessage = {globalmessage} version={"DEVELOPMENT"}/>,
 	document.getElementById('main')
