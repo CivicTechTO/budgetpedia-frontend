@@ -35,6 +35,18 @@ class Announcements extends Component<any, any> {
 <CardText>
 <h3>Key Past Events</h3>
 <ul style = {{marginBottom:"16px"}} >
+    <li><p><strong>Monday, January 30, 2017 Budgetpedia upgrade v0.1.2 released</strong><br />
+        This release adds two new features to the explorer page.</p>
+        <p> <em>Latest analyst notes</em> provides access to the 
+        latest city capital and operating analyst notes for all divisions and agencies cited in the budget. These are
+        available from a button at the top of the page, and also from info buttons on all budget charts. 
+        </p>
+        <p>Secondly a <em>View</em> button beside the <em>Taxonomy</em> selection shows an hierarchical chart (
+            like an org chart) of the currently selected taxonomy. This allows the user to get an overview
+            of the currently selected taxonomy. The charts are interactive, allowing the user to hide child 
+            cells by double-clicking on parent cells. This allows for focus on selected sections of the hierarchy.
+        </p>
+    </li>
     <li><p><strong>Monday, January 2, 2017 Budgetpedia upgrade v0.1.1 released</strong><br />
         This release adds a major feature: "select an area of interest" which creates a "storyboard" of 
         charts related to one of the main areas of budget activities, as selected by the user. This is 

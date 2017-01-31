@@ -50,7 +50,7 @@ import {BranchSettings} from '../addins/explorer/modules/interfaces'
 import * as colors from 'material-ui/styles/colors'
 
 let appnavbar = {
-	title: 'Budgetpedia v0.1.1',
+	title: 'Budgetpedia v0.1.2',
 	username: 'anonymous',
 	accountoptions: [],
 	menuoptions: [],
