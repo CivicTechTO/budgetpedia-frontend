@@ -1,5 +1,6 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 // root.tsx
+// TODO collapse into Main component
 import * as React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
