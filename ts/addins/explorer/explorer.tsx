@@ -2061,6 +2061,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     <div>
                     <span style={{lineHeight:'48px',verticalAlign:'23px'}} >Explore charts below, or select an area of interest: </span>
                     <DropDownMenu
+                            style = {{verticalAlign:'top'}}
                             value = {this.state.selectStoryboard}
                             onChange = {(event, index, value) => {
                                 this.onSelectStoryboard(value)
