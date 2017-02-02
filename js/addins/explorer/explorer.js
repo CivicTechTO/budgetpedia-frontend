@@ -1297,7 +1297,7 @@ let Explorer = class extends Component {
                     React.createElement("div", { style: { display: 'inline-block', verticalAlign: 'top' } },
                         React.createElement("div", null,
                             React.createElement("span", { style: { lineHeight: '48px', verticalAlign: '23px' } }, "Explore charts below, or select an area of interest: "),
-                            React.createElement(DropDownMenu_1.default, { value: this.state.selectStoryboard, onChange: (event, index, value) => {
+                            React.createElement(DropDownMenu_1.default, { style: { verticalAlign: 'top' }, value: this.state.selectStoryboard, onChange: (event, index, value) => {
                                     this.onSelectStoryboard(value);
                                 } },
                                 React.createElement(MenuItem_1.default, { value: 'SELECT', primaryText: "Select" }),
