@@ -299,17 +299,17 @@
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "SOCIALDEV": {
+                                "POLICYADMIN": {
                                     "Index": 1,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "ECONDEV": {
+                                "SOCIALDEV": {
                                     "Index": 2,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "POLICYADMIN": {
+                                "ECONDEV": {
                                     "Index": 3,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
