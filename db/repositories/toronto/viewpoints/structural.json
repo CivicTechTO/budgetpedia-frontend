@@ -219,17 +219,17 @@
                             "Index": 1,
                             "NamingConfigRef": "CLUSTER",
                             "Components": {
-                                "ENGINEERING": {
+                                "PLANNING": {
                                     "Index": 0,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "PLANNING": {
+                                "POLICYADMIN": {
                                     "Index": 1,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "POLICYADMIN": {
+                                "ENGINEERING": {
                                     "Index": 2,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
