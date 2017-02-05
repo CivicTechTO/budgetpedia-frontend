@@ -250,8 +250,49 @@
                 }
             }
         },
-        "AGENCIES": {
+        "CORPORATEACCOUNTS2": {
             "Index": 2,
+            "NamingConfigRef": "CLUSTER",
+            "Components": {
+                "CORPFINANCING": {
+                    "Index": 0,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "CORPEXPENDITURES": {
+                    "Index": 1,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "CORPREVENUES": {
+                    "Index": 2,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "PARKINGTAGS": {
+                    "Index": 1,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "PROPERTYTAX": {
+                    "Index": 4,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "SUBWAYLEVY": {
+                    "Index": 4,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "CORPACCOUNTS": {
+                    "Index": 4,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                }
+            }
+        },
+        "AGENCIES": {
+            "Index": 3,
             "NamingConfigRef": "STRUCTURETYPE",
             "Components": {
                 "POLICESERV": {
@@ -352,47 +393,6 @@
                             }
                         }
                     }
-                }
-            }
-        },
-        "CORPORATEACCOUNTS2": {
-            "Index": 3,
-            "NamingConfigRef": "CLUSTER",
-            "Components": {
-                "CORPFINANCING": {
-                    "Index": 0,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "CORPEXPENDITURES": {
-                    "Index": 1,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "CORPREVENUES": {
-                    "Index": 2,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "PARKINGTAGS": {
-                    "Index": 1,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "PROPERTYTAX": {
-                    "Index": 4,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "SUBWAYLEVY": {
-                    "Index": 4,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "CORPACCOUNTS": {
-                    "Index": 4,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
                 }
             }
         }
