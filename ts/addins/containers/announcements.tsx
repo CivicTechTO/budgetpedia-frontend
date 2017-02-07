@@ -35,6 +35,12 @@ class Announcements extends Component<any, any> {
 <CardText>
 <h3>Key Past Events</h3>
 <ul style = {{marginBottom:"16px"}} >
+    <li><p><strong>Monday, Feb 6, 2017 honoured to give budget overview presentation to the <a target="_blank" 
+    href="http://thetyc.ca/">toronto youth cabinet</a> budget meeting at City Hall.</strong>
+    </p>
+    <p>Great conversation ensued between councillors Perks, Wong-Tam, and youth cabinet. Our take: people's narratives
+    need to snowball to overcome obstacles. Slide deck we used is <a target="_blank" href="https://drive.google.com/open?id=153RdCnnAlNPGMo7_Ji-V4j_nMFczzgdHWELiyI2cYX0">here</a>.</p>
+    </li>
     <li><p><strong>Monday, January 30, 2017 Budgetpedia upgrade v0.1.2 released</strong><br />
         This release adds two new features to the explorer page.</p>
         <p> <em>Latest analyst notes</em> provides access to the 
