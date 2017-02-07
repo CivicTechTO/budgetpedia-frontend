@@ -44,6 +44,8 @@ let coreroutes = routedata.map((item, index) => (
 ))
 // TODO: see https://github.com/reactjs/react-router-redux
 //    for enhanced history link
+
+// TODO: rename routes to router
 let routes = (
     <Router onUpdate={ () => 
         { 
