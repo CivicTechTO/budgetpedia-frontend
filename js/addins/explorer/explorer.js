@@ -637,7 +637,7 @@ let Explorer = class extends Component {
                     width: "36px",
                     position: "absolute",
                     zIndex: 2,
-                }, onTouchTap: this.handleFindDialogClose },
+                }, onClick: this.handleFindDialogClose },
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", { style: { padding: "8px" } },
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
@@ -1251,7 +1251,7 @@ let Explorer = class extends Component {
                     } },
                     React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
                         "Row " + (branchIndex + 1) + " ",
-                        React.createElement("input", { defaultValue: this.stories ? this.stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onTouchTap: (ev) => { ev.stopPropagation(); } }),
+                        React.createElement("input", { defaultValue: this.stories ? this.stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onClick: (ev) => { ev.stopPropagation(); } }),
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right",
                                 marginRight: "30px"

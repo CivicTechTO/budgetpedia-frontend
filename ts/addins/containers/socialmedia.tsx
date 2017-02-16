@@ -11,7 +11,6 @@ const SocialMedia = () =>
             height="700" 
             style={{ border: "none", overflow: "hidden" }}
             scrolling="no" 
-            frameborder="0" 
             allowTransparency={true}>
                 
         </iframe> 

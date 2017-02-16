@@ -25,8 +25,7 @@
 */
 
 /// <reference path="../../../typings-custom/react-google-charts.d.ts" />
-/// <reference path="../../../typings-custom/react-slider.d.ts" />
-/// <reference path="../../../typings-custom/general.d.ts" />
+// <reference path="../../../typings-custom/react-slider.d.ts" />
 // <reference path="../../../typings/globals/react-router/index.d.ts" />
 
 'use strict'
@@ -1107,7 +1106,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ this.handleFindDialogClose } >
+                onClick={ this.handleFindDialogClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -1926,8 +1925,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             defaultValue = {this.stories?this.stories[branchIndex].title:''}
                             type="text" 
                             style={{width:'350px',fontWeight:'bold',fontSize:'14px'}}
-                            onTouchTap = {(ev) => {ev.stopPropagation()}}
-                        /> 
+                            onClick = {(ev) => {ev.stopPropagation()}}
+                        />
 
                         <IconButton
                             style={{

@@ -113,12 +113,12 @@ let MainBar = class extends React.Component {
         let loginform = React.createElement(basicform_1.BasicForm, { submit: appbar.submitLogin, elements: elements, submitButtonLabel: 'Sign in', errorMessage: appbar.props.auth.errorMessage });
         let registerprompt = React.createElement("div", null,
             React.createElement(Card_1.CardText, null,
-                React.createElement("a", { href: "javascript:void(0);", onTouchTap: appbar.transitionToResetPassword }, "Forgot your password?")),
+                React.createElement("a", { href: "javascript:void(0);", onClick: appbar.transitionToResetPassword }, "Forgot your password?")),
             React.createElement(Divider_1.default, null),
             React.createElement(Card_1.CardText, null, "Not a member? Register:"),
             React.createElement(Card_1.CardActions, null,
                 React.createElement(RaisedButton_1.default, { type: "button", label: "Register", onTouchTap: appbar.transitionToRegister })));
-        let loginsidebar = React.createElement(Drawer_1.default, { width: 300, disableSwipeToOpen: true, docked: false, openRight: true, onRequestChange: open => appbar.setState({ accountsidebaropen: open, }), open: appbar.state.accountsidebaropen },
+        let loginsidebar = React.createElement(Drawer_1.default, { width: 300, disableSwipeToOpen: true, docked: false, onRequestChange: open => appbar.setState({ accountsidebaropen: open, }), open: appbar.state.accountsidebaropen },
             React.createElement(Card_1.Card, { style: { margin: "5px" } },
                 closeicon,
                 React.createElement(Card_1.CardTitle, { title: "Member Sign In", style: { paddingBottom: 0 } }),
@@ -128,7 +128,7 @@ let MainBar = class extends React.Component {
         let menuitems = hometiles.map(menutile => {
             return React.createElement(menutile_1.MenuTile, { transitionTo: transitionToFunc, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
         });
-        let menusidebar = React.createElement(Drawer_1.default, { width: 300, docked: false, openRight: false, disableSwipeToOpen: true, onRequestChange: open => appbar.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen },
+        let menusidebar = React.createElement(Drawer_1.default, { width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => appbar.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen },
             React.createElement(menutile_1.MenuTile, { transitionTo: transitionToFunc, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
             React.createElement(Divider_1.default, null),
             menuitems);

@@ -73,6 +73,13 @@ let loginError = createAction(
     }
 )
 
+interface RequestInit {
+    method:string,
+    headers: any,
+    body:string,
+}
+
+
 // call the api
 export const loginUser = (creds, callback) => {
 
