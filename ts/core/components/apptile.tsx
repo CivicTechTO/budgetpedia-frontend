@@ -58,12 +58,12 @@ export class AppTile extends React.Component<any, any> {
                         cursor:'pointer',
                     }
                 }
-                onTouchTap={ tile.transitionTo }
                 title = {this.props.content.title}
                 subtitle = {this.props.content.subtitle}
                 cols = {  this.props.content.cols || 1 }
                 >
-                <div style={wrapperstyle}>
+                <div style={wrapperstyle}
+                onClick={ tile.transitionTo }>
                 <div style={{position:"absolute",top:3,left:3,color:"silver",fontStyle:"italic",fontSize:"smaller"}} >
                 {this.props.content.category}</div>
                 <img src={this.props.content.image} style={{ height: "120px" }}/>

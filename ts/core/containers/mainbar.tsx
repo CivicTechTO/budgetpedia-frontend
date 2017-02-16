@@ -191,7 +191,7 @@ let MainBar = class extends React.Component<any, any> {
             <div>
                 <CardText>
                     <a href="javascript:void(0);"
-                        onTouchTap={appbar.transitionToResetPassword}>
+                        onClick={appbar.transitionToResetPassword}>
                         Forgot your password?
                     </a>
                 </CardText>
@@ -217,7 +217,6 @@ let MainBar = class extends React.Component<any, any> {
                 width = { 300} 
                 disableSwipeToOpen
                 docked = { false}
-                openRight = { true } 
                 onRequestChange = { open => appbar.setState({ accountsidebaropen: open, }) }
                 open = { appbar.state.accountsidebaropen } >
 
@@ -252,7 +251,6 @@ let MainBar = class extends React.Component<any, any> {
             <LeftNav
                 width={300}
                 docked={false}
-                openRight={false}
                 disableSwipeToOpen
                 onRequestChange={open => appbar.setState({ menusidebaropen: open, }) }
                 open={this.state.menusidebaropen} >

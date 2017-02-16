@@ -4,8 +4,8 @@ const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
 const IconButton_1 = require("material-ui/IconButton");
 const FontIcon_1 = require("material-ui/FontIcon");
-const toolbar_1 = require("material-ui/lib/toolbar/toolbar");
-const toolbar_group_1 = require("material-ui/lib/toolbar/toolbar-group");
+const Toolbar_1 = require("material-ui/Toolbar");
+const Toolbar_2 = require("material-ui/Toolbar");
 function mapStateToProps(state) {
     let { toolsnavbar, resources } = state;
     return {
@@ -22,14 +22,14 @@ let MainToolbar = class extends React.Component {
     }
     render() {
         let { appnavbar, theme } = this.props;
-        return (React.createElement(toolbar_1.default, { style: {
+        return (React.createElement(Toolbar_1.default, { style: {
                 position: "fixed",
                 bottom: 0,
                 display: "flex",
                 justifyContent: "center",
                 borderTop: "2px solid silver"
             } },
-            React.createElement(toolbar_group_1.default, { style: {
+            React.createElement(Toolbar_2.default, { style: {
                     float: "none",
                     width: "70%",
                     display: "flex",

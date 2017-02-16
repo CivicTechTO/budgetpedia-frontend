@@ -7,7 +7,7 @@
 import * as React from 'react'
 var { Component } = React
 
-import Checkbox = require('material-ui/lib/checkbox')
+import Checkbox = require('material-ui/Checkbox')
 import TextField from 'material-ui/TextField'
 import { CardText, CardActions} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'

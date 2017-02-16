@@ -10,8 +10,8 @@ import * as Actions from '../actions/actions'
 
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
-import Toolbar from 'material-ui/lib/toolbar/toolbar'
-import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group'
+import Toolbar from 'material-ui/Toolbar'
+import ToolbarGroup from 'material-ui/Toolbar'
 
 function mapStateToProps(state) {
 

@@ -33,5 +33,5 @@
 /// <reference path="main/ambient/react-tap-event-plugin/index.d.ts" />
 /// <reference path="main/ambient/react/index.d.ts" />
 /// <reference path="main/ambient/redux-actions/index.d.ts" />
-/// <reference path="main/ambient/redux/index.d.ts" />
+// <reference path="main/ambient/redux/index.d.ts" />
 /// <reference path="main/ambient/superagent/index.d.ts" />

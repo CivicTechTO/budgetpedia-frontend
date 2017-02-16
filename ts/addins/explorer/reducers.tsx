@@ -106,7 +106,7 @@ let branchList = (state = [], action) => {
     }
 }
 
-let branchesById:{[index:string]:any} = (state = { }, action) => {
+let branchesById:any = (state = { }, action) => {
     let { type } = action
     let newstate
     switch (type) {
