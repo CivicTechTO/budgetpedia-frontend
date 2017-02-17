@@ -612,7 +612,12 @@
             "section":"OTHER",
             "link":"https://talks.ontario.ca/"
         },
-
+        {
+            "title":"Neighbourhood change site",
+            "description":"David Hulchanski's site",
+            "section":"OTHER",
+            "link":"http://neighbourhoodchange.ca/"
+        },
         {
             "section":"FPARS",
             "title":"summary spreadsheet of fpars documents",
