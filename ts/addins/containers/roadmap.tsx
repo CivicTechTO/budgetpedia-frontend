@@ -149,7 +149,8 @@ class Roadmap extends Component<any, State> {
                     >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11819">February 7</a> (<a 
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11819">video</a>)</li>
                 <li><a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961">City Council</a
-                    >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11852">February 15, 16, possibly 17</a></li>
+                    >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11852">February 15</a> (<a 
+                            target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11852">video</a>)</li>
             </ul>
             </CardText>
         </Card>
@@ -168,8 +169,9 @@ class Roadmap extends Component<any, State> {
                 <p>Toronto is undertaking a planning process to find additional sources of funding. The 
                 website for this initiative is here: <a target="_blank" href="http://www.investinginto.ca/">www.investinginto.ca</a>.
                 </p>
+                <p>See the first phase report <a target = "_blank" href="https://drive.google.com/open?id=0B208oCU9D8OuV0ZNcUpqYWpzdUE">here</a>.</p>
                 <p>The public consultation options for this process are outlined <a target="_blank" href="http://www.investinginto.ca/join-the-consultation/">here</a>.
-                They include surveys open November 9 - 20 and December 5 - 23, 2015, and public meetings December 5, 6, 7 and 8 for which you have to sign up.</p>
+                They included surveys open November 9 - 20 and December 5 - 23, 2015, and public meetings December 5, 6, 7 and 8.</p>
                 <p>There's a second phase planned - Governance and Financial Oversight - for the winter and spring 2017.</p>
             </CardText>
         </Card>
