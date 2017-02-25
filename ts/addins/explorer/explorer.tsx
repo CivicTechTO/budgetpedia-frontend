@@ -1106,7 +1106,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onClick={ this.handleFindDialogClose } >
+                onTouchTap={ this.handleFindDialogClose } >
 
                 <FontIcon
                     className="material-icons"

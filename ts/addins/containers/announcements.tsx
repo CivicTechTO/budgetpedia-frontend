@@ -35,6 +35,13 @@ class Announcements extends Component<any, any> {
 <CardText>
 <h3>Key Past Events</h3>
 <ul style = {{marginBottom:"16px"}} >
+    <li><p><strong>Saturday, Feb 25, 2017 gave "lightening" (10 minute) talk at  <a target="_blank" 
+    href="http://hellocon.net/">Hello Con</a> conference.</strong>
+    </p>
+    <p>Highlighted benefits of <em>
+    taxonomies, careful data preparation, and reactive programming</em>. See the slide deck <a 
+    target="_blank" href="https://drive.google.com/open?id=13tOAln9YE6DOKP_zrGiLzVpeIaZLkd3bWxoBhHj3UUg">here</a>.</p>
+    </li>
     <li><p><strong>Monday, Feb 6, 2017 honoured to give budget overview presentation to the <a target="_blank" 
     href="http://thetyc.ca/">toronto youth cabinet</a> budget meeting at City Hall.</strong>
     </p>

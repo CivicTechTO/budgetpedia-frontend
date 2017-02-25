@@ -16,7 +16,6 @@
 
 declare var fetch
 
-
 // declare module 'react-alert' {
 //     var AlertContainer: any
 //     export default AlertContainer
