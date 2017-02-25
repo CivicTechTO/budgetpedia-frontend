@@ -637,7 +637,7 @@ let Explorer = class extends Component {
                     width: "36px",
                     position: "absolute",
                     zIndex: 2,
-                }, onClick: this.handleFindDialogClose },
+                }, onTouchTap: this.handleFindDialogClose },
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", { style: { padding: "8px" } },
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },

@@ -343,12 +343,12 @@
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "ENGINEERING": {
+                        "FLEET": {
                             "Index": 1,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "FLEET": {
+                        "ENGINEERING": {
                             "Index": 2,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
