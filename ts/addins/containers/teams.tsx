@@ -148,6 +148,12 @@ Or just email us your interests and we'll take it from there.
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
+    <img src="./public/avatars/jeremybiden.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
+    <p>Jeremy Biden is a planner, lead of The Planning Clinc, owner and principal at  RIOT Urbanism, and is with our advisory group, helping us find ways to support planning efforts through budgets.</p>
+    <div style={{clear:"left"}} ></div>
+</div>
+
+<div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/kejobuchanan.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
     <p>Kejo Buchanan is with our advisory group, and an expert at resource and information structures and access.</p>
     <div style={{clear:"left"}} ></div>
@@ -155,13 +161,13 @@ Or just email us your interests and we'll take it from there.
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/rafichaudhury.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Rafi Chaudhury is with our UX group, and a specialist in project and product management.</p>
+    <p>Rafi Chaudhury is co-lead of our UX group, and a specialist in project and product management.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
 <div style={{border:"1px solid silver",margin:"6px 3px",padding:"3px",borderRadius:"8px"}} >
     <img src="./public/avatars/chrisgraham.png" style = {{borderRadius:"50%",float:"left",height:"40px",margin:"6px"}} />
-    <p>Christopher Graham is our product champion, lead of our UX team, and is involved with research and project development.</p>
+    <p>Christopher Graham is our product champion, co-lead of our UX team, and is involved with research and project development.</p>
     <div style={{clear:"left"}} ></div>
 </div>
 
