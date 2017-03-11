@@ -118,6 +118,15 @@ Or just email us your interests and we'll take it from there.
             <li>Funding, including grants and possibly a service-for-fee plan</li>
         </ul>
     </li>
+    <li><strong>Operations</strong><br/>
+        <p>This group is tasked with looking after Budgetpedia's routine administrative operations</p>
+        <ul style={{marginBottom:"16px"}} >
+            <li>Developing an operations plan</li>
+            <li>Website operations</li>
+            <li>Repository maintenance</li>
+            <li>Administrative support</li>
+        </ul>
+    </li>
     <li><strong>Advisory Group</strong><br/>
         <p>We're working on organizing an advisory group to help guide the project, and develop connections among user groups.</p>
     </li>
