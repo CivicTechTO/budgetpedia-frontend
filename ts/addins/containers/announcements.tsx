@@ -36,7 +36,7 @@ class Announcements extends Component<any, any> {
 <h3>Key Past Events</h3>
 <ul style = {{marginBottom:"16px"}} >
     <li><p><strong>Saturday, Feb 25, 2017 gave "lightening" (10 minute) talk at  <a target="_blank" 
-    href="http://hellocon.net/">Hello Con</a> conference.</strong>
+    href="http://hellocon.net/">Hello Con</a> conference</strong>. See the <a target = "_blank" href="https://www.youtube.com/watch?v=Pn4l9JA1ROg">video</a>.
     </p>
     <p>Highlighted benefits of <em>
     taxonomies, careful data preparation, and reactive programming</em>. See the slide deck <a 
