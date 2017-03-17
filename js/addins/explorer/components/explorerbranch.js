@@ -1028,7 +1028,7 @@ class ExplorerBranch extends Component {
         let versionselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Dataset:")),
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Datasource:")),
                 React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
                         branch.switchVersion(value);
                     } }, versionchoices())) : null;
