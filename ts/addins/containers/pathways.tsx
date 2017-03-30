@@ -107,6 +107,9 @@ href="https://parkpeople.ca/archives/2073"
 target="_blank"
 href="http://www.ideasthatmatter.com/people/2001jutta"
 >http://www.ideasthatmatter.com/people/2001jutta</a></li>
+<li><a
+target="_blank"
+href="http://metcalffoundation.com/stories/publications/the-power-of-civic-action/">Women's Committee of Thorncliffe Park</a></li>
 </ul>
             </CardText>
             </Card>
