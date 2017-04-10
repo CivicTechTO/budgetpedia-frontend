@@ -2115,21 +2115,21 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <div style={{paddingLeft:"20px"}} >Policing & Court Services</div>
                             }/>
                             <Divider inset />
-                            <MenuItem value={"HEALTH"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Public Health</div>
-                            }/>
-                            <MenuItem value={"LONGTERMCARE"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Long Term Care</div>
-                            }/>
-                            <MenuItem value={"CHILDREN"} primaryText = {
-                                <div style={{paddingLeft:"20px"}} >Children's Services</div>
-                            }/>
-                            <Divider inset />
                             <MenuItem value={"EMPLOYMENT"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Income Support Services</div>
                             }/>
                             <MenuItem value={"HOUSING"} primaryText = {
                                 <div style={{paddingLeft:"20px"}} >Housing Support Services</div>
+                            }/>
+                            <MenuItem value={"CHILDREN"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Children's Services</div>
+                            }/>
+                            <Divider inset />
+                            <MenuItem value={"HEALTH"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Public Health</div>
+                            }/>
+                            <MenuItem value={"LONGTERMCARE"} primaryText = {
+                                <div style={{paddingLeft:"20px"}} >Long Term Care</div>
                             }/>
                         <MenuItem value={'ADMINISTRATIVE'} primaryText={
                             <div style={{fontWeight:'bold'}} >Administrative Services</div>} />

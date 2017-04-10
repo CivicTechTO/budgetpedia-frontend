@@ -170,27 +170,6 @@
                         }
                     }
                 },
-                "WELLBEING": {
-                    "Index": 1,
-                    "NamingConfigRef": "CLUSTER",
-                    "Components": {
-                        "PUBLICHEALTH": {
-                            "Index": 0,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "LONGTERMHOME": {
-                            "Index": 1,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "CHILDSERV": {
-                            "Index": 2,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        }
-                    }
-                },
                 "WELFARE": {
                     "Index": 1,
                     "NamingConfigRef": "CLUSTER",
@@ -201,7 +180,7 @@
                             "Baseline": true
                         },
                         "HOUSING" : {
-                            "Index": 0,
+                            "Index": 1,
                             "NamingConfigRef":"CLUSTER",
                             "Components": {
                                 "SHELTERADMIN": {
@@ -215,6 +194,27 @@
                                     "Baseline": true
                                 }
                             }
+                        },
+                        "CHILDSERV": {
+                            "Index": 2,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        }
+                    }
+                },
+                "WELLBEING": {
+                    "Index": 2,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "PUBLICHEALTH": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "LONGTERMHOME": {
+                            "Index": 1,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
                         }
                     }
                 }
@@ -437,9 +437,9 @@
                 "SUPPORT": "Citizen Support Services",
                 "TRANSTRANSIT": "Transportation & Transit Services",
                 "WASTEWATER": "Waste & Water Services",
-                "WELFARE": "Income & Housing Services",
+                "WELFARE": "Human Services",
                 "HOUSING": "Housing Support Services",
-                "WELLBEING": "Health & Education Services"
+                "WELLBEING": "Health Services"
             }
         },
         "NamingConfigurations": {
