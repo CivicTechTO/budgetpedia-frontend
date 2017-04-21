@@ -67,7 +67,7 @@ export class AppTile extends React.Component<any, any> {
                 <div style={{position:"absolute",top:3,left:3,color:"silver",fontStyle:"italic",fontSize:"smaller"}} >
                 {this.props.content.category}</div>
                 <img src={this.props.content.image} style={{ height: "120px" }}/>
-                <div style={{ position: "abolute", height: "30px", bottom: 0, width: "100%" }}></div>
+                <div style={{ position: "absolute", height: "30px", bottom: 0, width: "100%" }}></div>
                 </div>
             </GridTile>
 

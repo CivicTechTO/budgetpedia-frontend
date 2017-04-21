@@ -14,7 +14,7 @@
 //     export default ReduxToastr
 // }
 
-declare var fetch
+// declare var fetch
 
 // declare module 'react-alert' {
 //     var AlertContainer: any
