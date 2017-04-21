@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
@@ -68,7 +69,7 @@ class HomeTilesClass extends React.Component {
                             React.createElement("span", { style: { whiteSpace: 'pre' } },
                                 React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: './public/icons/ic_explore_48px.svg' }),
                                 React.createElement("a", { href: "javascript:void(0);", onClick: e => { this.transitionTo(e, 'explorer'); } }, "Budget Explorer")),
-                            "," + " " + "see information about Toronto's budget decision schedule at our ",
+                            ", see information about Toronto's budget decision schedule at our ",
                             React.createElement("span", { style: { whiteSpace: 'pre' } },
                                 React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: './public/icons/ic_map_48px.svg' }),
                                 React.createElement("a", { href: "javascript:void(0);", onClick: e => { this.transitionTo(e, 'roadmap'); } }, "Budget Roadmap")),
@@ -98,12 +99,12 @@ class HomeTilesClass extends React.Component {
                             React.createElement("li", null,
                                 React.createElement("a", { href: "http://medium.com/budgetpedia", target: "_blank" },
                                     React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "./public/icons/medium.png" })),
-                                " For" + " " + "in-depth articles: ",
+                                " For in-depth articles: ",
                                 React.createElement("a", { href: "http://medium.com/budgetpedia", target: "_blank" }, "Medium")),
                             React.createElement("li", null,
                                 React.createElement("a", { href: "http://groups.google.com/d/forum/budgetpedia", target: "_blank" },
                                     React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "./public/icons/g-logo.png" })),
-                                " For" + " " + "technical discussions: ",
+                                " For technical discussions: ",
                                 React.createElement("a", { href: "http://groups.google.com/d/forum/budgetpedia", target: "_blank" }, "our Google forum")),
                             React.createElement("li", null,
                                 React.createElement("a", { href: "https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig", target: "_blank" },
@@ -131,5 +132,4 @@ var HomeTiles = react_redux_1.connect(mapStateToProps, {
     transitionTo: Actions.transitionTo,
     setHomeTileCols: Actions.setHomeTileCols,
 })(HomeTilesClass);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = HomeTiles;

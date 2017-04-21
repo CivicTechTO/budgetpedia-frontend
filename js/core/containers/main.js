@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -15,5 +16,4 @@ if (!auth.isAuthenticated) {
     }
 }
 const Main = ({ globalmessage, version }) => (React.createElement(root_1.default, { store: store, globalmessage: globalmessage }));
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Main;

@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component, PropTypes } = React;
 const react_redux_1 = require("react-redux");
@@ -221,5 +222,4 @@ MainBar = react_redux_1.connect(mapStateToProps, {
     loginUser: Actions.loginUser,
     logoutUser: Actions.logoutUser,
 })(MainBar);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = MainBar;

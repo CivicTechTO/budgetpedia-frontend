@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 var { Chart } = require('../../../../forked/react-google-charts/Chart.js');
@@ -593,5 +594,4 @@ class ExplorerCell extends Component {
                     harmonizeoptions) : null));
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ExplorerCell;

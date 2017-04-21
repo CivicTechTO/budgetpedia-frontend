@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const constants_1 = require("../constants");
 const cell_class_1 = require("./cell.class");
 class BudgetNode {
@@ -165,5 +166,4 @@ class BudgetNode {
             return [...list];
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BudgetNode;

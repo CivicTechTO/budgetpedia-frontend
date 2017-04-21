@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let getBudgetNode = (node, path) => {
     let components = node.Components;
     for (let index of path) {
@@ -13,5 +14,4 @@ let getBudgetNode = (node, path) => {
     }
     return node;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = getBudgetNode;

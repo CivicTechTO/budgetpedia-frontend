@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const Card_1 = require("material-ui/Card");
@@ -14,7 +15,7 @@ class Resources extends Component {
             React.createElement(Card_1.Card, null,
                 React.createElement(Card_1.CardTitle, { title: "Budget Resources", subtitle: "A starter kit of external links" }),
                 React.createElement(Card_1.CardText, null,
-                    "We've assembled some web links to get you started. Click on a class of links below, to see details." + " " + "If you find something that should be added to this list, let us know at ",
+                    "We've assembled some web links to get you started. Click on a class of links below, to see details. If you find something that should be added to this list, let us know at ",
                     React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
                     ".")));
         this.lists = null;
@@ -138,5 +139,4 @@ class Resources extends Component {
             resources);
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Resources;

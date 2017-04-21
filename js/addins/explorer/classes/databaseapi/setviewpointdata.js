@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const setViewpointData = (parms) => {
     let { datasetName, viewpointDataTemplate, datasetData, lookups, inflationAdjusted } = parms;
     let datasetMeta = datasetData.MetaData;
@@ -243,5 +244,4 @@ const incrementAggregator = (aggregator, componentSummaries) => {
         }
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = setViewpointData;

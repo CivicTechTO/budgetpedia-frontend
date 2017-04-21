@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const react_redux_1 = require("react-redux");
@@ -783,7 +784,7 @@ let Explorer = class extends Component {
         this.shareStoryboard = () => {
             let longurl = this._getShareUrl();
             let toastrComponent = () => (React.createElement("div", { style: { width: "300px" } },
-                React.createElement("p", { style: { width: "240px" } }, "To share this storyboard" + " " + "(not including any changes you may have made)," + " " + "copy the url below, and send it to a friend."),
+                React.createElement("p", { style: { width: "240px" } }, "To share this storyboard (not including any changes you may have made), copy the url below, and send it to a friend."),
                 React.createElement("input", { ref: node => {
                         this._inputfieldref = node;
                     }, onFocus: this._inputonfocus, style: { width: "310px", marginLeft: '-60px' }, value: longurl, readOnly: true })));
@@ -1290,7 +1291,7 @@ let Explorer = class extends Component {
                     borderRadius: "8px",
                     fontFamily: "Roboto,sans-serif",
                     fontSize: "12px",
-                } }, "Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations." + " " + "There are numerous data source quality and continuity issues, the intake process has not been" + " " + "validated, and the data presented has not been rigorously verified against source data."),
+                } }, "Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations. There are numerous data source quality and continuity issues, the intake process has not been validated, and the data presented has not been rigorously verified against source data."),
             React.createElement(Card_1.Card, { initiallyExpanded: true },
                 React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Budget Explorer"),
                 React.createElement(Card_1.CardText, { expandable: true },
@@ -1390,5 +1391,4 @@ Explorer = react_redux_1.connect(mapStateToProps, {
     updateCellChartCode: ExplorerActions.updateCellChartCode,
     updateNode: ExplorerActions.updateNode,
 })(Explorer);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Explorer;

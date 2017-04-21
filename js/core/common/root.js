@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const MuiThemeProvider_1 = require("material-ui/styles/MuiThemeProvider");
 const getMuiTheme_1 = require("material-ui/styles/getMuiTheme");
@@ -14,5 +15,4 @@ const Root = ({ store, globalmessage }) => (React.createElement(MuiThemeProvider
             globalmessage,
             routes_1.default,
             React.createElement(react_redux_toastr_1.default, { timeOut: 4000, newestOnTop: false, position: "top-left" })))));
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Root;

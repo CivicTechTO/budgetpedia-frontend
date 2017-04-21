@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const databaseapi_1 = require("./databaseapi");
 const getbudgetnode_1 = require("../modules/getbudgetnode");
 const node_class_1 = require("./node.class");
@@ -439,5 +440,4 @@ class BudgetBranch {
         return this.props.declarationData.branchesById[this.uid];
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BudgetBranch;

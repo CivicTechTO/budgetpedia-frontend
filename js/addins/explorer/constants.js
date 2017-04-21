@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var TimeScope;
 (function (TimeScope) {
     TimeScope[TimeScope["OneYear"] = 0] = "OneYear";

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const constants_1 = require("../constants");
 const constants_2 = require("../constants");
 const utilities_1 = require("../modules/utilities");
@@ -641,5 +642,4 @@ class BudgetCell {
         return this.getState().chartParms;
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BudgetCell;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
 const react_router_1 = require("react-router");
 const react_router_redux_1 = require("react-router-redux");
@@ -8,5 +9,4 @@ const reduxRouterMiddleware = react_router_redux_1.routerMiddleware(react_router
 const middlewares = [redux_thunk_1.default, reduxRouterMiddleware];
 const store = redux_1.createStore(reducers_1.default, redux_1.applyMiddleware(...middlewares));
 const configureStore = () => store;
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = configureStore;

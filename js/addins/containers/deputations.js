@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 class Deputations extends Component {
@@ -6,5 +7,4 @@ class Deputations extends Component {
         return React.createElement("div", null, "Deputations Page");
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Deputations;

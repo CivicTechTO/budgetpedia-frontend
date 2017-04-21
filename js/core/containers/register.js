@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component, PropTypes } = React;
 const react_redux_1 = require("react-redux");
@@ -104,5 +105,4 @@ function mapStateToProps(state) {
 Register = react_redux_1.connect(mapStateToProps, {
     registerUser: Actions.registerUser,
 })(Register);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Register;

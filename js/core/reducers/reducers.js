@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
 const flux_standard_action_1 = require("flux-standard-action");
 const redux_actions_1 = require("redux-actions");
@@ -223,5 +224,4 @@ let mainReducer = (state, action) => {
         return mainReducerCore(state, action);
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = mainReducer;

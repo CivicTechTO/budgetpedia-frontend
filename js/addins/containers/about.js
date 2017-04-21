@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const Card_1 = require("material-ui/Card");
 var { Component } = React;
@@ -153,5 +154,4 @@ class About extends Component {
                         React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca")))));
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = About;

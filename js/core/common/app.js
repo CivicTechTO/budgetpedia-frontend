@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const ReactCSSTransitionGroup = require("react-addons-css-transition-group");
@@ -10,5 +11,4 @@ class App extends Component {
             }))));
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = App;

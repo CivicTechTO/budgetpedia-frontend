@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const MenuItem_1 = require("material-ui/MenuItem");
 class MenuTile extends React.Component {

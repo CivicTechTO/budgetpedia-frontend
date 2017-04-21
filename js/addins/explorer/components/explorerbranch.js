@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const DropDownMenu_1 = require("material-ui/DropDownMenu");
@@ -1107,11 +1108,11 @@ class ExplorerBranch extends Component {
                 }, onTouchTap: branch.handleTechDialogClose },
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", null,
-                "Please report" + " " + "any problems to ",
+                "Please report any problems to ",
                 React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
                 " "),
             branch.state.techDialogOpen ? branch.getTechNotesDisplay() : null,
-            React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories" + " " + "for continuity -- to make the numbers more easily comparable. We plan to disclose" + " " + "continuity details here."));
+            React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here."));
         let technotes = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
         let search = (branchDeclaration.showOptions) ?
@@ -1163,5 +1164,4 @@ class ExplorerBranch extends Component {
             React.createElement(Snackbar_1.default, { open: this.state.snackbar.open, message: this.state.snackbar.message, autoHideDuration: 4000, onRequestClose: this.handleSnackbarRequestClose }));
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ExplorerBranch;

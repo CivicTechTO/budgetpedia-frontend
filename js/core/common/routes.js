@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_router_1 = require("react-router");
 let ReactGA = require('react-ga');
@@ -35,5 +36,4 @@ let routes = (React.createElement(react_router_1.Router, { onUpdate: () => {
         React.createElement(react_router_1.IndexRoute, { component: hometiles_1.default }),
         approutes_1.default,
         coreroutes)));
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = routes;

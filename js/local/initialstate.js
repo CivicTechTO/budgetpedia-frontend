@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const lightBaseTheme_1 = require("material-ui/styles/baseThemes/lightBaseTheme");
 const colors = require("material-ui/styles/colors");
 let appnavbar = {
@@ -174,5 +175,4 @@ var initialstate = {
     explorer,
     workingmessagestate,
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = initialstate;

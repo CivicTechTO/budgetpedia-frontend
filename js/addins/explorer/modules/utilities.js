@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.filterActionsForUpdate = (nextProps, component, show = false) => {
     let componentName = component.constructor.name;
     let instance, text, targetType;

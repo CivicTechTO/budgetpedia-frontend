@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const react_redux_1 = require("react-redux");
@@ -21,7 +22,7 @@ let RegisterPending = class extends Component {
                             "Thanks for registering, ",
                             register.user.username,
                             "!"),
-                        React.createElement("p", null, "An email has been sent to" + " " + "the email address you used to register. Please follow the instructions in this email" + " " + "to authenticate and complete your registration."))
+                        React.createElement("p", null, "An email has been sent to the email address you used to register. Please follow the instructions in this email to authenticate and complete your registration."))
                 :
                     React.createElement("div", null,
                         React.createElement("p", null, "No registration data is available."));
@@ -39,5 +40,4 @@ function mapStateToProps(state) {
     };
 }
 RegisterPending = react_redux_1.connect(mapStateToProps)(RegisterPending);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = RegisterPending;

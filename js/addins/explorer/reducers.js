@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
 const initialstate_1 = require("../../local/initialstate");
 const actions_1 = require("./actions");
@@ -511,6 +512,5 @@ let explorer = redux_1.combineReducers({
     generation,
     onetimenotification,
 });
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = explorer;
 exports.getExplorerDeclarationData = state => state.explorer;

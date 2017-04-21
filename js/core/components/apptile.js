@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const GridList_1 = require("material-ui/GridList");
 class AppTile extends React.Component {

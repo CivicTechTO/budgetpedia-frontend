@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let applyChartComponentSelection = (budgetBranch, nodeIndex, cellIndex, chartSelectionData) => {
     let { nodes: branchNodes, uid: branchuid } = budgetBranch;
     let budgetNode = branchNodes[nodeIndex];

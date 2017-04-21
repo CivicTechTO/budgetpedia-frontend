@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
@@ -50,5 +51,4 @@ let MainToolbar = class extends React.Component {
 MainToolbar = react_redux_1.connect(mapStateToProps, {
     transitionTo: Actions.transitionTo
 })(MainToolbar);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = MainToolbar;

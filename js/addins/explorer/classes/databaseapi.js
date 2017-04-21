@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const setviewpointdata_1 = require("./databaseapi/setviewpointdata");
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 class Database {
@@ -149,5 +150,4 @@ class Database {
     }
 }
 const database = new Database();
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = database;
