@@ -75,6 +75,31 @@ class Roadmap extends Component<any, State> {
             /> 
         </Card>
         <Card initiallyExpanded >
+            <CardTitle title = {'Toronto\'s "Investing in our future" consultations'} 
+                actAsExpander={true}
+                showExpandableButton={true}
+            />
+            <CardText expandable
+                style = {{
+                    border:"1px solid silver",
+                    margin:"0 3px 8px 3px",
+                    borderRadius:"8px",
+                }}
+            >
+                <p>Toronto is undertaking a planning process to find additional sources of funding. The 
+                website for this initiative is here: <a target="_blank" href="http://www.investinginto.ca/">www.investinginto.ca</a>.
+                </p>
+                <p>See the first phase report <a target = "_blank" href="https://drive.google.com/open?id=0B208oCU9D8OuV0ZNcUpqYWpzdUE">here</a>.</p>
+                <p>See the second phase consultation videos for Governance and Financial Oversight here (April 22, 2017):</p>
+                <ul>
+                    <li><a target = "_blank" href="https://www.youtube.com/watch?v=xlvL_1GGCjI">Financial and Other Decision-Making Information with Public Discussion</a></li>
+                    <li><a target = "_blank" href="https://www.youtube.com/watch?v=3JuxEPlT4AM">Balancing City Priorities and the Books: Public Debates</a></li>
+                    <li><a target = "_blank" href="https://www.youtube.com/watch?v=WRPEKSRtdjc">Public Engagement for Long-Term Goals, Issues and Multi-Year Decision-Making</a></li>
+                </ul>
+                <p>There is still a public survey available for input <a target="_blank" href="http://www.investinginto.ca/join-the-consultation/governance-survey">here</a> April 22 - May 14.</p>
+            </CardText>
+        </Card>
+        <Card >
             <CardTitle 
                 actAsExpander={true}
                 showExpandableButton={true}
@@ -152,27 +177,6 @@ class Roadmap extends Component<any, State> {
                     >: <a target = "_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11852">February 15</a> (<a 
                             target="_blank" href="http://app.toronto.ca/tmmis/video.do?id=11852">video</a>)</li>
             </ul>
-            </CardText>
-        </Card>
-        <Card>
-            <CardTitle title = {'Toronto\'s "Investing in our future" consultations'} 
-                actAsExpander={true}
-                showExpandableButton={true}
-            />
-            <CardText expandable
-                style = {{
-                    border:"1px solid silver",
-                    margin:"0 3px 8px 3px",
-                    borderRadius:"8px",
-                }}
-            >
-                <p>Toronto is undertaking a planning process to find additional sources of funding. The 
-                website for this initiative is here: <a target="_blank" href="http://www.investinginto.ca/">www.investinginto.ca</a>.
-                </p>
-                <p>See the first phase report <a target = "_blank" href="https://drive.google.com/open?id=0B208oCU9D8OuV0ZNcUpqYWpzdUE">here</a>.</p>
-                <p>The public consultation options for this process are outlined <a target="_blank" href="http://www.investinginto.ca/join-the-consultation/">here</a>.
-                They included surveys open November 9 - 20 and December 5 - 23, 2015, and public meetings December 5, 6, 7 and 8.</p>
-                <p>There's a second phase planned - Governance and Financial Oversight - for the winter and spring 2017.</p>
             </CardText>
         </Card>
         <hr style = {
