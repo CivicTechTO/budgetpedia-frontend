@@ -38,7 +38,7 @@ class Announcements extends Component<any, any> {
     <li><p><strong>Saturday, April 22, 2017 gave "lightening" (5 minute) talk at  <a target="_blank" 
     href="http://investinginto.ca/">Investing in Toronto</a> consultation</strong>. See the <a target = "_blank" href="https://www.youtube.com/watch?v=xlvL_1GGCjI&feature=youtu.be&t=3821">video</a> and <a target = "_blank" href="https://drive.google.com/open?id=1vmw8MGtj9fvV-tX3l53VL6Z6Jh6rruI2nUVIdeFeCIs">slide deck</a>.
     </p>
-    <p>Highlighted waht we learned like <em>
+    <p>Highlighted what we learned like <em>
     taxonomies, trends, motivations</em>.
     </p>
     </li>
@@ -83,7 +83,10 @@ class Announcements extends Component<any, any> {
         into the city budget and generally celebrate our going live. See the <a
         target="_blank"
         href="https://drive.google.com/open?id=1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY"
-        >slide deck</a> for the meetup.</p>
+        >slide deck</a> and <a
+        target="_blank"
+        href="https://www.youtube.com/watch?v=Wd7-g9ox-90"
+        >video</a> for the meetup.</p>
     </li>
 </ul>
 </CardText>

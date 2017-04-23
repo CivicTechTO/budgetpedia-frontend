@@ -40,7 +40,7 @@ class Announcements extends Component {
                                 React.createElement("a", { target: "_blank", href: "https://drive.google.com/open?id=1vmw8MGtj9fvV-tX3l53VL6Z6Jh6rruI2nUVIdeFeCIs" }, "slide deck"),
                                 "."),
                             React.createElement("p", null,
-                                "Highlighted waht we learned like ",
+                                "Highlighted what we learned like ",
                                 React.createElement("em", null, "taxonomies, trends, motivations"),
                                 ".")),
                         React.createElement("li", null,
@@ -98,6 +98,8 @@ class Announcements extends Component {
                             React.createElement("p", null,
                                 "Join us for the official launch of Budgetpedia version 0.1 at Civic Tech's weekly meetup. See Budgetpedia in action, gain insights into the city budget and generally celebrate our going live. See the ",
                                 React.createElement("a", { target: "_blank", href: "https://drive.google.com/open?id=1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY" }, "slide deck"),
+                                " and ",
+                                React.createElement("a", { target: "_blank", href: "https://www.youtube.com/watch?v=Wd7-g9ox-90" }, "video"),
                                 " for the meetup."))))));
     }
 }
