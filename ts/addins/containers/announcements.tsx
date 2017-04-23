@@ -36,7 +36,7 @@ class Announcements extends Component<any, any> {
 <h3>Key Past Events</h3>
 <ul style = {{marginBottom:"16px"}} >
     <li><p><strong>Saturday, April 22, 2017 gave "lightening" (5 minute) talk at  <a target="_blank" 
-    href="http://investinginto.ca/">Investing in Toronto</a> consultation</strong>. See the <a target = "_blank" href="https://drive.google.com/open?id=1lVWW_w7BxufjRO8s2oNKi_We9ad9uzMZfEfMJ12ZYvg">slide deck</a>.
+    href="http://investinginto.ca/">Investing in Toronto</a> consultation</strong>. See the <a target = "_blank" href="https://www.youtube.com/watch?v=xlvL_1GGCjI&feature=youtu.be&t=3821">video</a> and <a target = "_blank" href="https://drive.google.com/open?id=1vmw8MGtj9fvV-tX3l53VL6Z6Jh6rruI2nUVIdeFeCIs">slide deck</a>.
     </p>
     <p>Highlighted waht we learned like <em>
     taxonomies, trends, motivations</em>.
