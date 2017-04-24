@@ -69,6 +69,7 @@ SHELTERADMIN,"Shelter, Support & Housing Administration",2003,,,,
 SOCIALDEV,"Social Development, Finance & Administration",2003,,,,
 SOCIALSERV,Toronto Employment & Social Services,2003,,,,
 SOLIDWASTE,Solid Waste Management Services,2003,,,,
+SPECIALREV,Special Revenues,2015,,,,
 SUBWAYLEVY,Special Levy for Scarborough Subway,2015,,,,
 SUPPORTSERV,Support Services,2003,2006,SHELTERADMIN,"Shelter, Support & Housing Administration",budget jumped after WES support services discontinued
 TCHCEXEMPT,TCHC Exempt,2014,2014,CORPEXPENDITURES,Non-Program Expenditures,Temporary
@@ -77,7 +78,7 @@ THEATRES,Theatres,2003,,,,
 TOTALPOLICE,Toronto Police Service & Board,2003,2003,POLICE,Toronto Police Service,later split out board
 TOTALTTC,Toronto Transit Commission (Incl. Wheel Trans),2003,2003,TTCCONV,Toronto Transit Commission - Conventional,later split out wheel trans
 TOURISM,Tourism,2003,2006,ECONDEV,Economic Development & Culture,guess
-TRANSPORTATION,Transportation Division,2003,,,,
+TRANSPORTATION,Transportation Services,2003,,,,
 TREASURER,Office of the Treasurer,2006,,,,
 TTCCONV,Toronto Transit Commission - Conventional,2004,,,,
 TTCWHEEL,Toronto Transit Commission - Wheel Trans,2004,,,,

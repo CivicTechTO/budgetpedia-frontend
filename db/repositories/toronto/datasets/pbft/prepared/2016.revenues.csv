@@ -15,8 +15,8 @@ NOTES_SEVERITY,,,,,,
 UNITS_NAME,Dollar,,,,,
 UNITS_CODE,DOLLAR,,,,,
 UNITS_MULTIPLIER,1,,,,,
-TOTAL_AMOUNT,11795207378.77,,,,,
-INTAKE_DATETIME,2017-02-05-10-42-14,,,,,
+TOTAL_AMOUNT,11795207378.770004,,,,,
+INTAKE_DATETIME,2017-04-24-01-42-51,,,,,
 INTAKE_OPERATOR_ID,Henrik,,,,,
 COLUMNS_CATEGORIES,"Program:CODE,Program:NAME,Service:CODE, Service:NAME,Revenue:CODE, Revenue:NAME",,,,,
 COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,,
@@ -213,8 +213,8 @@ CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,750A,Int
 CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,860A,Licences & Permits Revenue,4146607.59
 CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,940A,Sundry and Other Revenues,1098892551.59
 CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,850A,User Fees & Donations,7460000.01
-CORPREVENUES,Non-Program Revenues,Property Tax,Property Tax,940A,Sundry and Other Revenues,3931222630
-CORPREVENUES,Non-Program Revenues,Special Levy for Scarborough Subway,Special Levy for Scarborough Subway,940A,Sundry and Other Revenues,40698854
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,940AP,Property Tax,3931222630
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,940AS,Special Levy for Scarborough Subway (Reserve Contribution),40698854
 CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",930A,Contribution From Reserves/Reserve Funds,306697
 CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",750A,Inter-Divisional Recoveries,173889
 CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",940A,Sundry and Other Revenues,37500

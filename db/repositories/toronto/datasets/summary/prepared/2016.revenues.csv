@@ -26,7 +26,7 @@ CHILDSERV,Children's Services,394467
 COURTSERV,Court Services,41428
 ECONDEV,Economic Development & Culture,16255
 PARAMEDIC,Toronto Paramedic Services,125447
-LONGTERMHOME,Long Term Care Homes & Services,206077
+LONGTERMHOME,Long-Term Care Homes & Services,206077
 PARKS,"Parks, Forestry & Recreation",134204
 SHELTERADMIN,"Shelter, Support & Housing Administration",328775
 SOCIALDEV,"Social Development, Finance & Administration",20962
@@ -37,7 +37,7 @@ LICENCING,Municipal Licensing & Standards,30513
 POLICYADMIN,"Policy, Planning, Finance & Administration",12448
 ENGINEERING,Engineering & Construction Services,63287
 BUILDINGS,Toronto Building,64580
-TRANSPORTATION,Transportation Services,180869
+TRANSPORTATION,Transportation Division,180869
 CFO,Office of the Chief Financial Officer,6904
 TREASURER,Office of the Treasurer,48778
 FACILITIES,"Facilities, Real Estate, Environment & Energy",127467

@@ -394,12 +394,7 @@
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "PROPERTYTAX": {
-                            "Index": 4,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "SUBWAYLEVY": {
+                        "SPECIALREV": {
                             "Index": 4,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true

@@ -260,6 +260,7 @@
         "400A": "Service And Rent",
         "505A": "Contribution To Capital",
         "510A": "Contribution To Reserves/Reserve Funds",
+        "510AS": "Special Levy for Scarborough Subway",
         "650A": "Other Expenditures",
         "700A": "Inter-Divisional Charges"
     },
@@ -333,7 +334,9 @@
         "860A": "Licences & Permits Revenue",
         "920A": "Transfers From Capital",
         "930A": "Contribution From Reserves/Reserve Funds",
-        "940A": "Sundry and Other Revenues"
+        "940A": "Sundry and Other Revenues",
+        "940AP": "Property Tax",
+        "940AS": "Special Levy for Scarborough Subway (Reserve Contribution)"
     },
     "service": {
         "311 Performance Reporting": "311 Performance Reporting",

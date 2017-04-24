@@ -15,8 +15,8 @@ NOTES_SEVERITY,,,,,,
 UNITS_NAME,Dollar,,,,,
 UNITS_CODE,DOLLAR,,,,,
 UNITS_MULTIPLIER,1,,,,,
-TOTAL_AMOUNT,11795207378.77,,,,,
-INTAKE_DATETIME,2017-02-05-10-42-14,,,,,
+TOTAL_AMOUNT,11795207378.769999,,,,,
+INTAKE_DATETIME,2017-04-24-01-48-41,,,,,
 INTAKE_OPERATOR_ID,Henrik,,,,,
 COLUMNS_CATEGORIES,"Program:CODE,Program:NAME,Service:CODE, Service:NAME,Expense:CODE, Expense:NAME",,,,,
 COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,,
@@ -410,7 +410,7 @@ CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,510A,Con
 CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,700A,Inter-Divisional Charges,5519734.24
 CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,650A,Other Expenditures,310590
 CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,400A,Service And Rent,5747144.99
-CORPREVENUES,Non-Program Revenues,Special Levy for Scarborough Subway,Special Levy for Scarborough Subway,510A,Contribution To Reserves/Reserve Funds,40698854
+CORPEXPENDITURES,Non-Program Expenditures,Corporate Accounts,Corporate Accounts,510AS,Special Levy for Scarborough Subway,40698854
 CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",300A,Equipment,1632.28
 CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",700A,Inter-Divisional Charges,5711.37
 CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",200A,Materials & Supplies,9161.33

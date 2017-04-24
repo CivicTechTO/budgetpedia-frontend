@@ -40,7 +40,8 @@ Parking Tag Enforcement & Operations,PARKINGTAGS,,
 "Shelter, Support & Housing Administration",SHELTERADMIN,,2
 "Social Development, Finance & Administration",SOCIALDEV,,2
 Solid Waste Management Services,SOLIDWASTE,,2
-Special Levy for Scarborough Subway,SUBWAYLEVY,,1
+Special Levy for Scarborough Subway,SUBWAYLEVY,,
+Special Revenues,SPECIALREV,,1
 TTC - Conventional,TTCCONV,,
 TTC - Wheel Trans,TTCWHEEL,,
 Theatres,THEATRES,,2

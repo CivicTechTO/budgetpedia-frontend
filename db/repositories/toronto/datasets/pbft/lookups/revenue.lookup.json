@@ -7,5 +7,7 @@
     "860A": "Licences & Permits Revenue",
     "920A": "Transfers From Capital",
     "930A": "Contribution From Reserves/Reserve Funds",
-    "940A": "Sundry and Other Revenues"
+    "940A": "Sundry and Other Revenues",
+    "940AP": "Property Tax",
+    "940AS": "Special Levy for Scarborough Subway (Reserve Contribution)"
 }

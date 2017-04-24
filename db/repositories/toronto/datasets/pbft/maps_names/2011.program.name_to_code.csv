@@ -1,74 +1,74 @@
 _COLUMNS_,"Category:NAME,Category:CODE,Note:DESCRIPTION,Count:VALUE",,
-311 Toronto,311SERVICE,,
-Affordable Housing Office,AFFHOUSING,,
-Arena Boards of Management,ARENAS,,
-Association of Community Centres,COMMCENTRES,,
-Auditor General's Office,AUDITGEN,,
-CAPITAL & CORPORATE FINANCE / NON-PROGRAM,CORPFINANCING,,
-Children's Services,CHILDSERV,,
-City Clerk's Office,CLERK,,
-City Council,COUNCIL,,
-City Manager's Office,CITYMANAGER,,
-City Planning,PLANNING,,
-Community Partnership and Investment Program,COMMPARTNER,,
-Court Services,COURTSERV,,
-Economic Development & Culture,ECONDEV,,
-Economic Development and Culture,ECONDEV,,
-Emergency Medical Services,PARAMEDIC,,
-Exhibition Place,EXHIBPLACE,,
-Facilities Management & Real Estate,FACILITIES,,
-Facilities Management and Real Estate,FACILITIES,,
-Fire Services,FIRE,,
-Fleet Services,FLEET,,
-Heritage Toronto,HERITAGE,,
-Information & Technology,IT,,
-Information and Technology,IT,,
-Legal Services,LEGAL,,
-Long Term Care Homes & Services,LONGTERMHOME,,
-Mayor's Office,MAYOR,,
-Municipal Licensing and Standards,LICENCING,,
-Office of the Chief Financial Officer,CFO,,
-Office of the Integrity Commissioner,INTEGRITYCOMM,,
-Office of the Lobbyist Registrar,LOBBYREG,,
-Office of the Ombudman,OMBUDSMAN,,
-Office of the Treasurer,TREASURER,,
-Parking Tag Enforcement & Operations,PARKINGTAGS,,
-"Parks, Forestry & Recreation",PARKS,,
-"Parks, Forestry and Recreation",PARKS,,
-"Policy, Planning, Finance & Administration",POLICYADMIN,,
-"Policy, Planning, Finance and Administration",POLICYADMIN,,
-"Shelter, Housing & Support Administration",SHELTERADMIN,,
-"Shelter, Support and Housing Administration",SHELTERADMIN,,
-"Social Development, Finance & Administration",SOCIALDEV,,
-"Social Development, Finance and Administration",SOCIALDEV,,
-Solid Waste Management Services,SOLIDWASTE,,
-Technical Services,ENGINEERING,,
-The Integrity Commissioner's Office,INTEGRITYCOMM,,
-The Lobbyist Registrar's Office,LOBBYREG,,
-The Mayor's Office,MAYOR,,
-The Ombudsman's Office,OMBUDSMAN,,
-Theatres,THEATRES,,
-Theatres - Sony Centre for the Performing Arts,SONYCENTRE,,
-Theatres - St. Lawrence Centre for the Arts,STLAWRENCECENTRE,,
-Theatres - Toronto Centre for the Arts,TORONTOCENTRE,,
-Toronto Atmospheric Fund,ATMOSPHERE,,
-Toronto Building,BUILDINGS,,
-Toronto Buildings,BUILDINGS,,
-Toronto Employment & Social Services,SOCIALSERV,,
-Toronto Employment and Social Services,SOCIALSERV,,
-Toronto Environment Office,ENVIRONMENTOFFICE,,
-Toronto Parking Authority,PARKING,,
-Toronto Police Service,POLICE,,
-Toronto Police Service Board,POLICEBOARD,,
-Toronto Public Health,PUBLICHEALTH,,
-Toronto Public Library,LIBRARY,,
-Toronto Transit Commission,TTCCONV,,
-Toronto Transit Commission - Conventional,TTCCONV,,
-Toronto Transit Commission - Wheel Trans,TTCWHEEL,,
-Toronto Water,WATER,,
-Toronto Zoo,ZOO,,
-Toronto and Region Conservation Authority,REGIONCONSERV,,
-Transportation Services,TRANSPORTATION,,
-Waterfront Secretariat,WATERFRONT,,
-Wheel Trans,TTCWHEEL,,
-Yonge-Dundas Square,YONGEDUNDAS,,
+311 Toronto,311SERVICE,,19
+Affordable Housing Office,AFFHOUSING,,19
+Arena Boards of Management,ARENAS,,19
+Association of Community Centres,COMMCENTRES,,19
+Auditor General's Office,AUDITGEN,,19
+CAPITAL & CORPORATE FINANCE / NON-PROGRAM,CORPFINANCING,,17
+Children's Services,CHILDSERV,,19
+City Clerk's Office,CLERK,,19
+City Council,COUNCIL,,19
+City Manager's Office,CITYMANAGER,,19
+City Planning,PLANNING,,19
+Community Partnership and Investment Program,COMMPARTNER,,17
+Court Services,COURTSERV,,19
+Economic Development & Culture,ECONDEV,,2
+Economic Development and Culture,ECONDEV,,17
+Emergency Medical Services,PARAMEDIC,,19
+Exhibition Place,EXHIBPLACE,,18
+Facilities Management & Real Estate,FACILITIES,,2
+Facilities Management and Real Estate,FACILITIES,,17
+Fire Services,FIRE,,19
+Fleet Services,FLEET,,19
+Heritage Toronto,HERITAGE,,19
+Information & Technology,IT,,2
+Information and Technology,IT,,17
+Legal Services,LEGAL,,19
+Long Term Care Homes & Services,LONGTERMHOME,,19
+Mayor's Office,MAYOR,,2
+Municipal Licensing and Standards,LICENCING,,19
+Office of the Chief Financial Officer,CFO,,19
+Office of the Integrity Commissioner,INTEGRITYCOMM,,2
+Office of the Lobbyist Registrar,LOBBYREG,,2
+Office of the Ombudman,OMBUDSMAN,,2
+Office of the Treasurer,TREASURER,,19
+Parking Tag Enforcement & Operations,PARKINGTAGS,,2
+"Parks, Forestry & Recreation",PARKS,,2
+"Parks, Forestry and Recreation",PARKS,,16
+"Policy, Planning, Finance & Administration",POLICYADMIN,,2
+"Policy, Planning, Finance and Administration",POLICYADMIN,,17
+"Shelter, Housing & Support Administration",SHELTERADMIN,,2
+"Shelter, Support and Housing Administration",SHELTERADMIN,,17
+"Social Development, Finance & Administration",SOCIALDEV,,2
+"Social Development, Finance and Administration",SOCIALDEV,,17
+Solid Waste Management Services,SOLIDWASTE,,19
+Technical Services,ENGINEERING,,19
+The Integrity Commissioner's Office,INTEGRITYCOMM,,17
+The Lobbyist Registrar's Office,LOBBYREG,,17
+The Mayor's Office,MAYOR,,17
+The Ombudsman's Office,OMBUDSMAN,,17
+Theatres,THEATRES,,2
+Theatres - Sony Centre for the Performing Arts,SONYCENTRE,,17
+Theatres - St. Lawrence Centre for the Arts,STLAWRENCECENTRE,,17
+Theatres - Toronto Centre for the Arts,TORONTOCENTRE,,17
+Toronto Atmospheric Fund,ATMOSPHERE,,19
+Toronto Building,BUILDINGS,,2
+Toronto Buildings,BUILDINGS,,17
+Toronto Employment & Social Services,SOCIALSERV,,2
+Toronto Employment and Social Services,SOCIALSERV,,17
+Toronto Environment Office,ENVIRONMENTOFFICE,,19
+Toronto Parking Authority,PARKING,,19
+Toronto Police Service,POLICE,,19
+Toronto Police Service Board,POLICEBOARD,,19
+Toronto Public Health,PUBLICHEALTH,,19
+Toronto Public Library,LIBRARY,,19
+Toronto Transit Commission,TTCCONV,,2
+Toronto Transit Commission - Conventional,TTCCONV,,17
+Toronto Transit Commission - Wheel Trans,TTCWHEEL,,17
+Toronto Water,WATER,,19
+Toronto Zoo,ZOO,,13
+Toronto and Region Conservation Authority,REGIONCONSERV,,17
+Transportation Services,TRANSPORTATION,,19
+Waterfront Secretariat,WATERFRONT,,19
+Wheel Trans,TTCWHEEL,,2
+Yonge-Dundas Square,YONGEDUNDAS,,19

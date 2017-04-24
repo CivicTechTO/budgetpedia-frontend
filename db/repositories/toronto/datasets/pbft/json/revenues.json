@@ -23583,12 +23583,26 @@
                                     "2016": 7460
                                 },
                                 "Name": "User Fees & Donations"
+                            },
+                            "940AP": {
+                                "years": {
+                                    "2015": 3950625,
+                                    "2016": 3931223
+                                },
+                                "Name": "Property Tax"
+                            },
+                            "940AS": {
+                                "years": {
+                                    "2015": 25504,
+                                    "2016": 40699
+                                },
+                                "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                             }
                         },
                         "CommonDimensionName": "Revenue",
                         "years": {
-                            "2015": 1255182,
-                            "2016": 1237400
+                            "2015": 5231312,
+                            "2016": 5209322
                         },
                         "SortedCommonDimension": [
                             {
@@ -23604,8 +23618,16 @@
                                 "Name": "Licences & Permits Revenue"
                             },
                             {
+                                "Code": "940AP",
+                                "Name": "Property Tax"
+                            },
+                            {
                                 "Code": "805A",
                                 "Name": "Provincial Subsidies"
+                            },
+                            {
+                                "Code": "940AS",
+                                "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                             },
                             {
                                 "Code": "940A",
@@ -23618,50 +23640,6 @@
                         ],
                         "CommonDimensionDrilldown": "None",
                         "Name": "Corporate Accounts"
-                    },
-                    "Property Tax": {
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 3931223
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "years": {
-                            "2016": 3931223
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Property Tax"
-                    },
-                    "Special Levy for Scarborough Subway": {
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 40699
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "years": {
-                            "2016": 40699
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 },
                 "ComponentsDimensionName": "Service",
@@ -23702,9 +23680,25 @@
                         "years": {
                             "2014": 905582,
                             "2015": 1074644,
-                            "2016": 5070815
+                            "2016": 1098893
                         },
                         "Name": "Sundry and Other Revenues"
+                    },
+                    "940AP": {
+                        "years": {
+                            "2014": 3919836,
+                            "2015": 3950625,
+                            "2016": 3931223
+                        },
+                        "Name": "Property Tax"
+                    },
+                    "940AS": {
+                        "years": {
+                            "2014": 12719,
+                            "2015": 25504,
+                            "2016": 40699
+                        },
+                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                     },
                     "805A": {
                         "years": {
@@ -23715,22 +23709,14 @@
                 },
                 "CommonDimensionName": "Revenue",
                 "years": {
-                    "2014": 1050639,
-                    "2015": 1255182,
+                    "2014": 4983194,
+                    "2015": 5231312,
                     "2016": 5209322
                 },
                 "SortedComponents": [
                     {
                         "Code": "Corporate Accounts",
                         "Name": "Corporate Accounts"
-                    },
-                    {
-                        "Code": "Property Tax",
-                        "Name": "Property Tax"
-                    },
-                    {
-                        "Code": "Special Levy for Scarborough Subway",
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -23748,8 +23734,16 @@
                         "Name": "Licences & Permits Revenue"
                     },
                     {
+                        "Code": "940AP",
+                        "Name": "Property Tax"
+                    },
+                    {
                         "Code": "805A",
                         "Name": "Provincial Subsidies"
+                    },
+                    {
+                        "Code": "940AS",
+                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                     },
                     {
                         "Code": "940A",
@@ -23758,61 +23752,6 @@
                     {
                         "Code": "850A",
                         "Name": "User Fees & Donations"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
-            "PROPERTYTAX": {
-                "Components": {
-                    "Special Levy for Scarborough Subway (Reserve Contribution)": {
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2015": 25504
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "years": {
-                            "2015": 25504
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "CommonDimension": {
-                    "940A": {
-                        "years": {
-                            "2014": 3932555,
-                            "2015": 3976130
-                        },
-                        "Name": "Sundry and Other Revenues"
-                    }
-                },
-                "CommonDimensionName": "Revenue",
-                "years": {
-                    "2014": 3932555,
-                    "2015": 3976130
-                },
-                "SortedComponents": [
-                    {
-                        "Code": "Special Levy for Scarborough Subway (Reserve Contribution)",
-                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "940A",
-                        "Name": "Sundry and Other Revenues"
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
@@ -47308,8 +47247,8 @@
             },
             "CORPREVENUES": {
                 "years": {
-                    "2014": 1008358,
-                    "2015": 1222778,
+                    "2014": 4782655,
+                    "2015": 5096259,
                     "2016": 5209322
                 },
                 "CommonDimension": {
@@ -47349,9 +47288,25 @@
                         "years": {
                             "2014": 869139,
                             "2015": 1046901,
-                            "2016": 5070815
+                            "2016": 1098893
                         },
                         "Name": "Sundry and Other Revenues"
+                    },
+                    "940AP": {
+                        "years": {
+                            "2014": 3762090,
+                            "2015": 3848635,
+                            "2016": 3931223
+                        },
+                        "Name": "Property Tax"
+                    },
+                    "940AS": {
+                        "years": {
+                            "2014": 12207,
+                            "2015": 24846,
+                            "2016": 40699
+                        },
+                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                     },
                     "805A": {
                         "years": {
@@ -47364,8 +47319,8 @@
                 "Components": {
                     "Corporate Accounts": {
                         "years": {
-                            "2015": 1222778,
-                            "2016": 1237400
+                            "2015": 5096259,
+                            "2016": 5209322
                         },
                         "CommonDimension": {
                             "930A": {
@@ -47408,6 +47363,20 @@
                                     "2016": 7460
                                 },
                                 "Name": "User Fees & Donations"
+                            },
+                            "940AP": {
+                                "years": {
+                                    "2015": 3848635,
+                                    "2016": 3931223
+                                },
+                                "Name": "Property Tax"
+                            },
+                            "940AS": {
+                                "years": {
+                                    "2015": 24846,
+                                    "2016": 40699
+                                },
+                                "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                             }
                         },
                         "CommonDimensionName": "Revenue",
@@ -47425,8 +47394,16 @@
                                 "Name": "Licences & Permits Revenue"
                             },
                             {
+                                "Code": "940AP",
+                                "Name": "Property Tax"
+                            },
+                            {
                                 "Code": "805A",
                                 "Name": "Provincial Subsidies"
+                            },
+                            {
+                                "Code": "940AS",
+                                "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                             },
                             {
                                 "Code": "940A",
@@ -47439,50 +47416,6 @@
                         ],
                         "CommonDimensionDrilldown": "None",
                         "Name": "Corporate Accounts"
-                    },
-                    "Property Tax": {
-                        "years": {
-                            "2016": 3931223
-                        },
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 3931223
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Property Tax"
-                    },
-                    "Special Levy for Scarborough Subway": {
-                        "years": {
-                            "2016": 40699
-                        },
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 40699
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 },
                 "ComponentsDimensionName": "Service",
@@ -47490,14 +47423,6 @@
                     {
                         "Code": "Corporate Accounts",
                         "Name": "Corporate Accounts"
-                    },
-                    {
-                        "Code": "Property Tax",
-                        "Name": "Property Tax"
-                    },
-                    {
-                        "Code": "Special Levy for Scarborough Subway",
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -47515,8 +47440,16 @@
                         "Name": "Licences & Permits Revenue"
                     },
                     {
+                        "Code": "940AP",
+                        "Name": "Property Tax"
+                    },
+                    {
                         "Code": "805A",
                         "Name": "Provincial Subsidies"
+                    },
+                    {
+                        "Code": "940AS",
+                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
                     },
                     {
                         "Code": "940A",
@@ -47528,66 +47461,11 @@
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
-            },
-            "PROPERTYTAX": {
-                "years": {
-                    "2014": 3774297,
-                    "2015": 3873481
-                },
-                "CommonDimension": {
-                    "940A": {
-                        "years": {
-                            "2014": 3774297,
-                            "2015": 3873481
-                        },
-                        "Name": "Sundry and Other Revenues"
-                    }
-                },
-                "CommonDimensionName": "Revenue",
-                "Components": {
-                    "Special Levy for Scarborough Subway (Reserve Contribution)": {
-                        "years": {
-                            "2015": 24846
-                        },
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2015": 24846
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "SortedComponents": [
-                    {
-                        "Code": "Special Levy for Scarborough Subway (Reserve Contribution)",
-                        "Name": "Special Levy for Scarborough Subway (Reserve Contribution)"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "940A",
-                        "Name": "Sundry and Other Revenues"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
             }
         }
     },
     "Notes": {
-        "2014.1.PROPERTYTAX.2.940A.": "revenue code was missing",
+        "2014.1.CORPREVENUES.2.940AS.": "revenue code was missing",
         "2015.1.FLEET.2.FL-Fleet Management.3.Fleet Maintenance.4.930A.": "Non-normal value",
         "2015.1.FLEET.2.FL-Fleet Management.3.Fleet Maintenance.4.940A.": "Non-normal value",
         "2015.1.LICENCING.2.MS-Animal Care, Control & Sheltering.3.Cat & Dog Licensing.4.940A.": "Non-normal value",
@@ -47616,7 +47494,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1000,
             "TOTAL_AMOUNT": 7096507,
-            "INTAKE_DATETIME": "2016-10-28-22-50-32",
+            "INTAKE_DATETIME": "2017-04-24-00-44-43",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Revenue:CODE,Revenue:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -47639,7 +47517,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1000,
             "TOTAL_AMOUNT": 7154246.3,
-            "INTAKE_DATETIME": "2016-10-28-22-50-32",
+            "INTAKE_DATETIME": "2017-04-24-00-44-43",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Revenue:CODE,Revenue:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -47662,7 +47540,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 10895172470,
-            "INTAKE_DATETIME": "2016-10-28-22-50-33",
+            "INTAKE_DATETIME": "2017-04-24-00-44-43",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Revenue:CODE, Revenue:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -47685,7 +47563,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 11207754430,
-            "INTAKE_DATETIME": "2016-10-28-22-50-33",
+            "INTAKE_DATETIME": "2017-04-24-01-42-50",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Revenue:CODE, Revenue:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -47708,7 +47586,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 11599101787,
-            "INTAKE_DATETIME": "2016-10-28-22-50-33",
+            "INTAKE_DATETIME": "2017-04-24-01-42-51",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Service:CODE, Service:NAME,Activity:CODE, Activity:NAME, Revenue:CODE, Revenue:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -47731,7 +47609,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 11795207378.8,
-            "INTAKE_DATETIME": "2017-02-05-10-42-14",
+            "INTAKE_DATETIME": "2017-04-24-01-42-51",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Service:CODE, Service:NAME,Revenue:CODE, Revenue:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"

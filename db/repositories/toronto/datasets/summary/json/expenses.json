@@ -837,7 +837,7 @@
                     "2012": 9842,
                     "2013": 9852,
                     "2014": 9841,
-                    "2015": 76256,
+                    "2015": 50750,
                     "2016": 60957,
                     "2017": 55548
                 }
@@ -982,8 +982,9 @@
                     "2017": 1810
                 }
             },
-            "SUBWAYLEVY": {
+            "SPECIALREV": {
                 "years": {
+                    "2015": 25505,
                     "2017": 40699
                 }
             }
@@ -1792,7 +1793,7 @@
                     "2012": 9102,
                     "2013": 9224,
                     "2014": 9445,
-                    "2015": 74287,
+                    "2015": 49440,
                     "2016": 60957,
                     "2017": 55548
                 }
@@ -1937,8 +1938,9 @@
                     "2017": 1810
                 }
             },
-            "SUBWAYLEVY": {
+            "SPECIALREV": {
                 "years": {
+                    "2015": 24847,
                     "2017": 40699
                 }
             }
@@ -2249,7 +2251,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1000,
             "TOTAL_AMOUNT": 11435334,
-            "INTAKE_DATETIME": "2016-10-29-22-25-49",
+            "INTAKE_DATETIME": "2017-04-24-19-36-42",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -2295,7 +2297,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1000,
             "TOTAL_AMOUNT": 12224988,
-            "INTAKE_DATETIME": "2016-12-12-15-24-06",
+            "INTAKE_DATETIME": "2017-04-24-19-36-42",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
