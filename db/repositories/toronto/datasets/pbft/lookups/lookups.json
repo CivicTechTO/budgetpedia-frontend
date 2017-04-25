@@ -180,6 +180,7 @@
         "Property Disposal": "Property Disposal",
         "Property Maintenance": "Property Maintenance",
         "Property Standards, Inspection & Enforcement": "Property Standards, Inspection & Enforcement",
+        "Property Tax": "Property Tax",
         "Provide Emergency Shelter & Related Support": "Provide Emergency Shelter & Related Support",
         "Provide Individualized Employment Service Planning": "Provide Individualized Employment Service Planning",
         "Public Communications": "Public Communications",
@@ -221,6 +222,7 @@
         "Solution Implementation": "Solution Implementation",
         "Solution Sustainment": "Solution Sustainment",
         "Special Events": "Special Events",
+        "Special Levy for Scarborough Subway": "Special Levy for Scarborough Subway",
         "Strategic Alliances": "Strategic Alliances",
         "Strategic Planning & Policy Development": "Strategic Planning & Policy Development",
         "Street Events": "Street Events",
@@ -260,7 +262,6 @@
         "400A": "Service And Rent",
         "505A": "Contribution To Capital",
         "510A": "Contribution To Reserves/Reserve Funds",
-        "510AS": "Special Levy for Scarborough Subway",
         "650A": "Other Expenditures",
         "700A": "Inter-Divisional Charges"
     },
@@ -316,6 +317,7 @@
         "SOCIALDEV": "Social Development, Finance & Administration",
         "SOCIALSERV": "Toronto Employment & Social Services",
         "SOLIDWASTE": "Solid Waste Management Services",
+        "SPECIALREV": "Special Revenues",
         "THEATRES": "Theatres",
         "TRANSPORTATION": "Transportation Services",
         "TREASURER": "Office of the Treasurer",
@@ -334,9 +336,7 @@
         "860A": "Licences & Permits Revenue",
         "920A": "Transfers From Capital",
         "930A": "Contribution From Reserves/Reserve Funds",
-        "940A": "Sundry and Other Revenues",
-        "940AP": "Property Tax",
-        "940AS": "Special Levy for Scarborough Subway (Reserve Contribution)"
+        "940A": "Sundry and Other Revenues"
     },
     "service": {
         "311 Performance Reporting": "311 Performance Reporting",

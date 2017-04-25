@@ -46,6 +46,7 @@
     "SOCIALDEV": "Social Development, Finance & Administration",
     "SOCIALSERV": "Toronto Employment & Social Services",
     "SOLIDWASTE": "Solid Waste Management Services",
+    "SPECIALREV": "Special Revenues",
     "THEATRES": "Theatres",
     "TRANSPORTATION": "Transportation Services",
     "TREASURER": "Office of the Treasurer",
@@ -53,5 +54,5 @@
     "TTCWHEEL": "Toronto Transit Commission - Wheel Trans",
     "WATER": "Toronto Water",
     "YONGEDUNDAS": "Yonge-Dundas Square",
-    "ZOO": "Toronto Zoo"
+    "ZOO": "Toronto Zoo",
 }

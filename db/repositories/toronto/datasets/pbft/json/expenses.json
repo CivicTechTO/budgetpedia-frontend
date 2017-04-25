@@ -6953,13 +6953,6 @@
                                 },
                                 "Name": "Service And Rent"
                             },
-                            "510AS": {
-                                "years": {
-                                    "2015": 25504,
-                                    "2016": 40699
-                                },
-                                "Name": "Special Levy for Scarborough Subway"
-                            },
                             "505A": {
                                 "years": {
                                     "2016": 391
@@ -6969,8 +6962,8 @@
                         },
                         "CommonDimensionName": "Expense",
                         "years": {
-                            "2015": 649817,
-                            "2016": 656905
+                            "2015": 624312,
+                            "2016": 616206
                         },
                         "SortedCommonDimension": [
                             {
@@ -7000,10 +6993,6 @@
                             {
                                 "Code": "400A",
                                 "Name": "Service And Rent"
-                            },
-                            {
-                                "Code": "510AS",
-                                "Name": "Special Levy for Scarborough Subway"
                             }
                         ],
                         "CommonDimensionDrilldown": "None",
@@ -7077,23 +7066,15 @@
                             "2016": 19729
                         },
                         "Name": "Inter-Divisional Charges"
-                    },
-                    "510AS": {
-                        "years": {
-                            "2014": 12719,
-                            "2015": 25504,
-                            "2016": 40699
-                        },
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 },
                 "CommonDimensionName": "Expense",
                 "years": {
                     "2011": 51887,
                     "2013": 1391943,
-                    "2014": 720246,
-                    "2015": 649817,
-                    "2016": 656905
+                    "2014": 707527,
+                    "2015": 624312,
+                    "2016": 616206
                 },
                 "SortedComponents": [
                     {
@@ -7134,10 +7115,6 @@
                     {
                         "Code": "400A",
                         "Name": "Service And Rent"
-                    },
-                    {
-                        "Code": "510AS",
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
@@ -37750,6 +37727,97 @@
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
+            },
+            "SPECIALREV": {
+                "Components": {
+                    "Special Levy for Scarborough Subway": {
+                        "Components": {
+                            "Special Levy for Scarborough Subway": {
+                                "CommonDimension": {
+                                    "510A": {
+                                        "years": {
+                                            "2015": 25504
+                                        },
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                },
+                                "CommonDimensionName": "Expense",
+                                "years": {
+                                    "2015": 25504
+                                },
+                                "SortedCommonDimension": [
+                                    {
+                                        "Code": "510A",
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                ],
+                                "CommonDimensionDrilldown": "None",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        },
+                        "ComponentsDimensionName": "Activity",
+                        "CommonDimension": {
+                            "510A": {
+                                "years": {
+                                    "2015": 25504,
+                                    "2016": 40699
+                                },
+                                "Name": "Contribution To Reserves/Reserve Funds"
+                            }
+                        },
+                        "CommonDimensionName": "Expense",
+                        "years": {
+                            "2015": 25504,
+                            "2016": 40699
+                        },
+                        "SortedComponents": [
+                            {
+                                "Code": "Special Levy for Scarborough Subway",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        ],
+                        "ComponentsDrilldown": "All",
+                        "SortedCommonDimension": [
+                            {
+                                "Code": "510A",
+                                "Name": "Contribution To Reserves/Reserve Funds"
+                            }
+                        ],
+                        "CommonDimensionDrilldown": "None",
+                        "Name": "Special Levy for Scarborough Subway"
+                    }
+                },
+                "ComponentsDimensionName": "Service",
+                "CommonDimension": {
+                    "510A": {
+                        "years": {
+                            "2014": 12719,
+                            "2015": 25504,
+                            "2016": 40699
+                        },
+                        "Name": "Contribution To Reserves/Reserve Funds"
+                    }
+                },
+                "CommonDimensionName": "Expense",
+                "years": {
+                    "2014": 12719,
+                    "2015": 25504,
+                    "2016": 40699
+                },
+                "SortedComponents": [
+                    {
+                        "Code": "Special Levy for Scarborough Subway",
+                        "Name": "Special Levy for Scarborough Subway"
+                    }
+                ],
+                "ComponentsDrilldown": "All",
+                "SortedCommonDimension": [
+                    {
+                        "Code": "510A",
+                        "Name": "Contribution To Reserves/Reserve Funds"
+                    }
+                ],
+                "CommonDimensionDrilldown": "None"
             }
         },
         "Nominal": {
@@ -44612,9 +44680,9 @@
                 "years": {
                     "2011": 47277,
                     "2013": 1303163,
-                    "2014": 691261,
-                    "2015": 633041,
-                    "2016": 656905
+                    "2014": 679054,
+                    "2015": 608195,
+                    "2016": 616206
                 },
                 "CommonDimension": {
                     "100A": {
@@ -44682,22 +44750,14 @@
                             "2016": 19729
                         },
                         "Name": "Inter-Divisional Charges"
-                    },
-                    "510AS": {
-                        "years": {
-                            "2014": 12207,
-                            "2015": 24846,
-                            "2016": 40699
-                        },
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 },
                 "CommonDimensionName": "Expense",
                 "Components": {
                     "Corporate Accounts": {
                         "years": {
-                            "2015": 633041,
-                            "2016": 656905
+                            "2015": 608195,
+                            "2016": 616206
                         },
                         "CommonDimension": {
                             "510A": {
@@ -44742,13 +44802,6 @@
                                 },
                                 "Name": "Service And Rent"
                             },
-                            "510AS": {
-                                "years": {
-                                    "2015": 24846,
-                                    "2016": 40699
-                                },
-                                "Name": "Special Levy for Scarborough Subway"
-                            },
                             "505A": {
                                 "years": {
                                     "2016": 391
@@ -44785,10 +44838,6 @@
                             {
                                 "Code": "400A",
                                 "Name": "Service And Rent"
-                            },
-                            {
-                                "Code": "510AS",
-                                "Name": "Special Levy for Scarborough Subway"
                             }
                         ],
                         "CommonDimensionDrilldown": "None",
@@ -44835,10 +44884,6 @@
                     {
                         "Code": "400A",
                         "Name": "Service And Rent"
-                    },
-                    {
-                        "Code": "510AS",
-                        "Name": "Special Levy for Scarborough Subway"
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
@@ -75451,6 +75496,97 @@
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
+            },
+            "SPECIALREV": {
+                "years": {
+                    "2014": 12207,
+                    "2015": 24846,
+                    "2016": 40699
+                },
+                "CommonDimension": {
+                    "510A": {
+                        "years": {
+                            "2014": 12207,
+                            "2015": 24846,
+                            "2016": 40699
+                        },
+                        "Name": "Contribution To Reserves/Reserve Funds"
+                    }
+                },
+                "CommonDimensionName": "Expense",
+                "Components": {
+                    "Special Levy for Scarborough Subway": {
+                        "years": {
+                            "2015": 24846,
+                            "2016": 40699
+                        },
+                        "CommonDimension": {
+                            "510A": {
+                                "years": {
+                                    "2015": 24846,
+                                    "2016": 40699
+                                },
+                                "Name": "Contribution To Reserves/Reserve Funds"
+                            }
+                        },
+                        "CommonDimensionName": "Expense",
+                        "Components": {
+                            "Special Levy for Scarborough Subway": {
+                                "years": {
+                                    "2015": 24846
+                                },
+                                "CommonDimension": {
+                                    "510A": {
+                                        "years": {
+                                            "2015": 24846
+                                        },
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                },
+                                "CommonDimensionName": "Expense",
+                                "SortedCommonDimension": [
+                                    {
+                                        "Code": "510A",
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                ],
+                                "CommonDimensionDrilldown": "None",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        },
+                        "ComponentsDimensionName": "Activity",
+                        "SortedComponents": [
+                            {
+                                "Code": "Special Levy for Scarborough Subway",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        ],
+                        "ComponentsDrilldown": "All",
+                        "SortedCommonDimension": [
+                            {
+                                "Code": "510A",
+                                "Name": "Contribution To Reserves/Reserve Funds"
+                            }
+                        ],
+                        "CommonDimensionDrilldown": "None",
+                        "Name": "Special Levy for Scarborough Subway"
+                    }
+                },
+                "ComponentsDimensionName": "Service",
+                "SortedComponents": [
+                    {
+                        "Code": "Special Levy for Scarborough Subway",
+                        "Name": "Special Levy for Scarborough Subway"
+                    }
+                ],
+                "ComponentsDrilldown": "All",
+                "SortedCommonDimension": [
+                    {
+                        "Code": "510A",
+                        "Name": "Contribution To Reserves/Reserve Funds"
+                    }
+                ],
+                "CommonDimensionDrilldown": "None"
             }
         }
     },
@@ -75565,7 +75701,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 11207754809,
-            "INTAKE_DATETIME": "2017-04-24-01-42-50",
+            "INTAKE_DATETIME": "2017-04-24-20-55-16",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME, Expense:CODE, Expense:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -75588,7 +75724,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 11614621513,
-            "INTAKE_DATETIME": "2017-04-24-01-42-51",
+            "INTAKE_DATETIME": "2017-04-24-20-55-16",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Service:CODE, Service:NAME,Activity:CODE, Activity:NAME, Expense:CODE, Expense:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
@@ -75611,7 +75747,7 @@
             "UNITS_CODE": "DOLLAR",
             "UNITS_MULTIPLIER": 1,
             "TOTAL_AMOUNT": 11795207378.8,
-            "INTAKE_DATETIME": "2017-04-24-01-48-41",
+            "INTAKE_DATETIME": "2017-04-24-20-55-16",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME,Service:CODE, Service:NAME,Expense:CODE, Expense:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
