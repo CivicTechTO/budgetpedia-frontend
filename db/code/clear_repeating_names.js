@@ -3,7 +3,7 @@
 /*
     - this is a stand-alone utility
     clears same-line repeated category names
-    place csv file in './temp', change name below and do
+    place intake csv file in './temp', change name below and do
     node clear_repeating_names
 */
 
@@ -13,16 +13,18 @@
 
 'use strict'
 
-utilities = require('./utilities')
+let utilities = require('./utilities')
 
-let filespec = './temp/2016.expenses.csv'
+let filespec = './temp/2017.revenues.csv'
 
 let csv = utilities.readFileCsv(filespec)
 
-for (line of csv) {
-    for (let index = 2; index > 0; index--) {
-        if (line[index] == line[index-1]) {
-            line[index] = null
+for (let line of csv) {
+    if (line[2]) { // a data line, not a meta line
+        for (let index = 2; index > 0; index--) {
+            if (line[index] == line[index-1]) {
+                line[index] = null
+            }
         }
     }
 }

@@ -27,7 +27,7 @@
     "LEGAL": "Legal Services",
     "LIBRARY": "Toronto Public Library",
     "LICENCING": "Municipal Licensing & Standards",
-    "LOBBYREG": "Office of the Lobbyist Registrar",
+    "LOBBYREG": "Lobbyist Registrar",
     "LONGTERMHOME": "Long Term Care Homes & Services",
     "MAYOR": "Mayor's Office",
     "OMBUDSMAN": "Office of the Ombudsman",
@@ -54,5 +54,5 @@
     "TTCWHEEL": "Toronto Transit Commission - Wheel Trans",
     "WATER": "Toronto Water",
     "YONGEDUNDAS": "Yonge-Dundas Square",
-    "ZOO": "Toronto Zoo",
+    "ZOO": "Toronto Zoo"
 }

@@ -1,0 +1,851 @@
+_META_START_,,,,,,,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=96c98f90dba60310VgnVCM1000003dd60f89RCRD&vgnextchannel=1a66e03bb8d1e310VgnVCM10000071d60f89RCRD,,,,,,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OudFF0bGVRMVZ4dTA,,,,,,,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuTF9vOFRVVHl3Z2M,,,,,,,
+SOURCE_DOCUMENT_TITLE,Budget - Operating Budget Program Summary by Expenditure Category,,,,,,,
+SOURCE_DOCUMENT_TABLE_LOCATION,Data Download,,,,,,,
+SOURCE_DOCUMENT_TABLE_TITLE,Approved Operating Budget Summary 2017,,,,,,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuOUo0b25oQ201WGM,,,,,,,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,,,,,,,
+YEAR,2017,,,,,,,
+VERSION,PBFT,,,,,,,
+ASPECT,Revenues,,,,,,,
+NOTES_CONTENT,,,,,,,,
+NOTES_SEVERITY,,,,,,,,
+UNITS_NAME,Dollar,,,,,,,
+UNITS_CODE,DOLLAR,,,,,,,
+UNITS_MULTIPLIER,1,,,,,,,
+TOTAL_AMOUNT,12401686208,,,,,,,
+INTAKE_DATETIME,2017-04-25-16-57-00,,,,,,,
+INTAKE_OPERATOR_ID,Henrik,,,,,,,
+COLUMNS_CATEGORIES,"Program:CODE,Program:NAME,Service:CODE, Service:NAME,Activity:CODE, Activity:NAME,Revenue:CODE, Revenue:NAME",,,,,,,
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION",,,,,,,
+_META_END_,,,,,,,,
+311SERVICE,311 Toronto,311 Service Delivery,311 Service Delivery,,,750A,Inter-Divisional Recoveries,6365033
+311SERVICE,311 Toronto,311 Service Delivery,311 Service Delivery,,,940A,Sundry and Other Revenues,18000
+311SERVICE,311 Toronto,TO-311 Development,TO-311 Development,311 PMO,311 PMO,920A,Transfers From Capital,1603125
+AFFHOUSING,Affordable Housing Office,Housing Improvement Programs,Housing Improvement Programs,,,805A,Provincial Subsidies,557452
+AFFHOUSING,Affordable Housing Office,Housing Improvement Programs,Housing Improvement Programs,,,930A,Contribution From Reserves/Reserve Funds,166333
+AFFHOUSING,Affordable Housing Office,Housing Policy & Partnerships,Housing Policy & Partnerships,,,805A,Provincial Subsidies,558481
+AFFHOUSING,Affordable Housing Office,Housing Policy & Partnerships,Housing Policy & Partnerships,,,930A,Contribution From Reserves/Reserve Funds,166333
+AFFHOUSING,Affordable Housing Office,New Affordable Housing Development,New Affordable Housing Development,,,805A,Provincial Subsidies,557452
+AFFHOUSING,Affordable Housing Office,New Affordable Housing Development,New Affordable Housing Development,,,930A,Contribution From Reserves/Reserve Funds,166333
+AFFHOUSING,Affordable Housing Office,New Affordable Housing Development,New Affordable Housing Development,,,750A,Inter-Divisional Recoveries,131782
+ARENAS,Arena Boards of Management,Community Ice & Facility Booking,Community Ice & Facility Booking,,,850A,User Fees & Donations,7970786
+ARENAS,Arena Boards of Management,Community Ice & Facility Booking,Community Ice & Facility Booking,,,940A,Sundry and Other Revenues,1062023
+COMMCENTRES,Association of Community Centres,Social Economic & Neighbourhood Development,Social Economic & Neighbourhood Development,,,850A,User Fees & Donations,294930
+COMMCENTRES,Association of Community Centres,Social Economic & Neighbourhood Development,Social Economic & Neighbourhood Development,,,940A,Sundry and Other Revenues,1500
+CORPFINANCING,Capital & Corporate Financing,Corporate Accounts,Corporate Accounts,,,930A,Contribution From Reserves/Reserve Funds,16273000
+CORPFINANCING,Capital & Corporate Financing,Corporate Accounts,Corporate Accounts,,,805A,Provincial Subsidies,3612676
+CORPFINANCING,Capital & Corporate Financing,Corporate Accounts,Corporate Accounts,,,750A,Inter-Divisional Recoveries,2532192
+CORPFINANCING,Capital & Corporate Financing,Corporate Accounts,Corporate Accounts,,,940A,Sundry and Other Revenues,1762045
+CHILDSERV,Children's Services,Child Care Delivery,Child Care Delivery,,,805A,Provincial Subsidies,262292875
+CHILDSERV,Children's Services,Child Care Delivery,Child Care Delivery,,,850A,User Fees & Donations,30569600
+CHILDSERV,Children's Services,Child Care Delivery,Child Care Delivery,,,750A,Inter-Divisional Recoveries,10200000
+CHILDSERV,Children's Services,Child Care Delivery,Child Care Delivery,,,920A,Transfers From Capital,984195
+CHILDSERV,Children's Services,Child Care Delivery,Child Care Delivery,,,930A,Contribution From Reserves/Reserve Funds,360000
+CHILDSERV,Children's Services,Child Care System Management,Child Care System Management,,,805A,Provincial Subsidies,94590330
+CHILDSERV,Children's Services,Child Care System Management,Child Care System Management,,,930A,Contribution From Reserves/Reserve Funds,1400001
+CHILDSERV,Children's Services,Child Care System Management,Child Care System Management,,,920A,Transfers From Capital,296435
+CLERK,City Clerk's Office,GV-Elect Government,GV-Elect Government,Elections,Elections,930A,Contribution From Reserves/Reserve Funds,5513202
+CLERK,City Clerk's Office,GV-Elect Government,GV-Elect Government,Elections,Elections,920A,Transfers From Capital,428200
+CLERK,City Clerk's Office,GV-Elect Government,GV-Elect Government,Elections,Elections,940A,Sundry and Other Revenues,75
+CLERK,City Clerk's Office,GV-Make Government Work,GV-Make Government Work,Government & Official Services,Government & Official Services,920A,Transfers From Capital,1084300
+CLERK,City Clerk's Office,GV-Make Government Work,GV-Make Government Work,Government & Official Services,Government & Official Services,750A,Inter-Divisional Recoveries,230061
+CLERK,City Clerk's Office,GV-Make Government Work,GV-Make Government Work,Government Decision Making Processes,Government Decision Making Processes,850A,User Fees & Donations,243319
+CLERK,City Clerk's Office,GV-Make Government Work,GV-Make Government Work,Government Decision Making Processes,Government Decision Making Processes,940A,Sundry and Other Revenues,91556
+CLERK,City Clerk's Office,GV-Make Government Work,GV-Make Government Work,Government Decision Making Processes,Government Decision Making Processes,750A,Inter-Divisional Recoveries,87500
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Corporate Information Production Services,Corporate Information Production Services,750A,Inter-Divisional Recoveries,8743265
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Corporate Information Production Services,Corporate Information Production Services,940A,Sundry and Other Revenues,511302
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Corporate Information Production Services,Corporate Information Production Services,850A,User Fees & Donations,157400
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Lifecycle Management of City Information,Lifecycle Management of City Information,750A,Inter-Divisional Recoveries,490646
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Lifecycle Management of City Information,Lifecycle Management of City Information,920A,Transfers From Capital,391300
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Lifecycle Management of City Information,Lifecycle Management of City Information,940A,Sundry and Other Revenues,162260
+CLERK,City Clerk's Office,GV-Open Government,GV-Open Government,Lifecycle Management of City Information,Lifecycle Management of City Information,850A,User Fees & Donations,15220
+COUNCIL,City Council,,,,,930A,Contribution From Reserves/Reserve Funds,272000
+CITYMANAGER,City Manager's Office,"Equity, Diversity & Human Rights","Equity, Diversity & Human Rights",,,750A,Inter-Divisional Recoveries,2500
+CITYMANAGER,City Manager's Office,Executive Management,Executive Management,,,820A,Other Subsidies,500000
+CITYMANAGER,City Manager's Office,Executive Management,Executive Management,,,940A,Sundry and Other Revenues,276422
+CITYMANAGER,City Manager's Office,HR Employee & Labour Relations,HR Employee & Labour Relations,,,920A,Transfers From Capital,431821
+CITYMANAGER,City Manager's Office,HR Employee & Labour Relations,HR Employee & Labour Relations,,,750A,Inter-Divisional Recoveries,178787
+CITYMANAGER,City Manager's Office,HR Employee & Labour Relations,HR Employee & Labour Relations,,,940A,Sundry and Other Revenues,167771
+CITYMANAGER,City Manager's Office,HR Employment Services,HR Employment Services,,,750A,Inter-Divisional Recoveries,2383209
+CITYMANAGER,City Manager's Office,HR Employment Services,HR Employment Services,,,920A,Transfers From Capital,431821
+CITYMANAGER,City Manager's Office,HR Organization & Employee Effectiveness,HR Organization & Employee Effectiveness,,,920A,Transfers From Capital,930175
+CITYMANAGER,City Manager's Office,HR Organization & Employee Effectiveness,HR Organization & Employee Effectiveness,,,750A,Inter-Divisional Recoveries,295393
+CITYMANAGER,City Manager's Office,HR Safe & Healthy Workplaces,HR Safe & Healthy Workplaces,,,920A,Transfers From Capital,431821
+CITYMANAGER,City Manager's Office,HR Safe & Healthy Workplaces,HR Safe & Healthy Workplaces,,,750A,Inter-Divisional Recoveries,334979
+CITYMANAGER,City Manager's Office,Internal Auditing,Internal Auditing,,,750A,Inter-Divisional Recoveries,613030
+CITYMANAGER,City Manager's Office,Internal Auditing,Internal Auditing,,,940A,Sundry and Other Revenues,42105
+CITYMANAGER,City Manager's Office,Strategic & Corporate Policy,Strategic & Corporate Policy,,,920A,Transfers From Capital,399472
+CITYMANAGER,City Manager's Office,Strategic Communications,Strategic Communications,,,750A,Inter-Divisional Recoveries,1164670
+PLANNING,City Planning,City Building & Policy Development,City Building & Policy Development,,,920A,Transfers From Capital,2533893
+PLANNING,City Planning,City Building & Policy Development,City Building & Policy Development,,,930A,Contribution From Reserves/Reserve Funds,1861012
+PLANNING,City Planning,City Building & Policy Development,City Building & Policy Development,,,940A,Sundry and Other Revenues,810900
+PLANNING,City Planning,City Building & Policy Development,City Building & Policy Development,,,810A,Federal Subsidies,175000
+PLANNING,City Planning,City Building & Policy Development,City Building & Policy Development,,,850A,User Fees & Donations,77040
+PLANNING,City Planning,"Development Review, Decision & Implementation","Development Review, Decision & Implementation",,,850A,User Fees & Donations,26143708
+PLANNING,City Planning,"Development Review, Decision & Implementation","Development Review, Decision & Implementation",,,930A,Contribution From Reserves/Reserve Funds,1043479
+PLANNING,City Planning,"Development Review, Decision & Implementation","Development Review, Decision & Implementation",,,940A,Sundry and Other Revenues,138050
+COURTSERV,Court Services,Court Case Management,Court Case Management,,,940A,Sundry and Other Revenues,33749260
+COURTSERV,Court Services,Court Case Management,Court Case Management,,,750A,Inter-Divisional Recoveries,5699444
+COURTSERV,Court Services,Court Case Management,Court Case Management,,,850A,User Fees & Donations,217875
+COURTSERV,Court Services,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,Hearings,Hearings,750A,Inter-Divisional Recoveries,1758889
+COURTSERV,Court Services,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,Hearings,Hearings,940A,Sundry and Other Revenues,192100
+COURTSERV,Court Services,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,Hearings,Hearings,850A,User Fees & Donations,23715
+COURTSERV,Court Services,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,Interventions,Interventions,750A,Inter-Divisional Recoveries,137336
+COURTSERV,Court Services,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,Interventions,Interventions,940A,Sundry and Other Revenues,37840
+COURTSERV,Court Services,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,CT-Provincial Offences/Licencing Tribunal Dispute Resolution,Interventions,Interventions,850A,User Fees & Donations,5250
+COURTSERV,Court Services,Default Fine Collection Management,Default Fine Collection Management,,,750A,Inter-Divisional Recoveries,686680
+COURTSERV,Court Services,Default Fine Collection Management,Default Fine Collection Management,,,940A,Sundry and Other Revenues,189200
+COURTSERV,Court Services,Default Fine Collection Management,Default Fine Collection Management,,,850A,User Fees & Donations,26250
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,"Arts Activities Classes, Exhibits & Events","Arts Activities Classes, Exhibits & Events",850A,User Fees & Donations,242049
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,"Arts Activities Classes, Exhibits & Events","Arts Activities Classes, Exhibits & Events",860A,Licences & Permits Revenue,148640
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,"Arts Activities Classes, Exhibits & Events","Arts Activities Classes, Exhibits & Events",940A,Sundry and Other Revenues,62350
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,Arts Venues & Public Art,Arts Venues & Public Art,810A,Federal Subsidies,75000
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,City-Produced Festivals & Events,City-Produced Festivals & Events,940A,Sundry and Other Revenues,2443231
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,City-Produced Festivals & Events,City-Produced Festivals & Events,930A,Contribution From Reserves/Reserve Funds,1921737
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,City-Produced Festivals & Events,City-Produced Festivals & Events,810A,Federal Subsidies,1508125
+ECONDEV,Economic Development & Culture,Arts Services,Arts Services,City-Produced Festivals & Events,City-Produced Festivals & Events,805A,Provincial Subsidies,1000000
+ECONDEV,Economic Development & Culture,Business Services,Business Services,BIA Support & Governance,BIA Support & Governance,920A,Transfers From Capital,493000
+ECONDEV,Economic Development & Culture,Business Services,Business Services,BIA Support & Governance,BIA Support & Governance,940A,Sundry and Other Revenues,11284
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business & Industry Advice,Business & Industry Advice,750A,Inter-Divisional Recoveries,990412
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business & Industry Advice,Business & Industry Advice,850A,User Fees & Donations,408176
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business & Industry Advice,Business & Industry Advice,940A,Sundry and Other Revenues,377600
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business & Industry Advice,Business & Industry Advice,930A,Contribution From Reserves/Reserve Funds,240000
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business Incentives,Business Incentives,750A,Inter-Divisional Recoveries,1390293
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business Training & Events,Business Training & Events,750A,Inter-Divisional Recoveries,555000
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business Training & Events,Business Training & Events,940A,Sundry and Other Revenues,300250
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business Training & Events,Business Training & Events,930A,Contribution From Reserves/Reserve Funds,153720
+ECONDEV,Economic Development & Culture,Business Services,Business Services,Business Training & Events,Business Training & Events,810A,Federal Subsidies,8125
+ECONDEV,Economic Development & Culture,Business Services,Business Services,International Alliances,International Alliances,750A,Inter-Divisional Recoveries,1245000
+ECONDEV,Economic Development & Culture,Business Services,Business Services,International Alliances,International Alliances,940A,Sundry and Other Revenues,50000
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,"Entertainment Ind. Training, Engagement & Other Initiatives","Entertainment Ind. Training, Engagement & Other Initiatives",930A,Contribution From Reserves/Reserve Funds,153720
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,"Entertainment Ind. Training, Engagement & Other Initiatives","Entertainment Ind. Training, Engagement & Other Initiatives",940A,Sundry and Other Revenues,100250
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,"Entertainment Ind. Training, Engagement & Other Initiatives","Entertainment Ind. Training, Engagement & Other Initiatives",810A,Federal Subsidies,8125
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,Entertainment Industry Consultancy,Entertainment Industry Consultancy,930A,Contribution From Reserves/Reserve Funds,850000
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,Entertainment Industry Consultancy,Entertainment Industry Consultancy,940A,Sundry and Other Revenues,264600
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,Film Permitting,Film Permitting,860A,Licences & Permits Revenue,647000
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,Visitor Information Services,Visitor Information Services,940A,Sundry and Other Revenues,508597
+ECONDEV,Economic Development & Culture,Entertainment Industries Services,Entertainment Industries Services,Visitor Information Services,Visitor Information Services,805A,Provincial Subsidies,20000
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,920A,Transfers From Capital,657000
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,820A,Other Subsidies,37000
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,850A,User Fees & Donations,30000
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,940A,Sundry and Other Revenues,21200
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,930A,Contribution From Reserves/Reserve Funds,20000
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,810A,Federal Subsidies,8125
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,Collections & Heritage Properties Conservation,Collections & Heritage Properties Conservation,860A,Licences & Permits Revenue,1500
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Historical Museums, Collections & Heritage Properties","Historical Museums, Collections & Heritage Properties",930A,Contribution From Reserves/Reserve Funds,490750
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Historical Museums, Collections & Heritage Properties","Historical Museums, Collections & Heritage Properties",860A,Licences & Permits Revenue,358640
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Historical Museums, Collections & Heritage Properties","Historical Museums, Collections & Heritage Properties",940A,Sundry and Other Revenues,211100
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Historical Museums, Collections & Heritage Properties","Historical Museums, Collections & Heritage Properties",810A,Federal Subsidies,144772
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Historical Museums, Collections & Heritage Properties","Historical Museums, Collections & Heritage Properties",850A,User Fees & Donations,107400
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Museums Classes, Exhibits & Events","Museums Classes, Exhibits & Events",850A,User Fees & Donations,584336
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Museums Classes, Exhibits & Events","Museums Classes, Exhibits & Events",940A,Sundry and Other Revenues,285200
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Museums Classes, Exhibits & Events","Museums Classes, Exhibits & Events",805A,Provincial Subsidies,242700
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Museums Classes, Exhibits & Events","Museums Classes, Exhibits & Events",930A,Contribution From Reserves/Reserve Funds,153720
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Museums Classes, Exhibits & Events","Museums Classes, Exhibits & Events",810A,Federal Subsidies,19400
+ECONDEV,Economic Development & Culture,Museums & Heritage Services,Museums & Heritage Services,"Museums Classes, Exhibits & Events","Museums Classes, Exhibits & Events",860A,Licences & Permits Revenue,4626
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Bridge Condition Assessment,Bridge Condition Assessment,920A,Transfers From Capital,934975
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Bridge Condition Assessment,Bridge Condition Assessment,940A,Sundry and Other Revenues,84260
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Bridge Condition Assessment,Bridge Condition Assessment,850A,User Fees & Donations,10000
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Land Information,Land Information,920A,Transfers From Capital,5294022
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Land Information,Land Information,850A,User Fees & Donations,549280
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Land Information,Land Information,940A,Sundry and Other Revenues,510126
+ENGINEERING,Engineering & Construction Services,WT-Engineering Information,WT-Engineering Information,Land Information,Land Information,750A,Inter-Divisional Recoveries,482475
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,3rd Party Application Review & Acceptance,3rd Party Application Review & Acceptance,920A,Transfers From Capital,2610473
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,3rd Party Application Review & Acceptance,3rd Party Application Review & Acceptance,850A,User Fees & Donations,2428397
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,3rd Party Application Review & Acceptance,3rd Party Application Review & Acceptance,940A,Sundry and Other Revenues,1275531
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,3rd Party Application Review & Acceptance,3rd Party Application Review & Acceptance,860A,Licences & Permits Revenue,338215
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,Development Application Review & Acceptance,Development Application Review & Acceptance,850A,User Fees & Donations,4820224
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,Development Application Review & Acceptance,Development Application Review & Acceptance,860A,Licences & Permits Revenue,813195
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,Development Application Review & Acceptance,Development Application Review & Acceptance,920A,Transfers From Capital,791206
+ENGINEERING,Engineering & Construction Services,WT-Engineering Review & Acceptance,WT-Engineering Review & Acceptance,Development Application Review & Acceptance,Development Application Review & Acceptance,940A,Sundry and Other Revenues,165030
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Construction,Construction,920A,Transfers From Capital,24986214
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Construction,Construction,850A,User Fees & Donations,1776358
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Construction,Construction,860A,Licences & Permits Revenue,578340
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Construction,Construction,940A,Sundry and Other Revenues,486522
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Design,Design,920A,Transfers From Capital,19754178
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Design,Design,850A,User Fees & Donations,326243
+ENGINEERING,Engineering & Construction Services,WT-Municipal Infrastructure Construction,WT-Municipal Infrastructure Construction,Design,Design,940A,Sundry and Other Revenues,175879
+EXHIBPLACE,Exhibition Place,"Conventions, Conferences & Meetings","Conventions, Conferences & Meetings",,,850A,User Fees & Donations,3268012
+EXHIBPLACE,Exhibition Place,"Conventions, Conferences & Meetings","Conventions, Conferences & Meetings",,,930A,Contribution From Reserves/Reserve Funds,1370425
+EXHIBPLACE,Exhibition Place,Exhibition Place Asset Management,Exhibition Place Asset Management,,,850A,User Fees & Donations,1116177
+EXHIBPLACE,Exhibition Place,Exhibition Place Asset Management,Exhibition Place Asset Management,,,930A,Contribution From Reserves/Reserve Funds,600000
+EXHIBPLACE,Exhibition Place,Exhibition Place Asset Management,Exhibition Place Asset Management,,,940A,Sundry and Other Revenues,519511
+EXHIBPLACE,Exhibition Place,Exhibition Place Parking Access,Exhibition Place Parking Access,,,850A,User Fees & Donations,7746725
+EXHIBPLACE,Exhibition Place,Exhibition Place Parking Access,Exhibition Place Parking Access,,,940A,Sundry and Other Revenues,40880
+EXHIBPLACE,Exhibition Place,Exhibitions & Events,Exhibitions & Events,,,850A,User Fees & Donations,23243676
+EXHIBPLACE,Exhibition Place,Exhibitions & Events,Exhibitions & Events,,,940A,Sundry and Other Revenues,12230969
+EXHIBPLACE,Exhibition Place,Exhibitions & Events,Exhibitions & Events,,,930A,Contribution From Reserves/Reserve Funds,100000
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Energy Management & Programs,Energy Management & Programs,750A,Inter-Divisional Recoveries,9113327
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Energy Management & Programs,Energy Management & Programs,930A,Contribution From Reserves/Reserve Funds,6127307
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Energy Management & Programs,Energy Management & Programs,940A,Sundry and Other Revenues,780398
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Energy Management & Programs,Energy Management & Programs,850A,User Fees & Donations,239544
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Environment & Energy Outreach,Environment & Energy Outreach,805A,Provincial Subsidies,250000
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Environment & Energy Outreach,Environment & Energy Outreach,850A,User Fees & Donations,224451
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Environment & Energy Outreach,Environment & Energy Outreach,940A,Sundry and Other Revenues,53804
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Renewable Energy,Renewable Energy,940A,Sundry and Other Revenues,863907
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Renewable Energy,Renewable Energy,920A,Transfers From Capital,217617
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Renewable Energy,Renewable Energy,930A,Contribution From Reserves/Reserve Funds,200000
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Environment & Energy,CA-Environment & Energy,Research & Policy Development,Research & Policy Development,930A,Contribution From Reserves/Reserve Funds,459642
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Corporate Security,Corporate Security,750A,Inter-Divisional Recoveries,6013481
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Corporate Security,Corporate Security,920A,Transfers From Capital,800000
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Corporate Security,Corporate Security,940A,Sundry and Other Revenues,250350
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Corporate Security,Corporate Security,850A,User Fees & Donations,43534
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Custodial Care,Custodial Care,750A,Inter-Divisional Recoveries,10887668
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Custodial Care,Custodial Care,850A,User Fees & Donations,472532
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Custodial Care,Custodial Care,940A,Sundry and Other Revenues,278172
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Custodial Care,Custodial Care,810A,Federal Subsidies,160256
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Facilities Maintenance,Facilities Maintenance,750A,Inter-Divisional Recoveries,18214035
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Facilities Maintenance,Facilities Maintenance,920A,Transfers From Capital,8539708
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Facilities Maintenance,Facilities Maintenance,940A,Sundry and Other Revenues,1437503
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Facilities Maintenance,Facilities Maintenance,850A,User Fees & Donations,714254
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Facilities Management,CA-Facilities Management,Facilities Maintenance,Facilities Maintenance,810A,Federal Subsidies,45703
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Development & Portfolio Planning,Development & Portfolio Planning,930A,Contribution From Reserves/Reserve Funds,914581
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Lease Management,Lease Management,850A,User Fees & Donations,42042992
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Lease Management,Lease Management,930A,Contribution From Reserves/Reserve Funds,7293234
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Lease Management,Lease Management,750A,Inter-Divisional Recoveries,5443852
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Lease Management,Lease Management,940A,Sundry and Other Revenues,2762241
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Lease Management,Lease Management,920A,Transfers From Capital,99800
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Property Acquisition,Property Acquisition,940A,Sundry and Other Revenues,928227
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Property Appraisal,Property Appraisal,850A,User Fees & Donations,622717
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Property Appraisal,Property Appraisal,930A,Contribution From Reserves/Reserve Funds,50000
+FACILITIES,"Facilities, Real Estate, Environment & Energy",CA-Real Estate,CA-Real Estate,Property Disposal,Property Disposal,930A,Contribution From Reserves/Reserve Funds,545000
+FIRE,Fire Services,Fire Rescue & Emergency Response,Fire Rescue & Emergency Response,,,850A,User Fees & Donations,14354226
+FIRE,Fire Services,Fire Rescue & Emergency Response,Fire Rescue & Emergency Response,,,750A,Inter-Divisional Recoveries,162176
+FIRE,Fire Services,Fire Rescue & Emergency Response,Fire Rescue & Emergency Response,,,920A,Transfers From Capital,144856
+FIRE,Fire Services,Fire Rescue & Emergency Response,Fire Rescue & Emergency Response,,,940A,Sundry and Other Revenues,102739
+FIRE,Fire Services,FR-Disaster Response & Event Support,FR-Disaster Response & Event Support,"Chemical, Biological, Radiological, Nuclear & Exposive Resp.","Chemical, Biological, Radiological, Nuclear & Exposive Resp.",805A,Provincial Subsidies,100000
+FIRE,Fire Services,FR-Disaster Response & Event Support,FR-Disaster Response & Event Support,Heavy Urban Search & Rescue,Heavy Urban Search & Rescue,805A,Provincial Subsidies,300000
+FIRE,Fire Services,"FR-Fire Prevention, Inspection, & Enforcement","FR-Fire Prevention, Inspection, & Enforcement",Development Review,Development Review,850A,User Fees & Donations,434432
+FIRE,Fire Services,"FR-Fire Prevention, Inspection, & Enforcement","FR-Fire Prevention, Inspection, & Enforcement",Fire Code Enforcement,Fire Code Enforcement,850A,User Fees & Donations,1485402
+FIRE,Fire Services,"FR-Fire Prevention, Inspection, & Enforcement","FR-Fire Prevention, Inspection, & Enforcement",Fire Code Enforcement,Fire Code Enforcement,750A,Inter-Divisional Recoveries,6715
+FIRE,Fire Services,FR-Fire Safety Education,FR-Fire Safety Education,Campaign Based Fire Education,Campaign Based Fire Education,750A,Inter-Divisional Recoveries,1679
+FIRE,Fire Services,FR-Fire Safety Education,FR-Fire Safety Education,Campaign Based Fire Education,Campaign Based Fire Education,850A,User Fees & Donations,1003
+FIRE,Fire Services,FR-Fire Safety Education,FR-Fire Safety Education,School Based Fire Education,School Based Fire Education,940A,Sundry and Other Revenues,8061
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Acquisition,Fleet Acquisition,940A,Sundry and Other Revenues,1243763
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Acquisition,Fleet Acquisition,750A,Inter-Divisional Recoveries,163134
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Acquisition,Fleet Acquisition,920A,Transfers From Capital,28108
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Acquisition,Fleet Acquisition,930A,Contribution From Reserves/Reserve Funds,12077
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Disposal,Fleet Disposal,940A,Sundry and Other Revenues,75000
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Maintenance,Fleet Maintenance,750A,Inter-Divisional Recoveries,34873534
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Maintenance,Fleet Maintenance,920A,Transfers From Capital,988105
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Fleet Maintenance,Fleet Maintenance,930A,Contribution From Reserves/Reserve Funds,96616
+FLEET,Fleet Services,FL-Fleet Management,FL-Fleet Management,Vehicle Safety,Vehicle Safety,940A,Sundry and Other Revenues,1589241
+FLEET,Fleet Services,FL-Fuel Management,FL-Fuel Management,Fuel Distribution,Fuel Distribution,750A,Inter-Divisional Recoveries,13320894
+FLEET,Fleet Services,FL-Fuel Management,FL-Fuel Management,Fuel Distribution,Fuel Distribution,940A,Sundry and Other Revenues,1602723
+FLEET,Fleet Services,FL-Fuel Management,FL-Fuel Management,Fuel Distribution,Fuel Distribution,920A,Transfers From Capital,73611
+FLEET,Fleet Services,FL-Fuel Management,FL-Fuel Management,Fuel Distribution,Fuel Distribution,930A,Contribution From Reserves/Reserve Funds,12077
+HERITAGE,Heritage Toronto,Heritage Fundraising & Partnership Development,Heritage Fundraising & Partnership Development,,,850A,User Fees & Donations,209500
+HERITAGE,Heritage Toronto,Heritage Fundraising & Partnership Development,Heritage Fundraising & Partnership Development,,,940A,Sundry and Other Revenues,55500
+HERITAGE,Heritage Toronto,Heritage Promotion & Education,Heritage Promotion & Education,,,850A,User Fees & Donations,158000
+HERITAGE,Heritage Toronto,Heritage Promotion & Education,Heritage Promotion & Education,,,940A,Sundry and Other Revenues,53500
+HERITAGE,Heritage Toronto,Heritage Promotion & Education,Heritage Promotion & Education,,,810A,Federal Subsidies,20000
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Authoritative Data Custodianship,Authoritative Data Custodianship,750A,Inter-Divisional Recoveries,915608
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Authoritative Data Custodianship,Authoritative Data Custodianship,920A,Transfers From Capital,279611
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Authoritative Data Custodianship,Authoritative Data Custodianship,850A,User Fees & Donations,133834
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Authoritative Data Custodianship,Authoritative Data Custodianship,940A,Sundry and Other Revenues,122013
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Authoritative Data Custodianship,Authoritative Data Custodianship,930A,Contribution From Reserves/Reserve Funds,40714
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,IT Common Components,IT Common Components,750A,Inter-Divisional Recoveries,349562
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,IT Common Components,IT Common Components,920A,Transfers From Capital,186480
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,IT Common Components,IT Common Components,940A,Sundry and Other Revenues,73208
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,IT Common Components,IT Common Components,930A,Contribution From Reserves/Reserve Funds,40714
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Solution Implementation,Solution Implementation,920A,Transfers From Capital,26399823
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Solution Implementation,Solution Implementation,750A,Inter-Divisional Recoveries,1697836
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Solution Implementation,Solution Implementation,930A,Contribution From Reserves/Reserve Funds,366336
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Solution Sustainment,Solution Sustainment,750A,Inter-Divisional Recoveries,2383704
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Solution Sustainment,Solution Sustainment,920A,Transfers From Capital,505957
+IT,Information & Technology,IT-Business IT Solutions,IT-Business IT Solutions,Solution Sustainment,Solution Sustainment,930A,Contribution From Reserves/Reserve Funds,40714
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Computing Infrastructure,Computing Infrastructure,930A,Contribution From Reserves/Reserve Funds,3922358
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Computing Infrastructure,Computing Infrastructure,750A,Inter-Divisional Recoveries,2976637
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Computing Infrastructure,Computing Infrastructure,920A,Transfers From Capital,855953
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Computing Infrastructure,Computing Infrastructure,850A,User Fees & Donations,208800
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Computing Infrastructure,Computing Infrastructure,940A,Sundry and Other Revenues,90809
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Network & Telecommunications,Network & Telecommunications,750A,Inter-Divisional Recoveries,5096987
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Network & Telecommunications,Network & Telecommunications,920A,Transfers From Capital,44194
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Network & Telecommunications,Network & Telecommunications,930A,Contribution From Reserves/Reserve Funds,16413
+IT,Information & Technology,IT-Computer & Communications Technology Infrastructure,IT-Computer & Communications Technology Infrastructure,Network & Telecommunications,Network & Telecommunications,940A,Sundry and Other Revenues,5591
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,"Client Support, Advice & Consultation","Client Support, Advice & Consultation",920A,Transfers From Capital,1034145
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,"Client Support, Advice & Consultation","Client Support, Advice & Consultation",750A,Inter-Divisional Recoveries,588627
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,"Client Support, Advice & Consultation","Client Support, Advice & Consultation",940A,Sundry and Other Revenues,39402
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,Enterprise Planning & Architecture,Enterprise Planning & Architecture,750A,Inter-Divisional Recoveries,1008891
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,Enterprise Planning & Architecture,Enterprise Planning & Architecture,920A,Transfers From Capital,943055
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,Enterprise Planning & Architecture,Enterprise Planning & Architecture,940A,Sundry and Other Revenues,410326
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,Enterprise Planning & Architecture,Enterprise Planning & Architecture,930A,Contribution From Reserves/Reserve Funds,340714
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,IT Project Management,IT Project Management,920A,Transfers From Capital,1979624
+IT,Information & Technology,IT-Enterprise IT Planning & Client Services,IT-Enterprise IT Planning & Client Services,IT Project Management,IT Project Management,750A,Inter-Divisional Recoveries,27075
+LEGAL,Legal Services,Civil Litigation,Civil Litigation,,,750A,Inter-Divisional Recoveries,6365197
+LEGAL,Legal Services,Civil Litigation,Civil Litigation,,,930A,Contribution From Reserves/Reserve Funds,700000
+LEGAL,Legal Services,Civil Litigation,Civil Litigation,,,850A,User Fees & Donations,158573
+LEGAL,Legal Services,Prosecution,Prosecution,,,750A,Inter-Divisional Recoveries,17671190
+LEGAL,Legal Services,Solicitor,Solicitor,,,850A,User Fees & Donations,4337987
+LEGAL,Legal Services,Solicitor,Solicitor,,,940A,Sundry and Other Revenues,3408314
+LEGAL,Legal Services,Solicitor,Solicitor,,,750A,Inter-Divisional Recoveries,3361752
+LEGAL,Legal Services,Solicitor,Solicitor,,,920A,Transfers From Capital,1624621
+LEGAL,Legal Services,Solicitor,Solicitor,,,930A,Contribution From Reserves/Reserve Funds,857496
+LONGTERMHOME,Long Term Care Homes & Services,Long-Term Care Homes,Long-Term Care Homes,,,805A,Provincial Subsidies,146250899
+LONGTERMHOME,Long Term Care Homes & Services,Long-Term Care Homes,Long-Term Care Homes,,,850A,User Fees & Donations,51307600
+LONGTERMHOME,Long Term Care Homes & Services,Long-Term Care Homes,Long-Term Care Homes,,,920A,Transfers From Capital,300000
+LONGTERMHOME,Long Term Care Homes & Services,Long-Term Care Homes,Long-Term Care Homes,,,940A,Sundry and Other Revenues,141000
+LONGTERMHOME,Long Term Care Homes & Services,Long-Term Care Homes,Long-Term Care Homes,,,750A,Inter-Divisional Recoveries,104400
+LONGTERMHOME,Long Term Care Homes & Services,LTCHS - Community Based Programs,LTCHS - Community Based Programs,Adult Day Program,Adult Day Program,805A,Provincial Subsidies,1374900
+LONGTERMHOME,Long Term Care Homes & Services,LTCHS - Community Based Programs,LTCHS - Community Based Programs,Adult Day Program,Adult Day Program,850A,User Fees & Donations,215000
+LONGTERMHOME,Long Term Care Homes & Services,LTCHS - Community Based Programs,LTCHS - Community Based Programs,Homemakers & Nurses Services,Homemakers & Nurses Services,805A,Provincial Subsidies,4676300
+LONGTERMHOME,Long Term Care Homes & Services,LTCHS - Community Based Programs,LTCHS - Community Based Programs,Supportive Housing Services,Supportive Housing Services,805A,Provincial Subsidies,5287900
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Mobile Response,Animal Mobile Response,860A,Licences & Permits Revenue,732754
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Mobile Response,Animal Mobile Response,940A,Sundry and Other Revenues,509762
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Mobile Response,Animal Mobile Response,850A,User Fees & Donations,63188
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Sheltering & Adoption,Animal Sheltering & Adoption,940A,Sundry and Other Revenues,384210
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Sheltering & Adoption,Animal Sheltering & Adoption,850A,User Fees & Donations,132837
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Sheltering & Adoption,Animal Sheltering & Adoption,860A,Licences & Permits Revenue,98328
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Sheltering & Adoption,Animal Sheltering & Adoption,750A,Inter-Divisional Recoveries,24000
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Sheltering & Adoption,Animal Sheltering & Adoption,920A,Transfers From Capital,13123
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Animal Sheltering & Adoption,Animal Sheltering & Adoption,930A,Contribution From Reserves/Reserve Funds,4000
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Cat & Dog Licensing,Cat & Dog Licensing,860A,Licences & Permits Revenue,845161
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Cat & Dog Licensing,Cat & Dog Licensing,940A,Sundry and Other Revenues,78157
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Cat & Dog Licensing,Cat & Dog Licensing,920A,Transfers From Capital,6562
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Cat & Dog Licensing,Cat & Dog Licensing,850A,User Fees & Donations,494
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Veterinary Care,Veterinary Care,940A,Sundry and Other Revenues,238785
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Veterinary Care,Veterinary Care,850A,User Fees & Donations,171619
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Veterinary Care,Veterinary Care,860A,Licences & Permits Revenue,17110
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Veterinary Care,Veterinary Care,920A,Transfers From Capital,6562
+LICENCING,Municipal Licensing & Standards,"MS-Animal Care, Control & Sheltering","MS-Animal Care, Control & Sheltering",Veterinary Care,Veterinary Care,930A,Contribution From Reserves/Reserve Funds,6000
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business & Trade Licensing,Business & Trade Licensing,860A,Licences & Permits Revenue,9002811
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business & Trade Licensing,Business & Trade Licensing,850A,User Fees & Donations,67161
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business & Trade Licensing,Business & Trade Licensing,940A,Sundry and Other Revenues,32910
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business & Trade Licensing,Business & Trade Licensing,920A,Transfers From Capital,16404
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business Permitting,Business Permitting,860A,Licences & Permits Revenue,1400437
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business Permitting,Business Permitting,920A,Transfers From Capital,16404
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business Permitting,Business Permitting,850A,User Fees & Donations,10447
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Business Permitting,Business Permitting,940A,Sundry and Other Revenues,5119
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Licensing Tribunal,Licensing Tribunal,860A,Licences & Permits Revenue,600187
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Licensing Tribunal,Licensing Tribunal,850A,User Fees & Donations,4477
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Licensing Tribunal,Licensing Tribunal,940A,Sundry and Other Revenues,2194
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Taxi & Livery Licensing,Taxi & Livery Licensing,860A,Licences & Permits Revenue,14675811
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Taxi & Livery Licensing,Taxi & Livery Licensing,850A,User Fees & Donations,67161
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Taxi & Livery Licensing,Taxi & Livery Licensing,940A,Sundry and Other Revenues,32910
+LICENCING,Municipal Licensing & Standards,"MS-Business Licensing, Enforcement, & Permitting","MS-Business Licensing, Enforcement, & Permitting",Taxi & Livery Licensing,Taxi & Livery Licensing,920A,Transfers From Capital,32808
+LICENCING,Municipal Licensing & Standards,MS-By-Law Enforcement,MS-By-Law Enforcement,Animal By-Law Enforcement,Animal By-Law Enforcement,860A,Licences & Permits Revenue,286399
+LICENCING,Municipal Licensing & Standards,MS-By-Law Enforcement,MS-By-Law Enforcement,License & Permit Enforcement,License & Permit Enforcement,920A,Transfers From Capital,82020
+LICENCING,Municipal Licensing & Standards,MS-By-Law Enforcement,MS-By-Law Enforcement,Parks By-Law Enforcement,Parks By-Law Enforcement,920A,Transfers From Capital,22966
+LICENCING,Municipal Licensing & Standards,MS-By-Law Enforcement,MS-By-Law Enforcement,Waste By-Law Enforcement,Waste By-Law Enforcement,750A,Inter-Divisional Recoveries,1491461
+LICENCING,Municipal Licensing & Standards,MS-By-Law Enforcement,MS-By-Law Enforcement,Waste By-Law Enforcement,Waste By-Law Enforcement,920A,Transfers From Capital,32808
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Exemptions & Permits,Exemptions & Permits,850A,User Fees & Donations,194072
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Exemptions & Permits,Exemptions & Permits,860A,Licences & Permits Revenue,43524
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Exemptions & Permits,Exemptions & Permits,920A,Transfers From Capital,16404
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Property Maintenance,Property Maintenance,850A,User Fees & Donations,333042
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Property Maintenance,Property Maintenance,860A,Licences & Permits Revenue,65285
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Property Maintenance,Property Maintenance,920A,Transfers From Capital,49212
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance","Property Standards, Inspection & Enforcement","Property Standards, Inspection & Enforcement",850A,User Fees & Donations,1410202
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance","Property Standards, Inspection & Enforcement","Property Standards, Inspection & Enforcement",860A,Licences & Permits Revenue,65285
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance","Property Standards, Inspection & Enforcement","Property Standards, Inspection & Enforcement",920A,Transfers From Capital,32808
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Zoning Investigation & Enforcement,Zoning Investigation & Enforcement,850A,User Fees & Donations,277183
+LICENCING,Municipal Licensing & Standards,"MS-Property Standards, Inspection & Compliance","MS-Property Standards, Inspection & Compliance",Zoning Investigation & Enforcement,Zoning Investigation & Enforcement,860A,Licences & Permits Revenue,43524
+CORPEXPENDITURES,Non-Program Expenditures,Corporate Accounts,Corporate Accounts,,,930A,Contribution From Reserves/Reserve Funds,170458953
+CORPEXPENDITURES,Non-Program Expenditures,Corporate Accounts,Corporate Accounts,,,940A,Sundry and Other Revenues,6168116
+CORPEXPENDITURES,Non-Program Expenditures,Corporate Accounts,Corporate Accounts,,,850A,User Fees & Donations,5332000
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,,,940A,Sundry and Other Revenues,1259087061
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,,,930A,Contribution From Reserves/Reserve Funds,91600000
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,,,750A,Inter-Divisional Recoveries,35299700
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,,,850A,User Fees & Donations,14721576
+CORPREVENUES,Non-Program Revenues,Corporate Accounts,Corporate Accounts,,,860A,Licences & Permits Revenue,4380432
+CORPREVENUES,Non-Program Revenues,Property Tax,Property Tax,,,940A,Sundry and Other Revenues,4046426501
+CORPREVENUES,Non-Program Revenues,Special Levy for Scarborough Subway,Special Levy for Scarborough Subway,,,940A,Sundry and Other Revenues,40698854
+CORPREVENUES,Non-Program Revenues,City Building Fund Levy,City Building Fund Levy,,,940A,Sundry and Other Revenues,14046000
+CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",CPF-Advisory & Negotiation,CPF-Advisory & Negotiation,930A,Contribution From Reserves/Reserve Funds,94707
+CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",CPF-Advisory & Negotiation,CPF-Advisory & Negotiation,750A,Inter-Divisional Recoveries,25079
+CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",CPF-Financial & Business Analysis,CPF-Financial & Business Analysis,930A,Contribution From Reserves/Reserve Funds,114292
+CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",CPF-Financial & Business Analysis,CPF-Financial & Business Analysis,750A,Inter-Divisional Recoveries,29259
+CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",CPF-Financial Policy Development,CPF-Financial Policy Development,750A,Inter-Divisional Recoveries,103269
+CFO,Office of the Chief Financial Officer,"CPF-Financial Strategies, Analysis & Policy Development","CPF-Financial Strategies, Analysis & Policy Development",CPF-Financial Policy Development,CPF-Financial Policy Development,930A,Contribution From Reserves/Reserve Funds,103235
+CFO,Office of the Chief Financial Officer,CPF-Investment & Debt Management,CPF-Investment & Debt Management,CPF-Debt Management,CPF-Debt Management,750A,Inter-Divisional Recoveries,549246
+CFO,Office of the Chief Financial Officer,CPF-Investment & Debt Management,CPF-Investment & Debt Management,CPF-Debt Management,CPF-Debt Management,930A,Contribution From Reserves/Reserve Funds,12344
+CFO,Office of the Chief Financial Officer,CPF-Investment & Debt Management,CPF-Investment & Debt Management,CPF-Investment Management,CPF-Investment Management,750A,Inter-Divisional Recoveries,770293
+CFO,Office of the Chief Financial Officer,CPF-Investment & Debt Management,CPF-Investment & Debt Management,CPF-Investment Management,CPF-Investment Management,930A,Contribution From Reserves/Reserve Funds,22534
+CFO,Office of the Chief Financial Officer,CPF-Risk Management & Insurance,CPF-Risk Management & Insurance,CPF-Claims Management,CPF-Claims Management,930A,Contribution From Reserves/Reserve Funds,1238694
+CFO,Office of the Chief Financial Officer,CPF-Risk Management & Insurance,CPF-Risk Management & Insurance,CPF-Claims Management,CPF-Claims Management,750A,Inter-Divisional Recoveries,63532
+CFO,Office of the Chief Financial Officer,CPF-Risk Management & Insurance,CPF-Risk Management & Insurance,CPF-Insurance & Risk Management,CPF-Insurance & Risk Management,930A,Contribution From Reserves/Reserve Funds,671056
+CFO,Office of the Chief Financial Officer,CPF-Risk Management & Insurance,CPF-Risk Management & Insurance,CPF-Insurance & Risk Management,CPF-Insurance & Risk Management,750A,Inter-Divisional Recoveries,187198
+CFO,Office of the Chief Financial Officer,F&A-Executive Leadership,F&A-Executive Leadership,,,930A,Contribution From Reserves/Reserve Funds,119273
+CFO,Office of the Chief Financial Officer,F&A-Executive Leadership,F&A-Executive Leadership,,,750A,Inter-Divisional Recoveries,87300
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Budgeting,FPD-Budgeting,750A,Inter-Divisional Recoveries,521849
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Budgeting,FPD-Budgeting,920A,Transfers From Capital,446198
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Budgeting,FPD-Budgeting,930A,Contribution From Reserves/Reserve Funds,48809
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Financial Advice,FPD-Financial Advice,920A,Transfers From Capital,551130
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Financial Advice,FPD-Financial Advice,750A,Inter-Divisional Recoveries,326155
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Financial Advice,FPD-Financial Advice,930A,Contribution From Reserves/Reserve Funds,30506
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Financial Planning & Policy,FPD-Financial Planning & Policy,920A,Transfers From Capital,415557
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Financial Planning & Policy,FPD-Financial Planning & Policy,750A,Inter-Divisional Recoveries,156553
+CFO,Office of the Chief Financial Officer,FPD-Financial Planning & Management,FPD-Financial Planning & Management,FPD-Financial Planning & Policy,FPD-Financial Planning & Policy,930A,Contribution From Reserves/Reserve Funds,14643
+CFO,Office of the Chief Financial Officer,FPD-Financial Reporting & Control,FPD-Financial Reporting & Control,,,750A,Inter-Divisional Recoveries,300062
+CFO,Office of the Chief Financial Officer,FPD-Financial Reporting & Control,FPD-Financial Reporting & Control,,,920A,Transfers From Capital,249334
+CFO,Office of the Chief Financial Officer,FPD-Financial Reporting & Control,FPD-Financial Reporting & Control,,,930A,Contribution From Reserves/Reserve Funds,28065
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Financial & System Control,ASD-Financial & System Control,750A,Inter-Divisional Recoveries,69070
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Financial & System Control,ASD-Financial & System Control,920A,Transfers From Capital,34066
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Financial & System Control,ASD-Financial & System Control,940A,Sundry and Other Revenues,13800
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Financial Statement Preparation,ASD-Financial Statement Preparation,750A,Inter-Divisional Recoveries,161350
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Management Reporting,ASD-Management Reporting,750A,Inter-Divisional Recoveries,75720
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Management Reporting,ASD-Management Reporting,920A,Transfers From Capital,13500
+TREASURER,Office of the Treasurer,ASD-Financial Reporting & Control,ASD-Financial Reporting & Control,ASD-Provincial & Federal Reports Submission,ASD-Provincial & Federal Reports Submission,750A,Inter-Divisional Recoveries,30240
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-Accounts Payable Processing,ASD-Accounts Payable Processing,940A,Sundry and Other Revenues,619582
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-Accounts Payable Processing,ASD-Accounts Payable Processing,750A,Inter-Divisional Recoveries,282116
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-Accounts Payable Processing,ASD-Accounts Payable Processing,920A,Transfers From Capital,12950
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-Accounts Receivable Processing,ASD-Accounts Receivable Processing,940A,Sundry and Other Revenues,386200
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-Accounts Receivable Processing,ASD-Accounts Receivable Processing,850A,User Fees & Donations,9500
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-Corporate Banking,ASD-Corporate Banking,920A,Transfers From Capital,8999
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-PCard Processing,ASD-PCard Processing,940A,Sundry and Other Revenues,100383
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-PCard Processing,ASD-PCard Processing,750A,Inter-Divisional Recoveries,11504
+TREASURER,Office of the Treasurer,ASD-Payment Processing,ASD-Payment Processing,ASD-PCard Processing,ASD-PCard Processing,920A,Transfers From Capital,0
+TREASURER,Office of the Treasurer,ASD-Tax & Financial System Support,ASD-Tax & Financial System Support,ASD-SAP User Support,ASD-SAP User Support,920A,Transfers From Capital,184201
+TREASURER,Office of the Treasurer,ASD-Tax & Financial System Support,ASD-Tax & Financial System Support,ASD-Tax Advisory & Policy,ASD-Tax Advisory & Policy,940A,Sundry and Other Revenues,276000
+TREASURER,Office of the Treasurer,PMM-Materials Management Stores & Distribution,PMM-Materials Management Stores & Distribution,,,750A,Inter-Divisional Recoveries,747115
+TREASURER,Office of the Treasurer,PMM-Materials Management Stores & Distribution,PMM-Materials Management Stores & Distribution,,,930A,Contribution From Reserves/Reserve Funds,308524
+TREASURER,Office of the Treasurer,PMM-Materials Management Stores & Distribution,PMM-Materials Management Stores & Distribution,,,940A,Sundry and Other Revenues,35000
+TREASURER,Office of the Treasurer,PMM-Purchasing,PMM-Purchasing,,,750A,Inter-Divisional Recoveries,1726125
+TREASURER,Office of the Treasurer,PMM-Purchasing,PMM-Purchasing,,,930A,Contribution From Reserves/Reserve Funds,1000000
+TREASURER,Office of the Treasurer,PMM-Purchasing,PMM-Purchasing,,,920A,Transfers From Capital,590000
+TREASURER,Office of the Treasurer,PMM-Purchasing,PMM-Purchasing,,,850A,User Fees & Donations,520000
+TREASURER,Office of the Treasurer,PMM-Purchasing,PMM-Purchasing,,,940A,Sundry and Other Revenues,143084
+TREASURER,Office of the Treasurer,PPEB-Employee & Retiree Benefit & OMERS Pension Compensation,PPEB-Employee & Retiree Benefit & OMERS Pension Compensation,PPEB-Employee Benefits & Pension Administration,PPEB-Employee Benefits & Pension Administration,750A,Inter-Divisional Recoveries,58216
+TREASURER,Office of the Treasurer,PPEB-Employee & Retiree Benefit & OMERS Pension Compensation,PPEB-Employee & Retiree Benefit & OMERS Pension Compensation,PPEB-Employee Benefits & Pension Administration,PPEB-Employee Benefits & Pension Administration,930A,Contribution From Reserves/Reserve Funds,52542
+TREASURER,Office of the Treasurer,PPEB-Payroll,PPEB-Payroll,PPEB-3rd  Party Payroll Payments & Compliance,PPEB-3rd  Party Payroll Payments & Compliance,930A,Contribution From Reserves/Reserve Funds,105085
+TREASURER,Office of the Treasurer,PPEB-Payroll,PPEB-Payroll,PPEB-3rd  Party Payroll Payments & Compliance,PPEB-3rd  Party Payroll Payments & Compliance,750A,Inter-Divisional Recoveries,13075
+TREASURER,Office of the Treasurer,PPEB-Payroll,PPEB-Payroll,PPEB-Payroll Administration,PPEB-Payroll Administration,930A,Contribution From Reserves/Reserve Funds,683052
+TREASURER,Office of the Treasurer,PPEB-Payroll,PPEB-Payroll,PPEB-Payroll Administration,PPEB-Payroll Administration,750A,Inter-Divisional Recoveries,272399
+TREASURER,Office of the Treasurer,PPEB-Payroll,PPEB-Payroll,PPEB-Payroll Management Reporting,PPEB-Payroll Management Reporting,930A,Contribution From Reserves/Reserve Funds,210170
+TREASURER,Office of the Treasurer,PPEB-Payroll,PPEB-Payroll,PPEB-Payroll Management Reporting,PPEB-Payroll Management Reporting,750A,Inter-Divisional Recoveries,104600
+TREASURER,Office of the Treasurer,RS-Parking Ticket,RS-Parking Ticket,RS-Parking Ticket Processing,RS-Parking Ticket Processing,750A,Inter-Divisional Recoveries,3343048
+TREASURER,Office of the Treasurer,RS-Property Tax Billing,RS-Property Tax Billing,RS-Apportionments of Property Tax,RS-Apportionments of Property Tax,850A,User Fees & Donations,16170
+TREASURER,Office of the Treasurer,RS-Property Tax Billing,RS-Property Tax Billing,RS-Property Assessment Reviews,RS-Property Assessment Reviews,750A,Inter-Divisional Recoveries,930534
+TREASURER,Office of the Treasurer,RS-Property Tax Billing,RS-Property Tax Billing,RS-Property Tax & Payment in Lieu of Tax Billing,RS-Property Tax & Payment in Lieu of Tax Billing,850A,User Fees & Donations,922712
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Arrears Collections,RS-Arrears Collections,850A,User Fees & Donations,7530334
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Arrears Collections,RS-Arrears Collections,750A,Inter-Divisional Recoveries,1626950
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Municipal Land Transfer Tax,RS-Municipal Land Transfer Tax,750A,Inter-Divisional Recoveries,1395792
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Payment Processing & Collection,RS-Payment Processing & Collection,750A,Inter-Divisional Recoveries,1568501
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Refund Processing,RS-Refund Processing,750A,Inter-Divisional Recoveries,390487
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Refund Processing,RS-Refund Processing,850A,User Fees & Donations,381114
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Revenue Accounting,RS-Revenue Accounting,750A,Inter-Divisional Recoveries,984442
+TREASURER,Office of the Treasurer,RS-Revenue Accounting & Collection,RS-Revenue Accounting & Collection,RS-Revenue Accounting,RS-Revenue Accounting,850A,User Fees & Donations,212880
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Revenue Services Contact Centre,RS-Revenue Services Contact Centre,750A,Inter-Divisional Recoveries,2694413
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Revenue Services Contact Centre,RS-Revenue Services Contact Centre,850A,User Fees & Donations,66490
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Revenue Services Counter Operations,RS-Revenue Services Counter Operations,750A,Inter-Divisional Recoveries,2674998
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Revenue Services Counter Operations,RS-Revenue Services Counter Operations,850A,User Fees & Donations,166747
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Tax / Utility Account Administration,RS-Tax / Utility Account Administration,850A,User Fees & Donations,3494860
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Tax / Utility Account Administration,RS-Tax / Utility Account Administration,940A,Sundry and Other Revenues,1743785
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Tax / Utility Account Administration,RS-Tax / Utility Account Administration,750A,Inter-Divisional Recoveries,974909
+TREASURER,Office of the Treasurer,"RS-Tax, Utility & Parking Ticket Client Services","RS-Tax, Utility & Parking Ticket Client Services",RS-Tax / Utility Account Administration,RS-Tax / Utility Account Administration,920A,Transfers From Capital,234889
+TREASURER,Office of the Treasurer,RS-Utility Billing,RS-Utility Billing,RS-Meter Reading Operations,RS-Meter Reading Operations,750A,Inter-Divisional Recoveries,1101808
+TREASURER,Office of the Treasurer,RS-Utility Billing,RS-Utility Billing,RS-Solid Waste Billings,RS-Solid Waste Billings,750A,Inter-Divisional Recoveries,1593177
+TREASURER,Office of the Treasurer,RS-Utility Billing,RS-Utility Billing,RS-Water Billings,RS-Water Billings,750A,Inter-Divisional Recoveries,1131377
+TREASURER,Office of the Treasurer,RS-Utility Billing,RS-Utility Billing,RS-Water Billings,RS-Water Billings,940A,Sundry and Other Revenues,375550
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Community Development,Community Development,750A,Inter-Divisional Recoveries,1438151
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Community Development,Community Development,940A,Sundry and Other Revenues,19065
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Community Development,Community Development,805A,Provincial Subsidies,3000
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Instructional Recreation Programs,Instructional Recreation Programs,850A,User Fees & Donations,34825457
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Instructional Recreation Programs,Instructional Recreation Programs,750A,Inter-Divisional Recoveries,2347009
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Instructional Recreation Programs,Instructional Recreation Programs,805A,Provincial Subsidies,795818
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Instructional Recreation Programs,Instructional Recreation Programs,940A,Sundry and Other Revenues,95906
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Leisure Recreation Programs,Leisure Recreation Programs,850A,User Fees & Donations,5844324
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Leisure Recreation Programs,Leisure Recreation Programs,940A,Sundry and Other Revenues,76462
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Leisure Recreation Programs,Leisure Recreation Programs,750A,Inter-Divisional Recoveries,48032
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Leisure Recreation Programs,Leisure Recreation Programs,805A,Provincial Subsidies,37500
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Permitted Activities & Recration Facilities,Permitted Activities & Recration Facilities,850A,User Fees & Donations,15698838
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Permitted Activities & Recration Facilities,Permitted Activities & Recration Facilities,860A,Licences & Permits Revenue,3122995
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Permitted Activities & Recration Facilities,Permitted Activities & Recration Facilities,940A,Sundry and Other Revenues,332589
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Permitted Activities & Recration Facilities,Permitted Activities & Recration Facilities,750A,Inter-Divisional Recoveries,39052
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Permitted Activities & Recration Facilities,Permitted Activities & Recration Facilities,805A,Provincial Subsidies,6000
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Recreation & Facilities Planning & Development,Recreation & Facilities Planning & Development,920A,Transfers From Capital,8818031
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Recreation & Facilities Planning & Development,Recreation & Facilities Planning & Development,850A,User Fees & Donations,1961574
+PARKS,"Parks, Forestry & Recreation",PR-Community Recreation,PR-Community Recreation,Recreation & Facilities Planning & Development,Recreation & Facilities Planning & Development,940A,Sundry and Other Revenues,600
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Beach Access,Beach Access,750A,Inter-Divisional Recoveries,15345
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Beach Access,Beach Access,940A,Sundry and Other Revenues,6320
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Parks Planning & Development,Parks Planning & Development,920A,Transfers From Capital,4531910
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Parks Planning & Development,Parks Planning & Development,850A,User Fees & Donations,4343818
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Parks Planning & Development,Parks Planning & Development,940A,Sundry and Other Revenues,1049293
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Parks Planning & Development,Parks Planning & Development,930A,Contribution From Reserves/Reserve Funds,259500
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,"Plant Production, Greenhouses, Comm Gardens & Conservatories","Plant Production, Greenhouses, Comm Gardens & Conservatories",920A,Transfers From Capital,73563
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,"Plant Production, Greenhouses, Comm Gardens & Conservatories","Plant Production, Greenhouses, Comm Gardens & Conservatories",940A,Sundry and Other Revenues,27832
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,PR-Parks Access,PR-Parks Access,850A,User Fees & Donations,5928075
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,PR-Parks Access,PR-Parks Access,860A,Licences & Permits Revenue,5030324
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,PR-Parks Access,PR-Parks Access,750A,Inter-Divisional Recoveries,1325592
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,PR-Parks Access,PR-Parks Access,940A,Sundry and Other Revenues,924822
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,PR-Parks Access,PR-Parks Access,930A,Contribution From Reserves/Reserve Funds,349000
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Ravines & Watercourses,Ravines & Watercourses,850A,User Fees & Donations,240000
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Ravines & Watercourses,Ravines & Watercourses,750A,Inter-Divisional Recoveries,237950
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Ravines & Watercourses,Ravines & Watercourses,940A,Sundry and Other Revenues,3488
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Toronto Island Ferry Operations,Toronto Island Ferry Operations,850A,User Fees & Donations,9075578
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Toronto Island Ferry Operations,Toronto Island Ferry Operations,750A,Inter-Divisional Recoveries,45575
+PARKS,"Parks, Forestry & Recreation",PR-Parks,PR-Parks,Zoo & Farm Attractions,Zoo & Farm Attractions,940A,Sundry and Other Revenues,32832
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Care & Maintenance,Tree Care & Maintenance,930A,Contribution From Reserves/Reserve Funds,9799587
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Care & Maintenance,Tree Care & Maintenance,810A,Federal Subsidies,3500000
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Care & Maintenance,Tree Care & Maintenance,940A,Sundry and Other Revenues,1207502
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Care & Maintenance,Tree Care & Maintenance,850A,User Fees & Donations,980000
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Care & Maintenance,Tree Care & Maintenance,750A,Inter-Divisional Recoveries,51150
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Planting,Tree Planting,940A,Sundry and Other Revenues,3282082
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Planting,Tree Planting,850A,User Fees & Donations,2420000
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Planting,Tree Planting,750A,Inter-Divisional Recoveries,1950000
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Planting,Tree Planting,930A,Contribution From Reserves/Reserve Funds,955857
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Planting,Tree Planting,920A,Transfers From Capital,73563
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Tree Protection,Tree Protection,850A,User Fees & Donations,3856730
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Urban Forestry Planning & Development,Urban Forestry Planning & Development,920A,Transfers From Capital,1584524
+PARKS,"Parks, Forestry & Recreation",PR-Urban Forestry,PR-Urban Forestry,Urban Forestry Planning & Development,Urban Forestry Planning & Development,850A,User Fees & Donations,1747
+POLICYADMIN,"Policy, Planning, Finance & Administration",Organizational Effectiveness,Organizational Effectiveness,,,940A,Sundry and Other Revenues,2782781
+POLICYADMIN,"Policy, Planning, Finance & Administration",Organizational Effectiveness,Organizational Effectiveness,,,750A,Inter-Divisional Recoveries,986847
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Emergency Management,PA-Emergency Management,Emergency Management Program Development & Response,Emergency Management Program Development & Response,805A,Provincial Subsidies,225000
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Emergency Management,PA-Emergency Management,Emergency Management Program Development & Response,Emergency Management Program Development & Response,850A,User Fees & Donations,10000
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Financial Management,PA-Financial Management,Budget Planning & coordination,Budget Planning & coordination,750A,Inter-Divisional Recoveries,905090
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Financial Management,PA-Financial Management,Financial Transaction & Payment Processing,Financial Transaction & Payment Processing,750A,Inter-Divisional Recoveries,2951381
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Complement Management & Reporting,Complement Management & Reporting,750A,Inter-Divisional Recoveries,196759
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Complement Management & Reporting,Complement Management & Reporting,920A,Transfers From Capital,114615
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,General Administration,General Administration,750A,Inter-Divisional Recoveries,983794
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,General Administration,General Administration,920A,Transfers From Capital,573076
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Public Consultation,Public Consultation,750A,Inter-Divisional Recoveries,1180552
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Public Consultation,Public Consultation,920A,Transfers From Capital,687691
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Public Consultation,Public Consultation,940A,Sundry and Other Revenues,103781
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Time & Attendance Data Entry & Reporting,Time & Attendance Data Entry & Reporting,750A,Inter-Divisional Recoveries,1574073
+POLICYADMIN,"Policy, Planning, Finance & Administration",PA-Program Support,PA-Program Support,Time & Attendance Data Entry & Reporting,Time & Attendance Data Entry & Reporting,920A,Transfers From Capital,916922
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Housing Stability Policy & Strategic Investments,Housing Stability Policy & Strategic Investments,810A,Federal Subsidies,21620486
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Housing Stability Policy & Strategic Investments,Housing Stability Policy & Strategic Investments,805A,Provincial Subsidies,18721609
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Housing Stability Policy & Strategic Investments,Housing Stability Policy & Strategic Investments,940A,Sundry and Other Revenues,1939336
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Housing Stability Policy & Strategic Investments,Housing Stability Policy & Strategic Investments,920A,Transfers From Capital,232131
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Housing Stability Policy & Strategic Investments,Housing Stability Policy & Strategic Investments,930A,Contribution From Reserves/Reserve Funds,43839
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Housing Stability Policy & Strategic Investments,Housing Stability Policy & Strategic Investments,750A,Inter-Divisional Recoveries,3769
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Provide Emergency Shelter & Related Support,Provide Emergency Shelter & Related Support,805A,Provincial Subsidies,76269376
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Provide Emergency Shelter & Related Support,Provide Emergency Shelter & Related Support,920A,Transfers From Capital,2131966
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Provide Emergency Shelter & Related Support,Provide Emergency Shelter & Related Support,940A,Sundry and Other Revenues,37045
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Provide Emergency Shelter & Related Support,Provide Emergency Shelter & Related Support,930A,Contribution From Reserves/Reserve Funds,3790
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Homeless and Housing First Solutions,HS-Homeless and Housing First Solutions,Provide Emergency Shelter & Related Support,Provide Emergency Shelter & Related Support,750A,Inter-Divisional Recoveries,3769
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Centralized Social Housing Waiting List,Manage Centralized Social Housing Waiting List,805A,Provincial Subsidies,16643794
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Centralized Social Housing Waiting List,Manage Centralized Social Housing Waiting List,930A,Contribution From Reserves/Reserve Funds,164528
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Centralized Social Housing Waiting List,Manage Centralized Social Housing Waiting List,920A,Transfers From Capital,117188
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage New Affordable Housing/Other Non Subsidized Programs,Manage New Affordable Housing/Other Non Subsidized Programs,805A,Provincial Subsidies,54724042
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage New Affordable Housing/Other Non Subsidized Programs,Manage New Affordable Housing/Other Non Subsidized Programs,930A,Contribution From Reserves/Reserve Funds,19004945
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage New Affordable Housing/Other Non Subsidized Programs,Manage New Affordable Housing/Other Non Subsidized Programs,920A,Transfers From Capital,148604
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage New Affordable Housing/Other Non Subsidized Programs,Manage New Affordable Housing/Other Non Subsidized Programs,750A,Inter-Divisional Recoveries,1238
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Rent Subsidies & Housing Allowances,Manage Rent Subsidies & Housing Allowances,805A,Provincial Subsidies,37871237
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Rent Subsidies & Housing Allowances,Manage Rent Subsidies & Housing Allowances,810A,Federal Subsidies,25624571
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Rent Subsidies & Housing Allowances,Manage Rent Subsidies & Housing Allowances,930A,Contribution From Reserves/Reserve Funds,377942
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Rent Subsidies & Housing Allowances,Manage Rent Subsidies & Housing Allowances,920A,Transfers From Capital,148604
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Rent Subsidies & Housing Allowances,Manage Rent Subsidies & Housing Allowances,750A,Inter-Divisional Recoveries,1238
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Rent Subsidies & Housing Allowances,Manage Rent Subsidies & Housing Allowances,940A,Sundry and Other Revenues,0
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Social Housing Provider Subsidies,Manage Social Housing Provider Subsidies,810A,Federal Subsidies,91160753
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Social Housing Provider Subsidies,Manage Social Housing Provider Subsidies,805A,Provincial Subsidies,54708119
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Social Housing Provider Subsidies,Manage Social Housing Provider Subsidies,930A,Contribution From Reserves/Reserve Funds,640814
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Social Housing Provider Subsidies,Manage Social Housing Provider Subsidies,920A,Transfers From Capital,175416
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Social Housing Provider Subsidies,Manage Social Housing Provider Subsidies,750A,Inter-Divisional Recoveries,1238
+SHELTERADMIN,"Shelter, Support & Housing Administration",HS-Social Housing System Management,HS-Social Housing System Management,Manage Social Housing Provider Subsidies,Manage Social Housing Provider Subsidies,940A,Sundry and Other Revenues,0
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Engagement,Community Engagement,805A,Provincial Subsidies,185502
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Engagement,Community Engagement,750A,Inter-Divisional Recoveries,123500
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Funding Delivery,Community Funding Delivery,805A,Provincial Subsidies,2871796
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Funding Delivery,Community Funding Delivery,930A,Contribution From Reserves/Reserve Funds,295751
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Funding Delivery,Community Funding Delivery,750A,Inter-Divisional Recoveries,12500
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Safety,Community Safety,805A,Provincial Subsidies,230965
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Community Safety,Community Safety,750A,Inter-Divisional Recoveries,228600
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Tower & Neighbourhood Revitalization,Tower & Neighbourhood Revitalization,930A,Contribution From Reserves/Reserve Funds,6713760
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Tower & Neighbourhood Revitalization,Tower & Neighbourhood Revitalization,805A,Provincial Subsidies,292290
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Tower & Neighbourhood Revitalization,Tower & Neighbourhood Revitalization,940A,Sundry and Other Revenues,199793
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Tower & Neighbourhood Revitalization,Tower & Neighbourhood Revitalization,750A,Inter-Divisional Recoveries,150000
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Youth Development,Youth Development,810A,Federal Subsidies,1630252
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Youth Development,Youth Development,750A,Inter-Divisional Recoveries,217250
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community & Neighbourhood Development,CD-Community & Neighbourhood Development,Youth Development,Youth Development,805A,Provincial Subsidies,40598
+SOCIALDEV,"Social Development, Finance & Administration",CD-Community Partnership Investment Program,CD-Community Partnership Investment Program,Investment Funding,Investment Funding,930A,Contribution From Reserves/Reserve Funds,100000
+SOCIALDEV,"Social Development, Finance & Administration",CD-Financial Management & Program Support,CD-Financial Management & Program Support,Financial Management & Reporting,Financial Management & Reporting,805A,Provincial Subsidies,238088
+SOCIALDEV,"Social Development, Finance & Administration",CD-Financial Management & Program Support,CD-Financial Management & Program Support,Financial Planning & Coordination,Financial Planning & Coordination,805A,Provincial Subsidies,55834
+SOCIALDEV,"Social Development, Finance & Administration",CD-Financial Management & Program Support,CD-Financial Management & Program Support,Program Support,Program Support,750A,Inter-Divisional Recoveries,361962
+SOCIALDEV,"Social Development, Finance & Administration",CD-Financial Management & Program Support,CD-Financial Management & Program Support,Program Support,Program Support,805A,Provincial Subsidies,88149
+SOCIALDEV,"Social Development, Finance & Administration",CD-Financial Management & Program Support,CD-Financial Management & Program Support,Revenue & Cash Management,Revenue & Cash Management,805A,Provincial Subsidies,940318
+SOCIALDEV,"Social Development, Finance & Administration",CD-Financial Management & Program Support,CD-Financial Management & Program Support,Revenue & Cash Management,Revenue & Cash Management,750A,Inter-Divisional Recoveries,300000
+SOCIALDEV,"Social Development, Finance & Administration",CD-Social Policy & Planning,CD-Social Policy & Planning,Social Policy & Analysis,Social Policy & Analysis,805A,Provincial Subsidies,441791
+SOCIALDEV,"Social Development, Finance & Administration",CD-Social Policy & Planning,CD-Social Policy & Planning,Social Policy & Analysis,Social Policy & Analysis,810A,Federal Subsidies,420200
+SOCIALDEV,"Social Development, Finance & Administration",CD-Social Policy & Planning,CD-Social Policy & Planning,Social Policy & Analysis,Social Policy & Analysis,930A,Contribution From Reserves/Reserve Funds,387000
+SOCIALDEV,"Social Development, Finance & Administration",CD-Social Policy & Planning,CD-Social Policy & Planning,Social Policy & Analysis,Social Policy & Analysis,750A,Inter-Divisional Recoveries,244812
+SOCIALDEV,"Social Development, Finance & Administration",CD-Social Policy & Planning,CD-Social Policy & Planning,Social Policy & Analysis,Social Policy & Analysis,940A,Sundry and Other Revenues,78852
+SOCIALDEV,"Social Development, Finance & Administration",CD-Social Policy & Planning,CD-Social Policy & Planning,Social Research & Evaluation,Social Research & Evaluation,805A,Provincial Subsidies,59721
+SOCIALDEV,"Social Development, Finance & Administration",CD-Toronto Office of Partnerships,CD-Toronto Office of Partnerships,Revenue Generation and Management,Revenue Generation and Management,940A,Sundry and Other Revenues,117929
+SOCIALDEV,"Social Development, Finance & Administration",Corporate Leadership (DCM),Corporate Leadership (DCM),,,750A,Inter-Divisional Recoveries,296151
+SOCIALDEV,"Social Development, Finance & Administration",Corporate Leadership (DCM),Corporate Leadership (DCM),,,805A,Provincial Subsidies,90018
+SOLIDWASTE,Solid Waste Management Services,SW-City Beautification,SW-City Beautification,Litter Pick-up,Litter Pick-up,920A,Transfers From Capital,141963
+SOLIDWASTE,Solid Waste Management Services,SW-City Beautification,SW-City Beautification,Parks Bin,Parks Bin,920A,Transfers From Capital,52382
+SOLIDWASTE,Solid Waste Management Services,SW-City Beautification,SW-City Beautification,Street Litter Bins,Street Litter Bins,750A,Inter-Divisional Recoveries,1479830
+SOLIDWASTE,Solid Waste Management Services,SW-City Beautification,SW-City Beautification,Street Litter Bins,Street Litter Bins,940A,Sundry and Other Revenues,900000
+SOLIDWASTE,Solid Waste Management Services,SW-City Beautification,SW-City Beautification,Street Litter Bins,Street Litter Bins,920A,Transfers From Capital,39750
+SOLIDWASTE,Solid Waste Management Services,SW-Residual Management,SW-Residual Management,Energy Generation,Energy Generation,920A,Transfers From Capital,499777
+SOLIDWASTE,Solid Waste Management Services,SW-Residual Management,SW-Residual Management,Green Lane Landfill Site,Green Lane Landfill Site,940A,Sundry and Other Revenues,39344239
+SOLIDWASTE,Solid Waste Management Services,SW-Residual Management,SW-Residual Management,Green Lane Landfill Site,Green Lane Landfill Site,850A,User Fees & Donations,2001488
+SOLIDWASTE,Solid Waste Management Services,SW-Residual Management,SW-Residual Management,Green Lane Landfill Site,Green Lane Landfill Site,750A,Inter-Divisional Recoveries,1149520
+SOLIDWASTE,Solid Waste Management Services,SW-Residual Management,SW-Residual Management,Perpetual Care,Perpetual Care,920A,Transfers From Capital,2044298
+SOLIDWASTE,Solid Waste Management Services,SW-Residual Management,SW-Residual Management,Perpetual Care,Perpetual Care,850A,User Fees & Donations,174977
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Durable Goods (C&T),Durable Goods (C&T),920A,Transfers From Capital,104995
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Garbage (C&T),Garbage (C&T),850A,User Fees & Donations,281427623
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Garbage (C&T),Garbage (C&T),940A,Sundry and Other Revenues,4345332
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Garbage (C&T),Garbage (C&T),920A,Transfers From Capital,670747
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Garbage (C&T),Garbage (C&T),750A,Inter-Divisional Recoveries,438116
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Green Bin (C&T),Green Bin (C&T),920A,Transfers From Capital,203964
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Leaf & Yard Waste (C&T),Leaf & Yard Waste (C&T),850A,User Fees & Donations,412144
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Leaf & Yard Waste (C&T),Leaf & Yard Waste (C&T),920A,Transfers From Capital,140509
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Leaf & Yard Waste (C&T),Leaf & Yard Waste (C&T),940A,Sundry and Other Revenues,59947
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Municipal Hazardous & Special Waste (C&T),Municipal Hazardous & Special Waste (C&T),920A,Transfers From Capital,14370
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Recyclables (C&T),Recyclables (C&T),805A,Provincial Subsidies,11121600
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Recyclables (C&T),Recyclables (C&T),920A,Transfers From Capital,159231
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Collection & Transfer,SW-Solid Waste Collection & Transfer,Recyclables (C&T),Recyclables (C&T),750A,Inter-Divisional Recoveries,38004
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Education & Enforcement,SW-Solid Waste Education & Enforcement,Environment Days,Environment Days,940A,Sundry and Other Revenues,3075
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Education & Enforcement,SW-Solid Waste Education & Enforcement,Environment Days,Environment Days,750A,Inter-Divisional Recoveries,1375
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Durable Goods (P&T),Durable Goods (P&T),940A,Sundry and Other Revenues,1243209
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Durable Goods (P&T),Durable Goods (P&T),750A,Inter-Divisional Recoveries,6874
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Garbage (P&T),Garbage (P&T),850A,User Fees & Donations,9553744
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Garbage (P&T),Garbage (P&T),750A,Inter-Divisional Recoveries,3548615
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Garbage (P&T),Garbage (P&T),940A,Sundry and Other Revenues,605676
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Garbage (P&T),Garbage (P&T),920A,Transfers From Capital,442760
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Garbage (P&T),Garbage (P&T),805A,Provincial Subsidies,4646
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Green Bin (P&T),Green Bin (P&T),920A,Transfers From Capital,117467
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Leaf & Yard Waste (P&T),Leaf & Yard Waste (P&T),850A,User Fees & Donations,421276
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Leaf & Yard Waste (P&T),Leaf & Yard Waste (P&T),750A,Inter-Divisional Recoveries,117648
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Leaf & Yard Waste (P&T),Leaf & Yard Waste (P&T),920A,Transfers From Capital,81323
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Leaf & Yard Waste (P&T),Leaf & Yard Waste (P&T),940A,Sundry and Other Revenues,18858
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Leaf & Yard Waste (P&T),Leaf & Yard Waste (P&T),805A,Provincial Subsidies,3872
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Municipal Hazardous & Special Waste (P&T),Municipal Hazardous & Special Waste (P&T),805A,Provincial Subsidies,1010669
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Municipal Hazardous & Special Waste (P&T),Municipal Hazardous & Special Waste (P&T),920A,Transfers From Capital,516002
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Municipal Hazardous & Special Waste (P&T),Municipal Hazardous & Special Waste (P&T),940A,Sundry and Other Revenues,372139
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Municipal Hazardous & Special Waste (P&T),Municipal Hazardous & Special Waste (P&T),850A,User Fees & Donations,17757
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Resales of Recyclables (P&T),Resales of Recyclables (P&T),940A,Sundry and Other Revenues,22410643
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Resales of Recyclables (P&T),Resales of Recyclables (P&T),805A,Provincial Subsidies,9879562
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Resales of Recyclables (P&T),Resales of Recyclables (P&T),850A,User Fees & Donations,362005
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Resales of Recyclables (P&T),Resales of Recyclables (P&T),920A,Transfers From Capital,240050
+SOLIDWASTE,Solid Waste Management Services,SW-Solid Waste Processing & Transport,SW-Solid Waste Processing & Transport,Resales of Recyclables (P&T),Resales of Recyclables (P&T),750A,Inter-Divisional Recoveries,179635
+THEATRES,Theatres,Theatrical & Other Cultural Events,Theatrical & Other Cultural Events,,,850A,User Fees & Donations,17737291
+THEATRES,Theatres,Theatrical & Other Cultural Events,Theatrical & Other Cultural Events,,,940A,Sundry and Other Revenues,3110684
+THEATRES,Theatres,Theatrical & Other Cultural Events,Theatrical & Other Cultural Events,,,930A,Contribution From Reserves/Reserve Funds,2324492
+REGIONCONSERV,Toronto & Region Conservation Authority,,,,,850A,User Fees & Donations,27705300
+REGIONCONSERV,Toronto & Region Conservation Authority,,,,,940A,Sundry and Other Revenues,10325400
+REGIONCONSERV,Toronto & Region Conservation Authority,,,,,805A,Provincial Subsidies,1940000
+ATMOSPHERE,Toronto Atmospheric Fund,,,,,940A,Sundry and Other Revenues,3310000
+ATMOSPHERE,Toronto Atmospheric Fund,,,,,850A,User Fees & Donations,400000
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Inspections,Building Inspections,860A,Licences & Permits Revenue,23093944
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Inspections,Building Inspections,850A,User Fees & Donations,939586
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Inspections,Building Inspections,750A,Inter-Divisional Recoveries,407359
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Inspections,Building Inspections,930A,Contribution From Reserves/Reserve Funds,189994
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Inspections,Building Inspections,920A,Transfers From Capital,20075
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Inspections,Building Inspections,940A,Sundry and Other Revenues,14600
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Investigations,Building Investigations,860A,Licences & Permits Revenue,4588780
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Investigations,Building Investigations,850A,User Fees & Donations,311598
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Investigations,Building Investigations,750A,Inter-Divisional Recoveries,82588
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Investigations,Building Investigations,930A,Contribution From Reserves/Reserve Funds,8108
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Investigations,Building Investigations,920A,Transfers From Capital,4070
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Building Investigations,Building Investigations,940A,Sundry and Other Revenues,2960
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Sign Tax Billing & Collection,Sign Tax Billing & Collection,860A,Licences & Permits Revenue,496085
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Sign Tax Billing & Collection,Sign Tax Billing & Collection,850A,User Fees & Donations,48863
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Sign Tax Billing & Collection,Sign Tax Billing & Collection,750A,Inter-Divisional Recoveries,8928
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Sign Tax Billing & Collection,Sign Tax Billing & Collection,930A,Contribution From Reserves/Reserve Funds,877
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Sign Tax Billing & Collection,Sign Tax Billing & Collection,920A,Transfers From Capital,440
+BUILDINGS,Toronto Building,BL-Building Compliance,BL-Building Compliance,Sign Tax Billing & Collection,Sign Tax Billing & Collection,940A,Sundry and Other Revenues,319
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Information,Building Information,860A,Licences & Permits Revenue,6821164
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Information,Building Information,850A,User Fees & Donations,273232
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Information,Building Information,750A,Inter-Divisional Recoveries,122766
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Information,Building Information,930A,Contribution From Reserves/Reserve Funds,12053
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Information,Building Information,920A,Transfers From Capital,6050
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Information,Building Information,940A,Sundry and Other Revenues,4400
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Permits,Building Permits,860A,Licences & Permits Revenue,22199781
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Permits,Building Permits,850A,User Fees & Donations,1062975
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Permits,Building Permits,750A,Inter-Divisional Recoveries,399547
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Permits,Building Permits,930A,Contribution From Reserves/Reserve Funds,39227
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Permits,Building Permits,920A,Transfers From Capital,19690
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Building Permits,Building Permits,940A,Sundry and Other Revenues,14320
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Preliminary Review,Preliminary Review,860A,Licences & Permits Revenue,5270897
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Preliminary Review,Preliminary Review,850A,User Fees & Donations,213826
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Preliminary Review,Preliminary Review,750A,Inter-Divisional Recoveries,94864
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Preliminary Review,Preliminary Review,930A,Contribution From Reserves/Reserve Funds,9314
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Preliminary Review,Preliminary Review,920A,Transfers From Capital,4675
+BUILDINGS,Toronto Building,BL-Building Permission & Information,BL-Building Permission & Information,Preliminary Review,Preliminary Review,940A,Sundry and Other Revenues,3400
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Develop and implement integrated employment strategies,Develop and implement integrated employment strategies,805A,Provincial Subsidies,1557336
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Develop and implement integrated employment strategies,Develop and implement integrated employment strategies,930A,Contribution From Reserves/Reserve Funds,171493
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Develop and implement integrated employment strategies,Develop and implement integrated employment strategies,750A,Inter-Divisional Recoveries,21341
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Plan and manage employment and career services,Plan and manage employment and career services,805A,Provincial Subsidies,48527414
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Plan and manage employment and career services,Plan and manage employment and career services,930A,Contribution From Reserves/Reserve Funds,1830270
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Plan and manage employment and career services,Plan and manage employment and career services,750A,Inter-Divisional Recoveries,131067
+SOCIALSERV,Toronto Employment & Social Services,SS-Employment Services,SS-Employment Services,Plan and manage employment and career services,Plan and manage employment and career services,850A,User Fees & Donations,24900
+SOCIALSERV,Toronto Employment & Social Services,SS-Financial Supports,SS-Financial Supports,Financial and employment benefits administration,Financial and employment benefits administration,805A,Provincial Subsidies,809476844
+SOCIALSERV,Toronto Employment & Social Services,SS-Financial Supports,SS-Financial Supports,Financial and employment benefits administration,Financial and employment benefits administration,940A,Sundry and Other Revenues,17800000
+SOCIALSERV,Toronto Employment & Social Services,SS-Financial Supports,SS-Financial Supports,Financial and employment benefits administration,Financial and employment benefits administration,930A,Contribution From Reserves/Reserve Funds,15365974
+SOCIALSERV,Toronto Employment & Social Services,SS-Financial Supports,SS-Financial Supports,Financial and employment benefits administration,Financial and employment benefits administration,750A,Inter-Divisional Recoveries,111976
+SOCIALSERV,Toronto Employment & Social Services,SS-Financial Supports,SS-Financial Supports,Financial and employment benefits administration,Financial and employment benefits administration,850A,User Fees & Donations,12000
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Eligibility determination and case management,Eligibility determination and case management,805A,Provincial Subsidies,18878514
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Eligibility determination and case management,Eligibility determination and case management,930A,Contribution From Reserves/Reserve Funds,2722953
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Eligibility determination and case management,Eligibility determination and case management,750A,Inter-Divisional Recoveries,289044
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Eligibility determination and case management,Eligibility determination and case management,850A,User Fees & Donations,45750
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Provide Individualized Employment Service Planning,Provide Individualized Employment Service Planning,805A,Provincial Subsidies,52066847
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Provide Individualized Employment Service Planning,Provide Individualized Employment Service Planning,930A,Contribution From Reserves/Reserve Funds,3259591
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Provide Individualized Employment Service Planning,Provide Individualized Employment Service Planning,750A,Inter-Divisional Recoveries,321901
+SOCIALSERV,Toronto Employment & Social Services,SS-Integrated Case Management and Service Planning,SS-Integrated Case Management and Service Planning,Provide Individualized Employment Service Planning,Provide Individualized Employment Service Planning,850A,User Fees & Donations,67350
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Citizen First Response Education,Citizen First Response Education,805A,Provincial Subsidies,680208
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Citizen First Response Education,Citizen First Response Education,850A,User Fees & Donations,326965
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Citizen First Response Education,Citizen First Response Education,750A,Inter-Divisional Recoveries,195901
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Citizen First Response Education,Citizen First Response Education,940A,Sundry and Other Revenues,15045
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Citizen First Response Education,Citizen First Response Education,920A,Transfers From Capital,900
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Community Healthcare Outreach & Referral,Community Healthcare Outreach & Referral,805A,Provincial Subsidies,512016
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Community Healthcare Outreach & Referral,Community Healthcare Outreach & Referral,940A,Sundry and Other Revenues,3397
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Community Healthcare Outreach & Referral,Community Healthcare Outreach & Referral,750A,Inter-Divisional Recoveries,629
+PARAMEDIC,Toronto Paramedic Services,AM-Community Paramedicine & Emergency Call Mitigation,AM-Community Paramedicine & Emergency Call Mitigation,Community Healthcare Outreach & Referral,Community Healthcare Outreach & Referral,920A,Transfers From Capital,225
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,AM-City Emergency & Major Event Mass Casualty Care,AM-City Emergency & Major Event Mass Casualty Care,805A,Provincial Subsidies,1120875
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,AM-City Emergency & Major Event Mass Casualty Care,AM-City Emergency & Major Event Mass Casualty Care,850A,User Fees & Donations,629624
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,AM-City Emergency & Major Event Mass Casualty Care,AM-City Emergency & Major Event Mass Casualty Care,940A,Sundry and Other Revenues,48974
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,AM-City Emergency & Major Event Mass Casualty Care,AM-City Emergency & Major Event Mass Casualty Care,750A,Inter-Divisional Recoveries,25305
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,AM-City Emergency & Major Event Mass Casualty Care,AM-City Emergency & Major Event Mass Casualty Care,920A,Transfers From Capital,675
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Critical Care Transport,Critical Care Transport,805A,Provincial Subsidies,3657716
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Critical Care Transport,Critical Care Transport,750A,Inter-Divisional Recoveries,4610
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Critical Care Transport,Critical Care Transport,940A,Sundry and Other Revenues,4455
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Critical Care Transport,Critical Care Transport,850A,User Fees & Donations,4012
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Critical Care Transport,Critical Care Transport,920A,Transfers From Capital,1650
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Pre-Hospital Emergency Care,Pre-Hospital Emergency Care,805A,Provincial Subsidies,97174295
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Pre-Hospital Emergency Care,Pre-Hospital Emergency Care,750A,Inter-Divisional Recoveries,549920
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Pre-Hospital Emergency Care,Pre-Hospital Emergency Care,940A,Sundry and Other Revenues,443914
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Pre-Hospital Emergency Care,Pre-Hospital Emergency Care,850A,User Fees & Donations,176544
+PARAMEDIC,Toronto Paramedic Services,AM-Emergency Medical Care,AM-Emergency Medical Care,Pre-Hospital Emergency Care,Pre-Hospital Emergency Care,920A,Transfers From Capital,71550
+PARAMEDIC,Toronto Paramedic Services,Emergency Medical Dispatch & Preliminary Care,Emergency Medical Dispatch & Preliminary Care,,,805A,Provincial Subsidies,26529302
+PARAMEDIC,Toronto Paramedic Services,Emergency Medical Dispatch & Preliminary Care,Emergency Medical Dispatch & Preliminary Care,,,750A,Inter-Divisional Recoveries,113482
+PARAMEDIC,Toronto Paramedic Services,Emergency Medical Dispatch & Preliminary Care,Emergency Medical Dispatch & Preliminary Care,,,940A,Sundry and Other Revenues,2352
+PARKING,Toronto Parking Authority,Bike Share,Bike Share,,,940A,Sundry and Other Revenues,1540000
+PARKING,Toronto Parking Authority,Bike Share,Bike Share,,,930A,Contribution From Reserves/Reserve Funds,198100
+PARKING,Toronto Parking Authority,Off-Street Parking,Off-Street Parking,,,850A,User Fees & Donations,97781824
+PARKING,Toronto Parking Authority,Off-Street Parking,Off-Street Parking,,,940A,Sundry and Other Revenues,4478075
+PARKING,Toronto Parking Authority,On-Street Parking,On-Street Parking,,,850A,User Fees & Donations,52053272
+POLICE,Toronto Police Service,,,,,850A,User Fees & Donations,46042500
+POLICE,Toronto Police Service,,,,,805A,Provincial Subsidies,37802500
+POLICE,Toronto Police Service,,,,,930A,Contribution From Reserves/Reserve Funds,21570000
+POLICE,Toronto Police Service,,,,,750A,Inter-Divisional Recoveries,9901971
+POLICE,Toronto Police Service,,,,,940A,Sundry and Other Revenues,8035429
+POLICEBOARD,Toronto Police Services Board,Toronto Police Service Governance & Oversight,Toronto Police Service Governance & Oversight,,,930A,Contribution From Reserves/Reserve Funds,500000
+PUBLICHEALTH,Toronto Public Health,Chronic Diseases & Injuries,Chronic Diseases & Injuries,,,805A,Provincial Subsidies,30685818
+PUBLICHEALTH,Toronto Public Health,Chronic Diseases & Injuries,Chronic Diseases & Injuries,,,810A,Federal Subsidies,1155100
+PUBLICHEALTH,Toronto Public Health,Chronic Diseases & Injuries,Chronic Diseases & Injuries,,,920A,Transfers From Capital,317070
+PUBLICHEALTH,Toronto Public Health,Chronic Diseases & Injuries,Chronic Diseases & Injuries,,,930A,Contribution From Reserves/Reserve Funds,20040
+PUBLICHEALTH,Toronto Public Health,Chronic Diseases & Injuries,Chronic Diseases & Injuries,,,940A,Sundry and Other Revenues,1241
+PUBLICHEALTH,Toronto Public Health,Emergency Preparedness,Emergency Preparedness,,,805A,Provincial Subsidies,1728272
+PUBLICHEALTH,Toronto Public Health,Emergency Preparedness,Emergency Preparedness,,,920A,Transfers From Capital,31002
+PUBLICHEALTH,Toronto Public Health,Emergency Preparedness,Emergency Preparedness,,,850A,User Fees & Donations,9122
+PUBLICHEALTH,Toronto Public Health,Emergency Preparedness,Emergency Preparedness,,,930A,Contribution From Reserves/Reserve Funds,1750
+PUBLICHEALTH,Toronto Public Health,Emergency Preparedness,Emergency Preparedness,,,940A,Sundry and Other Revenues,192
+PUBLICHEALTH,Toronto Public Health,Environmental Health,Environmental Health,,,805A,Provincial Subsidies,17508046
+PUBLICHEALTH,Toronto Public Health,Environmental Health,Environmental Health,,,850A,User Fees & Donations,940317
+PUBLICHEALTH,Toronto Public Health,Environmental Health,Environmental Health,,,810A,Federal Subsidies,88036
+PUBLICHEALTH,Toronto Public Health,Environmental Health,Environmental Health,,,930A,Contribution From Reserves/Reserve Funds,15750
+PUBLICHEALTH,Toronto Public Health,Environmental Health,Environmental Health,,,750A,Inter-Divisional Recoveries,12000
+PUBLICHEALTH,Toronto Public Health,Environmental Health,Environmental Health,,,940A,Sundry and Other Revenues,553
+PUBLICHEALTH,Toronto Public Health,Family Health,Family Health,,,805A,Provincial Subsidies,69352577
+PUBLICHEALTH,Toronto Public Health,Family Health,Family Health,,,750A,Inter-Divisional Recoveries,1619932
+PUBLICHEALTH,Toronto Public Health,Family Health,Family Health,,,940A,Sundry and Other Revenues,945092
+PUBLICHEALTH,Toronto Public Health,Family Health,Family Health,,,920A,Transfers From Capital,449850
+PUBLICHEALTH,Toronto Public Health,Family Health,Family Health,,,930A,Contribution From Reserves/Reserve Funds,13360
+PUBLICHEALTH,Toronto Public Health,Infectious Diseases,Infectious Diseases,,,805A,Provincial Subsidies,48098036
+PUBLICHEALTH,Toronto Public Health,Infectious Diseases,Infectious Diseases,,,940A,Sundry and Other Revenues,947382
+PUBLICHEALTH,Toronto Public Health,Infectious Diseases,Infectious Diseases,,,920A,Transfers From Capital,630626
+PUBLICHEALTH,Toronto Public Health,Infectious Diseases,Infectious Diseases,,,850A,User Fees & Donations,41485
+PUBLICHEALTH,Toronto Public Health,Infectious Diseases,Infectious Diseases,,,810A,Federal Subsidies,3731
+PUBLICHEALTH,Toronto Public Health,Public Health Foundations,Public Health Foundations,,,805A,Provincial Subsidies,9177601
+PUBLICHEALTH,Toronto Public Health,Public Health Foundations,Public Health Foundations,,,920A,Transfers From Capital,342300
+PUBLICHEALTH,Toronto Public Health,Public Health Foundations,Public Health Foundations,,,940A,Sundry and Other Revenues,114694
+PUBLICHEALTH,Toronto Public Health,Public Health Foundations,Public Health Foundations,,,810A,Federal Subsidies,23480
+LIBRARY,Toronto Public Library,Library Collections Access & Borrowing,Library Collections Access & Borrowing,,,930A,Contribution From Reserves/Reserve Funds,3949993
+LIBRARY,Toronto Public Library,Library Collections Access & Borrowing,Library Collections Access & Borrowing,,,805A,Provincial Subsidies,1033120
+LIBRARY,Toronto Public Library,Library Collections Access & Borrowing,Library Collections Access & Borrowing,,,850A,User Fees & Donations,916015
+LIBRARY,Toronto Public Library,Library Collections Access & Borrowing,Library Collections Access & Borrowing,,,940A,Sundry and Other Revenues,392831
+LIBRARY,Toronto Public Library,Library Collections Access & Borrowing,Library Collections Access & Borrowing,,,920A,Transfers From Capital,170499
+LIBRARY,Toronto Public Library,Library In-Branch & Virtual Services,Library In-Branch & Virtual Services,,,805A,Provincial Subsidies,4557047
+LIBRARY,Toronto Public Library,Library In-Branch & Virtual Services,Library In-Branch & Virtual Services,,,850A,User Fees & Donations,4040268
+LIBRARY,Toronto Public Library,Library In-Branch & Virtual Services,Library In-Branch & Virtual Services,,,930A,Contribution From Reserves/Reserve Funds,2141989
+LIBRARY,Toronto Public Library,Library In-Branch & Virtual Services,Library In-Branch & Virtual Services,,,940A,Sundry and Other Revenues,1732749
+LIBRARY,Toronto Public Library,Library In-Branch & Virtual Services,Library In-Branch & Virtual Services,,,920A,Transfers From Capital,752034
+LIBRARY,Toronto Public Library,"Library Partnerships, Outreach & Cust. Engagement","Library Partnerships, Outreach & Cust. Engagement",,,805A,Provincial Subsidies,105233
+LIBRARY,Toronto Public Library,"Library Partnerships, Outreach & Cust. Engagement","Library Partnerships, Outreach & Cust. Engagement",,,850A,User Fees & Donations,93417
+LIBRARY,Toronto Public Library,"Library Partnerships, Outreach & Cust. Engagement","Library Partnerships, Outreach & Cust. Engagement",,,930A,Contribution From Reserves/Reserve Funds,52818
+LIBRARY,Toronto Public Library,"Library Partnerships, Outreach & Cust. Engagement","Library Partnerships, Outreach & Cust. Engagement",,,940A,Sundry and Other Revenues,40020
+LIBRARY,Toronto Public Library,"Library Partnerships, Outreach & Cust. Engagement","Library Partnerships, Outreach & Cust. Engagement",,,920A,Transfers From Capital,17382
+TTCCONV,Toronto Transit Commission - Conventional,Toronto Transit Commission - Conventional Service,Toronto Transit Commission - Conventional Service,,,850A,User Fees & Donations,1237621900
+TTCCONV,Toronto Transit Commission - Conventional,Toronto Transit Commission - Conventional Service,Toronto Transit Commission - Conventional Service,,,930A,Contribution From Reserves/Reserve Funds,14014500
+TTCCONV,Toronto Transit Commission - Conventional,Toronto Transit Commission - Conventional Service,Toronto Transit Commission - Conventional Service,,,920A,Transfers From Capital,5800000
+TTCWHEEL,Toronto Transit Commission - Wheel Trans,Toronto Transit Commission - Wheel-Trans Service,Toronto Transit Commission - Wheel-Trans Service,,,850A,User Fees & Donations,8491500
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Collection,TW-Stormwater Collection,850A,User Fees & Donations,2083135
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Collection,TW-Stormwater Collection,940A,Sundry and Other Revenues,796215
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Collection,TW-Stormwater Collection,920A,Transfers From Capital,193303
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Treatment,TW-Stormwater Treatment,940A,Sundry and Other Revenues,616973
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Treatment,TW-Stormwater Treatment,850A,User Fees & Donations,209311
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Treatment,TW-Stormwater Treatment,930A,Contribution From Reserves/Reserve Funds,195000
+WATER,Toronto Water,TW-Stormwater Management,TW-Stormwater Management,TW-Stormwater Treatment,TW-Stormwater Treatment,920A,Transfers From Capital,106747
+WATER,Toronto Water,TW-Wastewater Collection & Treatment,TW-Wastewater Collection & Treatment,TW-Wastewater Collection,TW-Wastewater Collection,940A,Sundry and Other Revenues,160861132
+WATER,Toronto Water,TW-Wastewater Collection & Treatment,TW-Wastewater Collection & Treatment,TW-Wastewater Collection,TW-Wastewater Collection,850A,User Fees & Donations,10676468
+WATER,Toronto Water,TW-Wastewater Collection & Treatment,TW-Wastewater Collection & Treatment,TW-Wastewater Collection,TW-Wastewater Collection,920A,Transfers From Capital,718260
+WATER,Toronto Water,TW-Wastewater Collection & Treatment,TW-Wastewater Collection & Treatment,TW-Wastewater Treatment,TW-Wastewater Treatment,940A,Sundry and Other Revenues,493767323
+WATER,Toronto Water,TW-Wastewater Collection & Treatment,TW-Wastewater Collection & Treatment,TW-Wastewater Treatment,TW-Wastewater Treatment,850A,User Fees & Donations,17000188
+WATER,Toronto Water,TW-Wastewater Collection & Treatment,TW-Wastewater Collection & Treatment,TW-Wastewater Treatment,TW-Wastewater Treatment,920A,Transfers From Capital,1518265
+WATER,Toronto Water,TW-Water Treatment & Supply,TW-Water Treatment & Supply,TW-Water Distribution,TW-Water Distribution,940A,Sundry and Other Revenues,244031321
+WATER,Toronto Water,TW-Water Treatment & Supply,TW-Water Treatment & Supply,TW-Water Distribution,TW-Water Distribution,850A,User Fees & Donations,19394030
+WATER,Toronto Water,TW-Water Treatment & Supply,TW-Water Treatment & Supply,TW-Water Distribution,TW-Water Distribution,920A,Transfers From Capital,608517
+WATER,Toronto Water,TW-Water Treatment & Supply,TW-Water Treatment & Supply,Water Treatment,Water Treatment,940A,Sundry and Other Revenues,275356808
+WATER,Toronto Water,TW-Water Treatment & Supply,TW-Water Treatment & Supply,Water Treatment,Water Treatment,850A,User Fees & Donations,3171137
+WATER,Toronto Water,TW-Water Treatment & Supply,TW-Water Treatment & Supply,Water Treatment,Water Treatment,920A,Transfers From Capital,624040
+ZOO,Toronto Zoo,Zoo Conservation & Science,Zoo Conservation & Science,,,805A,Provincial Subsidies,1011500
+ZOO,Toronto Zoo,Zoo Conservation & Science,Zoo Conservation & Science,,,850A,User Fees & Donations,921173
+ZOO,Toronto Zoo,Zoo Conservation & Science,Zoo Conservation & Science,,,940A,Sundry and Other Revenues,74063
+ZOO,Toronto Zoo,Zoo Fundraising & Strategic Partnerships,Zoo Fundraising & Strategic Partnerships,,,850A,User Fees & Donations,2467100
+ZOO,Toronto Zoo,Zoo Fundraising & Strategic Partnerships,Zoo Fundraising & Strategic Partnerships,,,940A,Sundry and Other Revenues,450
+ZOO,Toronto Zoo,Zoo Visitor Services,Zoo Visitor Services,,,850A,User Fees & Donations,34834011
+ZOO,Toronto Zoo,Zoo Visitor Services,Zoo Visitor Services,,,940A,Sundry and Other Revenues,646687
+ZOO,Toronto Zoo,Zoo Visitor Services,Zoo Visitor Services,,,930A,Contribution From Reserves/Reserve Funds,386000
+ZOO,Toronto Zoo,Zoo Visitor Services,Zoo Visitor Services,,,920A,Transfers From Capital,171000
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Construction Permits,Construction Permits,860A,Licences & Permits Revenue,6568515
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Construction Permits,Construction Permits,850A,User Fees & Donations,5081868
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Construction Permits,Construction Permits,930A,Contribution From Reserves/Reserve Funds,1623784
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Construction Permits,Construction Permits,940A,Sundry and Other Revenues,58148
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Construction Permits,Construction Permits,920A,Transfers From Capital,20329
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Development Review Applications,Development Review Applications,850A,User Fees & Donations,3030808
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Development Review Applications,Development Review Applications,930A,Contribution From Reserves/Reserve Funds,298539
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Development Review Applications,Development Review Applications,940A,Sundry and Other Revenues,54652
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Development Review Applications,Development Review Applications,920A,Transfers From Capital,13360
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Parking Permits,Parking Permits,850A,User Fees & Donations,18151080
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Parking Permits,Parking Permits,930A,Contribution From Reserves/Reserve Funds,891790
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Parking Permits,Parking Permits,860A,Licences & Permits Revenue,234290
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Parking Permits,Parking Permits,940A,Sundry and Other Revenues,58159
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Parking Permits,Parking Permits,920A,Transfers From Capital,13360
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Street Events,Street Events,860A,Licences & Permits Revenue,1428463
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Street Events,Street Events,930A,Contribution From Reserves/Reserve Funds,1135788
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Street Events,Street Events,940A,Sundry and Other Revenues,65148
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Street Events,Street Events,920A,Transfers From Capital,15683
+TRANSPORTATION,Transportation Services,TP-Permits & Applications,TP-Permits & Applications,Street Events,Street Events,850A,User Fees & Donations,0
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,"Infrastructure Planning, Programming & Budgeting","Infrastructure Planning, Programming & Budgeting",920A,Transfers From Capital,2512998
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,"Infrastructure Planning, Programming & Budgeting","Infrastructure Planning, Programming & Budgeting",940A,Sundry and Other Revenues,694868
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,"Infrastructure Planning, Programming & Budgeting","Infrastructure Planning, Programming & Budgeting",850A,User Fees & Donations,48691
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Patrols & Investigations,Patrols & Investigations,920A,Transfers From Capital,470002
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Patrols & Investigations,Patrols & Investigations,930A,Contribution From Reserves/Reserve Funds,298539
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Patrols & Investigations,Patrols & Investigations,940A,Sundry and Other Revenues,54652
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Pedestrian & Cycling Infrastructure & Programs,Pedestrian & Cycling Infrastructure & Programs,930A,Contribution From Reserves/Reserve Funds,1789538
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Pedestrian & Cycling Infrastructure & Programs,Pedestrian & Cycling Infrastructure & Programs,920A,Transfers From Capital,1741253
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Pedestrian & Cycling Infrastructure & Programs,Pedestrian & Cycling Infrastructure & Programs,940A,Sundry and Other Revenues,86265
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Pedestrian & Cycling Infrastructure & Programs,Pedestrian & Cycling Infrastructure & Programs,850A,User Fees & Donations,15727
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Public Realm Improvements & Programs,Public Realm Improvements & Programs,930A,Contribution From Reserves/Reserve Funds,8968438
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Public Realm Improvements & Programs,Public Realm Improvements & Programs,920A,Transfers From Capital,88035
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Public Realm Improvements & Programs,Public Realm Improvements & Programs,940A,Sundry and Other Revenues,15000
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Road & Sidewalk Repairs & Cleaning,Road & Sidewalk Repairs & Cleaning,940A,Sundry and Other Revenues,62407623
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Road & Sidewalk Repairs & Cleaning,Road & Sidewalk Repairs & Cleaning,850A,User Fees & Donations,24479442
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Road & Sidewalk Repairs & Cleaning,Road & Sidewalk Repairs & Cleaning,920A,Transfers From Capital,16002201
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Road & Sidewalk Repairs & Cleaning,Road & Sidewalk Repairs & Cleaning,750A,Inter-Divisional Recoveries,12394366
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Road & Sidewalk Repairs & Cleaning,Road & Sidewalk Repairs & Cleaning,930A,Contribution From Reserves/Reserve Funds,4897078
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Road & Sidewalk Repairs & Cleaning,Road & Sidewalk Repairs & Cleaning,860A,Licences & Permits Revenue,200000
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Winter Operations,Winter Operations,930A,Contribution From Reserves/Reserve Funds,597078
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Winter Operations,Winter Operations,940A,Sundry and Other Revenues,533545
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Winter Operations,Winter Operations,920A,Transfers From Capital,172167
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Winter Operations,Winter Operations,750A,Inter-Divisional Recoveries,160000
+TRANSPORTATION,Transportation Services,TP-Road & Sidewalk Management,TP-Road & Sidewalk Management,Winter Operations,Winter Operations,850A,User Fees & Donations,76215
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Traffic Signal Installation & Maintenance,Traffic Signal Installation & Maintenance,940A,Sundry and Other Revenues,2888720
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Traffic Signal Installation & Maintenance,Traffic Signal Installation & Maintenance,920A,Transfers From Capital,1270233
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Traffic Signs & Pavement Markings,Traffic Signs & Pavement Markings,940A,Sundry and Other Revenues,579568
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Traffic Signs & Pavement Markings,Traffic Signs & Pavement Markings,920A,Transfers From Capital,6454
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Information & Monitoring Systems,Transportation Information & Monitoring Systems,920A,Transfers From Capital,1382938
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Information & Monitoring Systems,Transportation Information & Monitoring Systems,940A,Sundry and Other Revenues,734845
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Information & Monitoring Systems,Transportation Information & Monitoring Systems,850A,User Fees & Donations,82400
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Studies & Investigations,Transportation Studies & Investigations,920A,Transfers From Capital,2011098
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Studies & Investigations,Transportation Studies & Investigations,940A,Sundry and Other Revenues,1152902
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Studies & Investigations,Transportation Studies & Investigations,930A,Contribution From Reserves/Reserve Funds,298539
+TRANSPORTATION,Transportation Services,TP-Transportation Safety & Operations,TP-Transportation Safety & Operations,Transportation Studies & Investigations,Transportation Studies & Investigations,850A,User Fees & Donations,86254
+YONGEDUNDAS,Yonge-Dundas Square,Yd-Public Square And Event Venue,Yd-Public Square And Event Venue,,,850A,User Fees & Donations,1070000
+YONGEDUNDAS,Yonge-Dundas Square,Yd-Public Square And Event Venue,Yd-Public Square And Event Venue,,,940A,Sundry and Other Revenues,560140
+YONGEDUNDAS,Yonge-Dundas Square,Yd-Public Square And Event Venue,Yd-Public Square And Event Venue,,,860A,Licences & Permits Revenue,345000

@@ -214,7 +214,10 @@ const findContinuityLine = (listcode, ratio, continuitylookup, filename) => {
             notes = continuityline[6]
         }
     }
-    let allocationcode = continuityline[4].trim()
+
+    let allocationcode = continuityline[4]
+    if (allocationcode)
+        allocationcode = acllocationcode.trim()
 
     if (allocationcode) { // recurse
 
