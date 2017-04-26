@@ -13,7 +13,7 @@
     "Dimensions":["Program", "Service","Activity","Revenue"],
     "CellTitles": {
         "Components": "Programs",
-        "CommonDimension": "Receipts"
+        "CommonDimension": "Revenue Elements"
     },
     "DimensionNames":{
         "Program":{

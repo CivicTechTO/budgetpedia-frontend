@@ -23,7 +23,7 @@
     },
     "CellTitles": {
         "Components": "Programs",
-        "CommonDimension": "Permanence"
+        "CommonDimension": "Staffing Elements"
     },
     "Units": "FTE",
     "UnitsAlias": "$000's",
