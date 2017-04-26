@@ -32,7 +32,7 @@
             },
             "Expense": {
                 "Instance": "Expenditure",
-                "Collection": "Budgeted Expenditures"
+                "Collection": "Budgeted Cost Elements"
             }
         },
         "CellTitles": {

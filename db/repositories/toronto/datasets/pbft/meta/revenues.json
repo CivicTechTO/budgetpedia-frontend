@@ -30,7 +30,7 @@
         },
         "Revenue":{
             "Instance":"Receipt",
-            "Collection":"Budgeted Receipts"
+            "Collection":"Budgeted Revenue Elements"
         }
     },
     "Units": "DOLLAR",

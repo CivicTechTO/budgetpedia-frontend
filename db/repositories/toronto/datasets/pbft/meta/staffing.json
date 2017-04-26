@@ -18,7 +18,7 @@
         },
         "Permanence":{
             "Instance":"Permanence",
-            "Collection":"Budgeted Permanence"
+            "Collection":"Budgeted Staffing Elements"
         }
     },
     "CellTitles": {
