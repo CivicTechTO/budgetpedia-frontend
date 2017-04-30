@@ -1495,11 +1495,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     taxonomychoices = {
-        FUNCTIONAL:"Programs by function (budget)",
-        STRUCTURAL:"Programs by org type (budget)",
-        ACTUALEXPENSES:"Expenses by function (actual)",
-        ACTUALREVENUES:"Revenues by type (actual)",
-        EXPENDITURES:"Expenses by type (actual)",
+        FUNCTIONAL:"Budget: Programs by function",
+        STRUCTURAL:"Budget: Programs by org type",
+        ACTUALEXPENSES:"Actual: Expenses by function",
+        ACTUALREVENUES:"Actual: Revenues by type",
+        EXPENDITURES:"Actual: Expenses by type",
     }
 
 
@@ -1534,7 +1534,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     <div style={{display:'inline-block'}}>
         <div style = {{display:'inline-block',whiteSpace:'nowrap'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'23px' }}>
-            <span style={{lineHeight:'44px'}} >Taxonomy:</span>
+            <span style={{lineHeight:'44px'}} >Viewpoint:</span>
         </div>
         <DropDownMenu
             value={branchDeclaration.viewpoint}
@@ -1577,15 +1577,19 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         switch (branchDeclaration.viewpoint) {
             case "FUNCTIONAL":
             case "STRUCTURAL":
-                return [<MenuItem key = {1} value={'SUMMARY'} primaryText="Summary PDF reports 2003 - 2017"/>,
-                <MenuItem key = {2} value={'PBFT'} primaryText="Detailed open data files 2011 - 2017"/>,
+                return [<MenuItem key = {1} value={'SUMMARY'} primaryText="Summary: PDF reports 2003 - 2017">
+                    <em>This data is shallower, but goes back further:</em>
+                </MenuItem>,
+                <MenuItem key = {2} value={'PBFT'} primaryText="Detail: open data files 2011 - 2017">
+                    <em>This data drills down to Cost Elements:</em>
+                </MenuItem>,
                 <MenuItem key = {3} disabled value={'VARIANCE'} primaryText="PDF Variance Reports"/>]
             case 'ACTUALEXPENSES':
-                return [<MenuItem key = {4} value={'ACTUALEXPENSES'} primaryText="Audited statements 1998 - 2015"/>]
+                return [<MenuItem key = {4} value={'ACTUALEXPENSES'} primaryText="Audited: statements 1998 - 2015"/>]
             case 'ACTUALREVENUES':
-                return [<MenuItem key = {4} value={'ACTUALREVENUES'} primaryText="Audited statements 1998 - 2015"/>]
+                return [<MenuItem key = {4} value={'ACTUALREVENUES'} primaryText="Audited: statements 1998 - 2015"/>]
             case 'EXPENDITURES':
-                return [<MenuItem key = {4} value={'EXPENDITURES'} primaryText="Audited statements 1998 - 2015"/>]
+                return [<MenuItem key = {4} value={'EXPENDITURES'} primaryText="Audited: statements 1998 - 2015"/>]
         }
     }
 
