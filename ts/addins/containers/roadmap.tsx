@@ -92,7 +92,8 @@ class Roadmap extends Component<any, State> {
                 <p>See the first phase report <a target = "_blank" href="https://drive.google.com/open?id=0B208oCU9D8OuV0ZNcUpqYWpzdUE">here</a>.</p>
                 <p>See the second phase consultation videos for Governance and Financial Oversight here (April 22, 2017):</p>
                 <ul>
-                    <li><a target = "_blank" href="https://www.youtube.com/watch?v=xlvL_1GGCjI">Financial and Other Decision-Making Information with Public Discussion</a></li>
+                    <li><a target = "_blank" href="https://www.youtube.com/watch?v=xlvL_1GGCjI">Financial and Other Decision-Making Information with Public Discussion</a>.  
+                    Josie La Vita's plans for Financial Data Manaagement: scraped <a target="_blank" href="https://drive.google.com/open?id=1jmDAeN2rsG2XQwlAmycqxTmhunfONc1z9zlLZHmEctk">slide deck</a>; <a target="_blank" href="https://youtu.be/xlvL_1GGCjI?t=1812">video portion</a>.</li>
                     <li><a target = "_blank" href="https://www.youtube.com/watch?v=3JuxEPlT4AM">Balancing City Priorities and the Books: Public Debates</a></li>
                     <li><a target = "_blank" href="https://www.youtube.com/watch?v=WRPEKSRtdjc">Public Engagement for Long-Term Goals, Issues and Multi-Year Decision-Making</a></li>
                 </ul>
