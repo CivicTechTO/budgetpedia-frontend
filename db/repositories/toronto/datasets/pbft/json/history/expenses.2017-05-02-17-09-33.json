@@ -43,8 +43,8 @@
         "UnitsAlias": "$000's",
         "UnitRatio": 1000,
         "CommonDimension": "Expense",
-        "ReferenceYear": 2017,
-        "InflationReferenceYear": 2017,
+        "ReferenceYear": 2016,
+        "InflationReferenceYear": 2016,
         "YearsRange": {
             "start": 2011,
             "end": 2017
