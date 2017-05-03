@@ -1,11 +1,11 @@
 _META_START_,
 SOURCE_DOCUMENT_LINK_ORIGINAL,
-SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuYkp6aWxEUE1nMkU
-SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuTzItQm9wVDZRcjg
-SOURCE_DOCUMENT_TITLE,CITY OF TORONTO 2016 COUNCIL PRELIMINARY OPERATING BUDGET
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8OuT0RQOThsMWYzRGs
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuMjVtQmpUd0kyMlU
+SOURCE_DOCUMENT_TITLE,CITY OF TORONTO 2016 COUNCIL APPROVED OPERATING BUDGET
 SOURCE_DOCUMENT_TABLE_LOCATION,
 SOURCE_DOCUMENT_TABLE_TITLE,
-SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuRXE0cXh2aDZWSmM
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuSXQzOXEwTklfTGM
 SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
 YEAR,2017
 VERSION,Summary
@@ -21,56 +21,57 @@ INTAKE_OPERATOR_ID,Henrik
 COLUMNS_CATEGORIES,Program:NAME
 COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
 _META_END_,
-Affordable Housing Office,2974
-Children's Services,479538
+Affordable Housing Office,3474
+Children's Services,483674
 Court Services,51959
-Economic Development & Culture,79360
+Economic Development & Culture,81054
 Toronto Paramedic Services,210484
 Long-Term Care Homes & Services,256981
-"Parks, Forestry & Recreation",453536
-"Shelter, Support & Housing Administration",756060
-"Social Development, Finance & Administration",49089
+"Parks, Forestry & Recreation",457328
+"Shelter, Support & Housing Administration",829583
+"Social Development, Finance & Administration",49608
 Toronto Employment & Social Services,1083234
-City Planning,47185
-Fire Services,439629
-Municipal Licensing & Standards,52048
-"Policy, Planning, Finance & Administration",21141
-Engineering & Construction Services,72774
+City Planning,48075
+Fire Services,439826
+Municipal Licensing & Standards,53122
+"Policy, Planning, Finance & Administration",23301
+Engineering & Construction Services,73247
 Toronto Building,56037
-Transportation Services,396725
-Office of the Chief Financial Officer,16852
-Office of the Treasurer,72784
-"Facilities, Real Estate, Environment & Energy",194646
+Transportation Services,399439
+Office of the Chief Financial Officer,16991
+Office of the Treasurer,73102
+"Facilities, Real Estate, Environment & Energy",194979
 Fleet Services,53907
 311 Toronto,17624
-Information & Technology,127737
-City Manager's Office,54413
-City Clerk's Office,49622
-Legal Services,56930
+Information & Technology,127815
+City Manager's Office,55531
+City Clerk's Office,50588
+Legal Services,57783
 Mayor's Office,2251
-City Council,20435
-Auditor General's Office,4902
+City Council,20627
+Auditor General's Office,5902
 Integrity Commissioner's Office,507
 Office of the Lobbyist Registrar,1154
 Office of the Ombudsman,1810
-Toronto Public Health,242518
-Toronto Public Library,198371
+Toronto Public Health,245071
+Toronto Public Library,199047
 Association of Community Centres,8105
 Exhibition Place,37282
 Heritage Toronto,795
-Theatres,28425
+Theatres,29058
 Toronto Zoo,52086
 Arena Boards of Management,9013
 Yonge-Dundas Square,2352
 Toronto & Region Conservation Authority,43532
-Toronto Transit Commission - Conventional,1802885
+Toronto Transit Commission - Conventional,1804282
 Toronto Transit Commission - Wheel Trans,151169
 Toronto Police Service,1127817
 Toronto Police Services Board,2809
 Capital & Corporate Financing,841343
-Non-Program Expenditures,667784
+Non-Program Expenditures,654031
 Non-Program Revenues,55548
-Special Revenues,40699
-Solid Waste Management Services,403562
+Special Levy for Scarborough Subway,40699
+City Building Fund,14046
+Solid Waste Management Services,398124
 Toronto Parking Authority,92637
 Toronto Water,1231928

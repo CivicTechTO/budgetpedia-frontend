@@ -1266,179 +1266,6 @@
                 ],
                 "CommonDimensionDrilldown": "None"
             },
-            "ATMOSPHERE": {
-                "Components": {
-                    "Toronto Atmospheric Fund": {
-                        "CommonDimension": {
-                            "200A": {
-                                "years": {
-                                    "2016": 20
-                                },
-                                "Name": "Materials & Supplies"
-                            },
-                            "650A": {
-                                "years": {
-                                    "2016": 510
-                                },
-                                "Name": "Other Expenditures"
-                            },
-                            "100A": {
-                                "years": {
-                                    "2016": 984
-                                },
-                                "Name": "Salaries And Benefits"
-                            },
-                            "400A": {
-                                "years": {
-                                    "2016": 1151
-                                },
-                                "Name": "Service And Rent"
-                            }
-                        },
-                        "CommonDimensionName": "Expense",
-                        "years": {
-                            "2016": 2666
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "200A",
-                                "Name": "Materials & Supplies"
-                            },
-                            {
-                                "Code": "650A",
-                                "Name": "Other Expenditures"
-                            },
-                            {
-                                "Code": "100A",
-                                "Name": "Salaries And Benefits"
-                            },
-                            {
-                                "Code": "400A",
-                                "Name": "Service And Rent"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Toronto Atmospheric Fund"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "CommonDimension": {
-                    "100A": {
-                        "years": {
-                            "2011": 794,
-                            "2012": 829,
-                            "2013": 870,
-                            "2014": 1004,
-                            "2015": 993,
-                            "2016": 984,
-                            "2017": 1148
-                        },
-                        "Name": "Salaries And Benefits"
-                    },
-                    "200A": {
-                        "years": {
-                            "2012": 120,
-                            "2013": 22,
-                            "2014": 21,
-                            "2015": 21,
-                            "2016": 20,
-                            "2017": 20
-                        },
-                        "Name": "Materials & Supplies"
-                    },
-                    "300A": {
-                        "years": {},
-                        "Name": "Equipment"
-                    },
-                    "400A": {
-                        "years": {
-                            "2012": 59,
-                            "2013": 181,
-                            "2014": 1064,
-                            "2015": 1148,
-                            "2016": 1151,
-                            "2017": 1736
-                        },
-                        "Name": "Service And Rent"
-                    },
-                    "505A": {
-                        "years": {},
-                        "Name": "Contribution To Capital"
-                    },
-                    "510A": {
-                        "years": {},
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    },
-                    "650A": {
-                        "years": {
-                            "2011": 1698,
-                            "2012": 1494,
-                            "2013": 1334,
-                            "2014": 476,
-                            "2015": 521,
-                            "2016": 510,
-                            "2017": 806
-                        },
-                        "Name": "Other Expenditures"
-                    },
-                    "700A": {
-                        "years": {},
-                        "Name": "Inter-Divisional Charges"
-                    }
-                },
-                "CommonDimensionName": "Expense",
-                "years": {
-                    "2011": 2492,
-                    "2012": 2502,
-                    "2013": 2406,
-                    "2014": 2565,
-                    "2015": 2683,
-                    "2016": 2666,
-                    "2017": 3710
-                },
-                "SortedComponents": [
-                    {
-                        "Code": "Toronto Atmospheric Fund",
-                        "Name": "Toronto Atmospheric Fund"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "505A",
-                        "Name": "Contribution To Capital"
-                    },
-                    {
-                        "Code": "510A",
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    },
-                    {
-                        "Code": "300A",
-                        "Name": "Equipment"
-                    },
-                    {
-                        "Code": "700A",
-                        "Name": "Inter-Divisional Charges"
-                    },
-                    {
-                        "Code": "200A",
-                        "Name": "Materials & Supplies"
-                    },
-                    {
-                        "Code": "650A",
-                        "Name": "Other Expenditures"
-                    },
-                    {
-                        "Code": "100A",
-                        "Name": "Salaries And Benefits"
-                    },
-                    {
-                        "Code": "400A",
-                        "Name": "Service And Rent"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
             "AUDITGEN": {
                 "Components": {
                     "Auditor General's Office": {
@@ -6021,6 +5848,58 @@
                         "CommonDimensionDrilldown": "None",
                         "Name": "HR Safe & Healthy Workplaces"
                     },
+                    "Toronto Atmospheric Fund": {
+                        "CommonDimension": {
+                            "200A": {
+                                "years": {
+                                    "2016": 20
+                                },
+                                "Name": "Materials & Supplies"
+                            },
+                            "650A": {
+                                "years": {
+                                    "2016": 510
+                                },
+                                "Name": "Other Expenditures"
+                            },
+                            "100A": {
+                                "years": {
+                                    "2016": 984
+                                },
+                                "Name": "Salaries And Benefits"
+                            },
+                            "400A": {
+                                "years": {
+                                    "2016": 1151
+                                },
+                                "Name": "Service And Rent"
+                            }
+                        },
+                        "CommonDimensionName": "Expense",
+                        "years": {
+                            "2016": 2666
+                        },
+                        "SortedCommonDimension": [
+                            {
+                                "Code": "200A",
+                                "Name": "Materials & Supplies"
+                            },
+                            {
+                                "Code": "650A",
+                                "Name": "Other Expenditures"
+                            },
+                            {
+                                "Code": "100A",
+                                "Name": "Salaries And Benefits"
+                            },
+                            {
+                                "Code": "400A",
+                                "Name": "Service And Rent"
+                            }
+                        ],
+                        "CommonDimensionDrilldown": "None",
+                        "Name": "Toronto Atmospheric Fund"
+                    },
                     "Equity, Diversity & Human Rights": {
                         "CommonDimension": {
                             "200A": {
@@ -6408,25 +6287,25 @@
                 "CommonDimension": {
                     "100A": {
                         "years": {
-                            "2011": 43502,
-                            "2012": 43536,
-                            "2013": 53181,
-                            "2014": 54279,
-                            "2015": 52564,
-                            "2016": 50841,
-                            "2017": 51073
+                            "2011": 44296,
+                            "2012": 44365,
+                            "2013": 54050,
+                            "2014": 55282,
+                            "2015": 53557,
+                            "2016": 51825,
+                            "2017": 52221
                         },
                         "Name": "Salaries And Benefits"
                     },
                     "200A": {
                         "years": {
                             "2011": 255,
-                            "2012": 220,
-                            "2013": 220,
-                            "2014": 210,
-                            "2015": 203,
-                            "2016": 182,
-                            "2017": 161
+                            "2012": 339,
+                            "2013": 241,
+                            "2014": 232,
+                            "2015": 224,
+                            "2016": 202,
+                            "2017": 181
                         },
                         "Name": "Materials & Supplies"
                     },
@@ -6445,12 +6324,12 @@
                     "400A": {
                         "years": {
                             "2011": 4447,
-                            "2012": 3297,
-                            "2013": 3226,
-                            "2014": 3591,
-                            "2015": 4837,
-                            "2016": 4538,
-                            "2017": 3719
+                            "2012": 3357,
+                            "2013": 3407,
+                            "2014": 4655,
+                            "2015": 5986,
+                            "2016": 5689,
+                            "2017": 5455
                         },
                         "Name": "Service And Rent"
                     },
@@ -6471,7 +6350,15 @@
                         "Name": "Contribution To Reserves/Reserve Funds"
                     },
                     "650A": {
-                        "years": {},
+                        "years": {
+                            "2011": 1698,
+                            "2012": 1494,
+                            "2013": 1334,
+                            "2014": 476,
+                            "2015": 521,
+                            "2016": 510,
+                            "2017": 806
+                        },
                         "Name": "Other Expenditures"
                     },
                     "700A": {
@@ -6489,13 +6376,13 @@
                 },
                 "CommonDimensionName": "Expense",
                 "years": {
-                    "2011": 49003,
-                    "2012": 47758,
-                    "2013": 57269,
-                    "2014": 58603,
-                    "2015": 58109,
-                    "2016": 56052,
-                    "2017": 55531
+                    "2011": 51496,
+                    "2012": 50259,
+                    "2013": 59674,
+                    "2014": 61168,
+                    "2015": 60792,
+                    "2016": 58718,
+                    "2017": 59241
                 },
                 "SortedComponents": [
                     {
@@ -6557,6 +6444,10 @@
                     {
                         "Code": "Strategic Communications",
                         "Name": "Strategic Communications"
+                    },
+                    {
+                        "Code": "Toronto Atmospheric Fund",
+                        "Name": "Toronto Atmospheric Fund"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -43181,9 +43072,36 @@
                         "Name": "Corporate Accounts"
                     },
                     "Special Levy for Scarborough Subway": {
+                        "Components": {
+                            "Special Levy for Scarborough Subway": {
+                                "CommonDimension": {
+                                    "510A": {
+                                        "years": {
+                                            "2015": 25892
+                                        },
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                },
+                                "CommonDimensionName": "Expense",
+                                "years": {
+                                    "2015": 25892
+                                },
+                                "SortedCommonDimension": [
+                                    {
+                                        "Code": "510A",
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                ],
+                                "CommonDimensionDrilldown": "None",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        },
+                        "ComponentsDimensionName": "Activity",
                         "CommonDimension": {
                             "510A": {
                                 "years": {
+                                    "2015": 25892,
+                                    "2016": 41538,
                                     "2017": 40699
                                 },
                                 "Name": "Contribution To Reserves/Reserve Funds"
@@ -43191,8 +43109,17 @@
                         },
                         "CommonDimensionName": "Expense",
                         "years": {
+                            "2015": 25892,
+                            "2016": 41538,
                             "2017": 40699
                         },
+                        "SortedComponents": [
+                            {
+                                "Code": "Special Levy for Scarborough Subway",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        ],
+                        "ComponentsDrilldown": "All",
                         "SortedCommonDimension": [
                             {
                                 "Code": "510A",
@@ -43238,8 +43165,9 @@
                     },
                     "510A": {
                         "years": {
-                            "2015": 112005,
-                            "2016": 50398,
+                            "2014": 12912,
+                            "2015": 137896,
+                            "2016": 91936,
                             "2017": 94745
                         },
                         "Name": "Contribution To Reserves/Reserve Funds"
@@ -43265,9 +43193,9 @@
                 },
                 "CommonDimensionName": "Expense",
                 "years": {
-                    "2014": 9801,
-                    "2015": 121842,
-                    "2016": 62214,
+                    "2014": 22713,
+                    "2015": 147734,
+                    "2016": 103752,
                     "2017": 110292
                 },
                 "SortedComponents": [
@@ -43301,97 +43229,6 @@
                     {
                         "Code": "400A",
                         "Name": "Service And Rent"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
-            "SPECIALREV": {
-                "Components": {
-                    "Special Levy for Scarborough Subway": {
-                        "Components": {
-                            "Special Levy for Scarborough Subway": {
-                                "CommonDimension": {
-                                    "510A": {
-                                        "years": {
-                                            "2015": 25892
-                                        },
-                                        "Name": "Contribution To Reserves/Reserve Funds"
-                                    }
-                                },
-                                "CommonDimensionName": "Expense",
-                                "years": {
-                                    "2015": 25892
-                                },
-                                "SortedCommonDimension": [
-                                    {
-                                        "Code": "510A",
-                                        "Name": "Contribution To Reserves/Reserve Funds"
-                                    }
-                                ],
-                                "CommonDimensionDrilldown": "None",
-                                "Name": "Special Levy for Scarborough Subway"
-                            }
-                        },
-                        "ComponentsDimensionName": "Activity",
-                        "CommonDimension": {
-                            "510A": {
-                                "years": {
-                                    "2015": 25892,
-                                    "2016": 41538
-                                },
-                                "Name": "Contribution To Reserves/Reserve Funds"
-                            }
-                        },
-                        "CommonDimensionName": "Expense",
-                        "years": {
-                            "2015": 25892,
-                            "2016": 41538
-                        },
-                        "SortedComponents": [
-                            {
-                                "Code": "Special Levy for Scarborough Subway",
-                                "Name": "Special Levy for Scarborough Subway"
-                            }
-                        ],
-                        "ComponentsDrilldown": "All",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "510A",
-                                "Name": "Contribution To Reserves/Reserve Funds"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "CommonDimension": {
-                    "510A": {
-                        "years": {
-                            "2014": 12912,
-                            "2015": 25892,
-                            "2016": 41538
-                        },
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    }
-                },
-                "CommonDimensionName": "Expense",
-                "years": {
-                    "2014": 12912,
-                    "2015": 25892,
-                    "2016": 41538
-                },
-                "SortedComponents": [
-                    {
-                        "Code": "Special Levy for Scarborough Subway",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "510A",
-                        "Name": "Contribution To Reserves/Reserve Funds"
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
@@ -44573,179 +44410,6 @@
                     {
                         "Code": "Community Ice & Facility Booking",
                         "Name": "Community Ice & Facility Booking"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "505A",
-                        "Name": "Contribution To Capital"
-                    },
-                    {
-                        "Code": "510A",
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    },
-                    {
-                        "Code": "300A",
-                        "Name": "Equipment"
-                    },
-                    {
-                        "Code": "700A",
-                        "Name": "Inter-Divisional Charges"
-                    },
-                    {
-                        "Code": "200A",
-                        "Name": "Materials & Supplies"
-                    },
-                    {
-                        "Code": "650A",
-                        "Name": "Other Expenditures"
-                    },
-                    {
-                        "Code": "100A",
-                        "Name": "Salaries And Benefits"
-                    },
-                    {
-                        "Code": "400A",
-                        "Name": "Service And Rent"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
-            "ATMOSPHERE": {
-                "years": {
-                    "2011": 2237,
-                    "2012": 2279,
-                    "2013": 2219,
-                    "2014": 2425,
-                    "2015": 2575,
-                    "2016": 2612,
-                    "2017": 3710
-                },
-                "CommonDimension": {
-                    "100A": {
-                        "years": {
-                            "2011": 713,
-                            "2012": 755,
-                            "2013": 802,
-                            "2014": 949,
-                            "2015": 953,
-                            "2016": 964,
-                            "2017": 1148
-                        },
-                        "Name": "Salaries And Benefits"
-                    },
-                    "200A": {
-                        "years": {
-                            "2012": 109,
-                            "2013": 20,
-                            "2014": 20,
-                            "2015": 20,
-                            "2016": 20,
-                            "2017": 20
-                        },
-                        "Name": "Materials & Supplies"
-                    },
-                    "300A": {
-                        "years": {},
-                        "Name": "Equipment"
-                    },
-                    "400A": {
-                        "years": {
-                            "2012": 54,
-                            "2013": 167,
-                            "2014": 1006,
-                            "2015": 1102,
-                            "2016": 1128,
-                            "2017": 1736
-                        },
-                        "Name": "Service And Rent"
-                    },
-                    "505A": {
-                        "years": {},
-                        "Name": "Contribution To Capital"
-                    },
-                    "510A": {
-                        "years": {},
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    },
-                    "650A": {
-                        "years": {
-                            "2011": 1524,
-                            "2012": 1361,
-                            "2013": 1230,
-                            "2014": 450,
-                            "2015": 500,
-                            "2016": 500,
-                            "2017": 806
-                        },
-                        "Name": "Other Expenditures"
-                    },
-                    "700A": {
-                        "years": {},
-                        "Name": "Inter-Divisional Charges"
-                    }
-                },
-                "CommonDimensionName": "Expense",
-                "Components": {
-                    "Toronto Atmospheric Fund": {
-                        "years": {
-                            "2016": 2612
-                        },
-                        "CommonDimension": {
-                            "200A": {
-                                "years": {
-                                    "2016": 20
-                                },
-                                "Name": "Materials & Supplies"
-                            },
-                            "650A": {
-                                "years": {
-                                    "2016": 500
-                                },
-                                "Name": "Other Expenditures"
-                            },
-                            "100A": {
-                                "years": {
-                                    "2016": 964
-                                },
-                                "Name": "Salaries And Benefits"
-                            },
-                            "400A": {
-                                "years": {
-                                    "2016": 1128
-                                },
-                                "Name": "Service And Rent"
-                            }
-                        },
-                        "CommonDimensionName": "Expense",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "200A",
-                                "Name": "Materials & Supplies"
-                            },
-                            {
-                                "Code": "650A",
-                                "Name": "Other Expenditures"
-                            },
-                            {
-                                "Code": "100A",
-                                "Name": "Salaries And Benefits"
-                            },
-                            {
-                                "Code": "400A",
-                                "Name": "Service And Rent"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Toronto Atmospheric Fund"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "SortedComponents": [
-                    {
-                        "Code": "Toronto Atmospheric Fund",
-                        "Name": "Toronto Atmospheric Fund"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -47753,36 +47417,36 @@
             },
             "CITYMANAGER": {
                 "years": {
-                    "2011": 43982,
-                    "2012": 43507,
-                    "2013": 52814,
-                    "2014": 55403,
-                    "2015": 55762,
-                    "2016": 54920,
-                    "2017": 55531
+                    "2011": 46219,
+                    "2012": 45786,
+                    "2013": 55032,
+                    "2014": 57828,
+                    "2015": 58337,
+                    "2016": 57532,
+                    "2017": 59241
                 },
                 "CommonDimension": {
                     "100A": {
                         "years": {
-                            "2011": 39044,
-                            "2012": 39661,
-                            "2013": 49044,
-                            "2014": 51315,
-                            "2015": 50441,
-                            "2016": 49814,
-                            "2017": 51073
+                            "2011": 39757,
+                            "2012": 40416,
+                            "2013": 49846,
+                            "2014": 52264,
+                            "2015": 51394,
+                            "2016": 50778,
+                            "2017": 52221
                         },
                         "Name": "Salaries And Benefits"
                     },
                     "200A": {
                         "years": {
                             "2011": 229,
-                            "2012": 200,
-                            "2013": 203,
-                            "2014": 199,
-                            "2015": 195,
-                            "2016": 178,
-                            "2017": 161
+                            "2012": 309,
+                            "2013": 222,
+                            "2014": 219,
+                            "2015": 215,
+                            "2016": 198,
+                            "2017": 181
                         },
                         "Name": "Materials & Supplies"
                     },
@@ -47801,12 +47465,12 @@
                     "400A": {
                         "years": {
                             "2011": 3991,
-                            "2012": 3004,
-                            "2013": 2975,
-                            "2014": 3395,
-                            "2015": 4642,
-                            "2016": 4446,
-                            "2017": 3719
+                            "2012": 3058,
+                            "2013": 3142,
+                            "2014": 4401,
+                            "2015": 5744,
+                            "2016": 5574,
+                            "2017": 5455
                         },
                         "Name": "Service And Rent"
                     },
@@ -47827,7 +47491,15 @@
                         "Name": "Contribution To Reserves/Reserve Funds"
                     },
                     "650A": {
-                        "years": {},
+                        "years": {
+                            "2011": 1524,
+                            "2012": 1361,
+                            "2013": 1230,
+                            "2014": 450,
+                            "2015": 500,
+                            "2016": 500,
+                            "2017": 806
+                        },
                         "Name": "Other Expenditures"
                     },
                     "700A": {
@@ -49459,6 +49131,58 @@
                         "CommonDimensionDrilldown": "None",
                         "Name": "HR Safe & Healthy Workplaces"
                     },
+                    "Toronto Atmospheric Fund": {
+                        "years": {
+                            "2016": 2612
+                        },
+                        "CommonDimension": {
+                            "200A": {
+                                "years": {
+                                    "2016": 20
+                                },
+                                "Name": "Materials & Supplies"
+                            },
+                            "650A": {
+                                "years": {
+                                    "2016": 500
+                                },
+                                "Name": "Other Expenditures"
+                            },
+                            "100A": {
+                                "years": {
+                                    "2016": 964
+                                },
+                                "Name": "Salaries And Benefits"
+                            },
+                            "400A": {
+                                "years": {
+                                    "2016": 1128
+                                },
+                                "Name": "Service And Rent"
+                            }
+                        },
+                        "CommonDimensionName": "Expense",
+                        "SortedCommonDimension": [
+                            {
+                                "Code": "200A",
+                                "Name": "Materials & Supplies"
+                            },
+                            {
+                                "Code": "650A",
+                                "Name": "Other Expenditures"
+                            },
+                            {
+                                "Code": "100A",
+                                "Name": "Salaries And Benefits"
+                            },
+                            {
+                                "Code": "400A",
+                                "Name": "Service And Rent"
+                            }
+                        ],
+                        "CommonDimensionDrilldown": "None",
+                        "Name": "Toronto Atmospheric Fund"
+                    },
                     "Equity, Diversity & Human Rights": {
                         "years": {
                             "2017": 1806
@@ -49903,6 +49627,10 @@
                     {
                         "Code": "Strategic Communications",
                         "Name": "Strategic Communications"
+                    },
+                    {
+                        "Code": "Toronto Atmospheric Fund",
+                        "Name": "Toronto Atmospheric Fund"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -86464,9 +86192,9 @@
             },
             "CORPREVENUES": {
                 "years": {
-                    "2014": 9266,
-                    "2015": 116921,
-                    "2016": 60958,
+                    "2014": 21473,
+                    "2015": 141767,
+                    "2016": 101657,
                     "2017": 110292
                 },
                 "CommonDimension": {
@@ -86481,8 +86209,9 @@
                     },
                     "510A": {
                         "years": {
-                            "2015": 107481,
-                            "2016": 49380,
+                            "2014": 12207,
+                            "2015": 132327,
+                            "2016": 90079,
                             "2017": 94745
                         },
                         "Name": "Contribution To Reserves/Reserve Funds"
@@ -86572,17 +86301,53 @@
                     },
                     "Special Levy for Scarborough Subway": {
                         "years": {
+                            "2015": 24846,
+                            "2016": 40699,
                             "2017": 40699
                         },
                         "CommonDimension": {
                             "510A": {
                                 "years": {
+                                    "2015": 24846,
+                                    "2016": 40699,
                                     "2017": 40699
                                 },
                                 "Name": "Contribution To Reserves/Reserve Funds"
                             }
                         },
                         "CommonDimensionName": "Expense",
+                        "Components": {
+                            "Special Levy for Scarborough Subway": {
+                                "years": {
+                                    "2015": 24846
+                                },
+                                "CommonDimension": {
+                                    "510A": {
+                                        "years": {
+                                            "2015": 24846
+                                        },
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                },
+                                "CommonDimensionName": "Expense",
+                                "SortedCommonDimension": [
+                                    {
+                                        "Code": "510A",
+                                        "Name": "Contribution To Reserves/Reserve Funds"
+                                    }
+                                ],
+                                "CommonDimensionDrilldown": "None",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        },
+                        "ComponentsDimensionName": "Activity",
+                        "SortedComponents": [
+                            {
+                                "Code": "Special Levy for Scarborough Subway",
+                                "Name": "Special Levy for Scarborough Subway"
+                            }
+                        ],
+                        "ComponentsDrilldown": "All",
                         "SortedCommonDimension": [
                             {
                                 "Code": "510A",
@@ -86650,108 +86415,17 @@
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
-            },
-            "SPECIALREV": {
-                "years": {
-                    "2014": 12207,
-                    "2015": 24846,
-                    "2016": 40699
-                },
-                "CommonDimension": {
-                    "510A": {
-                        "years": {
-                            "2014": 12207,
-                            "2015": 24846,
-                            "2016": 40699
-                        },
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    }
-                },
-                "CommonDimensionName": "Expense",
-                "Components": {
-                    "Special Levy for Scarborough Subway": {
-                        "years": {
-                            "2015": 24846,
-                            "2016": 40699
-                        },
-                        "CommonDimension": {
-                            "510A": {
-                                "years": {
-                                    "2015": 24846,
-                                    "2016": 40699
-                                },
-                                "Name": "Contribution To Reserves/Reserve Funds"
-                            }
-                        },
-                        "CommonDimensionName": "Expense",
-                        "Components": {
-                            "Special Levy for Scarborough Subway": {
-                                "years": {
-                                    "2015": 24846
-                                },
-                                "CommonDimension": {
-                                    "510A": {
-                                        "years": {
-                                            "2015": 24846
-                                        },
-                                        "Name": "Contribution To Reserves/Reserve Funds"
-                                    }
-                                },
-                                "CommonDimensionName": "Expense",
-                                "SortedCommonDimension": [
-                                    {
-                                        "Code": "510A",
-                                        "Name": "Contribution To Reserves/Reserve Funds"
-                                    }
-                                ],
-                                "CommonDimensionDrilldown": "None",
-                                "Name": "Special Levy for Scarborough Subway"
-                            }
-                        },
-                        "ComponentsDimensionName": "Activity",
-                        "SortedComponents": [
-                            {
-                                "Code": "Special Levy for Scarborough Subway",
-                                "Name": "Special Levy for Scarborough Subway"
-                            }
-                        ],
-                        "ComponentsDrilldown": "All",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "510A",
-                                "Name": "Contribution To Reserves/Reserve Funds"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "SortedComponents": [
-                    {
-                        "Code": "Special Levy for Scarborough Subway",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "510A",
-                        "Name": "Contribution To Reserves/Reserve Funds"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
             }
         }
     },
     "Notes": {
         "2011.1.EXHIBPLACE.2.650A.": "Non-normal value",
         "2012.1.EXHIBPLACE.2.650A.": "Non-normal value",
-        "2013.1.EXHIBPLACE.2.650A.": "Non-normal value",
         "2013.1.CORPEXPENDITURES.2.300A.": "no value provided",
+        "2013.1.EXHIBPLACE.2.650A.": "Non-normal value",
         "2013.1.REGIONCONSERV.2.650A.": "Non-normal value",
-        "2014.1.EXHIBPLACE.2.650A.": "Non-normal value",
         "2014.1.CORPREVENUES.2.510A.": "Non-normal value",
+        "2014.1.EXHIBPLACE.2.650A.": "Non-normal value",
         "2015.1.CHILDSERV.2.Child Care System Management.4.650A.": "Non-normal value",
         "2015.1.EXHIBPLACE.2.Exhibition Place Asset Management.4.650A.": "Non-normal value",
         "2015.1.EXHIBPLACE.2.Exhibition Place Parking Access.4.650A.": "Non-normal value",

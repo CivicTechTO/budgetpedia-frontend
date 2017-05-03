@@ -700,148 +700,6 @@
                 ],
                 "CommonDimensionDrilldown": "None"
             },
-            "ATMOSPHERE": {
-                "Components": {
-                    "Toronto Atmospheric Fund": {
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 2156
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            },
-                            "850A": {
-                                "years": {
-                                    "2016": 510
-                                },
-                                "Name": "User Fees & Donations"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "years": {
-                            "2016": 2666
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            },
-                            {
-                                "Code": "850A",
-                                "Name": "User Fees & Donations"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Toronto Atmospheric Fund"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "CommonDimension": {
-                    "750A": {
-                        "years": {},
-                        "Name": "Inter-Divisional Recoveries"
-                    },
-                    "805A": {
-                        "years": {},
-                        "Name": "Provincial Subsidies"
-                    },
-                    "810A": {
-                        "years": {},
-                        "Name": "Federal Subsidies"
-                    },
-                    "940A": {
-                        "years": {
-                            "2011": 2232,
-                            "2012": 1696,
-                            "2013": 1646,
-                            "2014": 1702,
-                            "2015": 2006,
-                            "2016": 2156,
-                            "2017": 3310
-                        },
-                        "Name": "Sundry and Other Revenues"
-                    },
-                    "850A": {
-                        "years": {
-                            "2013": 759,
-                            "2014": 863,
-                            "2015": 677,
-                            "2016": 510,
-                            "2017": 400
-                        },
-                        "Name": "User Fees & Donations"
-                    },
-                    "920A": {
-                        "years": {
-                            "2011": 261,
-                            "2012": 257
-                        },
-                        "Name": "Transfers From Capital"
-                    },
-                    "930A": {
-                        "years": {},
-                        "Name": "Contribution From Reserves/Reserve Funds"
-                    },
-                    "820A": {
-                        "years": {
-                            "2012": 549
-                        },
-                        "Name": "Other Subsidies"
-                    }
-                },
-                "CommonDimensionName": "Revenue",
-                "years": {
-                    "2011": 2492,
-                    "2012": 2502,
-                    "2013": 2405,
-                    "2014": 2565,
-                    "2015": 2683,
-                    "2016": 2666,
-                    "2017": 3710
-                },
-                "SortedComponents": [
-                    {
-                        "Code": "Toronto Atmospheric Fund",
-                        "Name": "Toronto Atmospheric Fund"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "930A",
-                        "Name": "Contribution From Reserves/Reserve Funds"
-                    },
-                    {
-                        "Code": "810A",
-                        "Name": "Federal Subsidies"
-                    },
-                    {
-                        "Code": "750A",
-                        "Name": "Inter-Divisional Recoveries"
-                    },
-                    {
-                        "Code": "820A",
-                        "Name": "Other Subsidies"
-                    },
-                    {
-                        "Code": "805A",
-                        "Name": "Provincial Subsidies"
-                    },
-                    {
-                        "Code": "940A",
-                        "Name": "Sundry and Other Revenues"
-                    },
-                    {
-                        "Code": "920A",
-                        "Name": "Transfers From Capital"
-                    },
-                    {
-                        "Code": "850A",
-                        "Name": "User Fees & Donations"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
             "AUDITGEN": {
                 "CommonDimension": {
                     "750A": {
@@ -3458,6 +3316,38 @@
                         "CommonDimensionDrilldown": "None",
                         "Name": "HR Safe & Healthy Workplaces"
                     },
+                    "Toronto Atmospheric Fund": {
+                        "CommonDimension": {
+                            "940A": {
+                                "years": {
+                                    "2016": 2156
+                                },
+                                "Name": "Sundry and Other Revenues"
+                            },
+                            "850A": {
+                                "years": {
+                                    "2016": 510
+                                },
+                                "Name": "User Fees & Donations"
+                            }
+                        },
+                        "CommonDimensionName": "Revenue",
+                        "years": {
+                            "2016": 2666
+                        },
+                        "SortedCommonDimension": [
+                            {
+                                "Code": "940A",
+                                "Name": "Sundry and Other Revenues"
+                            },
+                            {
+                                "Code": "850A",
+                                "Name": "User Fees & Donations"
+                            }
+                        ],
+                        "CommonDimensionDrilldown": "None",
+                        "Name": "Toronto Atmospheric Fund"
+                    },
                     "Equity, Diversity & Human Rights": {
                         "CommonDimension": {
                             "750A": {
@@ -3650,6 +3540,7 @@
                     },
                     "820A": {
                         "years": {
+                            "2012": 549,
                             "2017": 500
                         },
                         "Name": "Other Subsidies"
@@ -3658,15 +3549,18 @@
                         "years": {
                             "2011": 18,
                             "2012": 18,
-                            "2013": 17,
-                            "2014": 17
+                            "2013": 776,
+                            "2014": 880,
+                            "2015": 677,
+                            "2016": 510,
+                            "2017": 400
                         },
                         "Name": "User Fees & Donations"
                     },
                     "920A": {
                         "years": {
-                            "2011": 3405,
-                            "2012": 3282,
+                            "2011": 3666,
+                            "2012": 3539,
                             "2013": 4317,
                             "2014": 4392,
                             "2015": 2420,
@@ -3686,26 +3580,26 @@
                     },
                     "940A": {
                         "years": {
-                            "2011": 32,
-                            "2012": 411,
-                            "2013": 293,
-                            "2014": 168,
-                            "2015": 197,
-                            "2016": 205,
-                            "2017": 486
+                            "2011": 2264,
+                            "2012": 2106,
+                            "2013": 1939,
+                            "2014": 1870,
+                            "2015": 2203,
+                            "2016": 2361,
+                            "2017": 3796
                         },
                         "Name": "Sundry and Other Revenues"
                     }
                 },
                 "CommonDimensionName": "Revenue",
                 "years": {
-                    "2011": 7663,
-                    "2012": 9328,
-                    "2013": 8680,
-                    "2014": 9256,
-                    "2015": 8729,
-                    "2016": 8051,
-                    "2017": 8584
+                    "2011": 10156,
+                    "2012": 11830,
+                    "2013": 11085,
+                    "2014": 11821,
+                    "2015": 11412,
+                    "2016": 10716,
+                    "2017": 12294
                 },
                 "SortedComponents": [
                     {
@@ -3763,6 +3657,10 @@
                     {
                         "Code": "Strategic Communications",
                         "Name": "Strategic Communications"
+                    },
+                    {
+                        "Code": "Toronto Atmospheric Fund",
+                        "Name": "Toronto Atmospheric Fund"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -27851,6 +27749,7 @@
                             "940A": {
                                 "years": {
                                     "2015": 4010620,
+                                    "2016": 4012248,
                                     "2017": 4046427
                                 },
                                 "Name": "Sundry and Other Revenues"
@@ -27859,6 +27758,7 @@
                         "CommonDimensionName": "Revenue",
                         "years": {
                             "2015": 4010620,
+                            "2016": 4012248,
                             "2017": 4046427
                         },
                         "SortedComponents": [
@@ -27907,6 +27807,7 @@
                             "940A": {
                                 "years": {
                                     "2015": 25892,
+                                    "2016": 41538,
                                     "2017": 40699
                                 },
                                 "Name": "Sundry and Other Revenues"
@@ -27915,6 +27816,7 @@
                         "CommonDimensionName": "Revenue",
                         "years": {
                             "2015": 25892,
+                            "2016": 41538,
                             "2017": 40699
                         },
                         "SortedComponents": [
@@ -27996,9 +27898,9 @@
                     },
                     "940A": {
                         "years": {
-                            "2014": 919335,
+                            "2014": 4911608,
                             "2015": 5127475,
-                            "2016": 1121542,
+                            "2016": 5175328,
                             "2017": 5360259
                         },
                         "Name": "Sundry and Other Revenues"
@@ -28012,9 +27914,9 @@
                 },
                 "CommonDimensionName": "Revenue",
                 "years": {
-                    "2014": 1066594,
+                    "2014": 5058867,
                     "2015": 5310755,
-                    "2016": 1262904,
+                    "2016": 5316690,
                     "2017": 5506261
                 },
                 "SortedComponents": [
@@ -28060,87 +27962,6 @@
                     {
                         "Code": "850A",
                         "Name": "User Fees & Donations"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
-            "SPECIALREV": {
-                "Components": {
-                    "Property Tax": {
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 4012248
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "years": {
-                            "2016": 4012248
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Property Tax"
-                    },
-                    "Special Levy for Scarborough Subway": {
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 41538
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "years": {
-                            "2016": 41538
-                        },
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "CommonDimension": {
-                    "940A": {
-                        "years": {
-                            "2014": 3992275,
-                            "2016": 4053786
-                        },
-                        "Name": "Sundry and Other Revenues"
-                    }
-                },
-                "CommonDimensionName": "Revenue",
-                "years": {
-                    "2014": 3992275,
-                    "2016": 4053786
-                },
-                "SortedComponents": [
-                    {
-                        "Code": "Property Tax",
-                        "Name": "Property Tax"
-                    },
-                    {
-                        "Code": "Special Levy for Scarborough Subway",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "940A",
-                        "Name": "Sundry and Other Revenues"
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
@@ -28756,148 +28577,6 @@
                     {
                         "Code": "Community Ice & Facility Booking",
                         "Name": "Community Ice & Facility Booking"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "930A",
-                        "Name": "Contribution From Reserves/Reserve Funds"
-                    },
-                    {
-                        "Code": "810A",
-                        "Name": "Federal Subsidies"
-                    },
-                    {
-                        "Code": "750A",
-                        "Name": "Inter-Divisional Recoveries"
-                    },
-                    {
-                        "Code": "820A",
-                        "Name": "Other Subsidies"
-                    },
-                    {
-                        "Code": "805A",
-                        "Name": "Provincial Subsidies"
-                    },
-                    {
-                        "Code": "940A",
-                        "Name": "Sundry and Other Revenues"
-                    },
-                    {
-                        "Code": "920A",
-                        "Name": "Transfers From Capital"
-                    },
-                    {
-                        "Code": "850A",
-                        "Name": "User Fees & Donations"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
-            },
-            "ATMOSPHERE": {
-                "years": {
-                    "2011": 2237,
-                    "2012": 2279,
-                    "2013": 2218,
-                    "2014": 2425,
-                    "2015": 2575,
-                    "2016": 2612,
-                    "2017": 3710
-                },
-                "CommonDimension": {
-                    "750A": {
-                        "years": {},
-                        "Name": "Inter-Divisional Recoveries"
-                    },
-                    "805A": {
-                        "years": {},
-                        "Name": "Provincial Subsidies"
-                    },
-                    "810A": {
-                        "years": {},
-                        "Name": "Federal Subsidies"
-                    },
-                    "940A": {
-                        "years": {
-                            "2011": 2003,
-                            "2012": 1545,
-                            "2013": 1518,
-                            "2014": 1609,
-                            "2015": 1925,
-                            "2016": 2112,
-                            "2017": 3310
-                        },
-                        "Name": "Sundry and Other Revenues"
-                    },
-                    "850A": {
-                        "years": {
-                            "2013": 700,
-                            "2014": 816,
-                            "2015": 650,
-                            "2016": 500,
-                            "2017": 400
-                        },
-                        "Name": "User Fees & Donations"
-                    },
-                    "920A": {
-                        "years": {
-                            "2011": 234,
-                            "2012": 234
-                        },
-                        "Name": "Transfers From Capital"
-                    },
-                    "930A": {
-                        "years": {},
-                        "Name": "Contribution From Reserves/Reserve Funds"
-                    },
-                    "820A": {
-                        "years": {
-                            "2012": 500
-                        },
-                        "Name": "Other Subsidies"
-                    }
-                },
-                "CommonDimensionName": "Revenue",
-                "Components": {
-                    "Toronto Atmospheric Fund": {
-                        "years": {
-                            "2016": 2612
-                        },
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 2112
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            },
-                            "850A": {
-                                "years": {
-                                    "2016": 500
-                                },
-                                "Name": "User Fees & Donations"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            },
-                            {
-                                "Code": "850A",
-                                "Name": "User Fees & Donations"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Toronto Atmospheric Fund"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "SortedComponents": [
-                    {
-                        "Code": "Toronto Atmospheric Fund",
-                        "Name": "Toronto Atmospheric Fund"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -30976,13 +30655,13 @@
             },
             "CITYMANAGER": {
                 "years": {
-                    "2011": 6878,
-                    "2012": 8498,
-                    "2013": 8005,
-                    "2014": 8751,
-                    "2015": 8376,
-                    "2016": 7888,
-                    "2017": 8584
+                    "2011": 9115,
+                    "2012": 10777,
+                    "2013": 10223,
+                    "2014": 11176,
+                    "2015": 10951,
+                    "2016": 10500,
+                    "2017": 12294
                 },
                 "CommonDimension": {
                     "750A": {
@@ -31012,6 +30691,7 @@
                     },
                     "820A": {
                         "years": {
+                            "2012": 500,
                             "2017": 500
                         },
                         "Name": "Other Subsidies"
@@ -31020,15 +30700,18 @@
                         "years": {
                             "2011": 16,
                             "2012": 16,
-                            "2013": 16,
-                            "2014": 16
+                            "2013": 716,
+                            "2014": 832,
+                            "2015": 650,
+                            "2016": 500,
+                            "2017": 400
                         },
                         "Name": "User Fees & Donations"
                     },
                     "920A": {
                         "years": {
-                            "2011": 3056,
-                            "2012": 2990,
+                            "2011": 3290,
+                            "2012": 3224,
                             "2013": 3981,
                             "2014": 4152,
                             "2015": 2322,
@@ -31048,13 +30731,13 @@
                     },
                     "940A": {
                         "years": {
-                            "2011": 29,
-                            "2012": 374,
-                            "2013": 270,
-                            "2014": 159,
-                            "2015": 189,
-                            "2016": 201,
-                            "2017": 486
+                            "2011": 2032,
+                            "2012": 1919,
+                            "2013": 1788,
+                            "2014": 1768,
+                            "2015": 2114,
+                            "2016": 2313,
+                            "2017": 3796
                         },
                         "Name": "Sundry and Other Revenues"
                     }
@@ -31638,6 +31321,38 @@
                         "CommonDimensionDrilldown": "None",
                         "Name": "HR Safe & Healthy Workplaces"
                     },
+                    "Toronto Atmospheric Fund": {
+                        "years": {
+                            "2016": 2612
+                        },
+                        "CommonDimension": {
+                            "940A": {
+                                "years": {
+                                    "2016": 2112
+                                },
+                                "Name": "Sundry and Other Revenues"
+                            },
+                            "850A": {
+                                "years": {
+                                    "2016": 500
+                                },
+                                "Name": "User Fees & Donations"
+                            }
+                        },
+                        "CommonDimensionName": "Revenue",
+                        "SortedCommonDimension": [
+                            {
+                                "Code": "940A",
+                                "Name": "Sundry and Other Revenues"
+                            },
+                            {
+                                "Code": "850A",
+                                "Name": "User Fees & Donations"
+                            }
+                        ],
+                        "CommonDimensionDrilldown": "None",
+                        "Name": "Toronto Atmospheric Fund"
+                    },
                     "Equity, Diversity & Human Rights": {
                         "years": {
                             "2017": 3
@@ -31858,6 +31573,10 @@
                     {
                         "Code": "Strategic Communications",
                         "Name": "Strategic Communications"
+                    },
+                    {
+                        "Code": "Toronto Atmospheric Fund",
+                        "Name": "Toronto Atmospheric Fund"
                     }
                 ],
                 "ComponentsDrilldown": "All",
@@ -55832,9 +55551,9 @@
             },
             "CORPREVENUES": {
                 "years": {
-                    "2014": 1008358,
+                    "2014": 4782654,
                     "2015": 5096259,
-                    "2016": 1237400,
+                    "2016": 5209322,
                     "2017": 5506261
                 },
                 "CommonDimension": {
@@ -55876,9 +55595,9 @@
                     },
                     "940A": {
                         "years": {
-                            "2014": 869139,
+                            "2014": 4643435,
                             "2015": 4920382,
-                            "2016": 1098893,
+                            "2016": 5070815,
                             "2017": 5360259
                         },
                         "Name": "Sundry and Other Revenues"
@@ -55979,12 +55698,14 @@
                     "Property Tax": {
                         "years": {
                             "2015": 3848635,
+                            "2016": 3931223,
                             "2017": 4046427
                         },
                         "CommonDimension": {
                             "940A": {
                                 "years": {
                                     "2015": 3848635,
+                                    "2016": 3931223,
                                     "2017": 4046427
                                 },
                                 "Name": "Sundry and Other Revenues"
@@ -56035,12 +55756,14 @@
                     "Special Levy for Scarborough Subway": {
                         "years": {
                             "2015": 24846,
+                            "2016": 40699,
                             "2017": 40699
                         },
                         "CommonDimension": {
                             "940A": {
                                 "years": {
                                     "2015": 24846,
+                                    "2016": 40699,
                                     "2017": 40699
                                 },
                                 "Name": "Sundry and Other Revenues"
@@ -56158,92 +55881,11 @@
                     }
                 ],
                 "CommonDimensionDrilldown": "None"
-            },
-            "SPECIALREV": {
-                "years": {
-                    "2014": 3774297,
-                    "2016": 3971922
-                },
-                "CommonDimension": {
-                    "940A": {
-                        "years": {
-                            "2014": 3774297,
-                            "2016": 3971922
-                        },
-                        "Name": "Sundry and Other Revenues"
-                    }
-                },
-                "CommonDimensionName": "Revenue",
-                "Components": {
-                    "Property Tax": {
-                        "years": {
-                            "2016": 3931223
-                        },
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 3931223
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Property Tax"
-                    },
-                    "Special Levy for Scarborough Subway": {
-                        "years": {
-                            "2016": 40699
-                        },
-                        "CommonDimension": {
-                            "940A": {
-                                "years": {
-                                    "2016": 40699
-                                },
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        },
-                        "CommonDimensionName": "Revenue",
-                        "SortedCommonDimension": [
-                            {
-                                "Code": "940A",
-                                "Name": "Sundry and Other Revenues"
-                            }
-                        ],
-                        "CommonDimensionDrilldown": "None",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                },
-                "ComponentsDimensionName": "Service",
-                "SortedComponents": [
-                    {
-                        "Code": "Property Tax",
-                        "Name": "Property Tax"
-                    },
-                    {
-                        "Code": "Special Levy for Scarborough Subway",
-                        "Name": "Special Levy for Scarborough Subway"
-                    }
-                ],
-                "ComponentsDrilldown": "All",
-                "SortedCommonDimension": [
-                    {
-                        "Code": "940A",
-                        "Name": "Sundry and Other Revenues"
-                    }
-                ],
-                "CommonDimensionDrilldown": "None"
             }
         }
     },
     "Notes": {
-        "2014.1.SPECIALREV.2.940A.": "revenue code was missing",
+        "2014.1.CORPREVENUES.2.940A.": "revenue code was missing",
         "2015.1.FLEET.2.FL-Fleet Management.3.Fleet Maintenance.4.930A.": "Non-normal value",
         "2015.1.FLEET.2.FL-Fleet Management.3.Fleet Maintenance.4.940A.": "Non-normal value",
         "2015.1.LICENCING.2.MS-Animal Care, Control & Sheltering.3.Cat & Dog Licensing.4.940A.": "Non-normal value",

@@ -176,45 +176,6 @@
             ],
             "CommonDimensionDrilldown": "None"
         },
-        "ATMOSPHERE": {
-            "years": {
-                "2011": 7,
-                "2012": 7,
-                "2013": 7,
-                "2014": 8,
-                "2015": 8,
-                "2016": 8
-            },
-            "CommonDimension": {
-                "PERM": {
-                    "years": {
-                        "2011": 7,
-                        "2012": 7,
-                        "2013": 7,
-                        "2014": 8,
-                        "2015": 8,
-                        "2016": 8
-                    },
-                    "Name": "Permanent"
-                },
-                "TEMP": {
-                    "years": {},
-                    "Name": "Temporary"
-                }
-            },
-            "CommonDimensionName": "Permanence",
-            "SortedCommonDimension": [
-                {
-                    "Code": "PERM",
-                    "Name": "Permanent"
-                },
-                {
-                    "Code": "TEMP",
-                    "Name": "Temporary"
-                }
-            ],
-            "CommonDimensionDrilldown": "None"
-        },
         "AUDITGEN": {
             "years": {
                 "2011": 29,
@@ -392,22 +353,22 @@
         },
         "CITYMANAGER": {
             "years": {
-                "2011": 388,
-                "2012": 375,
-                "2013": 406.5,
-                "2014": 410.5,
-                "2015": 424.5,
-                "2016": 413
+                "2011": 395,
+                "2012": 382,
+                "2013": 413.5,
+                "2014": 418.5,
+                "2015": 432.5,
+                "2016": 421
             },
             "CommonDimension": {
                 "PERM": {
                     "years": {
-                        "2011": 378,
-                        "2012": 366,
-                        "2013": 395.5,
-                        "2014": 396.5,
-                        "2015": 415.5,
-                        "2016": 403
+                        "2011": 385,
+                        "2012": 373,
+                        "2013": 402.5,
+                        "2014": 404.5,
+                        "2015": 423.5,
+                        "2016": 411
                     },
                     "Name": "Permanent"
                 },
@@ -2282,12 +2243,12 @@
         }
     },
     "Notes": {
-        "2016.1.SOLIDWASTE.2.PERM.": "derived from 2016 gfoa p.495",
-        "2016.1.WATER.2.PERM.": "derived from 2016 gfoa p.536 ff",
         "2016.1.PARKING.2.PERM.": "derived from 2016 gfoa p.936",
+        "2016.1.PARKING.2.TEMP.": "derived from 2016 gfoa p.936",
+        "2016.1.SOLIDWASTE.2.PERM.": "derived from 2016 gfoa p.495",
         "2016.1.SOLIDWASTE.2.TEMP.": "derived from 2016 gfoa p.495",
-        "2016.1.WATER.2.TEMP.": "derived from 2016 gfoa p.536 ff",
-        "2016.1.PARKING.2.TEMP.": "derived from 2016 gfoa p.936"
+        "2016.1.WATER.2.PERM.": "derived from 2016 gfoa p.536 ff",
+        "2016.1.WATER.2.TEMP.": "derived from 2016 gfoa p.536 ff"
     },
     "Allocations": {},
     "Headers": {

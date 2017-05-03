@@ -264,28 +264,13 @@
                     "NamingConfigRef": "PROGRAM",
                     "Baseline": true
                 },
-                "CORPREVENUES": {
+                "PARKINGTAGS": {
                     "Index": 2,
                     "NamingConfigRef": "PROGRAM",
                     "Baseline": true
                 },
-                "PARKINGTAGS": {
-                    "Index": 1,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "PROPERTYTAX": {
-                    "Index": 4,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "SUBWAYLEVY": {
-                    "Index": 4,
-                    "NamingConfigRef": "PROGRAM",
-                    "Baseline": true
-                },
-                "CORPACCOUNTS": {
-                    "Index": 4,
+                "CORPREVENUES": {
+                    "Index": 2,
                     "NamingConfigRef": "PROGRAM",
                     "Baseline": true
                 }
@@ -420,6 +405,7 @@
                 "POLICESERV": "Police Services",
                 "RATESUPPORTED": "Rate Supported Services",
                 "SPECIALIZED": "Smaller Agencies",
+                "SPECIALREV":"Special Revenue*",
                 "TRANSITSERV": "Transit Services"
             }
         },

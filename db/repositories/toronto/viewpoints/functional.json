@@ -113,11 +113,6 @@
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "ATMOSPHERE": {
-                                    "Index": 1,
-                                    "NamingConfigRef": "PROGRAM",
-                                    "Baseline": true
-                                },
                                 "HERITAGE": {
                                     "Index": 2,
                                     "NamingConfigRef": "PROGRAM",
@@ -393,16 +388,6 @@
                             "Index": 3,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
-                        },
-                        "SPECIALREV": {
-                            "Index": 4,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "CORPACCOUNTS": {
-                            "Index": 4,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
                         }
                     }
                 }
@@ -433,6 +418,7 @@
                 "TRANSTRANSIT": "Transport Services",
                 "WASTEWATER": "Utility Services",
                 "WELFARE": "Human Services",
+                "SPECIALREV":"Special Revenue*",
                 "HOUSING": "Housing Support Services",
                 "WELLBEING": "Health Services"
             }
