@@ -63,7 +63,7 @@
                 "2014": 100,
                 "2015": 102,
                 "2016": 103,
-                "2017": 104
+                "2017": 105
             }
         },
         "CHILDSERV": {
@@ -99,7 +99,7 @@
                 "2014": 418.5,
                 "2015": 432.5,
                 "2016": 421,
-                "2017": 408
+                "2017": 412
             }
         },
         "CLERK": {
@@ -213,7 +213,7 @@
                 "2014": 133.8,
                 "2015": 133,
                 "2016": 131.9,
-                "2017": 124.9
+                "2017": 128.9
             }
         },
         "EXHIBPLACE": {
@@ -249,7 +249,7 @@
                 "2014": 799.7,
                 "2015": 925.5,
                 "2016": 927.5,
-                "2017": 917
+                "2017": 923
             }
         },
         "FIRE": {
@@ -339,7 +339,7 @@
                 "2014": 297,
                 "2015": 302.4,
                 "2016": 305.9,
-                "2017": 349.4
+                "2017": 356.4
             }
         },
         "LIBRARY": {
@@ -357,7 +357,7 @@
                 "2014": 1737.4,
                 "2015": 1739.9,
                 "2016": 1736,
-                "2017": 1732.3
+                "2017": 1734.3
             }
         },
         "LONGTERMHOME": {
@@ -465,7 +465,7 @@
                 "2014": 4347.6,
                 "2015": 4454.8,
                 "2016": 4503.5,
-                "2017": 4267.6
+                "2017": 4283.9
             }
         },
         "PLANNING": {
@@ -483,7 +483,7 @@
                 "2014": 352,
                 "2015": 360,
                 "2016": 368,
-                "2017": 367.5
+                "2017": 376.5
             }
         },
         "POLICE": {
@@ -547,7 +547,7 @@
                 "2014": 718.6,
                 "2015": 707.2,
                 "2016": 756.5,
-                "2017": 739.1
+                "2017": 770.1
             }
         },
         "SOCIALDEV": {
@@ -565,7 +565,7 @@
                 "2014": 126.3,
                 "2015": 127.5,
                 "2016": 136.5,
-                "2017": 147
+                "2017": 148
             }
         },
         "SOCIALSERV": {
@@ -619,7 +619,7 @@
                 "2014": 156.5,
                 "2015": 163.1,
                 "2016": 171.9,
-                "2017": 186.7
+                "2017": 187.7
             }
         },
         "TRANSPORTATION": {
@@ -637,7 +637,7 @@
                 "2014": 1055.4,
                 "2015": 1028.8,
                 "2016": 1030.5,
-                "2017": 1013.1
+                "2017": 1011.1
             }
         },
         "TTCCONV": {
@@ -655,7 +655,7 @@
                 "2014": 11179,
                 "2015": 11691,
                 "2016": 11870,
-                "2017": 11793
+                "2017": 11798
             }
         },
         "WATER": {
@@ -743,7 +743,7 @@
                 "2014": 19,
                 "2015": 19,
                 "2016": 19,
-                "2017": 19
+                "2017": 23
             }
         },
         "BUILDINGS": {
@@ -775,7 +775,7 @@
                 "2014": 456,
                 "2015": 460,
                 "2016": 460,
-                "2017": 470.5
+                "2017": 476.5
             }
         },
         "LOBBYREG": {
@@ -806,7 +806,7 @@
                 "2014": 200.4,
                 "2015": 199.4,
                 "2016": 196.4,
-                "2017": 188.4
+                "2017": 189.4
             }
         },
         "TREASURER": {
@@ -1210,26 +1210,26 @@
             "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=0B208oCU9D8OuX3NMSlJCYWZuVW8",
             "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=0B208oCU9D8OuWTRDakxKYk42bFk",
             "SOURCE_DOCUMENT_TITLE": "2016 Budget Committee Recommended Tax Supported Operating Budget",
-            "SOURCE_DOCUMENT_TABLE_LOCATION": "CITY OF TORONTO 2017 PRELIMINARY OPERATING BUDGET SUMMARY",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "2017 CITY COUNCIL APPROVED COMPLEMENT (estimated)",
             "SOURCE_DOCUMENT_TABLE_TITLE": "",
             "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=0B208oCU9D8OuOUhYVlB2NlBuS2s",
             "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
             "YEAR": 2017,
             "VERSION": "Summary",
             "ASPECT": "Staffing",
-            "NOTES_CONTENT": "",
+            "NOTES_CONTENT": "Modified by staffing variance.csv to estimate approved values",
             "NOTES_SEVERITY": "",
             "UNITS_NAME": "Full Time Equivalent",
             "UNITS_CODE": "FTE",
             "UNITS_MULTIPLIER": 1,
-            "TOTAL_AMOUNT": 51243.7,
-            "INTAKE_DATETIME": "2017-01-16-10-07-10",
+            "TOTAL_AMOUNT": 51340,
+            "INTAKE_DATETIME": "2017-05-04-00-02-13",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Program:CODE,Program:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
         }
     },
     "Messages": {
-        "WARNING": "Source: City of Toronto summary budget documents. The general quality and availability of this data source is poor. We were unable to obtain matching staffing complement data for 2013. Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years."
+        "WARNING": "Source: City of Toronto summary budget documents. The general quality and availability of this data source is poor. We were unable to obtain matching staffing complement data for 2013. Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years. The approved 2017 figures are estimated from changes to total (operating and capital) staffing from prelimiary, applied to preliminary operating.."
     }
 }
