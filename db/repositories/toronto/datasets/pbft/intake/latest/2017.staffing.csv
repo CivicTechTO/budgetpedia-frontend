@@ -1,0 +1,125 @@
+_META_START_,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=0B208oCU9D8Oub1NCX3ZldEI3Nmc,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=0B208oCU9D8OuNmZiYk41TjJkQWM,
+SOURCE_DOCUMENT_TITLE,2017 Estimated Operating Staff Positions by Status,
+SOURCE_DOCUMENT_TABLE_LOCATION,,
+SOURCE_DOCUMENT_TABLE_TITLE,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=0B208oCU9D8OuTm5YTV94czVXbzg,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,
+YEAR,2017,
+VERSION,Detailed,
+ASPECT,Staffing,
+NOTES_CONTENT,Rate supported total amounts were taken from 2016 gfoa per department; permanent and temp were calculated based on prior year ratios,
+NOTES_SEVERITY,,
+UNITS_NAME,Full Time Equivalent,
+UNITS_CODE,FTE,
+UNITS_MULTIPLIER,1,
+TOTAL_AMOUNT,54966.1,
+INTAKE_DATETIME,,
+INTAKE_OPERATOR_ID,Henrik,
+COLUMNS_CATEGORIES,"Program:NAME,Permanence:NAME",
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE",
+_META_END_,,
+Affordable Housing Office,Temporary,0
+Children's Services,Temporary,33.86
+Court Services,Temporary,0
+Economic Development & Culture,Temporary,56.5
+Toronto Paramedic Services,Temporary,3.19
+Long Term Care Homes & Services,Temporary,0
+"Parks, Forestry & Recreation",Temporary,2421.58
+"Shelter, Support & Housing Administration",Temporary,158.96
+"Social Development, Finance & Administration",Temporary,15
+Toronto Employment & Social Services,Temporary,45
+City Planning,Temporary,14.18
+Fire Services,Temporary,1.67
+Municipal Licensing & Standards,Temporary,4.5
+"Policy, Planning, Finance & Administration",Temporary,7.4
+Engineering & Construction Services,Temporary,8.23
+Toronto Building,Temporary,7
+Transportation Services,Temporary,51.09
+Office of the Chief Financial Officer,Temporary,1
+Office of the Treasurer,Temporary,12.52
+"Facilities, Real Estate, Environment & Energy",Temporary,39.88
+Fleet Services,Temporary,14
+Information & Technology,Temporary,2.8
+311 Toronto,Temporary,14.22
+City Manager's Office,Temporary,13.82
+City Clerk's Office,Temporary,7.91
+Legal Services,Temporary,13.69
+Mayor's Office,Temporary,19
+City Council,Temporary,136
+Auditor General's Office,Temporary,0
+Office of the Lobbyist Registrar,Temporary,0.3
+Integrity Commissioner's Office,Temporary,0
+Office of the Ombudsman,Temporary,0
+Corporate Accounts,Temporary,0
+Toronto Public Health,Temporary,22.16
+Toronto Public Library,Temporary,0
+Association of Community Centres,Temporary,0
+Exhibition Place,Temporary,239
+Heritage Toronto,Temporary,0
+Theatres,Temporary,94.3
+Toronto Zoo,Temporary,115.2
+Arena Boards of Management,Temporary,24.7
+Yonge-Dundas Square,Temporary,0.5
+Parking Tag Enforcement & Operations,Temporary,0
+Toronto & Region Conservation Authority,Temporary,0
+Toronto Transit Commission - Conventional,Temporary,12.58
+Toronto Transit Commission - Wheel Trans,Temporary,3
+Toronto Police Service,Temporary,0
+Toronto Police Services Board,Temporary,0
+Toronto Water,Temporary,96.7
+Solid Waste Management Services,Temporary,26
+Toronto Parking Authority,Temporary,53
+Affordable Housing Office,Permanent,23
+Children's Services,Permanent,939.64
+Court Services,Permanent,252
+Economic Development & Culture,Permanent,228
+Toronto Paramedic Services,Permanent,1442.61
+Long Term Care Homes & Services,Permanent,2373.9
+"Parks, Forestry & Recreation",Permanent,1862.32
+"Shelter, Support & Housing Administration",Permanent,611.14
+"Social Development, Finance & Administration",Permanent,133
+Toronto Employment & Social Services,Permanent,1967
+City Planning,Permanent,362.32
+Fire Services,Permanent,3173.63
+Municipal Licensing & Standards,Permanent,472
+"Policy, Planning, Finance & Administration",Permanent,182
+Engineering & Construction Services,Permanent,120.67
+Toronto Building,Permanent,460
+Transportation Services,Permanent,960.01
+Office of the Chief Financial Officer,Permanent,104
+Office of the Treasurer,Permanent,633.68
+"Facilities, Real Estate, Environment & Energy",Permanent,883.12
+Fleet Services,Permanent,164
+Information & Technology,Permanent,625.2
+311 Toronto,Permanent,145.78
+City Manager's Office,Permanent,398.18
+City Clerk's Office,Permanent,378.39
+Legal Services,Permanent,342.71
+Mayor's Office,Permanent,1
+City Council,Permanent,44
+Auditor General's Office,Permanent,32
+Office of the Lobbyist Registrar,Permanent,8
+Integrity Commissioner's Office,Permanent,3
+Office of the Ombudsman,Permanent,12
+Corporate Accounts,Permanent,3
+Toronto Public Health,Permanent,1791.14
+Toronto Public Library,Permanent,1734.3
+Association of Community Centres,Permanent,77.9
+Exhibition Place,Permanent,115
+Heritage Toronto,Permanent,7
+Theatres,Permanent,93.4
+Toronto Zoo,Permanent,278.8
+Arena Boards of Management,Permanent,43
+Yonge-Dundas Square,Permanent,6
+Parking Tag Enforcement & Operations,Permanent,394
+Toronto & Region Conservation Authority,Permanent,426.6
+Toronto Transit Commission - Conventional,Permanent,11785.42
+Toronto Transit Commission - Wheel Trans,Permanent,568
+Toronto Police Service,Permanent,7881
+Toronto Police Services Board,Permanent,7
+Toronto Water,Permanent,1655.95
+Solid Waste Management Services,Permanent,1087.7
+Toronto Parking Authority,Permanent,256
