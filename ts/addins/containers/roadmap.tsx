@@ -89,7 +89,20 @@ class Roadmap extends Component<any, State> {
                 }}
             > 
                 <p>The 2018 budget cycle begins May 11, 2017.</p>
-                <p>The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12190">budget committee</a> considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU32.7">2018 budget directions and schedule</a> on May 11, 2017.</p>
+                <p>The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12190">budget committee</a
+                > considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU32.7">2018 budget directions and schedule</a> on May 11, 2017.
+                (<a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=5473">video</a>)</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Toronto City Manager lays out rationale for 2018 budget direction -- "Status Quo": <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=15992">video</a></li>
+                    <li>Toronto City Manager explains to Councillor DiCiano how 'Value for money' can happen - contracting out, investment in digital and management, reduce 'core businesses', take discretion away from staff: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=18281">video</a></li>
+                    <li>Toronto City Manager says value for money means reduction of 'core businesses' and reduction of staff discretion: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=18470">video</a></li>
+                    <li>Toronto City Manager reveals bias to shrink Municipal Government and Services; proud of reduction of social services: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=18742">video</a></li>
+                    <li>Toronto City Manager stonewalls Councillor Davis on public Service Plan Review and Priority-Setting process: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=19360">video</a></li>
+                    <li>Toronto City Manager blames Councillors for failure of maintaining state of good repair: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=19845">video</a></li>
+                </ul>
+                <p> Next event: The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11825">executive committee</a
+                > considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18">2018 budget directions and schedule</a> on May 16, 2017.</p>
             </CardText>
             <CardTitle 
                 title = "2017"
