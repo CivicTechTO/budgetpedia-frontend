@@ -101,8 +101,15 @@ class Roadmap extends Component<any, State> {
                     <li>Toronto City Manager stonewalls Councillor Davis on public Service Plan Review and Priority-Setting process: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=19360">video</a></li>
                     <li>Toronto City Manager blames Councillors for failure of maintaining state of good repair: <a target="_blank" href="https://youtu.be/mnUMDeQOUwA?t=19845">video</a></li>
                 </ul>
-                <p> Next event: The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11825">executive committee</a
+                <p>The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11825">executive committee</a
                 > considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18">2018 budget directions and schedule</a> on May 16, 2017.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>2018 budget direction: <a target="_blank" href="https://www.youtube.com/watch?v=hR3gYykKJOw&feature=youtu.be&t=28381">video</a></li>
+                    <li>New Real Estate Division: <a target="_blank" href="https://www.youtube.com/watch?v=hR3gYykKJOw&feature=youtu.be&t=22628">video</a></li>
+                </ul>
+                <p>Next event: The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11859">City Council</a
+                > considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18">2018 budget directions and schedule</a> on May 24, 2017.</p>
             </CardText>
             <CardTitle 
                 title = "2017"
