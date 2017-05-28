@@ -8,26 +8,33 @@
             "note":"",
             "links":[]
         },
+        "MODERNGOV":{
+            "description":"Somewhat random readings in modern government",
+            "index":1,
+            "title":"Modern Government",
+            "note":"Modern government is an emerging view of government management that encompasses digital platforms, open government, open data, and collaborative management",
+            "links":[]
+        },
         "TORONTOIST":{
             "description":"Torontoist Resources, courtesy of David Haines",
             "link":"http://torontoist.com/",
-            "index":1,
+            "index":2,
             "title":"Torontoist Resources",
             "note":"The Torontoist is one of our favourite publications. Its people provide in-depth coverage of Toronto City Hall to its readers",
             "links":[]
         },
         "DATACLUB":{
-            "description":"Open data book club budget related presentations",
+            "description":"Independent budget and related presentations",
             "link":"http://www.meetup.com/opentoronto/",
-            "index":2,
-            "title":"Open Data Book Club presentations",
+            "index":3,
+            "title":"Independent visualizations",
             "note":"The open data book club meets periodically to review open datasets (analogous to reviewing books!)",
             "links":[]
         },
         "CIVILSOCIETY":{
             "description":"A selected set of civil society websites",
             "link":"",
-            "index":3,
+            "index":4,
             "title":"Civil Society websites",
             "note":"",
             "links":[]
@@ -35,7 +42,7 @@
         "REPOSITORIES":{
             "description":"Collected Budgetpedia project repositories",
             "link":"",
-            "index":4,
+            "index":5,
             "title":"Budgetpedia repositories",
             "note":"Our own project has collected a lot of notes and data over its lifetime, with high quality content that could (and should!) be mined to improve the project",
             "links":[]
@@ -43,7 +50,7 @@
         "OPENDATA":{
             "description":"Links about open data",
             "link":"",
-            "index":5,
+            "index":6,
             "title":"Open Data sites",
             "note":"",
             "links":[]
@@ -51,7 +58,7 @@
         "FPARS":{
             "description":"Documents about Toronto's Financial Planning, Analysis and Reporting System (FPARS)",
             "link":"",
-            "index":5,
+            "index":7,
             "title":"FPARS",
             "note":"",
             "links":[]
@@ -59,7 +66,7 @@
         "OTHER":{
             "description":"Other budget links",
             "link":"",
-            "index":6,
+            "index":8,
             "title":"Other budget sites of interest",
             "note":"",
             "links":[]
@@ -167,6 +174,12 @@
             "description":"",
             "section":"TORONTOIST",
             "link":"http://torontoist.com/2015/12/the-impact-of-an-underfunded-poverty-reduction-strategy/"
+        },
+        {
+            "title":"Toronto Wards Map",
+            "description":"Interactive map by Lilly Tong",
+            "section":"DATACLUB",
+            "link":"https://public.tableau.com/profile/lilly.tong#!/vizhome/shared/B2RPPSR62"
         },
         {
             "title":"Toronto District School Board Learning Opportunities Index",
@@ -359,6 +372,18 @@
             "description":"TRELLO",
             "section":"REPOSITORIES",
             "link":"https://trello.com/b/vyHbx4XE/civictechto-budget-project"
+        },
+        {
+            "title":"The Global Impact of Open Data",
+            "description":"An O'Reilly free book",
+            "section":"OPENDATA",
+            "link":"http://www.oreilly.com/data/free/the-global-impact-of-open-data.csp"
+        },
+        {
+            "title":"Open Data for Development BUILDING AN INCLUSIVE DATA REVOLUTION ANNUAL REPORT 2016",
+            "description":"od4d.com report",
+            "section":"OPENDATA",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuQ2FXS0xHNm8taFE"
         },
         {
             "title":"Toronto's open data portal",
@@ -889,6 +914,61 @@
             "description":"financial services cap plan 2017, includes fpars",
             "filename":"2016.12.16.backgroundfile-98970.pdf",
             "link":"https://drive.google.com/open?id=0B208oCU9D8OuX292V2ZHVG5sNGM"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"New Public Management",
+            "description":"The government management philosophy that became popular in the 80's, based on importing business terms and techniques.",
+            "link":"https://en.wikipedia.org/wiki/New_public_management"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"From New Public Management to New Public Governance: The implications for a ‘new public service’",
+            "description":"Academic chapter on new public governance.",
+            "filename":"ch03.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuelpoU2Q3Vkl1ek0"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"New Public Management Is Dead—Long Live Digital-Era Governance",
+            "description":"Paper on Digital Era Governance.",
+            "filename":"Digital Era Governence 2006.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuS0JPUmxZc2hreFk"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"Transforming the Ontario Government for the Future",
+            "description":"A discussion paper from the Government of Ontario",
+            "filename":"discussionpaper170203-02_final-aoda.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuUmZfcGoyaFJYdEk"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"Editorial on the New Public Governance",
+            "description":"Thoughts by one of the academics in the field",
+            "filename":"osborne-sp-the-new-public-governance-2006.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuajF3bjNwTi1Hb2c"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"From Old Public Administration to the New Public Service",
+            "description":"A paper from the Global Centre for Public Service Excellence",
+            "filename":"PS-Reform_Paper.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuWG1oeVM2M3lOWlk"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"BETWEEN NEW PUBLIC MANAGEMENT AND NEW PUBLIC MANAGEMENT",
+            "description":"Academic paper on new public governance.",
+            "filename":"160-319-1-SM.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OucHBRMkx3RVJ3R1E"
+        },
+        {
+            "section":"MODERNGOV",
+            "title":"Public Private Partnerships",
+            "description":"A paper asking questions about PPPs",
+            "filename":"Public-Private_Partnerships.pdf",
+            "link":"https://drive.google.com/open?id=0B208oCU9D8OuU1VCV1B5bGpsYlU"
         }
     ]
 }
