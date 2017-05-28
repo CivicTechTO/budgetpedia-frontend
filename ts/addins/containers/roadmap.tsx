@@ -108,8 +108,17 @@ class Roadmap extends Component<any, State> {
                     <li>2018 budget direction: <a target="_blank" href="https://www.youtube.com/watch?v=hR3gYykKJOw&feature=youtu.be&t=28381">video</a></li>
                     <li>New Real Estate Division: <a target="_blank" href="https://www.youtube.com/watch?v=hR3gYykKJOw&feature=youtu.be&t=22628">video</a></li>
                 </ul>
-                <p>Next event: The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11859">City Council</a
-                > considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18">2018 budget directions and schedule</a> on May 24, 2017.</p>
+                <p>The <a target="_blank" href="http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11859">City Council</a
+                > considers the <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18">2018 budget directions and schedule</a> on May 24, 2017. <a target="_blank" href="https://www.youtube.com/watch?v=qxzMIKnH4OE">video May 25, 2017, Part 1
+                </a>, <a target="_blank" href="https://youtu.be/nv--55vbcb0?t=3341">video May 25, 2017, Part 2, after closed session
+                </a>, <a target="_blank" href="https://www.youtube.com/watch?v=-xbjpFsPRNI">video May 26, 2017
+                </a> </p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>2018 budget direction: <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18">agenda</a>, <a target="_blank" href="https://youtu.be/qxzMIKnH4OE?t=1235">video</a></li>
+                    <li>New Real Estate Division: <a target="_blank" href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.9">agenda</a></li>
+                </ul>
+                <p>No further public consultations on the 2018 budget is directed by Council before October 2017. Therefore most decisions will be made by staff behind closed doors.</p>
             </CardText>
             <CardTitle 
                 title = "2017"
