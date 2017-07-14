@@ -48,7 +48,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.16.60",
+    "@types/material-ui": "^0.17.16",
     "@types/node": "^7.0.37",
     "@types/react": "^15.0.38",
     "@types/react-router-redux": "^4.0.48",

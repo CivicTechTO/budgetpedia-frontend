@@ -15,7 +15,7 @@ import { Card, CardText, CardTitle} from 'material-ui/Card'
 
 let RegisterConfirm = class extends Component<any, any> {
 
-    componentWillMount = () => {
+    componentWillMount() {
         this.props.confirmUser()
     }
     render() {

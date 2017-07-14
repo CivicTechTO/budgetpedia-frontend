@@ -57,18 +57,18 @@ let MainBar = class extends React.Component {
         this.logout = () => {
             this.props.logoutUser();
         };
-        this.componentDidMount = () => {
-            let auth = this.props.auth;
-            if (auth.isAuthenticated && (!auth.isFetching) && this.state.accountsidebaropen) {
-                this.setState({ accountsidebaropen: false });
-            }
-        };
         this.state = {
             accountsidebaropen: false,
             menusidebaropen: false,
             elements: {},
             errors: { password: false, email: false },
         };
+    }
+    componentDidMount() {
+        let auth = this.props.auth;
+        if (auth.isAuthenticated && (!auth.isFetching) && this.state.accountsidebaropen) {
+            this.setState({ accountsidebaropen: false });
+        }
     }
     render() {
         let appbar = this;

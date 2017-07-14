@@ -19,21 +19,21 @@ class HomeTilesClass extends React.Component {
         this.handleHomeResize = () => {
             this.props.setHomeTileCols();
         };
-        this.componentWillMount = () => {
-            this.props.setHomeTileCols();
-        };
-        this.componentDidMount = () => {
-            window.addEventListener('resize', this.handleHomeResize);
-        };
-        this.componentWillUnmount = () => {
-            window.removeEventListener('resize', this.handleHomeResize);
-        };
         this.transitionTo = (e, target) => {
             e.stopPropagation();
             e.preventDefault();
             var _this = this;
             _this.props.transitionTo(target);
         };
+    }
+    componentWillMount() {
+        this.props.setHomeTileCols();
+    }
+    componentDidMount() {
+        window.addEventListener('resize', this.handleHomeResize);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleHomeResize);
     }
     render() {
         let { hometiles, homecols, homepadding, theme, colors, system } = this.props;

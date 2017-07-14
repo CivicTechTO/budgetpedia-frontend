@@ -30,20 +30,20 @@ class HomeTilesClass extends React.Component<any, any> {
 
     }
 
-    componentWillMount = () => {
+    componentWillMount() {
 
         // initialize
         this.props.setHomeTileCols()
 
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
 
         window.addEventListener ( 'resize', this.handleHomeResize )
 
     }
 
-    componentWillUnmount = () => {
+    componentWillUnmount() {
 
         window.removeEventListener ( 'resize', this.handleHomeResize )
 

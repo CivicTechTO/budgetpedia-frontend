@@ -112,7 +112,7 @@ let MainBar = class extends React.Component<any, any> {
         this.props.logoutUser()
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
         let auth = this.props.auth
         // close login sidebar after login
         if (auth.isAuthenticated && (!auth.isFetching) && this.state.accountsidebaropen) {

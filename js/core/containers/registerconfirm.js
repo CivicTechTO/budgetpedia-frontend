@@ -6,11 +6,8 @@ const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
 const Card_1 = require("material-ui/Card");
 let RegisterConfirm = class extends Component {
-    constructor() {
-        super(...arguments);
-        this.componentWillMount = () => {
-            this.props.confirmUser();
-        };
+    componentWillMount() {
+        this.props.confirmUser();
     }
     render() {
         let registerconfirmpage = this;
