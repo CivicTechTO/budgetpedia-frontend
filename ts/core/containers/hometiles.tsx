@@ -117,21 +117,8 @@ class HomeTilesClass extends React.Component<any, any> {
                     href="javascript:void(0);"
                     onClick={ e => {this.transitionTo(e,'resources')}}>Resources</a></span>.</p>
                     <hr />
-                <p>We also welcome you to join us (and contribute!) on any of our digital platforms:</p>
+                <p>Follow us on:</p>
                 <ul>
-                <li><a 
-                    href="http://facebook.com/budgetpedia" 
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
-                    href="http://facebook.com/budgetpedia" 
-                    target="_blank">our Facebook page</a></li>
-                <li><a 
-                    href="http://facebook.com/groups/budgetpedia" 
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
-                    href="http://facebook.com/groups/budgetpedia" 
-                    target="_blank">
-                    our Facebook group</a></li>
                 <li><a 
                     href="http://twitter.com/budgetpedia" 
                     target="_blank">
@@ -143,21 +130,6 @@ class HomeTilesClass extends React.Component<any, any> {
                     <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/medium.png"/></a> For 
                     in-depth articles: <a href="http://medium.com/budgetpedia"
                     target = "_blank">Medium</a></li>
-                <li><a href="http://groups.google.com/d/forum/budgetpedia"
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/g-logo.png"/></a> For 
-                    technical discussions: <a href="http://groups.google.com/d/forum/budgetpedia"
-                    target="_blank">our Google forum</a></li>
-                <li><a href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/YouTube-icon-full_color.png"/></a> Videos: <a
-                     href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
-                    target="_blank">YouTube</a></li>
-                <li><a href="http://budgetpedia.blogspot.ca/"
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/blogspot.jpeg"/></a> Blog: <a
-                     href="http://budgetpedia.blogspot.ca/"
-                    target="_blank">Blogspot</a></li>
                 </ul>
                 <hr />
                 <p>Below are tiles leading to more information about the Budgetpedia Project.</p>
@@ -186,6 +158,59 @@ class HomeTilesClass extends React.Component<any, any> {
                 transitionTo = { this.props.transitionTo }
                 cellHeight = { 180 }
             />
+            <div 
+                style = {
+                    {
+                        backgroundColor:"#404244",
+                        padding:"8px",
+                    }
+                }
+            >
+            <Card style={
+                {
+                    backgroundImage:"url(./public/icons/WebsiteBanner.png)",
+                    backgroundSize:"cover",
+                    margin:"8px",
+                    border:"2px solid silver",
+                    borderRadius:"8px",
+                    fontSize:"18px"
+                }
+            }>
+                <CardText>
+                <p>More media (experimental):</p>
+                <ul>
+                <li><a 
+                    href="http://facebook.com/budgetpedia" 
+                    target="_blank">
+                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
+                    href="http://facebook.com/budgetpedia" 
+                    target="_blank">our Facebook page</a></li>
+                <li><a 
+                    href="http://facebook.com/groups/budgetpedia" 
+                    target="_blank">
+                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
+                    href="http://facebook.com/groups/budgetpedia" 
+                    target="_blank">
+                    our Facebook group</a></li>
+                <li><a href="http://groups.google.com/d/forum/budgetpedia"
+                    target="_blank">
+                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/g-logo.png"/></a> For 
+                    technical discussions: <a href="http://groups.google.com/d/forum/budgetpedia"
+                    target="_blank">our Google forum</a></li>
+                <li><a href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
+                    target="_blank">
+                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/YouTube-icon-full_color.png"/></a> Videos: <a
+                     href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
+                    target="_blank">YouTube</a></li>
+                <li><a href="http://budgetpedia.blogspot.ca/"
+                    target="_blank">
+                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/blogspot.jpeg"/></a> Blog: <a
+                     href="http://budgetpedia.blogspot.ca/"
+                    target="_blank">Blogspot</a></li>
+                </ul>
+                </CardText>
+            </Card>
+            </div>
             </div>
         )
     }
