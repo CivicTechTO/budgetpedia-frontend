@@ -91,8 +91,7 @@ class HomeTilesClass extends React.Component {
                                     React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "./public/icons/medium.png" })),
                                 " For in-depth articles: ",
                                 React.createElement("a", { href: "http://medium.com/budgetpedia", target: "_blank" }, "Medium"))),
-                        React.createElement("hr", null),
-                        React.createElement("p", null, "Below are tiles leading to more information about the Budgetpedia Project.")))),
+                        React.createElement("div", { style: { clear: "both" } })))),
             React.createElement(apptiles_1.AppTiles, { style: {
                     margin: "16px",
                     fontFamily: theme.fontFamily,

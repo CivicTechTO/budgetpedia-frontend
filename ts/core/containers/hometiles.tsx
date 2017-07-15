@@ -131,8 +131,7 @@ class HomeTilesClass extends React.Component<any, any> {
                     in-depth articles: <a href="http://medium.com/budgetpedia"
                     target = "_blank">Medium</a></li>
                 </ul>
-                <hr />
-                <p>Below are tiles leading to more information about the Budgetpedia Project.</p>
+                <div style = {{clear:"both"}}></div>
                 </CardText>
             </Card>
             </div>
