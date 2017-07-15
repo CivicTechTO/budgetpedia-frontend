@@ -35,7 +35,6 @@ class BudgetCell {
                             console.log('ERROR: default invoked in refreshSelection');
                             break;
                     }
-                    budgetCell.chart.setSelection(chartSelection);
                 }
             }
         };
@@ -608,7 +607,7 @@ class BudgetCell {
                 style = 'stroke-color: Gold; stroke-width: 3;';
             }
             if (!(componentItem.Components || componentItem.CommonDimension)) {
-                style += 'fill-opacity: 0.5';
+                style += 'fill-color: #3366CC;fill-opacity:0.5;';
             }
             row.push(style);
             return row;

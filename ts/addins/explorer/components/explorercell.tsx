@@ -801,7 +801,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
             </div>
 
         // ------------------------------[ the chart itself ]-----------------------------
-
+        // console.log(chartParms)
         let chart =  (chartParms)?
             (isDataAvailable?<Chart
                 ref = {node => {

@@ -165,11 +165,13 @@ class BudgetCell {
 
         let budgetCell = this
 
+        // console.log('budgetCell.chartSelection',budgetCell.chartSelection, budgetCell)
         if (budgetCell.chartSelection !== null) {
 
             if (budgetCell.chart && budgetCell.chart.getSelection().length == 0) {
                 let selectionObj = {row:null, column:null}
                 let chartSelection = [selectionObj]
+                // console.log('chartSelection',chartSelection)
                 switch (budgetCell.googleChartType) {
                     case "PieChart":
                         selectionObj.row = budgetCell.chartSelection
@@ -193,7 +195,7 @@ class BudgetCell {
                         break;
                 }
 
-                budgetCell.chart.setSelection(chartSelection)
+                // budgetCell.chart.setSelection(chartSelection)
             }
         }        
     }
@@ -998,7 +1000,7 @@ class BudgetCell {
             style = 'stroke-color: Gold; stroke-width: 3;'
         }
         if (!(componentItem.Components || componentItem.CommonDimension)) {
-            style += 'fill-opacity: 0.5'
+            style += 'fill-color: #3366CC;fill-opacity:0.5;'
         }
 
         row.push(style)
