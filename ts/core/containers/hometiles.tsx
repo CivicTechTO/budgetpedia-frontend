@@ -95,27 +95,31 @@ class HomeTilesClass extends React.Component<any, any> {
                     <a target = "_blank" href="http://betterbudget.ca">
                     <img style={{width:"100px"}} src= "./public/icons/bbtoLogo_04.jpg" /></a>
                 </div>
-                <CardTitle>
+                <CardTitle style = {{padding:"16px 16px 0 16px"}} >
                 Welcome to Budgetpedia.
                 </CardTitle>
                 <CardText>
-                <p style={{margin:0, padding:0}}>Explore the Toronto budget with our <span
+                <hr />
+                <p style={{margin:0,padding:0}}>Browse our site:</p>
+                <ul> <li>Explore the Toronto budget with our <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
                     src={'./public/icons/ic_explore_48px.svg'}/><a 
                     href="javascript:void(0);"
-                    onClick={ e => {this.transitionTo(e,'explorer')}}>Budget Explorer</a></span>, 
-                see information about Toronto's budget decision schedule at our <span
+                    onClick={ e => {this.transitionTo(e,'explorer')}}>Budget Explorer</a></span></li>
+
+                <li>See information about Toronto's budget decision schedule at our <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
                     src={'./public/icons/ic_map_48px.svg'}/><a 
                     href="javascript:void(0);"
-                    onClick={ e => {this.transitionTo(e,'roadmap')}}>Budget Roadmap</a></span>, and find related <span
+                    onClick={ e => {this.transitionTo(e,'roadmap')}}>Budget Roadmap</a></span></li>
+                    <li>Find related <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
                     src={'./public/icons/ic_library_books_48px.svg'}/><a
                     href="javascript:void(0);"
-                    onClick={ e => {this.transitionTo(e,'resources')}}>Resources</a></span>.</p>
+                    onClick={ e => {this.transitionTo(e,'resources')}}>Resources</a></span></li></ul>
                     <hr />
                 <p>Follow us on:</p>
                 <ul>
