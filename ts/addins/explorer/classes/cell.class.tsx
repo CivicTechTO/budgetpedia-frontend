@@ -195,7 +195,7 @@ class BudgetCell {
                         break;
                 }
 
-                // budgetCell.chart.setSelection(chartSelection)
+                budgetCell.chart.setSelection(chartSelection)
             }
         }        
     }

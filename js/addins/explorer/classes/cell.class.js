@@ -35,6 +35,7 @@ class BudgetCell {
                             console.log('ERROR: default invoked in refreshSelection');
                             break;
                     }
+                    budgetCell.chart.setSelection(chartSelection);
                 }
             }
         };
