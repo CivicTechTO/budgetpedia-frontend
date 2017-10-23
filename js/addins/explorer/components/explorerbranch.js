@@ -1039,8 +1039,8 @@ class ExplorerBranch extends Component {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
                 case "STRUCTURAL":
-                    return [React.createElement(MenuItem_1.default, { key: 1, value: 'Expenses', primaryText: "Expenses" }),
-                        React.createElement(MenuItem_1.default, { key: 2, value: 'Revenues', primaryText: "Revenues" }),
+                    return [React.createElement(MenuItem_1.default, { key: 1, value: 'Expenses', primaryText: "Expenditures" }),
+                        React.createElement(MenuItem_1.default, { key: 2, value: 'Revenues', primaryText: "Receipts" }),
                         React.createElement(MenuItem_1.default, { key: 3, value: 'Staffing', primaryText: "Staffing" })];
                 case 'ACTUALEXPENSES':
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Expenses', primaryText: "Expenses" })];

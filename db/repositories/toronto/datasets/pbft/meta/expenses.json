@@ -1,7 +1,7 @@
 {
     "InflationAdjustable": true,
     "DatasetName":"Expenses",
-    "DatasetTitle": "Gross Operating Expenses",
+    "DatasetTitle": "Gross Operating Expenditures",
     "Dataseries": [
         {
             "Type": "Components"

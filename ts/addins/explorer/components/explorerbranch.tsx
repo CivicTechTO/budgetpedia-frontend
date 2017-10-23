@@ -1619,8 +1619,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         switch (branchDeclaration.viewpoint) {
             case "FUNCTIONAL":
             case "STRUCTURAL":
-                return [<MenuItem key = {1} value={'Expenses'} primaryText="Expenses"/>,
-                <MenuItem key = {2} value={'Revenues'} primaryText="Revenues"/>,
+                return [<MenuItem key = {1} value={'Expenses'} primaryText="Expenditures"/>,
+                <MenuItem key = {2} value={'Revenues'} primaryText="Receipts"/>,
                 <MenuItem key = {3} value={'Staffing'} primaryText="Staffing" />]
             case 'ACTUALEXPENSES':
                 return [<MenuItem key = {4} value={'Expenses'} primaryText="Expenses"/>]

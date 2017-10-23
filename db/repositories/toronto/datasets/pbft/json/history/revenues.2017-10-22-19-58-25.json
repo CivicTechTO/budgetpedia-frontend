@@ -2,7 +2,7 @@
     "MetaData": {
         "InflationAdjustable": true,
         "DatasetName": "Revenues",
-        "DatasetTitle": "Gross Operating Receipts",
+        "DatasetTitle": "Gross Operating Revenue",
         "Dataseries": [
             {
                 "Type": "Components"

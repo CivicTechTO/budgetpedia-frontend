@@ -1,7 +1,7 @@
 {
     "InflationAdjustable": true,
     "DatasetName":"Revenues",
-    "DatasetTitle": "Gross Operating Revenue",
+    "DatasetTitle": "Gross Operating Receipts",
     "Dataseries": [
         {
             "Type": "Components"
