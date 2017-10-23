@@ -548,7 +548,7 @@ class ExplorerBranch extends Component {
                     }
                 };
                 requestAnimationFrame(tick);
-            });
+            }, 10);
         };
         this.easeOutCubic = t => {
             const t1 = t - 1;
@@ -1162,7 +1162,7 @@ class ExplorerBranch extends Component {
                         branch.branchScrollBlock = node;
                     }, style: { overflow: "scroll" } },
                     drilldownportals,
-                    React.createElement("div", { style: { display: "inline-block", width: "500px" } }))),
+                    React.createElement("div", { style: { display: "inline-block", width: "500px", height: "20px" } }))),
             React.createElement(Snackbar_1.default, { open: this.state.snackbar.open, message: this.state.snackbar.message, autoHideDuration: 4000, onRequestClose: this.handleSnackbarRequestClose }));
     }
 }

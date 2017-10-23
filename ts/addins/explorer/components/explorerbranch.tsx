@@ -934,9 +934,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             let scrollright = scrollleft + clientwidth
             let targetright = scrollwidth - 500
             let adjustment = scrollright - targetright
+            // console.log('scrollwidth,scrollleft,clientwidth,scrollright,targetright,adjustment',scrollwidth,scrollleft,clientwidth,scrollright,targetright,adjustment)
             if (adjustment > 0) {
                 adjustment = Math.min(adjustment,scrollleft)
             }
+            // console.log('final adjustment',adjustment)
             let frames = 60
             let t = 1 / frames
             let counter = 0
@@ -952,7 +954,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
             requestAnimationFrame(tick)
 
-        })
+        },10)
     }
 
     // from https://github.com/DelvarWorld/easing-utils/blob/master/src/easing.js
@@ -1889,7 +1891,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
             { drilldownportals }
 
-            <div style={{ display: "inline-block", width: "500px" }}></div>
+            <div style={{ display: "inline-block", width: "500px",height:"20px" }}></div>
 
         </div>
     </div>
