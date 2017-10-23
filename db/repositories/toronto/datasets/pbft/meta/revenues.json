@@ -12,8 +12,8 @@
     ],
     "Dimensions":["Program", "Service","Activity","Revenue"],
     "CellTitles": {
-        "Components": "Programs",
-        "CommonDimension": "Receipt Elements"
+        "Components": "Program Receipts",
+        "CommonDimension": "Receipt Categories"
     },
     "DimensionNames":{
         "Program":{
@@ -30,7 +30,7 @@
         },
         "Revenue":{
             "Instance":"Receipt",
-            "Collection":"Budgeted Revenue Elements"
+            "Collection":"Budgeted Receipt Categories"
         }
     },
     "Units": "DOLLAR",

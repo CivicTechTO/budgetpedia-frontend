@@ -18,7 +18,7 @@
             }
         },
         "CellTitles": {
-            "Components": "Program Expenditures"
+            "Components": "Programs"
         },
         "Units": "DOLLAR",
         "UnitsAlias": "$000's",

@@ -18,12 +18,12 @@
         },
         "Permanence":{
             "Instance":"Permanence",
-            "Collection":"Budgeted Staffing Elements"
+            "Collection":"Budgeted Staffing Categories"
         }
     },
     "CellTitles": {
-        "Components": "Programs",
-        "CommonDimension": "Staffing Elements"
+        "Components": "Program Staffing",
+        "CommonDimension": "Staffing Categories"
     },
     "Units": "FTE",
     "UnitsAlias": "$000's",

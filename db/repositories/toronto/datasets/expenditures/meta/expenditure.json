@@ -15,7 +15,7 @@
         }
     },
     "CellTitles": {
-        "Components": "Expenditures"
+        "Components": "Expense Categories"
     },
     "Units": "DOLLAR",
     "UnitsAlias": "$000's",

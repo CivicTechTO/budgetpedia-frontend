@@ -32,12 +32,12 @@
             },
             "Expense": {
                 "Instance": "Expenditure",
-                "Collection": "Budgeted Expenditure Categories"
+                "Collection": "Budgeted Cost Elements"
             }
         },
         "CellTitles": {
-            "Components": "Program Expenditures",
-            "CommonDimension": "Expenditure Categories"
+            "Components": "Programs",
+            "CommonDimension": "Expenditure Elements"
         },
         "Units": "DOLLAR",
         "UnitsAlias": "$000's",
