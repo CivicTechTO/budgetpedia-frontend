@@ -31,7 +31,7 @@
     },
     "CellTitles": {
         "Components": "Programs",
-        "CommonDimension": "Cost Elements"
+        "CommonDimension": "Expenditure Elements"
     },
     "Units": "DOLLAR",
     "UnitsAlias": "$000's",

@@ -19,7 +19,7 @@
         ],
         "CellTitles": {
             "Components": "Programs",
-            "CommonDimension": "Receipt Elements"
+            "CommonDimension": "Revenue Elements"
         },
         "DimensionNames": {
             "Program": {
