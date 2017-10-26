@@ -28,7 +28,7 @@
         "InflationReferenceYear": 2017,
         "YearsRange": {
             "start": 2000,
-            "end": 2015
+            "end": 2016
         }
     },
     "Data": {
@@ -50,7 +50,8 @@
                     "2012": 5564728,
                     "2013": 5391393,
                     "2014": 5658874,
-                    "2015": 5799546
+                    "2015": 5799546,
+                    "2016": 5734055
                 }
             },
             "MATERIALS": {
@@ -70,7 +71,8 @@
                     "2012": 882327,
                     "2013": 995681,
                     "2014": 972005,
-                    "2015": 977536
+                    "2015": 977536,
+                    "2016": 1004140
                 }
             },
             "CONTRACTED": {
@@ -90,7 +92,8 @@
                     "2012": 1549152,
                     "2013": 1764427,
                     "2014": 1897484,
-                    "2015": 1744666
+                    "2015": 1744666,
+                    "2016": 1628993
                 }
             },
             "INTEREST": {
@@ -110,7 +113,8 @@
                     "2012": 316127,
                     "2013": 324003,
                     "2014": 331413,
-                    "2015": 328078
+                    "2015": 328078,
+                    "2016": 326851
                 }
             },
             "OTHER": {
@@ -130,7 +134,8 @@
                     "2012": 339731,
                     "2013": 194072,
                     "2014": 225898,
-                    "2015": 222874
+                    "2015": 222874,
+                    "2016": 264120
                 }
             },
             "TRANSFERS": {
@@ -149,7 +154,8 @@
                     "2012": 1748550,
                     "2013": 1484034,
                     "2014": 1058744,
-                    "2015": 1322047
+                    "2015": 1322047,
+                    "2016": 1227509
                 }
             },
             "AMORTIZATION": {
@@ -161,7 +167,8 @@
                     "2012": 880186,
                     "2013": 918540,
                     "2014": 921408,
-                    "2015": 887020
+                    "2015": 887020,
+                    "2016": 993970
                 }
             }
         },
@@ -183,7 +190,8 @@
                     "2012": 5069438,
                     "2013": 4972018,
                     "2014": 5349900,
-                    "2015": 5565309
+                    "2015": 5565309,
+                    "2016": 5618259
                 }
             },
             "MATERIALS": {
@@ -203,7 +211,8 @@
                     "2012": 803795,
                     "2013": 918231,
                     "2014": 918934,
-                    "2015": 938054
+                    "2015": 938054,
+                    "2016": 983862
                 }
             },
             "CONTRACTED": {
@@ -223,7 +232,8 @@
                     "2012": 1411269,
                     "2013": 1627179,
                     "2014": 1793882,
-                    "2015": 1674201
+                    "2015": 1674201,
+                    "2016": 1596096
                 }
             },
             "INTEREST": {
@@ -243,7 +253,8 @@
                     "2012": 287990,
                     "2013": 298800,
                     "2014": 313318,
-                    "2015": 314827
+                    "2015": 314827,
+                    "2016": 320250
                 }
             },
             "OTHER": {
@@ -263,7 +274,8 @@
                     "2012": 309493,
                     "2013": 178976,
                     "2014": 213564,
-                    "2015": 213872
+                    "2015": 213872,
+                    "2016": 258786
                 }
             },
             "TRANSFERS": {
@@ -282,7 +294,8 @@
                     "2012": 1592920,
                     "2013": 1368597,
                     "2014": 1000937,
-                    "2015": 1268651
+                    "2015": 1268651,
+                    "2016": 1202720
                 }
             },
             "AMORTIZATION": {
@@ -294,7 +307,8 @@
                     "2012": 801845,
                     "2013": 847090,
                     "2014": 871099,
-                    "2015": 851194
+                    "2015": 851194,
+                    "2016": 973897
                 }
             }
         }
@@ -666,6 +680,29 @@
             "UNITS_MULTIPLIER": 1000,
             "TOTAL_AMOUNT": 10826108,
             "INTAKE_DATETIME": "2016-10-20-17-29-09",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Expenditure:CODE,Expenditure:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2016": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "https://drive.google.com/open?id=0B208oCU9D8OuX2F1a0VNQUU4OWM",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=0B208oCU9D8OuX2F1a0VNQUU4OWM",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "",
+            "SOURCE_DOCUMENT_TITLE": "2016 Consolidated Financial Statments",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Expenses by Object",
+            "SOURCE_CSV_PRECURSOR_LINK": "",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "",
+            "YEAR": 2016,
+            "VERSION": "Actual",
+            "ASPECT": "Expenses",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 10953870,
+            "INTAKE_DATETIME": "2017-10-26-15-06-13",
             "INTAKE_OPERATOR_ID": "Henrik",
             "COLUMNS_CATEGORIES": "Expenditure:CODE,Expenditure:NAME",
             "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"

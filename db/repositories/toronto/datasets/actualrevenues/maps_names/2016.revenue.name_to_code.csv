@@ -1,0 +1,11 @@
+_COLUMNS_,"Category:NAME,Category:CODE,Note:DESCRIPTION,Count:VALUE",,
+Development charges,DEVELOPMENT,,1
+Funding transfers from other governments (Note 19),TRANSFERS,,1
+Government business enterprise earnings (Note 5),ENTERPRISES,,1
+Investment income,INVESTMENT,,1
+Municipal land transfer tax,LANDTRANSFER,,1
+Other,OTHER,,1
+Property taxation,PROPERTYTAX,,1
+Rent and concessions,RENTS,,1
+Taxation from other governments,OTHERGOVTAX,,1
+User charges,USERCHARGES,,1
