@@ -1583,7 +1583,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     <em>This data is shallower, but goes back further:</em>
                 </MenuItem>,
                 <MenuItem key = {2} value={'PBFT'} primaryText="Detail: open data files 2011 - 2017">
-                    <em>This data drills down to Cost Elements:</em>
+                    <em>This data drills down to Account Categories:</em>
                 </MenuItem>,
                 <MenuItem key = {3} disabled value={'VARIANCE'} primaryText="PDF Variance Reports"/>]
             case 'ACTUALEXPENSES':
