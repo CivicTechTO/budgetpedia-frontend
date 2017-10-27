@@ -78,7 +78,7 @@
             "AUDITED": {
                 "Instance": {
                     "Name": "Type",
-                    "Alias": "Audited"
+                    "Alias": "Actual"
                 },
                 "Contents": {
                     "Name": "Expenses",
@@ -88,7 +88,7 @@
             "CATEGORY": {
                 "Instance": {
                     "Name": "Type",
-                    "Alias": "Audited"
+                    "Alias": "Actual"
                 },
                 "Contents": {
                     "Name": "Expenses",

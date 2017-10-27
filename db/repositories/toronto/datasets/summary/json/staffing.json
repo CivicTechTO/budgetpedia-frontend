@@ -1230,6 +1230,6 @@
         }
     },
     "Messages": {
-        "WARNING": "Source: City of Toronto summary budget documents. The general quality and availability of this data source is poor. We were unable to obtain matching staffing complement data for 2013. Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years. The approved 2017 figures are estimated from changes to total (operating and capital) staffing from prelimiary, applied to preliminary operating.."
+        "WARNING": "Source: City of Toronto summary budget documents. Budgets may be a hybrid of operating and capital staffing. The general quality and availability of this data source is poor. We were unable to obtain matching staffing complement data for 2013. Caution: The staffing dataset for 2016, and most datasets before 2011, are pre-council approved. Roughly estimated re-allocations for continuity have been applied to the earlier years. The approved 2017 figures are estimated from changes to total (operating and capital) staffing from prelimiary, applied to preliminary operating.."
     }
 }
