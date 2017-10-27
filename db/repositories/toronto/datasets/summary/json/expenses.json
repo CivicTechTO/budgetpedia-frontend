@@ -1,7 +1,7 @@
 {
     "MetaData": {
         "InflationAdjustable": true,
-        "DatasetName": "Expenses",
+        "DatasetName": "Expenditures",
         "DatasetTitle": "Gross Operating Expenditures",
         "Dataseries": [
             {
