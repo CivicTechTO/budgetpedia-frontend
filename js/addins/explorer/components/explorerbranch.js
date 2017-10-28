@@ -1008,9 +1008,12 @@ class ExplorerBranch extends Component {
                         React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
                         React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }))),
                 viewtaxonomy) : null;
-        let governmentselection = (branchDeclaration.showOptions) ? React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
-            React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
-                React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;
+        let governmentselection = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select domain:")),
+                React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
+                    React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;
         const versionchoices = () => {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
@@ -1126,19 +1129,20 @@ class ExplorerBranch extends Component {
             React.createElement("div", null,
                 React.createElement("div", null, this.getBranchDataMessages()),
                 React.createElement("div", null,
-                    (branchDeclaration.showOptions) ? React.createElement("div", { style: {
-                            display: "inline-block",
-                            backgroundColor: "cornsilk",
-                            border: "1px solid silver",
-                            borderRadius: "8px",
-                            margin: "3px",
-                            paddingLeft: "6px",
-                            paddingBottom: "3px",
-                            verticalAlign: "top",
-                        } },
-                        search,
-                        shareurl,
-                        technotes) : null,
+                    (branchDeclaration.showOptions) ? React.createElement("div", null,
+                        React.createElement("div", { style: {
+                                display: "inline-block",
+                                backgroundColor: "cornsilk",
+                                border: "1px solid silver",
+                                borderRadius: "8px",
+                                margin: "3px 20px 3px 3px",
+                                paddingLeft: "6px",
+                                paddingBottom: "3px",
+                                verticalAlign: "top",
+                            } },
+                            search,
+                            shareurl,
+                            technotes)) : null,
                     governmentselection),
                 React.createElement("div", null,
                     technotesdialog,

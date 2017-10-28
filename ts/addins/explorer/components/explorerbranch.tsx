@@ -1562,7 +1562,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     </div>:null
 
     // <span style={{ fontStyle: "italic" }}>Government: </span>
-    let governmentselection = (branchDeclaration.showOptions)?<div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    let governmentselection = (branchDeclaration.showOptions)?
+    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+        <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
+            <span style={{lineHeight:'44px'}} >Select domain:</span>
+        </div>
         <DropDownMenu
                 value={"Toronto"}
                 disabled
@@ -1824,14 +1828,14 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         </div>
 
         <div>
-        {(branchDeclaration.showOptions)?<div
+        {(branchDeclaration.showOptions)?<div><div
             style = {
                 {
                     display:"inline-block",
                     backgroundColor:"cornsilk",
                     border:"1px solid silver",
                     borderRadius:"8px",
-                    margin:"3px",
+                    margin:"3px 20px 3px 3px",
                     paddingLeft:"6px",
                     paddingBottom:"3px",
                     verticalAlign:"top",
@@ -1845,7 +1849,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         { technotes }
 
-        </div>:null}
+        </div></div>:null}
 
         { governmentselection }
 

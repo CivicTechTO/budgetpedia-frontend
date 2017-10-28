@@ -2044,7 +2044,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         validated, and the data presented has not been rigorously verified against source data.</div>
 
         <Card 
-        initiallyExpanded
         >
 
             <CardTitle
