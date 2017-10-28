@@ -1434,7 +1434,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         if (!this.viewtaxonomydata.viewpointdata) return null
         let taxonomyselection = this.viewtaxonomydata.viewpointselection.viewpoint
          return <Dialog
-            title = {<div style = {{padding:'12px 0 0 12px'}} >Chart view of selected taxonomy (<span style={{fontStyle:'italic'}}>{this.viewtaxonomydata.viewpointselection.name}</span>)
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Chart view of selected workspace tree (<span style={{fontStyle:'italic'}}>{this.viewtaxonomydata.viewpointselection.name}</span>)
             </div>}
             modal = {false}
             onRequestClose = { () => {  

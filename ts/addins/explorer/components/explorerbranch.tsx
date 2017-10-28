@@ -1517,7 +1517,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
     let viewtaxonomy = <RaisedButton
-        label = "View"
+        label = "Workspace tree"
         style={{margin:'3px 24px 0 0',verticalAlign:'23px'}}
         type="button"
         onTouchTap = { () => {
@@ -1536,7 +1536,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     <div style={{display:'inline-block'}}>
         <div style = {{display:'inline-block',whiteSpace:'nowrap'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'23px' }}>
-            <span style={{lineHeight:'44px'}} >Viewpoint:</span>
+            <span style={{lineHeight:'44px'}} >Select workspace:</span>
         </div>
         <DropDownMenu
             value={branchDeclaration.viewpoint}
@@ -1579,10 +1579,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         switch (branchDeclaration.viewpoint) {
             case "FUNCTIONAL":
             case "STRUCTURAL":
-                return [<MenuItem key = {1} value={'SUMMARY'} primaryText="Summary: PDF reports 2003 - 2017">
+                return [<MenuItem key = {1} value={'SUMMARY'} primaryText="Summary PDF reports 2003 - 2017">
                     <em>This data is shallower, but goes back further:</em>
                 </MenuItem>,
-                <MenuItem key = {2} value={'PBFT'} primaryText="Detail: open data files 2011 - 2017">
+                <MenuItem key = {2} value={'PBFT'} primaryText="Detail open data portal files 2011 - 2017">
                     <em>This data drills down to Account Categories:</em>
                 </MenuItem>,
                 <MenuItem key = {3} disabled value={'VARIANCE'} primaryText="PDF Variance Reports"/>]
@@ -1599,7 +1599,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let versionselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Datasource:</span>
+            <span style={{lineHeight:'44px'}} >Select data:</span>
         </div>
         <DropDownMenu
             disabled = {versionchoices().length < 2}
@@ -1637,7 +1637,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
 
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Category:</span>
+            <span style={{lineHeight:'44px'}} >Select category:</span>
         </div>
 
         <DropDownMenu

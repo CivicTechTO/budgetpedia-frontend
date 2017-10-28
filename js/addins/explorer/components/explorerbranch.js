@@ -986,7 +986,7 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "View", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => {
+        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => {
                 let viewpointselection = {
                     viewpoint: branchDeclaration.viewpoint,
                     name: this.taxonomychoices[branchDeclaration.viewpoint]
@@ -997,7 +997,7 @@ class ExplorerBranch extends Component {
             React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap' } },
                     React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: '23px' } },
-                        React.createElement("span", { style: { lineHeight: '44px' } }, "Viewpoint:")),
+                        React.createElement("span", { style: { lineHeight: '44px' } }, "Select workspace:")),
                     React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                             branch.switchViewpoint(value);
                         } },
@@ -1015,9 +1015,9 @@ class ExplorerBranch extends Component {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
                 case "STRUCTURAL":
-                    return [React.createElement(MenuItem_1.default, { key: 1, value: 'SUMMARY', primaryText: "Summary: PDF reports 2003 - 2017" },
+                    return [React.createElement(MenuItem_1.default, { key: 1, value: 'SUMMARY', primaryText: "Summary PDF reports 2003 - 2017" },
                             React.createElement("em", null, "This data is shallower, but goes back further:")),
-                        React.createElement(MenuItem_1.default, { key: 2, value: 'PBFT', primaryText: "Detail: open data files 2011 - 2017" },
+                        React.createElement(MenuItem_1.default, { key: 2, value: 'PBFT', primaryText: "Detail open data portal files 2011 - 2017" },
                             React.createElement("em", null, "This data drills down to Account Categories:")),
                         React.createElement(MenuItem_1.default, { key: 3, disabled: true, value: 'VARIANCE', primaryText: "PDF Variance Reports" })];
                 case 'ACTUALEXPENSES':
@@ -1031,7 +1031,7 @@ class ExplorerBranch extends Component {
         let versionselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Datasource:")),
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select data:")),
                 React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
                         branch.switchVersion(value);
                     } }, versionchoices())) : null;
@@ -1053,7 +1053,7 @@ class ExplorerBranch extends Component {
         let aspectselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Category:")),
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select category:")),
                 React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
                         branch.switchAspect(value);
                     } }, aspectchoices())) : null;
