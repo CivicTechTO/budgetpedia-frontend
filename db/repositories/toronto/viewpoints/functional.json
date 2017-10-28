@@ -427,7 +427,7 @@
             "BUDGET": {
                 "Instance": {
                     "Name": "Type",
-                    "Alias": "Budget"
+                    "Alias": "Internal budget"
                 },
                 "Contents": {
                     "Name": "Functional",
