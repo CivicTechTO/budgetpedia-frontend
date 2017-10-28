@@ -986,13 +986,6 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 24px 0 0', verticalAlign: '23px' }, type: "button", onTouchTap: () => {
-                let viewpointselection = {
-                    viewpoint: branchDeclaration.viewpoint,
-                    name: this.taxonomychoices[branchDeclaration.viewpoint]
-                };
-                this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection);
-            }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
         let viewpointselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap' } },
@@ -1006,8 +999,7 @@ class ExplorerBranch extends Component {
                         React.createElement(Divider_1.default, null),
                         React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
                         React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
-                        React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }))),
-                viewtaxonomy) : null;
+                        React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES })))) : null;
         let governmentselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
@@ -1120,8 +1112,17 @@ class ExplorerBranch extends Component {
             React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here."));
         let technotes = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
+        let viewtaxonomy = (branchDeclaration.showOptions) ?
+            React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
+                    let viewpointselection = {
+                        viewpoint: branchDeclaration.viewpoint,
+                        name: this.taxonomychoices[branchDeclaration.viewpoint]
+                    };
+                    this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection);
+                }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) })
+            : null;
         let search = (branchDeclaration.showOptions) ?
-            React.createElement(RaisedButton_1.default, { label: "Find", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") })
+            React.createElement(RaisedButton_1.default, { label: "Search", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") })
             : null;
         let shareurl = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }) : null;
@@ -1140,6 +1141,7 @@ class ExplorerBranch extends Component {
                                 paddingBottom: "3px",
                                 verticalAlign: "top",
                             } },
+                            viewtaxonomy,
                             search,
                             shareurl,
                             technotes)) : null,

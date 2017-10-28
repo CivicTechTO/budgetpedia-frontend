@@ -1516,22 +1516,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
-    let viewtaxonomy = <RaisedButton
-        label = "Workspace tree"
-        style={{margin:'3px 24px 0 0',verticalAlign:'23px'}}
-        type="button"
-        onTouchTap = { () => {
-            let viewpointselection = {
-                viewpoint:branchDeclaration.viewpoint,
-                name:this.taxonomychoices[branchDeclaration.viewpoint]
-            }
-            this.props.onCallViewTaxonomy(this.state.viewpointData,viewpointselection)} 
-        } 
-        labelPosition="before"
-        icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
-        }
-    />
-
     let viewpointselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block'}}>
         <div style = {{display:'inline-block',whiteSpace:'nowrap'}}>
@@ -1556,8 +1540,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         </DropDownMenu>
         </div>
-
-        {viewtaxonomy}
 
     </div>:null
 
@@ -1796,9 +1778,27 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 className="material-icons">cloud</FontIcon>}
         />:null
 
+    let viewtaxonomy = (branchDeclaration.showOptions)?
+        <RaisedButton
+            label = "Workspace tree"
+            style={{margin:'3px 6px 0 0'}}
+            type="button"
+            onTouchTap = { () => {
+                let viewpointselection = {
+                    viewpoint:branchDeclaration.viewpoint,
+                    name:this.taxonomychoices[branchDeclaration.viewpoint]
+                }
+                this.props.onCallViewTaxonomy(this.state.viewpointData,viewpointselection)} 
+            } 
+            labelPosition="before"
+            icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
+            }
+            />
+        :null
+
     let search = (branchDeclaration.showOptions)?
         <RaisedButton 
-            label = "Find"
+            label = "Search"
             style={{margin:'3px 6px 0 0'}}
             type="button"
             onTouchTap = { this.handleSearch }
@@ -1842,6 +1842,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 }
             }
         >
+
+        { viewtaxonomy }
 
         { search }
 
