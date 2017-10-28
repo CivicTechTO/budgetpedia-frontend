@@ -907,8 +907,8 @@ class ExplorerBranch extends Component {
             this.props.handleFindDialogOpen(e);
         };
         this.taxonomychoices = {
-            FUNCTIONAL: "Budget: Programs by function",
-            STRUCTURAL: "Budget: Programs by org type",
+            FUNCTIONAL: "Internal budget: Programs by function",
+            STRUCTURAL: "Internal budget: Programs by org type",
             ACTUALEXPENSES: "Actual: Expenses by function",
             ACTUALREVENUES: "Actual: Revenues by type",
             EXPENDITURES: "Actual: Expenses by type",
@@ -1024,11 +1024,11 @@ class ExplorerBranch extends Component {
                             React.createElement("em", null, "This data drills down to Account Categories:")),
                         React.createElement(MenuItem_1.default, { key: 3, disabled: true, value: 'VARIANCE', primaryText: "PDF Variance Reports" })];
                 case 'ACTUALEXPENSES':
-                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALEXPENSES', primaryText: "Audited: statements 1998 - 2015" })];
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALEXPENSES', primaryText: "Audited statements 1998 - 2015" })];
                 case 'ACTUALREVENUES':
-                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALREVENUES', primaryText: "Audited: statements 1998 - 2015" })];
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALREVENUES', primaryText: "Audited statements 1998 - 2015" })];
                 case 'EXPENDITURES':
-                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited: statements 1998 - 2015" })];
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2015" })];
             }
         };
         let versionselection = (branchDeclaration.showOptions) ?
