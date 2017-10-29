@@ -31,6 +31,7 @@ class ExplorerBranch extends Component {
             snackbar: { open: false, message: 'empty' },
             comparatorselection: 'Off',
             techDialogOpen: false,
+            noticeDialogOpen: false,
         };
         this.waitafteraction = 0;
         this.getState = () => this.state;
@@ -839,9 +840,25 @@ class ExplorerBranch extends Component {
                 techDialogOpen: true
             });
         };
+        this.handleNoticeDialogOpen = (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            this.logEvent({
+                category: 'ExplorerBranch',
+                action: 'Show notices',
+            });
+            this.setState({
+                noticeDialogOpen: true
+            });
+        };
         this.handleTechDialogClose = () => {
             this.setState({
                 techDialogOpen: false
+            });
+        };
+        this.handleNoticeDialogClose = () => {
+            this.setState({
+                noticeDialogOpen: false
             });
         };
         this.openwindow = (url) => {
@@ -1093,6 +1110,18 @@ class ExplorerBranch extends Component {
             React.createElement(Toggle_1.default, { label: 'Show chart options:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
                     this.toggleShowOptions(value);
                 } }));
+        let noticesdialog = React.createElement(Dialog_1.default, { title: "Notices for this data", modal: false, open: branch.state.noticeDialogOpen, onRequestClose: branch.handleNoticeDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
+            React.createElement(IconButton_1.default, { style: {
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }, onTouchTap: branch.handleNoticeDialogClose },
+                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+            branch.state.noticeDialogOpen ? branch.getBranchDataMessages() : null);
         let technotesdialog = React.createElement(Dialog_1.default, { title: "Row Data Sources", modal: false, open: branch.state.techDialogOpen, onRequestClose: branch.handleTechDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
             React.createElement(IconButton_1.default, { style: {
                     top: 0,
@@ -1112,6 +1141,8 @@ class ExplorerBranch extends Component {
             React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here."));
         let technotes = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
+        let notices = (branchDeclaration.showOptions)
+            ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onTouchTap: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") }) : null;
         let viewtaxonomy = (branchDeclaration.showOptions) ?
             React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
                     let viewpointselection = {
@@ -1128,7 +1159,6 @@ class ExplorerBranch extends Component {
             ? React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }) : null;
         return React.createElement("div", null,
             React.createElement("div", null,
-                React.createElement("div", null, this.getBranchDataMessages()),
                 React.createElement("div", null,
                     (branchDeclaration.showOptions) ? React.createElement("div", null,
                         React.createElement("div", { style: {
@@ -1144,9 +1174,11 @@ class ExplorerBranch extends Component {
                             viewtaxonomy,
                             search,
                             shareurl,
-                            technotes)) : null,
+                            technotes,
+                            notices)) : null,
                     governmentselection),
                 React.createElement("div", null,
+                    noticesdialog,
                     technotesdialog,
                     viewpointselection,
                     versionselection,

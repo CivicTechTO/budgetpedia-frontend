@@ -100,6 +100,7 @@ interface ExplorerBranchState {
     snackbar?:SnackbarProps, 
     comparatorselection?: string,
     techDialogOpen?:boolean,
+    noticeDialogOpen?:boolean,
 }
 
 class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState> {
@@ -111,6 +112,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         snackbar:{open:false,message:'empty'},
         comparatorselection:'Off',
         techDialogOpen:false,
+        noticeDialogOpen:false,
 
     }
 
@@ -1392,9 +1394,27 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         })
     }
 
+    handleNoticeDialogOpen = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        this.logEvent({
+            category:'ExplorerBranch',
+            action:'Show notices',
+        })
+        this.setState({
+            noticeDialogOpen: true
+        })
+    }
+
     handleTechDialogClose = () => {
         this.setState({
             techDialogOpen: false
+        })
+    }
+
+    handleNoticeDialogClose = () => {
+        this.setState({
+            noticeDialogOpen: false
         })
     }
 
@@ -1428,7 +1448,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         </div>:null)
 
     }
-
 
     getTechNotesDisplay = () => {
 
@@ -1723,6 +1742,43 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             />
         </div>
 
+        let noticesdialog =
+        <Dialog
+            title = "Notices for this data"
+            modal = { false }
+            open = { branch.state.noticeDialogOpen }
+            onRequestClose = { branch.handleNoticeDialogClose }
+            bodyStyle={{padding:'12px'}}
+            autoScrollBodyContent
+            contentStyle = {{width:'95%',maxWidth:'600px'}}
+        >
+            <IconButton
+                style={{
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }}
+                onTouchTap={ branch.handleNoticeDialogClose } >
+
+                <FontIcon
+                    className="material-icons"
+                    style = {{ cursor: "pointer" }} >
+
+                    close
+
+                </FontIcon>
+
+            </IconButton>
+
+            { branch.state.noticeDialogOpen?branch.getBranchDataMessages():null }
+
+        </Dialog >
+
+
     let technotesdialog =
         <Dialog
             title = "Row Data Sources"
@@ -1778,6 +1834,18 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 className="material-icons">cloud</FontIcon>}
         />:null
 
+    let notices = (branchDeclaration.showOptions)
+        ?<RaisedButton
+            style={{margin:'3px 6px 0 0'}}
+            type="button"
+            label="Notices"
+            onTouchTap={branch.handleNoticeDialogOpen} 
+            labelPosition="before"
+            icon = {<FontIcon 
+                style={{color:'rgba(0,0,0,0.5'}}
+                className="material-icons">priority_high</FontIcon>}
+        />:null
+
     let viewtaxonomy = (branchDeclaration.showOptions)?
         <RaisedButton
             label = "Workspace tree"
@@ -1824,10 +1892,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     return <div >
     <div>
         <div>
-        { this.getBranchDataMessages() }
-        </div>
-
-        <div>
         {(branchDeclaration.showOptions)?<div><div
             style = {
                 {
@@ -1851,6 +1915,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         { technotes }
 
+        { notices }
+
         </div></div>:null}
 
         { governmentselection }
@@ -1858,6 +1924,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         </div>
 
         <div>
+
+        { noticesdialog }
+
         { technotesdialog }
 
         { viewpointselection }
