@@ -1377,8 +1377,16 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
+    taxonomyselection = null
+
     // TODO: should log event for google analytics
     onCallViewTaxonomy = (viewpointdata,viewpointselection) => {
+        let self = this
+        self.taxonomyselection = null
+        window['taxonomyCall'] = function(value) {
+            self.taxonomyselection = value
+            console.log('set taxonomyselection',value)
+        }
         // console.log('viewpointdata',viewpointdata)
         this.viewtaxonomydata.viewpointdata = viewpointdata
         this.viewtaxonomydata.viewpointselection = viewpointselection
@@ -1398,6 +1406,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.viewtaxonomydata.data = data
     }
 
+    // recursive
     setViewTaxonomyRow = (parentcode,components,data) => {
         let baselines:any = {string:''}
         for (let code in components) {
@@ -1407,7 +1416,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 if (!baselines.code) {
                     baselines.code = code
                 }
-                baselines.string += '<div style="border:2px solid gray;margin-bottom:3px;border-radius:6px;font-size:smaller">'+component.Name+'</div>'
+                baselines.string += '<div style="border:2px solid gray;margin-bottom:3px;border-radius:6px;font-size:smaller" onClick="taxonomyCall(\''+ code +'\')">'+component.Name+'</div>'
             } else {
                 data.push([{v:code,f:component.Name},parentcode,''])
                 this.setViewTaxonomyRow(code,component.Components,data)
@@ -1422,11 +1431,35 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
+    setbranchnodes = (selection) => {
+        console.log('chart selection, taxonomyselection',selection, this.taxonomyselection)
+    }
+
+    taxonomyevents = () => {
+        let self = this
+        return [
+            {
+                eventName: 'select',
+                callback: (Chart, err) => {
+                    let chart = Chart.chart
+                    let selection = chart.getSelection()
+                    self.setState({
+                        viewTaxonomyDialogOpen: false,
+                    })
+                    if (selection.length) {
+                        self.setbranchnodes(selection)
+                    }
+                }
+            }
+        ]
+    }
+
     taxonomychart = () => {
-        // console.log('viewtaxonomydata',this.viewtaxonomydata)
+        console.log('viewtaxonomydata',this.viewtaxonomydata)
         return this.viewtaxonomydata.data?<Chart 
         chartType = 'OrgChart'
         options = { this.viewtaxonomydata.options }
+        chartEvents = { this.taxonomyevents() }
         data = { this.viewtaxonomydata.data }
     />:null }
 
