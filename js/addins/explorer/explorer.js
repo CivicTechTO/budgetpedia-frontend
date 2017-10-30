@@ -808,13 +808,12 @@ let Explorer = class extends Component {
                 allowCollapse: true,
             }
         };
-        this.taxonomyselection = null;
+        this.taxonomyleafnodeselection = null;
         this.onCallViewTaxonomy = (viewpointdata, viewpointselection) => {
             let self = this;
-            self.taxonomyselection = null;
+            self.taxonomyleafnodeselection = null;
             window['taxonomyCall'] = function (value) {
-                self.taxonomyselection = value;
-                console.log('set taxonomyselection', value);
+                self.taxonomyleafnodeselection = value;
             };
             this.viewtaxonomydata.viewpointdata = viewpointdata;
             this.viewtaxonomydata.viewpointselection = viewpointselection;
@@ -854,8 +853,26 @@ let Explorer = class extends Component {
                 ]);
             }
         };
-        this.setbranchnodes = (selection) => {
-            console.log('chart selection, taxonomyselection', selection, this.taxonomyselection);
+        this.setSelectionBranchNodes = (selection) => {
+            setTimeout(() => {
+                let selectedleafnode = null;
+                let selectedtreenode = null;
+                let selectednoderow = selection[0].row;
+                let datanode = this.viewtaxonomydata.data[selectednoderow + 1];
+                if (this.taxonomyleafnodeselection) {
+                    selectedleafnode = this.taxonomyleafnodeselection;
+                    selectedtreenode = datanode[1];
+                }
+                else {
+                    let substr = datanode[0].f.substring(0, 4);
+                    if (substr == '<div') {
+                        selectedtreenode = datanode[1];
+                    }
+                    else {
+                        selectedtreenode = datanode[0].v;
+                    }
+                }
+            });
         };
         this.taxonomyevents = () => {
             let self = this;
@@ -869,14 +886,13 @@ let Explorer = class extends Component {
                             viewTaxonomyDialogOpen: false,
                         });
                         if (selection.length) {
-                            self.setbranchnodes(selection);
+                            self.setSelectionBranchNodes(selection);
                         }
                     }
                 }
             ];
         };
         this.taxonomychart = () => {
-            console.log('viewtaxonomydata', this.viewtaxonomydata);
             return this.viewtaxonomydata.data ? React.createElement(Chart, { chartType: 'OrgChart', options: this.viewtaxonomydata.options, chartEvents: this.taxonomyevents(), data: this.viewtaxonomydata.data }) : null;
         };
         this.viewTaxonomyDialog = () => {

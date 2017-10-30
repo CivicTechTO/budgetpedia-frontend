@@ -419,7 +419,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
-    // ------------------------[ andcillary ui ]---------------------------
+    // ------------------------[ ancillary ui ]---------------------------
 
     handleDialogOpen = (e) => {
         e.stopPropagation()
@@ -1377,15 +1377,15 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
-    taxonomyselection = null
+    taxonomyleafnodeselection = null
 
     // TODO: should log event for google analytics
     onCallViewTaxonomy = (viewpointdata,viewpointselection) => {
         let self = this
-        self.taxonomyselection = null
+        self.taxonomyleafnodeselection = null
         window['taxonomyCall'] = function(value) {
-            self.taxonomyselection = value
-            console.log('set taxonomyselection',value)
+            self.taxonomyleafnodeselection = value
+            // console.log('set taxonomynodeselection',value)
         }
         // console.log('viewpointdata',viewpointdata)
         this.viewtaxonomydata.viewpointdata = viewpointdata
@@ -1431,8 +1431,27 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         }
     }
 
-    setbranchnodes = (selection) => {
-        console.log('chart selection, taxonomyselection',selection, this.taxonomyselection)
+    setSelectionBranchNodes = (selection) => {
+        setTimeout( () => { // wait for this.taxonomyleafnodeselection to be set
+            let selectedleafnode = null
+            let selectedtreenode = null
+            let selectednoderow = selection[0].row
+            let datanode = this.viewtaxonomydata.data[selectednoderow+1]
+            if (this.taxonomyleafnodeselection) { // an html injected div has been clicked
+                selectedleafnode = this.taxonomyleafnodeselection
+                selectedtreenode = datanode[1] // parent
+            } else {
+                let substr = datanode[0].f.substring(0,4)
+                if ( substr == '<div') { // a constructed node. get parent
+                    selectedtreenode = datanode[1] // parent
+                } else { // get current code
+                    selectedtreenode = datanode[0].v // node code
+                }
+
+            }
+            // console.log('viewtaxonomydata.data',this.viewtaxonomydata.data)
+            // console.log('selectedleafnode, selectedtreenode, chart selection, taxonomynodeselection', selectedleafnode, selectedtreenode, selection, this.taxonomyleafnodeselection)
+        })
     }
 
     taxonomyevents = () => {
@@ -1447,7 +1466,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         viewTaxonomyDialogOpen: false,
                     })
                     if (selection.length) {
-                        self.setbranchnodes(selection)
+                        self.setSelectionBranchNodes(selection)
                     }
                 }
             }
@@ -1455,7 +1474,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     taxonomychart = () => {
-        console.log('viewtaxonomydata',this.viewtaxonomydata)
+        // console.log('viewtaxonomydata',this.viewtaxonomydata)
         return this.viewtaxonomydata.data?<Chart 
         chartType = 'OrgChart'
         options = { this.viewtaxonomydata.options }
