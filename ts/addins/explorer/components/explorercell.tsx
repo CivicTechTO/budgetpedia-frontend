@@ -657,7 +657,16 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     display:"inline-block",
                 }
             }>
-                <div style={{paddingLeft: '3px', position:"absolute",top:"0", left:"0",fontSize:"8px",textAlign:"left"}}>data<br />[deferred]</div>
+                <div style={
+                    {
+                        paddingLeft: '3px', 
+                        position:"absolute",
+                        top:"0", 
+                        left:"0",
+                        fontSize:"8px",
+                        textAlign:"left"
+                    }
+                }>see data<br />[deferred]</div>
                 <IconButton 
                     disabled
                     tooltip="Data Table"
@@ -700,7 +709,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         left:"0",
                         fontSize:"8px"
                     }
-                }>harmonize</div>
+                }>harmonize <br />settings</div>
                 <IconButton 
                     tooltip="Harmonize settings for row"
                     tooltipPosition="top-center"
@@ -853,9 +862,10 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
             return (viewpoint == 'FUNCTIONAL' || viewpoint == 'STRUCTURAL')?
             <div style={{
-                position:"absolute",
-                top:"8px",
-                right:"3px",
+                display:'inline-block',
+                // position:"absolute",
+                // top:"8px",
+                // right:"3px",
                 fontSize:"9px",
                 fontStyle:"italic",
                 zIndex:10,
@@ -942,7 +952,15 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
                 { chartoptions }
 
-                { informationprompt() }
+                <div style={{float:'right'}}>
+
+                    { informationprompt() }
+
+                    { datatable }
+
+                    { harmonizeoptions }
+
+                </div>
 
             </div>:null}
 
@@ -959,16 +977,14 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                 {(this.props.showControls)?
                     yearselection:<div style={{height:"12px"}}></div>}
 
-                {this.props.showControls?<div style={{display:"inline-block"}} >
+                {//this.props.showControls?<div style={{display:"inline-block"}} >
 
-                { informationoptions }
+                // {informationoptions }
 
-                { socialoptions }
+                // { socialoptions }
 
-                { datatable }
-
-                { harmonizeoptions }
-                </div>:null}
+                // </div>:null
+                }
 
             </div>
             

@@ -415,8 +415,15 @@ class ExplorerCell extends Component {
                 position: "relative",
                 display: "inline-block",
             } },
-            React.createElement("div", { style: { paddingLeft: '3px', position: "absolute", top: "0", left: "0", fontSize: "8px", textAlign: "left" } },
-                "data",
+            React.createElement("div", { style: {
+                    paddingLeft: '3px',
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                    fontSize: "8px",
+                    textAlign: "left"
+                } },
+                "see data",
                 React.createElement("br", null),
                 "[deferred]"),
             React.createElement(IconButton_1.default, { disabled: true, tooltip: "Data Table", tooltipPosition: "top-center", style: {
@@ -446,7 +453,10 @@ class ExplorerCell extends Component {
                     top: "0",
                     left: "0",
                     fontSize: "8px"
-                } }, "harmonize"),
+                } },
+                "harmonize ",
+                React.createElement("br", null),
+                "settings"),
             React.createElement(IconButton_1.default, { tooltip: "Harmonize settings for row", tooltipPosition: "top-center", style: {
                     borderRadius: "50%",
                     padding: "0",
@@ -537,9 +547,7 @@ class ExplorerCell extends Component {
             let nodepath = this.props.budgetCell.nodeDataPack.budgetNode.dataPath;
             return (viewpoint == 'FUNCTIONAL' || viewpoint == 'STRUCTURAL') ?
                 React.createElement("div", { style: {
-                        position: "absolute",
-                        top: "8px",
-                        right: "3px",
+                        display: 'inline-block',
                         fontSize: "9px",
                         fontStyle: "italic",
                         zIndex: 10,
@@ -580,18 +588,15 @@ class ExplorerCell extends Component {
             (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },
                 timescopes,
                 chartoptions,
-                informationprompt()) : null,
+                React.createElement("div", { style: { float: 'right' } },
+                    informationprompt(),
+                    datatable,
+                    harmonizeoptions)) : null,
             React.createElement("div", { style: { position: "relative" } },
                 chart,
                 drilldownprompt),
-            React.createElement("div", { style: { padding: "3px", textAlign: "center" } },
-                (this.props.showControls) ?
-                    yearselection : React.createElement("div", { style: { height: "12px" } }),
-                this.props.showControls ? React.createElement("div", { style: { display: "inline-block" } },
-                    informationoptions,
-                    socialoptions,
-                    datatable,
-                    harmonizeoptions) : null));
+            React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, (this.props.showControls) ?
+                yearselection : React.createElement("div", { style: { height: "12px" } })));
     }
 }
 exports.default = ExplorerCell;
