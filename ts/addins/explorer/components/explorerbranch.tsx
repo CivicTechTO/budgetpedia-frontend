@@ -101,6 +101,7 @@ interface ExplorerBranchState {
     comparatorselection?: string,
     techDialogOpen?:boolean,
     noticeDialogOpen?:boolean,
+    selectionsDialogOpen?:boolean,
 }
 
 class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState> {
@@ -113,6 +114,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         comparatorselection:'Off',
         techDialogOpen:false,
         noticeDialogOpen:false,
+        selectionsDialogOpen:false,
 
     }
 
@@ -1382,6 +1384,18 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         return url
     }
 
+    handleSelectionsDialogOpen = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        this.logEvent({
+            category:'ExplorerBranch',
+            action:'Selections Dialog',
+        })
+        this.setState({
+            selectionsDialogOpen: true
+        })
+    }
+
     handleTechDialogOpen = (e) => {
         e.stopPropagation()
         e.preventDefault()
@@ -1403,6 +1417,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         })
         this.setState({
             noticeDialogOpen: true
+        })
+    }
+
+    handleSelectionsDialogClose = () => {
+        this.setState({
+            selectionsDialogOpen: false
         })
     }
 
@@ -1742,6 +1762,59 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             />
         </div>
 
+        let selectionsdialog =
+        <Dialog
+            title = "Make selections for this row of charts"
+            modal = { false }
+            open = { branch.state.selectionsDialogOpen }
+            onRequestClose = { branch.handleSelectionsDialogClose }
+            bodyStyle={{padding:'12px'}}
+            autoScrollBodyContent
+            contentStyle = {{width:'95%',maxWidth:'600px'}}
+        >
+            <IconButton
+                style={{
+                    top: 0,
+                    right: 0,
+                    padding: 0,
+                    height: "36px",
+                    width: "36px",
+                    position: "absolute",
+                    zIndex: 2,
+                }}
+                onTouchTap={ branch.handleSelectionsDialogClose } >
+
+                <FontIcon
+                    className="material-icons"
+                    style = {{ cursor: "pointer" }} >
+
+                    close
+
+                </FontIcon>
+
+            </IconButton>
+
+        <div>
+
+            { governmentselection }
+
+            { viewpointselection }
+
+            { versionselection }
+
+            { aspectselection }
+
+        </div>
+
+        <RaisedButton label="Done" 
+            style={{margin:'3px 6px 0 0',float:'right'}}
+            onTouchTap={branch.handleSelectionsDialogClose} 
+        />
+
+        <div></div>
+    
+        </Dialog >
+
         let noticesdialog =
         <Dialog
             title = "Notices for this data"
@@ -1846,6 +1919,19 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 className="material-icons">priority_high</FontIcon>}
         />:null
 
+    let makeselections = (branchDeclaration.showOptions)?
+        <RaisedButton
+            label = "Selections"
+            style={{margin:'3px 6px 0 0'}}
+            type="button"
+            onTouchTap={branch.handleSelectionsDialogOpen} 
+            labelPosition="before"
+            icon ={<FontIcon 
+                style={{color:'rgba(0,0,0,0.5'}}
+                className="material-icons">settings_applications</FontIcon>}
+            />
+        :null
+
     let viewtaxonomy = (branchDeclaration.showOptions)?
         <RaisedButton
             label = "Workspace tree"
@@ -1892,20 +1978,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     return <div >
     <div>
         <div>
-        {(branchDeclaration.showOptions)?<div><div
-            style = {
-                {
-                    display:"inline-block",
-                    backgroundColor:"cornsilk",
-                    border:"1px solid silver",
-                    borderRadius:"8px",
-                    margin:"3px 20px 3px 3px",
-                    paddingLeft:"6px",
-                    paddingBottom:"3px",
-                    verticalAlign:"top",
-                }
-            }
-        >
+        {(branchDeclaration.showOptions)?<div style = {{marginBottom:'12px'}}>
+
+        { makeselections }
 
         { viewtaxonomy }
 
@@ -1917,23 +1992,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         { notices }
 
-        </div></div>:null}
+        </div>:null}
 
-        { governmentselection }
-
-        </div>
-
-        <div>
+        { selectionsdialog }
 
         { noticesdialog }
 
         { technotesdialog }
-
-        { viewpointselection }
-
-        { versionselection }
-
-        { aspectselection }
 
         </div>
 
