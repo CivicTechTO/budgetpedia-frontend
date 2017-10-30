@@ -1022,7 +1022,7 @@ class ExplorerBranch extends Component {
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
         let viewpointselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block' } },
-                React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap' } },
+                React.createElement("div", { style: { display: 'inline-block' } },
                     React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: '23px' } },
                         React.createElement("span", { style: { lineHeight: '44px' } }, "Select workspace:")),
                     React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
@@ -1035,9 +1035,9 @@ class ExplorerBranch extends Component {
                         React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
                         React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES })))) : null;
         let governmentselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+            React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select domain:")),
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
                 React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
                     React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;
         const versionchoices = () => {
@@ -1058,7 +1058,7 @@ class ExplorerBranch extends Component {
             }
         };
         let versionselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+            React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                     React.createElement("span", { style: { lineHeight: '44px' } }, "Select data:")),
                 React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
@@ -1080,14 +1080,14 @@ class ExplorerBranch extends Component {
             }
         };
         let aspectselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+            React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                     React.createElement("span", { style: { lineHeight: '44px' } }, "Select category:")),
                 React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
                         branch.switchAspect(value);
                     } }, aspectchoices())) : null;
         let byunitselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block', whiteSpace: "nowrap" } },
+            React.createElement("div", { style: { display: 'inline-block' } },
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                     React.createElement("span", { style: { lineHeight: '44px' } }, "Prorated:")),
                 React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
@@ -1209,6 +1209,7 @@ class ExplorerBranch extends Component {
                     noticesdialog,
                     technotesdialog),
                 (branchDeclaration.showOptions) ? React.createElement("div", { style: {
+                        whiteSpace: 'nowrap',
                         display: "inline-block",
                         backgroundColor: "#ebfaf9",
                         border: "1px solid silver",

@@ -1557,7 +1557,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let viewpointselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block'}}>
-        <div style = {{display:'inline-block',whiteSpace:'nowrap'}}>
+        <div style = {{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'23px' }}>
             <span style={{lineHeight:'44px'}} >Select workspace:</span>
         </div>
@@ -1584,9 +1584,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // <span style={{ fontStyle: "italic" }}>Government: </span>
     let governmentselection = (branchDeclaration.showOptions)?
-    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Select domain:</span>
+            <span style={{lineHeight:'44px'}} >Select city:</span>
         </div>
         <DropDownMenu
                 value={"Toronto"}
@@ -1622,7 +1622,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // TODO: add contitional logic depending on viewpoint selection
     let versionselection = (branchDeclaration.showOptions)?
-    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Select data:</span>
         </div>
@@ -1659,7 +1659,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     let aspectselection = (branchDeclaration.showOptions)?
-    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    <div style={{display:'inline-block'}}>
 
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Select category:</span>
@@ -1682,7 +1682,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     </div>:null
 
     let byunitselection = (branchDeclaration.showOptions)?
-    <div style={{display:'inline-block', whiteSpace:"nowrap"}}>
+    <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Prorated:</span>
         </div>
@@ -2005,6 +2005,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         {(branchDeclaration.showOptions)?<div
             style = {
                 {
+                    whiteSpace:'nowrap',
                     display:"inline-block",
                     backgroundColor:"#ebfaf9",
                     border:"1px solid silver",
