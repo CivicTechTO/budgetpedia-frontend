@@ -1123,7 +1123,36 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         console.log('applytaxonomyselection parms',parms,targetcode)
         let path = []
         this._getPath(path,targetcode,this.state.viewpointData.Components)
+
         console.log('path',path)
+        // remove previous branches
+        let { budgetBranch } = this.props
+        let { nodes:branchNodes } = budgetBranch
+
+        // branchNodes is just a copy of the component state's BranchNodes
+        let removed = branchNodes.splice(0) // identify nodes to remove
+        let removeditems = removed.map((item:BudgetNode) => {
+            return {nodeuid:item.uid, cellList:item.cellDeclarationList}
+        })
+        // this will trigger render cycle that will delete the component state's stored nodes
+        let globalStateActions = this._stateActions
+        globalStateActions.removeNodeDeclarations(removeditems)
+
+        // add new branches
+        // let settingslist = this._getTreeSelectionNodeSettingsList()
+        // this._stateActions.addNodeDeclarations(settingslist)
+
+        // let explorerbranch = this
+
+        // setTimeout(()=>{
+        //     explorerbranch._updateCellChartSelections()
+        // })
+        // setTimeout(()=>{
+
+        //     explorerbranch.onPortalCreation()
+            
+        // },1000)
+
     }
 
 

@@ -666,6 +666,14 @@ class ExplorerBranch extends Component {
             let path = [];
             this._getPath(path, targetcode, this.state.viewpointData.Components);
             console.log('path', path);
+            let { budgetBranch } = this.props;
+            let { nodes: branchNodes } = budgetBranch;
+            let removed = branchNodes.splice(0);
+            let removeditems = removed.map((item) => {
+                return { nodeuid: item.uid, cellList: item.cellDeclarationList };
+            });
+            let globalStateActions = this._stateActions;
+            globalStateActions.removeNodeDeclarations(removeditems);
         };
         this.harmonizeCells = (nodeUid, cellUid) => {
             let { budgetBranch } = this.props;
