@@ -309,7 +309,7 @@ class ExplorerBranch extends Component {
         };
         this._updateCellChartSelections = () => {
             let nodes = this.state.branchNodes;
-            let selections = this.finderSelections;
+            let selections = this.pathSelections;
             for (let index in selections) {
                 let node = nodes[index];
                 let cell = node.cells[0];
@@ -405,7 +405,7 @@ class ExplorerBranch extends Component {
                 path.pop();
                 selections.pop();
             }
-            this.finderSelections = selections;
+            this.pathSelections = selections;
             return path;
         };
         this._searchComponents = (code, path, selections, components, sortedcomponents) => {
@@ -662,10 +662,13 @@ class ExplorerBranch extends Component {
         };
         this.applytaxonomyselection = (parms) => {
             let targetcode = parms.selectedleafnode ? parms.selectedleafnode : parms.selectedtreenode;
-            console.log('applytaxonomyselection parms', parms, targetcode);
-            let path = [];
-            this._getPath(path, targetcode, this.state.viewpointData.Components);
-            console.log('path', path);
+            let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
+            let pathParms = {
+                code: targetcode,
+                aspect: branchDeclaration.aspect,
+                name: targetcode
+            };
+            let path = this._getLeafPath(pathParms, this.state.viewpointData);
             let { budgetBranch } = this.props;
             let { nodes: branchNodes } = budgetBranch;
             let removed = branchNodes.splice(0);
@@ -674,6 +677,61 @@ class ExplorerBranch extends Component {
             });
             let globalStateActions = this._stateActions;
             globalStateActions.removeNodeDeclarations(removeditems);
+            let settingslist = this._getTreeSelectionNodeSettingsList(path);
+            this._stateActions.addNodeDeclarations(settingslist);
+            let explorerbranch = this;
+            setTimeout(() => {
+                explorerbranch._updateCellChartSelections();
+            }, 500);
+            setTimeout(() => {
+                explorerbranch.onPortalCreation();
+            }, 1000);
+        };
+        this._getTreeSelectionNodeSettingsList = (path) => {
+            let settingslist = [];
+            let viewpointdata = this.state.viewpointData;
+            let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
+            let settings = {
+                aspectName: branchDeclaration.aspect,
+                cellIndex: 0,
+                cellList: null,
+                dataPath: [],
+                nodeIndex: 0,
+                viewpointName: branchDeclaration.viewpoint,
+                yearSelections: {
+                    leftYear: viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    rightYear: viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
+                yearsRange: {
+                    firstYear: viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    lastYear: viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
+            };
+            settingslist.push({
+                settings,
+            });
+            for (let nodeindex in path) {
+                let settings = {
+                    aspectName: branchDeclaration.aspect,
+                    cellIndex: 0,
+                    cellList: null,
+                    dataPath: path.slice(0, parseInt(nodeindex) + 1),
+                    nodeIndex: parseInt(nodeindex) + 1,
+                    viewpointName: branchDeclaration.viewpoint,
+                    yearSelections: {
+                        leftYear: viewpointdata.Meta.datasetConfig.YearsRange.start,
+                        rightYear: viewpointdata.Meta.datasetConfig.YearsRange.end,
+                    },
+                    yearsRange: {
+                        firstYear: viewpointdata.Meta.datasetConfig.YearsRange.start,
+                        lastYear: viewpointdata.Meta.datasetConfig.YearsRange.end,
+                    },
+                };
+                settingslist.push({
+                    settings,
+                });
+            }
+            return settingslist;
         };
         this.harmonizeCells = (nodeUid, cellUid) => {
             let { budgetBranch } = this.props;

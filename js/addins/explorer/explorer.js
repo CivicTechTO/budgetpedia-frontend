@@ -816,7 +816,6 @@ let Explorer = class extends Component {
             window['taxonomyCall'] = function (value) {
                 self.taxonomyleafnodeselection = value;
             };
-            console.log('viewpointdata,viewpointselection', viewpointdata, viewpointselection);
             this.viewtaxonomydata.viewpointdata = viewpointdata;
             this.viewtaxonomydata.viewpointselection = viewpointselection;
             this.setViewTaxonomyData();

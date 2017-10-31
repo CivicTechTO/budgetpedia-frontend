@@ -651,7 +651,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     private _updateCellChartSelections = () => {
 
         let nodes = this.state.branchNodes
-        let selections = this.finderSelections
+        let selections = this.pathSelections
         for (let index in selections) {
             let node = nodes[index]
             let cell = node.cells[0]
@@ -761,12 +761,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             selections.pop()
         }
 
-        this.finderSelections = selections
+        this.pathSelections = selections
         // console.log('leafpath, selections',path,selections)
         return path
     }
 
-    finderSelections: any
+    pathSelections: any
 
     private _searchComponents = (code, path, selections, components, sortedcomponents) => {
         for (let component_name in components) {
@@ -1120,11 +1120,18 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     applytaxonomyselection = (parms) => {
         let targetcode = parms.selectedleafnode? parms.selectedleafnode:parms.selectedtreenode
-        console.log('applytaxonomyselection parms',parms,targetcode)
-        let path = []
-        this._getPath(path,targetcode,this.state.viewpointData.Components)
+        // console.log('applytaxonomyselection parms',parms,targetcode)
+        let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
-        console.log('path',path)
+        let pathParms = {
+            code:targetcode,
+            aspect:branchDeclaration.aspect,
+            name:targetcode
+        }
+
+        let path = this._getLeafPath(pathParms,this.state.viewpointData)
+
+        // console.log('path',path)
         // remove previous branches
         let { budgetBranch } = this.props
         let { nodes:branchNodes } = budgetBranch
@@ -1139,20 +1146,74 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         globalStateActions.removeNodeDeclarations(removeditems)
 
         // add new branches
-        // let settingslist = this._getTreeSelectionNodeSettingsList()
-        // this._stateActions.addNodeDeclarations(settingslist)
+        let settingslist = this._getTreeSelectionNodeSettingsList(path)
+        this._stateActions.addNodeDeclarations(settingslist)
 
-        // let explorerbranch = this
+        let explorerbranch = this
 
-        // setTimeout(()=>{
-        //     explorerbranch._updateCellChartSelections()
-        // })
-        // setTimeout(()=>{
+        setTimeout(()=>{
+            explorerbranch._updateCellChartSelections()
+        },500)
+        setTimeout(()=>{
 
-        //     explorerbranch.onPortalCreation()
+            explorerbranch.onPortalCreation()
             
-        // },1000)
+        },1000)
 
+    }
+
+    _getTreeSelectionNodeSettingsList = (path) => {
+        let settingslist = []
+        let viewpointdata = this.state.viewpointData
+
+        let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
+
+
+        let settings = {
+            aspectName:branchDeclaration.aspect,
+            cellIndex:0,
+            cellList:null,
+            dataPath: [],
+            nodeIndex:0,
+            viewpointName:branchDeclaration.viewpoint,
+            yearSelections: {
+                leftYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                rightYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+            },
+            yearsRange:{
+                firstYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                lastYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+            },
+        }
+
+        settingslist.push({
+            settings,
+        })
+
+        for (let nodeindex in path) {
+
+            let settings = {
+                aspectName:branchDeclaration.aspect,
+                cellIndex:0,
+                cellList:null,
+                dataPath: path.slice(0,parseInt(nodeindex) + 1),
+                nodeIndex:parseInt(nodeindex) + 1,
+                viewpointName:branchDeclaration.viewpoint,
+                yearSelections: {
+                    leftYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    rightYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
+                yearsRange:{
+                    firstYear:viewpointdata.Meta.datasetConfig.YearsRange.start,
+                    lastYear:viewpointdata.Meta.datasetConfig.YearsRange.end,
+                },
+            }
+            settingslist.push({
+                settings,
+            })
+        }
+
+        return settingslist
     }
 
 

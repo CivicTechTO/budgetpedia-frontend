@@ -1388,7 +1388,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             self.taxonomyleafnodeselection = value
             // console.log('set taxonomynodeselection',value)
         }
-        console.log('viewpointdata,viewpointselection',viewpointdata, viewpointselection)
+        // console.log('viewpointdata,viewpointselection',viewpointdata, viewpointselection)
         this.viewtaxonomydata.viewpointdata = viewpointdata
         this.viewtaxonomydata.viewpointselection = viewpointselection
         this.setViewTaxonomyData()
