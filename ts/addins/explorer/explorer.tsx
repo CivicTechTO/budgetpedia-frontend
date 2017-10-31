@@ -1373,21 +1373,22 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     viewtaxonomydata:any = {
         options:{
             allowHtml:true,
-            allowCollapse:true,
+            allowCollapse:false,
         }
     }
 
     taxonomyleafnodeselection = null
 
     // TODO: should log event for google analytics
-    onCallViewTaxonomy = (viewpointdata,viewpointselection) => {
+    onCallViewTaxonomy = (viewpointdata,viewpointselection,applytaxonomyselection) => {
         let self = this
+        self.viewtaxonomydata.applytaxonomyselection = applytaxonomyselection
         self.taxonomyleafnodeselection = null
         window['taxonomyCall'] = function(value) {
             self.taxonomyleafnodeselection = value
             // console.log('set taxonomynodeselection',value)
         }
-        // console.log('viewpointdata',viewpointdata)
+        console.log('viewpointdata,viewpointselection',viewpointdata, viewpointselection)
         this.viewtaxonomydata.viewpointdata = viewpointdata
         this.viewtaxonomydata.viewpointselection = viewpointselection
         this.setViewTaxonomyData()
@@ -1449,6 +1450,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 }
 
             }
+            let parms = {
+                selectedleafnode,
+                selectedtreenode,
+            }
+            this.viewtaxonomydata.applytaxonomyselection(parms)
             // console.log('viewtaxonomydata.data',this.viewtaxonomydata.data)
             // console.log('selectedleafnode, selectedtreenode, chart selection, taxonomynodeselection', selectedleafnode, selectedtreenode, selection, this.taxonomyleafnodeselection)
         })
@@ -1526,7 +1532,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             </IconButton>
             <div style={{height:window.innerHeight}}>
                 <div style={{fontStyle:'italic',fontSize:'smaller'}} >
-                double-click on a cell to collapse its children. <div
+                click on a cell to view chart. <div
                     style ={
                         {
                             display:'inline-block',

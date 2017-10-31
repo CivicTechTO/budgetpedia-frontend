@@ -660,6 +660,13 @@ class ExplorerBranch extends Component {
             };
             return settings;
         };
+        this.applytaxonomyselection = (parms) => {
+            let targetcode = parms.selectedleafnode ? parms.selectedleafnode : parms.selectedtreenode;
+            console.log('applytaxonomyselection parms', parms, targetcode);
+            let path = [];
+            this._getPath(path, targetcode, this.state.viewpointData.Components);
+            console.log('path', path);
+        };
         this.harmonizeCells = (nodeUid, cellUid) => {
             let { budgetBranch } = this.props;
             let nodeList = [];
@@ -1187,7 +1194,7 @@ class ExplorerBranch extends Component {
                         viewpoint: branchDeclaration.viewpoint,
                         name: this.taxonomychoices[branchDeclaration.viewpoint]
                     };
-                    this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection);
+                    this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection, this.applytaxonomyselection);
                 }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) })
             : null;
         let search = (branchDeclaration.showOptions) ?

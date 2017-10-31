@@ -805,16 +805,18 @@ let Explorer = class extends Component {
         this.viewtaxonomydata = {
             options: {
                 allowHtml: true,
-                allowCollapse: true,
+                allowCollapse: false,
             }
         };
         this.taxonomyleafnodeselection = null;
-        this.onCallViewTaxonomy = (viewpointdata, viewpointselection) => {
+        this.onCallViewTaxonomy = (viewpointdata, viewpointselection, applytaxonomyselection) => {
             let self = this;
+            self.viewtaxonomydata.applytaxonomyselection = applytaxonomyselection;
             self.taxonomyleafnodeselection = null;
             window['taxonomyCall'] = function (value) {
                 self.taxonomyleafnodeselection = value;
             };
+            console.log('viewpointdata,viewpointselection', viewpointdata, viewpointselection);
             this.viewtaxonomydata.viewpointdata = viewpointdata;
             this.viewtaxonomydata.viewpointselection = viewpointselection;
             this.setViewTaxonomyData();
@@ -872,6 +874,11 @@ let Explorer = class extends Component {
                         selectedtreenode = datanode[0].v;
                     }
                 }
+                let parms = {
+                    selectedleafnode,
+                    selectedtreenode,
+                };
+                this.viewtaxonomydata.applytaxonomyselection(parms);
             });
         };
         this.taxonomyevents = () => {
@@ -923,7 +930,7 @@ let Explorer = class extends Component {
                     React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", { style: { height: window.innerHeight } },
                     React.createElement("div", { style: { fontStyle: 'italic', fontSize: 'smaller' } },
-                        "double-click on a cell to collapse its children. ",
+                        "click on a cell to view chart. ",
                         React.createElement("div", { style: {
                                 display: 'inline-block',
                                 height: '9px',

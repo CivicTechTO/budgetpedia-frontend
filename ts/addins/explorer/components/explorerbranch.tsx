@@ -1118,6 +1118,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         return settings
     }
 
+    applytaxonomyselection = (parms) => {
+        let targetcode = parms.selectedleafnode? parms.selectedleafnode:parms.selectedtreenode
+        console.log('applytaxonomyselection parms',parms,targetcode)
+        let path = []
+        this._getPath(path,targetcode,this.state.viewpointData.Components)
+        console.log('path',path)
+    }
+
+
     // ---------------------------[ callbacks ]------------------------------
 
     /*
@@ -1942,7 +1951,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     viewpoint:branchDeclaration.viewpoint,
                     name:this.taxonomychoices[branchDeclaration.viewpoint]
                 }
-                this.props.onCallViewTaxonomy(this.state.viewpointData,viewpointselection)} 
+                this.props.onCallViewTaxonomy(
+                    this.state.viewpointData,
+                    viewpointselection,
+                    this.applytaxonomyselection
+                )} 
             } 
             labelPosition="before"
             icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
