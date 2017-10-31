@@ -836,15 +836,17 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         value:(
                             <MenuItem style={{whiteSpace:'normal',lineHeight:'150%'}}
                                 >
-                                <div><span style={{fontWeight:"bold"}}>{name}</span></div>
-                                <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>taxonomy: {dictionary[sourceviewpoints[datasetname]]}</span>
+                                <div>
+                                    <span style={{fontWeight:"bold"}}>{name}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>level: {dictionary[dimensionlookupname]} </span>
+                                    <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[sourceviewpoints[datasetname]]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
+                                    <span style={{fontStyle:"italic",color:"gray"}}>depth: {dictionary[dimensionlookupname]} </span>
+                                </div>
+                                <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
+                                    <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
                                 </div>
                             </MenuItem>
                             )
@@ -852,27 +854,36 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     lookups.push(selection)
                     // including structuralviewpoint for all relevant choices is annoying (duplicates)
                     //  suppress for now
-                    // if (datasetname == 'detailedbudgets' || datasetname == 'summarybudgets') {
+                    if (datasetname == 'detailedbudgets' || datasetname == 'summarybudgets') {
 
-                    //     let selection = {
-                    //         viewpoint:alternatesourceviewpoints[datasetname],
-                    //         datasource:datasetname,
-                    //         aspects:sourceaspects[datasetname],
-                    //         dimension:dimensionname,
-                    //         code,
-                    //         name,
-                    //         value:(
-                    //             <MenuItem primaryText={<span style={{fontStyle:"italic",color:"gray"}}>viewpoint: {dictionary[alternatesourceviewpoints[datasetname]]}</span>}
-                    //                 secondaryText={<span style={{fontStyle:"italic",color:"gray"}}>level: {dictionary[dimensionname]} </span>}>
-                    //                 <div>
-                    //                 <span style={{fontWeight:"bold"}}>{name}</span> <span style={{float:"right",fontStyle:"italic",color:"gray"}} >source: {dictionary[datasetname]}</span>
-                    //                 </div>
-                    //             </MenuItem>
-                    //             )
-                    //     }
-                    //     lookups.push(selection)
+                        let selection = {
+                            viewpoint:alternatesourceviewpoints[datasetname],
+                            datasource:datasetname,
+                            aspects:sourceaspects[datasetname],
+                            dimension:dimensionname,
+                            code,
+                            name,
+                            value:(
+                                <MenuItem style={{whiteSpace:'normal',lineHeight:'150%'}}
+                                    >
+                                    <div>
+                                        <span style={{fontWeight:"bold"}}>{name}</span> 
+                                    </div>
+                                    <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
+                                        <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[alternatesourceviewpoints[datasetname]]}</span>
+                                    </div>
+                                    <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
+                                        <span style={{fontStyle:"italic",color:"gray"}}>depth: {dictionary[dimensionname]} </span>
+                                    </div>
+                                    <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
+                                        <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
+                                    </div>
+                                </MenuItem>
+                                )
+                        }
+                        lookups.push(selection)
 
-                    // }
+                    }
                 }
             }
         }
@@ -912,10 +923,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 <span style={{fontWeight:"bold"}}>{name}</span> 
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>taxonomy: {dictionary[viewpointname]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[viewpointname]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>level: {dictionary[dimensionname]} </span>
+                                <span style={{fontStyle:"italic",color:"gray"}}>depth: {dictionary[dimensionname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                 <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[viewpointsources[viewpointname]]}</span>
@@ -1082,12 +1093,12 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                   <RadioButton
                     style={{display:'inline-block',width:'auto',marginRight:'50px'}}
                     value="expenses"
-                    label="expenses"
+                    label="expenditures/expenses"
                   />
                   <RadioButton
                     style={{display:'inline-block',width:'auto',marginRight:'50px'}}
                     value="revenues"
-                    label="revenues"
+                    label="receipts/revenues"
                   />
                   <RadioButton
                     style={{display:'inline-block',width:'auto',marginRight:'50px'}}
@@ -1120,11 +1131,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             <div style={{padding:"8px"}} >
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>taxonomy: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>workspace: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.viewpointdisplay }</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>level: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>depth: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.leveldisplay}</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
@@ -1367,8 +1378,8 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         return 'http://' + location.hostname + '/explorer?storyboard=' + this.state.selectStoryboard
     }
 
-    // ===================================================================
-    // ---------------------------[ View Taxonomy ]-----------------------
+    // =============================================================================
+    // ---------------------------[ View Taxonomy/workspace ]-----------------------
 
     viewtaxonomydata:any = {
         options:{

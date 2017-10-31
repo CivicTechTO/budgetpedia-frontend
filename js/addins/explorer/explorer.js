@@ -452,11 +452,11 @@ let Explorer = class extends Component {
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "taxonomy: ",
+                                        "workspace: ",
                                         dictionary[sourceviewpoints[datasetname]])),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "level: ",
+                                        "depth: ",
                                         dictionary[dimensionlookupname],
                                         " ")),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -465,6 +465,33 @@ let Explorer = class extends Component {
                                         dictionary[datasetname]))))
                         };
                         lookups.push(selection);
+                        if (datasetname == 'detailedbudgets' || datasetname == 'summarybudgets') {
+                            let selection = {
+                                viewpoint: alternatesourceviewpoints[datasetname],
+                                datasource: datasetname,
+                                aspects: sourceaspects[datasetname],
+                                dimension: dimensionname,
+                                code,
+                                name,
+                                value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
+                                    React.createElement("div", null,
+                                        React.createElement("span", { style: { fontWeight: "bold" } }, name)),
+                                    React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                        React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                            "workspace: ",
+                                            dictionary[alternatesourceviewpoints[datasetname]])),
+                                    React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                        React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                            "depth: ",
+                                            dictionary[dimensionname],
+                                            " ")),
+                                    React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
+                                        React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
+                                            "dataset: ",
+                                            dictionary[datasetname]))))
+                            };
+                            lookups.push(selection);
+                        }
                     }
                 }
             }
@@ -500,11 +527,11 @@ let Explorer = class extends Component {
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "taxonomy: ",
+                                        "workspace: ",
                                         dictionary[viewpointname])),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "level: ",
+                                        "depth: ",
                                         dictionary[dimensionname],
                                         " ")),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -627,8 +654,8 @@ let Explorer = class extends Component {
             React.createElement("div", null,
                 React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput }),
                 React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.findDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
-                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenses" }),
-                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "revenues" }),
+                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
+                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
                     React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
             React.createElement(IconButton_1.default, { style: {
                     top: 0,
@@ -642,10 +669,10 @@ let Explorer = class extends Component {
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", { style: { padding: "8px" } },
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "taxonomy: "),
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "workspace: "),
                     React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.viewpointdisplay)),
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "level: "),
+                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "depth: "),
                     React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.leveldisplay)),
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
                     React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),
