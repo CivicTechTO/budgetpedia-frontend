@@ -216,6 +216,22 @@ class ExplorerBranch extends Component {
             budgetBranch.nodeCallbacks = branch._nodeDisplayCallbacks;
             branch._previousControlData = declarationData;
         };
+        this._getLeafPath = (parms, viewpointdata) => {
+            let path = [];
+            let selections = [];
+            let code = parms.code;
+            let result = this._searchComponents(code, path, selections, viewpointdata.Components, viewpointdata.SortedComponents);
+            if (!result) {
+                react_redux_toastr_1.toastr.warning(this.findParmsToStateDictionary.aspect[parms.aspect] + ' chart not available for that selection (' + parms.name + ')');
+            }
+            let isLeaf = !path.pop();
+            if (isLeaf) {
+                path.pop();
+                selections.pop();
+            }
+            this.pathSelections = selections;
+            return path;
+        };
         this.lastactiongeneration = 0;
         this.harmonizecount = null;
         this.harmonizeNodesToState = (branchNodes, nodeList, nodesById, budgetBranch) => {
@@ -391,22 +407,6 @@ class ExplorerBranch extends Component {
                 }
             }
             return settingslist;
-        };
-        this._getLeafPath = (parms, viewpointdata) => {
-            let path = [];
-            let selections = [];
-            let code = parms.code;
-            let result = this._searchComponents(code, path, selections, viewpointdata.Components, viewpointdata.SortedComponents);
-            if (!result) {
-                react_redux_toastr_1.toastr.warning(this.findParmsToStateDictionary.aspect[parms.aspect] + ' chart not available for that selection (' + parms.name + ')');
-            }
-            let isLeaf = !path.pop();
-            if (isLeaf) {
-                path.pop();
-                selections.pop();
-            }
-            this.pathSelections = selections;
-            return path;
         };
         this._searchComponents = (code, path, selections, components, sortedcomponents) => {
             for (let component_name in components) {

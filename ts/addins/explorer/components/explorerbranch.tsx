@@ -60,6 +60,8 @@ import * as Utilities from '../modules/utilities'
 
 export { ExplorerBranchActions }
 
+// ------------------------[ interfaces ]-----------------------------
+
 interface DeclarationData {
     branchesById: Object,
     generation: number,
@@ -104,7 +106,11 @@ interface ExplorerBranchState {
     selectionsDialogOpen?:boolean,
 }
 
+// ------------------------[ class ]-----------------------------
+
 class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState> {
+
+    // ---------------------[ initialization ]------------------------
 
     state = {
 
@@ -162,24 +168,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     logEvent = (parms) => {
         if (window.location.hostname == 'budgetpedia.ca') {
             ReactGA.event(parms);
-        }
-    }
-
-    private story:any = null
-    private storiescleared = []
-    private storysettings = []
-
-    clearStory = nodeIndex => {
-        if (!this.story) {
-            console.error('call to remove expired story', nodeIndex)
-        }
-        this.storiescleared.push(nodeIndex)
-        if (this.storiescleared.length == this.storysettings.length) {
-            this.story = null
-            this.storiescleared = []
-            setTimeout(()=>{
-                this.onPortalCreation()
-            },1000)
         }
     }
 
@@ -243,6 +231,27 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         })
     }
 
+    //----------------------------[ stories ]--------------------------------
+    // these are sets of branches; this section is for this branch's story section
+
+    private story:any = null
+    private storiescleared = []
+    private storysettings = []
+
+    clearStory = nodeIndex => {
+        if (!this.story) {
+            console.error('call to remove expired story', nodeIndex)
+        }
+        this.storiescleared.push(nodeIndex)
+        if (this.storiescleared.length == this.storysettings.length) {
+            this.story = null
+            this.storiescleared = []
+            setTimeout(()=>{
+                this.onPortalCreation()
+            },1000)
+        }
+    }
+
     private _createStoryNodes = (story,viewpointdata) => {
         let path = this._getStoryPath(story) 
         // console.log('story path',story.code,path)
@@ -301,6 +310,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         return settingslist
 
     }
+
+    // -------------------------[ utilities ]----------------------
 
     private _getPath = (path, targetcode, components) => {
         for (let code in components) {
@@ -432,6 +443,29 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         branch._previousControlData = declarationData // initialize
 
     }
+
+    private _getLeafPath = (parms, viewpointdata) => {
+        let path = []
+        let selections = []
+        let code = parms.code
+        let result = this._searchComponents(code, path, selections, viewpointdata.Components, viewpointdata.SortedComponents)
+        if (!result) {
+            toastr.warning(this.findParmsToStateDictionary.aspect[parms.aspect] + ' chart not available for that selection (' + parms.name + ')')
+        }
+        let isLeaf = !path.pop()
+        if (isLeaf) {
+            path.pop()
+            selections.pop()
+        }
+
+        this.pathSelections = selections
+        // console.log('leafpath, selections',path,selections)
+        return path
+    }
+
+    pathSelections: any
+
+    // ---------------------------[ lifecycle events ]--------------------------
 
     // remove obsolete node objects
     componentWillReceiveProps(nextProps) {
@@ -662,6 +696,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
+    // --------------------------[ finder (search) ]-----------------------------
+
     private _getFinderNodeSettingsList = () => {
         let viewpointdata = this.state.viewpointData
         let parms = this.finderParms
@@ -747,27 +783,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         return settingslist
     }
 
-    private _getLeafPath = (parms, viewpointdata) => {
-        let path = []
-        let selections = []
-        let code = parms.code
-        let result = this._searchComponents(code, path, selections, viewpointdata.Components, viewpointdata.SortedComponents)
-        if (!result) {
-            toastr.warning(this.findParmsToStateDictionary.aspect[parms.aspect] + ' chart not available for that selection (' + parms.name + ')')
-        }
-        let isLeaf = !path.pop()
-        if (isLeaf) {
-            path.pop()
-            selections.pop()
-        }
-
-        this.pathSelections = selections
-        // console.log('leafpath, selections',path,selections)
-        return path
-    }
-
-    pathSelections: any
-
     private _searchComponents = (code, path, selections, components, sortedcomponents) => {
         for (let component_name in components) {
             path.push(component_name)
@@ -812,6 +827,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
         return false
     }
+
+    // ---------------------------[ user requested state changes ]------------------
 
     private _processChangeVersionStateChange = (budgetBranch:BudgetBranch) => {
 
@@ -1049,6 +1066,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
+    // ---------------------------[ search dialog response ]-------------------------
+
     handleSearch = (e) => {
         this.props.handleFindDialogOpen(e,this.applySearchBranchSettings)
     }
@@ -1117,6 +1136,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
         return settings
     }
+
+    // ------------------------------[ workspace tree selection response ]------------------------
 
     applytaxonomyselection = (parms) => {
         let targetcode = parms.selectedleafnode? parms.selectedleafnode:parms.selectedtreenode
@@ -1363,6 +1384,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         this._inputfieldref.setSelectionRange(0, this._inputfieldref.value.length)
     }
 
+    // ----------------------------[ response to share request ]--------------------------
+
     shareBranch = () => {
         this.logEvent({
             category:'ExplorerBranch',
@@ -1482,6 +1505,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         // console.log('url',url,url.length)
         return url
     }
+
+    // -------------------------------------[ handle dialog requests ]-----------------------
 
     handleSelectionsDialogOpen = (e) => {
         e.stopPropagation()
@@ -1643,7 +1668,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
 
+    // -------------------------------------[ render! ]---------------------------------
+
     render() {
+
+    // ---------------------------------[ interactive controls ]--------------------------
 
     let branch = this
     let drilldownrow = branch.props.budgetBranch.nodes
@@ -1757,6 +1786,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         }
     }
 
+    // aspect = category
     let aspectselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block'}}>
 
@@ -1860,6 +1890,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 }
             />
         </div>
+
+        // dialogs
 
         let selectionsdialog =
         <Dialog
@@ -1994,6 +2026,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         </Dialog >
 
+    // dialog calls
+
     let technotes = (branchDeclaration.showOptions)
         ?<RaisedButton
             style={{margin:'3px 6px 0 0'}}
@@ -2077,6 +2111,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 style={{color:'rgba(0,0,0,0.5)'}}
                 className="material-icons">share</FontIcon>}
         />:null
+
+    // assemble the page
 
     return <div >
     <div>
