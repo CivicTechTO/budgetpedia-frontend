@@ -59,6 +59,7 @@ let ReactGA = require('react-ga')
 var { Chart } = require('../../../forked/react-google-charts/Chart.js')
 
 import ExplorerBranch from './components/explorerbranch'
+import SearchDialog from './components/searchdialog'
 
 import * as Actions from '../../core/actions/actions'
 import * as ExplorerActions from './actions'
@@ -1709,6 +1710,12 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             { this.analystNotesDialog() }
 
             { this.viewTaxonomyDialog() }
+
+            <SearchDialog
+                open = {this.state.findDialogOpen}
+                onRequestClose = {null}
+                applyReturnSettings = {null}
+            />
 
             { branches }
 

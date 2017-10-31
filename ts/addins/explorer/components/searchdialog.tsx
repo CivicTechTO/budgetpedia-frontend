@@ -345,7 +345,7 @@ let SearchDialog = class extends Component<any,any>
 
     findOnNewRequest = (chosenRequest, index) => {
         if (index == -1) {
-            this.findResetSelection()
+            this.resetSelectionParameters()
         } else {
             let item = this.findAspectChartLookups[index]
             let dictionary = this.findDictionary
@@ -385,7 +385,7 @@ let SearchDialog = class extends Component<any,any>
 
     findOnUpdateInput = () => {
         if (this.findSelection.known) {
-            this.findResetSelection()
+            this.resetSelectionParameters()
             this.forceUpdate()
         }
     }
@@ -393,13 +393,13 @@ let SearchDialog = class extends Component<any,any>
     onChangeFindAspect = (e,value) => {
         this.findAspectChartLookups = null
         this.findClearSearchText()
-        this.findResetSelection()
+        this.resetSelectionParameters()
         this.setState({
             findDialogAspect:value
         })
     }
 
-    findResetSelection = () => {
+    resetSelectionParameters = () => {
         this.findSelection = {
             known:false,
             viewpoint:null,
@@ -457,7 +457,7 @@ let SearchDialog = class extends Component<any,any>
         e.stopPropagation()
         e.preventDefault()
         this.findParameters.applySearchBranchSettings = applySearchBranchSettings
-        this.findResetSelection()
+        this.resetSelectionParameters()
         this.findChart()
     }
 
@@ -591,3 +591,5 @@ let SearchDialog = class extends Component<any,any>
     }
 
 }
+
+export default SearchDialog

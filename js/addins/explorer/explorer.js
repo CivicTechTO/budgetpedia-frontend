@@ -21,6 +21,7 @@ let jsonpack = require('jsonpack');
 let ReactGA = require('react-ga');
 var { Chart } = require('../../../forked/react-google-charts/Chart.js');
 const explorerbranch_1 = require("./components/explorerbranch");
+const searchdialog_1 = require("./components/searchdialog");
 const Actions = require("../../core/actions/actions");
 const ExplorerActions = require("./actions");
 const branch_class_1 = require("./classes/branch.class");
@@ -996,6 +997,7 @@ let Explorer = class extends Component {
             this.storyboardDialog(),
             this.analystNotesDialog(),
             this.viewTaxonomyDialog(),
+            React.createElement(searchdialog_1.default, { open: this.state.findDialogOpen, onRequestClose: null, applyReturnSettings: null }),
             branches);
     }
 };

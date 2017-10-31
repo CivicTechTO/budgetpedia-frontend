@@ -289,7 +289,7 @@ let SearchDialog = class extends Component {
         };
         this.findOnNewRequest = (chosenRequest, index) => {
             if (index == -1) {
-                this.findResetSelection();
+                this.resetSelectionParameters();
             }
             else {
                 let item = this.findAspectChartLookups[index];
@@ -326,19 +326,19 @@ let SearchDialog = class extends Component {
         };
         this.findOnUpdateInput = () => {
             if (this.findSelection.known) {
-                this.findResetSelection();
+                this.resetSelectionParameters();
                 this.forceUpdate();
             }
         };
         this.onChangeFindAspect = (e, value) => {
             this.findAspectChartLookups = null;
             this.findClearSearchText();
-            this.findResetSelection();
+            this.resetSelectionParameters();
             this.setState({
                 findDialogAspect: value
             });
         };
-        this.findResetSelection = () => {
+        this.resetSelectionParameters = () => {
             this.findSelection = {
                 known: false,
                 viewpoint: null,
@@ -386,7 +386,7 @@ let SearchDialog = class extends Component {
             e.stopPropagation();
             e.preventDefault();
             this.findParameters.applySearchBranchSettings = applySearchBranchSettings;
-            this.findResetSelection();
+            this.resetSelectionParameters();
             this.findChart();
         };
         this.findApplyChart = () => {
@@ -457,3 +457,4 @@ let SearchDialog = class extends Component {
         return this.findDialog();
     }
 };
+exports.default = SearchDialog;
