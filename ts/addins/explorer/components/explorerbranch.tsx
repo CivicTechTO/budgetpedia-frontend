@@ -91,7 +91,7 @@ interface ExplorerBranchProps {
     clearUrlParms: Function,
     clearStories: Function,
     setToast: Function,
-    handleFindDialogOpen: Function,
+    handleSearchDialogOpen: Function,
     onCallAnalystNotes: Function,
     onCallViewTaxonomy: Function,
 }
@@ -1069,7 +1069,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     // ---------------------------[ search dialog response ]-------------------------
 
     handleSearch = (e) => {
-        this.props.handleFindDialogOpen(e,this.applySearchBranchSettings)
+        this.props.handleSearchDialogOpen(e,this.applySearchBranchSettings)
     }
 
     finderParms:any = null
@@ -1656,7 +1656,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     handleFindDialogOpen = (e) => {
-        this.props.handleFindDialogOpen(e)
+        this.props.handleSearchDialogOpen(e)
     }
 
     taxonomychoices = {

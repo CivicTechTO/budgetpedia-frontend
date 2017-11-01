@@ -14,6 +14,10 @@ let ReactGA = require('react-ga');
 let SearchDialog = class extends Component {
     constructor() {
         super(...arguments);
+        this.state = {
+            dialogOpen: false,
+            searchDialogAspect: 'expenses',
+        };
         this.logEvent = (parms) => {
             if (window.location.hostname == 'budgetpedia.ca') {
                 ReactGA.event(parms);
@@ -335,7 +339,7 @@ let SearchDialog = class extends Component {
             this.findClearSearchText();
             this.resetSelectionParameters();
             this.setState({
-                findDialogAspect: value
+                searchDialogAspect: value
             });
         };
         this.resetSelectionParameters = () => {
@@ -352,53 +356,41 @@ let SearchDialog = class extends Component {
             };
         };
         this.getFindAspectLookups = () => {
-            let explorer = this;
-            if (!explorer.findChartLookups) {
-                explorer.findAspectChartLookups = null;
+            let self = this;
+            if (!self.findChartLookups) {
+                self.findAspectChartLookups = null;
                 return;
             }
-            let sourcelist = explorer.findChartLookups;
+            let sourcelist = self.findChartLookups;
             let targetlist = [];
-            let aspect = explorer.state.findDialogAspect;
+            let aspect = self.state.searchDialogAspect;
             for (let item of sourcelist) {
                 if (item.aspects[aspect]) {
                     targetlist.push(item);
                 }
             }
-            explorer.findAspectChartLookups = targetlist;
+            self.findAspectChartLookups = targetlist;
         };
         this.findAspectChartLookups = null;
-        this.handleFindDialogClose = () => {
+        this.handleSearchDialogClose = () => {
             this.setState({
                 findDialogOpen: false
-            });
-        };
-        this.findChart = () => {
-            this.setState({
-                findDialogOpen: true
             });
         };
         this.findParameters = {
             applySearchBranchSettings: null,
             parms: null,
         };
-        this.handleFindDialogOpen = (e, applySearchBranchSettings) => {
-            e.stopPropagation();
-            e.preventDefault();
-            this.findParameters.applySearchBranchSettings = applySearchBranchSettings;
-            this.resetSelectionParameters();
-            this.findChart();
-        };
         this.findApplyChart = () => {
             let explorer = this;
-            explorer.handleFindDialogClose();
+            explorer.handleSearchDialogClose();
             let selection = explorer.findSelection;
             let parms = {
                 viewpoint: selection.viewpoint,
                 source: selection.source,
                 level: selection.level,
                 code: selection.code,
-                aspect: explorer.state.findDialogAspect,
+                aspect: explorer.state.searchDialogAspect,
                 name: selection.name,
             };
             this.logEvent({
@@ -409,10 +401,10 @@ let SearchDialog = class extends Component {
             explorer.findParameters.parms = parms;
             explorer.findParameters.applySearchBranchSettings(parms);
         };
-        this.findDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.findDialogOpen, onRequestClose: this.handleFindDialogClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+        this.searchDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.dialogOpen, onRequestClose: this.handleSearchDialogClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
             React.createElement("div", null,
                 React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput }),
-                React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.findDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
+                React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.searchDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
                     React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
                     React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
                     React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
@@ -424,7 +416,7 @@ let SearchDialog = class extends Component {
                     width: "36px",
                     position: "absolute",
                     zIndex: 2,
-                }, onTouchTap: this.handleFindDialogClose },
+                }, onTouchTap: this.handleSearchDialogClose },
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             React.createElement("div", { style: { padding: "8px" } },
                 React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
@@ -440,7 +432,7 @@ let SearchDialog = class extends Component {
                 React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onTouchTap: () => {
                         this.findApplyChart();
                     }, label: "Apply", primary: true, style: { marginRight: "50px" } }),
-                React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: () => (this.handleFindDialogClose()), label: "Cancel", secondary: true })),
+                React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: () => (this.handleSearchDialogClose()), label: "Cancel", secondary: true })),
             React.createElement("div", { style: { height: '200px' } })));
     }
     componentWillMount() {
@@ -450,11 +442,19 @@ let SearchDialog = class extends Component {
             react_redux_toastr_1.toastr.error('Error loading finder lookups: ' + reason);
         });
     }
+    componentDidMount() {
+        console.log('did mount');
+        this.resetSelectionParameters();
+    }
+    componentDidUpdate() {
+        console.log('did update');
+        this.resetSelectionParameters();
+    }
     render() {
-        if (this.state.findDialogOpen && !this.findAspectChartLookups) {
+        if (this.state.dialogOpen && !this.findAspectChartLookups) {
             this.getFindAspectLookups();
         }
-        return this.findDialog();
+        return this.searchDialog();
     }
 };
 exports.default = SearchDialog;

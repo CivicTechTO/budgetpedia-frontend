@@ -34,11 +34,10 @@ let Explorer = class extends Component {
         this.state = {
             budgetBranches: [],
             dialogOpen: false,
-            findDialogOpen: false,
+            searchDialogOpen: false,
             storyboardDialogOpen: false,
             analystNotesDialogOpen: false,
             viewTaxonomyDialogOpen: false,
-            findDialogAspect: 'expenses',
             selectStoryboard: 'SELECT',
         };
         this.toastrmessages = {
@@ -258,6 +257,17 @@ let Explorer = class extends Component {
         };
         this.removeBranches = () => {
             this.props.removeBranches();
+        };
+        this.findParameters = {
+            applySearchBranchSettings: null
+        };
+        this.handleSearchDialogOpen = (e, applySearchBranchSettings) => {
+            e.stopPropagation();
+            e.preventDefault();
+            this.findParameters.applySearchBranchSettings = applySearchBranchSettings;
+            this.setState({
+                searchDialogOpen: true
+            });
         };
         this.storyBoards = null;
         this.getStoryboardsPromise = () => {
@@ -915,7 +925,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleFindDialogOpen: null, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleSearchDialogOpen: this.handleSearchDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);
@@ -997,7 +1007,7 @@ let Explorer = class extends Component {
             this.storyboardDialog(),
             this.analystNotesDialog(),
             this.viewTaxonomyDialog(),
-            React.createElement(searchdialog_1.default, { open: this.state.findDialogOpen, onRequestClose: null, applyReturnSettings: null }),
+            React.createElement(searchdialog_1.default, { open: this.state.searchDialogOpen, onRequestClose: null, onConfirm: this.findParameters.applySearchBranchSettings }),
             branches);
     }
 };

@@ -604,7 +604,7 @@ class ExplorerBranch extends Component {
             this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
         };
         this.handleSearch = (e) => {
-            this.props.handleFindDialogOpen(e, this.applySearchBranchSettings);
+            this.props.handleSearchDialogOpen(e, this.applySearchBranchSettings);
         };
         this.finderParms = null;
         this.findParmsToStateDictionary = {
@@ -1011,7 +1011,7 @@ class ExplorerBranch extends Component {
                 itemlist);
         };
         this.handleFindDialogOpen = (e) => {
-            this.props.handleFindDialogOpen(e);
+            this.props.handleSearchDialogOpen(e);
         };
         this.taxonomychoices = {
             FUNCTIONAL: "Internal budget: Programs by function",

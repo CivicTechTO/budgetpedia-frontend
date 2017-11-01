@@ -137,8 +137,8 @@ interface ExplorerProps extends MappedActions {
 interface ExplorerState {
     budgetBranches?:BudgetBranch[],
     dialogOpen?: boolean,
-    findDialogOpen?:boolean,
-    findDialogAspect?:string,
+    searchDialogOpen?:boolean,
+    searchDialogAspect?:string,
     selectStoryboard?:string,
     storyboardDialogOpen?:boolean,
     analystNotesDialogOpen?:boolean,
@@ -153,11 +153,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     state = {
         budgetBranches:[],
         dialogOpen: false,
-        findDialogOpen: false,
+        searchDialogOpen: false,
         storyboardDialogOpen: false,
         analystNotesDialogOpen: false,
         viewTaxonomyDialogOpen: false,
-        findDialogAspect:'expenses',
         selectStoryboard:'SELECT',
     }
 
@@ -606,7 +605,22 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         this.props.removeBranches()
     }
 
+
+    findParameters = {
+        applySearchBranchSettings:null
+    }
+
     // ==================[ FIND CHART ]=======================
+
+    handleSearchDialogOpen = (e,applySearchBranchSettings) => {
+        e.stopPropagation()
+        e.preventDefault()
+        this.findParameters.applySearchBranchSettings = applySearchBranchSettings
+        // this.resetSelectionParameters()
+        this.setState({
+            searchDialogOpen: true
+        })
+    }
 
 
     // =======================[ Storyboard Creation ]=====================
@@ -1509,8 +1523,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         clearUrlParms = {this.clearUrlParms}
                         clearStories = {this.clearStories}
                         setToast = {this.setToast}
-                        handleFindDialogOpen = {null //this.handleFindDialogOpen
-                        }
+                        handleSearchDialogOpen = {this.handleSearchDialogOpen}
                         onCallAnalystNotes = {this.onCallAnalystNotes}
                         onCallViewTaxonomy = {this.onCallViewTaxonomy}
                     />
@@ -1712,9 +1725,9 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
             { this.viewTaxonomyDialog() }
 
             <SearchDialog
-                open = {this.state.findDialogOpen}
+                open = {this.state.searchDialogOpen}
                 onRequestClose = {null}
-                applyReturnSettings = {null}
+                onConfirm = {this.findParameters.applySearchBranchSettings}
             />
 
             { branches }

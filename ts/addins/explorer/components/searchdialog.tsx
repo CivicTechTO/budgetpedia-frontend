@@ -17,6 +17,11 @@ let ReactGA = require('react-ga')
 let SearchDialog = class extends Component<any,any> 
 {
 
+    state = {
+        dialogOpen:false,
+        searchDialogAspect:'expenses',
+    }
+
     componentWillMount() {
 
         this.getAllFindLookups().then(data => {
@@ -29,6 +34,15 @@ let SearchDialog = class extends Component<any,any>
 
     }
 
+    componentDidMount() {
+        console.log('did mount')
+        this.resetSelectionParameters()
+    }
+
+    componentDidUpdate() {
+        console.log('did update')
+        this.resetSelectionParameters()
+    }
 
     logEvent = (parms) => {
         if (window.location.hostname == 'budgetpedia.ca') {
@@ -395,7 +409,7 @@ let SearchDialog = class extends Component<any,any>
         this.findClearSearchText()
         this.resetSelectionParameters()
         this.setState({
-            findDialogAspect:value
+            searchDialogAspect:value
         })
     }
 
@@ -414,37 +428,29 @@ let SearchDialog = class extends Component<any,any>
     }
 
     getFindAspectLookups = () => {
-        let explorer = this
-        if (!explorer.findChartLookups) {
-            explorer.findAspectChartLookups = null
+        let self = this
+        if (!self.findChartLookups) {
+            self.findAspectChartLookups = null
             return
         }
-        let sourcelist = explorer.findChartLookups
+        let sourcelist = self.findChartLookups
         // console.log('sourcelist',sourcelist)
         let targetlist = []
-        let aspect = explorer.state.findDialogAspect
+        let aspect = self.state.searchDialogAspect
         for (let item of sourcelist) {
             // console.log('item',item)
             if (item.aspects[aspect]) {
                 targetlist.push(item)
             }
         }
-        explorer.findAspectChartLookups = targetlist
+        self.findAspectChartLookups = targetlist
     }
 
     findAspectChartLookups: any = null
 
-    handleFindDialogClose = () => {
+    handleSearchDialogClose = () => {
         this.setState({
             findDialogOpen: false
-        })
-    }
-
-
-    findChart = () => {
-        // let findParms:{} = {}
-        this.setState({
-            findDialogOpen: true
         })
     }
 
@@ -453,25 +459,16 @@ let SearchDialog = class extends Component<any,any>
         parms:null,
     }   
 
-    handleFindDialogOpen = (e,applySearchBranchSettings) => {
-        e.stopPropagation()
-        e.preventDefault()
-        this.findParameters.applySearchBranchSettings = applySearchBranchSettings
-        this.resetSelectionParameters()
-        this.findChart()
-    }
-
-
     findApplyChart = () => {
         let explorer = this
-        explorer.handleFindDialogClose()
+        explorer.handleSearchDialogClose()
         let selection = explorer.findSelection
         let parms = {
             viewpoint:selection.viewpoint,
             source:selection.source,
             level:selection.level,
             code:selection.code,
-            aspect:explorer.state.findDialogAspect,
+            aspect:explorer.state.searchDialogAspect,
             name:selection.name,
         }
         this.logEvent({
@@ -483,12 +480,12 @@ let SearchDialog = class extends Component<any,any>
         explorer.findParameters.applySearchBranchSettings(parms)
     }
 
-    findDialog = () => (
+    searchDialog = () => (
         <Dialog
             title = {<div style = {{padding:'12px 0 0 12px'}} >Find a Chart</div>}
             modal = { false }
-            open = { this.state.findDialogOpen }
-            onRequestClose = { this.handleFindDialogClose }
+            open = { this.state.dialogOpen }
+            onRequestClose = { this.handleSearchDialogClose }
             autoScrollBodyContent = {false}
             contentStyle = {{maxWidth:'600px'}}
             autoDetectWindowHeight = {false}
@@ -509,7 +506,7 @@ let SearchDialog = class extends Component<any,any>
                   onUpdateInput = {this.findOnUpdateInput}
                 />
                 <RadioButtonGroup 
-                    valueSelected= {this.state.findDialogAspect} 
+                    valueSelected= {this.state.searchDialogAspect} 
                     name="findchart"
                     onChange = { this.onChangeFindAspect }
                 >
@@ -540,7 +537,7 @@ let SearchDialog = class extends Component<any,any>
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ this.handleFindDialogClose } >
+                onTouchTap={ this.handleSearchDialogClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -574,7 +571,7 @@ let SearchDialog = class extends Component<any,any>
                     }}
                     label="Apply" primary={ true } style={{marginRight:"50px"}} />
                 <RaisedButton disabled = { false }
-                    onTouchTap = {() => (this.handleFindDialogClose())}
+                    onTouchTap = {() => (this.handleSearchDialogClose())}
                     label="Cancel" secondary={true} />
             </div>
             <div style={{height:'200px'}}></div>
@@ -582,11 +579,11 @@ let SearchDialog = class extends Component<any,any>
 
     render() {
 
-        if (this.state.findDialogOpen && !this.findAspectChartLookups) {
+        if (this.state.dialogOpen && !this.findAspectChartLookups) {
             this.getFindAspectLookups()
         }
 
-        return this.findDialog()
+        return this.searchDialog()
 
     }
 
