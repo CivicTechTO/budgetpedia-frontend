@@ -560,7 +560,7 @@ let Explorer = class extends Component {
                             'City Divisions and Agencies' : 'Source document base categories'),
                     this.taxonomychart()));
         };
-        this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Latest Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen, autoScrollBodyContent: true },
+        this.analystNotesDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Budget Analyst Notes"), modal: false, onRequestClose: () => { this.onSelectAnalystNotes(null, null); }, open: this.state.analystNotesDialogOpen, autoScrollBodyContent: true },
             React.createElement(IconButton_1.default, { style: {
                     top: 0,
                     right: 0,
@@ -1012,7 +1012,7 @@ let Explorer = class extends Component {
             this.storyboardDialog(),
             this.analystNotesDialog(),
             this.viewTaxonomyDialog(),
-            React.createElement(searchdialog_1.default, { open: this.state.searchDialogOpen, onRequestClose: this.handleSearchDialogClose, onConfirm: this.findParameters.applySearchBranchSettings }),
+            this.state.searchDialogOpen ? React.createElement(searchdialog_1.default, { onRequestClose: this.handleSearchDialogClose, onConfirm: this.findParameters.applySearchBranchSettings }) : null,
             branches);
     }
 };

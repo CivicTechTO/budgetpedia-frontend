@@ -1038,7 +1038,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     analystNotesDialog = () => (
         <Dialog
-            title = {<div style = {{padding:'12px 0 0 12px'}} >Latest Budget Analyst Notes
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Budget Analyst Notes
             </div>}
             modal = {false}
             onRequestClose = { () => { this.onSelectAnalystNotes(null,null)} }
@@ -1729,11 +1729,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             { this.viewTaxonomyDialog() }
 
-            <SearchDialog
-                open = {this.state.searchDialogOpen}
+            {this.state.searchDialogOpen?<SearchDialog
                 onRequestClose = {this.handleSearchDialogClose}
                 onConfirm = {this.findParameters.applySearchBranchSettings}
-            />
+            />:null}
 
             { branches }
 

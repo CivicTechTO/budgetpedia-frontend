@@ -15,7 +15,7 @@ let SearchDialog = class extends Component {
     constructor() {
         super(...arguments);
         this.state = {
-            dialogOpen: false,
+            dialogOpen: true,
             searchDialogAspect: 'expenses',
         };
         this.logEvent = (parms) => {
@@ -315,7 +315,6 @@ let SearchDialog = class extends Component {
         this.findClearSearchText = () => {
             let instance = this.refs['autocomplete'];
             instance.setState({ searchText: '' });
-            instance.focus();
         };
         this.findSelection = {
             known: false,
@@ -372,18 +371,12 @@ let SearchDialog = class extends Component {
             self.findAspectChartLookups = targetlist;
         };
         this.findAspectChartLookups = null;
-        this.handleSearchDialogClose = () => {
-            this.setState({
-                searchDialogOpen: false
-            });
-        };
         this.findParameters = {
-            applySearchBranchSettings: null,
             parms: null,
         };
         this.findApplyChart = () => {
             let explorer = this;
-            explorer.handleSearchDialogClose();
+            explorer.onRequestClose();
             let selection = explorer.findSelection;
             let parms = {
                 viewpoint: selection.viewpoint,
@@ -399,62 +392,62 @@ let SearchDialog = class extends Component {
                 label: parms.name,
             });
             explorer.findParameters.parms = parms;
-            explorer.findParameters.applySearchBranchSettings(parms);
+            explorer.props.onConfirm(parms);
         };
-        this.searchDialog = () => (React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.dialogOpen, onRequestClose: this.handleSearchDialogClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
-            React.createElement("div", null,
-                React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput }),
-                React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.searchDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
-                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
-                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
-                    React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
-            React.createElement(IconButton_1.default, { style: {
-                    top: 0,
-                    right: 0,
-                    padding: 0,
-                    height: "36px",
-                    width: "36px",
-                    position: "absolute",
-                    zIndex: 2,
-                }, onTouchTap: this.handleSearchDialogClose },
-                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
-            React.createElement("div", { style: { padding: "8px" } },
-                React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "workspace: "),
-                    React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.viewpointdisplay)),
-                React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "depth: "),
-                    React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.leveldisplay)),
-                React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                    React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),
-                    React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.sourcedisplay))),
-            React.createElement("div", null,
-                React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onTouchTap: () => {
-                        this.findApplyChart();
-                    }, label: "Apply", primary: true, style: { marginRight: "50px" } }),
-                React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: () => (this.handleSearchDialogClose()), label: "Cancel", secondary: true })),
-            React.createElement("div", { style: { height: '200px' } })));
+        this.onRequestClose = () => {
+            this.props.onRequestClose();
+        };
+        this.searchDialog = () => {
+            return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+                React.createElement("div", null,
+                    React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput, autoFocus: true }),
+                    React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.searchDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
+                        React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
+                        React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
+                        React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
+                React.createElement(IconButton_1.default, { style: {
+                        top: 0,
+                        right: 0,
+                        padding: 0,
+                        height: "36px",
+                        width: "36px",
+                        position: "absolute",
+                        zIndex: 2,
+                    }, onTouchTap: this.onRequestClose },
+                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                React.createElement("div", { style: { padding: "8px" } },
+                    React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
+                        React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "workspace: "),
+                        React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.viewpointdisplay)),
+                    React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
+                        React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "depth: "),
+                        React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.leveldisplay)),
+                    React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
+                        React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),
+                        React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.sourcedisplay))),
+                React.createElement("div", null,
+                    React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onTouchTap: this.findApplyChart, label: "Apply", primary: true, style: { marginRight: "50px" } }),
+                    React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: this.onRequestClose, label: "Cancel", secondary: true })),
+                React.createElement("div", { style: { height: '200px' } }));
+        };
     }
     componentWillMount() {
         this.getAllFindLookups().then(data => {
             this.findChartLookups = this.processFindChartLookups(data);
+            this.forceUpdate();
         }).catch(reason => {
             react_redux_toastr_1.toastr.error('Error loading finder lookups: ' + reason);
         });
     }
     componentDidMount() {
-        console.log('did mount');
-        this.resetSelectionParameters();
-    }
-    componentDidUpdate() {
-        console.log('did update');
         this.resetSelectionParameters();
     }
     render() {
         if (this.state.dialogOpen && !this.findAspectChartLookups) {
             this.getFindAspectLookups();
         }
-        return this.searchDialog();
+        let dialog = this.searchDialog();
+        return dialog;
     }
 };
 exports.default = SearchDialog;

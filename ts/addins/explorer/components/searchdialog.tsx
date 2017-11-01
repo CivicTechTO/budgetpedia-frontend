@@ -1,4 +1,7 @@
 // searchdialog.tsx
+/*
+    TODO: should cache lookup list in parent
+*/
 'use strict'
 import * as React from 'react'
 var { Component } = React
@@ -14,11 +17,16 @@ import RaisedButton from 'material-ui/RaisedButton'
 import {toastr} from 'react-redux-toastr'
 let ReactGA = require('react-ga')
 
-let SearchDialog = class extends Component<any,any> 
+interface SearchDialogProps {
+    onRequestClose:Function,
+    onConfirm:Function,
+}
+
+let SearchDialog = class extends Component<SearchDialogProps,any> 
 {
 
     state = {
-        dialogOpen:false,
+        dialogOpen:true,
         searchDialogAspect:'expenses',
     }
 
@@ -27,7 +35,7 @@ let SearchDialog = class extends Component<any,any>
         this.getAllFindLookups().then(data => {
             // console.log('sourcedata', data)
             this.findChartLookups = this.processFindChartLookups(data)
-            // console.log('lookupdata set',this.findChartLookups)
+            this.forceUpdate() // inject data into autocomplete
         }).catch(reason => {
             toastr.error('Error loading finder lookups: ' + reason)
         })
@@ -35,12 +43,7 @@ let SearchDialog = class extends Component<any,any>
     }
 
     componentDidMount() {
-        console.log('did mount')
-        this.resetSelectionParameters()
-    }
-
-    componentDidUpdate() {
-        console.log('did update')
+        // console.log('did mount')
         this.resetSelectionParameters()
     }
 
@@ -159,6 +162,7 @@ let SearchDialog = class extends Component<any,any>
         name
         value
     */
+    // TODO: the values here should be taken from source; automatic update
     findDictionary = {
         // viewpoints
         structuralbudget:'Structural Budget',
@@ -358,6 +362,7 @@ let SearchDialog = class extends Component<any,any>
     }
 
     findOnNewRequest = (chosenRequest, index) => {
+        // console.log('findOnNewRequest',this.findAspectChartLookups)
         if (index == -1) {
             this.resetSelectionParameters()
         } else {
@@ -382,7 +387,7 @@ let SearchDialog = class extends Component<any,any>
     findClearSearchText = () => {
         let instance:any = this.refs['autocomplete']
         instance.setState({searchText:''});
-        instance.focus();
+        // instance.focus();
     }
 
     findSelection = {
@@ -398,6 +403,7 @@ let SearchDialog = class extends Component<any,any>
     }
 
     findOnUpdateInput = () => {
+        // console.log('findOnUpdateInput',this.findAspectChartLookups,this.findSelection)
         if (this.findSelection.known) {
             this.resetSelectionParameters()
             this.forceUpdate()
@@ -429,6 +435,7 @@ let SearchDialog = class extends Component<any,any>
 
     getFindAspectLookups = () => {
         let self = this
+        // console.log('in getFindAspectLookups',self.state, self.findChartLookups)
         if (!self.findChartLookups) {
             self.findAspectChartLookups = null
             return
@@ -448,20 +455,13 @@ let SearchDialog = class extends Component<any,any>
 
     findAspectChartLookups: any = null
 
-    handleSearchDialogClose = () => {
-        this.setState({
-            searchDialogOpen: false
-        })
-    }
-
     findParameters = {
-        applySearchBranchSettings:null,
         parms:null,
     }   
 
     findApplyChart = () => {
         let explorer = this
-        explorer.handleSearchDialogClose()
+        explorer.onRequestClose()
         let selection = explorer.findSelection
         let parms = {
             viewpoint:selection.viewpoint,
@@ -477,15 +477,20 @@ let SearchDialog = class extends Component<any,any>
             label:parms.name,
         })
         explorer.findParameters.parms = parms
-        explorer.findParameters.applySearchBranchSettings(parms)
+        explorer.props.onConfirm(parms)
     }
 
-    searchDialog = () => (
-        <Dialog
+    onRequestClose = () => {
+        this.props.onRequestClose()
+    }
+
+    searchDialog = () => {
+        // console.log('returning dialog',this.findAspectChartLookups)
+        return <Dialog
             title = {<div style = {{padding:'12px 0 0 12px'}} >Find a Chart</div>}
             modal = { false }
             open = { this.state.dialogOpen }
-            onRequestClose = { this.handleSearchDialogClose }
+            onRequestClose = { this.onRequestClose }
             autoScrollBodyContent = {false}
             contentStyle = {{maxWidth:'600px'}}
             autoDetectWindowHeight = {false}
@@ -504,6 +509,7 @@ let SearchDialog = class extends Component<any,any>
                   maxSearchResults = {60}
                   onNewRequest = {this.findOnNewRequest}
                   onUpdateInput = {this.findOnUpdateInput}
+                  autoFocus
                 />
                 <RadioButtonGroup 
                     valueSelected= {this.state.searchDialogAspect} 
@@ -537,7 +543,7 @@ let SearchDialog = class extends Component<any,any>
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ this.handleSearchDialogClose } >
+                onTouchTap={ this.onRequestClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -566,16 +572,14 @@ let SearchDialog = class extends Component<any,any>
 
             <div>
                 <RaisedButton disabled = { !this.findSelection.known }
-                    onTouchTap = {() => {
-                        this.findApplyChart()
-                    }}
+                    onTouchTap = {this.findApplyChart}
                     label="Apply" primary={ true } style={{marginRight:"50px"}} />
                 <RaisedButton disabled = { false }
-                    onTouchTap = {() => (this.handleSearchDialogClose())}
+                    onTouchTap = {this.onRequestClose}
                     label="Cancel" secondary={true} />
             </div>
             <div style={{height:'200px'}}></div>
-        </Dialog >)
+        </Dialog >}
 
     render() {
 
@@ -583,7 +587,9 @@ let SearchDialog = class extends Component<any,any>
             this.getFindAspectLookups()
         }
 
-        return this.searchDialog()
+        let dialog = this.searchDialog()
+
+        return dialog
 
     }
 
