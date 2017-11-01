@@ -382,8 +382,11 @@ let SearchDialog = class extends Component {
             let targetlist = [];
             let aspect = self.state.searchDialogAspect;
             for (let item of sourcelist) {
-                if (item.aspects[aspect]) {
-                    targetlist.push(item);
+                if (((!(item.viewpoint == 'structuralbudget')) &&
+                    (!((item.datasource == 'detailedbudgets') && (item.sortname < '(03'))))) {
+                    if (item.aspects[aspect]) {
+                        targetlist.push(item);
+                    }
                 }
             }
             targetlist.sort((a, b) => {

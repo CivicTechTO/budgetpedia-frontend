@@ -464,9 +464,12 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
         let targetlist = []
         let aspect = self.state.searchDialogAspect
         for (let item of sourcelist) {
-            // console.log('item',item)
-            if (item.aspects[aspect]) {
-                targetlist.push(item)
+            if (((!(item.viewpoint == 'structuralbudget')) && 
+                    (!((item.datasource == 'detailedbudgets') && (item.sortname < '(03')))
+                )) {
+                if (item.aspects[aspect]) {
+                    targetlist.push(item)
+                }
             }
         }
 
