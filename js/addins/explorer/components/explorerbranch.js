@@ -1010,9 +1010,6 @@ class ExplorerBranch extends Component {
                 React.createElement(Subheader_1.default, null, DatasetTitle),
                 itemlist);
         };
-        this.handleFindDialogOpen = (e) => {
-            this.props.handleSearchDialogOpen(e);
-        };
         this.taxonomychoices = {
             FUNCTIONAL: "Internal budget: Programs by function",
             STRUCTURAL: "Internal budget: Programs by org type",

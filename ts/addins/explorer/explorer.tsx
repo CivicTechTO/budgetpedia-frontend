@@ -622,6 +622,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         })
     }
 
+    handleSearchDialogClose = () => {
+        this.setState({
+            searchDialogOpen: false
+        })
+    }
 
     // =======================[ Storyboard Creation ]=====================
 
@@ -1726,7 +1731,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
             <SearchDialog
                 open = {this.state.searchDialogOpen}
-                onRequestClose = {null}
+                onRequestClose = {this.handleSearchDialogClose}
                 onConfirm = {this.findParameters.applySearchBranchSettings}
             />
 

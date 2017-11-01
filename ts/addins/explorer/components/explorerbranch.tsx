@@ -1655,9 +1655,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    handleFindDialogOpen = (e) => {
-        this.props.handleSearchDialogOpen(e)
-    }
+    // handleSearchDialogOpen = (e) => {
+    //     this.props.handleSearchDialogOpen(e)
+    // }
 
     taxonomychoices = {
         FUNCTIONAL:"Internal budget: Programs by function",

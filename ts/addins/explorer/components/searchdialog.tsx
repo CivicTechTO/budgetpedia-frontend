@@ -450,7 +450,7 @@ let SearchDialog = class extends Component<any,any>
 
     handleSearchDialogClose = () => {
         this.setState({
-            findDialogOpen: false
+            searchDialogOpen: false
         })
     }
 

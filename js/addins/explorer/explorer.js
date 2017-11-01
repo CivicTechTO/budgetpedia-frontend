@@ -269,6 +269,11 @@ let Explorer = class extends Component {
                 searchDialogOpen: true
             });
         };
+        this.handleSearchDialogClose = () => {
+            this.setState({
+                searchDialogOpen: false
+            });
+        };
         this.storyBoards = null;
         this.getStoryboardsPromise = () => {
             let filespec = './db/repositories/toronto/storyboards/storyboards.json';
@@ -1007,7 +1012,7 @@ let Explorer = class extends Component {
             this.storyboardDialog(),
             this.analystNotesDialog(),
             this.viewTaxonomyDialog(),
-            React.createElement(searchdialog_1.default, { open: this.state.searchDialogOpen, onRequestClose: null, onConfirm: this.findParameters.applySearchBranchSettings }),
+            React.createElement(searchdialog_1.default, { open: this.state.searchDialogOpen, onRequestClose: this.handleSearchDialogClose, onConfirm: this.findParameters.applySearchBranchSettings }),
             branches);
     }
 };

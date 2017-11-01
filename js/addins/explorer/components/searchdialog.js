@@ -374,7 +374,7 @@ let SearchDialog = class extends Component {
         this.findAspectChartLookups = null;
         this.handleSearchDialogClose = () => {
             this.setState({
-                findDialogOpen: false
+                searchDialogOpen: false
             });
         };
         this.findParameters = {
