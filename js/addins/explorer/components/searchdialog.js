@@ -115,18 +115,30 @@ let SearchDialog = class extends Component {
             auditedexpenditures: 'Audited Statements',
             detailedbudgets: 'Detailed Budgets',
             summarybudgets: 'Summary Budgets',
-            Taxonomy: 'Taxonomy',
-            auditedexpense: "Expenses",
-            auditedrevenue: "Revenues",
-            program: 'Programs',
-            service: 'Services',
-            activity: 'Activities',
-            expense: 'Expenditures',
-            revenue: 'Receipts',
-            permanence: 'Permanence',
-            expenditure: "Expenses",
+            Taxonomy: '01-Taxonomy',
+            auditedexpense: "07-Expenses",
+            auditedrevenue: "08-Revenues",
+            program: '02-Programs',
+            service: '03-Services',
+            activity: '04-Activities',
+            expense: '06-Expenditures',
+            revenue: '05-Receipts',
+            permanence: '09-Permanence',
+            expenditure: "10-Expenses",
         };
         this.processFindChartLookups = data => {
+            let collation = {
+                Taxonomy: '01-taxonomy',
+                auditedexpense: '07-audited expense',
+                auditedrevenue: '08-audited revenue',
+                program: '02-program',
+                service: '03-service',
+                activity: '04-activity',
+                expense: '06-expense',
+                revenue: '05-revenue',
+                permanence: '09-permanence',
+                expenditure: '10-expenditure',
+            };
             let lookups = [];
             let { viewpoints, datasets } = data;
             let sourceviewpoints = {
@@ -186,6 +198,7 @@ let SearchDialog = class extends Component {
                     }
                     for (let code in dimension) {
                         let name = dimension[code];
+                        let sortname = '(' + collation[dimensionname] + ') ' + name;
                         let selection = {
                             viewpoint: sourceviewpoints[datasetname],
                             datasource: datasetname,
@@ -193,6 +206,7 @@ let SearchDialog = class extends Component {
                             dimension: dimensionname,
                             code,
                             name,
+                            sortname,
                             value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
                                 React.createElement("div", null,
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
@@ -202,7 +216,7 @@ let SearchDialog = class extends Component {
                                         dictionary[sourceviewpoints[datasetname]])),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "depth: ",
+                                        "scope: ",
                                         dictionary[dimensionlookupname],
                                         " ")),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -212,6 +226,7 @@ let SearchDialog = class extends Component {
                         };
                         lookups.push(selection);
                         if (datasetname == 'detailedbudgets' || datasetname == 'summarybudgets') {
+                            let sortname = '(' + collation[dimensionname] + ') ' + name;
                             let selection = {
                                 viewpoint: alternatesourceviewpoints[datasetname],
                                 datasource: datasetname,
@@ -219,6 +234,7 @@ let SearchDialog = class extends Component {
                                 dimension: dimensionname,
                                 code,
                                 name,
+                                sortname,
                                 value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
                                     React.createElement("div", null,
                                         React.createElement("span", { style: { fontWeight: "bold" } }, name)),
@@ -228,7 +244,7 @@ let SearchDialog = class extends Component {
                                             dictionary[alternatesourceviewpoints[datasetname]])),
                                     React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                         React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                            "depth: ",
+                                            "scope: ",
                                             dictionary[dimensionname],
                                             " ")),
                                     React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -261,6 +277,7 @@ let SearchDialog = class extends Component {
                     let dimension = viewpoint[dimensionname];
                     for (let code in dimension) {
                         let name = dimension[code];
+                        let sortname = '(' + collation[dimensionname] + ') ' + name;
                         let selection = {
                             viewpoint: viewpointname,
                             datasource: viewpointsources[viewpointname],
@@ -268,6 +285,7 @@ let SearchDialog = class extends Component {
                             dimension: dimensionname,
                             code,
                             name,
+                            sortname,
                             value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
                                 React.createElement("div", null,
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
@@ -277,7 +295,7 @@ let SearchDialog = class extends Component {
                                         dictionary[viewpointname])),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
                                     React.createElement("span", { style: { fontStyle: "italic", color: "gray" } },
-                                        "depth: ",
+                                        "scope: ",
                                         dictionary[dimensionname],
                                         " ")),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -368,6 +386,13 @@ let SearchDialog = class extends Component {
                     targetlist.push(item);
                 }
             }
+            targetlist.sort((a, b) => {
+                if (a.sortname < b.sortname)
+                    return -1;
+                if (a.sortname > b.sortname)
+                    return 1;
+                return 0;
+            });
             self.findAspectChartLookups = targetlist;
         };
         this.findAspectChartLookups = null;
@@ -400,7 +425,7 @@ let SearchDialog = class extends Component {
         this.searchDialog = () => {
             return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
                 React.createElement("div", null,
-                    React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 60, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput, autoFocus: true }),
+                    React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item (sorted by scope)", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 80, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput, autoFocus: true }),
                     React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.searchDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
                         React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
                         React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
@@ -420,7 +445,7 @@ let SearchDialog = class extends Component {
                         React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "workspace: "),
                         React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.viewpointdisplay)),
                     React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
-                        React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "depth: "),
+                        React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "scope: "),
                         React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.leveldisplay)),
                     React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
                         React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),

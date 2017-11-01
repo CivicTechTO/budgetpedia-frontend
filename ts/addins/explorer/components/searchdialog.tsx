@@ -176,20 +176,33 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
         auditedexpenditures:'Audited Statements',
         detailedbudgets:'Detailed Budgets',
         summarybudgets:'Summary Budgets',
-        // levels
-        Taxonomy:'Taxonomy',
-        auditedexpense:"Expenses",
-        auditedrevenue:"Revenues",
-        program:'Programs',
-        service:'Services',
-        activity:'Activities',
-        expense:'Expenditures',
-        revenue:'Receipts',
-        permanence:'Permanence',
-        expenditure:"Expenses",        
+        // levels (collation)
+        Taxonomy:'01-Taxonomy', // 1
+        auditedexpense:"07-Expenses", // 7
+        auditedrevenue:"08-Revenues", // 8
+        program:'02-Programs', // 2
+        service:'03-Services', //3
+        activity:'04-Activities', //4
+        expense:'06-Expenditures', // 6 
+        revenue:'05-Receipts', // 5
+        permanence:'09-Permanence', // 9
+        expenditure:"10-Expenses", // 10 
     }
     
     processFindChartLookups = data => {
+
+        let collation = {
+            Taxonomy:'01-taxonomy',
+            auditedexpense:'07-audited expense',
+            auditedrevenue: '08-audited revenue',
+            program: '02-program',
+            service:'03-service',
+            activity:'04-activity',
+            expense:'06-expense', 
+            revenue:'05-revenue',
+            permanence:'09-permanence',
+            expenditure:'10-expenditure',
+        }
 
         let lookups = []
         let {viewpoints, datasets } = data
@@ -244,6 +257,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                 }
                 for (let code in dimension) {
                     let name = dimension[code]
+                    let sortname = '('+collation[dimensionname]+') '+name
                     let selection = {
                         viewpoint:sourceviewpoints[datasetname],
                         datasource:datasetname,
@@ -251,6 +265,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                         dimension:dimensionname,
                         code,
                         name,
+                        sortname,
                         value:(
                             <MenuItem style={{whiteSpace:'normal',lineHeight:'150%'}}
                                 >
@@ -261,7 +276,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                                     <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[sourceviewpoints[datasetname]]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                    <span style={{fontStyle:"italic",color:"gray"}}>depth: {dictionary[dimensionlookupname]} </span>
+                                    <span style={{fontStyle:"italic",color:"gray"}}>scope: {dictionary[dimensionlookupname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                     <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
@@ -274,6 +289,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                     //  suppress for now
                     if (datasetname == 'detailedbudgets' || datasetname == 'summarybudgets') {
 
+                        let sortname = '('+collation[dimensionname]+') '+name
                         let selection = {
                             viewpoint:alternatesourceviewpoints[datasetname],
                             datasource:datasetname,
@@ -281,6 +297,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                             dimension:dimensionname,
                             code,
                             name,
+                            sortname,
                             value:(
                                 <MenuItem style={{whiteSpace:'normal',lineHeight:'150%'}}
                                     >
@@ -291,7 +308,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                                         <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[alternatesourceviewpoints[datasetname]]}</span>
                                     </div>
                                     <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                        <span style={{fontStyle:"italic",color:"gray"}}>depth: {dictionary[dimensionname]} </span>
+                                        <span style={{fontStyle:"italic",color:"gray"}}>scope: {dictionary[dimensionname]} </span>
                                     </div>
                                     <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                         <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
@@ -327,6 +344,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                 let dimension = viewpoint[dimensionname]
                 for (let code in dimension) {
                     let name = dimension[code]
+                    let sortname = '('+collation[dimensionname]+') '+name
                     let selection = {
                         viewpoint:viewpointname,
                         datasource:viewpointsources[viewpointname],
@@ -334,6 +352,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                         dimension:dimensionname,
                         code,
                         name,
+                        sortname,
                         value:(
                             <MenuItem style={{whiteSpace:'normal',lineHeight:'150%'}}
                                 >
@@ -344,7 +363,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                                 <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[viewpointname]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>depth: {dictionary[dimensionname]} </span>
+                                <span style={{fontStyle:"italic",color:"gray"}}>scope: {dictionary[dimensionname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                 <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[viewpointsources[viewpointname]]}</span>
@@ -450,6 +469,13 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                 targetlist.push(item)
             }
         }
+
+        targetlist.sort((a,b) => {
+            if (a.sortname < b.sortname) return -1
+            if (a.sortname > b.sortname) return 1
+            return 0
+        })
+
         self.findAspectChartLookups = targetlist
     }
 
@@ -498,7 +524,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
             <div>
                 <AutoComplete
                   ref={'autocomplete'}
-                  floatingLabelText="type in a key word, then select a list item"
+                  floatingLabelText="type in a key word, then select a list item (sorted by scope)"
                   filter={AutoComplete.caseInsensitiveFilter}
                   dataSource={this.findAspectChartLookups || []}
                   dataSourceConfig = {{text:'name',value:'value'}}
@@ -506,7 +532,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                   openOnFocus = {false}
                   style = {{width:'100%'}}
                   menuStyle = {{maxHeight:"300px",overflowY:'auto'}}
-                  maxSearchResults = {60}
+                  maxSearchResults = {80}
                   onNewRequest = {this.findOnNewRequest}
                   onUpdateInput = {this.findOnUpdateInput}
                   autoFocus
@@ -561,7 +587,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.viewpointdisplay }</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>depth: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>scope: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.leveldisplay}</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
