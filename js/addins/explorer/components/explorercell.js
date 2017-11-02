@@ -131,13 +131,13 @@ class ExplorerCell extends Component {
         let drillDown = datanode[drillDownProperty] || 'None';
         let drilldownmessage;
         if (drillDown == 'All') {
-            drilldownmessage = 'drilldown available for all elements here';
+            drilldownmessage = 'drilldown is available for all elements here';
         }
         else if (drillDown == 'Some') {
             drilldownmessage = 'some elements allow drilldown here';
         }
         else {
-            drilldownmessage = 'no drilldown available here';
+            drilldownmessage = 'no drilldown is available here';
         }
         let isDataAvailable = true;
         if (yearScope == 'OneYear') {
@@ -157,7 +157,7 @@ class ExplorerCell extends Component {
                 position: "relative",
                 display: "inline-block"
             } },
-            React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "years"),
+            React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "number of years to include"),
             React.createElement(IconButton_1.default, { tooltip: "One year", tooltipPosition: "top-center", style: {
                     backgroundColor: (this.cellDeclaration.yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear])
                         ? "rgba(144,238,144,0.5)"
@@ -329,7 +329,7 @@ class ExplorerCell extends Component {
                     position: "relative",
                     display: "inline-block"
                 } },
-                React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "charts"),
+                React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "available charts"),
                 chartoptions);
         };
         let chartoptions = getchartoptions();

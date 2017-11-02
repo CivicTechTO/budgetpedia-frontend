@@ -206,11 +206,11 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
         let drillDown = datanode[drillDownProperty] || 'None'
         let drilldownmessage
         if (drillDown == 'All') {
-            drilldownmessage = 'drilldown available for all elements here'
+            drilldownmessage = 'drilldown is available for all elements here'
         } else if (drillDown == 'Some') {
             drilldownmessage = 'some elements allow drilldown here'
         } else {
-            drilldownmessage = 'no drilldown available here'
+            drilldownmessage = 'no drilldown is available here'
         }
         let isDataAvailable = true
         if (yearScope == 'OneYear') {
@@ -234,7 +234,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     display:"inline-block"
                 }
             }>
-                <div style={{position:"absolute",top:"0", left:"0",fontSize:"8px"}}>years</div>
+                <div style={{position:"absolute",top:"0", left:"0",fontSize:"8px"}}>number of years to include</div>
                 <IconButton
                     tooltip="One year"
                     tooltipPosition="top-center"
@@ -526,7 +526,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     display:"inline-block"
                 }
             }>
-                <div style={{position:"absolute",top:"0", left:"0",fontSize:"8px"}}>charts</div>
+                <div style={{position:"absolute",top:"0", left:"0",fontSize:"8px"}}>available charts</div>
 
                 { chartoptions }
 
