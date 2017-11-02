@@ -1452,7 +1452,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     }}
                     >
 
-                    <CardTitle
+                    {(budgetBranches.length > 1)?<CardTitle
                         actAsExpander={false}
                         showExpandableButton={false} >
 
@@ -1516,7 +1516,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
                         </IconButton>
 
-                    </CardTitle>
+                    </CardTitle>:null}
 
                     <CardText expandable = {false}>
                     <ExplorerBranch 

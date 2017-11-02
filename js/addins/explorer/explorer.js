@@ -911,7 +911,7 @@ let Explorer = class extends Component {
                 return React.createElement(Card_1.Card, { initiallyExpanded: true, key: budgetBranch.uid, onExpandChange: (expanded) => {
                         this.onExpandChange(expanded);
                     } },
-                    React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
+                    (budgetBranches.length > 1) ? React.createElement(Card_1.CardTitle, { actAsExpander: false, showExpandableButton: false },
                         "Row " + (branchIndex + 1) + " ",
                         React.createElement("input", { defaultValue: this.stories ? this.stories[branchIndex].title : '', type: "text", style: { width: '350px', fontWeight: 'bold', fontSize: '14px' }, onClick: (ev) => { ev.stopPropagation(); } }),
                         React.createElement(IconButton_1.default, { style: {
@@ -928,7 +928,7 @@ let Explorer = class extends Component {
                                 ev.stopPropagation();
                                 this.branchMoveUp(uid);
                             })(budgetBranch.uid), tooltip: "Move up" },
-                            React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))),
+                            React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))) : null,
                     React.createElement(Card_1.CardText, { expandable: false },
                         React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleSearchDialogOpen: this.handleSearchDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
                     React.createElement(Card_1.CardActions, { expandable: false },
