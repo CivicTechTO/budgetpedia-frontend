@@ -11,6 +11,7 @@ const MenuItem_1 = require("material-ui/MenuItem");
 const constants_1 = require("../constants");
 const actions_1 = require("../actions");
 const Utilities = require("../modules/utilities");
+const datatable_1 = require("./datatable");
 class ExplorerCell extends Component {
     constructor() {
         super(...arguments);
@@ -19,6 +20,7 @@ class ExplorerCell extends Component {
             netstate: false,
             variancestate: false,
             chartParms: null,
+            datatableopen: false,
         };
         this.getState = () => this.state;
         this.getProps = () => this.props;
@@ -77,6 +79,15 @@ class ExplorerCell extends Component {
             });
         };
         this.onDataTable = () => {
+            console.log('onDataTable');
+            this.setState({});
+        };
+        this.onReqestCloseDataTable = () => {
+            this.setState({
+                datatableopen: false
+            });
+        };
+        this.onConfirmDataExport = () => {
         };
         this.onHarmonize = () => {
             this.props.callbacks.harmonizeCells(this.props.budgetCell.nodeDataPack.budgetNode.uid, this.props.budgetCell.uid);
@@ -425,8 +436,8 @@ class ExplorerCell extends Component {
                 } },
                 "see data",
                 React.createElement("br", null),
-                "[deferred]"),
-            React.createElement(IconButton_1.default, { disabled: true, tooltip: "Data Table", tooltipPosition: "top-center", style: {
+                "table"),
+            React.createElement(IconButton_1.default, { disabled: false, tooltip: "Data Table", tooltipPosition: "top-center", style: {
                     backgroundColor: (explorerChartCode == "DataTable")
                         ? "rgba(144,238,144,0.5)"
                         : "transparent",
@@ -584,6 +595,12 @@ class ExplorerCell extends Component {
             React.createElement(DropDownMenu_1.default, { value: rightYear, style: {}, onChange: (e, key, payload) => {
                     this.onChangeChartYears(leftYear, payload);
                 } }, yearsoptions()));
+        let tabledata, tablecolumns;
+        if (this.state.datatableopen) {
+            let { data, columns } = budgetCell.getDataTable();
+            tabledata = data;
+            tablecolumns = columns;
+        }
         return React.createElement("div", null,
             (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },
                 timescopes,
@@ -596,7 +613,8 @@ class ExplorerCell extends Component {
                 chart,
                 drilldownprompt),
             React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, (this.props.showControls) ?
-                yearselection : React.createElement("div", { style: { height: "12px" } })));
+                yearselection : React.createElement("div", { style: { height: "12px" } })),
+            this.state.datatableopen ? React.createElement(datatable_1.default, { data: tabledata, columns: tablecolumns, onRequestClose: this.onReqestCloseDataTable, onConfirmExport: this.onConfirmDataExport }) : null);
     }
 }
 exports.default = ExplorerCell;

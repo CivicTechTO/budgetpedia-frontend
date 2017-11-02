@@ -227,7 +227,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         >
             <div>
             please wait while the charts are rendered...<br />
-            Toggle any row's "Show chart options" to experiment with settings for that row
+            Toggle any row's "Show chart controls" to experiment with settings for that row
             <LinearProgress mode="indeterminate" />
             </div>
         </Dialog>

@@ -613,6 +613,13 @@ class BudgetCell {
             row.push(style);
             return row;
         };
+        this.getDataTable = () => {
+            let displayparms = {
+                data: null,
+                columns: null,
+            };
+            return displayparms;
+        };
         let { nodeDataseriesName, chartSelection, uid } = specs;
         this.nodeDataseriesName = nodeDataseriesName;
         this.chartSelection = chartSelection;

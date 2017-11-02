@@ -11,6 +11,7 @@
 'use strict'
 import * as React from 'react'
 var { Component } = React
+
 var { Chart } = require('../../../../forked/react-google-charts/Chart.js')
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
@@ -25,6 +26,7 @@ import { TimeScope } from '../constants'
 import { cellTypes as cellActionTypes } from '../actions'
 
 import * as Utilities from '../modules/utilities'
+import DataTable from './datatable'
 
 declare var google
 
@@ -50,6 +52,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
         netstate:false,
         variancestate:false,
         chartParms: null,
+        datatableopen:false,
     }
 
     // for use by BudgetCell instance...
@@ -177,6 +180,19 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
     }
 
     onDataTable = () => {
+        console.log('onDataTable')
+        this.setState({
+            // datatableopen:true
+        })
+    }
+
+    onReqestCloseDataTable = () => {
+        this.setState({
+            datatableopen:false
+        })
+    }
+
+    onConfirmDataExport = () => {
 
     }
 
@@ -666,9 +682,9 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         fontSize:"8px",
                         textAlign:"left"
                     }
-                }>see data<br />[deferred]</div>
+                }>see data<br />table</div>
                 <IconButton 
-                    disabled
+                    disabled = {false}
                     tooltip="Data Table"
                     tooltipPosition="top-center"
                     style={
@@ -944,6 +960,13 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                 </DropDownMenu>
             </div>
 
+        let tabledata, tablecolumns
+        if (this.state.datatableopen) {
+            let {data,columns} = budgetCell.getDataTable()
+            tabledata = data
+            tablecolumns = columns
+        }
+
         return <div>
 
             {(this.props.showControls)?<div style={{ padding: "3px" }}>
@@ -987,6 +1010,15 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                 }
 
             </div>
+
+            {
+                this.state.datatableopen?<DataTable
+                    data = {tabledata}
+                    columns = {tablecolumns}
+                    onRequestClose = {this.onReqestCloseDataTable}
+                    onConfirmExport = {this.onConfirmDataExport}
+                />:null
+            }
             
         </div>
     }

@@ -74,7 +74,7 @@ let Explorer = class extends Component {
             React.createElement("div", null,
                 "please wait while the charts are rendered...",
                 React.createElement("br", null),
-                "Toggle any row's \"Show chart options\" to experiment with settings for that row",
+                "Toggle any row's \"Show chart controls\" to experiment with settings for that row",
                 React.createElement(LinearProgress_1.default, { mode: "indeterminate" }))));
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;

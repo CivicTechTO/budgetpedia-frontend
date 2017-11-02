@@ -1009,6 +1009,16 @@ class BudgetCell {
 
     }
 
+    // datatable
+
+    getDataTable = () => {
+        let displayparms = {
+            data:null,
+            columns:null,
+        }
+        return displayparms
+    }
+
 }
 
 export default BudgetCell
