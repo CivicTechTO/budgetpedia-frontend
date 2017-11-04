@@ -1,5 +1,5 @@
 // gulpfile.js
-var watchify = require('watchify');
+// var watchify = require('watchify');
 var browserify = require('browserify');
 var gulp = require('gulp');
 var source = require('vinyl-source-stream');
@@ -11,17 +11,18 @@ var assign = require('lodash.assign');
 var browserSync = require('browser-sync').create();
 
 var babelify = require("babelify");
-var b = watchify(browserify({
+// var b = watchify(browserify({
   // entries: ['./js/testtsx.js'],
+var b = browserify({
   entries:glob.sync('./js/*.js',{}),
   // cache: {},
   // packageCache: {},
   output:'bundle.js'
   // delay: 100
-  }).transform(babelify, {presets: ["es2015", "react"],plugins:["transform-object-assign"]}),{
-  ignoreWatch: ['**/node_modules/**'],
-  poll: 100
-}); 
+  }).transform(babelify, {presets: ["es2015", "react"],plugins:["transform-object-assign"]})//,{
+//   ignoreWatch: ['**/node_modules/**'],
+//   poll: 100
+// }); 
 
 // add transformations here
 // i.e. b.transform(coffeeify);

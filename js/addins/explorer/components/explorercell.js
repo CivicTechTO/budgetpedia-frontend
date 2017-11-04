@@ -79,8 +79,7 @@ class ExplorerCell extends Component {
             });
         };
         this.onDataTable = () => {
-            console.log('onDataTable');
-            this.setState({});
+            let tableparms = this.props.budgetCell.getDataTable();
         };
         this.onReqestCloseDataTable = () => {
             this.setState({
@@ -597,9 +596,6 @@ class ExplorerCell extends Component {
                 } }, yearsoptions()));
         let tabledata, tablecolumns;
         if (this.state.datatableopen) {
-            let { data, columns } = budgetCell.getDataTable();
-            tabledata = data;
-            tablecolumns = columns;
         }
         return React.createElement("div", null,
             (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },

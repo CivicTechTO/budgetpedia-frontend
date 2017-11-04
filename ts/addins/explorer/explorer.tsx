@@ -1575,7 +1575,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 fontSize:"12px",
             }
         } >
-        PLEASE READ NOTICES BELOW. Caution: This is a very early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations.
+        PLEASE READ NOTICES BELOW. Caution: This is an early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations.
         There are numerous data source quality and continuity issues, the intake process has not been
         validated, and the data presented has not been rigorously verified against source data.</div>
 

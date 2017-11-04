@@ -34,7 +34,7 @@ import {
 import BudgetNode from './node.class'
 import { YearsRange, DatasetConfig } from './databaseapi'
 import { TimeScope, GoogleChartColors } from '../constants'
-import {ColorBrightness} from '../modules/utilities'
+import { ColorBrightness } from '../modules/utilities'
 
 var format = require('format-number')
 
@@ -1010,13 +1010,44 @@ class BudgetCell {
     }
 
     // datatable
+    // 'DonutChart':'PieChart',
+    // 'ColumnChart':'ColumnChart',
+    // 'DiffPieChart':'PieChart',
+    // 'DiffColumnChart':'ColumnChart',
+    // 'TimeLine':'LineChart',
+    // 'ContextChart':'TreeMap',
+    // 'StackedArea':'AreaChart', // isStacked:'absolute'
+    // 'Proportional':'AreaChart', // isStacked:'percent'
 
     getDataTable = () => {
-        let displayparms = {
+        let {chartType, columns, rows, diffdata} = this.chartParms
+        let chartCode = this.explorerChartCode
+
+        let tableparms = {
+            chartCode,
+            chartType,
+            chartdata: {
+                rows,
+                diffdata,
+                columns,
+            },
             data:null,
             columns:null,
+            header:null,
+            footer:null,
         }
-        return displayparms
+
+        let parms = this._preProcessTableData(tableparms)
+
+        console.log('tableparms',parms)
+
+        return parms
+    }
+
+    _preProcessTableData = parms => {
+
+
+        return parms
     }
 
 }

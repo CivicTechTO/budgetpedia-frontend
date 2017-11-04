@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const lightBaseTheme_1 = require("material-ui/styles/baseThemes/lightBaseTheme");
 const colors = require("material-ui/styles/colors");
 let appnavbar = {
-    title: 'Budgetpedia v0.1.2',
+    title: 'Budgetpedia v0.1.3',
     username: 'anonymous',
     accountoptions: [],
     menuoptions: [],

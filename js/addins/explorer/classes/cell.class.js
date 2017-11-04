@@ -614,11 +614,27 @@ class BudgetCell {
             return row;
         };
         this.getDataTable = () => {
-            let displayparms = {
+            let { chartType, columns, rows, diffdata } = this.chartParms;
+            let chartCode = this.explorerChartCode;
+            let tableparms = {
+                chartCode,
+                chartType,
+                chartdata: {
+                    rows,
+                    diffdata,
+                    columns,
+                },
                 data: null,
                 columns: null,
+                header: null,
+                footer: null,
             };
-            return displayparms;
+            let parms = this._preProcessTableData(tableparms);
+            console.log('tableparms', parms);
+            return parms;
+        };
+        this._preProcessTableData = parms => {
+            return parms;
         };
         let { nodeDataseriesName, chartSelection, uid } = specs;
         this.nodeDataseriesName = nodeDataseriesName;

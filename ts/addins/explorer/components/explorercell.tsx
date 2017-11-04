@@ -180,10 +180,11 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
     }
 
     onDataTable = () => {
-        console.log('onDataTable')
-        this.setState({
-            // datatableopen:true
-        })
+        // console.log('onDataTable')
+        let tableparms = this.props.budgetCell.getDataTable()
+        // this.setState({
+        //     datatableopen:true
+        // })
     }
 
     onReqestCloseDataTable = () => {
@@ -962,9 +963,10 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
         let tabledata, tablecolumns
         if (this.state.datatableopen) {
-            let {data,columns} = budgetCell.getDataTable()
-            tabledata = data
-            tablecolumns = columns
+            // let tableparms = budgetCell.getDataTable()
+            // console.log('tableparms',tableparms)
+            // tabledata = data
+            // tablecolumns = columns
         }
 
         return <div>
