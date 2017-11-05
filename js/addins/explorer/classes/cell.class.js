@@ -654,6 +654,7 @@ class BudgetCell {
                     outputparms = this.prepareDiffColumnChartData(tableparms, outputparms);
                     break;
                 case "DiffPieChart":
+                    outputparms = this.prepareDiffPieChartData(tableparms, outputparms);
                     break;
                 case "TimeLine":
                     break;
@@ -769,6 +770,56 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareDiffPieChartData = (tableparms, outputparms) => {
+            outputparms = this.prepareDiffColumnChartData(tableparms, outputparms);
+            let columns = outputparms.columns;
+            columns.splice(2, 0, { Header: columns[1].Header + ' Ratio' });
+            columns.splice(4, 0, { Header: columns[3].Header + ' Ratio' });
+            columns.push({ Header: 'Ratio of Change to Previous' }, { Header: 'Ratio of Change to Current' });
+            let footer = outputparms.footer;
+            let previoustotal = footer[1];
+            let currenttotal = footer[2];
+            let totalchange = footer[3];
+            footer.splice(2, 0, 1);
+            footer.splice(4, 0, 1);
+            let changetoprevious = null;
+            let changetocurrent = null;
+            if (!isNaN(totalchange)) {
+                if (!isNaN(previoustotal)) {
+                    changetoprevious = totalchange / previoustotal;
+                }
+                if (!isNaN(currenttotal)) {
+                    changetocurrent = totalchange / currenttotal;
+                }
+            }
+            footer.push(changetoprevious, changetocurrent);
+            let data = outputparms.data;
+            for (let n = 0; n < data.length; n++) {
+                let row = data[n];
+                let previousvalue = row[1];
+                let currentvalue = row[2];
+                let change = row[3];
+                let previousratio = null;
+                let currentratio = null;
+                let changetoprevious = null;
+                let changetocurrent = null;
+                if (!isNaN(previoustotal) && !isNaN(previousvalue)) {
+                    previousratio = previousvalue / previoustotal;
+                }
+                if (!isNaN(currenttotal) && !isNaN(currentvalue)) {
+                    currentratio = currentvalue / currenttotal;
+                }
+                if (!isNaN(change)) {
+                    if (!isNaN(previousvalue)) {
+                        changetoprevious = change / previousvalue;
+                    }
+                    if (!isNaN(currentvalue)) {
+                        changetocurrent = change / currentvalue;
+                    }
+                }
+                row.splice(2, 0, previousratio);
+                row.splice(4, 0, currentratio);
+                row.push(changetoprevious, changetocurrent);
+            }
             return outputparms;
         };
         this.prepareTimelineData = (tableparms, outputparms) => {
