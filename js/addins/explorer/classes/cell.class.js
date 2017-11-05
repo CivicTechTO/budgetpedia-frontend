@@ -614,7 +614,9 @@ class BudgetCell {
             return row;
         };
         this.getDataTable = () => {
-            let { chartType, columns, rows, diffdata } = this.chartParmsObject;
+            console.log('chartParms', this.chartParmsObject);
+            let { chartType, columns, rows, diffdata, options } = this.chartParmsObject;
+            let { hAxis, vAxis, title } = options;
             let chartCode = this.explorerChartCode;
             let tableparms = {
                 chartCode,
@@ -623,15 +625,18 @@ class BudgetCell {
                     rows,
                     diffdata,
                     columns,
+                    hAxis,
+                    vAxis
                 },
+                title,
             };
-            let parms = this._preProcessTableData(tableparms);
-            console.log('tableparms, parms', tableparms, parms);
-            return parms;
+            let outputparms = this._preProcessTableData(tableparms);
+            console.log('tableparms, parms', tableparms, outputparms);
+            return outputparms;
         };
         this._preProcessTableData = tableparms => {
             let { chartCode, chartType } = tableparms;
-            let parms = {
+            let outputparms = {
                 chartCode,
                 chartType,
                 data: null,
@@ -641,10 +646,10 @@ class BudgetCell {
             };
             switch (chartCode) {
                 case "ColumnChart":
-                    parms = this.prepareColumnChartData(tableparms, parms);
+                    outputparms = this.prepareColumnChartData(tableparms, outputparms);
                     break;
                 case "DonutChart":
-                    parms = this.prepareDonutChartData(tableparms, parms);
+                    outputparms = this.prepareDonutChartData(tableparms, outputparms);
                     break;
                 case "DiffColumnChart":
                     break;
@@ -657,11 +662,11 @@ class BudgetCell {
                 case "Proportional":
                     break;
                 default:
-                    throw ('Unknown chart type in _processTableData: ' + chartCode);
+                    throw ('Unknown chart type in cell.class._processTableData: ' + chartCode);
             }
-            return parms;
+            return outputparms;
         };
-        this.prepareColumnChartData = (tableparms, parms) => {
+        this.prepareColumnChartData = (tableparms, outputparms) => {
             let rows = [];
             for (let row of tableparms.chartdata.rows) {
                 let newrow = [];
@@ -674,6 +679,8 @@ class BudgetCell {
             for (let n = 0; n < 2; n++) {
                 columns.push({ Header: tableparms.chartdata.columns[n].label });
             }
+            columns[0].Header = tableparms.chartdata.hAxis.title;
+            let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title;
             let footer = ['Total'];
             for (let n = 1; n < 2; n++) {
                 let totalamount = rows.reduce((accumulator, currentvalue) => {
@@ -681,44 +688,45 @@ class BudgetCell {
                 }, 0);
                 footer.push(totalamount);
             }
-            parms.data = rows;
-            parms.columns = columns;
-            parms.footer = footer;
-            return parms;
+            outputparms.data = rows;
+            outputparms.columns = columns;
+            outputparms.footer = footer;
+            outputparms.title = title;
+            return outputparms;
         };
-        this.prepareDonutChartData = (tableparms, parms) => {
-            parms = this.prepareColumnChartData(tableparms, parms);
-            parms.columns.push({ Header: 'Ratio' });
-            let total = parms.footer[1];
+        this.prepareDonutChartData = (tableparms, outputparms) => {
+            outputparms = this.prepareColumnChartData(tableparms, outputparms);
+            outputparms.columns.push({ Header: 'Ratio' });
+            let total = outputparms.footer[1];
             if (total)
-                parms.footer.push(1);
+                outputparms.footer.push(1);
             else
-                parms.footer.push(null);
-            for (let n = 0; n < parms.data.length; n++) {
-                let numerator = parms.data[n][1];
+                outputparms.footer.push(null);
+            for (let n = 0; n < outputparms.data.length; n++) {
+                let numerator = outputparms.data[n][1];
                 if (numerator && total) {
-                    parms.data[n].push(numerator / total);
+                    outputparms.data[n].push(numerator / total);
                 }
                 else {
-                    parms.data[n].push(null);
+                    outputparms.data[n].push(null);
                 }
             }
-            return parms;
+            return outputparms;
         };
-        this.prepareDiffColumnChartData = (tableparms, parms) => {
-            return parms;
+        this.prepareDiffColumnChartData = (tableparms, outputparms) => {
+            return outputparms;
         };
-        this.prepareDiffPieChartData = (tableparms, parms) => {
-            return parms;
+        this.prepareDiffPieChartData = (tableparms, outputparms) => {
+            return outputparms;
         };
-        this.prepareTimelineData = (tableparms, parms) => {
-            return parms;
+        this.prepareTimelineData = (tableparms, outputparms) => {
+            return outputparms;
         };
-        this.prepareStackedAreaData = (tableparms, parms) => {
-            return parms;
+        this.prepareStackedAreaData = (tableparms, outputparms) => {
+            return outputparms;
         };
-        this.prepareProportionalData = (tableparms, parms) => {
-            return parms;
+        this.prepareProportionalData = (tableparms, outputparms) => {
+            return outputparms;
         };
         let { nodeDataseriesName, chartSelection, uid } = specs;
         this.nodeDataseriesName = nodeDataseriesName;

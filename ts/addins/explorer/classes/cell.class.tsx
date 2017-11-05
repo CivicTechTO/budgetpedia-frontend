@@ -1010,7 +1010,9 @@ class BudgetCell {
     }
 
     getDataTable = () => {
-        let {chartType, columns, rows, diffdata} = this.chartParmsObject
+        console.log('chartParms',this.chartParmsObject)
+        let {chartType, columns, rows, diffdata, options} = this.chartParmsObject
+        let { hAxis, vAxis, title } = options
         let chartCode = this.explorerChartCode
 
         let tableparms = {
@@ -1020,21 +1022,24 @@ class BudgetCell {
                 rows,
                 diffdata,
                 columns,
+                hAxis,
+                vAxis
             },
+            title,
         }
 
-        let parms = this._preProcessTableData(tableparms)
+        let outputparms = this._preProcessTableData(tableparms)
 
-        console.log('tableparms, parms',tableparms, parms)
+        console.log('tableparms, parms',tableparms, outputparms)
 
-        return parms
+        return outputparms
     }
 
     _preProcessTableData = tableparms => {
 
         let {chartCode, chartType} = tableparms
 
-        let parms = {
+        let outputparms = {
 
             chartCode,
             chartType,
@@ -1054,11 +1059,11 @@ class BudgetCell {
 
         switch (chartCode) {
             case "ColumnChart":
-                parms = this.prepareColumnChartData(tableparms,parms)
+                outputparms = this.prepareColumnChartData(tableparms,outputparms)
                 break;
 
             case "DonutChart":
-                parms = this.prepareDonutChartData(tableparms,parms)
+                outputparms = this.prepareDonutChartData(tableparms,outputparms)
                 break;
 
             case "DiffColumnChart":
@@ -1077,15 +1082,15 @@ class BudgetCell {
                 break;
 
             default:
-                throw ('Unknown chart type in _processTableData: ' + chartCode)
+                throw ('Unknown chart type in cell.class._processTableData: ' + chartCode)
         }
 
-        return parms
+        return outputparms
     }
 
     // ----------- one year --------------
 
-    prepareColumnChartData = (tableparms, parms) => {
+    prepareColumnChartData = (tableparms, outputparms) => {
 
         let rows = []
         for (let row of tableparms.chartdata.rows) {
@@ -1101,6 +1106,10 @@ class BudgetCell {
             columns.push({Header:tableparms.chartdata.columns[n].label})
         }
 
+        columns[0].Header = tableparms.chartdata.hAxis.title
+
+        let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title 
+
         let footer = ['Total']
 
         for (let n = 1; n < 2; n++) {
@@ -1111,70 +1120,71 @@ class BudgetCell {
             footer.push(totalamount)
         } 
 
-        parms.data = rows
-        parms.columns = columns
-        parms.footer = footer
+        outputparms.data = rows
+        outputparms.columns = columns
+        outputparms.footer = footer
+        outputparms.title = title
 
-        return parms
+        return outputparms
     }
 
-    prepareDonutChartData = (tableparms, parms) => {
+    prepareDonutChartData = (tableparms, outputparms) => {
 
-        parms = this.prepareColumnChartData(tableparms,parms) // same input
+        outputparms = this.prepareColumnChartData(tableparms,outputparms) // same input
 
-        parms.columns.push({Header:'Ratio'})
+        outputparms.columns.push({Header:'Ratio'})
 
-        let total = parms.footer[1]
+        let total = outputparms.footer[1]
 
         if (total)
-            parms.footer.push(1)
+            outputparms.footer.push(1)
         else 
-            parms.footer.push(null)
+            outputparms.footer.push(null)
 
-        for (let n = 0; n < parms.data.length; n++) {
-            let numerator = parms.data[n][1]
+        for (let n = 0; n < outputparms.data.length; n++) {
+            let numerator = outputparms.data[n][1]
             if (numerator && total) {
-                parms.data[n].push(numerator/total)
+                outputparms.data[n].push(numerator/total)
             } else {
-                parms.data[n].push(null)
+                outputparms.data[n].push(null)
             }
         }
 
-        return parms
+        return outputparms
     }
 
     // ----------- two yeara --------------
 
-    prepareDiffColumnChartData = (tableparms, parms) => {
+    prepareDiffColumnChartData = (tableparms, outputparms) => {
 
 
-        return parms
+        return outputparms
     }
 
-    prepareDiffPieChartData = (tableparms, parms) => {
+    prepareDiffPieChartData = (tableparms, outputparms) => {
 
 
-        return parms
+        return outputparms
     }
 
     // ----------- all years --------------
 
-    prepareTimelineData = (tableparms, parms) => {
+    prepareTimelineData = (tableparms, outputparms) => {
 
 
-        return parms
+        return outputparms
     }
 
-    prepareStackedAreaData = (tableparms, parms) => {
+    prepareStackedAreaData = (tableparms, outputparms) => {
 
 
-        return parms
+        return outputparms
     }
 
-    prepareProportionalData = (tableparms, parms) => {
+    prepareProportionalData = (tableparms, outputparms) => {
 
 
-        return parms
+        return outputparms
     }
 
 }
