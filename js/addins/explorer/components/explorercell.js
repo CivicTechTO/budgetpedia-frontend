@@ -11,7 +11,6 @@ const MenuItem_1 = require("material-ui/MenuItem");
 const constants_1 = require("../constants");
 const actions_1 = require("../actions");
 const Utilities = require("../modules/utilities");
-const datatable_1 = require("./datatable");
 class ExplorerCell extends Component {
     constructor() {
         super(...arguments);
@@ -78,8 +77,9 @@ class ExplorerCell extends Component {
                 variancestate: !this.state.variancestate
             });
         };
-        this.onDataTable = () => {
-            let tableparms = this.props.budgetCell.getDataTable();
+        this.onDataTable = (e) => {
+            let budgetCell = this.props.budgetCell;
+            let tableparms = budgetCell.getDataTable();
         };
         this.onReqestCloseDataTable = () => {
             this.setState({
@@ -446,7 +446,7 @@ class ExplorerCell extends Component {
                     width: "36px",
                     marginRight: "3px",
                 }, onTouchTap: e => {
-                    this.onDataTable();
+                    this.onDataTable(e);
                 } },
                 React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_list")));
         let harmonizeoptions = React.createElement("div", { style: {
@@ -594,9 +594,6 @@ class ExplorerCell extends Component {
             React.createElement(DropDownMenu_1.default, { value: rightYear, style: {}, onChange: (e, key, payload) => {
                     this.onChangeChartYears(leftYear, payload);
                 } }, yearsoptions()));
-        let tabledata, tablecolumns;
-        if (this.state.datatableopen) {
-        }
         return React.createElement("div", null,
             (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },
                 timescopes,
@@ -609,8 +606,7 @@ class ExplorerCell extends Component {
                 chart,
                 drilldownprompt),
             React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, (this.props.showControls) ?
-                yearselection : React.createElement("div", { style: { height: "12px" } })),
-            this.state.datatableopen ? React.createElement(datatable_1.default, { data: tabledata, columns: tablecolumns, onRequestClose: this.onReqestCloseDataTable, onConfirmExport: this.onConfirmDataExport }) : null);
+                yearselection : React.createElement("div", { style: { height: "12px" } })));
     }
 }
 exports.default = ExplorerCell;

@@ -614,7 +614,7 @@ class BudgetCell {
             return row;
         };
         this.getDataTable = () => {
-            let { chartType, columns, rows, diffdata } = this.chartParms;
+            let { chartType, columns, rows, diffdata } = this.chartParmsObject;
             let chartCode = this.explorerChartCode;
             let tableparms = {
                 chartCode,
@@ -624,16 +624,83 @@ class BudgetCell {
                     diffdata,
                     columns,
                 },
-                data: null,
-                columns: null,
-                header: null,
-                footer: null,
             };
             let parms = this._preProcessTableData(tableparms);
-            console.log('tableparms', parms);
+            console.log('tableparms, parms', tableparms, parms);
             return parms;
         };
-        this._preProcessTableData = parms => {
+        this._preProcessTableData = tableparms => {
+            let { chartCode, chartType } = tableparms;
+            let parms = {
+                chartCode,
+                chartType,
+                data: null,
+                columns: null,
+                title: null,
+                footer: null,
+            };
+            switch (chartCode) {
+                case "ColumnChart":
+                    parms = this.prepareColumnChartData(tableparms, parms);
+                    break;
+                case "DonutChart":
+                    break;
+                case "DiffColumnChart":
+                    break;
+                case "DiffPieChart":
+                    break;
+                case "TimeLine":
+                    break;
+                case "StackedArea":
+                    break;
+                case "Proportional":
+                    break;
+                default:
+                    throw ('Unknown chart type in _processTableData: ' + chartCode);
+            }
+            return parms;
+        };
+        this.prepareColumnChartData = (tableparms, parms) => {
+            let rows = [];
+            for (let row of tableparms.chartdata.rows) {
+                let newrow = [];
+                for (let n = 0; n < 2; n++) {
+                    newrow.push(row[n]);
+                }
+                rows.push(newrow);
+            }
+            let columns = [];
+            for (let n = 0; n < 2; n++) {
+                columns.push({ Header: tableparms.chartdata.columns[n].label });
+            }
+            let footer = ['Total'];
+            for (let n = 1; n < 2; n++) {
+                let totalamount = rows.reduce((accumulator, currentvalue) => {
+                    return currentvalue[n] ? accumulator + currentvalue[n] : accumulator;
+                }, 0);
+                footer.push(totalamount);
+            }
+            parms.data = rows;
+            parms.columns = columns;
+            parms.footer = footer;
+            return parms;
+        };
+        this.prepareDonutChartData = (tableparms, parms) => {
+            return parms;
+        };
+        this.prepareDiffColumnChartData = (tableparms, parms) => {
+            return parms;
+        };
+        this.prepareDiffPieChartData = (tableparms, parms) => {
+            return parms;
+        };
+        this.prepareTimelineData = (tableparms, parms) => {
+            return parms;
+        };
+        this.prepareStackedAreaData = (tableparms, parms) => {
+            return parms;
+        };
+        this.prepareProportionalData = (tableparms, parms) => {
             return parms;
         };
         let { nodeDataseriesName, chartSelection, uid } = specs;

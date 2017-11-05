@@ -179,12 +179,16 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
         })
     }
 
-    onDataTable = () => {
+    onDataTable = (e) => {
         // console.log('onDataTable')
-        let tableparms = this.props.budgetCell.getDataTable()
-        // this.setState({
-        //     datatableopen:true
-        // })
+        // let tableparms = this.props.budgetCell.getDataTable()
+        // e.stopPropagation()
+        // e.preventDefault()
+
+        let budgetCell = this.props.budgetCell
+
+        let tableparms = budgetCell.getDataTable()
+
     }
 
     onReqestCloseDataTable = () => {
@@ -701,7 +705,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         }
                     }
                     onTouchTap={ e => {
-                        this.onDataTable()
+                        this.onDataTable(e)
                     } }>
                     <FontIcon className="material-icons">view_list</FontIcon>
                 </IconButton>
@@ -961,14 +965,6 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                 </DropDownMenu>
             </div>
 
-        let tabledata, tablecolumns
-        if (this.state.datatableopen) {
-            // let tableparms = budgetCell.getDataTable()
-            // console.log('tableparms',tableparms)
-            // tabledata = data
-            // tablecolumns = columns
-        }
-
         return <div>
 
             {(this.props.showControls)?<div style={{ padding: "3px" }}>
@@ -1014,12 +1010,12 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
             </div>
 
             {
-                this.state.datatableopen?<DataTable
-                    data = {tabledata}
-                    columns = {tablecolumns}
-                    onRequestClose = {this.onReqestCloseDataTable}
-                    onConfirmExport = {this.onConfirmDataExport}
-                />:null
+                // false?<DataTable
+                //     data = {tabledata}
+                //     columns = {tablecolumns}
+                //     onRequestClose = {this.onReqestCloseDataTable}
+                //     onConfirmExport = {this.onConfirmDataExport}
+                // />:null
             }
             
         </div>

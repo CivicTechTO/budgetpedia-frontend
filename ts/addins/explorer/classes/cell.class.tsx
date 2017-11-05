@@ -1009,18 +1009,8 @@ class BudgetCell {
 
     }
 
-    // datatable
-    // 'DonutChart':'PieChart',
-    // 'ColumnChart':'ColumnChart',
-    // 'DiffPieChart':'PieChart',
-    // 'DiffColumnChart':'ColumnChart',
-    // 'TimeLine':'LineChart',
-    // 'ContextChart':'TreeMap',
-    // 'StackedArea':'AreaChart', // isStacked:'absolute'
-    // 'Proportional':'AreaChart', // isStacked:'percent'
-
     getDataTable = () => {
-        let {chartType, columns, rows, diffdata} = this.chartParms
+        let {chartType, columns, rows, diffdata} = this.chartParmsObject
         let chartCode = this.explorerChartCode
 
         let tableparms = {
@@ -1031,20 +1021,137 @@ class BudgetCell {
                 diffdata,
                 columns,
             },
-            data:null,
-            columns:null,
-            header:null,
-            footer:null,
         }
 
         let parms = this._preProcessTableData(tableparms)
 
-        console.log('tableparms',parms)
+        console.log('tableparms, parms',tableparms, parms)
 
         return parms
     }
 
-    _preProcessTableData = parms => {
+    _preProcessTableData = tableparms => {
+
+        let {chartCode, chartType} = tableparms
+
+        let parms = {
+
+            chartCode,
+            chartType,
+            data:null,
+            columns:null,
+            title:null,
+            footer:null,
+        }
+
+        // 'DonutChart':'PieChart',
+        // 'ColumnChart':'ColumnChart',
+        // 'DiffPieChart':'PieChart',
+        // 'DiffColumnChart':'ColumnChart',
+        // 'TimeLine':'LineChart',
+        // 'StackedArea':'AreaChart', // isStacked:'absolute'
+        // 'Proportional':'AreaChart', // isStacked:'percent'
+
+        switch (chartCode) {
+            case "ColumnChart":
+                parms = this.prepareColumnChartData(tableparms,parms)
+                break;
+
+            case "DonutChart":
+                break;
+
+            case "DiffColumnChart":
+                break;
+
+            case "DiffPieChart":
+                break;
+
+            case "TimeLine":
+                break;
+
+            case "StackedArea":
+                break;
+
+            case "Proportional":
+                break;
+
+            default:
+                throw ('Unknown chart type in _processTableData: ' + chartCode)
+        }
+
+        return parms
+    }
+
+    // ----------- one year --------------
+
+    prepareColumnChartData = (tableparms, parms) => {
+
+        let rows = []
+        for (let row of tableparms.chartdata.rows) {
+            let newrow = []
+            for (let n = 0; n < 2; n++) {
+                newrow.push(row[n])
+            }
+            rows.push(newrow)
+        }
+
+        let columns = []
+        for (let n = 0; n < 2;n++ ) {
+            columns.push({Header:tableparms.chartdata.columns[n].label})
+        }
+
+        let footer = ['Total']
+
+        for (let n = 1; n < 2; n++) {
+            let totalamount = rows.reduce((accumulator,currentvalue) => {
+
+                return currentvalue[n]?accumulator + currentvalue[n]:accumulator
+            },0)
+            footer.push(totalamount)
+        } 
+
+        parms.data = rows
+        parms.columns = columns
+        parms.footer = footer
+
+        return parms
+    }
+
+    prepareDonutChartData = (tableparms, parms) => {
+
+
+        return parms
+    }
+
+    // ----------- two yeara --------------
+
+    prepareDiffColumnChartData = (tableparms, parms) => {
+
+
+        return parms
+    }
+
+    prepareDiffPieChartData = (tableparms, parms) => {
+
+
+        return parms
+    }
+
+    // ----------- all years --------------
+
+    prepareTimelineData = (tableparms, parms) => {
+
+
+        return parms
+    }
+
+    prepareStackedAreaData = (tableparms, parms) => {
+
+
+        return parms
+    }
+
+    prepareProportionalData = (tableparms, parms) => {
 
 
         return parms
