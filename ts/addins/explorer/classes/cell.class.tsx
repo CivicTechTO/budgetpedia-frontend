@@ -1170,6 +1170,59 @@ class BudgetCell {
 
     prepareDiffColumnChartData = (tableparms, outputparms) => {
 
+        let {old:olddata, new:newdata} = tableparms.chartdata.diffdata
+
+        let oldrows = olddata.slice(1)
+        let oldcolumns = olddata.slice(0,1)[0]
+        oldrows = this._getOutputRows(oldrows)
+        let oldfooter = this._getOutputFooter(oldrows)
+        let newrows = newdata.slice(1)
+        let newcolumns = newdata.slice(0,1)[0]
+        newrows = this._getOutputRows(newrows)
+        let newfooter = this._getOutputFooter(newrows)
+
+        console.log('oldrows, oldcolumns, newrows, newcolumns',oldrows,oldcolumns,newrows,newcolumns)
+
+        let outputrows = oldrows
+        for (let n = 0; n < newrows.length; n++) {
+            outputrows[n].push(newrows[n][1])
+        }
+
+        for (let n = 0; n < outputrows.length; n++) {
+            let current = outputrows[n][2]
+            let previous = outputrows[n][1]
+            let change = null
+            if (!isNaN(current) && !isNaN(previous)) {
+                change = current - previous
+            }
+            outputrows[n].push(change)
+        }
+
+        let footer = oldfooter
+        footer.push(newfooter[1])
+        let current:any = footer[2] // any required to overcome ts evaluation as string type
+        let previous:any = footer[1]
+        let change = null
+        if (!isNaN(current) && !isNaN(previous)) {
+            change = current - previous
+        }
+        footer.push(change)
+
+        console.log('outputrows',outputrows)
+        let columns = [
+            {Header:tableparms.chartdata.hAxis.title},
+            {Header:oldcolumns[1].label},
+            {Header:newcolumns[1].label},
+            {Header:'Change'}
+        ]
+
+        let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title 
+
+        outputparms.data = outputrows
+        outputparms.columns = columns
+        outputparms.footer = footer
+        outputparms.title = title
+
         return outputparms
     }
 
