@@ -1058,6 +1058,7 @@ class BudgetCell {
                 break;
 
             case "DonutChart":
+                parms = this.prepareDonutChartData(tableparms,parms)
                 break;
 
             case "DiffColumnChart":
@@ -1119,6 +1120,25 @@ class BudgetCell {
 
     prepareDonutChartData = (tableparms, parms) => {
 
+        parms = this.prepareColumnChartData(tableparms,parms) // same input
+
+        parms.columns.push({Header:'Ratio'})
+
+        let total = parms.footer[1]
+
+        if (total)
+            parms.footer.push(1)
+        else 
+            parms.footer.push(null)
+
+        for (let n = 0; n < parms.data.length; n++) {
+            let numerator = parms.data[n][1]
+            if (numerator && total) {
+                parms.data[n].push(numerator/total)
+            } else {
+                parms.data[n].push(null)
+            }
+        }
 
         return parms
     }
