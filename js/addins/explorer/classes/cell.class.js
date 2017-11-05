@@ -614,7 +614,6 @@ class BudgetCell {
             return row;
         };
         this.getDataTable = () => {
-            console.log('chartParms', this.chartParmsObject);
             let { chartType, columns, rows, diffdata, options } = this.chartParmsObject;
             let { hAxis, vAxis, title } = options;
             let chartCode = this.explorerChartCode;
@@ -631,7 +630,7 @@ class BudgetCell {
                 title,
             };
             let outputparms = this._preProcessTableData(tableparms);
-            console.log('tableparms, parms', tableparms, outputparms);
+            console.log('tableparms, outputparms', tableparms, outputparms);
             return outputparms;
         };
         this._preProcessTableData = tableparms => {
@@ -652,6 +651,7 @@ class BudgetCell {
                     outputparms = this.prepareDonutChartData(tableparms, outputparms);
                     break;
                 case "DiffColumnChart":
+                    outputparms = this.prepareDiffColumnChartData(tableparms, outputparms);
                     break;
                 case "DiffPieChart":
                     break;
@@ -667,20 +667,32 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareColumnChartData = (tableparms, outputparms) => {
-            let rows = [];
-            for (let row of tableparms.chartdata.rows) {
-                let newrow = [];
-                for (let n = 0; n < 2; n++) {
-                    newrow.push(row[n]);
-                }
-                rows.push(newrow);
-            }
+            let rows = this._getOutputRows(tableparms.chartdata.rows);
+            let footer = this._getOutputFooter(rows);
             let columns = [];
             for (let n = 0; n < 2; n++) {
                 columns.push({ Header: tableparms.chartdata.columns[n].label });
             }
             columns[0].Header = tableparms.chartdata.hAxis.title;
             let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title;
+            outputparms.data = rows;
+            outputparms.columns = columns;
+            outputparms.footer = footer;
+            outputparms.title = title;
+            return outputparms;
+        };
+        this._getOutputRows = (rows) => {
+            let newrows = [];
+            for (let row of rows) {
+                let newrow = [];
+                for (let n = 0; n < 2; n++) {
+                    newrow.push(row[n]);
+                }
+                newrows.push(newrow);
+            }
+            return newrows;
+        };
+        this._getOutputFooter = (rows) => {
             let footer = ['Total'];
             for (let n = 1; n < 2; n++) {
                 let totalamount = rows.reduce((accumulator, currentvalue) => {
@@ -688,11 +700,7 @@ class BudgetCell {
                 }, 0);
                 footer.push(totalamount);
             }
-            outputparms.data = rows;
-            outputparms.columns = columns;
-            outputparms.footer = footer;
-            outputparms.title = title;
-            return outputparms;
+            return footer;
         };
         this.prepareDonutChartData = (tableparms, outputparms) => {
             outputparms = this.prepareColumnChartData(tableparms, outputparms);

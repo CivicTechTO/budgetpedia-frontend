@@ -1010,7 +1010,7 @@ class BudgetCell {
     }
 
     getDataTable = () => {
-        console.log('chartParms',this.chartParmsObject)
+        // console.log('chartParms',this.chartParmsObject)
         let {chartType, columns, rows, diffdata, options} = this.chartParmsObject
         let { hAxis, vAxis, title } = options
         let chartCode = this.explorerChartCode
@@ -1030,7 +1030,7 @@ class BudgetCell {
 
         let outputparms = this._preProcessTableData(tableparms)
 
-        console.log('tableparms, parms',tableparms, outputparms)
+        console.log('tableparms, outputparms',tableparms, outputparms)
 
         return outputparms
     }
@@ -1067,6 +1067,7 @@ class BudgetCell {
                 break;
 
             case "DiffColumnChart":
+                outputparms = this.prepareDiffColumnChartData(tableparms,outputparms)
                 break;
 
             case "DiffPieChart":
@@ -1092,24 +1093,42 @@ class BudgetCell {
 
     prepareColumnChartData = (tableparms, outputparms) => {
 
-        let rows = []
-        for (let row of tableparms.chartdata.rows) {
-            let newrow = []
-            for (let n = 0; n < 2; n++) {
-                newrow.push(row[n])
-            }
-            rows.push(newrow)
-        }
+        let rows = this._getOutputRows(tableparms.chartdata.rows)
+
+        let footer = this._getOutputFooter(rows)
 
         let columns = []
         for (let n = 0; n < 2;n++ ) {
             columns.push({Header:tableparms.chartdata.columns[n].label})
         }
 
+        // replace placeholder...
         columns[0].Header = tableparms.chartdata.hAxis.title
 
         let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title 
 
+
+        outputparms.data = rows
+        outputparms.columns = columns
+        outputparms.footer = footer
+        outputparms.title = title
+
+        return outputparms
+    }
+
+    _getOutputRows = (rows) => {
+        let newrows = []
+        for (let row of rows) {
+            let newrow = []
+            for (let n = 0; n < 2; n++) {
+                newrow.push(row[n])
+            }
+            newrows.push(newrow)
+        }
+        return newrows  
+    }
+
+    _getOutputFooter = (rows) => {
         let footer = ['Total']
 
         for (let n = 1; n < 2; n++) {
@@ -1118,14 +1137,8 @@ class BudgetCell {
                 return currentvalue[n]?accumulator + currentvalue[n]:accumulator
             },0)
             footer.push(totalamount)
-        } 
-
-        outputparms.data = rows
-        outputparms.columns = columns
-        outputparms.footer = footer
-        outputparms.title = title
-
-        return outputparms
+        }
+        return footer        
     }
 
     prepareDonutChartData = (tableparms, outputparms) => {
@@ -1156,7 +1169,6 @@ class BudgetCell {
     // ----------- two yeara --------------
 
     prepareDiffColumnChartData = (tableparms, outputparms) => {
-
 
         return outputparms
     }
