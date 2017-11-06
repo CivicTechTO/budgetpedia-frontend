@@ -660,6 +660,7 @@ class BudgetCell {
                     outputparms = this.prepareTimelineData(tableparms, outputparms);
                     break;
                 case "StackedArea":
+                    outputparms = this.prepareStackedAreaData(tableparms, outputparms);
                     break;
                 case "Proportional":
                     break;
@@ -853,6 +854,7 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareStackedAreaData = (tableparms, outputparms) => {
+            outputparms = this.prepareTimelineData(tableparms, outputparms);
             return outputparms;
         };
         this.prepareProportionalData = (tableparms, outputparms) => {
