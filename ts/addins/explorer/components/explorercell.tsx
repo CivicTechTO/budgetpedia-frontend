@@ -179,17 +179,23 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
         })
     }
 
+    datatableparms = {
+        tableparms:null
+    }
+
     onDataTable = (e) => {
-        // console.log('onDataTable')
-        // let tableparms = this.props.budgetCell.getDataTable()
-        // e.stopPropagation()
-        // e.preventDefault()
 
         let budgetCell = this.props.budgetCell
 
         let tableparms = budgetCell.getDataTable()
 
         console.log('onDataTable tableparms',tableparms)
+
+        this.datatableparms.tableparms = tableparms
+
+        this.setState({
+            datatableopen:true
+        })
 
     }
 
@@ -1012,12 +1018,10 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
             </div>
 
             {
-                // false?<DataTable
-                //     data = {tabledata}
-                //     columns = {tablecolumns}
-                //     onRequestClose = {this.onReqestCloseDataTable}
-                //     onConfirmExport = {this.onConfirmDataExport}
-                // />:null
+                this.state.datatableopen?<DataTable
+                    specifications = {this.datatableparms}
+                    onRequestClose = {this.onReqestCloseDataTable}
+                />:null
             }
             
         </div>

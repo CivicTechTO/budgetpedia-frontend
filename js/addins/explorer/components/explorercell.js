@@ -11,6 +11,7 @@ const MenuItem_1 = require("material-ui/MenuItem");
 const constants_1 = require("../constants");
 const actions_1 = require("../actions");
 const Utilities = require("../modules/utilities");
+const datatable_1 = require("./datatable");
 class ExplorerCell extends Component {
     constructor() {
         super(...arguments);
@@ -77,10 +78,17 @@ class ExplorerCell extends Component {
                 variancestate: !this.state.variancestate
             });
         };
+        this.datatableparms = {
+            tableparms: null
+        };
         this.onDataTable = (e) => {
             let budgetCell = this.props.budgetCell;
             let tableparms = budgetCell.getDataTable();
             console.log('onDataTable tableparms', tableparms);
+            this.datatableparms.tableparms = tableparms;
+            this.setState({
+                datatableopen: true
+            });
         };
         this.onReqestCloseDataTable = () => {
             this.setState({
@@ -607,7 +615,8 @@ class ExplorerCell extends Component {
                 chart,
                 drilldownprompt),
             React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, (this.props.showControls) ?
-                yearselection : React.createElement("div", { style: { height: "12px" } })));
+                yearselection : React.createElement("div", { style: { height: "12px" } })),
+            this.state.datatableopen ? React.createElement(datatable_1.default, { specifications: this.datatableparms, onRequestClose: this.onReqestCloseDataTable }) : null);
     }
 }
 exports.default = ExplorerCell;

@@ -670,7 +670,7 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareColumnChartData = (tableparms, outputparms) => {
-            let rows = this._get2ColOutputRows(tableparms.chartdata.rows);
+            let rows = this._getOutputRows(tableparms.chartdata.rows, 2);
             let footer = this._getOutputFooter(rows, 2);
             let columns = [];
             for (let n = 0; n < 2; n++) {
@@ -684,11 +684,11 @@ class BudgetCell {
             outputparms.title = title;
             return outputparms;
         };
-        this._get2ColOutputRows = (rows) => {
+        this._getOutputRows = (rows, colcount) => {
             let newrows = [];
             for (let row of rows) {
                 let newrow = [];
-                for (let n = 0; n < 2; n++) {
+                for (let n = 0; n < colcount; n++) {
                     newrow.push(row[n]);
                 }
                 newrows.push(newrow);
@@ -728,11 +728,11 @@ class BudgetCell {
             let { old: olddata, new: newdata } = tableparms.chartdata.diffdata;
             let oldrows = olddata.slice(1);
             let oldcolumns = olddata.slice(0, 1)[0];
-            oldrows = this._get2ColOutputRows(oldrows);
+            oldrows = this._getOutputRows(oldrows, 2);
             let oldfooter = this._getOutputFooter(oldrows, 2);
             let newrows = newdata.slice(1);
             let newcolumns = newdata.slice(0, 1)[0];
-            newrows = this._get2ColOutputRows(newrows);
+            newrows = this._getOutputRows(newrows, 2);
             let newfooter = this._getOutputFooter(newrows, 2);
             let outputrows = oldrows;
             for (let n = 0; n < newrows.length; n++) {
