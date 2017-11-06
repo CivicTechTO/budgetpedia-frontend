@@ -1194,7 +1194,7 @@ class ExplorerBranch extends Component {
                 whiteSpace: "nowrap",
                 verticalAlign: "top"
             } },
-            React.createElement(Toggle_1.default, { label: 'Show chart options:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
+            React.createElement(Toggle_1.default, { label: 'Show chart controls:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
                     this.toggleShowOptions(value);
                 } }));
         let selectionsdialog = React.createElement(Dialog_1.default, { title: "Make selections for this row of charts", modal: false, open: branch.state.selectionsDialogOpen, onRequestClose: branch.handleSelectionsDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },

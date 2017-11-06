@@ -189,7 +189,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
         let tableparms = budgetCell.getDataTable()
 
-        console.log('onDataTable tableparms',tableparms)
+        // console.log('onDataTable tableparms',tableparms)
 
         this.datatableparms.tableparms = tableparms
 
