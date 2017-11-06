@@ -630,7 +630,6 @@ class BudgetCell {
                 title,
             };
             let outputparms = this._preProcessTableData(tableparms);
-            console.log('tableparms, outputparms', tableparms, outputparms);
             return outputparms;
         };
         this._preProcessTableData = tableparms => {
@@ -663,6 +662,7 @@ class BudgetCell {
                     outputparms = this.prepareStackedAreaData(tableparms, outputparms);
                     break;
                 case "Proportional":
+                    outputparms = this.prepareProportionalData(tableparms, outputparms);
                     break;
                 default:
                     throw ('Unknown chart type in cell.class._processTableData: ' + chartCode);
@@ -734,7 +734,6 @@ class BudgetCell {
             let newcolumns = newdata.slice(0, 1)[0];
             newrows = this._getOutputRows(newrows);
             let newfooter = this._getOutputFooter(newrows, 2);
-            console.log('oldrows, oldcolumns, newrows, newcolumns', oldrows, oldcolumns, newrows, newcolumns);
             let outputrows = oldrows;
             for (let n = 0; n < newrows.length; n++) {
                 outputrows[n].push(newrows[n][1]);
@@ -757,7 +756,6 @@ class BudgetCell {
                 change = current - previous;
             }
             footer.push(change);
-            console.log('outputrows', outputrows);
             let columns = [
                 { Header: tableparms.chartdata.hAxis.title },
                 { Header: oldcolumns[1].label },
@@ -830,7 +828,6 @@ class BudgetCell {
             for (let n = 0; n < tableparms.chartdata.columns.length - 1; n++) {
                 data.push([]);
             }
-            console.log('data', data);
             let rows = tableparms.chartdata.rows;
             let newrows = [];
             let columns = [];
@@ -845,7 +842,7 @@ class BudgetCell {
             for (let n = 1; n < sourcecolumns.length; n++) {
                 data[n - 1].splice(0, 0, sourcecolumns[n].label);
             }
-            columns.splice(0, 0, tableparms.chartdata.hAxis.title);
+            columns.splice(0, 0, { Header: tableparms.chartdata.hAxis.title });
             let footer = this._getOutputFooter(data, columns.length);
             outputparms.data = data;
             outputparms.columns = columns;
@@ -858,6 +855,26 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareProportionalData = (tableparms, outputparms) => {
+            outputparms = this.prepareTimelineData(tableparms, outputparms);
+            let columns = outputparms.columns;
+            for (let n = columns.length; n > 1; n--) {
+                columns.splice(n, 0, { Header: columns[n - 1].Header + ' Ratio' });
+            }
+            let footer = outputparms.footer;
+            let data = outputparms.data;
+            for (let n = footer.length; n > 1; n--) {
+                for (let rownum = 0; rownum < data.length; rownum++) {
+                    let row = data[rownum];
+                    let numerator = row[n - 1];
+                    let denominator = footer[n - 1];
+                    let ratio = null;
+                    if (!isNaN(numerator) && !isNaN(denominator)) {
+                        ratio = numerator / denominator;
+                    }
+                    row.splice(n, 0, ratio);
+                }
+                footer.splice(n, 0, 1);
+            }
             return outputparms;
         };
         let { nodeDataseriesName, chartSelection, uid } = specs;

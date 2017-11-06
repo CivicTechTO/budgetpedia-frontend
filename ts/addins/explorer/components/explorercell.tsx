@@ -189,6 +189,8 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
         let tableparms = budgetCell.getDataTable()
 
+        console.log('onDataTable tableparms',tableparms)
+
     }
 
     onReqestCloseDataTable = () => {

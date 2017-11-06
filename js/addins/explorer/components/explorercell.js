@@ -80,6 +80,7 @@ class ExplorerCell extends Component {
         this.onDataTable = (e) => {
             let budgetCell = this.props.budgetCell;
             let tableparms = budgetCell.getDataTable();
+            console.log('onDataTable tableparms', tableparms);
         };
         this.onReqestCloseDataTable = () => {
             this.setState({

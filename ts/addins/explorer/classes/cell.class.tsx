@@ -1030,7 +1030,7 @@ class BudgetCell {
 
         let outputparms = this._preProcessTableData(tableparms)
 
-        console.log('tableparms, outputparms',tableparms, outputparms)
+        // console.log('outputparms',outputparms)
 
         return outputparms
     }
@@ -1083,6 +1083,7 @@ class BudgetCell {
                 break;
 
             case "Proportional":
+                outputparms = this.prepareProportionalData(tableparms,outputparms)
                 break;
 
             default:
@@ -1185,7 +1186,7 @@ class BudgetCell {
         newrows = this._getOutputRows(newrows)
         let newfooter = this._getOutputFooter(newrows,2)
 
-        console.log('oldrows, oldcolumns, newrows, newcolumns',oldrows,oldcolumns,newrows,newcolumns)
+        // console.log('oldrows, oldcolumns, newrows, newcolumns',oldrows,oldcolumns,newrows,newcolumns)
 
         let outputrows = oldrows
         for (let n = 0; n < newrows.length; n++) {
@@ -1212,7 +1213,7 @@ class BudgetCell {
         }
         footer.push(change)
 
-        console.log('outputrows',outputrows)
+        // console.log('outputrows',outputrows)
         let columns = [
             {Header:tableparms.chartdata.hAxis.title},
             {Header:oldcolumns[1].label},
@@ -1303,7 +1304,7 @@ class BudgetCell {
         for (let n = 0; n < tableparms.chartdata.columns.length -1;n++) {
             data.push([])
         }
-        console.log('data',data)
+        // console.log('data',data)
         let rows = tableparms.chartdata.rows
         let newrows = []
         let columns = []
@@ -1321,7 +1322,7 @@ class BudgetCell {
             data[n-1].splice(0,0,sourcecolumns[n].label)
         }
 
-        columns.splice(0,0,tableparms.chartdata.hAxis.title)
+        columns.splice(0,0,{Header:tableparms.chartdata.hAxis.title})
 
         let footer = this._getOutputFooter(data,columns.length)
 
@@ -1335,12 +1336,37 @@ class BudgetCell {
     prepareStackedAreaData = (tableparms, outputparms) => {
 
         outputparms = this.prepareTimelineData(tableparms,outputparms) // same data
-        
+
         return outputparms
     }
 
     prepareProportionalData = (tableparms, outputparms) => {
 
+        outputparms = this.prepareTimelineData(tableparms,outputparms) // same input
+
+        let columns = outputparms.columns
+
+        for (let n = columns.length; n > 1; n--) {
+            columns.splice( n,0,{Header:columns[n-1].Header + ' Ratio'})
+        }
+
+        let footer = outputparms.footer
+
+        let data = outputparms.data
+
+        for (let n = footer.length; n > 1; n--) {
+            for (let rownum = 0; rownum < data.length; rownum++) {
+                let row = data[rownum]
+                let numerator = row[n-1]
+                let denominator = footer[n-1]
+                let ratio = null
+                if (!isNaN(numerator) && !isNaN(denominator)) {
+                    ratio = numerator/denominator
+                }
+                row.splice(n,0,ratio)
+            }
+            footer.splice(n,0,1)
+        }
 
         return outputparms
     }
