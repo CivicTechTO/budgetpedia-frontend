@@ -1097,7 +1097,7 @@ class BudgetCell {
 
     prepareColumnChartData = (tableparms, outputparms) => {
 
-        let rows = this._getOutputRows(tableparms.chartdata.rows)
+        let rows = this._get2ColOutputRows(tableparms.chartdata.rows)
 
         let footer = this._getOutputFooter(rows,2)
 
@@ -1111,7 +1111,6 @@ class BudgetCell {
 
         let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title 
 
-
         outputparms.data = rows
         outputparms.columns = columns
         outputparms.footer = footer
@@ -1120,7 +1119,8 @@ class BudgetCell {
         return outputparms
     }
 
-    _getOutputRows = (rows) => {
+    // TODO: generalize this with colcount parm
+    _get2ColOutputRows = (rows) => {
         let newrows = []
         for (let row of rows) {
             let newrow = []
@@ -1179,11 +1179,12 @@ class BudgetCell {
 
         let oldrows = olddata.slice(1)
         let oldcolumns = olddata.slice(0,1)[0]
-        oldrows = this._getOutputRows(oldrows)
+        oldrows = this._get2ColOutputRows(oldrows)
         let oldfooter = this._getOutputFooter(oldrows,2)
+
         let newrows = newdata.slice(1)
         let newcolumns = newdata.slice(0,1)[0]
-        newrows = this._getOutputRows(newrows)
+        newrows = this._get2ColOutputRows(newrows)
         let newfooter = this._getOutputFooter(newrows,2)
 
         // console.log('oldrows, oldcolumns, newrows, newcolumns',oldrows,oldcolumns,newrows,newcolumns)
@@ -1350,9 +1351,7 @@ class BudgetCell {
             columns.splice( n,0,{Header:columns[n-1].Header + ' Ratio'})
         }
 
-        let footer = outputparms.footer
-
-        let data = outputparms.data
+        let {footer, data} = outputparms
 
         for (let n = footer.length; n > 1; n--) {
             for (let rownum = 0; rownum < data.length; rownum++) {

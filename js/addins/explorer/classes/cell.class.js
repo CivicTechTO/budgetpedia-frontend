@@ -670,7 +670,7 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareColumnChartData = (tableparms, outputparms) => {
-            let rows = this._getOutputRows(tableparms.chartdata.rows);
+            let rows = this._get2ColOutputRows(tableparms.chartdata.rows);
             let footer = this._getOutputFooter(rows, 2);
             let columns = [];
             for (let n = 0; n < 2; n++) {
@@ -684,7 +684,7 @@ class BudgetCell {
             outputparms.title = title;
             return outputparms;
         };
-        this._getOutputRows = (rows) => {
+        this._get2ColOutputRows = (rows) => {
             let newrows = [];
             for (let row of rows) {
                 let newrow = [];
@@ -728,11 +728,11 @@ class BudgetCell {
             let { old: olddata, new: newdata } = tableparms.chartdata.diffdata;
             let oldrows = olddata.slice(1);
             let oldcolumns = olddata.slice(0, 1)[0];
-            oldrows = this._getOutputRows(oldrows);
+            oldrows = this._get2ColOutputRows(oldrows);
             let oldfooter = this._getOutputFooter(oldrows, 2);
             let newrows = newdata.slice(1);
             let newcolumns = newdata.slice(0, 1)[0];
-            newrows = this._getOutputRows(newrows);
+            newrows = this._get2ColOutputRows(newrows);
             let newfooter = this._getOutputFooter(newrows, 2);
             let outputrows = oldrows;
             for (let n = 0; n < newrows.length; n++) {
@@ -860,8 +860,7 @@ class BudgetCell {
             for (let n = columns.length; n > 1; n--) {
                 columns.splice(n, 0, { Header: columns[n - 1].Header + ' Ratio' });
             }
-            let footer = outputparms.footer;
-            let data = outputparms.data;
+            let { footer, data } = outputparms;
             for (let n = footer.length; n > 1; n--) {
                 for (let rownum = 0; rownum < data.length; rownum++) {
                     let row = data[rownum];

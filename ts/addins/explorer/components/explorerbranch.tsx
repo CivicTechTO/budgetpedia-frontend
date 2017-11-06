@@ -1752,7 +1752,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let versionselection = (branchDeclaration.showOptions)?
     <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Select data:</span>
+            <span style={{lineHeight:'44px'}} >Select dataset:</span>
         </div>
         <DropDownMenu
             disabled = {versionchoices().length < 2}
