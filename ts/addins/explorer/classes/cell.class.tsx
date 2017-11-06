@@ -1075,6 +1075,7 @@ class BudgetCell {
                 break;
 
             case "TimeLine":
+                outputparms = this.prepareTimelineData(tableparms,outputparms)
                 break;
 
             case "StackedArea":
@@ -1096,7 +1097,7 @@ class BudgetCell {
 
         let rows = this._getOutputRows(tableparms.chartdata.rows)
 
-        let footer = this._getOutputFooter(rows)
+        let footer = this._getOutputFooter(rows,2)
 
         let columns = []
         for (let n = 0; n < 2;n++ ) {
@@ -1129,13 +1130,14 @@ class BudgetCell {
         return newrows  
     }
 
-    _getOutputFooter = (rows) => {
+    _getOutputFooter = (rows,itemcount) => {
         let footer = ['Total']
 
-        for (let n = 1; n < 2; n++) {
+        for (let n = 1; n < itemcount; n++) {
             let totalamount = rows.reduce((accumulator,currentvalue) => {
 
                 return currentvalue[n]?accumulator + currentvalue[n]:accumulator
+
             },0)
             footer.push(totalamount)
         }
@@ -1176,11 +1178,11 @@ class BudgetCell {
         let oldrows = olddata.slice(1)
         let oldcolumns = olddata.slice(0,1)[0]
         oldrows = this._getOutputRows(oldrows)
-        let oldfooter = this._getOutputFooter(oldrows)
+        let oldfooter = this._getOutputFooter(oldrows,2)
         let newrows = newdata.slice(1)
         let newcolumns = newdata.slice(0,1)[0]
         newrows = this._getOutputRows(newrows)
-        let newfooter = this._getOutputFooter(newrows)
+        let newfooter = this._getOutputFooter(newrows,2)
 
         console.log('oldrows, oldcolumns, newrows, newcolumns',oldrows,oldcolumns,newrows,newcolumns)
 
@@ -1294,7 +1296,38 @@ class BudgetCell {
 
     prepareTimelineData = (tableparms, outputparms) => {
 
+        let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title 
+        let data = [] 
+        
+        for (let n = 0; n < tableparms.chartdata.columns.length -1;n++) {
+            data.push([])
+        }
+        console.log('data',data)
+        let rows = tableparms.chartdata.rows
+        let newrows = []
+        let columns = []
 
+        for (let n = 0; n < rows.length; n++) {
+            let row = rows[n]
+            columns.push({Header:row[0]})
+            for (let x = 1; x < row.length; x++) {
+                data[x-1][n] = row[x]
+            }
+        }
+
+        let sourcecolumns = tableparms.chartdata.columns
+        for (let n = 1; n < sourcecolumns.length; n++) {
+            data[n-1].splice(0,0,sourcecolumns[n].label)
+        }
+
+        columns.splice(0,0,tableparms.chartdata.hAxis.title)
+
+        let footer = this._getOutputFooter(data,columns.length)
+
+        outputparms.data = data
+        outputparms.columns = columns
+        outputparms.title = title
+        outputparms.footer = footer
         return outputparms
     }
 
