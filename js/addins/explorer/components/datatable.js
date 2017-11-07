@@ -7,6 +7,7 @@ const FontIcon_1 = require("material-ui/FontIcon");
 const IconButton_1 = require("material-ui/IconButton");
 const react_table_1 = require("react-table");
 const react_csv_1 = require("react-csv");
+let stringify = require('csv-stringify/lib/sync');
 var format = require('format-number');
 var numberformat = format();
 var percentformat = format({ suffix: '%', round: 1 });
@@ -32,6 +33,7 @@ class DataTable extends Component {
                 headercells.push(columns[n].Header);
             }
             let csv = [titlecells, headercells, ...data, footer];
+            csv = stringify(csv);
             this.csv = csv;
             return this.csv;
         };
@@ -112,7 +114,6 @@ class DataTable extends Component {
     }
     componentWillMount() {
         this.specifications = this.props.specifications;
-        console.log('DataTable specs', this.specifications);
     }
     render() {
         let dialog = this.tableDialog();

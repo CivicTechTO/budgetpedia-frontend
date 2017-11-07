@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^5.3.0",
+    "csv": "^2.0.0",
     "eslint-config-react-tools": "^1.0.10",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "flux-standard-action": "^1.2.0",

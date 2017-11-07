@@ -10,6 +10,7 @@ import IconButton from 'material-ui/IconButton'
 import ReactTable from 'react-table'
 
 import {CSVLink} from 'react-csv'
+let stringify = require('csv-stringify/lib/sync')
 
 var format = require('format-number')
 
@@ -33,7 +34,7 @@ class DataTable extends Component<DataTableProps, any> {
 
         this.specifications = this.props.specifications
 
-        console.log('DataTable specs',this.specifications)
+        // console.log('DataTable specs',this.specifications)
     }
 
     onRequestClose = () => {
@@ -59,6 +60,10 @@ class DataTable extends Component<DataTableProps, any> {
         //     footercells.push(footer[n])
         // }
         let csv = [titlecells,headercells,...data,footer]
+
+        csv = stringify(csv)
+
+        // console.log('csv',csv)
 
         this.csv = csv
         return this.csv

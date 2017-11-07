@@ -713,14 +713,14 @@ class BudgetCell {
             if (total)
                 outputparms.footer.push(1);
             else
-                outputparms.footer.push(null);
+                outputparms.footer.push('');
             for (let n = 0; n < outputparms.data.length; n++) {
                 let numerator = outputparms.data[n][1];
                 if (numerator && total) {
                     outputparms.data[n].push(numerator / total);
                 }
                 else {
-                    outputparms.data[n].push(null);
+                    outputparms.data[n].push('');
                 }
             }
             return outputparms;
