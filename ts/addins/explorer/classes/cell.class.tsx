@@ -550,7 +550,7 @@ class BudgetCell {
                 if (!isInflationAdjusted) {
                     fragment = ' -- nominal $'
                 } else {
-                    fragment = ` -- up to the year ${datasetConfig.InflationReferenceYear - 1}, inflation adjusted to ${datasetConfig.InflationReferenceYear} $`
+                    fragment = ` -- inflation adjusted to ${datasetConfig.InflationReferenceYear} $`
                 }
                 title += fragment
             }
