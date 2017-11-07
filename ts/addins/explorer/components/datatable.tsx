@@ -13,6 +13,9 @@ import {CSVLink} from 'react-csv'
 
 var format = require('format-number')
 
+var numberformat = format()
+var percentformat = format({suffix:'%',round:1})
+
 interface DataTableProps {
     onRequestClose:Function,
     specifications:Object,
@@ -71,6 +74,14 @@ class DataTable extends Component<DataTableProps, any> {
             }
             data.push(newdata)
         }
+
+        let newdata = {}
+        let row = this.specifications.footer
+        for (let n = 0; n < row.length; n++) {
+            newdata[n] = row[n]
+        }
+        data.push(newdata)
+
         return data
     }
 
@@ -99,6 +110,11 @@ class DataTable extends Component<DataTableProps, any> {
         let value = props.value
         if (column.type == 'ratio') {
             value *= 100
+            value = percentformat(value)
+
+        }
+        if (column.type == 'number') {
+            value = numberformat(value)
         }
         return value
     }
@@ -157,6 +173,7 @@ class DataTable extends Component<DataTableProps, any> {
                     </FontIcon>
                 </CSVLink>
             </div>
+            <div style = {{fontWeight:'bold'}} >{this.specifications.title}</div>
             <ReactTable 
                 style = {{minWidth:'min-content'}}
                 data = {this.assembleTableData()} 

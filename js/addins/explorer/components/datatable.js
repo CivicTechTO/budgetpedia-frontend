@@ -8,6 +8,8 @@ const IconButton_1 = require("material-ui/IconButton");
 const react_table_1 = require("react-table");
 const react_csv_1 = require("react-csv");
 var format = require('format-number');
+var numberformat = format();
+var percentformat = format({ suffix: '%', round: 1 });
 class DataTable extends Component {
     constructor() {
         super(...arguments);
@@ -43,6 +45,12 @@ class DataTable extends Component {
                 }
                 data.push(newdata);
             }
+            let newdata = {};
+            let row = this.specifications.footer;
+            for (let n = 0; n < row.length; n++) {
+                newdata[n] = row[n];
+            }
+            data.push(newdata);
             return data;
         };
         this.assembleTableColumns = () => {
@@ -69,6 +77,10 @@ class DataTable extends Component {
             let value = props.value;
             if (column.type == 'ratio') {
                 value *= 100;
+                value = percentformat(value);
+            }
+            if (column.type == 'number') {
+                value = numberformat(value);
             }
             return value;
         };
@@ -94,6 +106,7 @@ class DataTable extends Component {
                     } },
                     React.createElement(react_csv_1.CSVLink, { data: this.assembleCSVdata(), filename: 'budgetpedia.chart.data.csv' },
                         React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "file_download"))),
+                React.createElement("div", { style: { fontWeight: 'bold' } }, this.specifications.title),
                 React.createElement(react_table_1.default, { style: { minWidth: 'min-content' }, data: this.assembleTableData(), columns: this.assembleTableColumns() }));
         };
     }
