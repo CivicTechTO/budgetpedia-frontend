@@ -109,7 +109,7 @@ class DataTable extends Component {
                     React.createElement(react_csv_1.CSVLink, { data: this.assembleCSVdata(), filename: 'budgetpedia.chart.data.csv' },
                         React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "file_download"))),
                 React.createElement("div", { style: { fontWeight: 'bold' } }, this.specifications.title),
-                React.createElement(react_table_1.default, { style: { minWidth: 'min-content' }, data: this.assembleTableData(), columns: this.assembleTableColumns() }));
+                React.createElement(react_table_1.default, { style: { height: '300px' }, data: this.assembleTableData(), columns: this.assembleTableColumns(), showPagination: false }));
         };
     }
     componentWillMount() {

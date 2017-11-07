@@ -180,9 +180,10 @@ class DataTable extends Component<DataTableProps, any> {
             </div>
             <div style = {{fontWeight:'bold'}} >{this.specifications.title}</div>
             <ReactTable 
-                style = {{minWidth:'min-content'}}
+                style = {{height:'300px'}}
                 data = {this.assembleTableData()} 
                 columns = {this.assembleTableColumns()}
+                showPagination = {false}
             />
 
         </Dialog >
