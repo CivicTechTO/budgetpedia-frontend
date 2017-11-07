@@ -5,7 +5,9 @@ var { Component } = React;
 const Dialog_1 = require("material-ui/Dialog");
 const FontIcon_1 = require("material-ui/FontIcon");
 const IconButton_1 = require("material-ui/IconButton");
+const react_table_1 = require("react-table");
 const react_csv_1 = require("react-csv");
+var format = require('format-number');
 class DataTable extends Component {
     constructor() {
         super(...arguments);
@@ -20,24 +22,58 @@ class DataTable extends Component {
         this.assembleCSVdata = () => {
             if (this.csv)
                 return this.csv;
-            let tableparms = this.specifications.tableparms;
+            let tableparms = this.specifications;
             let { columns, title, data, footer } = tableparms;
             let headercells = [];
-            let titlecells = [];
-            let footercells = [];
+            let titlecells = [title];
             for (let n = 0; n < columns.length; n++) {
                 headercells.push(columns[n].Header);
             }
-            titlecells[0] = title;
-            for (let n = 0; n < footer.length; n++) {
-                footercells.push(footer[n]);
-            }
-            let csv = [titlecells, headercells, ...data, footercells];
+            let csv = [titlecells, headercells, ...data, footer];
             this.csv = csv;
             return this.csv;
         };
+        this.assembleTableData = () => {
+            let sourcedata = this.specifications.data;
+            let data = [];
+            for (let datum of sourcedata) {
+                let newdata = {};
+                for (let n = 0; n < datum.length; n++) {
+                    newdata[n] = datum[n];
+                }
+                data.push(newdata);
+            }
+            return data;
+        };
+        this.assembleTableColumns = () => {
+            let sourcecolumns = this.specifications.columns;
+            let columns = [];
+            for (let n = 0; n < sourcecolumns.length; n++) {
+                let column = columns[n] = sourcecolumns[n];
+                column.accessor = n.toString();
+                column.Cell = props => this._formatCell(column, props);
+            }
+            return columns;
+        };
+        this._formatCell = (column, props) => {
+            let cell;
+            if (column.type == 'number' || column.type == 'ratio') {
+                cell = React.createElement("div", { style: { textAlign: 'right' } }, this._formatValue(column, props));
+            }
+            else {
+                cell = React.createElement("div", null, props.value);
+            }
+            return cell;
+        };
+        this._formatValue = (column, props) => {
+            let value = props.value;
+            if (column.type == 'ratio') {
+                value *= 100;
+            }
+            return value;
+        };
         this.tableDialog = () => {
-            return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px', textAlign: 'center' } }, "Data Table"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+            return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px', textAlign: 'center' } }, "Data Table"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: true, autoDetectWindowHeight: true },
                 React.createElement(IconButton_1.default, { style: {
                         top: 0,
                         right: 0,
@@ -57,7 +93,8 @@ class DataTable extends Component {
                         zIndex: 2,
                     } },
                     React.createElement(react_csv_1.CSVLink, { data: this.assembleCSVdata(), filename: 'budgetpedia.chart.data.csv' },
-                        React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "file_download"))));
+                        React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "file_download"))),
+                React.createElement(react_table_1.default, { style: { minWidth: 'min-content' }, data: this.assembleTableData(), columns: this.assembleTableColumns() }));
         };
     }
     componentWillMount() {

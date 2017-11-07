@@ -11,6 +11,8 @@ import ReactTable from 'react-table'
 
 import {CSVLink} from 'react-csv'
 
+var format = require('format-number')
+
 interface DataTableProps {
     onRequestClose:Function,
     specifications:Object,
@@ -40,23 +42,65 @@ class DataTable extends Component<DataTableProps, any> {
     assembleCSVdata = () => {
         if (this.csv) return this.csv
 
-        let tableparms = this.specifications.tableparms
+        let tableparms = this.specifications
         let {columns, title, data, footer} = tableparms
         let headercells = []
-        let titlecells = []
-        let footercells = []
+        let titlecells = [title]
+        // let footercells = []
         // let datacells = []
         for (let n = 0; n < columns.length; n++) {
             headercells.push(columns[n].Header)
         } 
-        titlecells[0] = title
-        for (let n = 0; n < footer.length; n++) {
-            footercells.push(footer[n])
-        }
-        let csv = [titlecells,headercells,...data,footercells]
+        // titlecells[0] = title
+        // for (let n = 0; n < footer.length; n++) {
+        //     footercells.push(footer[n])
+        // }
+        let csv = [titlecells,headercells,...data,footer]
 
         this.csv = csv
         return this.csv
+    }
+
+    assembleTableData = () => {
+        let sourcedata = this.specifications.data
+        let data = []
+        for (let datum of sourcedata) {
+            let newdata = {}
+            for (let n = 0; n < datum.length; n++) {
+                newdata[n] = datum[n]
+            }
+            data.push(newdata)
+        }
+        return data
+    }
+
+    assembleTableColumns = () => {
+        let sourcecolumns = this.specifications.columns
+        let columns = []
+        for (let n = 0; n < sourcecolumns.length; n++) {
+            let column = columns[n] = sourcecolumns[n]
+            column.accessor = n.toString()
+            column.Cell = props => this._formatCell(column,props)
+        }
+        return columns
+    }
+
+    _formatCell = (column,props) => {
+        let cell
+        if (column.type == 'number' || column.type == 'ratio') {
+            cell = <div style = {{textAlign:'right'}}>{this._formatValue(column,props)}</div>
+        } else {
+            cell = <div>{props.value}</div>
+        }
+        return cell
+    }
+
+    _formatValue = (column,props) => {
+        let value = props.value
+        if (column.type == 'ratio') {
+            value *= 100
+        }
+        return value
     }
 
     tableDialog = () => {
@@ -66,9 +110,8 @@ class DataTable extends Component<DataTableProps, any> {
             modal = { false }
             open = { this.state.dialogOpen }
             onRequestClose = { this.onRequestClose }
-            autoScrollBodyContent = {false}
-            contentStyle = {{maxWidth:'600px'}}
-            autoDetectWindowHeight = {false}
+            autoScrollBodyContent = {true}
+            autoDetectWindowHeight = {true}
         >
 
             <IconButton
@@ -114,6 +157,11 @@ class DataTable extends Component<DataTableProps, any> {
                     </FontIcon>
                 </CSVLink>
             </div>
+            <ReactTable 
+                style = {{minWidth:'min-content'}}
+                data = {this.assembleTableData()} 
+                columns = {this.assembleTableColumns()}
+            />
 
         </Dialog >
     }

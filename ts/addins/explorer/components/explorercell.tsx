@@ -1019,7 +1019,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
             {
                 this.state.datatableopen?<DataTable
-                    specifications = {this.datatableparms}
+                    specifications = {this.datatableparms.tableparms}
                     onRequestClose = {this.onReqestCloseDataTable}
                 />:null
             }

@@ -674,9 +674,10 @@ class BudgetCell {
             let footer = this._getOutputFooter(rows, 2);
             let columns = [];
             for (let n = 0; n < 2; n++) {
-                columns.push({ Header: tableparms.chartdata.columns[n].label });
+                columns.push({ Header: tableparms.chartdata.columns[n].label, type: 'number' });
             }
             columns[0].Header = tableparms.chartdata.hAxis.title;
+            columns[0].type = 'label';
             let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title;
             outputparms.data = rows;
             outputparms.columns = columns;
@@ -707,7 +708,7 @@ class BudgetCell {
         };
         this.prepareDonutChartData = (tableparms, outputparms) => {
             outputparms = this.prepareColumnChartData(tableparms, outputparms);
-            outputparms.columns.push({ Header: 'Ratio' });
+            outputparms.columns.push({ Header: 'Ratio', type: 'ratio' });
             let total = outputparms.footer[1];
             if (total)
                 outputparms.footer.push(1);
@@ -757,10 +758,10 @@ class BudgetCell {
             }
             footer.push(change);
             let columns = [
-                { Header: tableparms.chartdata.hAxis.title },
-                { Header: oldcolumns[1].label },
-                { Header: newcolumns[1].label },
-                { Header: 'Change' }
+                { Header: tableparms.chartdata.hAxis.title, type: 'label' },
+                { Header: oldcolumns[1].label, type: 'number' },
+                { Header: newcolumns[1].label, type: 'number' },
+                { Header: 'Change', type: 'number' }
             ];
             let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title;
             outputparms.data = outputrows;
@@ -772,9 +773,9 @@ class BudgetCell {
         this.prepareDiffPieChartData = (tableparms, outputparms) => {
             outputparms = this.prepareDiffColumnChartData(tableparms, outputparms);
             let columns = outputparms.columns;
-            columns.splice(2, 0, { Header: columns[1].Header + ' Ratio' });
-            columns.splice(4, 0, { Header: columns[3].Header + ' Ratio' });
-            columns.push({ Header: 'Ratio of Change to Previous' }, { Header: 'Ratio of Change to Current' });
+            columns.splice(2, 0, { Header: columns[1].Header + ' Ratio', type: 'ratio' });
+            columns.splice(4, 0, { Header: columns[3].Header + ' Ratio', type: 'ratio' });
+            columns.push({ Header: 'Ratio of Change to Previous', type: 'ratio' }, { Header: 'Ratio of Change to Current', type: 'ratio' });
             let footer = outputparms.footer;
             let previoustotal = footer[1];
             let currenttotal = footer[2];
@@ -833,7 +834,8 @@ class BudgetCell {
             let columns = [];
             for (let n = 0; n < rows.length; n++) {
                 let row = rows[n];
-                columns.push({ Header: row[0] });
+                let type = 'number';
+                columns.push({ Header: row[0], type });
                 for (let x = 1; x < row.length; x++) {
                     data[x - 1][n] = row[x];
                 }
@@ -842,7 +844,7 @@ class BudgetCell {
             for (let n = 1; n < sourcecolumns.length; n++) {
                 data[n - 1].splice(0, 0, sourcecolumns[n].label);
             }
-            columns.splice(0, 0, { Header: tableparms.chartdata.hAxis.title });
+            columns.splice(0, 0, { Header: tableparms.chartdata.hAxis.title, type: 'label' });
             let footer = this._getOutputFooter(data, columns.length);
             outputparms.data = data;
             outputparms.columns = columns;
@@ -858,7 +860,7 @@ class BudgetCell {
             outputparms = this.prepareTimelineData(tableparms, outputparms);
             let columns = outputparms.columns;
             for (let n = columns.length; n > 1; n--) {
-                columns.splice(n, 0, { Header: columns[n - 1].Header + ' Ratio' });
+                columns.splice(n, 0, { Header: columns[n - 1].Header + ' Ratio', type: 'ratio' });
             }
             let { footer, data } = outputparms;
             for (let n = footer.length; n > 1; n--) {

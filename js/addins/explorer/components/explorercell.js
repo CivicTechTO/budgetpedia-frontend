@@ -615,7 +615,7 @@ class ExplorerCell extends Component {
                 drilldownprompt),
             React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, (this.props.showControls) ?
                 yearselection : React.createElement("div", { style: { height: "12px" } })),
-            this.state.datatableopen ? React.createElement(datatable_1.default, { specifications: this.datatableparms, onRequestClose: this.onReqestCloseDataTable }) : null);
+            this.state.datatableopen ? React.createElement(datatable_1.default, { specifications: this.datatableparms.tableparms, onRequestClose: this.onReqestCloseDataTable }) : null);
     }
 }
 exports.default = ExplorerCell;
