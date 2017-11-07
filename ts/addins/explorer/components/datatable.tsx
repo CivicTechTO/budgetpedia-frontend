@@ -171,11 +171,12 @@ class DataTable extends Component<DataTableProps, any> {
                 >
                     <FontIcon
                         className="material-icons"
-                        style = {{ cursor: "pointer" }} >
+                        style = {{ cursor: "pointer",verticalAlign:'middle' }} >
 
                         file_download
 
                     </FontIcon>
+                    <span>Download</span>
                 </CSVLink>
             </div>
             <div style = {{fontWeight:'bold'}} >{this.specifications.title}</div>
