@@ -64,10 +64,10 @@ class DataTable extends Component<DataTableProps, any> {
     assembleTableData = () => {
         let sourcedata = this.specifications.data
         let data = []
-        for (let datum of sourcedata) {
+        for (let row of sourcedata) {
             let newdata = {}
-            for (let n = 0; n < datum.length; n++) {
-                newdata[n] = datum[n]
+            for (let n = 0; n < row.length; n++) {
+                newdata[n] = row[n]
             }
             data.push(newdata)
         }

@@ -977,10 +977,6 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
             {(this.props.showControls)?<div style={{ padding: "3px" }}>
 
-                { timescopes }
-
-                { chartoptions }
-
                 <div style={{float:'right'}}>
 
                     { informationprompt() }
@@ -990,6 +986,10 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     { harmonizeoptions }
 
                 </div>
+
+                { timescopes }
+
+                { chartoptions }
 
             </div>:null}
 
