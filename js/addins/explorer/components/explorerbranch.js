@@ -265,7 +265,7 @@ class ExplorerBranch extends Component {
             }
             switch (lastAction.type) {
                 case actions_1.branchTypes.CHANGE_VIEWPOINT: {
-                    this._processChangeViewpointStateChange(budgetBranch);
+                    this._processChangeViewpointSelection(budgetBranch);
                     break;
                 }
                 case actions_1.branchTypes.UPDATE_BRANCH: {
@@ -273,19 +273,19 @@ class ExplorerBranch extends Component {
                     break;
                 }
                 case actions_1.branchTypes.CHANGE_VERSION: {
-                    this._processChangeVersionStateChange(budgetBranch);
+                    this._processChangeVersionSelection(budgetBranch);
                     break;
                 }
                 case actions_1.branchTypes.CHANGE_ASPECT: {
-                    this._processChangeAspectStateChange(budgetBranch);
+                    this._processChangeAspectSelection(budgetBranch);
                     break;
                 }
                 case actions_1.branchTypes.TOGGLE_INFLATION_ADJUSTED: {
-                    this._processToggleInflationAdjustedStateChange(budgetBranch);
+                    this._processToggleInflationAdjustedSelection(budgetBranch);
                     break;
                 }
                 case actions_1.branchTypes.UPDATE_PRORATA: {
-                    this._processUpdateProrataStateChange(budgetBranch);
+                    this._processUpdateProrataSelection(budgetBranch);
                     break;
                 }
                 case actions_1.branchTypes.HARMONIZE_CELLS: {
@@ -298,7 +298,7 @@ class ExplorerBranch extends Component {
             this._previousControlData = currentControlData;
             return returnvalue;
         };
-        this._processChangeViewpointStateChange = (budgetBranch) => {
+        this._processChangeViewpointSelection = (budgetBranch) => {
             budgetBranch.getViewpointData().then(() => {
                 this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
                 let budgetNodeParms = budgetBranch.getInitialBranchNodeParms();
@@ -452,7 +452,7 @@ class ExplorerBranch extends Component {
             }
             return false;
         };
-        this._processChangeVersionStateChange = (budgetBranch) => {
+        this._processChangeVersionSelection = (budgetBranch) => {
             budgetBranch.getViewpointData().then(() => {
                 this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
                 let budgetNodeParms = budgetBranch.getInitialBranchNodeParms();
@@ -461,7 +461,7 @@ class ExplorerBranch extends Component {
                 console.error('error in data fetch, changeversion', reason);
             });
         };
-        this._processToggleInflationAdjustedStateChange = (budgetBranch) => {
+        this._processToggleInflationAdjustedSelection = (budgetBranch) => {
             budgetBranch.getViewpointData().then(() => {
                 this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
                 budgetBranch.toggleInflationAdjusted();
@@ -469,7 +469,7 @@ class ExplorerBranch extends Component {
                 console.error('error in data fetch, toggle inflation adjustment', reason);
             });
         };
-        this._processUpdateProrataStateChange = (budgetBranch) => {
+        this._processUpdateProrataSelection = (budgetBranch) => {
             budgetBranch.calculateProRata(this.state.viewpointData).then(() => {
                 this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
                 budgetBranch.updateProrata();
@@ -477,7 +477,7 @@ class ExplorerBranch extends Component {
                 console.error('error in data fetch, updata prorata', reason);
             });
         };
-        this._processChangeAspectStateChange = (budgetBranch) => {
+        this._processChangeAspectSelection = (budgetBranch) => {
             budgetBranch.getViewpointData().then(() => {
                 this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
                 let switchResults = budgetBranch.switchAspect();
@@ -495,10 +495,10 @@ class ExplorerBranch extends Component {
                 if (deeperdata || shallowerdata) {
                     let message = null;
                     if (deeperdata) {
-                        message = "More drilldown is available for current aspect selection";
+                        message = "More drilldown is available for current selection";
                     }
                     else {
-                        message = "Less drilldown is available for current aspect selection";
+                        message = "Less drilldown is available for current selection";
                     }
                     let { snackbar } = this.state;
                     snackbar = Object.assign({}, snackbar);
@@ -588,7 +588,7 @@ class ExplorerBranch extends Component {
                     return;
             }
             let { budgetBranch } = this.props;
-            budgetBranch.saveAspectState();
+            budgetBranch.saveNodeStates();
             this.props.globalStateActions.changeAspect(budgetBranch.uid, aspect);
         };
         this.switchComparator = comparatorindex => {

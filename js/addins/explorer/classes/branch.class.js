@@ -48,12 +48,12 @@ class BudgetBranch {
                 branchNodes,
             });
         };
-        this.saveAspectState = () => {
+        this.saveNodeStates = () => {
             let budgetBranch = this;
             let nodes = budgetBranch.nodes;
             let node;
             for (node of nodes) {
-                node.oldAspectState = !!node.treeNodeData.Components;
+                node.oldNodeState.hasChildren = !!node.treeNodeData.Components;
             }
         };
         this.toggleInflationAdjusted = () => {
@@ -110,8 +110,8 @@ class BudgetBranch {
                 budgetNode = branchNodes[nodeIndex];
                 let dataNode = getbudgetnode_1.default(viewpointData, budgetNode.dataPath);
                 if (dataNode) {
-                    let deeperdata = ((!!dataNode.Components) && (!budgetNode.oldAspectState));
-                    let shallowerdata = ((!dataNode.Components) && (budgetNode.oldAspectState));
+                    let deeperdata = ((!!dataNode.Components) && (!budgetNode.oldNodeState.hasChildren));
+                    let shallowerdata = ((!dataNode.Components) && (budgetNode.oldNodeState.hasChildren));
                     let parentDataNode = null;
                     if (nodeIndex > 0) {
                         parentDataNode = branchNodes[nodeIndex - 1].treeNodeData;

@@ -16,6 +16,9 @@ class BudgetNode {
             this._nodeData = treeNodeData;
             this.updated = true;
         };
+        this.oldNodeState = {
+            hasChildren: null
+        };
         this.getCellDeclarationParms = () => {
             let budgetNode = this;
             let parmsList = [];

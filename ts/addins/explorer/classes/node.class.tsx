@@ -117,7 +117,9 @@ class BudgetNode {
         this.updated = true
     }
 
-    oldAspectState: boolean // !!dataNode.Components
+    oldNodeState = {
+        hasChildren: null
+    } 
 
     // ====================================================================
     // ---------------------[ PRIVATE ]------------------------------------

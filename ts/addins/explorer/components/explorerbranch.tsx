@@ -594,7 +594,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         switch (lastAction.type) {
             case branchActionTypes.CHANGE_VIEWPOINT: {
 
-                this._processChangeViewpointStateChange(budgetBranch)
+                this._processChangeViewpointSelection(budgetBranch)
                 break
 
             }
@@ -606,24 +606,24 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             case branchActionTypes.CHANGE_VERSION: {
 
-                this._processChangeVersionStateChange(budgetBranch)
+                this._processChangeVersionSelection(budgetBranch)
                 break
 
             }
             case branchActionTypes.CHANGE_ASPECT: {
 
-                this._processChangeAspectStateChange(budgetBranch)
+                this._processChangeAspectSelection(budgetBranch)
                 break
 
             }
             case branchActionTypes.TOGGLE_INFLATION_ADJUSTED: {
 
-                this._processToggleInflationAdjustedStateChange(budgetBranch)
+                this._processToggleInflationAdjustedSelection(budgetBranch)
                 break
 
             }
             case branchActionTypes.UPDATE_PRORATA: {
-                this._processUpdateProrataStateChange(budgetBranch)
+                this._processUpdateProrataSelection(budgetBranch)
                 break
             }
             case branchActionTypes.HARMONIZE_CELLS: {
@@ -640,7 +640,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    private _processChangeViewpointStateChange = (budgetBranch:BudgetBranch) => {
+    private _processChangeViewpointSelection = (budgetBranch:BudgetBranch) => {
 
         budgetBranch.getViewpointData().then(()=>{
 
@@ -830,7 +830,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // ---------------------------[ user requested state changes ]------------------
 
-    private _processChangeVersionStateChange = (budgetBranch:BudgetBranch) => {
+    private _processChangeVersionSelection = (budgetBranch:BudgetBranch) => {
 
         budgetBranch.getViewpointData().then(()=>{
 
@@ -846,7 +846,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    private _processToggleInflationAdjustedStateChange = (budgetBranch:BudgetBranch) => {
+    private _processToggleInflationAdjustedSelection = (budgetBranch:BudgetBranch) => {
         budgetBranch.getViewpointData().then(() => {
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid)
@@ -859,7 +859,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         })
     }
 
-    private _processUpdateProrataStateChange = (budgetBranch:BudgetBranch) => {
+    private _processUpdateProrataSelection = (budgetBranch:BudgetBranch) => {
         budgetBranch.calculateProRata(this.state.viewpointData).then(() => {
 
             this._stateActions.incrementBranchDataVersion(budgetBranch.uid)
@@ -872,7 +872,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         })
     }
 
-    private _processChangeAspectStateChange = (budgetBranch:BudgetBranch) => {
+    private _processChangeAspectSelection = (budgetBranch:BudgetBranch) => {
 
         budgetBranch.getViewpointData().then(() => {
 
@@ -898,9 +898,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
                 let message = null
                 if (deeperdata) {
-                    message = "More drilldown is available for current aspect selection"
+                    message = "More drilldown is available for current selection"
                 } else {
-                    message = "Less drilldown is available for current aspect selection"
+                    message = "Less drilldown is available for current selection"
                 }
                 let { snackbar } = this.state
                 snackbar = Object.assign ( {},snackbar )
@@ -1038,7 +1038,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         let { budgetBranch }:{budgetBranch:BudgetBranch} = this.props
 
-        budgetBranch.saveAspectState()
+        budgetBranch.saveNodeStates()
 
         this.props.globalStateActions.changeAspect(budgetBranch.uid, aspect)
 
