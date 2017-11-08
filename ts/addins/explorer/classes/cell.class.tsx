@@ -1157,14 +1157,14 @@ class BudgetCell {
         if (total)
             outputparms.footer.push(1)
         else 
-            outputparms.footer.push('')
+            outputparms.footer.push(null)
 
         for (let n = 0; n < outputparms.data.length; n++) {
             let numerator = outputparms.data[n][1]
             if (numerator && total) {
                 outputparms.data[n].push(numerator/total)
             } else {
-                outputparms.data[n].push('')
+                outputparms.data[n].push(null)
             }
         }
 
@@ -1254,10 +1254,10 @@ class BudgetCell {
         let changetoprevious = null
         let changetocurrent = null
         if (!isNaN(totalchange)) {
-            if (!isNaN(previoustotal)) {
+            if (!isNaN(previoustotal) && previoustotal) {
                 changetoprevious = totalchange/previoustotal                
             }
-            if (!isNaN(currenttotal)) {
+            if (!isNaN(currenttotal) && currenttotal) {
                 changetocurrent = totalchange/currenttotal
             }
         }
@@ -1273,17 +1273,17 @@ class BudgetCell {
             let currentratio = null
             let changetoprevious = null
             let changetocurrent = null
-            if (!isNaN(previoustotal) && !isNaN(previousvalue)) {
+            if (!isNaN(previoustotal) && !isNaN(previousvalue) && previousvalue && previoustotal) {
                 previousratio = previousvalue/previoustotal
             }
-            if (!isNaN(currenttotal) && !isNaN(currentvalue)) {
+            if (!isNaN(currenttotal) && !isNaN(currentvalue) && currentvalue && currenttotal) {
                 currentratio = currentvalue/currenttotal
             }
             if (!isNaN(change)) {
-                if (!isNaN(previousvalue)) {
+                if (!isNaN(previousvalue) && previousvalue) {
                     changetoprevious = change/previousvalue
                 }
-                if (!isNaN(currentvalue)) {
+                if (!isNaN(currentvalue) && currentvalue) {
                     changetocurrent = change/currentvalue
                 }
             }
@@ -1360,7 +1360,7 @@ class BudgetCell {
                 let numerator = row[n-1]
                 let denominator = footer[n-1]
                 let ratio = null
-                if (!isNaN(numerator) && !isNaN(denominator)) {
+                if (!isNaN(numerator) && !isNaN(denominator) && denominator) {
                     ratio = numerator/denominator
                 }
                 row.splice(n,0,ratio)

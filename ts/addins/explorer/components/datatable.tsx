@@ -14,7 +14,7 @@ let stringify = require('csv-stringify/lib/sync')
 
 var format = require('format-number')
 
-var numberformat = format()
+var numberformat = format({round:0})
 var percentformat = format({suffix:'%',round:1})
 
 interface DataTableProps {
@@ -113,9 +113,11 @@ class DataTable extends Component<DataTableProps, any> {
 
     _formatValue = (column,props) => {
         let value = props.value
+        if (!value) return null
         if (column.type == 'ratio') {
             value *= 100
-            value = percentformat(value)
+            if (value)
+                value = percentformat(value)
 
         }
         if (column.type == 'number') {
