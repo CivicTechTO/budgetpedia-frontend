@@ -216,13 +216,12 @@ class ExplorerBranch extends Component {
             budgetBranch.nodeCallbacks = branch._nodeDisplayCallbacks;
             branch._previousControlData = declarationData;
         };
-        this._getLeafPath = (parms, viewpointdata) => {
+        this._getLeafPath = (code, viewpointdata) => {
             let path = [];
             let selections = [];
-            let code = parms.code;
             let result = this._searchComponents(code, path, selections, viewpointdata.Components, viewpointdata.SortedComponents);
             if (!result) {
-                react_redux_toastr_1.toastr.warning(this.findParmsToStateDictionary.aspect[parms.aspect] + ' chart not available for that selection (' + parms.name + ')');
+                path = [];
             }
             let isLeaf = !path.pop();
             if (isLeaf) {
@@ -364,7 +363,7 @@ class ExplorerBranch extends Component {
                 react_redux_toastr_1.toastr.info('Find ' + dictionary.level[parms.level].toUpperCase() + ' tabs at any program drilldown level');
             }
             else {
-                let leafpath = this._getLeafPath(parms, viewpointdata);
+                let leafpath = this._getLeafPath(parms.code, viewpointdata);
                 let settings = {
                     aspectName: dictionary.aspect[parms.aspect],
                     cellIndex: 0,
@@ -454,9 +453,20 @@ class ExplorerBranch extends Component {
         };
         this._processChangeVersionSelection = (budgetBranch) => {
             budgetBranch.getViewpointData().then(() => {
-                this._stateActions.incrementBranchDataVersion(budgetBranch.uid);
-                let budgetNodeParms = budgetBranch.getInitialBranchNodeParms();
-                this._stateActions.addNodeDeclaration(budgetNodeParms);
+                let path = this.previousVersionPath;
+                if (path.length) {
+                    let code = path.pop();
+                    path = this._getLeafPath(code, this.state.viewpointData);
+                }
+                let settingslist = this._getTreeSelectionNodeSettingsList(path);
+                this._stateActions.addNodeDeclarations(settingslist);
+                let explorerbranch = this;
+                setTimeout(() => {
+                    explorerbranch._updateCellChartSelections();
+                }, 500);
+                setTimeout(() => {
+                    explorerbranch.onPortalCreation();
+                }, 1000);
             }).catch(reason => {
                 console.error('error in data fetch, changeversion', reason);
             });
@@ -556,7 +566,7 @@ class ExplorerBranch extends Component {
             const t1 = t - 1;
             return t1 * t1 * t1 + 1;
         };
-        this.switchViewpoint = (viewpointname) => {
+        this.selectViewpoint = (viewpointname) => {
             let { budgetBranch } = this.props;
             let { nodes: branchNodes } = budgetBranch;
             let removed = branchNodes.splice(0);
@@ -567,9 +577,20 @@ class ExplorerBranch extends Component {
             globalStateActions.removeNodeDeclarations(removeditems);
             globalStateActions.changeViewpoint(budgetBranch.uid, viewpointname);
         };
-        this.switchVersion = (versionName) => {
+        this.previousVersionPath = null;
+        this.selectVersion = (versionName) => {
             let { budgetBranch } = this.props;
             let { nodes: branchNodes } = budgetBranch;
+            let path = null;
+            for (let n = branchNodes.length - 1; n >= 0; n--) {
+                let node = branchNodes[n];
+                if (node.treeNodeData.Baseline) {
+                    path = node.dataPath;
+                }
+                if (!path)
+                    path = node.dataPath;
+            }
+            this.previousVersionPath = path;
             let removed = branchNodes.splice(0);
             let removeditems = removed.map((item) => {
                 return { nodeuid: item.uid, cellList: item.cellDeclarationList };
@@ -578,7 +599,7 @@ class ExplorerBranch extends Component {
             globalStateActions.removeNodeDeclarations(removeditems);
             globalStateActions.changeVersion(budgetBranch.uid, versionName);
         };
-        this.switchAspect = (aspect) => {
+        this.selectAspect = (aspect) => {
             switch (aspect) {
                 case "Expenses":
                 case "Revenues":
@@ -668,7 +689,7 @@ class ExplorerBranch extends Component {
                 aspect: branchDeclaration.aspect,
                 name: targetcode
             };
-            let path = this._getLeafPath(pathParms, this.state.viewpointData);
+            let path = this._getLeafPath(pathParms.code, this.state.viewpointData);
             let { budgetBranch } = this.props;
             let { nodes: branchNodes } = budgetBranch;
             let removed = branchNodes.splice(0);
@@ -1096,7 +1117,7 @@ class ExplorerBranch extends Component {
                     React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: '23px' } },
                         React.createElement("span", { style: { lineHeight: '44px' } }, "Select workspace:")),
                     React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
-                            branch.switchViewpoint(value);
+                            branch.selectViewpoint(value);
                         } },
                         React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
                         React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
@@ -1132,7 +1153,7 @@ class ExplorerBranch extends Component {
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                     React.createElement("span", { style: { lineHeight: '44px' } }, "Select dataset:")),
                 React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
-                        branch.switchVersion(value);
+                        branch.selectVersion(value);
                     } }, versionchoices())) : null;
         const aspectchoices = () => {
             switch (branchDeclaration.viewpoint) {
@@ -1154,7 +1175,7 @@ class ExplorerBranch extends Component {
                 React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                     React.createElement("span", { style: { lineHeight: '44px' } }, "Select category:")),
                 React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
-                        branch.switchAspect(value);
+                        branch.selectAspect(value);
                     } }, aspectchoices())) : null;
         let byunitselection = (branchDeclaration.showOptions) ?
             React.createElement("div", { style: { display: 'inline-block' } },

@@ -444,13 +444,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    private _getLeafPath = (parms, viewpointdata) => {
+    private _getLeafPath = (code, viewpointdata) => {
+        // console.log('code, viewpointdata',code, viewpointdata)
         let path = []
         let selections = []
-        let code = parms.code
+        // let code = parms.code
         let result = this._searchComponents(code, path, selections, viewpointdata.Components, viewpointdata.SortedComponents)
         if (!result) {
-            toastr.warning(this.findParmsToStateDictionary.aspect[parms.aspect] + ' chart not available for that selection (' + parms.name + ')')
+            path = []
+            // toastr.warning(parms.aspect + ' chart not available for that selection (' + parms.name + ')')
         }
         let isLeaf = !path.pop()
         if (isLeaf) {
@@ -519,6 +521,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             this._respondToGlobalStateChange()
 
         }
+
+        // console.log('nodes', branchNodes)
 
     }
 
@@ -732,7 +736,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         } else {
 
-            let leafpath = this._getLeafPath(parms, viewpointdata)
+            let leafpath = this._getLeafPath(parms.code, viewpointdata)
 
             let settings = {
                 aspectName:dictionary.aspect[parms.aspect],
@@ -832,11 +836,33 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     private _processChangeVersionSelection = (budgetBranch:BudgetBranch) => {
 
+        // console.log('previousVersionPath',this.previousVersionPath)
+
         budgetBranch.getViewpointData().then(()=>{
 
-            this._stateActions.incrementBranchDataVersion(budgetBranch.uid)
-            let budgetNodeParms:BudgetNodeDeclarationParms = budgetBranch.getInitialBranchNodeParms()
-            this._stateActions.addNodeDeclaration(budgetNodeParms)
+            let path = this.previousVersionPath
+
+            if (path.length) {
+                let code = path.pop()
+                path = this._getLeafPath(code,this.state.viewpointData)
+            }
+
+            let settingslist = this._getTreeSelectionNodeSettingsList(path)
+            this._stateActions.addNodeDeclarations(settingslist)
+
+            let explorerbranch = this
+
+            setTimeout(()=>{
+                explorerbranch._updateCellChartSelections()
+            },500)
+            setTimeout(()=>{
+
+                explorerbranch.onPortalCreation()
+                
+            },1000)
+            // this._stateActions.incrementBranchDataVersion(budgetBranch.uid)
+            // let budgetNodeParms:BudgetNodeDeclarationParms = budgetBranch.getInitialBranchNodeParms()
+            // this._stateActions.addNodeDeclaration(budgetNodeParms)
 
         }).catch(reason => {
 
@@ -986,7 +1012,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // ---------------------[ user interactions ]---------------------------
 
-    switchViewpoint = (viewpointname:string) => {
+    selectViewpoint = (viewpointname:string) => {
 
         let { budgetBranch } = this.props
         let { nodes:branchNodes } = budgetBranch
@@ -1004,10 +1030,23 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    switchVersion = (versionName: string) => {
+    previousVersionPath = null
+
+    selectVersion = (versionName: string) => {
 
         let { budgetBranch } = this.props
         let { nodes:branchNodes } = budgetBranch
+
+        let path = null
+        for (let n = branchNodes.length - 1; n >= 0; n--) {
+            let node = branchNodes[n]
+            if (node.treeNodeData.Baseline) {
+                path = node.dataPath
+            }
+            if (!path) path = node.dataPath
+        }
+
+        this.previousVersionPath = path
 
         // branchNodes is just a copy of the component state's BranchNodes
         let removed = branchNodes.splice(0) // identify nodes to remove
@@ -1024,7 +1063,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    switchAspect = (aspect:string) => {
+    selectAspect = (aspect:string) => {
 
         switch (aspect) {
             case "Expenses":
@@ -1150,7 +1189,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             name:targetcode
         }
 
-        let path = this._getLeafPath(pathParms,this.state.viewpointData)
+        let path = this._getLeafPath(pathParms.code,this.state.viewpointData)
 
         // console.log('path',path)
         // remove previous branches
@@ -1693,7 +1732,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             value={branchDeclaration.viewpoint}
             onChange={
                 (e, index, value) => {
-                    branch.switchViewpoint(value)
+                    branch.selectViewpoint(value)
                 }
             }
             >
@@ -1759,7 +1798,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             value = {branchDeclaration.version}
             onChange={
                 (e, index, value) => {
-                    branch.switchVersion(value)
+                    branch.selectVersion(value)
                 }
             }
             >
@@ -1799,7 +1838,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             value={branchDeclaration.aspect}
             onChange={
                 (e, index, value) => {
-                    branch.switchAspect(value)
+                    branch.selectAspect(value)
                 }
             }
             >
