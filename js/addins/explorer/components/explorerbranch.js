@@ -1306,12 +1306,14 @@ class ExplorerBranch extends Component {
             : null;
         let shareurl = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }) : null;
+        let maxheight = (branchDeclaration.showOptions) ? '100px' : '0';
+        let height = (branchDeclaration.showOptions) ? '48px' : '0';
         return React.createElement(StyleRoot, null,
             React.createElement("div", null,
                 " ",
-                (branchDeclaration.showOptions) ? React.createElement("div", { style: styles.slideInDown },
-                    React.createElement("div", null,
-                        React.createElement("div", { style: { marginBottom: '12px' } },
+                React.createElement("div", null,
+                    React.createElement("div", { style: { maxHeight: maxheight, transition: 'max-height 1s', overflow: 'hidden' } },
+                        React.createElement("div", { style: [styles.zoomInLeft, { marginBottom: '12px' }] },
                             makeselections,
                             viewtaxonomy,
                             search,
@@ -1321,18 +1323,22 @@ class ExplorerBranch extends Component {
                         selectionsdialog,
                         noticesdialog,
                         technotesdialog),
-                    React.createElement("div", { style: {
-                            whiteSpace: 'nowrap',
-                            display: "inline-block",
-                            backgroundColor: "#ebfaf9",
-                            border: "1px solid silver",
-                            borderRadius: "8px",
-                            marginRight: "6px",
-                            paddingLeft: "6px",
-                            height: '48px',
-                        } },
+                    React.createElement("div", { style: [
+                            styles.fadeIn,
+                            { height: height,
+                                overflow: 'hidden',
+                                transition: 'height 1s',
+                                whiteSpace: 'nowrap',
+                                display: "inline-block",
+                                backgroundColor: "#ebfaf9",
+                                border: "1px solid silver",
+                                borderRadius: "8px",
+                                marginRight: "6px",
+                                paddingLeft: "6px",
+                            }
+                        ] },
                         byunitselection,
-                        inflationadjustment)) : null,
+                        inflationadjustment)),
                 React.createElement("div", null, showcontrols)),
             React.createElement("div", { style: { whiteSpace: "nowrap" } },
                 React.createElement("div", { ref: node => {

@@ -2175,10 +2175,15 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // assemble the page
 
+    let maxheight = (branchDeclaration.showOptions)?'100px':'0'
+    let height = (branchDeclaration.showOptions)?'48px':'0'
+
     return <StyleRoot>
-    <div> { (branchDeclaration.showOptions)?<div  style = {styles.slideInDown}>
-        <div>
-        <div style = {{marginBottom:'12px'}}>
+    <div> { <div >
+        <div style = {
+            {maxHeight:maxheight,transition:'max-height 1s',overflow:'hidden'}
+            }>
+        <div style = {[styles.zoomInLeft,{marginBottom:'12px'}]}>
 
         { makeselections }
 
@@ -2202,8 +2207,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         </div>
         <div 
-            style = { 
-                {
+            style = { [
+                styles.fadeIn,
+                {   height:height,
+                    overflow:'hidden',
+                    transition:'height 1s',
                     whiteSpace:'nowrap',
                     display:"inline-block",
                     backgroundColor:"#ebfaf9",
@@ -2211,15 +2219,14 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     borderRadius:"8px",
                     marginRight:"6px",
                     paddingLeft:"6px",
-                    height:'48px',
-                }
+                }]
             }
         >
         { byunitselection }
 
         { inflationadjustment }
         </div>
-        </div>:null }
+        </div> }
         <div>
         { showcontrols }
         </div>
