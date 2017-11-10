@@ -13,6 +13,24 @@ const Snackbar_1 = require("material-ui/Snackbar");
 const Toggle_1 = require("material-ui/Toggle");
 const RaisedButton_1 = require("material-ui/RaisedButton");
 const react_redux_toastr_1 = require("react-redux-toastr");
+const react_animations_1 = require("react-animations");
+const Radium = require("radium");
+let { StyleRoot } = Radium;
+console.log('StyleRoot', StyleRoot);
+const styles = {
+    zoomInLeft: {
+        animation: 'x 1s',
+        animationName: Radium.keyframes(react_animations_1.zoomInLeft, 'zoomInLeft')
+    },
+    fadeIn: {
+        animation: 'x 1s',
+        animationName: Radium.keyframes(react_animations_1.fadeIn, 'fadeIn')
+    },
+    slideInDown: {
+        animation: 'x 1s',
+        animationName: Radium.keyframes(react_animations_1.slideInDown, 'slideInDown')
+    }
+};
 let jsonpack = require('jsonpack');
 let validurl = require('valid-url');
 let ReactGA = require('react-ga');
@@ -1191,23 +1209,22 @@ class ExplorerBranch extends Component {
                     React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
                     React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
                     React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" }))) : null;
-        let inflationadjustment = (branchDeclaration.showOptions)
-            ?
-                React.createElement("div", { style: {
+        let inflationadjustment = (branchDeclaration.showOptions) ?
+            React.createElement("div", { style: {
+                    display: 'inline-block',
+                    whiteSpace: "nowrap",
+                    verticalAlign: "top",
+                    marginRight: '16px',
+                } },
+                React.createElement(Toggle_1.default, { label: 'Inflation adjusted:', style: {
+                        height: '32px',
+                        marginTop: '16px',
                         display: 'inline-block',
-                        whiteSpace: "nowrap",
-                        verticalAlign: "top",
-                        marginRight: '16px',
-                    } },
-                    React.createElement(Toggle_1.default, { label: 'Inflation adjusted:', style: {
-                            height: '32px',
-                            marginTop: '16px',
-                            display: 'inline-block',
-                        }, onToggle: (e, value) => {
-                            this.toggleInflationAdjustment(value);
-                        }, labelStyle: {
-                            fontStyle: 'italic'
-                        }, defaultToggled: branchDeclaration.inflationAdjusted }))
+                    }, onToggle: (e, value) => {
+                        this.toggleInflationAdjustment(value);
+                    }, labelStyle: {
+                        fontStyle: 'italic'
+                    }, defaultToggled: branchDeclaration.inflationAdjusted }))
             :
                 null;
         let showcontrols = React.createElement("div", { style: {
@@ -1218,57 +1235,60 @@ class ExplorerBranch extends Component {
             React.createElement(Toggle_1.default, { label: 'Show chart controls:', style: { height: '32px', marginTop: '16px' }, labelStyle: { fontStyle: 'italic' }, defaultToggled: branchDeclaration.showOptions, onToggle: (e, value) => {
                     this.toggleShowOptions(value);
                 } }));
-        let selectionsdialog = React.createElement(Dialog_1.default, { title: "Make selections for this row of charts", modal: false, open: branch.state.selectionsDialogOpen, onRequestClose: branch.handleSelectionsDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
-            React.createElement(IconButton_1.default, { style: {
-                    top: 0,
-                    right: 0,
-                    padding: 0,
-                    height: "36px",
-                    width: "36px",
-                    position: "absolute",
-                    zIndex: 2,
-                }, onTouchTap: branch.handleSelectionsDialogClose },
-                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
-            React.createElement("div", null,
-                governmentselection,
-                viewpointselection,
-                versionselection,
-                aspectselection),
-            React.createElement(RaisedButton_1.default, { label: "Done", style: { margin: '3px 6px 0 0', float: 'right' }, onTouchTap: branch.handleSelectionsDialogClose }),
-            React.createElement("div", null));
-        let noticesdialog = React.createElement(Dialog_1.default, { title: "Notices for this data", modal: false, open: branch.state.noticeDialogOpen, onRequestClose: branch.handleNoticeDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
-            React.createElement(IconButton_1.default, { style: {
-                    top: 0,
-                    right: 0,
-                    padding: 0,
-                    height: "36px",
-                    width: "36px",
-                    position: "absolute",
-                    zIndex: 2,
-                }, onTouchTap: branch.handleNoticeDialogClose },
-                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
-            branch.state.noticeDialogOpen ? branch.getBranchDataMessages() : null);
-        let technotesdialog = React.createElement(Dialog_1.default, { title: "Row Data Sources", modal: false, open: branch.state.techDialogOpen, onRequestClose: branch.handleTechDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
-            React.createElement(IconButton_1.default, { style: {
-                    top: 0,
-                    right: 0,
-                    padding: 0,
-                    height: "36px",
-                    width: "36px",
-                    position: "absolute",
-                    zIndex: 2,
-                }, onTouchTap: branch.handleTechDialogClose },
-                React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
-            React.createElement("div", null,
-                "Please report any problems to ",
-                React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
-                " "),
-            branch.state.techDialogOpen ? branch.getTechNotesDisplay() : null,
-            React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here."));
-        let technotes = (branchDeclaration.showOptions)
-            ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
-        let notices = (branchDeclaration.showOptions)
-            ? React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onTouchTap: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") }) : null;
+        let selectionsdialog = (branchDeclaration.showOptions) ?
+            React.createElement(Dialog_1.default, { title: "Make selections for this row of charts", modal: false, open: branch.state.selectionsDialogOpen, onRequestClose: branch.handleSelectionsDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
+                React.createElement(IconButton_1.default, { style: {
+                        top: 0,
+                        right: 0,
+                        padding: 0,
+                        height: "36px",
+                        width: "36px",
+                        position: "absolute",
+                        zIndex: 2,
+                    }, onTouchTap: branch.handleSelectionsDialogClose },
+                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                React.createElement("div", null,
+                    governmentselection,
+                    viewpointselection,
+                    versionselection,
+                    aspectselection),
+                React.createElement(RaisedButton_1.default, { label: "Done", style: { margin: '3px 6px 0 0', float: 'right' }, onTouchTap: branch.handleSelectionsDialogClose }),
+                React.createElement("div", null)) : null;
+        let noticesdialog = (branchDeclaration.showOptions) ?
+            React.createElement(Dialog_1.default, { title: "Notices for this data", modal: false, open: branch.state.noticeDialogOpen, onRequestClose: branch.handleNoticeDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
+                React.createElement(IconButton_1.default, { style: {
+                        top: 0,
+                        right: 0,
+                        padding: 0,
+                        height: "36px",
+                        width: "36px",
+                        position: "absolute",
+                        zIndex: 2,
+                    }, onTouchTap: branch.handleNoticeDialogClose },
+                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                branch.state.noticeDialogOpen ? branch.getBranchDataMessages() : null) : null;
+        let technotesdialog = (branchDeclaration.showOptions) ?
+            React.createElement(Dialog_1.default, { title: "Row Data Sources", modal: false, open: branch.state.techDialogOpen, onRequestClose: branch.handleTechDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
+                React.createElement(IconButton_1.default, { style: {
+                        top: 0,
+                        right: 0,
+                        padding: 0,
+                        height: "36px",
+                        width: "36px",
+                        position: "absolute",
+                        zIndex: 2,
+                    }, onTouchTap: branch.handleTechDialogClose },
+                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                React.createElement("div", null,
+                    "Please report any problems to ",
+                    React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
+                    " "),
+                branch.state.techDialogOpen ? branch.getTechNotesDisplay() : null,
+                React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here.")) : null;
+        let technotes = (branchDeclaration.showOptions) ?
+            React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
+        let notices = (branchDeclaration.showOptions) ?
+            React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onTouchTap: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") }) : null;
         let makeselections = (branchDeclaration.showOptions) ?
             React.createElement(RaisedButton_1.default, { label: "Selections", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: branch.handleSelectionsDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "settings_applications") })
             : null;
@@ -1286,32 +1306,34 @@ class ExplorerBranch extends Component {
             : null;
         let shareurl = (branchDeclaration.showOptions)
             ? React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }) : null;
-        return React.createElement("div", null,
+        return React.createElement(StyleRoot, null,
             React.createElement("div", null,
-                React.createElement("div", null,
-                    (branchDeclaration.showOptions) ? React.createElement("div", { style: { marginBottom: '12px' } },
-                        makeselections,
-                        viewtaxonomy,
-                        search,
-                        shareurl,
-                        technotes,
-                        notices) : null,
-                    selectionsdialog,
-                    noticesdialog,
-                    technotesdialog),
-                (branchDeclaration.showOptions) ? React.createElement("div", { style: {
-                        whiteSpace: 'nowrap',
-                        display: "inline-block",
-                        backgroundColor: "#ebfaf9",
-                        border: "1px solid silver",
-                        borderRadius: "8px",
-                        marginRight: "6px",
-                        paddingLeft: "6px",
-                        height: '48px',
-                    } },
-                    byunitselection,
-                    inflationadjustment) : null,
-                showcontrols),
+                " ",
+                (branchDeclaration.showOptions) ? React.createElement("div", { style: styles.slideInDown },
+                    React.createElement("div", null,
+                        React.createElement("div", { style: { marginBottom: '12px' } },
+                            makeselections,
+                            viewtaxonomy,
+                            search,
+                            shareurl,
+                            technotes,
+                            notices),
+                        selectionsdialog,
+                        noticesdialog,
+                        technotesdialog),
+                    React.createElement("div", { style: {
+                            whiteSpace: 'nowrap',
+                            display: "inline-block",
+                            backgroundColor: "#ebfaf9",
+                            border: "1px solid silver",
+                            borderRadius: "8px",
+                            marginRight: "6px",
+                            paddingLeft: "6px",
+                            height: '48px',
+                        } },
+                        byunitselection,
+                        inflationadjustment)) : null,
+                React.createElement("div", null, showcontrols)),
             React.createElement("div", { style: { whiteSpace: "nowrap" } },
                 React.createElement("div", { ref: node => {
                         branch.branchScrollBlock = node;

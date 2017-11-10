@@ -30,6 +30,30 @@ import Toggle from 'material-ui/Toggle'
 import RaisedButton from 'material-ui/RaisedButton'
 import {List, ListItem} from 'material-ui/List'
 import {toastr} from 'react-redux-toastr'
+
+
+import { zoomInLeft, zoomOutLeft, fadeIn, slideInDown  } from 'react-animations'
+import * as Radium from 'radium'
+
+let { StyleRoot }  = Radium
+
+console.log('StyleRoot',StyleRoot)
+
+const styles = {
+  zoomInLeft: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(zoomInLeft, 'zoomInLeft')
+  },
+  fadeIn: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(fadeIn, 'fadeIn')
+  },
+  slideInDown: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(slideInDown, 'slideInDown')
+  }
+}
+
 let jsonpack = require('jsonpack')
 let validurl = require('valid-url')
 let ReactGA = require('react-ga')
@@ -107,7 +131,6 @@ interface ExplorerBranchState {
 }
 
 // ------------------------[ class ]-----------------------------
-
 class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState> {
 
     // ---------------------[ initialization ]------------------------
@@ -1874,8 +1897,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         </DropDownMenu>
     </div>:null
 
-    let inflationadjustment = (branchDeclaration.showOptions)
-        ?
+    let inflationadjustment = (branchDeclaration.showOptions)?
         <div 
             style={
                 {
@@ -1932,7 +1954,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         // dialogs
 
-        let selectionsdialog =
+        let selectionsdialog = (branchDeclaration.showOptions)?
         <Dialog
             title = "Make selections for this row of charts"
             modal = { false }
@@ -1983,9 +2005,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         <div></div>
     
-        </Dialog >
+        </Dialog >:null
 
-        let noticesdialog =
+        let noticesdialog = (branchDeclaration.showOptions)?
         <Dialog
             title = "Notices for this data"
             modal = { false }
@@ -2019,10 +2041,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
             { branch.state.noticeDialogOpen?branch.getBranchDataMessages():null }
 
-        </Dialog >
+        </Dialog >:null
 
 
-    let technotesdialog =
+    let technotesdialog = (branchDeclaration.showOptions)?
         <Dialog
             title = "Row Data Sources"
             modal = { false }
@@ -2063,12 +2085,12 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             for continuity -- to make the numbers more easily comparable. We plan to disclose
             continuity details here.</div>
 
-        </Dialog >
+        </Dialog >:null
 
     // dialog calls
 
-    let technotes = (branchDeclaration.showOptions)
-        ?<RaisedButton
+    let technotes = (branchDeclaration.showOptions)?
+        <RaisedButton
             style={{margin:'3px 6px 0 0'}}
             type="button"
             label="Sources"
@@ -2079,8 +2101,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 className="material-icons">cloud</FontIcon>}
         />:null
 
-    let notices = (branchDeclaration.showOptions)
-        ?<RaisedButton
+    let notices = (branchDeclaration.showOptions)?
+        <RaisedButton
             style={{margin:'3px 6px 0 0'}}
             type="button"
             label="Notices"
@@ -2153,10 +2175,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // assemble the page
 
-    return <div >
-    <div>
+    return <StyleRoot>
+    <div> { (branchDeclaration.showOptions)?<div  style = {styles.slideInDown}>
         <div>
-        {(branchDeclaration.showOptions)?<div style = {{marginBottom:'12px'}}>
+        <div style = {{marginBottom:'12px'}}>
 
         { makeselections }
 
@@ -2170,7 +2192,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         { notices }
 
-        </div>:null}
+        </div>
 
         { selectionsdialog }
 
@@ -2179,9 +2201,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         { technotesdialog }
 
         </div>
-
-        {(branchDeclaration.showOptions)?<div
-            style = {
+        <div 
+            style = { 
                 {
                     whiteSpace:'nowrap',
                     display:"inline-block",
@@ -2197,9 +2218,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         { byunitselection }
 
         { inflationadjustment }
-        </div>:null}
-
+        </div>
+        </div>:null }
+        <div>
         { showcontrols }
+        </div>
 
     </div>
 
@@ -2220,7 +2243,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         autoHideDuration={4000}
         onRequestClose={this.handleSnackbarRequestClose}
         />
-    </div >
+    </StyleRoot>
     }
 
 }

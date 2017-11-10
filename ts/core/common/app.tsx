@@ -10,17 +10,11 @@ class App extends Component<any, any> {
     render() {
         return (
             <div>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    transitionName="mainpage"
-                    transitionEnterTimeout={300}
-                    transitionLeave={false} >
-                    {
-                        React.cloneElement(this.props.children, {
-                            key: this.props.location.pathname
-                        })
-                    }
-                </ReactCSSTransitionGroup>
+                {
+                    React.cloneElement(this.props.children, {
+                        key: this.props.location.pathname
+                    })
+                }
             </div>
         )
     }
