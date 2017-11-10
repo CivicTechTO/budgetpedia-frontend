@@ -37,10 +37,21 @@ import * as Radium from 'radium'
 
 let { StyleRoot }  = Radium
 
-console.log('StyleRoot',StyleRoot)
+// console.log('StyleRoot',StyleRoot)
 
-const styles = {
+const transitions = {
+    buttonsIn: {},
+    buttonsOut: {},
+    controlsIn: {},
+    controlsOut: {},
+}
+
+const animations = {
   zoomInLeft: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(zoomInLeft, 'zoomInLeft')
+  },
+  zoomOutLeft: {
     animation: 'x 1s',
     animationName: Radium.keyframes(zoomInLeft, 'zoomInLeft')
   },
@@ -1121,10 +1132,25 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
+    animations = {
+        buttons: null,
+        controls: null,
+    }
+
+    transitions = {
+        buttons: null,
+        controls: null,
+    }
+
     toggleShowOptions = value => {
 
-        let { budgetBranch }:{budgetBranch:BudgetBranch} = this.props
-        this.props.globalStateActions.toggleShowOptions( budgetBranch.uid, value )
+        this.animations.buttons = this.animations.controls = null
+        console.log('first render')
+        this.forceUpdate(() => {
+            console.log('second render')
+            let { budgetBranch }:{budgetBranch:BudgetBranch} = this.props
+            this.props.globalStateActions.toggleShowOptions( budgetBranch.uid, value )
+        })
 
     }
 
@@ -1745,7 +1771,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let branchDeclaration:BranchSettings = this.props.declarationData.branchesById[this.props.budgetBranch.uid]
 
-    let viewpointselection = (branchDeclaration.showOptions)?
+    let viewpointselection = 
     <div style={{display:'inline-block'}}>
         <div style = {{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'23px' }}>
@@ -1770,10 +1796,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         </DropDownMenu>
         </div>
 
-    </div>:null
+    </div>
 
     // <span style={{ fontStyle: "italic" }}>Government: </span>
-    let governmentselection = (branchDeclaration.showOptions)?
+    let governmentselection = 
     <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Select city:</span>
@@ -1787,7 +1813,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         </DropDownMenu>
 
-    </div>:null
+    </div>
 
     // TODO externalize this; make it metadata-driven
     const versionchoices = () => {
@@ -1811,7 +1837,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     // TODO: add contitional logic depending on viewpoint selection
-    let versionselection = (branchDeclaration.showOptions)?
+    let versionselection = 
     <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Select dataset:</span>
@@ -1829,7 +1855,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             { versionchoices() }
 
         </DropDownMenu>
-    </div>:null
+    </div>
 
     // TODO externalize this; make it metadata-driven
     const aspectchoices = () => {
@@ -1849,7 +1875,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     }
 
     // aspect = category
-    let aspectselection = (branchDeclaration.showOptions)?
+    let aspectselection = 
     <div style={{display:'inline-block'}}>
 
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
@@ -1870,9 +1896,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         </DropDownMenu>
 
-    </div>:null
+    </div>
 
-    let byunitselection = (branchDeclaration.showOptions)?
+    let byunitselection =
     <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
             <span style={{lineHeight:'44px'}} >Prorated:</span>
@@ -1895,9 +1921,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'PERNEIGHBOURHOOD'} primaryText="Per neighbourhood (x 4 x 44)"/>
 
         </DropDownMenu>
-    </div>:null
+    </div>
 
-    let inflationadjustment = (branchDeclaration.showOptions)?
+    let inflationadjustment =
         <div 
             style={
                 {
@@ -1927,8 +1953,6 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 defaultToggled={branchDeclaration.inflationAdjusted} 
             /> 
         </div>
-        :
-        null
 
     let showcontrols = 
         <div 
@@ -2089,7 +2113,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // dialog calls
 
-    let technotes = (branchDeclaration.showOptions)?
+    let technotes = 
         <RaisedButton
             style={{margin:'3px 6px 0 0'}}
             type="button"
@@ -2099,9 +2123,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5'}}
                 className="material-icons">cloud</FontIcon>}
-        />:null
+        />
 
-    let notices = (branchDeclaration.showOptions)?
+    let notices = 
         <RaisedButton
             style={{margin:'3px 6px 0 0'}}
             type="button"
@@ -2111,9 +2135,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5'}}
                 className="material-icons">priority_high</FontIcon>}
-        />:null
+        />
 
-    let makeselections = (branchDeclaration.showOptions)?
+    let makeselections = 
         <RaisedButton
             label = "Selections"
             style={{margin:'3px 6px 0 0'}}
@@ -2124,9 +2148,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 style={{color:'rgba(0,0,0,0.5'}}
                 className="material-icons">settings_applications</FontIcon>}
             />
-        :null
 
-    let viewtaxonomy = (branchDeclaration.showOptions)?
+    let viewtaxonomy = 
         <RaisedButton
             label = "Workspace tree"
             style={{margin:'3px 6px 0 0'}}
@@ -2146,9 +2169,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             icon = {<img style={{width:'24px'}} src="./public/icons/org_chart.svg" />
             }
             />
-        :null
 
-    let search = (branchDeclaration.showOptions)?
+    let search =
         <RaisedButton 
             label = "Search"
             style={{margin:'3px 6px 0 0'}}
@@ -2159,10 +2181,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 style={{color:'rgba(0,0,0,0.5)'}}
                 className="material-icons">search</FontIcon>}
             />
-        :null
 
-    let shareurl = (branchDeclaration.showOptions)
-        ?<RaisedButton
+    let shareurl =
+        <RaisedButton
             type="button"
             style={{margin:'3px 6px 0 0'}}
             label="Share"
@@ -2171,19 +2192,25 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5)'}}
                 className="material-icons">share</FontIcon>}
-        />:null
+        />
 
     // assemble the page
 
+    if (branchDeclaration.showOptions) {
+        // this.animations.controls = this.animations.buttons = animations.zoomInLeft
+    } else {
+        this.animations.controls = this.animations.buttons = animations.zoomOutLeft
+    }
+
     let maxheight = (branchDeclaration.showOptions)?'100px':'0'
-    let height = (branchDeclaration.showOptions)?'48px':'0'
+    let height = (branchDeclaration.showOptions)?'50px':'0'
 
     return <StyleRoot>
     <div> { <div >
         <div style = {
-            {maxHeight:maxheight,transition:'max-height 1s',overflow:'hidden'}
+            {maxHeight:maxheight,transition:'max-height .5s',overflow:'hidden'}
             }>
-        <div style = {[styles.zoomInLeft,{marginBottom:'12px'}]}>
+        <div style = {[this.animations.buttons,{marginBottom:'12px'}]}>
 
         { makeselections }
 
@@ -2206,25 +2233,29 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         { technotesdialog }
 
         </div>
-        <div 
-            style = { [
-                styles.fadeIn,
-                {   height:height,
-                    overflow:'hidden',
-                    transition:'height 1s',
-                    whiteSpace:'nowrap',
-                    display:"inline-block",
-                    backgroundColor:"#ebfaf9",
-                    border:"1px solid silver",
-                    borderRadius:"8px",
-                    marginRight:"6px",
-                    paddingLeft:"6px",
-                }]
-            }
-        >
-        { byunitselection }
+        <div style = {[this.animations.controls,
+            {
+                height:height,
+                overflow:'hidden',
+                transition:'height .5s',
+            }]}>
+            <div 
+                style = {
+                    {   height:'48px',
+                        whiteSpace:'nowrap',
+                        display:"inline-block",
+                        backgroundColor:"#ebfaf9",
+                        border:"1px solid silver",
+                        borderRadius:"8px",
+                        marginRight:"6px",
+                        paddingLeft:"6px",
+                    }
+                }
+            >
+            { byunitselection }
 
-        { inflationadjustment }
+            { inflationadjustment }
+            </div>
         </div>
         </div> }
         <div>

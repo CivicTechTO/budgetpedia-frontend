@@ -16,9 +16,18 @@ const react_redux_toastr_1 = require("react-redux-toastr");
 const react_animations_1 = require("react-animations");
 const Radium = require("radium");
 let { StyleRoot } = Radium;
-console.log('StyleRoot', StyleRoot);
-const styles = {
+const transitions = {
+    buttonsIn: {},
+    buttonsOut: {},
+    controlsIn: {},
+    controlsOut: {},
+};
+const animations = {
     zoomInLeft: {
+        animation: 'x 1s',
+        animationName: Radium.keyframes(react_animations_1.zoomInLeft, 'zoomInLeft')
+    },
+    zoomOutLeft: {
         animation: 'x 1s',
         animationName: Radium.keyframes(react_animations_1.zoomInLeft, 'zoomInLeft')
     },
@@ -638,9 +647,22 @@ class ExplorerBranch extends Component {
             let { budgetBranch } = this.props;
             this.props.globalStateActions.toggleInflationAdjusted(budgetBranch.uid, value);
         };
+        this.animations = {
+            buttons: null,
+            controls: null,
+        };
+        this.transitions = {
+            buttons: null,
+            controls: null,
+        };
         this.toggleShowOptions = value => {
-            let { budgetBranch } = this.props;
-            this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
+            this.animations.buttons = this.animations.controls = null;
+            console.log('first render');
+            this.forceUpdate(() => {
+                console.log('second render');
+                let { budgetBranch } = this.props;
+                this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
+            });
         };
         this.handleSearch = (e) => {
             this.props.handleSearchDialogOpen(e, this.applySearchBranchSettings);
@@ -1129,26 +1151,24 @@ class ExplorerBranch extends Component {
         let drilldownrow = branch.props.budgetBranch.nodes;
         let drilldownportals = branch.getPortals(drilldownrow);
         let branchDeclaration = this.props.declarationData.branchesById[this.props.budgetBranch.uid];
-        let viewpointselection = (branchDeclaration.showOptions) ?
+        let viewpointselection = React.createElement("div", { style: { display: 'inline-block' } },
             React.createElement("div", { style: { display: 'inline-block' } },
-                React.createElement("div", { style: { display: 'inline-block' } },
-                    React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: '23px' } },
-                        React.createElement("span", { style: { lineHeight: '44px' } }, "Select workspace:")),
-                    React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
-                            branch.selectViewpoint(value);
-                        } },
-                        React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
-                        React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
-                        React.createElement(Divider_1.default, null),
-                        React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
-                        React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
-                        React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES })))) : null;
-        let governmentselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block' } },
-                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
-                React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
-                    React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" }))) : null;
+                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: '23px' } },
+                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select workspace:")),
+                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
+                        branch.selectViewpoint(value);
+                    } },
+                    React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
+                    React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
+                    React.createElement(Divider_1.default, null),
+                    React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
+                    React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
+                    React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }))));
+        let governmentselection = React.createElement("div", { style: { display: 'inline-block' } },
+            React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
+            React.createElement(DropDownMenu_1.default, { value: "Toronto", disabled: true },
+                React.createElement(MenuItem_1.default, { value: 'Toronto', primaryText: "Toronto, Ontario" })));
         const versionchoices = () => {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
@@ -1166,13 +1186,12 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2015" })];
             }
         };
-        let versionselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block' } },
-                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select dataset:")),
-                React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
-                        branch.selectVersion(value);
-                    } }, versionchoices())) : null;
+        let versionselection = React.createElement("div", { style: { display: 'inline-block' } },
+            React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                React.createElement("span", { style: { lineHeight: '44px' } }, "Select dataset:")),
+            React.createElement(DropDownMenu_1.default, { disabled: versionchoices().length < 2, value: branchDeclaration.version, onChange: (e, index, value) => {
+                    branch.selectVersion(value);
+                } }, versionchoices()));
         const aspectchoices = () => {
             switch (branchDeclaration.viewpoint) {
                 case "FUNCTIONAL":
@@ -1188,45 +1207,40 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Expenditure', primaryText: "Expenses" })];
             }
         };
-        let aspectselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block' } },
-                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Select category:")),
-                React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
-                        branch.selectAspect(value);
-                    } }, aspectchoices())) : null;
-        let byunitselection = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: { display: 'inline-block' } },
-                React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
-                    React.createElement("span", { style: { lineHeight: '44px' } }, "Prorated:")),
-                React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
-                        this.switchComparator(value);
-                    } },
-                    React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
-                    React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
-                    React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
-                    React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
-                    React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
-                    React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
-                    React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" }))) : null;
-        let inflationadjustment = (branchDeclaration.showOptions) ?
-            React.createElement("div", { style: {
-                    display: 'inline-block',
-                    whiteSpace: "nowrap",
-                    verticalAlign: "top",
-                    marginRight: '16px',
+        let aspectselection = React.createElement("div", { style: { display: 'inline-block' } },
+            React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                React.createElement("span", { style: { lineHeight: '44px' } }, "Select category:")),
+            React.createElement(DropDownMenu_1.default, { disabled: aspectchoices().length < 2, value: branchDeclaration.aspect, onChange: (e, index, value) => {
+                    branch.selectAspect(value);
+                } }, aspectchoices()));
+        let byunitselection = React.createElement("div", { style: { display: 'inline-block' } },
+            React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
+                React.createElement("span", { style: { lineHeight: '44px' } }, "Prorated:")),
+            React.createElement(DropDownMenu_1.default, { value: branchDeclaration.prorata, onChange: (e, index, value) => {
+                    this.switchComparator(value);
                 } },
-                React.createElement(Toggle_1.default, { label: 'Inflation adjusted:', style: {
-                        height: '32px',
-                        marginTop: '16px',
-                        display: 'inline-block',
-                    }, onToggle: (e, value) => {
-                        this.toggleInflationAdjustment(value);
-                    }, labelStyle: {
-                        fontStyle: 'italic'
-                    }, defaultToggled: branchDeclaration.inflationAdjusted }))
-            :
-                null;
+                React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
+                React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
+                React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
+                React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
+                React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),
+                React.createElement(MenuItem_1.default, { value: 'PERWARD', primaryText: "Per ward (x 44)" }),
+                React.createElement(MenuItem_1.default, { value: 'PERNEIGHBOURHOOD', primaryText: "Per neighbourhood (x 4 x 44)" })));
+        let inflationadjustment = React.createElement("div", { style: {
+                display: 'inline-block',
+                whiteSpace: "nowrap",
+                verticalAlign: "top",
+                marginRight: '16px',
+            } },
+            React.createElement(Toggle_1.default, { label: 'Inflation adjusted:', style: {
+                    height: '32px',
+                    marginTop: '16px',
+                    display: 'inline-block',
+                }, onToggle: (e, value) => {
+                    this.toggleInflationAdjustment(value);
+                }, labelStyle: {
+                    fontStyle: 'italic'
+                }, defaultToggled: branchDeclaration.inflationAdjusted }));
         let showcontrols = React.createElement("div", { style: {
                 display: 'inline-block',
                 whiteSpace: "nowrap",
@@ -1285,35 +1299,31 @@ class ExplorerBranch extends Component {
                     " "),
                 branch.state.techDialogOpen ? branch.getTechNotesDisplay() : null,
                 React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here.")) : null;
-        let technotes = (branchDeclaration.showOptions) ?
-            React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") }) : null;
-        let notices = (branchDeclaration.showOptions) ?
-            React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onTouchTap: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") }) : null;
-        let makeselections = (branchDeclaration.showOptions) ?
-            React.createElement(RaisedButton_1.default, { label: "Selections", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: branch.handleSelectionsDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "settings_applications") })
-            : null;
-        let viewtaxonomy = (branchDeclaration.showOptions) ?
-            React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
-                    let viewpointselection = {
-                        viewpoint: branchDeclaration.viewpoint,
-                        name: this.taxonomychoices[branchDeclaration.viewpoint]
-                    };
-                    this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection, this.applytaxonomyselection);
-                }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) })
-            : null;
-        let search = (branchDeclaration.showOptions) ?
-            React.createElement(RaisedButton_1.default, { label: "Search", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") })
-            : null;
-        let shareurl = (branchDeclaration.showOptions)
-            ? React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }) : null;
+        let technotes = React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") });
+        let notices = React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onTouchTap: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") });
+        let makeselections = React.createElement(RaisedButton_1.default, { label: "Selections", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: branch.handleSelectionsDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "settings_applications") });
+        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
+                let viewpointselection = {
+                    viewpoint: branchDeclaration.viewpoint,
+                    name: this.taxonomychoices[branchDeclaration.viewpoint]
+                };
+                this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection, this.applytaxonomyselection);
+            }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
+        let search = React.createElement(RaisedButton_1.default, { label: "Search", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") });
+        let shareurl = React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") });
+        if (branchDeclaration.showOptions) {
+        }
+        else {
+            this.animations.controls = this.animations.buttons = animations.zoomOutLeft;
+        }
         let maxheight = (branchDeclaration.showOptions) ? '100px' : '0';
-        let height = (branchDeclaration.showOptions) ? '48px' : '0';
+        let height = (branchDeclaration.showOptions) ? '50px' : '0';
         return React.createElement(StyleRoot, null,
             React.createElement("div", null,
                 " ",
                 React.createElement("div", null,
-                    React.createElement("div", { style: { maxHeight: maxheight, transition: 'max-height 1s', overflow: 'hidden' } },
-                        React.createElement("div", { style: [styles.zoomInLeft, { marginBottom: '12px' }] },
+                    React.createElement("div", { style: { maxHeight: maxheight, transition: 'max-height .5s', overflow: 'hidden' } },
+                        React.createElement("div", { style: [this.animations.buttons, { marginBottom: '12px' }] },
                             makeselections,
                             viewtaxonomy,
                             search,
@@ -1323,11 +1333,13 @@ class ExplorerBranch extends Component {
                         selectionsdialog,
                         noticesdialog,
                         technotesdialog),
-                    React.createElement("div", { style: [
-                            styles.fadeIn,
-                            { height: height,
+                    React.createElement("div", { style: [this.animations.controls,
+                            {
+                                height: height,
                                 overflow: 'hidden',
-                                transition: 'height 1s',
+                                transition: 'height .5s',
+                            }] },
+                        React.createElement("div", { style: { height: '48px',
                                 whiteSpace: 'nowrap',
                                 display: "inline-block",
                                 backgroundColor: "#ebfaf9",
@@ -1335,10 +1347,9 @@ class ExplorerBranch extends Component {
                                 borderRadius: "8px",
                                 marginRight: "6px",
                                 paddingLeft: "6px",
-                            }
-                        ] },
-                        byunitselection,
-                        inflationadjustment)),
+                            } },
+                            byunitselection,
+                            inflationadjustment))),
                 React.createElement("div", null, showcontrols)),
             React.createElement("div", { style: { whiteSpace: "nowrap" } },
                 React.createElement("div", { ref: node => {
