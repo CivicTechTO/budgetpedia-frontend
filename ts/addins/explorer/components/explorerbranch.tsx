@@ -39,13 +39,6 @@ let { StyleRoot }  = Radium
 
 // console.log('StyleRoot',StyleRoot)
 
-const transitions = {
-    buttonsIn: {},
-    buttonsOut: {},
-    controlsIn: {},
-    controlsOut: {},
-}
-
 const animations = {
   fadeIn: {
     animation: 'x .5s',
@@ -132,10 +125,6 @@ interface ExplorerBranchState {
     noticeDialogOpen?:boolean,
     selectionsDialogOpen?:boolean,
     animations: {
-        buttons: any,
-        controls: any,
-    },
-    transitions?: {
         buttons: any,
         controls: any,
     },
@@ -2211,7 +2200,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     // }
 
     let maxheight = (branchDeclaration.showOptions)?'130px':'0'
-    let height = (branchDeclaration.showOptions)?'50px':'0'
+    let height = (branchDeclaration.showOptions)?'52px':'0'
     let maxwidth = (branchDeclaration.showOptions)?'400px':'0'
 
     return <StyleRoot>
@@ -2248,7 +2237,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 maxWidth:maxwidth,
                 overflow:'hidden',
                 display:"inline-block",
-                transition:'height .5s,max-width .5s',
+                transition:'height .4s,max-width .5s',
             }]}>
             <div 
                 style = {
