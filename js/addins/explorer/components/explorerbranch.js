@@ -1329,7 +1329,7 @@ class ExplorerBranch extends Component {
                                 maxWidth: maxwidth,
                                 overflow: 'hidden',
                                 display: "inline-block",
-                                transition: 'height .4s,max-width .5s',
+                                transition: 'height .3s,max-width .3s',
                             }] },
                         React.createElement("div", { style: { height: '48px',
                                 whiteSpace: 'nowrap',

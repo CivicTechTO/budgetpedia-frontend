@@ -2237,7 +2237,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 maxWidth:maxwidth,
                 overflow:'hidden',
                 display:"inline-block",
-                transition:'height .4s,max-width .5s',
+                transition:'height .3s,max-width .3s',
             }]}>
             <div 
                 style = {
