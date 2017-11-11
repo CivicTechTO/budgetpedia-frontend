@@ -32,7 +32,7 @@ import {List, ListItem} from 'material-ui/List'
 import {toastr} from 'react-redux-toastr'
 
 
-import { zoomInLeft, zoomOutLeft, fadeIn, slideInDown  } from 'react-animations'
+import { fadeIn, fadeOut  } from 'react-animations'
 import * as Radium from 'radium'
 
 let { StyleRoot }  = Radium
@@ -47,22 +47,14 @@ const transitions = {
 }
 
 const animations = {
-  zoomInLeft: {
-    animation: 'x 1s',
-    animationName: Radium.keyframes(zoomInLeft, 'zoomInLeft')
-  },
-  zoomOutLeft: {
-    animation: 'x 1s',
-    animationName: Radium.keyframes(zoomInLeft, 'zoomInLeft')
-  },
   fadeIn: {
-    animation: 'x 1s',
+    animation: 'x .5s',
     animationName: Radium.keyframes(fadeIn, 'fadeIn')
   },
-  slideInDown: {
-    animation: 'x 1s',
-    animationName: Radium.keyframes(slideInDown, 'slideInDown')
-  }
+  fadeOut: {
+    animation: 'x .5s',
+    animationName: Radium.keyframes(fadeOut, 'fadeOut')
+  },
 }
 
 let jsonpack = require('jsonpack')
@@ -139,6 +131,14 @@ interface ExplorerBranchState {
     techDialogOpen?:boolean,
     noticeDialogOpen?:boolean,
     selectionsDialogOpen?:boolean,
+    animations: {
+        buttons: any,
+        controls: any,
+    },
+    transitions?: {
+        buttons: any,
+        controls: any,
+    },
 }
 
 // ------------------------[ class ]-----------------------------
@@ -155,6 +155,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         techDialogOpen:false,
         noticeDialogOpen:false,
         selectionsDialogOpen:false,
+        animations: {
+            buttons:null,
+            controls:null,
+        }
 
     }
 
@@ -1132,24 +1136,28 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     }
 
-    animations = {
-        buttons: null,
-        controls: null,
-    }
-
-    transitions = {
-        buttons: null,
-        controls: null,
-    }
-
     toggleShowOptions = value => {
 
-        this.animations.buttons = this.animations.controls = null
-        console.log('first render')
-        this.forceUpdate(() => {
-            console.log('second render')
-            let { budgetBranch }:{budgetBranch:BudgetBranch} = this.props
-            this.props.globalStateActions.toggleShowOptions( budgetBranch.uid, value )
+        let anims = {
+            buttons:null,
+            controls:null,
+        }
+
+        this.setState({
+            animations:anims,
+        }
+        ,() => {
+            let a = (value)?animations.fadeIn:animations.fadeOut
+            let anims = {
+                buttons:a,
+                controls:a,
+            }
+            this.setState({
+                animations:anims,
+            },() => {
+                let { budgetBranch }:{budgetBranch:BudgetBranch} = this.props
+                this.props.globalStateActions.toggleShowOptions( budgetBranch.uid, value )
+            })
         })
 
     }
@@ -2196,21 +2204,22 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // assemble the page
 
-    if (branchDeclaration.showOptions) {
-        // this.animations.controls = this.animations.buttons = animations.zoomInLeft
-    } else {
-        this.animations.controls = this.animations.buttons = animations.zoomOutLeft
-    }
+    // if (branchDeclaration.showOptions) {
+    //     // this.animations.controls = this.animations.buttons = animations.zoomInLeft
+    // } else {
+    //     this.animations.controls = this.animations.buttons = animations.zoomOutLeft
+    // }
 
     let maxheight = (branchDeclaration.showOptions)?'100px':'0'
     let height = (branchDeclaration.showOptions)?'50px':'0'
+    let maxwidth = (branchDeclaration.showOptions)?'400px':'0'
 
     return <StyleRoot>
-    <div> { <div >
+    <div style={{marginBottom:'12px'}} > { <div >
         <div style = {
             {maxHeight:maxheight,transition:'max-height .5s',overflow:'hidden'}
             }>
-        <div style = {[this.animations.buttons,{marginBottom:'12px'}]}>
+        <div style = {[this.state.animations.buttons,{marginBottom:'12px'}]}>
 
         { makeselections }
 
@@ -2233,11 +2242,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         { technotesdialog }
 
         </div>
-        <div style = {[this.animations.controls,
+        <div style = {[this.state.animations.controls,
             {
-                height:height,
+                height,
+                maxWidth:maxwidth,
                 overflow:'hidden',
-                transition:'height .5s',
+                display:"inline-block",
+                transition:'height .5s,max-width .5s',
             }]}>
             <div 
                 style = {
@@ -2257,10 +2268,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             { inflationadjustment }
             </div>
         </div>
-        </div> }
-        <div>
+
         { showcontrols }
-        </div>
+
+        </div> }
 
     </div>
 

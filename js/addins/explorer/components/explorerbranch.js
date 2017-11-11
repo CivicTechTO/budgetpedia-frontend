@@ -23,22 +23,14 @@ const transitions = {
     controlsOut: {},
 };
 const animations = {
-    zoomInLeft: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(react_animations_1.zoomInLeft, 'zoomInLeft')
-    },
-    zoomOutLeft: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(react_animations_1.zoomInLeft, 'zoomInLeft')
-    },
     fadeIn: {
-        animation: 'x 1s',
+        animation: 'x .5s',
         animationName: Radium.keyframes(react_animations_1.fadeIn, 'fadeIn')
     },
-    slideInDown: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(react_animations_1.slideInDown, 'slideInDown')
-    }
+    fadeOut: {
+        animation: 'x .5s',
+        animationName: Radium.keyframes(react_animations_1.fadeOut, 'fadeOut')
+    },
 };
 let jsonpack = require('jsonpack');
 let validurl = require('valid-url');
@@ -60,6 +52,10 @@ class ExplorerBranch extends Component {
             techDialogOpen: false,
             noticeDialogOpen: false,
             selectionsDialogOpen: false,
+            animations: {
+                buttons: null,
+                controls: null,
+            }
         };
         this.waitafteraction = 0;
         this.getState = () => this.state;
@@ -647,21 +643,25 @@ class ExplorerBranch extends Component {
             let { budgetBranch } = this.props;
             this.props.globalStateActions.toggleInflationAdjusted(budgetBranch.uid, value);
         };
-        this.animations = {
-            buttons: null,
-            controls: null,
-        };
-        this.transitions = {
-            buttons: null,
-            controls: null,
-        };
         this.toggleShowOptions = value => {
-            this.animations.buttons = this.animations.controls = null;
-            console.log('first render');
-            this.forceUpdate(() => {
-                console.log('second render');
-                let { budgetBranch } = this.props;
-                this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
+            let anims = {
+                buttons: null,
+                controls: null,
+            };
+            this.setState({
+                animations: anims,
+            }, () => {
+                let a = (value) ? animations.fadeIn : animations.fadeOut;
+                let anims = {
+                    buttons: a,
+                    controls: a,
+                };
+                this.setState({
+                    animations: anims,
+                }, () => {
+                    let { budgetBranch } = this.props;
+                    this.props.globalStateActions.toggleShowOptions(budgetBranch.uid, value);
+                });
             });
         };
         this.handleSearch = (e) => {
@@ -1311,19 +1311,15 @@ class ExplorerBranch extends Component {
             }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
         let search = React.createElement(RaisedButton_1.default, { label: "Search", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") });
         let shareurl = React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") });
-        if (branchDeclaration.showOptions) {
-        }
-        else {
-            this.animations.controls = this.animations.buttons = animations.zoomOutLeft;
-        }
         let maxheight = (branchDeclaration.showOptions) ? '100px' : '0';
         let height = (branchDeclaration.showOptions) ? '50px' : '0';
+        let maxwidth = (branchDeclaration.showOptions) ? '400px' : '0';
         return React.createElement(StyleRoot, null,
-            React.createElement("div", null,
+            React.createElement("div", { style: { marginBottom: '12px' } },
                 " ",
                 React.createElement("div", null,
                     React.createElement("div", { style: { maxHeight: maxheight, transition: 'max-height .5s', overflow: 'hidden' } },
-                        React.createElement("div", { style: [this.animations.buttons, { marginBottom: '12px' }] },
+                        React.createElement("div", { style: [this.state.animations.buttons, { marginBottom: '12px' }] },
                             makeselections,
                             viewtaxonomy,
                             search,
@@ -1333,11 +1329,13 @@ class ExplorerBranch extends Component {
                         selectionsdialog,
                         noticesdialog,
                         technotesdialog),
-                    React.createElement("div", { style: [this.animations.controls,
+                    React.createElement("div", { style: [this.state.animations.controls,
                             {
-                                height: height,
+                                height,
+                                maxWidth: maxwidth,
                                 overflow: 'hidden',
-                                transition: 'height .5s',
+                                display: "inline-block",
+                                transition: 'height .5s,max-width .5s',
                             }] },
                         React.createElement("div", { style: { height: '48px',
                                 whiteSpace: 'nowrap',
@@ -1349,8 +1347,8 @@ class ExplorerBranch extends Component {
                                 paddingLeft: "6px",
                             } },
                             byunitselection,
-                            inflationadjustment))),
-                React.createElement("div", null, showcontrols)),
+                            inflationadjustment)),
+                    showcontrols)),
             React.createElement("div", { style: { whiteSpace: "nowrap" } },
                 React.createElement("div", { ref: node => {
                         branch.branchScrollBlock = node;
