@@ -3,6 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const Tabs_1 = require("material-ui/Tabs");
+const react_animations_1 = require("react-animations");
+const Radium = require("radium");
+let { StyleRoot } = Radium;
+const animations = {
+    fadeIn: {
+        animation: 'x .7s',
+        animationName: Radium.keyframes(react_animations_1.fadeIn, 'fadeIn')
+    },
+};
 const explorercell_1 = require("./explorercell");
 const actions_1 = require("../actions");
 const Utilities = require("../modules/utilities");
@@ -11,6 +20,7 @@ class ExplorerNode extends Component {
         super(...arguments);
         this.state = {
             nodeCells: [],
+            animation: animations.fadeIn,
         };
         this.waitafteraction = 0;
         this.getState = () => this.state;
@@ -270,29 +280,33 @@ class ExplorerNode extends Component {
         let chartTabs = this.getChartTabs();
         let tabobject = this.getTabObject(chartTabs);
         let { portalConfig: portalSettings } = this.props.budgetNode;
-        return React.createElement("div", { style: {
-                position: "relative",
-                display: "inline-block",
-                padding: "10px",
-                backgroundColor: "Beige",
-                verticalAlign: "top",
-                width: "400px",
-                borderRight: "1px solid silver",
-            } },
-            React.createElement("div", { style: {
-                    position: "absolute",
-                    top: 0,
-                    left: "10px",
-                    padding: "3px 20px 3px 20px",
-                    borderRadius: "6px",
-                    border: "1px solid silver",
-                    fontSize: "12px",
-                    color: "lightgreen",
-                    fontWeight: "bold",
-                    display: "inline-block",
-                    backgroundColor: "#00bcd4",
-                } }, ("#" + (this.props.budgetNode.nodeIndex + 1)) + ". " + portalSettings.portalName),
-            tabobject);
+        return React.createElement(StyleRoot, { style: { display: 'inline-block' } },
+            React.createElement("div", { style: [
+                    {
+                        position: "relative",
+                        display: "inline-block",
+                        padding: "10px",
+                        backgroundColor: "Beige",
+                        verticalAlign: "top",
+                        width: "400px",
+                        borderRight: "1px solid silver",
+                    },
+                    this.state.animation
+                ] },
+                React.createElement("div", { style: {
+                        position: "absolute",
+                        top: 0,
+                        left: "10px",
+                        padding: "3px 20px 3px 20px",
+                        borderRadius: "6px",
+                        border: "1px solid silver",
+                        fontSize: "12px",
+                        color: "lightgreen",
+                        fontWeight: "bold",
+                        display: "inline-block",
+                        backgroundColor: "#00bcd4",
+                    } }, ("#" + (this.props.budgetNode.nodeIndex + 1)) + ". " + portalSettings.portalName),
+                tabobject));
     }
 }
 exports.ExplorerNode = ExplorerNode;

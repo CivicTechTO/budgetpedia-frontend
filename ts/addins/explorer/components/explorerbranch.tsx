@@ -37,8 +37,6 @@ import * as Radium from 'radium'
 
 let { StyleRoot }  = Radium
 
-// console.log('StyleRoot',StyleRoot)
-
 const animations = {
   fadeIn: {
     animation: 'x .5s',

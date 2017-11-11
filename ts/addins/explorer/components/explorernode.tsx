@@ -14,6 +14,19 @@ var { Component } = React
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 import { Tabs, Tab } from 'material-ui/Tabs'
+
+import { fadeIn } from 'react-animations'
+import * as Radium from 'radium'
+
+let { StyleRoot }  = Radium
+
+const animations = {
+  fadeIn: {
+    animation: 'x .7s',
+    animationName: Radium.keyframes(fadeIn, 'fadeIn')
+  },
+}
+
 import {
     ChartParms,
     PortalConfig,
@@ -44,10 +57,11 @@ interface ExplorerNodeProps {
     onCallAnalystNotes: Function,
 }
 
-class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]}> {
+class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[],animation:any}> {
 
     state = {
         nodeCells:[],
+        animation:animations.fadeIn,
     }
 
     waitafteraction:number = 0
@@ -434,7 +448,7 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
 
         let { portalConfig:portalSettings } = this.props.budgetNode
 
-        return <div style={
+        return <StyleRoot style = {{display:'inline-block'}}><div style={[
                 { 
                     position:"relative", 
                     display: "inline-block", 
@@ -443,7 +457,9 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
                     verticalAlign:"top",
                     width:"400px",
                     borderRight:"1px solid silver",
-                }
+                },
+                this.state.animation
+                ]
             }>
             <div style={
                 { 
@@ -463,7 +479,7 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
 
             { tabobject }
 
-        </div>
+        </div></StyleRoot>
     }
 }
 
