@@ -402,11 +402,12 @@ let MainBar = class extends React.Component<any, any> {
 
                 { menusidebar }
 
-                {
+                { // suppressed TODO: remove
                     workingmessagestate
                         ? <div
                             style={
                                 {
+                                    display:'none',
                                     position: "absolute",
                                     top: "54px",
                                     left:0,

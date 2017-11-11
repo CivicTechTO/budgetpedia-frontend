@@ -189,6 +189,7 @@ let MainBar = class extends React.Component {
             menusidebar,
             workingmessagestate
                 ? React.createElement("div", { style: {
+                        display: 'none',
                         position: "absolute",
                         top: "54px",
                         left: 0,
