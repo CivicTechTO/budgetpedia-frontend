@@ -588,33 +588,40 @@ class ExplorerCell extends Component {
             }
             return years;
         };
-        let yearselection = React.createElement("div", { style: { paddingBottom: "3px" } },
-            React.createElement("span", { style: { fontStyle: "italic", verticalAlign: '25px', lineHeight: '48px' } },
-                "Select ",
-                (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? 'year' : 'years',
-                ": "),
-            (yearScope != constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? (React.createElement(DropDownMenu_1.default, { value: leftYear, style: {}, onChange: (e, key, payload) => {
-                    this.onChangeChartYears(payload, rightYear);
-                } }, yearsoptions())) : null,
-            (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? null
-                : ((yearScope == constants_1.TimeScope[constants_1.TimeScope.TwoYears]) ? React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, ":")
-                    : React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, "-")),
-            React.createElement(DropDownMenu_1.default, { value: rightYear, style: {}, onChange: (e, key, payload) => {
-                    this.onChangeChartYears(leftYear, payload);
-                } }, yearsoptions()));
+        let yearselection = () => {
+            let height = this.props.showControls ? "53px" : "12px";
+            return (React.createElement("div", { style: {
+                    height: height,
+                    transition: 'height .5s'
+                } }, this.props.showControls ? React.createElement("div", { style: { paddingBottom: "3px" } },
+                React.createElement("span", { style: { fontStyle: "italic", verticalAlign: '25px', lineHeight: '48px' } },
+                    "Select ",
+                    (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? 'year' : 'years',
+                    ": "),
+                (yearScope != constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? (React.createElement(DropDownMenu_1.default, { value: leftYear, style: {}, onChange: (e, key, payload) => {
+                        this.onChangeChartYears(payload, rightYear);
+                    } }, yearsoptions())) : null,
+                (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? null
+                    : ((yearScope == constants_1.TimeScope[constants_1.TimeScope.TwoYears]) ? React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, ":")
+                        : React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, "-")),
+                React.createElement(DropDownMenu_1.default, { value: rightYear, style: {}, onChange: (e, key, payload) => {
+                        this.onChangeChartYears(leftYear, payload);
+                    } }, yearsoptions())) : React.createElement("div", { style: { height: "12px" } })));
+        };
+        let controlBarHeight = this.props.showControls ? "52px" : "0px";
         return React.createElement("div", null,
-            (this.props.showControls) ? React.createElement("div", { style: { padding: "3px" } },
-                React.createElement("div", { style: { float: 'right' } },
-                    informationprompt(),
-                    datatable,
-                    harmonizeoptions),
-                timescopes,
-                chartoptions) : null,
+            React.createElement("div", { style: { height: controlBarHeight, transition: 'height .5s', overflow: 'hidden' } },
+                React.createElement("div", { style: { padding: "3px" } },
+                    React.createElement("div", { style: { float: 'right' } },
+                        informationprompt(),
+                        datatable,
+                        harmonizeoptions),
+                    timescopes,
+                    chartoptions)),
             React.createElement("div", { style: { position: "relative" } },
                 chart,
                 drilldownprompt),
-            React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, (this.props.showControls) ?
-                yearselection : React.createElement("div", { style: { height: "12px" } })),
+            React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, yearselection()),
             this.state.datatableopen ? React.createElement(datatable_1.default, { specifications: this.datatableparms.tableparms, onRequestClose: this.onReqestCloseDataTable }) : null);
     }
 }

@@ -932,8 +932,16 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
             return years
         } 
 
-        let yearselection = 
-            <div style={{paddingBottom:"3px"}}>
+        let yearselection = () => {
+            let height = this.props.showControls?"53px":"12px"
+
+            return (<div style = {
+                {
+                    height:height,
+                    transition:'height .5s'
+                }
+            }>
+                {this.props.showControls?<div style={{paddingBottom:"3px"}}>
                 <span style={{ fontStyle: "italic",verticalAlign:'25px',lineHeight:'48px' }}>Select {
                     (yearScope == TimeScope[TimeScope.OneYear])? 'year': 'years'}: </span>
                     
@@ -971,27 +979,33 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                     { yearsoptions() }
 
                 </DropDownMenu>
-            </div>
+            </div>:<div style={{height:"12px"}}></div>}
+            </div>) 
+        }
 
-        return <div>
+        let controlBarHeight = this.props.showControls?"52px":"0px"
 
-            {(this.props.showControls)?<div style={{ padding: "3px" }}>
+        return <div >
 
-                <div style={{float:'right'}}>
+            <div style = {{height:controlBarHeight,transition:'height .5s',overflow:'hidden'}}>
+                <div style={{ padding: "3px" }}>
 
-                    { informationprompt() }
+                    <div style={{float:'right'}}>
 
-                    { datatable }
+                        { informationprompt() }
 
-                    { harmonizeoptions }
+                        { datatable }
+
+                        { harmonizeoptions }
+
+                    </div>
+
+                    { timescopes }
+
+                    { chartoptions }
 
                 </div>
-
-                { timescopes }
-
-                { chartoptions }
-
-            </div>:null}
+            </div>
 
             <div style={{position:"relative"}}>
 
@@ -1003,8 +1017,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
             <div style={{ padding: "3px", textAlign:"center" }}>
 
-                {(this.props.showControls)?
-                    yearselection:<div style={{height:"12px"}}></div>}
+                { yearselection() }
 
                 {//this.props.showControls?<div style={{display:"inline-block"}} >
 
