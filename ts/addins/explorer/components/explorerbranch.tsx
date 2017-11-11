@@ -2210,7 +2210,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     //     this.animations.controls = this.animations.buttons = animations.zoomOutLeft
     // }
 
-    let maxheight = (branchDeclaration.showOptions)?'100px':'0'
+    let maxheight = (branchDeclaration.showOptions)?'130px':'0'
     let height = (branchDeclaration.showOptions)?'50px':'0'
     let maxwidth = (branchDeclaration.showOptions)?'400px':'0'
 
