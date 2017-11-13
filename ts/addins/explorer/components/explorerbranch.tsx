@@ -1745,9 +1745,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     taxonomychoices = {
         FUNCTIONAL:"Internal budget: Programs by function",
         STRUCTURAL:"Internal budget: Programs by org type",
-        ACTUALEXPENSES:"Actual: Expenses by function",
-        ACTUALREVENUES:"Actual: Revenues by type",
-        EXPENDITURES:"Actual: Expenses by type",
+        ACTUALEXPENSES:"Audited actual: Expenses by function",
+        ACTUALREVENUES:"Audited actual: Revenues by type",
+        EXPENDITURES:"Audited actual: Expenses by type",
     }
 
 
