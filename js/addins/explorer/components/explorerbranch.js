@@ -1307,7 +1307,7 @@ class ExplorerBranch extends Component {
         let shareurl = React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") });
         let maxheight = (branchDeclaration.showOptions) ? '130px' : '0';
         let height = (branchDeclaration.showOptions) ? '52px' : '0';
-        let maxwidth = (branchDeclaration.showOptions) ? '400px' : '0';
+        let maxwidth = (branchDeclaration.showOptions) ? '600px' : '0';
         return React.createElement(StyleRoot, null,
             React.createElement("div", { style: { marginBottom: '12px' } },
                 " ",

@@ -2199,7 +2199,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let maxheight = (branchDeclaration.showOptions)?'130px':'0'
     let height = (branchDeclaration.showOptions)?'52px':'0'
-    let maxwidth = (branchDeclaration.showOptions)?'400px':'0'
+    let maxwidth = (branchDeclaration.showOptions)?'600px':'0'
 
     return <StyleRoot>
     <div style={{marginBottom:'12px'}} > { <div >
