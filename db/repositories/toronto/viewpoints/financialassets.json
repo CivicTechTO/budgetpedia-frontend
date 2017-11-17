@@ -2,46 +2,59 @@
     "Index": 0,
     "NamingConfigRef": "AUDITED",
     "Components": {
-            "CASH": {
-                "Index": 0,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
-            },
-            "TAXAR": {
-                "Index": 1,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
-            },
-            "TDSBAR": {
-                "Index": 2,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
-            },
-            "AR": {
-                "Index": 3,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
-            },
-            "GBE": {
-                "Index": 4,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
-            },
-            "INVEST": {
-                "Index": 5,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
-            },
-            "OTHER": {
-                "Index": 6,
-                "NamingConfigRef": "ASSETS",
-                "Baseline": true
+        "CASHAR":{
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "CASH": {
+                    "Index": 0,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                },
+                "TAXAR": {
+                    "Index": 1,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                },
+                "TDSBAR": {
+                    "Index": 2,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                },
+                "AR": {
+                    "Index": 3,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                }
             }
+        },
+        "INVESTOTHER":{
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "GBE": {
+                    "Index": 0,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                },
+                "INVEST": {
+                    "Index": 1,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                },
+                "OTHER": {
+                    "Index": 2,
+                    "NamingConfigRef": "ASSETS",
+                    "Baseline": true
+                }
+            }
+        }
     },
     "Meta":{
         "Lookups": {
             "Taxonomy": {
-                "ASSET": "Financial Assets"
+                "CASHAR": "Cash and Receivables",
+                "INVESTOTHER": "Investment & Other"
             }
         },
         "NamingConfigurations": {
@@ -63,6 +76,16 @@
                 "Contents": {
                     "Name": "Assets",
                     "Alias": "Audited Financial Assets"
+                }
+            },
+            "CATEGORY": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Grouping",
+                    "Alias": "Financial Asset Groupings"
                 }
             }
         }
