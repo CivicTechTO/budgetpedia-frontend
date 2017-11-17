@@ -1,0 +1,9 @@
+{
+    "AR": "Accounts receivable",
+    "CASH": "Cash",
+    "GBE": "Investments in government business enterprises",
+    "INVEST": "Investments",
+    "OTHER": "Other assets",
+    "TAXAR": "Property taxes receivable",
+    "TDSBAR": "Due from Toronto District School Board"
+}

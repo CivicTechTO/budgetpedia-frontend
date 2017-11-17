@@ -1068,9 +1068,10 @@ class ExplorerBranch extends Component {
         this.taxonomychoices = {
             FUNCTIONAL: "Internal budget: Programs by function",
             STRUCTURAL: "Internal budget: Programs by org type",
-            ACTUALEXPENSES: "Actual: Expenses by function",
-            ACTUALREVENUES: "Actual: Revenues by type",
-            EXPENDITURES: "Actual: Expenses by type",
+            ACTUALEXPENSES: "Audited actual: Expenses by function",
+            ACTUALREVENUES: "Audited actual: Revenues by type",
+            EXPENDITURES: "Audited actual: Expenses by type",
+            FINANCIALASSETS: "Audited actual: Financial assets",
         };
     }
     componentWillMount() {
@@ -1157,7 +1158,8 @@ class ExplorerBranch extends Component {
                     React.createElement(Divider_1.default, null),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
-                    React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }))));
+                    React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }),
+                    React.createElement(MenuItem_1.default, { value: 'FINANCIALASSETS', primaryText: this.taxonomychoices.FINANCIALASSETS }))));
         let governmentselection = React.createElement("div", { style: { display: 'inline-block' } },
             React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                 React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
@@ -1173,11 +1175,13 @@ class ExplorerBranch extends Component {
                             React.createElement("em", null, "This data drills down to Account Categories:")),
                         React.createElement(MenuItem_1.default, { key: 3, disabled: true, value: 'VARIANCE', primaryText: "PDF Variance Reports" })];
                 case 'ACTUALEXPENSES':
-                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALEXPENSES', primaryText: "Audited statements 1998 - 2015" })];
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALEXPENSES', primaryText: "Audited statements 1998 - 2016" })];
                 case 'ACTUALREVENUES':
-                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALREVENUES', primaryText: "Audited statements 1998 - 2015" })];
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'ACTUALREVENUES', primaryText: "Audited statements 1998 - 2016" })];
                 case 'EXPENDITURES':
-                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2015" })];
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2016" })];
+                case 'FINANCIALASSETS':
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'FINANCIALASSETS', primaryText: "Audited statements 2010 - 2016" })];
             }
         };
         let versionselection = React.createElement("div", { style: { display: 'inline-block' } },
@@ -1199,6 +1203,8 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Revenues', primaryText: "Revenues" })];
                 case 'EXPENDITURES':
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Expenditure', primaryText: "Expenses" })];
+                case 'FINANCIALASSETS':
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'Assets', primaryText: "Assets" })];
             }
         };
         let aspectselection = React.createElement("div", { style: { display: 'inline-block' } },

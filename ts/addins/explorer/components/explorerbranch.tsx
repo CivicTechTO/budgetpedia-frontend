@@ -1748,6 +1748,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         ACTUALEXPENSES:"Audited actual: Expenses by function",
         ACTUALREVENUES:"Audited actual: Revenues by type",
         EXPENDITURES:"Audited actual: Expenses by type",
+        FINANCIALASSETS:"Audited actual: Financial assets",
     }
 
 
@@ -1787,6 +1788,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'ACTUALEXPENSES'} primaryText={this.taxonomychoices.ACTUALEXPENSES}/>
             <MenuItem value={'ACTUALREVENUES'} primaryText={this.taxonomychoices.ACTUALREVENUES}/>
             <MenuItem value={'EXPENDITURES'} primaryText={this.taxonomychoices.EXPENDITURES}/>
+            <MenuItem value={'FINANCIALASSETS'} primaryText={this.taxonomychoices.FINANCIALASSETS}/>
 
         </DropDownMenu>
         </div>
@@ -1823,11 +1825,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 </MenuItem>,
                 <MenuItem key = {3} disabled value={'VARIANCE'} primaryText="PDF Variance Reports"/>]
             case 'ACTUALEXPENSES':
-                return [<MenuItem key = {4} value={'ACTUALEXPENSES'} primaryText="Audited statements 1998 - 2015"/>]
+                return [<MenuItem key = {4} value={'ACTUALEXPENSES'} primaryText="Audited statements 1998 - 2016"/>]
             case 'ACTUALREVENUES':
-                return [<MenuItem key = {4} value={'ACTUALREVENUES'} primaryText="Audited statements 1998 - 2015"/>]
+                return [<MenuItem key = {4} value={'ACTUALREVENUES'} primaryText="Audited statements 1998 - 2016"/>]
             case 'EXPENDITURES':
-                return [<MenuItem key = {4} value={'EXPENDITURES'} primaryText="Audited statements 1998 - 2015"/>]
+                return [<MenuItem key = {4} value={'EXPENDITURES'} primaryText="Audited statements 1998 - 2016"/>]
+            case 'FINANCIALASSETS':
+                return [<MenuItem key = {4} value={'FINANCIALASSETS'} primaryText="Audited statements 2010 - 2016"/>]
         }
     }
 
@@ -1866,6 +1870,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 return [<MenuItem key = {4} value={'Revenues'} primaryText="Revenues"/>]
             case 'EXPENDITURES':
                 return [<MenuItem key = {4} value={'Expenditure'} primaryText="Expenses"/>]
+            case 'FINANCIALASSETS':
+                return [<MenuItem key = {4} value={'Assets'} primaryText="Assets"/>]
         }
     }
 

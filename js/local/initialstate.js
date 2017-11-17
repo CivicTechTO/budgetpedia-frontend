@@ -126,6 +126,7 @@ let branchDefaults = {
         'ACTUALEXPENSES': 'ACTUALEXPENSES',
         'ACTUALREVENUES': 'ACTUALREVENUES',
         'EXPENDITURES': 'EXPENDITURES',
+        'FINANCIALASSETS': 'FINANCIALASSETS',
     },
     defaultAspects: {
         'SUMMARY': 'Expenses',
@@ -133,6 +134,7 @@ let branchDefaults = {
         'ACTUALEXPENSES': 'Expenses',
         'ACTUALREVENUES': 'Revenues',
         'EXPENDITURES': 'Expenditure',
+        'FINANCIALASSETS': 'Assets',
     },
     inflationAdjusted: true,
     nodeList: [],

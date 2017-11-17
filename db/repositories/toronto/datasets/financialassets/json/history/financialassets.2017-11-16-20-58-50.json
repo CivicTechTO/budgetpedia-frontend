@@ -1,0 +1,360 @@
+{
+    "MetaData": {
+        "InflationAdjustable": true,
+        "DatasetName": "Assets",
+        "DatasetTitle": "Audited Financial Assets",
+        "Dataseries": [
+            {
+                "Type": "Components"
+            }
+        ],
+        "Dimensions": [
+            "Asset"
+        ],
+        "DimensionNames": {
+            "Program": {
+                "Instance": "Asset",
+                "Collection": "Actual Financial Assets"
+            }
+        },
+        "CellTitles": {
+            "Components": "Financial Assets"
+        },
+        "Units": "DOLLAR",
+        "UnitsAlias": "$000's",
+        "UnitRatio": 1000,
+        "CommonDimension": false,
+        "ReferenceYear": 2016,
+        "InflationReferenceYear": 2016,
+        "YearsRange": {
+            "start": 2010,
+            "end": 2016
+        }
+    },
+    "Data": {
+        "Adjusted": {
+            "CASH": {
+                "years": {
+                    "2010": 552857,
+                    "2011": 538281,
+                    "2012": 496093,
+                    "2013": 641055,
+                    "2014": 498059,
+                    "2015": 214100,
+                    "2016": 1523411
+                }
+            },
+            "AR": {
+                "years": {
+                    "2010": 1184336,
+                    "2011": 1308932,
+                    "2012": 1307233,
+                    "2013": 1056604,
+                    "2014": 1114235,
+                    "2015": 1246990,
+                    "2016": 1024974
+                }
+            },
+            "TAXAR": {
+                "years": {
+                    "2010": 344736,
+                    "2011": 272090,
+                    "2012": 246849,
+                    "2013": 259718,
+                    "2014": 266942,
+                    "2015": 250831,
+                    "2016": 266452
+                }
+            },
+            "OTHER": {
+                "years": {
+                    "2010": 128629,
+                    "2011": 143798,
+                    "2012": 177935,
+                    "2013": 264043,
+                    "2014": 277248,
+                    "2015": 248999,
+                    "2016": 217726
+                }
+            },
+            "INVEST": {
+                "years": {
+                    "2010": 3780562,
+                    "2011": 3894677,
+                    "2012": 4845290,
+                    "2013": 5055148,
+                    "2014": 4836084,
+                    "2015": 5370027,
+                    "2016": 4335747
+                }
+            },
+            "TDSBAR": {
+                "years": {
+                    "2010": 38807,
+                    "2011": 33637,
+                    "2012": 28947,
+                    "2013": 24300,
+                    "2014": 17996,
+                    "2015": 11436,
+                    "2016": 4695
+                }
+            },
+            "GBE": {
+                "years": {
+                    "2010": 1445778,
+                    "2011": 1912014,
+                    "2012": 1948698,
+                    "2013": 1991320,
+                    "2014": 1908564,
+                    "2015": 2110906,
+                    "2016": 2111999
+                }
+            }
+        },
+        "Nominal": {
+            "CASH": {
+                "years": {
+                    "2010": 481734,
+                    "2011": 483124,
+                    "2012": 451938,
+                    "2013": 591190,
+                    "2014": 470865,
+                    "2015": 205453,
+                    "2016": 1492647
+                }
+            },
+            "AR": {
+                "years": {
+                    "2010": 1031976,
+                    "2011": 1174808,
+                    "2012": 1190882,
+                    "2013": 974415,
+                    "2014": 1053398,
+                    "2015": 1196625,
+                    "2016": 1004275
+                }
+            },
+            "TAXAR": {
+                "years": {
+                    "2010": 300387,
+                    "2011": 244209,
+                    "2012": 224878,
+                    "2013": 239516,
+                    "2014": 252367,
+                    "2015": 240700,
+                    "2016": 261071
+                }
+            },
+            "OTHER": {
+                "years": {
+                    "2010": 112081,
+                    "2011": 129063,
+                    "2012": 162098,
+                    "2013": 243504,
+                    "2014": 262110,
+                    "2015": 238942,
+                    "2016": 213329
+                }
+            },
+            "INVEST": {
+                "years": {
+                    "2010": 3294207,
+                    "2011": 3495596,
+                    "2012": 4414034,
+                    "2013": 4661928,
+                    "2014": 4572035,
+                    "2015": 5153137,
+                    "2016": 4248189
+                }
+            },
+            "TDSBAR": {
+                "years": {
+                    "2010": 33815,
+                    "2011": 30190,
+                    "2012": 26371,
+                    "2013": 22410,
+                    "2014": 17013,
+                    "2015": 10974,
+                    "2016": 4600
+                }
+            },
+            "GBE": {
+                "years": {
+                    "2010": 1259784,
+                    "2011": 1716093,
+                    "2012": 1775254,
+                    "2013": 1836423,
+                    "2014": 1804357,
+                    "2015": 2025649,
+                    "2016": 2069348
+                }
+            }
+        }
+    },
+    "Notes": {},
+    "Allocations": {},
+    "Headers": {
+        "2010": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1aCaqQBIswJZe6sDjDy6v0UTXyCvhr4hm",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2010 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=112omZZfSqnUqOrIPTzXkpMkyhrSteqPY",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2010,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 6513984,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2011": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1srRsTj50-AEg3Ek4oGM_Wp5E-MyrX91h",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2011 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1JdBAbJMwTHbRo2YXbOSEEDMf9FjrQgzY",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2011,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 7273083,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2012": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1CIPgaXcspMu8OEmJyPmmp77JJv-IpbMu",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2012 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1kUQXO68MIFRIpm4gUxQGkyI_wcy1Latc",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2012,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 8245455,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2013": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1mRuzrtZQMbcPIUYYaSDMTxaWf6f_r2SO",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2013 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1HzWWl3Ub1VwVA3zSlHMxvSY52_qpgixU",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2013,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 8569386,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2014": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1Ik6TZco-Uj9GO2nanmClaES__ZAzBiQW",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2014 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1kbeqzuF0QDCTtoDUeHjmdMyiPQWiTG0I",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2014,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 8432145,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2015": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1ZjxsffTJiaD7n116q5wGdbM-dXz6tnN7",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2015 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1ueIjv7nhfuD5Hi761sfIgmdneonaobNt",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2015,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 9071480,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2016": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=11aDq6m7MAZhzj-SWKlrQTGqGjSN2qnfF",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2016 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "p.5",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1rt5a54oeFdqZ3bzgrYX3r3D8Sv5pft3P",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2016,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 9293459,
+            "INTAKE_DATETIME": "2017-11-16-15-31-21",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        }
+    },
+    "Messages": null
+}
