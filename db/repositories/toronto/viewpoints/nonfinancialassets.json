@@ -2,53 +2,20 @@
     "Index": 0,
     "NamingConfigRef": "AUDITED",
     "Components": {
-        "SALARIES": {
+        "TANGIBLEASSETS": {
             "Index": 1,
-            "NamingConfigRef": "EXPENDITURE",
+            "NamingConfigRef": "TANGIBLE",
             "Baseline":true
         },
-        "ALLOTHEREXPENSES": {
-            "Index": 0,
-            "NamingConfigRef": "CATEGORY",
-            "Components": {
-                "CONTRACTED": {
-                    "Index": 0,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                },
-                "INTEREST": {
-                    "Index": 1,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                },
-                "AMORTIZATION": {
-                    "Index": 2,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                },
-                "OTHER": {
-                    "Index": 3,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                },
-                "MATERIALS": {
-                    "Index": 4,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                },
-                "TRANSFERS": {
-                    "Index": 5,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                }
-            }
+        "INVENTORIES": {
+            "Index": 1,
+            "NamingConfigRef": "TANGIBLE",
+            "Baseline":true
         }
     },
     "Meta":{
         "Lookups": {
-            "Taxonomy": {
-                "ALLOTHEREXPENSES": "Non-salary expenses"
-            }
+            "Taxonomy": {}
         },
         "NamingConfigurations": {
             "AUDITED": {
@@ -61,24 +28,14 @@
                     "Alias": "Audited Statement"
                 }
             },
-            "CATEGORY": {
+            "TANGIBLE": {
                 "Instance": {
                     "Name": "Type",
                     "Alias": "Audited"
                 },
                 "Contents": {
                     "Name": "Expenses",
-                    "Alias": "Audited Expenses by Object"
-                }
-            },
-            "EXPENDITURE": {
-                "Instance": {
-                    "Name": "Type",
-                    "Alias": "Expenses"
-                },
-                "Contents": {
-                    "Name": "Revenues",
-                    "Alias": "Audited Expenses by Object"
+                    "Alias": "Audited Tangible Assets"
                 }
             }
         }

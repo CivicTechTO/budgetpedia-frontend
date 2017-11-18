@@ -242,6 +242,7 @@ let branchDefaults:BranchSettings = {
         'ACTUALREVENUES':'ACTUALREVENUES',
         'EXPENDITURES':'EXPENDITURES',
         'FINANCIALASSETS':'FINANCIALASSETS',
+        'NONFINANCIALASSETS':'NONFINANCIALASSETS',
     },
     defaultAspects:{ // version aspects
         'SUMMARY':'Expenses',
@@ -250,6 +251,7 @@ let branchDefaults:BranchSettings = {
         'ACTUALREVENUES':'Revenues',
         'EXPENDITURES':'Expenditure',
         'FINANCIALASSETS':'Assets',
+        'NONFINANCIALASSETS':'TangibleAssets',
     },
     // chartType: "ColumnChart",
     inflationAdjusted: true,

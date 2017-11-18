@@ -1072,6 +1072,7 @@ class ExplorerBranch extends Component {
             ACTUALREVENUES: "Audited actual: Revenues by type",
             EXPENDITURES: "Audited actual: Expenses by type",
             FINANCIALASSETS: "Audited actual: Financial assets",
+            TANGIBLEASSETS: "Audited actual: Tangible assets",
         };
     }
     componentWillMount() {
@@ -1159,7 +1160,8 @@ class ExplorerBranch extends Component {
                     React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
                     React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }),
-                    React.createElement(MenuItem_1.default, { value: 'FINANCIALASSETS', primaryText: this.taxonomychoices.FINANCIALASSETS }))));
+                    React.createElement(MenuItem_1.default, { value: 'FINANCIALASSETS', primaryText: this.taxonomychoices.FINANCIALASSETS }),
+                    React.createElement(MenuItem_1.default, { value: 'NONFINANCIALASSETS', primaryText: this.taxonomychoices.TANGIBLEASSETS }))));
         let governmentselection = React.createElement("div", { style: { display: 'inline-block' } },
             React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                 React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
@@ -1182,6 +1184,8 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'EXPENDITURES', primaryText: "Audited statements 1998 - 2016" })];
                 case 'FINANCIALASSETS':
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'FINANCIALASSETS', primaryText: "Audited statements 2010 - 2016" })];
+                case 'NONFINANCIALASSETS':
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'NONFINANCIALASSETS', primaryText: "Audited statements 2010 - 2016" })];
             }
         };
         let versionselection = React.createElement("div", { style: { display: 'inline-block' } },
@@ -1205,6 +1209,8 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Expenditure', primaryText: "Expenses" })];
                 case 'FINANCIALASSETS':
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Assets', primaryText: "Assets" })];
+                case 'NONFINANCIALASSETS':
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'TangibleAssets', primaryText: "Tangible Assets" })];
             }
         };
         let aspectselection = React.createElement("div", { style: { display: 'inline-block' } },

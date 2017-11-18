@@ -559,6 +559,8 @@ class BudgetBranch {
             repository,
         } = branchSettings
 
+        // console.log('aspectName, AspectNameToDatasetName',aspectName, AspectNameToDatasetName)
+
         let datasetName = AspectNameToDatasetName[aspectName]
 
         let _promise = databaseapi.getViewpointData({

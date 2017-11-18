@@ -1749,6 +1749,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         ACTUALREVENUES:"Audited actual: Revenues by type",
         EXPENDITURES:"Audited actual: Expenses by type",
         FINANCIALASSETS:"Audited actual: Financial assets",
+        TANGIBLEASSETS:"Audited actual: Tangible assets",
     }
 
 
@@ -1789,6 +1790,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'ACTUALREVENUES'} primaryText={this.taxonomychoices.ACTUALREVENUES}/>
             <MenuItem value={'EXPENDITURES'} primaryText={this.taxonomychoices.EXPENDITURES}/>
             <MenuItem value={'FINANCIALASSETS'} primaryText={this.taxonomychoices.FINANCIALASSETS}/>
+            <MenuItem value={'NONFINANCIALASSETS'} primaryText={this.taxonomychoices.TANGIBLEASSETS}/>
 
         </DropDownMenu>
         </div>
@@ -1832,6 +1834,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 return [<MenuItem key = {4} value={'EXPENDITURES'} primaryText="Audited statements 1998 - 2016"/>]
             case 'FINANCIALASSETS':
                 return [<MenuItem key = {4} value={'FINANCIALASSETS'} primaryText="Audited statements 2010 - 2016"/>]
+            case 'NONFINANCIALASSETS':
+                return [<MenuItem key = {4} value={'NONFINANCIALASSETS'} primaryText="Audited statements 2010 - 2016"/>]
         }
     }
 
@@ -1872,6 +1876,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 return [<MenuItem key = {4} value={'Expenditure'} primaryText="Expenses"/>]
             case 'FINANCIALASSETS':
                 return [<MenuItem key = {4} value={'Assets'} primaryText="Assets"/>]
+            case 'NONFINANCIALASSETS':
+                return [<MenuItem key = {4} value={'TangibleAssets'} primaryText="Tangible Assets"/>]
         }
     }
 

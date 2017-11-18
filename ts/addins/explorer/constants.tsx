@@ -51,7 +51,8 @@ let AspectNameToDatasetName = {
     'Revenues':'Revenues',
     'Staffing':'Staffing',
     'Expenditure':'Expenditure',
-    'Assets':'FinancialAssets'
+    'Assets':'FinancialAssets',
+    'TangibleAssets':'NonFinancialAssets'
 }
 
 export var DatasetNameToAspectName = {

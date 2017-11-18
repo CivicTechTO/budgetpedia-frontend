@@ -1,21 +1,21 @@
 {
     "InflationAdjustable": true,
-    "DatasetName":"Expenditures",
-    "DatasetTitle": "Audited Expenses by Object",
+    "DatasetName":"NonFinancialAssets",
+    "DatasetTitle": "Audited Tangible Assets",
     "Dataseries": [
         {
             "Type": "Components"
         }
     ],
-    "Dimensions":["Expenditure"],
+    "Dimensions":["Asset"],
     "DimensionNames":{
         "Program":{
-            "Instance":"Expenditure",
-            "Collection":"Actual Expenses by Object"
+            "Instance":"Tangible Asset",
+            "Collection":"Actual Tangible Assets"
         }
     },
     "CellTitles": {
-        "Components": "Expense Categories"
+        "Components": "Tangible Financial Assets"
     },
     "Units": "DOLLAR",
     "UnitsAlias": "$000's",
