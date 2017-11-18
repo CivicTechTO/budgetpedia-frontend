@@ -235,7 +235,7 @@ let branchDefaults:BranchSettings = {
     version: 'SUMMARY',
     aspect: "Expenses",
     branchDataGeneration:0,
-    defaultVersions:{ // viewpoint versions
+    defaultVersions:{ // viewpoint versions -> datasets
         'FUNCTIONAL':'SUMMARY',
         'STRUCTURAL':'SUMMARY',
         'ACTUALEXPENSES':'ACTUALEXPENSES',
@@ -244,7 +244,7 @@ let branchDefaults:BranchSettings = {
         'FINANCIALASSETS':'FINANCIALASSETS',
         'NONFINANCIALASSETS':'NONFINANCIALASSETS',
     },
-    defaultAspects:{ // version aspects
+    defaultAspects:{ // version (viewpoint) aspects
         'SUMMARY':'Expenses',
         'PBFT':'Expenses',
         'ACTUALEXPENSES':'Expenses',

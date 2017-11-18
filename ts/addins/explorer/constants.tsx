@@ -46,6 +46,7 @@ let ChartCodeToGoogleChartType = {
 
 export { ChartCodeToGoogleChartType }
 
+// DatasetName means source file name here.
 let AspectNameToDatasetName = {
     'Expenses':'Expenses',
     'Revenues':'Revenues',
