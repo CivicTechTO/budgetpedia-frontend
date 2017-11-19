@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "count": "cloc ts"
+    "count": "cloc ts",
+    "build": "webpack --config config/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -62,6 +63,7 @@
     "@types/react": "^15.6.7",
     "@types/react-router-redux": "^4.0.51",
     "@types/react-tap-event-plugin": "0.0.30",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -74,9 +76,12 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
     "redux-devtools": "^3.4.1",
+    "ts-loader": "^3.1.1",
+    "typescript": "^2.6.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0",
+    "webpack": "^3.8.1",
     "when": "^3.7.8"
   }
 }

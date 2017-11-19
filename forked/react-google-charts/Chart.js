@@ -316,12 +316,18 @@ class Chart extends React.Component {
     this.props.options.colors = colors;
     this.chart.draw(view, this.props.options);
   }
-  render() {
+
+  render() { 
     // debug('render', this.props, this.state);
-    let divStyle= {height: this.props.height || this.props.options.height, width: this.props.width || this.props.options.width};
-    return <div id={this.state.graphID} style={divStyle}> Rendering Chart... </div>
+    let height = this.props.height || this.props.options.height
+    let width = this.props.width || this.props.options.width
+
+    let divStyle= {height, width: width}
+    return (
+       React.createElement('div', {id:this.state.graphID, style:divStyle},"Rendering Chart")
+      )
   }
-};
+}
 
 Chart.defaultProps = {
   chartType : 'LineChart',
