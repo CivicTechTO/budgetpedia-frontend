@@ -1750,6 +1750,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         EXPENDITURES:"Audited actual: Expenses by type",
         FINANCIALASSETS:"Audited actual: Financial assets",
         TANGIBLEASSETS:"Audited actual: Tangible assets",
+        LIABILITIES:"Audited actual: Liabilities",
     }
 
 
@@ -1791,6 +1792,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'EXPENDITURES'} primaryText={this.taxonomychoices.EXPENDITURES}/>
             <MenuItem value={'FINANCIALASSETS'} primaryText={this.taxonomychoices.FINANCIALASSETS}/>
             <MenuItem value={'NONFINANCIALASSETS'} primaryText={this.taxonomychoices.TANGIBLEASSETS}/>
+            <MenuItem value={'LIABILITIES'} primaryText={this.taxonomychoices.LIABILITIES}/>
 
         </DropDownMenu>
         </div>
@@ -1836,6 +1838,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 return [<MenuItem key = {4} value={'FINANCIALASSETS'} primaryText="Audited statements 2010 - 2016"/>]
             case 'NONFINANCIALASSETS':
                 return [<MenuItem key = {4} value={'NONFINANCIALASSETS'} primaryText="Audited statements 2010 - 2016"/>]
+            case 'LIABILITIES':
+                return [<MenuItem key = {4} value={'LIABILITIES'} primaryText="Audited statements 2010 - 2016"/>]
         }
     }
 
@@ -1862,6 +1866,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     // TODO externalize this; make it metadata-driven
     const aspectchoices = () => {
+        // console.log('branchdeclaration.viewpoint',branchDeclaration.viewpoint)
         switch (branchDeclaration.viewpoint) {
             case "FUNCTIONAL":
             case "STRUCTURAL":
@@ -1876,8 +1881,11 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 return [<MenuItem key = {4} value={'Expenditure'} primaryText="Expenses"/>]
             case 'FINANCIALASSETS':
                 return [<MenuItem key = {4} value={'Assets'} primaryText="Assets"/>]
-            case 'NONFINANCIALASSETS':
+            case 'NONFINANCIALASSETS': {
                 return [<MenuItem key = {4} value={'TangibleAssets'} primaryText="Tangible Assets"/>]
+                }
+            case 'LIABILITIES':
+                return [<MenuItem key = {4} value={'Liabilities'} primaryText="Liabilities"/>]
         }
     }
 

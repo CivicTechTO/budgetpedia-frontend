@@ -1,0 +1,42 @@
+NEWDATASET.txt
+
+To add a new dataset:
+
+In the front end code:
+
+In explorerbranch.tsx:
+
+~1752
+
+1. Add dictionary item to taxonomy choices. 
+This ony provides access to string for interface prompt.
+It is referenced in viewpoint selection below.
+
+~1797
+
+2. Add MenuItem for the viewpoint. This returns the viewpoint id for the system.
+
+~1838
+
+3. Add a dataset version for the Viewpoint. This returns the dataset name for the back end
+
+~1884
+
+4. Add an aspect for the viewpoint. This returns the filename for the dataset
+
+In constants.tsx:
+
+~54
+
+5. Add a lookup in dictionary AspectNameToDatasetName. Argument is the Aspect name, return value is the file name
+
+In initialstate.tsx:
+
+~246
+
+6. Add default dataset for the viewpoint, for the menu system
+
+~256
+
+7. Add default front end aspect for the viewpoint, for the menu system
+
