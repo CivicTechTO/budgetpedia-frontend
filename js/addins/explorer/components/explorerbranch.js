@@ -4,7 +4,6 @@ const React = require("react");
 var { Component } = React;
 const DropDownMenu_1 = require("material-ui/DropDownMenu");
 const MenuItem_1 = require("material-ui/MenuItem");
-const Divider_1 = require("material-ui/Divider");
 const Subheader_1 = require("material-ui/Subheader");
 const FontIcon_1 = require("material-ui/FontIcon");
 const IconButton_1 = require("material-ui/IconButton");
@@ -1066,14 +1065,14 @@ class ExplorerBranch extends Component {
                 itemlist);
         };
         this.taxonomychoices = {
-            FUNCTIONAL: "Internal budget: Programs by function",
-            STRUCTURAL: "Internal budget: Programs by org type",
-            ACTUALEXPENSES: "Audited actual: Expenses by function",
-            ACTUALREVENUES: "Audited actual: Revenues by type",
-            EXPENDITURES: "Audited actual: Expenses by type",
-            FINANCIALASSETS: "Audited actual: Financial assets",
-            TANGIBLEASSETS: "Audited actual: Tangible assets",
-            LIABILITIES: "Audited actual: Liabilities",
+            FUNCTIONAL: "Programs by function",
+            STRUCTURAL: "Programs by org type",
+            ACTUALEXPENSES: "Expenses by function",
+            ACTUALREVENUES: "Revenues by type",
+            EXPENDITURES: "Expenses by type",
+            FINANCIALASSETS: "Financial assets",
+            TANGIBLEASSETS: "Tangible assets",
+            LIABILITIES: "Liabilities",
         };
     }
     componentWillMount() {
@@ -1155,9 +1154,10 @@ class ExplorerBranch extends Component {
                 React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                         branch.selectViewpoint(value);
                     } },
+                    React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Internal Budget"),
                     React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
                     React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
-                    React.createElement(Divider_1.default, null),
+                    React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Audited Actual"),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALEXPENSES', primaryText: this.taxonomychoices.ACTUALEXPENSES }),
                     React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
                     React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }),

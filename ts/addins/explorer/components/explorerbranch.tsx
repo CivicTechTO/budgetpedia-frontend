@@ -1743,14 +1743,14 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     // }
 
     taxonomychoices = {
-        FUNCTIONAL:"Internal budget: Programs by function",
-        STRUCTURAL:"Internal budget: Programs by org type",
-        ACTUALEXPENSES:"Audited actual: Expenses by function",
-        ACTUALREVENUES:"Audited actual: Revenues by type",
-        EXPENDITURES:"Audited actual: Expenses by type",
-        FINANCIALASSETS:"Audited actual: Financial assets",
-        TANGIBLEASSETS:"Audited actual: Tangible assets",
-        LIABILITIES:"Audited actual: Liabilities",
+        FUNCTIONAL:"Programs by function",
+        STRUCTURAL:"Programs by org type",
+        ACTUALEXPENSES:"Expenses by function",
+        ACTUALREVENUES:"Revenues by type",
+        EXPENDITURES:"Expenses by type",
+        FINANCIALASSETS:"Financial assets",
+        TANGIBLEASSETS:"Tangible assets",
+        LIABILITIES:"Liabilities",
     }
 
 
@@ -1784,9 +1784,10 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             >
 
+            <div style={{padding:"3px",fontStyle:'italic'}} >Internal Budget</div>
             <MenuItem value={'FUNCTIONAL'} primaryText={this.taxonomychoices.FUNCTIONAL}/>
             <MenuItem value={'STRUCTURAL'} primaryText={this.taxonomychoices.STRUCTURAL}/>
-            <Divider />
+            <div style={{padding:"3px",fontStyle:'italic'}}>Audited Actual</div>
             <MenuItem value={'ACTUALEXPENSES'} primaryText={this.taxonomychoices.ACTUALEXPENSES}/>
             <MenuItem value={'ACTUALREVENUES'} primaryText={this.taxonomychoices.ACTUALREVENUES}/>
             <MenuItem value={'EXPENDITURES'} primaryText={this.taxonomychoices.EXPENDITURES}/>
