@@ -11,7 +11,7 @@ class App extends Component<any, any> {
         return (
             <div>
                 {
-                    React.cloneElement(this.props.children, {
+                    React.cloneElement(this.props.children as any, { // as any required for typescript 2.6.1
                         key: this.props.location.pathname
                     })
                 }
