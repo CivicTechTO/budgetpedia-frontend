@@ -1,0 +1,31 @@
+_META_START_,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=1aCaqQBIswJZe6sDjDy6v0UTXyCvhr4hm,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr,
+SOURCE_DOCUMENT_TITLE,2010 Consolidated Financial Statements,
+SOURCE_DOCUMENT_TABLE_LOCATION,,
+SOURCE_DOCUMENT_TABLE_TITLE,Statement of Financial Position,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=1BtUdeovN7GJlV9I5_74DfgrLVvrs9AJo,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,
+YEAR,2010,
+VERSION,Actual,
+ASPECT,Assets,
+NOTES_CONTENT,Dollar,
+NOTES_SEVERITY,,
+UNITS_NAME,Dollar,
+UNITS_CODE,DOLLAR,
+UNITS_MULTIPLIER,1000,
+TOTAL_AMOUNT,10899622,
+INTAKE_DATETIME,2017-11-19-02-36-13,
+INTAKE_OPERATOR_ID,Henrik,
+COLUMNS_CATEGORIES,"Asset:CODE,Asset:NAME",
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE",
+_META_END_,,
+BANKDEBT,Bank indebtedness (Note 6),135329
+AP,Accounts payable and accrued liabilities (Note 7),2443527
+DEFERREDREVENUE,Deferred revenue (Note 8),1439639
+OTHER,Other liabilities (Note 9),477004
+LANDFILL,Landfill closure and post-closure liabilities (Note 10),121058
+MORTGAGE,Mortgages payable (Note 11),803636
+LONGTERM,Net long-term debt (Note 12),2890472
+EMPLOYEEBENEFITS,Employee benefit liabilities (Note 13),2588957

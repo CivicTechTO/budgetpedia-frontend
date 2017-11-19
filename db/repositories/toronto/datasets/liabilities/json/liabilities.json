@@ -1,0 +1,382 @@
+{
+    "MetaData": {
+        "InflationAdjustable": true,
+        "DatasetName": "Liabilities",
+        "DatasetTitle": "Audited Liabilities",
+        "Dataseries": [
+            {
+                "Type": "Components"
+            }
+        ],
+        "Dimensions": [
+            "Asset"
+        ],
+        "DimensionNames": {
+            "Program": {
+                "Instance": "Asset",
+                "Collection": "Actual Liabilities"
+            }
+        },
+        "CellTitles": {
+            "Components": "Liabilities"
+        },
+        "Units": "DOLLAR",
+        "UnitsAlias": "$000's",
+        "UnitRatio": 1000,
+        "CommonDimension": false,
+        "ReferenceYear": 2016,
+        "InflationReferenceYear": 2017,
+        "YearsRange": {
+            "start": 2010,
+            "end": 2016
+        }
+    },
+    "Data": {
+        "Adjusted": {
+            "BANKDEBT": {
+                "years": {
+                    "2010": 155309,
+                    "2011": 161231,
+                    "2012": 54703,
+                    "2013": 60595,
+                    "2014": 80927,
+                    "2015": 103905,
+                    "2016": 67213
+                }
+            },
+            "AP": {
+                "years": {
+                    "2010": 2804288,
+                    "2011": 2825430,
+                    "2012": 2937526,
+                    "2013": 3182381,
+                    "2014": 2948078,
+                    "2015": 3274930,
+                    "2016": 3358066
+                }
+            },
+            "DEFERREDREVENUE": {
+                "years": {
+                    "2010": 1652187,
+                    "2011": 1685281,
+                    "2012": 1728002,
+                    "2013": 1834812,
+                    "2014": 2123351,
+                    "2015": 2335369,
+                    "2016": 2466451
+                }
+            },
+            "OTHER": {
+                "years": {
+                    "2010": 547429,
+                    "2011": 619194,
+                    "2012": 657224,
+                    "2013": 701650,
+                    "2014": 687078,
+                    "2015": 733721,
+                    "2016": 702719
+                }
+            },
+            "LANDFILL": {
+                "years": {
+                    "2010": 138931,
+                    "2011": 135304,
+                    "2012": 136315,
+                    "2013": 134213,
+                    "2014": 147362,
+                    "2015": 147529,
+                    "2016": 140947
+                }
+            },
+            "MORTGAGE": {
+                "years": {
+                    "2010": 922284,
+                    "2011": 861908,
+                    "2012": 803764,
+                    "2013": 695049,
+                    "2014": 612867,
+                    "2015": 532334,
+                    "2016": 370582
+                }
+            },
+            "LONGTERM": {
+                "years": {
+                    "2010": 3317220,
+                    "2011": 3636885,
+                    "2012": 4060678,
+                    "2013": 4181421,
+                    "2014": 4419834,
+                    "2015": 4910893,
+                    "2016": 5176956
+                }
+            },
+            "EMPLOYEEBENEFITS": {
+                "years": {
+                    "2010": 2971189,
+                    "2011": 3093113,
+                    "2012": 3333711,
+                    "2013": 3433566,
+                    "2014": 3607200,
+                    "2015": 3750319,
+                    "2016": 3834275
+                }
+            }
+        },
+        "Nominal": {
+            "BANKDEBT": {
+                "years": {
+                    "2010": 135329,
+                    "2011": 144710,
+                    "2012": 49834,
+                    "2013": 55882,
+                    "2014": 76508,
+                    "2015": 99708,
+                    "2016": 65856
+                }
+            },
+            "AP": {
+                "years": {
+                    "2010": 2443527,
+                    "2011": 2535913,
+                    "2012": 2676071,
+                    "2013": 2934836,
+                    "2014": 2787113,
+                    "2015": 3142659,
+                    "2016": 3290252
+                }
+            },
+            "DEFERREDREVENUE": {
+                "years": {
+                    "2010": 1439639,
+                    "2011": 1512593,
+                    "2012": 1574201,
+                    "2013": 1692089,
+                    "2014": 2007416,
+                    "2015": 2241046,
+                    "2016": 2416642
+                }
+            },
+            "OTHER": {
+                "years": {
+                    "2010": 477004,
+                    "2011": 555746,
+                    "2012": 598728,
+                    "2013": 647071,
+                    "2014": 649564,
+                    "2015": 704087,
+                    "2016": 688528
+                }
+            },
+            "LANDFILL": {
+                "years": {
+                    "2010": 121058,
+                    "2011": 121440,
+                    "2012": 124182,
+                    "2013": 123773,
+                    "2014": 139316,
+                    "2015": 141570,
+                    "2016": 138101
+                }
+            },
+            "MORTGAGE": {
+                "years": {
+                    "2010": 803636,
+                    "2011": 773590,
+                    "2012": 732225,
+                    "2013": 640984,
+                    "2014": 579405,
+                    "2015": 510834,
+                    "2016": 363098
+                }
+            },
+            "LONGTERM": {
+                "years": {
+                    "2010": 2890472,
+                    "2011": 3264220,
+                    "2012": 3699256,
+                    "2013": 3856165,
+                    "2014": 4178512,
+                    "2015": 4712547,
+                    "2016": 5072410
+                }
+            },
+            "EMPLOYEEBENEFITS": {
+                "years": {
+                    "2010": 2588957,
+                    "2011": 2776167,
+                    "2012": 3036993,
+                    "2013": 3166482,
+                    "2014": 3410247,
+                    "2015": 3598848,
+                    "2016": 3756844
+                }
+            }
+        }
+    },
+    "Notes": {},
+    "Allocations": {},
+    "Headers": {
+        "2010": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1aCaqQBIswJZe6sDjDy6v0UTXyCvhr4hm",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2010 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1BtUdeovN7GJlV9I5_74DfgrLVvrs9AJo",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2010,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 10899622,
+            "INTAKE_DATETIME": "2017-11-19-02-36-13",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2011": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1srRsTj50-AEg3Ek4oGM_Wp5E-MyrX91h",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2011 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1AtjihDTYU1kK30VVBkj1hBr4wzZzABRu",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2011,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 11684379,
+            "INTAKE_DATETIME": "2017-11-19-02-36-13",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2012": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1CIPgaXcspMu8OEmJyPmmp77JJv-IpbMu",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2012 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1AUdgZBUrAlMm72dSRUTBpCbgg4go8dqJ",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2012,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 12491490,
+            "INTAKE_DATETIME": "2017-11-19-02-36-13",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2013": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1mRuzrtZQMbcPIUYYaSDMTxaWf6f_r2SO",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2013 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1fV7sw1rHFknDN-2tk61aB_FaV6lygAxu",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2013,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 13117282,
+            "INTAKE_DATETIME": "2017-11-19-02-36-13",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2014": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1Ik6TZco-Uj9GO2nanmClaES__ZAzBiQW",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2014 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=11a9JJq7X9DWnF10-YwGnaNJ-EGxLAPLu",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2014,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 13828081,
+            "INTAKE_DATETIME": "2017-11-19-02-36-13",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2015": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1ZjxsffTJiaD7n116q5wGdbM-dXz6tnN7",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2015 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1qCIyXFzq04FngaF1vzcFNjb3gS4qo6bL",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2015,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 15151299,
+            "INTAKE_DATETIME": "2017-11-19-02-36-13",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2016": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=11aDq6m7MAZhzj-SWKlrQTGqGjSN2qnfF",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr",
+            "SOURCE_DOCUMENT_TITLE": "2016 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "p.5",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "Statement of Financial Position",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1-n83QLpjTLB19aLrtPPu99CsnHFZAb2I",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2016,
+            "VERSION": "Actual",
+            "ASPECT": "Assets",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 15791731,
+            "INTAKE_DATETIME": "2017-11-19-02-36-14",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Asset:CODE,Asset:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        }
+    },
+    "Messages": null
+}

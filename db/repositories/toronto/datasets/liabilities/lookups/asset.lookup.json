@@ -1,0 +1,10 @@
+{
+    "AP": "Accounts payable and accrued liabilities",
+    "BANKDEBT": "Bank indebtedness",
+    "DEFERREDREVENUE": "Deferred revenue",
+    "EMPLOYEEBENEFITS": "Employee benefit liabilities",
+    "LANDFILL": "Landfill closure and post-closure liabilities",
+    "LONGTERM": "Net long-term debt",
+    "MORTGAGE": "Mortgages payable",
+    "OTHER": "Other liabilities"
+}

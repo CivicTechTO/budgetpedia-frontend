@@ -1,21 +1,21 @@
 {
     "InflationAdjustable": true,
-    "DatasetName":"Expenditures",
-    "DatasetTitle": "Audited Expenses by Object",
+    "DatasetName":"Liabilities",
+    "DatasetTitle": "Audited Liabilities",
     "Dataseries": [
         {
             "Type": "Components"
         }
     ],
-    "Dimensions":["Expenditure"],
+    "Dimensions":["Asset"],
     "DimensionNames":{
         "Program":{
-            "Instance":"Expenditure",
-            "Collection":"Actual Expenses by Object"
+            "Instance":"Asset",
+            "Collection":"Actual Liabilities"
         }
     },
     "CellTitles": {
-        "Components": "Expense Categories"
+        "Components": "Liabilities"
     },
     "Units": "DOLLAR",
     "UnitsAlias": "$000's",

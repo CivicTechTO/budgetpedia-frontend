@@ -2,43 +2,54 @@
     "Index": 0,
     "NamingConfigRef": "AUDITED",
     "Components": {
-        "SALARIES": {
-            "Index": 1,
-            "NamingConfigRef": "EXPENDITURE",
-            "Baseline":true
-        },
-        "ALLOTHEREXPENSES": {
+        "SHORTLIABILITIES":{
             "Index": 0,
             "NamingConfigRef": "CATEGORY",
             "Components": {
-                "CONTRACTED": {
+                "AP": {
                     "Index": 0,
-                    "NamingConfigRef": "EXPENDITURE",
+                    "NamingConfigRef": "LIABILITY",
                     "Baseline": true
                 },
-                "INTEREST": {
+                "BANKDEBT": {
                     "Index": 1,
-                    "NamingConfigRef": "EXPENDITURE",
+                    "NamingConfigRef": "LIABILITY",
                     "Baseline": true
                 },
-                "AMORTIZATION": {
+                "DEFERREDREVENUE": {
                     "Index": 2,
-                    "NamingConfigRef": "EXPENDITURE",
+                    "NamingConfigRef": "LIABILITY",
                     "Baseline": true
                 },
                 "OTHER": {
-                    "Index": 3,
-                    "NamingConfigRef": "EXPENDITURE",
+                    "Index": 7,
+                    "NamingConfigRef": "LIABILITY",
                     "Baseline": true
-                },
-                "MATERIALS": {
-                    "Index": 4,
-                    "NamingConfigRef": "EXPENDITURE",
-                    "Baseline": true
-                },
-                "TRANSFERS": {
+                }
+            }
+        },
+        "LONGLIABILITIES":{
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "LONGTERM": {
                     "Index": 5,
-                    "NamingConfigRef": "EXPENDITURE",
+                    "NamingConfigRef": "LIABILITY",
+                    "Baseline": true
+                },
+                "EMPLOYEEBENEFITS": {
+                    "Index": 3,
+                    "NamingConfigRef": "LIABILITY",
+                    "Baseline": true
+                },
+                "MORTGAGE": {
+                    "Index": 6,
+                    "NamingConfigRef": "LIABILITY",
+                    "Baseline": true
+                },
+                "LANDFILL": {
+                    "Index": 4,
+                    "NamingConfigRef": "LIABILITY",
                     "Baseline": true
                 }
             }
@@ -47,7 +58,8 @@
     "Meta":{
         "Lookups": {
             "Taxonomy": {
-                "ALLOTHEREXPENSES": "Non-salary expenses"
+                "LONGLIABILITIES":"Longer term liabilities",
+                "SHORTLIABILITIES":"Shorter term liabilities"
             }
         },
         "NamingConfigurations": {
@@ -57,8 +69,18 @@
                     "Alias": "Audited"
                 },
                 "Contents": {
-                    "Name": "Expenses",
+                    "Name": "Liabilities",
                     "Alias": "Audited Statement"
+                }
+            },
+            "LIABILITY": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Liability"
+                },
+                "Contents": {
+                    "Name": "Liability",
+                    "Alias": "Audited Liabilities"
                 }
             },
             "CATEGORY": {
@@ -67,18 +89,8 @@
                     "Alias": "Audited"
                 },
                 "Contents": {
-                    "Name": "Expenses",
-                    "Alias": "Audited Expenses by Object"
-                }
-            },
-            "EXPENDITURE": {
-                "Instance": {
-                    "Name": "Type",
-                    "Alias": "Expenses"
-                },
-                "Contents": {
-                    "Name": "Revenues",
-                    "Alias": "Audited Expenses by Object"
+                    "Name": "Grouping",
+                    "Alias": "Liability Groupings"
                 }
             }
         }

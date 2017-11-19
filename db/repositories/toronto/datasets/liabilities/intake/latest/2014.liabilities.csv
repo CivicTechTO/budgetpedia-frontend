@@ -1,0 +1,31 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=1Ik6TZco-Uj9GO2nanmClaES__ZAzBiQW
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=1cP1y9CrSSL-cGcYulCB7iKvvRpj5BgCr
+SOURCE_DOCUMENT_TITLE,2014 Consolidated Financial Statements
+SOURCE_DOCUMENT_TABLE_LOCATION,
+SOURCE_DOCUMENT_TABLE_TITLE,Statement of Financial Position
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=11a9JJq7X9DWnF10-YwGnaNJ-EGxLAPLu
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2014
+VERSION,Actual
+ASPECT,Assets
+NOTES_CONTENT,Dollar
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Asset:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Bank indebtedness (Note 6),76508
+Accounts payable and accrued liabilities (Note 7),2787113
+Deferred revenue (Note 8),2007416
+Other liabilities (Note 9),649564
+Landfill closure and post-closure liabilities (Note 10),139316
+Mortgages payable (Note 11),579405
+Net long-term debt (Note 12),4178512
+Employee benefit liabilities (Note 13),3410247
