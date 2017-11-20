@@ -22,7 +22,7 @@
 'use strict'
 
 import * as React from 'react' // required by bundler
-var { Component, PropTypes } = React
+var { Component } = React
 import { connect } from 'react-redux'
 import * as Actions from '../actions/actions'
 import { compose } from 'redux'

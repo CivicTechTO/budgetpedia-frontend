@@ -1,7 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-var { Component, PropTypes } = React;
+var { Component } = React;
 const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
 const redux_1 = require("redux");
