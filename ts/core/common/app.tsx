@@ -4,7 +4,6 @@
 import * as React from 'react'
 var { Component } = React
 //import { ReactCssTransitionGroup } from 'react-addons-css-transition-group'
-import ReactCSSTransitionGroup = require('react-addons-css-transition-group')
 
 class App extends Component<any, any> {
     render() {
