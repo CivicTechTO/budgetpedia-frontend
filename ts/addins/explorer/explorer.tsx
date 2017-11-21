@@ -24,17 +24,13 @@
         BudgetMatrix complete set of budget paths for BudgetExplorer
 */
 
-// <reference path="../../../typings-custom/react-google-charts.d.ts" />
-// <reference path="../../../typings-custom/react-slider.d.ts" />
-// <reference path="../../../typings/globals/react-router/index.d.ts" />
-
 'use strict'
 import * as React from 'react'
 import { findDOMNode } from 'react-dom'
 var { Component } = React
 // doesn't require .d.ts...! (reference available in index.tsx)
 import { connect } from 'react-redux'
-// import { withRouter } from 'react-router' // not ready yet!!
+
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 import FontIcon from 'material-ui/FontIcon'
 import IconButton from 'material-ui/IconButton'
