@@ -329,7 +329,7 @@ let mainReducerCore = combineReducers(
         // system data
         resources,
         
-        routing:routerReducer, // import
+        router:routerReducer, // import
 
         // user login management
         login,

@@ -1,10 +1,9 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const react_router_1 = require("react-router");
+const react_router_dom_1 = require("react-router-dom");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
-const app_1 = require("./app");
 const hometiles_1 = require("../containers/hometiles");
 const resetpassword_1 = require("../containers/resetpassword");
 const register_1 = require("../containers/register");
@@ -27,13 +26,10 @@ let routedata = [
     { path: "userprofile", component: userprofile_1.default },
     { path: "*", component: nomatch_1.default },
 ];
-let coreroutes = routedata.map((item, index) => (React.createElement(react_router_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
-let routes = (React.createElement(react_router_1.Router, { onUpdate: () => {
-        window.scrollTo(0, 0);
-        logPageView();
-    }, history: react_router_1.browserHistory },
-    React.createElement(react_router_1.Route, { path: "/", component: app_1.default },
-        React.createElement(react_router_1.IndexRoute, { component: hometiles_1.default }),
+let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
+let Routes = () => (React.createElement(react_router_dom_1.BrowserRouter, null,
+    React.createElement(react_router_dom_1.Switch, null,
+        React.createElement(react_router_dom_1.Route, { path: "/", component: hometiles_1.default }),
         approutes_1.default,
         coreroutes)));
-exports.default = routes;
+exports.Routes = Routes;

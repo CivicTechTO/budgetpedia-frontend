@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 // custom...
 import MainBar from '../containers/mainbar'
 // import { MainToolbar } from './maintoolbar'
-import routes from './routes'
+import {Routes} from './routes'
 
 const Root = ({store, globalmessage}) => (
     <MuiThemeProvider muiTheme = {getMuiTheme()}>
@@ -22,7 +22,7 @@ const Root = ({store, globalmessage}) => (
 
                 {globalmessage}
 
-                { routes }
+                < Routes />
                 
                 <ReduxToastr
                       timeOut={4000}

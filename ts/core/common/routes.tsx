@@ -5,7 +5,7 @@
 
 import * as React from 'react'
 
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 import App from './app'
@@ -42,22 +42,22 @@ let routedata = [
 let coreroutes = routedata.map((item, index) => (
    <Route key = {'coreroute'+index} path={item.path} component = {item.component} />
 ))
-// TODO: see https://github.com/reactjs/react-router-redux
-//    for enhanced history link
 
+
+// onUpdate={ () => 
+//         { 
+//             window.scrollTo(0, 0)
+//             logPageView()
+//         }
+//     }
 // TODO: rename routes to router
-let routes = (
-    <Router onUpdate={ () => 
-        { 
-            window.scrollTo(0, 0)
-            logPageView()
-        }
-    } history={ browserHistory }>
-        <Route path="/" component={ App } >
-            <IndexRoute component={ HomeTiles } />
+let Routes = () => (
+    <Router>
+        <Switch>
+            <Route path="/" component={ HomeTiles } />
             {approutes}
             {coreroutes}
-        </Route>
+        </Switch>
     </Router>)
 
-export default routes
+export {Routes}

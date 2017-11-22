@@ -209,7 +209,7 @@ let login = redux_1.combineReducers({
 let mainReducerCore = redux_1.combineReducers({
     explorer: reducers_1.default,
     resources,
-    routing: react_router_redux_1.routerReducer,
+    router: react_router_redux_1.routerReducer,
     login,
     homegrid,
     toastr: react_redux_toastr_1.reducer,

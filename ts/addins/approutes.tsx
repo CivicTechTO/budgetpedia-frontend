@@ -5,7 +5,7 @@
 
 import * as React from 'react'
 
-import { Route } from 'react-router'
+import { Route } from 'react-router-dom'
 
 import About from './containers/about'
 import Roadmap from './containers/roadmap'

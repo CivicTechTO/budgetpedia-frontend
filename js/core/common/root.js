@@ -13,6 +13,6 @@ const Root = ({ store, globalmessage }) => (React.createElement(MuiThemeProvider
             React.createElement(mainbar_1.default, null),
             React.createElement("div", { style: { height: "64px" } }, " "),
             globalmessage,
-            routes_1.default,
+            React.createElement(routes_1.Routes, null),
             React.createElement(react_redux_toastr_1.default, { timeOut: 4000, newestOnTop: false, position: "top-left" })))));
 exports.default = Root;

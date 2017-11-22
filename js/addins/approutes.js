@@ -1,7 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const react_router_1 = require("react-router");
+const react_router_dom_1 = require("react-router-dom");
 const about_1 = require("./containers/about");
 const roadmap_1 = require("./containers/roadmap");
 const deputations_1 = require("./containers/deputations");
@@ -30,5 +30,5 @@ let routedata = [
     { path: "announcements", component: announcements_1.default },
     { path: "pathways", component: pathways_1.default },
 ];
-const approutes = routedata.map((item, index) => (React.createElement(react_router_1.Route, { key: 'approute' + index, path: item.path, component: item.component })));
+const approutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'approute' + index, path: item.path, component: item.component })));
 exports.default = approutes;
