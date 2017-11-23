@@ -60,9 +60,9 @@ let history = createHistory()
 // TODO: rename routes to router
 let Routes = () => (
     <ConnectedRouter history = {history}>
-        <div>
+        <Switch>
         { routes }
-        </div>
+        </Switch>
     </ConnectedRouter>)
 
 export { Routes }

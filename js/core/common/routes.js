@@ -34,5 +34,5 @@ let routes = [home, ...approutes_1.default, ...coreroutes];
 console.log('routes', routes);
 let history = createBrowserHistory_1.default();
 let Routes = () => (React.createElement(react_router_redux_1.ConnectedRouter, { history: history },
-    React.createElement("div", null, routes)));
+    React.createElement(react_router_dom_1.Switch, null, routes)));
 exports.Routes = Routes;
