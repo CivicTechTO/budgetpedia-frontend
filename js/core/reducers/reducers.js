@@ -1,7 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
-const flux_standard_action_1 = require("flux-standard-action");
 const redux_actions_1 = require("redux-actions");
 const react_router_redux_1 = require("react-router-redux");
 const react_redux_toastr_1 = require("react-redux-toastr");
@@ -206,7 +205,7 @@ let login = redux_1.combineReducers({
     register,
     registerconfirm,
 });
-let mainReducerCore = redux_1.combineReducers({
+let mainReducerCore = {
     explorer: reducers_1.default,
     resources,
     router: react_router_redux_1.routerReducer,
@@ -214,14 +213,5 @@ let mainReducerCore = redux_1.combineReducers({
     homegrid,
     toastr: react_redux_toastr_1.reducer,
     ui,
-});
-let mainReducer = (state, action) => {
-    if (!flux_standard_action_1.isFSA(action)) {
-        console.error('System Error: non-FSA action', action);
-        throw 'non-FSA action, see console for details';
-    }
-    else {
-        return mainReducerCore(state, action);
-    }
 };
-exports.default = mainReducer;
+exports.default = mainReducerCore;

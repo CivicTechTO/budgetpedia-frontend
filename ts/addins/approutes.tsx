@@ -22,19 +22,19 @@ import Announcements from './containers/announcements'
 import Pathways from './containers/pathways'
 
 let routedata = [
-    { path: "about", component: About },
-    { path: "roadmap", component: Roadmap },
-    { path: "deputations", component: Deputations },
-    { path: "explorer", component: Explorer },
-    { path: "communities", component: Communities },
-    { path: "socialmedia", component: SocialMedia },
-    { path: "newsletter", component: Newsletter },
-    { path: "resources", component: Resources },
-    { path: "teams", component: Teams },
-    { path: "stories", component: Stories },
-    { path: "demos", component: Demos },
-    { path: "announcements", component: Announcements },
-    { path: "pathways", component: Pathways },
+    { path: "/about", component: About },
+    { path: "/roadmap", component: Roadmap },
+    { path: "/deputations", component: Deputations },
+    { path: "/explorer", component: Explorer },
+    { path: "/communities", component: Communities },
+    { path: "/socialmedia", component: SocialMedia },
+    { path: "/newsletter", component: Newsletter },
+    { path: "/resources", component: Resources },
+    { path: "/teams", component: Teams },
+    { path: "/stories", component: Stories },
+    { path: "/demos", component: Demos },
+    { path: "/announcements", component: Announcements },
+    { path: "/pathways", component: Pathways },
 ]
 
 const approutes = routedata.map((item, index) => (

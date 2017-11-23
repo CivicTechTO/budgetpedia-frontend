@@ -16,19 +16,19 @@ const demos_1 = require("./containers/demos");
 const announcements_1 = require("./containers/announcements");
 const pathways_1 = require("./containers/pathways");
 let routedata = [
-    { path: "about", component: about_1.default },
-    { path: "roadmap", component: roadmap_1.default },
-    { path: "deputations", component: deputations_1.default },
-    { path: "explorer", component: explorer_1.default },
-    { path: "communities", component: communities_1.default },
-    { path: "socialmedia", component: socialmedia_1.default },
-    { path: "newsletter", component: newsletter_1.default },
-    { path: "resources", component: resources_1.default },
-    { path: "teams", component: teams_1.default },
-    { path: "stories", component: stories_1.default },
-    { path: "demos", component: demos_1.default },
-    { path: "announcements", component: announcements_1.default },
-    { path: "pathways", component: pathways_1.default },
+    { path: "/about", component: about_1.default },
+    { path: "/roadmap", component: roadmap_1.default },
+    { path: "/deputations", component: deputations_1.default },
+    { path: "/explorer", component: explorer_1.default },
+    { path: "/communities", component: communities_1.default },
+    { path: "/socialmedia", component: socialmedia_1.default },
+    { path: "/newsletter", component: newsletter_1.default },
+    { path: "/resources", component: resources_1.default },
+    { path: "/teams", component: teams_1.default },
+    { path: "/stories", component: stories_1.default },
+    { path: "/demos", component: demos_1.default },
+    { path: "/announcements", component: announcements_1.default },
+    { path: "/pathways", component: pathways_1.default },
 ];
 const approutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'approute' + index, path: item.path, component: item.component })));
 exports.default = approutes;

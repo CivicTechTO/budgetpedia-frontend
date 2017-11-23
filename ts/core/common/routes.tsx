@@ -6,10 +6,12 @@
 import * as React from 'react'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 import App from './app'
 
+import createHistory from 'history/createBrowserHistory'
 // TODO: isolate hometiles as plugin
 import HomeTiles from '../containers/hometiles'
 
@@ -43,7 +45,13 @@ let coreroutes = routedata.map((item, index) => (
    <Route key = {'coreroute'+index} path={item.path} component = {item.component} />
 ))
 
+let home = <Route key = 'home' exact path="/" component={ HomeTiles } />
 
+let routes = [home,...approutes, ...coreroutes]
+
+console.log('routes',routes)
+
+let history = createHistory()
 // onUpdate={ () => 
 //         { 
 //             window.scrollTo(0, 0)
@@ -52,12 +60,10 @@ let coreroutes = routedata.map((item, index) => (
 //     }
 // TODO: rename routes to router
 let Routes = () => (
-    <Router>
-        <Switch>
-            <Route path="/" component={ HomeTiles } />
-            {approutes}
-            {coreroutes}
-        </Switch>
-    </Router>)
+    <ConnectedRouter history = {history}>
+        <div>
+        { routes }
+        </div>
+    </ConnectedRouter>)
 
-export {Routes}
+export { Routes }

@@ -18,14 +18,16 @@ import { autoLoginUser } from '../actions/actions'
 
 const store = configureStore()
 
-let { auth } = store.getState().login
+// console.log('store',store, store.getState())
 
-if (!auth.isAuthenticated) {
-    let token = localStorage.getItem('jsonwebtoken')
-    if (token) {
-        store.dispatch(autoLoginUser(token))
-    }
-}
+// let { auth } = store.getState().login
+
+// if (!auth.isAuthenticated) {
+//     let token = localStorage.getItem('jsonwebtoken')
+//     if (token) {
+//         store.dispatch(autoLoginUser(token))
+//     }
+// }
 
 //TODO: assign version to state (DEVELOPMENT|STAGING|PRODUCTION)
 const Main = ({globalmessage, version}) => (

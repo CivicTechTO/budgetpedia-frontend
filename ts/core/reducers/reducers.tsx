@@ -322,7 +322,7 @@ let login = combineReducers({
 
 // ---------------------------[ main reducer ]--------------------------------
 
-let mainReducerCore = combineReducers(
+let mainReducerCore = //combineReducers(
     { 
         // app data
         explorer,
@@ -343,19 +343,19 @@ let mainReducerCore = combineReducers(
         // workingmessagestate,
         // appnavbar,
     }
-)
+//)
 
-let mainReducer = (state,action) => {
-    if (!isFSA( action )) {
+// let mainReducer = (state,action) => {
+//     if (!isFSA( action )) {
 
-        console.error('System Error: non-FSA action',action)
-        throw 'non-FSA action, see console for details'
+//         console.error('System Error: non-FSA action',action)
+//         throw 'non-FSA action, see console for details'
 
-    } else {
+//     } else {
 
-        return mainReducerCore(state,action)
+//         return mainReducerCore(state,action)
         
-    }
-}
+//     }
+// }
 
-export default mainReducer
+export default mainReducerCore

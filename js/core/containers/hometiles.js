@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
+const react_router_dom_1 = require("react-router-dom");
 const apptiles_1 = require("../components/apptiles");
 const Card_1 = require("material-ui/Card");
 const mapStateToProps = ({ homegrid, resources }) => ({
@@ -72,7 +73,7 @@ class HomeTilesClass extends React.Component {
                                 "Explore the Toronto budget with our ",
                                 React.createElement("span", { style: { whiteSpace: 'pre' } },
                                     React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: './public/icons/ic_explore_48px.svg' }),
-                                    React.createElement("a", { href: "javascript:void(0);", onClick: e => { this.transitionTo(e, 'explorer'); } }, "Budget Explorer"))),
+                                    React.createElement(react_router_dom_1.Link, { to: 'explorer' }, "Budget Explorer"))),
                             React.createElement("li", null,
                                 "See information about Toronto's budget decision schedule at our ",
                                 React.createElement("span", { style: { whiteSpace: 'pre' } },

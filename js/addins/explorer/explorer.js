@@ -784,7 +784,13 @@ let Explorer = class extends Component {
             this.toastrmessages.info = "Click or tap on any chart column to drill down (except as noted).";
             this.props.onetimeNotification();
         }
-        let { query } = this.props.location;
+        let query = {
+            search: this.props.location.search,
+            branch: null,
+            settings: null,
+            hash: null,
+            storyboard: null,
+        };
         let branchdata, settingsdata, hash;
         if (query.branch && query.settings && query.hash) {
             branchdata = jsonpack.unpack(query.branch);

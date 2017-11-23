@@ -7,6 +7,7 @@ import * as React from 'react';
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as Actions from '../actions/actions'
+import { Link } from 'react-router-dom'
 
 import { AppTiles } from "../components/apptiles"
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
@@ -104,9 +105,8 @@ class HomeTilesClass extends React.Component<any, any> {
                 <ul> <li>Explore the Toronto budget with our <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_explore_48px.svg'}/><a 
-                    href="javascript:void(0);"
-                    onClick={ e => {this.transitionTo(e,'explorer')}}>Budget Explorer</a></span></li>
+                    src={'./public/icons/ic_explore_48px.svg'}/>
+                    <Link to='explorer'>Budget Explorer</Link></span></li>
 
                 <li>See information about Toronto's budget decision schedule at our <span
                     style = {{whiteSpace:'pre'}} ><img 
