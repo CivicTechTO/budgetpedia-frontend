@@ -229,6 +229,13 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         </Dialog>
     )
 
+    getUrlParameter = name => {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
     componentWillMount() {
 
         // console.log('explorer props location.query',this.props.location.query)
@@ -244,10 +251,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
         let query = {
             search:this.props.location.search,
-            branch:null,
-            settings:null,
-            hash:null,
-            storyboard:null,
+            branch:this.getUrlParameter('branch'),
+            settings:this.getUrlParameter('settings'),
+            hash:this.getUrlParameter('hash'),
+            storyboard:this.getUrlParameter('storyboard'),
         }
 
         // console.log('query',query)
@@ -1749,9 +1756,11 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 // ====================================================================================
 // ------------------------------[ INJECT DATA STORE ]---------------------------------
 
-let mapStateToProps = state => ({ 
-    declarationData:getExplorerDeclarationData(state), 
-})
+let mapStateToProps = state => {
+    return { 
+        declarationData:getExplorerDeclarationData(state), 
+    }
+}
 
 // initialize all these call backs with dispatch
 

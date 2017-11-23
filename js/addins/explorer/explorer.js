@@ -76,6 +76,12 @@ let Explorer = class extends Component {
                 React.createElement("br", null),
                 "Toggle any row's \"Show chart controls\" to experiment with settings for that row",
                 React.createElement(LinearProgress_1.default, { mode: "indeterminate" }))));
+        this.getUrlParameter = name => {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
         this.harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
             let change = false;
             let newBranches = budgetBranches.filter((branch) => {
@@ -786,10 +792,10 @@ let Explorer = class extends Component {
         }
         let query = {
             search: this.props.location.search,
-            branch: null,
-            settings: null,
-            hash: null,
-            storyboard: null,
+            branch: this.getUrlParameter('branch'),
+            settings: this.getUrlParameter('settings'),
+            hash: this.getUrlParameter('hash'),
+            storyboard: this.getUrlParameter('storyboard'),
         };
         let branchdata, settingsdata, hash;
         if (query.branch && query.settings && query.hash) {
@@ -1022,9 +1028,11 @@ let Explorer = class extends Component {
             branches);
     }
 };
-let mapStateToProps = state => ({
-    declarationData: reducers_1.getExplorerDeclarationData(state),
-});
+let mapStateToProps = state => {
+    return {
+        declarationData: reducers_1.getExplorerDeclarationData(state),
+    };
+};
 Explorer = react_redux_1.connect(mapStateToProps, {
     showWaitingMessage: Actions.showWaitingMessage,
     hideWaitingMessage: Actions.hideWaitingMessage,

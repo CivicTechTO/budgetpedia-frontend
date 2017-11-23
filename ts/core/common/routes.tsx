@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
-import App from './app'
 
 import createHistory from 'history/createBrowserHistory'
 // TODO: isolate hometiles as plugin
