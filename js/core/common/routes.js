@@ -6,11 +6,6 @@ const react_router_redux_1 = require("react-router-redux");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
 const hometiles_1 = require("../containers/hometiles");
-const resetpassword_1 = require("../containers/resetpassword");
-const register_1 = require("../containers/register");
-const registerpending_1 = require("../containers/registerpending");
-const registerconfirm_1 = require("../containers/registerconfirm");
-const userprofile_1 = require("../containers/userprofile");
 const nomatch_1 = require("../containers/nomatch");
 const approutes_1 = require("../../addins/approutes");
 let logPageView = (location) => {
@@ -19,11 +14,6 @@ let logPageView = (location) => {
     }
 };
 let routedata = [
-    { path: "resetpassword", component: resetpassword_1.default },
-    { path: "register", component: register_1.default },
-    { path: "register/pending", component: registerpending_1.default },
-    { path: "register/confirm", component: registerconfirm_1.default },
-    { path: "userprofile", component: userprofile_1.default },
     { path: "*", component: nomatch_1.default },
 ];
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
@@ -32,6 +22,7 @@ let routes = [home, ...approutes_1.default, ...coreroutes];
 logPageView(window.location);
 let Routes = ({ history }) => {
     history.listen(location => {
+        window.scrollTo(0, 0);
         logPageView(location);
     });
     return React.createElement(react_router_redux_1.ConnectedRouter, { history: history },

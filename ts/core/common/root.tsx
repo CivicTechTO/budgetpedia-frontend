@@ -22,7 +22,7 @@ const Root = ({store, globalmessage, history}) => (
 
                 {globalmessage}
 
-                < Routes history={history}/>
+                <Routes history={history}/>
                 
                 <ReduxToastr
                       timeOut={4000}

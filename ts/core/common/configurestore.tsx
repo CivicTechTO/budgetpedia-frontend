@@ -3,26 +3,23 @@
 
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import createHistory from 'history/createBrowserHistory'
-// import { browserHistory } from 'react-router'
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
+import { routerReducer, routerMiddleware } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
-import mainReducer from "../reducers/reducers"
+import mainReducers from "../reducers/reducers"
 
+
+// assemble reducers
+const reducers = combineReducers({...mainReducers,router:routerReducer})
+
+// assemble middleware
 const history = createHistory()
-
 const reduxRouterMiddleware = routerMiddleware(history)
+const middleware = applyMiddleware(reduxRouterMiddleware,thunkMiddleware)
 
-// could be conditional list of middlewares; last first
-const middlewares = applyMiddleware(reduxRouterMiddleware,thunkMiddleware)
-
-// console.log('mainReducer',mainReducer)
-
-// TODO: this is an incorrect construct -- the second argument should be for persisted 
-// stores; the first argument should be the combined reducers
+// create store
 const store = createStore(
-    combineReducers(
-        {...mainReducer,router:routerReducer}),
-    middlewares // the enhancer has last position
+    reducers,
+    middleware
 )
 
 const configureStore = () => store

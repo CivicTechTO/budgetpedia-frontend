@@ -14,31 +14,30 @@ ReactGA.initialize('UA-4105209-11')
 // TODO: isolate hometiles as plugin
 import HomeTiles from '../containers/hometiles'
 
-import ResetPassword from '../containers/resetpassword'
-import Register from '../containers/register'
-import RegisterPending from '../containers/registerpending'
-import RegisterConfirm from '../containers/registerconfirm'
-import UserProfile from '../containers/userprofile'
+// import ResetPassword from '../containers/resetpassword'
+// import Register from '../containers/register'
+// import RegisterPending from '../containers/registerpending'
+// import RegisterConfirm from '../containers/registerconfirm'
+// import UserProfile from '../containers/userprofile'
 import NoMatch  from '../containers/nomatch'
 
 import approutes from '../../addins/approutes'
 
 let logPageView = (location) => {
-        // console.log('calling ', location, window.location)
+
     if (window.location.hostname == 'budgetpedia.ca') {
-        // console.log('tracking ', location, window.location)
-        // ReactGA.set({ page: location.pathname });
         ReactGA.pageview(location.pathname + location.search);
     }
+
 }
 
 let routedata = [
 
-    { path: "resetpassword", component: ResetPassword },
-    { path: "register", component: Register },
-    { path: "register/pending", component: RegisterPending },
-    { path: "register/confirm", component: RegisterConfirm },
-    { path: "userprofile", component: UserProfile },
+    // { path: "resetpassword", component: ResetPassword },
+    // { path: "register", component: Register },
+    // { path: "register/pending", component: RegisterPending },
+    // { path: "register/confirm", component: RegisterConfirm },
+    // { path: "userprofile", component: UserProfile },
     { path: "*", component: NoMatch }, // must be LAST, or else will pre-empt other paths
 ]
 
@@ -52,7 +51,6 @@ let routes = [home,...approutes, ...coreroutes]
 
 // console.log('routes',routes)
 
-// let history = createHistory()
 // onUpdate={ () => 
 //         { 
 //             window.scrollTo(0, 0)
@@ -63,11 +61,12 @@ let routes = [home,...approutes, ...coreroutes]
 logPageView(window.location)
 let Routes = ({history}) => {
     history.listen( location => {
+        window.scrollTo(0, 0)
         logPageView(location)
     })
     return <ConnectedRouter history = {history}>
         <Switch>
-        { routes }
+            { routes }
         </Switch>
     </ConnectedRouter>}
 

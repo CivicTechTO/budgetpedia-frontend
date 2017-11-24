@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_dom_1 = require("react-dom");
+const injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
+require('isomorphic-fetch');
 const main_1 = require("./core/containers/main");
 let globalmessage = null;
 try {
