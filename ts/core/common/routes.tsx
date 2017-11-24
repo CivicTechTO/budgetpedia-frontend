@@ -25,8 +25,9 @@ import approutes from '../../addins/approutes'
 
 let logPageView = (location) => {
     if (location.hostname == 'budgetpedia.ca') {
-        ReactGA.set({ page: location.pathname });
-        ReactGA.pageview(location.pathname);
+        console.log('tracking ', location)
+        // ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(ReactGA.pageview(location.pathname + location.search));
     }
 }
 
