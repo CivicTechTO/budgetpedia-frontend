@@ -49,6 +49,7 @@ import Divider from 'material-ui/Divider'
 import Toggle from 'material-ui/Toggle'
 import LinearProgress from 'material-ui/LinearProgress'
 import {toastr} from 'react-redux-toastr'
+
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
 let ReactGA = require('react-ga')

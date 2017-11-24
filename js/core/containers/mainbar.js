@@ -26,18 +26,18 @@ let MainBar = class extends React.Component {
         };
         this.transitionToHome = () => {
             this.setState({ accountsidebaropen: false });
-            this.props.transitionTo('/');
+            this.props.pushHistory('/');
         };
         this.transitionToRegister = (e) => {
             this.setState({ accountsidebaropen: false });
-            this.props.transitionTo('/register');
+            this.props.pushHistory('/register');
         };
         this.transitionToResetPassword = (e) => {
             this.setState({ accountsidebaropen: false });
-            this.props.transitionTo('/resetpassword');
+            this.props.pushHistory('/resetpassword');
         };
         this.transitionToProfile = (e) => {
-            this.props.transitionTo('/userprofile');
+            this.props.pushHistory('/userprofile');
         };
         this.submitLogin = (elements) => {
             let creds = {};
@@ -125,12 +125,12 @@ let MainBar = class extends React.Component {
                 React.createElement(Card_1.CardTitle, { title: "Member Sign In", style: { paddingBottom: 0 } }),
                 loginform,
                 registerprompt));
-        let transitionToFunc = redux_1.compose(menutransition, this.props.transitionTo);
+        let transitionToFunc = redux_1.compose(menutransition, this.props.pushHistory);
         let menuitems = hometiles.map(menutile => {
-            return React.createElement(menutile_1.MenuTile, { transitionTo: transitionToFunc, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
+            return React.createElement(menutile_1.MenuTile, { pushHistory: transitionToFunc, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
         });
         let menusidebar = React.createElement(Drawer_1.default, { width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => appbar.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen },
-            React.createElement(menutile_1.MenuTile, { transitionTo: transitionToFunc, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
+            React.createElement(menutile_1.MenuTile, { pushHistory: transitionToFunc, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
             React.createElement(Divider_1.default, null),
             menuitems);
         let menuicon = React.createElement(IconButton_1.default, { onTouchTap: () => { appbar.handleMenuSidebarToggle(); } },
@@ -219,7 +219,7 @@ function mapStateToProps(state) {
     };
 }
 MainBar = react_redux_1.connect(mapStateToProps, {
-    transitionTo: Actions.transitionTo,
+    pushHistory: Actions.pushHistory,
     loginUser: Actions.loginUser,
     logoutUser: Actions.logoutUser,
 })(MainBar);

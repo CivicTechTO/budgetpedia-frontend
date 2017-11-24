@@ -13,12 +13,12 @@ export class MenuTile extends React.Component<any, any> {
         super(props);
     }
 
-    transitionTo = (e) => {
+    pushHistory = (e) => {
         // if (e.target.tagName == 'A') return;
         // used exclusively for transition
         e.stopPropagation()
         e.preventDefault()
-        this.props.transitionTo(this.props.route)
+        this.props.pushHistory(this.props.route)
     }
     
     render() {
@@ -29,7 +29,7 @@ export class MenuTile extends React.Component<any, any> {
 
             <MenuItem 
 
-                onTouchTap={ tile.transitionTo }
+                onTouchTap={ tile.pushHistory }
                 primaryText = {this.props.primaryText}
                 leftIcon = {<img src={this.props.image}/>}
                 disabled = {this.props.disabled?true:false}>

@@ -5,7 +5,6 @@ const react_router_dom_1 = require("react-router-dom");
 const react_router_redux_1 = require("react-router-redux");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
-const createBrowserHistory_1 = require("history/createBrowserHistory");
 const hometiles_1 = require("../containers/hometiles");
 const resetpassword_1 = require("../containers/resetpassword");
 const register_1 = require("../containers/register");
@@ -31,8 +30,6 @@ let routedata = [
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
 let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: hometiles_1.default });
 let routes = [home, ...approutes_1.default, ...coreroutes];
-console.log('routes', routes);
-let history = createBrowserHistory_1.default();
-let Routes = () => (React.createElement(react_router_redux_1.ConnectedRouter, { history: history },
+let Routes = ({ history }) => (React.createElement(react_router_redux_1.ConnectedRouter, { history: history },
     React.createElement(react_router_dom_1.Switch, null, routes)));
 exports.Routes = Routes;

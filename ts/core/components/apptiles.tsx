@@ -30,7 +30,7 @@ interface AppTilesProps extends React.Props< AppTiles > {
     tilecolors: Object,
     system:     Object,
     route?:     string,
-    transitionTo: Function,
+    pushHistory: Function,
     cellHeight?: number,
 
 }
@@ -39,7 +39,7 @@ class AppTiles extends Component< AppTilesProps, any > {
 
     render() {
 
-        let { tiles, tilecols, padding, tilecolors, style, system, route, transitionTo, cellHeight } = this.props
+        let { tiles, tilecols, padding, tilecolors, style, system, route, pushHistory, cellHeight } = this.props
         let primarytiledata = []
         let secondarytiledata = []
         style['width'] = '100%'
@@ -60,7 +60,7 @@ class AppTiles extends Component< AppTilesProps, any > {
                     tilecolors = { tilecolors }
                     system = { system }
                     route = { data.route }
-                    transitionTo = { transitionTo } 
+                    pushHistory = { pushHistory } 
                     />
             )
         })
@@ -73,7 +73,7 @@ class AppTiles extends Component< AppTilesProps, any > {
                     tilecolors = { tilecolors }
                     system = { system }
                     route = { data.route }
-                    transitionTo = { transitionTo } 
+                    pushHistory = { pushHistory } 
                     />
             )
         })

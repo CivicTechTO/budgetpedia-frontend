@@ -8,10 +8,12 @@ import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-r
 import thunkMiddleware from 'redux-thunk'
 import mainReducer from "../reducers/reducers"
 
-const reduxRouterMiddleware = routerMiddleware(createHistory())
+const history = createHistory()
+
+const reduxRouterMiddleware = routerMiddleware(history)
 
 // could be conditional list of middlewares; last first
-const middlewares = [thunkMiddleware,reduxRouterMiddleware]
+const middlewares = applyMiddleware(reduxRouterMiddleware,thunkMiddleware)
 
 // console.log('mainReducer',mainReducer)
 
@@ -20,9 +22,9 @@ const middlewares = [thunkMiddleware,reduxRouterMiddleware]
 const store = createStore(
     combineReducers(
         {...mainReducer,router:routerReducer}),
-    applyMiddleware(...middlewares) // the enhancer has last position
+    middlewares // the enhancer has last position
 )
 
 const configureStore = () => store
 
-export default configureStore
+export {configureStore, history}

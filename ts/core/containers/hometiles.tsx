@@ -50,12 +50,11 @@ class HomeTilesClass extends React.Component<any, any> {
 
     }
 
-    transitionTo = (e, target) => {
+    pushHistory = (e, target) => {
 
         e.stopPropagation()
         e.preventDefault()
-        var _this = this;
-        _this.props.transitionTo(target)
+        this.props.history.push(target)
 
     }
 
@@ -105,21 +104,20 @@ class HomeTilesClass extends React.Component<any, any> {
                 <ul> <li>Explore the Toronto budget with our <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_explore_48px.svg'}/>
-                    <Link to='explorer'>Budget Explorer</Link></span></li>
+                    src={'./public/icons/ic_explore_48px.svg'}
+                    />
+                    <Link to='/explorer'>Budget Explorer</Link></span></li>
 
                 <li>See information about Toronto's budget decision schedule at our <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_map_48px.svg'}/><a 
-                    href="javascript:void(0);"
-                    onClick={ e => {this.transitionTo(e,'roadmap')}}>Budget Roadmap</a></span></li>
+                    src={'./public/icons/ic_map_48px.svg'}/>
+                    <Link to='/roadmap'>Budget Roadmap</Link></span></li>
                     <li>Find related <span
                     style = {{whiteSpace:'pre'}} ><img 
                     style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_library_books_48px.svg'}/><a
-                    href="javascript:void(0);"
-                    onClick={ e => {this.transitionTo(e,'resources')}}>Resources</a></span></li></ul>
+                    src={'./public/icons/ic_library_books_48px.svg'}/>
+                    <Link to='/resources'>Resources</Link></span></li></ul>
                     <hr />
                 <p>Follow us on:</p>
                 <ul>
@@ -158,7 +156,7 @@ class HomeTilesClass extends React.Component<any, any> {
                     }
                 }
                 system = { system }
-                transitionTo = { this.props.transitionTo }
+                pushHistory = { this.props.pushHistory }
                 cellHeight = { 180 }
             />
             <div 
@@ -220,10 +218,11 @@ class HomeTilesClass extends React.Component<any, any> {
 }
 
 // dependency injection
-var HomeTiles = connect ( mapStateToProps, 
+var HomeTiles = connect ( mapStateToProps,
     {
-        transitionTo:Actions.transitionTo,
+        pushHistory:Actions.pushHistory,
         setHomeTileCols:Actions.setHomeTileCols,
-    } ) ( HomeTilesClass )
+    } 
+) ( HomeTilesClass )
 
 export default HomeTiles

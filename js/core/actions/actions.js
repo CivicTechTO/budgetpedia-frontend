@@ -10,7 +10,7 @@ exports.REMOVE_TILE = 'REMOVE_TILE';
 exports.UPDATE_TILE = 'UPDATE_TILE';
 exports.setTileCols = redux_actions_1.createAction(exports.SET_TILECOLS);
 exports.setHomeTileCols = redux_actions_1.createAction(exports.SET_HOMETILECOLS);
-exports.transitionTo = route => {
+exports.pushHistory = route => {
     return dispatch => {
         dispatch(react_router_redux_1.routerActions.push(route));
     };
@@ -241,7 +241,7 @@ exports.registerUser = profile => {
                     dispatch(receiveRegister(json));
                     return Promise.resolve();
                 }).then(() => {
-                    dispatch(exports.transitionTo('/register/pending'));
+                    dispatch(exports.pushHistory('/register/pending'));
                 });
             }
         })

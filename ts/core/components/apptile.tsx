@@ -6,14 +6,16 @@
 // required by bundler
 import * as React from 'react'
 
+import { push } from 'react-router-redux'
+
 import { GridTile } from 'material-ui/GridList'
 
-export class AppTile extends React.Component<any, any> {
+class AppTile extends React.Component<any, any> {
     constructor(props) {
         super(props);
     }
 
-    transitionTo = (e) => {
+    pushHistory = (e) => {
         // if (e.target.tagName == 'A') return;
         // used exclusively for transition
         if (this.props.content.disabled) {
@@ -23,7 +25,7 @@ export class AppTile extends React.Component<any, any> {
         e.stopPropagation()
         e.preventDefault()
         var self = this;
-        self.props.transitionTo(self.props.route)
+        self.props.pushHistory(self.props.route)
     }
     
     render() {
@@ -63,7 +65,7 @@ export class AppTile extends React.Component<any, any> {
                 cols = {  this.props.content.cols || 1 }
                 >
                 <div style={wrapperstyle}
-                onClick={ tile.transitionTo }>
+                onClick={ tile.pushHistory }>
                 <div style={{position:"absolute",top:3,left:3,color:"silver",fontStyle:"italic",fontSize:"smaller"}} >
                 {this.props.content.category}</div>
                 <img src={this.props.content.image} style={{ height: "120px" }}/>
@@ -74,4 +76,6 @@ export class AppTile extends React.Component<any, any> {
         )
     }
 }
+
+export { AppTile }
 

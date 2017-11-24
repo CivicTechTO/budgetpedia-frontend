@@ -29,7 +29,7 @@ function mapStateToProps(state) {
 let MainToolbar = class extends React.Component<any, any> {
 
     transitionToHome = () => {
-        this.props.transitionTo('/')
+        this.props.pushHistory('/')
     }
 
     render() {
@@ -62,7 +62,7 @@ let MainToolbar = class extends React.Component<any, any> {
 
 MainToolbar = connect(mapStateToProps,
     {
-        transitionTo:Actions.transitionTo
+        pushHistory:Actions.pushHistory
     })(MainToolbar)
 
 export default MainToolbar

@@ -11,7 +11,7 @@ import injectTapEventPlugin = require( 'react-tap-event-plugin' )
 injectTapEventPlugin()
 require('isomorphic-fetch')
 
-import configureStore from '../common/configurestore'
+import {configureStore, history} from '../common/configurestore'
 import Root from '../common/root'
 
 import { autoLoginUser } from '../actions/actions'
@@ -31,7 +31,7 @@ const store = configureStore()
 
 //TODO: assign version to state (DEVELOPMENT|STAGING|PRODUCTION)
 const Main = ({globalmessage, version}) => (
-    <Root store={store} globalmessage={globalmessage} />
+    <Root store={store} globalmessage={globalmessage} history = {history}/>
 )
 
 export default Main

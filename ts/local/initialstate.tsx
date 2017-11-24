@@ -83,7 +83,7 @@ let hometiles: [Object] = [
         },
         index: 0,
         tier:'primary',
-        route: 'explorer',
+        route: '/explorer',
     },
     {
         id: 7,
@@ -96,7 +96,7 @@ let hometiles: [Object] = [
         },
         index: 1,
         tier:'primary',
-        route: 'roadmap',
+        route: '/roadmap',
     },
     {
         id: 15,
@@ -108,7 +108,7 @@ let hometiles: [Object] = [
         },
         index: 2,
         tier:'primary',
-        route: 'resources',
+        route: '/resources',
     },
     {
         id: 14,
@@ -120,7 +120,7 @@ let hometiles: [Object] = [
         },
         index: 3,
         tier:'primary',
-        route: 'pathways',
+        route: '/pathways',
     },
     {
         id: 6,
@@ -132,7 +132,7 @@ let hometiles: [Object] = [
         },
         index: 4,
         tier:'secondary',
-        route: 'about',
+        route: '/about',
     },
     {
         id: 16,
@@ -144,7 +144,7 @@ let hometiles: [Object] = [
         },
         index: 5,
         tier:'secondary',
-        route: 'announcements',
+        route: '/announcements',
     },
     {
         id: 13,
@@ -156,7 +156,7 @@ let hometiles: [Object] = [
         },
         index: 6,
         tier:'secondary',
-        route: 'demos',
+        route: '/demos',
     },
     {
         id: 10,
@@ -168,7 +168,7 @@ let hometiles: [Object] = [
         },
         index: 7,
         tier:'secondary',
-        route: 'teams',
+        route: '/teams',
     },
 /*    {
         id: 1,

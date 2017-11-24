@@ -67,25 +67,25 @@ let MainBar = class extends React.Component<any, any> {
     transitionToHome = () => {
         // consistent with other transition calls...
         this.setState({ accountsidebaropen: false })
-        this.props.transitionTo('/')
+        this.props.pushHistory('/')
     }
 
     transitionToRegister = (e) => {
 
         this.setState({ accountsidebaropen: false })
-        this.props.transitionTo('/register')
+        this.props.pushHistory('/register')
 
     }
 
     transitionToResetPassword = (e) => {
 
         this.setState({ accountsidebaropen: false })
-        this.props.transitionTo('/resetpassword')
+        this.props.pushHistory('/resetpassword')
 
     }
 
     transitionToProfile = (e) => {
-        this.props.transitionTo('/userprofile')
+        this.props.pushHistory('/userprofile')
     }
 
     // respond to login form; assume error correction
@@ -233,11 +233,11 @@ let MainBar = class extends React.Component<any, any> {
                 </Card>
             </LeftNav >
 
-        // let transitionToFunc = compose(menutransition, this.props.dispatch, Actions.transitionTo)
-        let transitionToFunc = compose(menutransition, this.props.transitionTo)
+        // let transitionToFunc = compose(menutransition, this.props.dispatch, Actions.pushHistory)
+        let transitionToFunc = compose(menutransition, this.props.pushHistory)
         let menuitems = hometiles.map(menutile => {
             return <MenuTile
-                transitionTo = { transitionToFunc }
+                pushHistory = { transitionToFunc }
                 key = { menutile.id}
                 primaryText = { menutile.content.title }
                 image = {menutile.content.image}
@@ -256,7 +256,7 @@ let MainBar = class extends React.Component<any, any> {
                 open={this.state.menusidebaropen} >
 
                 <MenuTile 
-                    transitionTo = { transitionToFunc }
+                    pushHistory = { transitionToFunc }
                     key = {'home'}
                     primaryText = "Budgetpedia Home"
                     image = '../../public/icons/budgetpedia-logo.png'
@@ -451,7 +451,7 @@ function mapStateToProps(state) {
 MainBar = connect(
     mapStateToProps, 
     {
-        transitionTo:Actions.transitionTo,
+        pushHistory:Actions.pushHistory,
         loginUser:Actions.loginUser,
         logoutUser:Actions.logoutUser,
     })(MainBar)

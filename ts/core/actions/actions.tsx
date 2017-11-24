@@ -31,7 +31,7 @@ export const setTileCols = createAction(SET_TILECOLS)
 
 export const setHomeTileCols = createAction(SET_HOMETILECOLS)
 
-export const transitionTo = route => {
+export const pushHistory = route => {
     return dispatch => {
         dispatch(routerActions.push(route))
     }
@@ -356,7 +356,7 @@ export const registerUser = profile => {
                         return Promise.resolve() // experimenting with thunks...
                     }).then(() => {
                         // switch to pending page
-                        dispatch(transitionTo('/register/pending'))
+                        dispatch(pushHistory('/register/pending'))
                     })
                 }
             })

@@ -18,7 +18,7 @@ let MainToolbar = class extends React.Component {
     constructor() {
         super(...arguments);
         this.transitionToHome = () => {
-            this.props.transitionTo('/');
+            this.props.pushHistory('/');
         };
     }
     render() {
@@ -49,6 +49,6 @@ let MainToolbar = class extends React.Component {
     }
 };
 MainToolbar = react_redux_1.connect(mapStateToProps, {
-    transitionTo: Actions.transitionTo
+    pushHistory: Actions.pushHistory
 })(MainToolbar);
 exports.default = MainToolbar;

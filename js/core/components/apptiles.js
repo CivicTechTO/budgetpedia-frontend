@@ -6,7 +6,7 @@ const GridList_1 = require("material-ui/GridList");
 const apptile_1 = require("./apptile");
 class AppTiles extends Component {
     render() {
-        let { tiles, tilecols, padding, tilecolors, style, system, route, transitionTo, cellHeight } = this.props;
+        let { tiles, tilecols, padding, tilecolors, style, system, route, pushHistory, cellHeight } = this.props;
         let primarytiledata = [];
         let secondarytiledata = [];
         style['width'] = '100%';
@@ -19,10 +19,10 @@ class AppTiles extends Component {
             }
         }
         let primarytiles = primarytiledata.map(function (data) {
-            return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, transitionTo: transitionTo }));
+            return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
         let secondarytiles = secondarytiledata.map(function (data) {
-            return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, transitionTo: transitionTo }));
+            return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
         return (React.createElement("div", null,
             React.createElement("div", { style: {

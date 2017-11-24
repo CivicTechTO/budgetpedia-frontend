@@ -20,11 +20,10 @@ class HomeTilesClass extends React.Component {
         this.handleHomeResize = () => {
             this.props.setHomeTileCols();
         };
-        this.transitionTo = (e, target) => {
+        this.pushHistory = (e, target) => {
             e.stopPropagation();
             e.preventDefault();
-            var _this = this;
-            _this.props.transitionTo(target);
+            this.props.history.push(target);
         };
     }
     componentWillMount() {
@@ -73,17 +72,17 @@ class HomeTilesClass extends React.Component {
                                 "Explore the Toronto budget with our ",
                                 React.createElement("span", { style: { whiteSpace: 'pre' } },
                                     React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: './public/icons/ic_explore_48px.svg' }),
-                                    React.createElement(react_router_dom_1.Link, { to: 'explorer' }, "Budget Explorer"))),
+                                    React.createElement(react_router_dom_1.Link, { to: '/explorer' }, "Budget Explorer"))),
                             React.createElement("li", null,
                                 "See information about Toronto's budget decision schedule at our ",
                                 React.createElement("span", { style: { whiteSpace: 'pre' } },
                                     React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: './public/icons/ic_map_48px.svg' }),
-                                    React.createElement("a", { href: "javascript:void(0);", onClick: e => { this.transitionTo(e, 'roadmap'); } }, "Budget Roadmap"))),
+                                    React.createElement(react_router_dom_1.Link, { to: '/roadmap' }, "Budget Roadmap"))),
                             React.createElement("li", null,
                                 "Find related ",
                                 React.createElement("span", { style: { whiteSpace: 'pre' } },
                                     React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: './public/icons/ic_library_books_48px.svg' }),
-                                    React.createElement("a", { href: "javascript:void(0);", onClick: e => { this.transitionTo(e, 'resources'); } }, "Resources")))),
+                                    React.createElement(react_router_dom_1.Link, { to: '/resources' }, "Resources")))),
                         React.createElement("hr", null),
                         React.createElement("p", null, "Follow us on:"),
                         React.createElement("ul", null,
@@ -105,7 +104,7 @@ class HomeTilesClass extends React.Component {
                     front: colors.blue50,
                     back: colors.amber50,
                     helpbutton: theme.palette.primary3Color,
-                }, system: system, transitionTo: this.props.transitionTo, cellHeight: 180 }),
+                }, system: system, pushHistory: this.props.pushHistory, cellHeight: 180 }),
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
                     padding: "8px",
@@ -149,7 +148,7 @@ class HomeTilesClass extends React.Component {
     }
 }
 var HomeTiles = react_redux_1.connect(mapStateToProps, {
-    transitionTo: Actions.transitionTo,
+    pushHistory: Actions.pushHistory,
     setHomeTileCols: Actions.setHomeTileCols,
 })(HomeTilesClass);
 exports.default = HomeTiles;

@@ -5,14 +5,14 @@ const GridList_1 = require("material-ui/GridList");
 class AppTile extends React.Component {
     constructor(props) {
         super(props);
-        this.transitionTo = (e) => {
+        this.pushHistory = (e) => {
             if (this.props.content.disabled) {
                 return;
             }
             e.stopPropagation();
             e.preventDefault();
             var self = this;
-            self.props.transitionTo(self.props.route);
+            self.props.pushHistory(self.props.route);
         };
     }
     render() {
@@ -37,7 +37,7 @@ class AppTile extends React.Component {
                 borderRadius: '8px',
                 cursor: 'pointer',
             }, title: this.props.content.title, subtitle: this.props.content.subtitle, cols: this.props.content.cols || 1 },
-            React.createElement("div", { style: wrapperstyle, onClick: tile.transitionTo },
+            React.createElement("div", { style: wrapperstyle, onClick: tile.pushHistory },
                 React.createElement("div", { style: { position: "absolute", top: 3, left: 3, color: "silver", fontStyle: "italic", fontSize: "smaller" } }, this.props.content.category),
                 React.createElement("img", { src: this.props.content.image, style: { height: "120px" } }),
                 React.createElement("div", { style: { position: "absolute", height: "30px", bottom: 0, width: "100%" } }))));

@@ -12,7 +12,7 @@ import MainBar from '../containers/mainbar'
 // import { MainToolbar } from './maintoolbar'
 import {Routes} from './routes'
 
-const Root = ({store, globalmessage}) => (
+const Root = ({store, globalmessage, history}) => (
     <MuiThemeProvider muiTheme = {getMuiTheme()}>
         <Provider store={ store }>
             <div >
@@ -22,7 +22,7 @@ const Root = ({store, globalmessage}) => (
 
                 {globalmessage}
 
-                < Routes />
+                < Routes history={history}/>
                 
                 <ReduxToastr
                       timeOut={4000}
