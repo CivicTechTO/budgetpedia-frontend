@@ -14,8 +14,8 @@ const userprofile_1 = require("../containers/userprofile");
 const nomatch_1 = require("../containers/nomatch");
 const approutes_1 = require("../../addins/approutes");
 let logPageView = (location) => {
-    if (location.hostname == 'budgetpedia.ca') {
-        console.log('tracking ', location);
+    console.log('tracking ', location);
+    if (window.location.hostname == 'budgetpedia.ca') {
         ReactGA.pageview(location.pathname + location.search);
     }
 };
