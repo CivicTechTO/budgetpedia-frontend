@@ -4,14 +4,16 @@
 'use strict'
 
 import * as React from 'react'
+let { Component } = React
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
+import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
-// import createHistory from 'history/createBrowserHistory'
-// TODO: isolate hometiles as plugin
 import HomeTiles from '../containers/hometiles'
 
 // import ResetPassword from '../containers/resetpassword'
@@ -47,27 +49,53 @@ let coreroutes = routedata.map((item, index) => (
 
 let home = <Route key = 'home' exact path="/" component={ HomeTiles } />
 
-let routes = [home,...approutes, ...coreroutes]
+let routes = [home, ...approutes, ...coreroutes]
 
-// console.log('routes',routes)
-
-// onUpdate={ () => 
-//         { 
-//             window.scrollTo(0, 0)
-//             logPageView()
-//         }
-//     }
-// TODO: rename routes to router
 logPageView(window.location)
-let Routes = ({history}) => {
-    history.listen( location => {
+let Routes = class extends Component<any,any> { 
+
+    historyListener = (location,action) => {
         window.scrollTo(0, 0)
         logPageView(location)
-    })
-    return <ConnectedRouter history = {history}>
-        <Switch>
-            { routes }
-        </Switch>
-    </ConnectedRouter>}
+    }
+
+    compoinentWillMount() {
+        
+        this.props.history.listen(this.historyListener)        
+    }
+
+    render() {
+        let location = this.props.router.location || {}
+        console.log('rendering')
+        return (
+        <ConnectedRouter history = {this.props.history}>
+            <TransitionGroup>
+                <CSSTransition
+                    classNames="default-transition"
+                    timeout={1000}
+                    appear= {true}
+                    mountOnEnter={true}
+                    unmountOnExit={true}
+                >
+                    <div>
+                        <Switch location = {location}>
+                            { routes }
+                        </Switch>
+                    </div>
+                </CSSTransition>
+            </TransitionGroup>
+        </ConnectedRouter>
+        )
+    }
+}
+
+let mapStateToProps = state => {
+    let { router } = state
+    return { 
+        router,
+    }
+}
+
+Routes = connect(mapStateToProps)(Routes)
 
 export { Routes }
