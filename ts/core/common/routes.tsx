@@ -24,7 +24,7 @@ import NoMatch  from '../containers/nomatch'
 import approutes from '../../addins/approutes'
 
 let logPageView = (location) => {
-        console.log('tracking ', location)
+        // console.log('tracking ', location)
     if (window.location.hostname == 'budgetpedia.ca') {
         // ReactGA.set({ page: location.pathname });
         ReactGA.pageview(location.pathname + location.search);
