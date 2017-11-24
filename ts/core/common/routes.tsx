@@ -23,10 +23,10 @@ import NoMatch  from '../containers/nomatch'
 
 import approutes from '../../addins/approutes'
 
-let logPageView = () => {
-    if (window.location.hostname == 'budgetpedia.ca') {
-        ReactGA.set({ page: window.location.pathname });
-        ReactGA.pageview(window.location.pathname);
+let logPageView = (location) => {
+    if (location.hostname == 'budgetpedia.ca') {
+        ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(location.pathname);
     }
 }
 
@@ -58,11 +58,15 @@ let routes = [home,...approutes, ...coreroutes]
 //         }
 //     }
 // TODO: rename routes to router
-let Routes = ({history}) => (
-    <ConnectedRouter history = {history}>
+logPageView(window.location)
+let Routes = ({history}) => {
+    history.listen( location => {
+        logPageView(location)
+    })
+    return <ConnectedRouter history = {history}>
         <Switch>
         { routes }
         </Switch>
-    </ConnectedRouter>)
+    </ConnectedRouter>}
 
 export { Routes }

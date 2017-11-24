@@ -13,10 +13,10 @@ const registerconfirm_1 = require("../containers/registerconfirm");
 const userprofile_1 = require("../containers/userprofile");
 const nomatch_1 = require("../containers/nomatch");
 const approutes_1 = require("../../addins/approutes");
-let logPageView = () => {
-    if (window.location.hostname == 'budgetpedia.ca') {
-        ReactGA.set({ page: window.location.pathname });
-        ReactGA.pageview(window.location.pathname);
+let logPageView = (location) => {
+    if (location.hostname == 'budgetpedia.ca') {
+        ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(location.pathname);
     }
 };
 let routedata = [
@@ -30,6 +30,12 @@ let routedata = [
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
 let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: hometiles_1.default });
 let routes = [home, ...approutes_1.default, ...coreroutes];
-let Routes = ({ history }) => (React.createElement(react_router_redux_1.ConnectedRouter, { history: history },
-    React.createElement(react_router_dom_1.Switch, null, routes)));
+logPageView(window.location);
+let Routes = ({ history }) => {
+    history.listen(location => {
+        logPageView(location);
+    });
+    return React.createElement(react_router_redux_1.ConnectedRouter, { history: history },
+        React.createElement(react_router_dom_1.Switch, null, routes));
+};
 exports.Routes = Routes;
