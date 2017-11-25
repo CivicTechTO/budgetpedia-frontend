@@ -4,8 +4,8 @@
 
 import * as React from 'react'
 
-import {configureStore, history} from '../common/configurestore'
-import Root from '../common/root'
+import {configureStore, history} from './configurestore'
+import Root from './app'
 
 const store = configureStore()
 

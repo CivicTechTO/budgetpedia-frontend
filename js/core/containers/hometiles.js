@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
-const Actions = require("../actions");
+const Actions = require("../actions/actions");
 const react_router_dom_1 = require("react-router-dom");
 const apptiles_1 = require("../components/apptiles");
 const Card_1 = require("material-ui/Card");

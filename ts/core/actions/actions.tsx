@@ -15,7 +15,7 @@ import { createAction } from 'redux-actions';
 */
 import { routerActions } from 'react-router-redux'
 
-import { getQuery } from './utilities'
+import { getQuery } from '../utilities/utilities'
 
 //===============================================
 /*------------- tile management -----------*/

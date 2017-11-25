@@ -11,7 +11,7 @@ import injectTapEventPlugin = require( 'react-tap-event-plugin' )
 injectTapEventPlugin()
 require('isomorphic-fetch')
 
-import Main from './core/containers/main'
+import Main from './core/load/main'
 
 // TODO concept of globalmessage needs to be fleshed out; source behind api
 let globalmessage = null

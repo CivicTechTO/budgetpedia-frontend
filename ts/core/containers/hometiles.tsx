@@ -6,7 +6,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import * as Actions from '../actions'
+import * as Actions from '../actions/actions'
 import { Link } from 'react-router-dom'
 
 import { AppTiles } from "../components/apptiles"
