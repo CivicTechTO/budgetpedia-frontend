@@ -9,7 +9,7 @@
 import * as React from 'react' // required by bundler
 var { Component } = React
 import { connect } from 'react-redux'
-import * as Actions from '../actions/actions'
+import * as Actions from '../actions'
 
 import { BasicForm, elementProps } from '../components/basicform'
 import { Card, CardTitle } from 'material-ui/Card'

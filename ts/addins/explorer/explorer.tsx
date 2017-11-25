@@ -58,7 +58,7 @@ var { Chart } = require('../../../forked/react-google-charts/Chart.js')
 import ExplorerBranch from './components/explorerbranch'
 import SearchDialog from './components/searchdialog'
 
-import * as Actions from '../../core/actions/actions'
+import * as Actions from '../../core/actions'
 import * as ExplorerActions from './actions'
 import BudgetBranch from './classes/branch.class'
 import { getExplorerDeclarationData } from './reducers'

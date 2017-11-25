@@ -52,6 +52,7 @@ let home = <Route key = 'home' exact path="/" component={ HomeTiles } />
 let routes = [home, ...approutes, ...coreroutes]
 
 logPageView(window.location)
+
 let Routes = class extends Component<any,any> { 
 
     historyListener = (location,action) => {
@@ -70,10 +71,10 @@ let Routes = class extends Component<any,any> {
             <TransitionGroup>
                 <CSSTransition
                     key = {location.key}
-                    classNames="fade"
-                    timeout={2000}
-                    appear= {true}
-                    exit={false}
+                    classNames = "fade"
+                    timeout = {2000}
+                    appear
+                    exit = {false}
                     onEnter = {() => {
                         window.scrollTo(0, 0)
                     }}

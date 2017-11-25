@@ -12,12 +12,12 @@ import { routerReducer } from 'react-router-redux'
 import {reducer as toastrReducer} from 'react-redux-toastr'
 
 // -------------[ app resources ]---------------
-import * as Actions from '../actions/actions'
+import * as Actions from './actions'
 
-import initialstate from "../../local/initialstate"
+import initialstate from "../local/initialstate"
 
 // ----------[ app settings ]----------------------
-import explorer from '../../addins/explorer/reducers'
+import explorer from '../addins/explorer/reducers'
 // -----------[ system resource reducers ]------------
 
 let theme = (state: any = initialstate.theme) => {

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const react_redux_1 = require("react-redux");
-const Actions = require("../actions/actions");
+const Actions = require("../actions");
 const basicform_1 = require("../components/basicform");
 const Card_1 = require("material-ui/Card");
 const constants_1 = require("../../local/constants");

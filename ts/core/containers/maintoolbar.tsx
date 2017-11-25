@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux'
-import * as Actions from '../actions/actions'
+import * as Actions from '../actions'
 
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
 const react_redux_1 = require("react-redux");
-const Actions = require("../actions/actions");
+const Actions = require("../actions");
 const redux_1 = require("redux");
 const AppBar_1 = require("material-ui/AppBar");
 const Drawer_1 = require("material-ui/Drawer");

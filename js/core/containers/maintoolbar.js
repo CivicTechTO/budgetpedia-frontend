@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
-const Actions = require("../actions/actions");
+const Actions = require("../actions");
 const IconButton_1 = require("material-ui/IconButton");
 const FontIcon_1 = require("material-ui/FontIcon");
 const Toolbar_1 = require("material-ui/Toolbar");
