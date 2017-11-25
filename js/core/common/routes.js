@@ -27,7 +27,6 @@ let Routes = class extends Component {
     constructor() {
         super(...arguments);
         this.historyListener = (location, action) => {
-            window.scrollTo(0, 0);
             logPageView(location);
         };
     }
@@ -38,7 +37,9 @@ let Routes = class extends Component {
         let location = this.props.router.location || {};
         return (React.createElement(react_router_redux_1.ConnectedRouter, { history: this.props.history },
             React.createElement(react_transition_group_1.TransitionGroup, null,
-                React.createElement(react_transition_group_1.CSSTransition, { key: location.key, classNames: "fade", timeout: 2000, appear: true, exit: false },
+                React.createElement(react_transition_group_1.CSSTransition, { key: location.key, classNames: "fade", timeout: 2000, appear: true, exit: false, onEnter: () => {
+                        window.scrollTo(0, 0);
+                    } },
                     React.createElement(react_router_dom_1.Switch, { location: location }, routes)))));
     }
 };

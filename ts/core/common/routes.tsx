@@ -55,7 +55,6 @@ logPageView(window.location)
 let Routes = class extends Component<any,any> { 
 
     historyListener = (location,action) => {
-        window.scrollTo(0, 0)
         logPageView(location)
     }
 
@@ -75,6 +74,9 @@ let Routes = class extends Component<any,any> {
                     timeout={2000}
                     appear= {true}
                     exit={false}
+                    onEnter = {() => {
+                        window.scrollTo(0, 0)
+                    }}
                 >
                     <Switch location = {location}>
                         { routes }
