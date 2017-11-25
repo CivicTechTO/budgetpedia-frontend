@@ -66,22 +66,19 @@ let Routes = class extends Component<any,any> {
 
     render() {
         let location = this.props.router.location || {}
-        console.log('rendering')
         return (
         <ConnectedRouter history = {this.props.history}>
             <TransitionGroup>
                 <CSSTransition
-                    classNames="default-transition"
-                    timeout={1000}
+                    key = {location.key}
+                    classNames="fade"
+                    timeout={2000}
                     appear= {true}
-                    mountOnEnter={true}
-                    unmountOnExit={true}
+                    exit={false}
                 >
-                    <div>
-                        <Switch location = {location}>
-                            { routes }
-                        </Switch>
-                    </div>
+                    <Switch location = {location}>
+                        { routes }
+                    </Switch>
                 </CSSTransition>
             </TransitionGroup>
         </ConnectedRouter>

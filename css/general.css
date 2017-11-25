@@ -9,6 +9,25 @@ blockquote {
 }
 /* ReactSlider */
 
+
+.fade-appear,
+.fade-enter {
+    opacity:0;
+}
+
+.fade-appear-active,
+.fade-enter-active {
+    opacity:1;
+    transition: opacity 1.5s;
+}
+
+.fade-exit {
+    opacity:1;
+    transition: opacity 1.5s;
+}
+.fade-exit-active {
+    opacity:0;
+}
 .horizontal-slider {
     width: 100%;
     max-width: 500px;

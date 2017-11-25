@@ -36,12 +36,10 @@ let Routes = class extends Component {
     }
     render() {
         let location = this.props.router.location || {};
-        console.log('rendering');
         return (React.createElement(react_router_redux_1.ConnectedRouter, { history: this.props.history },
             React.createElement(react_transition_group_1.TransitionGroup, null,
-                React.createElement(react_transition_group_1.CSSTransition, { classNames: "default-transition", timeout: 1000, appear: true, mountOnEnter: true, unmountOnExit: true },
-                    React.createElement("div", null,
-                        React.createElement(react_router_dom_1.Switch, { location: location }, routes))))));
+                React.createElement(react_transition_group_1.CSSTransition, { key: location.key, classNames: "fade", timeout: 2000, appear: true, exit: false },
+                    React.createElement(react_router_dom_1.Switch, { location: location }, routes)))));
     }
 };
 exports.Routes = Routes;
