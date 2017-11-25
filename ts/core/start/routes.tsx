@@ -1,6 +1,8 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 // routes.tsx
 
+// assemble and manage routes
+
 'use strict'
 
 import * as React from 'react'
@@ -16,11 +18,6 @@ ReactGA.initialize('UA-4105209-11')
 
 import HomeTiles from '../containers/hometiles'
 
-// import ResetPassword from '../containers/resetpassword'
-// import Register from '../containers/register'
-// import RegisterPending from '../containers/registerpending'
-// import RegisterConfirm from '../containers/registerconfirm'
-// import UserProfile from '../containers/userprofile'
 import NoMatch  from '../containers/nomatch'
 
 import approutes from '../../addins/approutes'
@@ -35,11 +32,6 @@ let logPageView = (location) => {
 
 let routedata = [
 
-    // { path: "resetpassword", component: ResetPassword },
-    // { path: "register", component: Register },
-    // { path: "register/pending", component: RegisterPending },
-    // { path: "register/confirm", component: RegisterConfirm },
-    // { path: "userprofile", component: UserProfile },
     { path: "*", component: NoMatch }, // must be LAST, or else will pre-empt other paths
 ]
 
@@ -51,7 +43,7 @@ let home = <Route key = 'home' exact path="/" component={ HomeTiles } />
 
 let routes = [home, ...approutes, ...coreroutes]
 
-logPageView(window.location)
+logPageView(window.location) // first hit
 
 let Routes = class extends Component<any,any> { 
 

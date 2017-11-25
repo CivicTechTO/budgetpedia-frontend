@@ -22,6 +22,4 @@ const store = createStore(
     middleware
 )
 
-const configureStore = () => store
-
-export {configureStore, history}
+export {store, history}

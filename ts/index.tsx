@@ -1,7 +1,7 @@
 // index.tsx
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 
-// <reference path="../typings-custom/general.d.ts" />
+// configure the system environment
 
 import * as React from 'react'
 import { render } from 'react-dom'

@@ -11,5 +11,4 @@ exports.history = history;
 const reduxRouterMiddleware = react_router_redux_1.routerMiddleware(history);
 const middleware = redux_1.applyMiddleware(reduxRouterMiddleware, redux_thunk_1.default);
 const store = redux_1.createStore(reducers, middleware);
-const configureStore = () => store;
-exports.configureStore = configureStore;
+exports.store = store;

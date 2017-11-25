@@ -1,30 +1,28 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 
+// configure the app environment
+
 'use strict'
 
 import * as React from 'react'
 
-import {configureStore, history} from './configurestore'
-import Root from './app'
+import {store, history} from './globaldataconfig'
 
-const store = configureStore()
+import { Provider } from 'react-redux'
 
-// console.log('store',store, store.getState())
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
+import App from './app'
 
 //TODO: assign version to state (DEVELOPMENT|STAGING|PRODUCTION)
 const Main = ({globalmessage, version}) => (
-    <Root store={store} history = {history} globalmessage={globalmessage}/>
+    <Provider store={ store }>
+        <MuiThemeProvider muiTheme = {getMuiTheme()}>
+            <App history = {history} globalmessage={globalmessage}/>
+        </MuiThemeProvider>
+    </Provider>
 )
 
 export default Main
 
-// import { autoLoginUser } from '../actions/actions'
-
-// let { auth } = store.getState().login
-
-// if (!auth.isAuthenticated) {
-//     let token = localStorage.getItem('jsonwebtoken')
-//     if (token) {
-//         store.dispatch(autoLoginUser(token))
-//     }
-// }
