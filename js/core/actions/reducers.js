@@ -5,7 +5,7 @@ const redux_actions_1 = require("redux-actions");
 const react_router_redux_1 = require("react-router-redux");
 const react_redux_toastr_1 = require("react-redux-toastr");
 const Actions = require("./actions");
-const initialstate_1 = require("../../local/initialstate");
+const initialstate_1 = require("../../settings/initialstate");
 const reducers_1 = require("../../addins/explorer/reducers");
 let theme = (state = initialstate_1.default.theme) => {
     return state;

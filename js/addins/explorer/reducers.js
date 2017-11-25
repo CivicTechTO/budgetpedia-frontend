@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
-const initialstate_1 = require("../../local/initialstate");
+const initialstate_1 = require("../../settings/initialstate");
 const actions_1 = require("./actions");
 const constants_1 = require("./constants");
 let generationcounter = 0;

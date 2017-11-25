@@ -14,7 +14,7 @@ import {reducer as toastrReducer} from 'react-redux-toastr'
 // -------------[ app resources ]---------------
 import * as Actions from './actions'
 
-import initialstate from "../../local/initialstate"
+import initialstate from "../../settings/initialstate"
 
 // ----------[ app settings ]----------------------
 import explorer from '../../addins/explorer/reducers'
