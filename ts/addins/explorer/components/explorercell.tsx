@@ -12,7 +12,7 @@
 import * as React from 'react'
 var { Component } = React
 
-var { Chart } = require('../../../../forked/react-google-charts/Chart.js')
+var { Chart } = require('../../../../forked_modules/react-google-charts/Chart.js')
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 import SvgIcon from 'material-ui/SvgIcon'

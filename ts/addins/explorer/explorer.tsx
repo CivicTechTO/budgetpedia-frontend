@@ -53,7 +53,7 @@ import {toastr} from 'react-redux-toastr'
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
 let ReactGA = require('react-ga')
-var { Chart } = require('../../../forked/react-google-charts/Chart.js')
+var { Chart } = require('../../../forked_modules/react-google-charts/Chart.js')
 
 import ExplorerBranch from './components/explorerbranch'
 import SearchDialog from './components/searchdialog'

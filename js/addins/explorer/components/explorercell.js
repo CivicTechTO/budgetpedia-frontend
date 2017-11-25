@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
-var { Chart } = require('../../../../forked/react-google-charts/Chart.js');
+var { Chart } = require('../../../../forked_modules/react-google-charts/Chart.js');
 const IconButton_1 = require("material-ui/IconButton");
 const FontIcon_1 = require("material-ui/FontIcon");
 const SvgIcon_1 = require("material-ui/SvgIcon");
