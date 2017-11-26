@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom'
 
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
+
+import { Timeline } from 'react-twitter-widgets'
+
 import { AppTiles } from "../components/apptiles"
 
 const mapStateToProps = ( { homegrid, resources } ) => 
@@ -164,7 +167,21 @@ let Home = class extends React.Component<any, any> {
                 pushHistory = { this.props.pushHistory }
                 cellHeight = { 180 }
             />
-            <div 
+            <div style = {{padding:'32px',backgroundColor:'silver'}} >
+            <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
+            <Timeline
+                dataSource={{
+                  sourceType: 'url',
+                  url: 'https://twitter.com/budgetpedia'
+                }}
+                options={{
+                  username: 'Budgetpedia',
+                  height: '400'
+                }}
+              />
+           </div>
+           </div>
+           <div 
                 style = {
                     {
                         backgroundColor:"#404244",

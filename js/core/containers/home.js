@@ -5,6 +5,7 @@ const react_redux_1 = require("react-redux");
 const Actions = require("../actions/actions");
 const react_router_dom_1 = require("react-router-dom");
 const Card_1 = require("material-ui/Card");
+const react_twitter_widgets_1 = require("react-twitter-widgets");
 const apptiles_1 = require("../components/apptiles");
 const mapStateToProps = ({ homegrid, resources }) => ({
     hometiles: homegrid.hometiles,
@@ -108,6 +109,15 @@ let Home = class extends React.Component {
                     back: colors.amber50,
                     helpbutton: theme.palette.primary3Color,
                 }, system: system, pushHistory: this.props.pushHistory, cellHeight: 180 }),
+            React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver' } },
+                React.createElement("div", { style: { maxWidth: '600px', margin: '0 auto' } },
+                    React.createElement(react_twitter_widgets_1.Timeline, { dataSource: {
+                            sourceType: 'url',
+                            url: 'https://twitter.com/budgetpedia'
+                        }, options: {
+                            username: 'Budgetpedia',
+                            height: '400'
+                        } }))),
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
                     padding: "8px",
