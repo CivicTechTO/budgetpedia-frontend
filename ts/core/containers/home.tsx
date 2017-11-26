@@ -9,8 +9,9 @@ import { connect } from 'react-redux'
 import * as Actions from '../actions/actions'
 import { Link } from 'react-router-dom'
 
-import { AppTiles } from "../components/apptiles"
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
+
+import { AppTiles } from "../components/apptiles"
 
 const mapStateToProps = ( { homegrid, resources } ) => 
 ({ 
@@ -23,7 +24,7 @@ const mapStateToProps = ( { homegrid, resources } ) =>
 })
 
 
-class HomeTilesClass extends React.Component<any, any> {
+let Home = class extends React.Component<any, any> {
 
     handleHomeResize = () => { 
 
@@ -143,10 +144,10 @@ class HomeTilesClass extends React.Component<any, any> {
                     {
                         margin:"16px",
                         fontFamily:theme.fontFamily,
+                        width:'100%'
                     }
                 }
                 tiles =     { hometiles } 
-                tilecols =  { homecols }
                 padding =   { homepadding }
                 tilecolors = {
                     { 
@@ -218,11 +219,11 @@ class HomeTilesClass extends React.Component<any, any> {
 }
 
 // dependency injection
-var HomeTiles = connect ( mapStateToProps,
+Home = connect ( mapStateToProps,
     {
         pushHistory:Actions.pushHistory,
         setHomeTileCols:Actions.setHomeTileCols,
     } 
-) ( HomeTilesClass )
+) ( Home )
 
-export default HomeTiles
+export default Home

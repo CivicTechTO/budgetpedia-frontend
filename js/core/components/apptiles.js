@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 var { Component } = React;
-const GridList_1 = require("material-ui/GridList");
 const apptile_1 = require("./apptile");
 class AppTiles extends Component {
     render() {
@@ -22,23 +21,20 @@ class AppTiles extends Component {
             return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
         let secondarytiles = secondarytiledata.map(function (data) {
-            return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
+            return (React.createElement(apptile_1.AppTile, { key: data.id, style: { width: '80px' }, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
         return (React.createElement("div", null,
             React.createElement("div", { style: {
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-around',
+                    display: 'block',
                     backgroundColor: '#749261',
+                    overflowX: 'auto',
+                    width: '100%',
                 } },
-                React.createElement(GridList_1.GridList, { style: style, children: primarytiles, cols: tilecols, padding: padding, cellHeight: cellHeight })),
-            React.createElement("div", { style: {
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-around',
-                    backgroundColor: '#986667 ',
-                } },
-                React.createElement(GridList_1.GridList, { style: style, children: secondarytiles, cols: tilecols, padding: padding, cellHeight: cellHeight }))));
+                React.createElement("div", { style: {
+                        display: 'block',
+                    } },
+                    primarytiles,
+                    secondarytiles))));
     }
 }
 exports.AppTiles = AppTiles;

@@ -31,11 +31,15 @@ class AppTile extends React.Component {
             };
         }
         return (React.createElement(GridList_1.GridTile, { style: {
+                display: 'inline-block',
                 textAlign: "center",
                 backgroundColor: 'white',
                 border: '2px solid silver',
                 borderRadius: '8px',
                 cursor: 'pointer',
+                width: '200px',
+                height: '200px',
+                fontFamily: this.props.system.fontFamily,
             }, title: this.props.content.title, subtitle: this.props.content.subtitle, cols: this.props.content.cols || 1 },
             React.createElement("div", { style: wrapperstyle, onClick: tile.pushHistory },
                 React.createElement("div", { style: { position: "absolute", top: 3, left: 3, color: "silver", fontStyle: "italic", fontSize: "smaller" } }, this.props.content.category),

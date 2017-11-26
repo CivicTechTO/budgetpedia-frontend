@@ -53,11 +53,15 @@ class AppTile extends React.Component<any, any> {
 
                 style = {
                     {
+                        display:'inline-block',
                         textAlign: "center",
                         backgroundColor:'white',
                         border:'2px solid silver',
                         borderRadius: '8px',
                         cursor:'pointer',
+                        width:'200px',
+                        height:'200px',
+                        fontFamily:this.props.system.fontFamily,
                     }
                 }
                 title = {this.props.content.title}

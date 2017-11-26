@@ -16,7 +16,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
-import HomeTiles from '../containers/hometiles'
+import Home from '../containers/home'
 
 import NoMatch  from '../containers/nomatch'
 
@@ -39,7 +39,7 @@ let coreroutes = routedata.map((item, index) => (
    <Route key = {'coreroute'+index} path={item.path} component = {item.component} />
 ))
 
-let home = <Route key = 'home' exact path="/" component={ HomeTiles } />
+let home = <Route key = 'home' exact path="/" component={ Home } />
 
 let routes = [home, ...approutes, ...coreroutes]
 
