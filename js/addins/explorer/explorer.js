@@ -786,10 +786,6 @@ let Explorer = class extends Component {
         };
     }
     componentWillMount() {
-        if (!this.props.declarationData.onetimenotification) {
-            this.toastrmessages.info = "Click or tap on any chart column to drill down (except as noted).";
-            this.props.onetimeNotification();
-        }
         let query = {
             search: this.props.location.search,
             branch: this.getUrlParameter('branch'),

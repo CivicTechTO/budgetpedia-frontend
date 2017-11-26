@@ -7,7 +7,6 @@ import { routerReducer, routerMiddleware } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
 import mainReducers from "../actions/reducers"
 
-
 // assemble reducers
 const reducers = combineReducers({...mainReducers,router:routerReducer})
 

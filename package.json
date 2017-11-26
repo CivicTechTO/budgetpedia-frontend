@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ajv": "^5.4.0",
+    "ajv": "^5.5.0",
     "csv": "^2.0.0",
     "eslint-config-react-tools": "^1.0.10",
     "flux-standard-action": "^2.0.0",
@@ -34,6 +34,7 @@
     "react-dom": "^16.1.1",
     "react-ga": "^2.3.5",
     "react-google-charts": "^1.5.5",
+    "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
     "react-redux-toastr": "^7.1.6",
     "react-router": "^4.2.0",

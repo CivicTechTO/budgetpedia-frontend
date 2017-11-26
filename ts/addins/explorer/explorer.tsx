@@ -245,10 +245,10 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         // console.log('window.location,state, props',window.location, this.state, this.props)
 
 
-        if (!this.props.declarationData.onetimenotification) {
-            this.toastrmessages.info = "Click or tap on any chart column to drill down (except as noted)."
-            this.props.onetimeNotification()
-        }
+        // if (!this.props.declarationData.onetimenotification) {
+        //     this.toastrmessages.info = "Click or tap on any chart column to drill down (except as noted)."
+        //     this.props.onetimeNotification()
+        // }
 
         let query = {
             search:this.props.location.search,
