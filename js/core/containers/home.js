@@ -98,9 +98,11 @@ let Home = class extends React.Component {
                                 React.createElement("a", { href: "http://medium.com/budgetpedia", target: "_blank" }, "Medium"))),
                         React.createElement("div", { style: { clear: "both" } })))),
             React.createElement(apptiles_1.AppTiles, { style: {
-                    margin: "16px",
+                    padding: "16px",
                     fontFamily: theme.fontFamily,
-                    width: '100%'
+                    display: 'block',
+                    backgroundColor: '#749261',
+                    overflowX: 'auto',
                 }, tiles: hometiles, padding: homepadding, tilecolors: {
                     front: colors.blue50,
                     back: colors.amber50,

@@ -63,6 +63,8 @@ let Home = class extends React.Component<any, any> {
 
         let { hometiles, homecols, homepadding, theme, colors, system } = this.props
 
+        // console.log('theme, props',theme,this.props)
+
         return (
             <div>
             <div 
@@ -142,9 +144,11 @@ let Home = class extends React.Component<any, any> {
 
                 style = {
                     {
-                        margin:"16px",
+                        padding:"16px",
                         fontFamily:theme.fontFamily,
-                        width:'100%'
+                        display: 'block',
+                        backgroundColor: '#749261',               
+                        overflowX: 'auto', 
                     }
                 }
                 tiles =     { hometiles } 

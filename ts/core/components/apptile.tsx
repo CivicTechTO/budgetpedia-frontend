@@ -59,9 +59,9 @@ class AppTile extends React.Component<any, any> {
                         border:'2px solid silver',
                         borderRadius: '8px',
                         cursor:'pointer',
-                        width:'200px',
-                        height:'200px',
-                        fontFamily:this.props.system.fontFamily,
+                        width:'180px',
+                        height:'180px',
+                        marginRight:'16px',
                     }
                 }
                 title = {this.props.content.title}

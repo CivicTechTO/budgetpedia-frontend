@@ -8,7 +8,6 @@ class AppTiles extends Component {
         let { tiles, tilecols, padding, tilecolors, style, system, route, pushHistory, cellHeight } = this.props;
         let primarytiledata = [];
         let secondarytiledata = [];
-        style['width'] = '100%';
         for (let tiledata of tiles) {
             if (tiledata.tier == 'primary') {
                 primarytiledata.push(tiledata);
@@ -21,20 +20,15 @@ class AppTiles extends Component {
             return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
         let secondarytiles = secondarytiledata.map(function (data) {
-            return (React.createElement(apptile_1.AppTile, { key: data.id, style: { width: '80px' }, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
+            return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
-        return (React.createElement("div", null,
+        return (React.createElement("div", { style: style },
             React.createElement("div", { style: {
                     display: 'block',
-                    backgroundColor: '#749261',
-                    overflowX: 'auto',
-                    width: '100%',
+                    whiteSpace: 'nowrap',
                 } },
-                React.createElement("div", { style: {
-                        display: 'block',
-                    } },
-                    primarytiles,
-                    secondarytiles))));
+                primarytiles,
+                secondarytiles)));
     }
 }
 exports.AppTiles = AppTiles;

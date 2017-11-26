@@ -40,7 +40,6 @@ class AppTiles extends Component< AppTilesProps, any > {
         let { tiles, tilecols, padding, tilecolors, style, system, route, pushHistory, cellHeight } = this.props
         let primarytiledata = []
         let secondarytiledata = []
-        style['width'] = '100%'
         for (let tiledata of tiles) {
             if (tiledata.tier == 'primary') {
                 primarytiledata.push(tiledata)
@@ -67,7 +66,6 @@ class AppTiles extends Component< AppTilesProps, any > {
             return (
                 <AppTile 
                     key     = { data.id } 
-                    style = {{width:'80px'}}
                     content  = { data.content }
                     tilecolors = { tilecolors }
                     system = { system }
@@ -78,25 +76,19 @@ class AppTiles extends Component< AppTilesProps, any > {
         })
 // 152    102    103   #986667 
         return (
-            <div>
+            <div
+            style = { style }
+            >
                 <div
-                style = {{
-                    display: 'block',
-                    backgroundColor: '#749261',               
-                    overflowX: 'auto', 
-                    width: '100%',
-                }}
-                >
-                    <div
 
-                        style       = {
-                            {
-                                display: 'block',
-                            }
-                        }>
-                        { primarytiles }
-                        { secondarytiles }
-                    </div>
+                    style       = {
+                        {
+                            display: 'block',
+                            whiteSpace:'nowrap',
+                        }
+                    }>
+                    { primarytiles }
+                    { secondarytiles }
                 </div>
             </div>
         )
