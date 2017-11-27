@@ -40,12 +40,12 @@ let resources = combineReducers({
 
 // ---------------------[ ui core services reducers ]------------------------
 
-let appnavbar = (state: any = initialstate.appnavbar, action) => {
+let globalbar = (state: any = initialstate.globalbar, action) => {
     return state
 }
 
 let ui = combineReducers({
-    appnavbar,
+    globalbar,
 })
 
 // ---------------------[ home grid reducers ]------------------------

@@ -19,11 +19,11 @@ let resources = redux_1.combineReducers({
     system,
     colors,
 });
-let appnavbar = (state = initialstate_1.default.appnavbar, action) => {
+let globalbar = (state = initialstate_1.default.globalbar, action) => {
     return state;
 };
 let ui = redux_1.combineReducers({
-    appnavbar,
+    globalbar,
 });
 let homepadding = (state = initialstate_1.default.homepadding, action) => {
     return state;

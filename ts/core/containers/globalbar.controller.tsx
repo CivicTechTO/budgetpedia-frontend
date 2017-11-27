@@ -20,6 +20,9 @@ import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 import Divider from 'material-ui/Divider'
 
+import * as Radium from 'radium'
+let { StyleRoot } = Radium
+
 import { MenuRow } from '../components/menurow'
 
 let GlobalBar = class extends React.Component<any, any> {
@@ -36,7 +39,7 @@ let GlobalBar = class extends React.Component<any, any> {
     
     render() { 
         // console.log('props', this.props)
-        let { appnavbar, theme } = this.props
+        let { globalbar, theme } = this.props
         let hometiles = this.props.hometiles
         let menutransition = (fn) => {
             this.setState({
@@ -96,6 +99,7 @@ let GlobalBar = class extends React.Component<any, any> {
             </IconButton>
 
         return (
+            <StyleRoot>
             <AppBar
                 onTitleTouchTap = { () => this.props.push('/') }
                 titleStyle = {{cursor:'pointer'}}
@@ -105,7 +109,7 @@ let GlobalBar = class extends React.Component<any, any> {
                         backgroundColor:"#336797" 
                     } 
                 }
-                title={ <span>{ appnavbar.title }</span> }
+                title={ <span>{ globalbar.title }</span> }
 
                 iconElementLeft={ menuicon }
                 >
@@ -117,19 +121,19 @@ let GlobalBar = class extends React.Component<any, any> {
                     right: 0,
                     padding: "3px",
                 }}>
-                    <style> {`
-                        #contact:link {
-                            color:white
-                        }
-                        #contact:visited {
-                            color:gold
-                        }
-                        #contact:hover {
-                            color:white
-                        }
-                    `} </style>
-                    contact: <a id="contact"
-                    target="_blank" href="mailto:mail@budgetpedia.ca">mail@budgetpedia.ca</a>
+                    contact: <a 
+                        style = {{
+                            color:'white',
+                            ':hover':{
+                                color:'white',
+                                background: 'black',
+                            },
+                            ':visited':{color:'gold'},
+                        }}
+                        target="_blank" href="mailto:mail@budgetpedia.ca"
+                        >
+                            mail@budgetpedia.ca
+                        </a>
                 </div>
 
                 <div style={{
@@ -146,6 +150,7 @@ let GlobalBar = class extends React.Component<any, any> {
                 { menusidebar }
 
             </AppBar>
+            </StyleRoot>
         )
     } // render
 }
@@ -156,7 +161,7 @@ function mapStateToProps(state) {
 
     return {
 
-        appnavbar:ui.appnavbar,
+        globalbar:ui.globalbar,
         theme:resources.theme,
         hometiles:homegrid.hometiles,
     }

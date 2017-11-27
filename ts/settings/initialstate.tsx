@@ -50,7 +50,7 @@ import {BranchSettings} from '../addins/explorer/modules/interfaces'
 
 import * as colors from 'material-ui/styles/colors'
 
-let appnavbar = {
+let globalbar = {
 	title: 'Budgetpedia v0.1.3',
 	username: 'anonymous',
 	accountoptions: [],
@@ -292,7 +292,7 @@ var initialstate = {
     hometiles,
     homecols,
     homepadding,
-    appnavbar,
+    globalbar,
 	// toolsnavbar,
 	theme,
 	colors,

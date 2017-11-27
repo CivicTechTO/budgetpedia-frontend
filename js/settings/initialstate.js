@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const lightBaseTheme_1 = require("material-ui/styles/baseThemes/lightBaseTheme");
 const colors = require("material-ui/styles/colors");
-let appnavbar = {
+let globalbar = {
     title: 'Budgetpedia v0.1.3',
     username: 'anonymous',
     accountoptions: [],
@@ -174,7 +174,7 @@ var initialstate = {
     hometiles,
     homecols,
     homepadding,
-    appnavbar,
+    globalbar,
     theme: lightBaseTheme_1.default,
     colors,
     system,
