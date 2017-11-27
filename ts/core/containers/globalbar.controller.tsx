@@ -45,7 +45,7 @@ import Divider from 'material-ui/Divider'
 import IconMenu from 'material-ui/IconMenu'
 // import FlatButton = require('material-ui/lib/flat-button')
 
-let MainBar = class extends React.Component<any, any> {
+let GlobalBar = class extends React.Component<any, any> {
 
     constructor(props) {
         super(props);
@@ -452,12 +452,12 @@ function mapStateToProps(state) {
 
 // if returned as default all is good; of returned by name then
 // fails to apply result of mapStateToProps (??)
-MainBar = connect(
+GlobalBar = connect(
     mapStateToProps, 
     {
         pushHistory:Actions.pushHistory,
         loginUser:Actions.loginUser,
         logoutUser:Actions.logoutUser,
-    })(MainBar)
+    })(GlobalBar)
 
-export default MainBar
+export default GlobalBar

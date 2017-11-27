@@ -16,7 +16,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
-import Home from '../containers/home'
+import Home from '../containers/home.controller'
 
 import NoMatch  from '../containers/nomatch'
 
@@ -68,7 +68,7 @@ let Routes = class extends Component<any,any> {
                     appear
                     exit = {false}
                     onEnter = {() => {
-                        window.scrollTo(0, 0)
+                        window.scrollTo(0, 0) // adapt to single page app results in arbitray page location after nav
                     }}
                 >
                     <Switch location = {location}>

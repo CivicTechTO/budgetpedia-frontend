@@ -7,13 +7,13 @@ import * as React from 'react'
 
 import ReduxToastr from 'react-redux-toastr'
 
-import MainBar from '../containers/mainbar'
+import GlobalBar from '../containers/globalbar.controller'
 
-import {Routes} from './routes'
+import { Routes } from './routes.controller'
 
-const App = ({globalmessage, history}) => (
+const MainView = ({globalmessage, history}) => (
     <div >
-        <MainBar />
+        <GlobalBar />
         <div style={{ height: "64px" }} > {/* space for top fixed appbar */}
         </div>
 
@@ -28,4 +28,4 @@ const App = ({globalmessage, history}) => (
     </div>
 )
 
-export default App
+export default MainView
