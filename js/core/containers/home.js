@@ -103,7 +103,7 @@ let Home = class extends React.Component {
                     fontFamily: theme.fontFamily,
                     display: 'block',
                     backgroundColor: '#749261',
-                    overflowX: 'auto',
+                    overflowX: 'scroll',
                 }, tiles: hometiles, padding: homepadding, tilecolors: {
                     front: colors.blue50,
                     back: colors.amber50,

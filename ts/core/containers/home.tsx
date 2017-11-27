@@ -151,7 +151,7 @@ let Home = class extends React.Component<any, any> {
                         fontFamily:theme.fontFamily,
                         display: 'block',
                         backgroundColor: '#749261',               
-                        overflowX: 'auto', 
+                        overflowX: 'scroll', 
                     }
                 }
                 tiles =     { hometiles } 
