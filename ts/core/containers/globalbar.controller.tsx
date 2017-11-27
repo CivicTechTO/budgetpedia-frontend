@@ -3,99 +3,40 @@
 
 /*
     TODO: 
-    - add name of user under account icon at right. Currently this causes styling problems
-    - control account icon color by passed in property
-    - change username source to user object
-    - clear login form after successful login (form.reset())
-    - use getInputDOMNode().value = this.refs.input.getDOMNode(), or getValue()
-    - animate and abstract the ui message board
-
-    NOTES:
-    - iconStyleRight does not work
-    - style on FontIcon does not work
-    - iconStyle on iconButton works
+    - animate and abstract a ui message board
 */
-
-// <reference path="../../typings/material-ui/material-ui.d.ts" />
-// <reference path="../../typings-custom/material-ui.d.ts" />
 
 'use strict'
 
 import * as React from 'react' // required by bundler
 var { Component } = React
 import { connect } from 'react-redux'
-import * as Actions from '../actions/actions'
+import { push } from 'react-router-redux'
 import { compose } from 'redux'
 
 import AppBar from 'material-ui/AppBar'
-import LeftNav from 'material-ui/Drawer'
-// import AppTile = require('../components/apptile')
-
-// import { BasicForm, elementProps } from '../components/basicform'
-
-import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
-
-import MenuItem from 'material-ui/MenuItem'
-import { MenuTile } from '../components/menutile'
+import Drawer from 'material-ui/Drawer'
 import IconButton from 'material-ui/IconButton'
-import RaisedButton from 'material-ui/RaisedButton'
 import FontIcon from 'material-ui/FontIcon'
-import TextField from 'material-ui/TextField'
 import Divider from 'material-ui/Divider'
-import IconMenu from 'material-ui/IconMenu'
-// import FlatButton = require('material-ui/lib/flat-button')
+
+import { MenuRow } from '../components/menurow'
 
 let GlobalBar = class extends React.Component<any, any> {
 
-    constructor(props) {
-        super(props);
-        this.state = { 
-            accountsidebaropen: false, 
-            menusidebaropen: false,
-            elements:{},
-            errors:{password:false,email:false},
-        };
+    state = { 
+        menusidebaropen: false,
     }
 
-    handleAccountSidebarToggle = () => this.setState({ accountsidebaropen: !this.state.accountsidebaropen });
     handleMenuSidebarToggle = (e) => {
         e.stopPropagation()
         e.preventDefault()
         this.setState({ menusidebaropen: !this.state.menusidebaropen })
     }
     
-    close = () => {
-        this.setState({ accountsidebaropen: false })
-    }
-
-    transitionToHome = () => {
-        // consistent with other transition calls...
-        this.setState({ accountsidebaropen: false })
-        this.props.pushHistory('/')
-    }
-
-    transitionToRegister = (e) => {
-
-        this.setState({ accountsidebaropen: false })
-        this.props.pushHistory('/register')
-
-    }
-
-    transitionToResetPassword = (e) => {
-
-        this.setState({ accountsidebaropen: false })
-        this.props.pushHistory('/resetpassword')
-
-    }
-
-    transitionToProfile = (e) => {
-        this.props.pushHistory('/userprofile')
-    }
-
     render() { 
         // console.log('props', this.props)
-        let appbar = this
-        let { appnavbar, theme } = appbar.props
+        let { appnavbar, theme } = this.props
         let hometiles = this.props.hometiles
         let menutransition = (fn) => {
             this.setState({
@@ -104,59 +45,9 @@ let GlobalBar = class extends React.Component<any, any> {
             return fn
         }
 
-        let closeicon =
-            <IconButton
-                style={{
-                    top:0,
-                    right:0,
-                    padding: 0,
-                    height: "36px",
-                    width: "36px",
-                    position: "absolute",
-                    zIndex:2,
-                }}
-                onTouchTap={ appbar.close } >
-
-                <FontIcon
-                    className="material-icons"
-                    color = {theme.palette.primary3Color}
-                    style = {{ cursor: "pointer" }} >
-
-                    close
-
-                </FontIcon>
-
-            </IconButton>
-
-        let registerprompt = 
-            <div>
-                <CardText>
-                    <a href="javascript:void(0);"
-                        onClick={appbar.transitionToResetPassword}>
-                        Forgot your password?
-                    </a>
-                </CardText>
-
-                <Divider/>
-
-                <CardText>
-                    Not a member? Register:
-                </CardText>
-
-                <CardActions>
-
-                    <RaisedButton
-                        type="button"
-                        label="Register"
-                        onTouchTap={appbar.transitionToRegister} />
-
-                </CardActions>
-            </div>
-
-        // let transitionToFunc = compose(menutransition, this.props.dispatch, Actions.pushHistory)
-        let transitionToFunc = compose(menutransition, this.props.pushHistory)
+        let transitionToFunc = compose(menutransition, this.props.push)
         let menuitems = hometiles.map(menutile => {
-            return <MenuTile
+            return <MenuRow
                 pushHistory = { transitionToFunc }
                 key = { menutile.id}
                 primaryText = { menutile.content.title }
@@ -168,14 +59,14 @@ let GlobalBar = class extends React.Component<any, any> {
         })
 
         let menusidebar = 
-            <LeftNav
+            <Drawer
                 width={300}
                 docked={false}
                 disableSwipeToOpen
-                onRequestChange={open => appbar.setState({ menusidebaropen: open, }) }
+                onRequestChange={open => this.setState({ menusidebaropen: open, }) }
                 open={this.state.menusidebaropen} >
 
-                <MenuTile 
+                <MenuRow 
                     pushHistory = { transitionToFunc }
                     key = {'home'}
                     primaryText = "Budgetpedia Home"
@@ -187,11 +78,11 @@ let GlobalBar = class extends React.Component<any, any> {
 
                 { menuitems }
 
-            </LeftNav>
+            </Drawer>
 
         let menuicon = 
             <IconButton
-                onTouchTap = {(e) => { appbar.handleMenuSidebarToggle(e) } } >
+                onTouchTap = {(e) => { this.handleMenuSidebarToggle(e) } } >
 
                 <FontIcon
                     className = "material-icons"
@@ -206,7 +97,7 @@ let GlobalBar = class extends React.Component<any, any> {
 
         return (
             <AppBar
-                onTitleTouchTap = { appbar.transitionToHome }
+                onTitleTouchTap = { () => this.props.push('/') }
                 titleStyle = {{cursor:'pointer'}}
                 style={ 
                     { 
@@ -252,12 +143,6 @@ let GlobalBar = class extends React.Component<any, any> {
                     We're all about government budgets
                 </div>
 
-                { // username 
-                }
-
-                { // loginsidebar 
-                }
-
                 { menusidebar }
 
             </AppBar>
@@ -267,7 +152,7 @@ let GlobalBar = class extends React.Component<any, any> {
 
 function mapStateToProps(state) {
 
-    let { resources, login, homegrid, ui } = state
+    let { resources, homegrid, ui } = state
 
     return {
 
@@ -283,7 +168,7 @@ function mapStateToProps(state) {
 GlobalBar = connect(
     mapStateToProps, 
     {
-        pushHistory:Actions.pushHistory,
+        push,
     })(GlobalBar)
 
 export default GlobalBar

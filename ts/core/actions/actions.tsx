@@ -13,7 +13,7 @@ import { createAction } from 'redux-actions';
     }
     createAction(type, payloadCreator = Identity, ?metaCreator)
 */
-import { routerActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 
 import { getQuery } from '../utilities/utilities'
 
@@ -22,7 +22,7 @@ import { getQuery } from '../utilities/utilities'
 
 export const pushHistory = route => {
     return dispatch => {
-        dispatch(routerActions.push(route))
+        dispatch(push(route))
     }
 }
 

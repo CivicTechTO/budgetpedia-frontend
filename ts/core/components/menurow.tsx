@@ -8,7 +8,7 @@ import * as React from 'react'
 
 import MenuItem from 'material-ui/MenuItem'
 
-export class MenuTile extends React.Component<any, any> {
+export class MenuRow extends React.Component<any, any> {
     constructor(props) {
         super(props);
     }
