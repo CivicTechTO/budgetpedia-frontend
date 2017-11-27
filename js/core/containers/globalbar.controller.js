@@ -10,8 +10,7 @@ const Drawer_1 = require("material-ui/Drawer");
 const IconButton_1 = require("material-ui/IconButton");
 const FontIcon_1 = require("material-ui/FontIcon");
 const Divider_1 = require("material-ui/Divider");
-const Radium = require("radium");
-let { StyleRoot } = Radium;
+const radium_1 = require("radium");
 const menurow_1 = require("../components/menurow");
 let GlobalBar = class extends React.Component {
     constructor() {
@@ -44,7 +43,7 @@ let GlobalBar = class extends React.Component {
             menuitems);
         let menuicon = React.createElement(IconButton_1.default, { onTouchTap: (e) => { this.handleMenuSidebarToggle(e); } },
             React.createElement(FontIcon_1.default, { className: "material-icons", color: theme.palette.alternateTextColor, style: { cursor: "pointer" } }, "menu"));
-        return (React.createElement(StyleRoot, null,
+        return (React.createElement(radium_1.StyleRoot, null,
             React.createElement(AppBar_1.default, { onTitleTouchTap: () => this.props.push('/'), titleStyle: { cursor: 'pointer' }, style: {
                     position: "fixed",
                     backgroundColor: "#336797"

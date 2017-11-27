@@ -20,8 +20,7 @@ import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 import Divider from 'material-ui/Divider'
 
-import * as Radium from 'radium'
-let { StyleRoot } = Radium
+import { StyleRoot } from 'radium'
 
 import { MenuRow } from '../components/menurow'
 
@@ -100,56 +99,56 @@ let GlobalBar = class extends React.Component<any, any> {
 
         return (
             <StyleRoot>
-            <AppBar
-                onTitleTouchTap = { () => this.props.push('/') }
-                titleStyle = {{cursor:'pointer'}}
-                style={ 
-                    { 
-                        position: "fixed",
-                        backgroundColor:"#336797" 
-                    } 
-                }
-                title={ <span>{ globalbar.title }</span> }
+                <AppBar
+                    onTitleTouchTap = { () => this.props.push('/') }
+                    titleStyle = {{cursor:'pointer'}}
+                    style={ 
+                        { 
+                            position: "fixed",
+                            backgroundColor:"#336797" 
+                        } 
+                    }
+                    title={ <span>{ globalbar.title }</span> }
 
-                iconElementLeft={ menuicon }
-                >
-                <div style={{
-                    position: "absolute",
-                    fontSize: "12px",
-                    color: "white",
-                    top: 0,
-                    right: 0,
-                    padding: "3px",
-                }}>
-                    contact: <a 
-                        style = {{
-                            color:'white',
-                            ':hover':{
+                    iconElementLeft={ menuicon }
+                    >
+                    <div style={{
+                        position: "absolute",
+                        fontSize: "12px",
+                        color: "white",
+                        top: 0,
+                        right: 0,
+                        padding: "3px",
+                    }}>
+                        contact: <a 
+                            style = {{
                                 color:'white',
-                                background: 'black',
-                            },
-                            ':visited':{color:'gold'},
-                        }}
-                        target="_blank" href="mailto:mail@budgetpedia.ca"
-                        >
-                            mail@budgetpedia.ca
-                        </a>
-                </div>
+                                ':hover':{
+                                    color:'white',
+                                    background: 'black',
+                                },
+                                ':visited':{color:'gold'},
+                            }}
+                            target="_blank" href="mailto:mail@budgetpedia.ca"
+                            >
+                                mail@budgetpedia.ca
+                            </a>
+                    </div>
 
-                <div style={{
-                    position: "absolute",
-                    fontSize: "12px",
-                    color: "gold",
-                    bottom: 0,
-                    left: 0,
-                    padding: "3px",
-                }}>
-                    We're all about government budgets
-                </div>
+                    <div style={{
+                        position: "absolute",
+                        fontSize: "12px",
+                        color: "gold",
+                        bottom: 0,
+                        left: 0,
+                        padding: "3px",
+                    }}>
+                        We're all about government budgets
+                    </div>
 
-                { menusidebar }
+                    { menusidebar }
 
-            </AppBar>
+                </AppBar>
             </StyleRoot>
         )
     } // render
