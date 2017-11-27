@@ -20,16 +20,10 @@ import { getQuery } from '../utilities/utilities'
 //===============================================
 /*------------- tile management -----------*/
 
-export const SET_TILECOLS = 'SET_TILECOLS'
-export const SET_HOMETILECOLS = 'SET_HOMETILECOLS'
 // the following three to be implemented
 export const ADD_TILE = 'ADD_TILE'
 export const REMOVE_TILE = 'REMOVE_TILE'
 export const UPDATE_TILE = 'UPDATE_TILE'
-
-export const setTileCols = createAction(SET_TILECOLS)
-
-export const setHomeTileCols = createAction(SET_HOMETILECOLS)
 
 export const pushHistory = route => {
     return dispatch => {

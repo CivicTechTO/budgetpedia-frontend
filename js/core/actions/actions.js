@@ -2,13 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const redux_actions_1 = require("redux-actions");
 const react_router_redux_1 = require("react-router-redux");
-exports.SET_TILECOLS = 'SET_TILECOLS';
-exports.SET_HOMETILECOLS = 'SET_HOMETILECOLS';
 exports.ADD_TILE = 'ADD_TILE';
 exports.REMOVE_TILE = 'REMOVE_TILE';
 exports.UPDATE_TILE = 'UPDATE_TILE';
-exports.setTileCols = redux_actions_1.createAction(exports.SET_TILECOLS);
-exports.setHomeTileCols = redux_actions_1.createAction(exports.SET_HOMETILECOLS);
 exports.pushHistory = route => {
     return dispatch => {
         dispatch(react_router_redux_1.routerActions.push(route));

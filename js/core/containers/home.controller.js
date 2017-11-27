@@ -18,26 +18,14 @@ const mapStateToProps = ({ homegrid, resources }) => ({
 let Home = class extends React.Component {
     constructor() {
         super(...arguments);
-        this.handleHomeResize = () => {
-            this.props.setHomeTileCols();
-        };
         this.pushHistory = (e, target) => {
             e.stopPropagation();
             e.preventDefault();
             this.props.history.push(target);
         };
     }
-    componentWillMount() {
-        this.props.setHomeTileCols();
-    }
-    componentDidMount() {
-        window.addEventListener('resize', this.handleHomeResize);
-    }
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleHomeResize);
-    }
     render() {
-        let { hometiles, homecols, homepadding, theme, colors, system } = this.props;
+        let { hometiles, homepadding, theme, colors, system } = this.props;
         return (React.createElement("div", null,
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
@@ -162,6 +150,5 @@ let Home = class extends React.Component {
 };
 Home = react_redux_1.connect(mapStateToProps, {
     pushHistory: Actions.pushHistory,
-    setHomeTileCols: Actions.setHomeTileCols,
 })(Home);
 exports.default = Home;

@@ -29,31 +29,6 @@ const mapStateToProps = ( { homegrid, resources } ) =>
 
 let Home = class extends React.Component<any, any> {
 
-    handleHomeResize = () => { 
-
-        this.props.setHomeTileCols()
-
-    }
-
-    componentWillMount() {
-
-        // initialize
-        this.props.setHomeTileCols()
-
-    }
-
-    componentDidMount() {
-
-        window.addEventListener ( 'resize', this.handleHomeResize )
-
-    }
-
-    componentWillUnmount() {
-
-        window.removeEventListener ( 'resize', this.handleHomeResize )
-
-    }
-
     pushHistory = (e, target) => {
 
         e.stopPropagation()
@@ -64,7 +39,7 @@ let Home = class extends React.Component<any, any> {
 
     render() {
 
-        let { hometiles, homecols, homepadding, theme, colors, system } = this.props
+        let { hometiles, homepadding, theme, colors, system } = this.props
 
         // console.log('theme, props',theme,this.props)
 
@@ -243,7 +218,6 @@ let Home = class extends React.Component<any, any> {
 Home = connect ( mapStateToProps,
     {
         pushHistory:Actions.pushHistory,
-        setHomeTileCols:Actions.setHomeTileCols,
     } 
 ) ( Home )
 

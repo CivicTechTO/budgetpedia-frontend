@@ -58,60 +58,9 @@ let hometiles = (state: any = initialstate.hometiles, action) => {
     return state
 }
 
-let homecolsreducer = (state: any = initialstate.homecols, action) => {
-    switch (action.type) {
-        case Actions.SET_HOMETILECOLS: {
-
-            let mainElement = document.getElementById('main')
-
-            let elementwidth: number = mainElement.getBoundingClientRect().width
-
-            let columns: number;
-
-            // breakpoints should be parameterized
-            // if (elementwidth > 960) {
-
-            //     columns = 5
-                
-            // } else 
-            if (elementwidth > 760) {
-
-                columns = 4
-
-            } else 
-            if (elementwidth > 480) {
-            // if (elementwidth > 620) {
-
-                columns = 2
-
-            // } else if (elementwidth > 200) {
-
-            //     columns = 2
-
-            } else {
-
-                columns = 1
-
-            }
-
-            return columns
-
-        }
-        default:
-
-            return state
-
-    }
-}
-
-let homecols = handleActions({
-    [Actions.SET_HOMETILECOLS]: homecolsreducer,
-}, initialstate.homecols)
-
 let homegrid = combineReducers({
     homepadding,
     hometiles,
-    homecols,
 })
 
 // ---------------------------[ main reducer ]--------------------------------
