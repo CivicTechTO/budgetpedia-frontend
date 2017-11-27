@@ -31,7 +31,7 @@ import AppBar from 'material-ui/AppBar'
 import LeftNav from 'material-ui/Drawer'
 // import AppTile = require('../components/apptile')
 
-import { BasicForm, elementProps } from '../components/basicform'
+// import { BasicForm, elementProps } from '../components/basicform'
 
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
@@ -92,42 +92,10 @@ let GlobalBar = class extends React.Component<any, any> {
         this.props.pushHistory('/userprofile')
     }
 
-    // respond to login form; assume error correction
-    submitLogin = ( elements ) => {
-
-        let creds = {}
-        for (var index in elements) {
-            creds[index] = elements[index].getValue()
-        }
-
-        let appbar = this
-        let callback = (result) => {
-            if (result) {
-                appbar.setState({
-                    accountsidebaropen: false
-                })
-            }
-        }
-
-        this.props.loginUser(creds,callback)
-    }
-
-    logout = () => {
-        this.props.logoutUser()
-    }
-
-    componentDidMount() {
-        let auth = this.props.auth
-        // close login sidebar after login
-        if (auth.isAuthenticated && (!auth.isFetching) && this.state.accountsidebaropen) {
-            this.setState({accountsidebaropen:false})
-        }
-    }
-
     render() { 
+        // console.log('props', this.props)
         let appbar = this
-        let { appnavbar, theme, auth } = appbar.props
-        let fieldMessages = appbar.props.auth.fieldMessages || {}
+        let { appnavbar, theme } = appbar.props
         let hometiles = this.props.hometiles
         let menutransition = (fn) => {
             this.setState({
@@ -160,37 +128,6 @@ let GlobalBar = class extends React.Component<any, any> {
 
             </IconButton>
 
-        // for login form below
-        let elements:Array<elementProps> = [
-            { 
-                index: 'email',
-                floatingLabelText: 'Email Address',
-                hintText:"enter unique email (required)",
-                // defaultValue: 'henrik@bechmann.ca',
-                type: 'email',
-                required: true,
-                errorText: fieldMessages['email'],
-            },
-            {
-                index: 'password',
-                floatingLabelText: 'Password',
-                hintText:"enter password (required)",
-                type: 'password',
-                maxLength:16,
-                minLength:6,
-                required: true,
-                errorText: fieldMessages['password'],
-            },
-        ]
-
-        let loginform = 
-            <BasicForm 
-                submit = { appbar.submitLogin }
-                elements = { elements }
-                submitButtonLabel = 'Sign in'
-                errorMessage = { appbar.props.auth.errorMessage } 
-            />
-
         let registerprompt = 
             <div>
                 <CardText>
@@ -215,27 +152,6 @@ let GlobalBar = class extends React.Component<any, any> {
 
                 </CardActions>
             </div>
-
-        let loginsidebar = 
-            <LeftNav
-                width = { 300} 
-                disableSwipeToOpen
-                docked = { false}
-                onRequestChange = { open => appbar.setState({ accountsidebaropen: open, }) }
-                open = { appbar.state.accountsidebaropen } >
-
-                <Card style={{ margin: "5px" }} >
-
-                    { closeicon }
-
-                    <CardTitle title="Member Sign In" style={{ paddingBottom: 0 }} />
-
-                    { loginform }
-
-                    { registerprompt }
-                    
-                </Card>
-            </LeftNav >
 
         // let transitionToFunc = compose(menutransition, this.props.dispatch, Actions.pushHistory)
         let transitionToFunc = compose(menutransition, this.props.pushHistory)
@@ -288,63 +204,6 @@ let GlobalBar = class extends React.Component<any, any> {
 
             </IconButton>
 
-        let accountmenu = 
-            <IconMenu
-                iconButtonElement={
-                    <IconButton>
-                        <FontIcon
-                            className = "material-icons"
-                            color = {theme.palette.alternateTextColor}
-                            style = {{ cursor: "pointer" }} >
-
-                            account_circle
-
-                        </FontIcon>
-                    </IconButton>
-                }
-                targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-                >
-                <MenuItem 
-                    onTouchTap = { appbar.transitionToProfile }
-                    primaryText = "Profile" />
-                <MenuItem 
-                    onTouchTap = { appbar.logout }
-                    primaryText = "Sign out" />
-            </IconMenu>
-
-        let accounticon = 
-            <IconButton
-                onTouchTap= {() => { appbar.handleAccountSidebarToggle() } } >
-
-                <FontIcon
-                    className = "material-icons"
-                    color = {theme.palette.alternateTextColor}
-                    style = {{ cursor: "pointer" }} >
-
-                    account_circle
-
-                </FontIcon>
-
-            </IconButton> 
-
-        let username = 
-            <div style={{
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-                fontSize: "small",
-                padding: "3px",
-                color: theme.palette.alternateTextColor,
-            }} >
-
-                { auth.isAuthenticated? auth.profile.userhandle: appnavbar.username }
-
-            </div>
-
-        // main components
-        let workingmessagestate = this.props.workingmessagestate
-
         return (
             <AppBar
                 onTitleTouchTap = { appbar.transitionToHome }
@@ -358,11 +217,6 @@ let GlobalBar = class extends React.Component<any, any> {
                 title={ <span>{ appnavbar.title }</span> }
 
                 iconElementLeft={ menuicon }
-                // iconElementRight={ 
-                    //appbar.props.auth.isAuthenticated
-                    //? accountmenu
-                    //: accounticon 
-                // } 
                 >
                 <div style={{
                     position: "absolute",
@@ -406,29 +260,6 @@ let GlobalBar = class extends React.Component<any, any> {
 
                 { menusidebar }
 
-                { // suppressed TODO: remove
-                    workingmessagestate
-                        ? <div
-                            style={
-                                {
-                                    display:'none',
-                                    position: "absolute",
-                                    top: "54px",
-                                    left:0,
-                                    textAlign: "center",
-                                    width: "100%",
-                                }
-                            }
-                            ><div style={{
-                                display: "inline-block", color: "green",
-                                backgroundColor: "beige",
-                                fontSize:"12px",
-                                padding: "3px",
-                                border: "1px solid silver",
-                                borderRadius: "10%"
-                            }}>Working...</div></div>
-                        : null
-                }
             </AppBar>
         )
     } // render
@@ -440,12 +271,9 @@ function mapStateToProps(state) {
 
     return {
 
-        state,
-        auth:login.auth,
         appnavbar:ui.appnavbar,
         theme:resources.theme,
         hometiles:homegrid.hometiles,
-        workingmessagestate:ui.workingmessagestate,
     }
 
 }
@@ -456,8 +284,6 @@ GlobalBar = connect(
     mapStateToProps, 
     {
         pushHistory:Actions.pushHistory,
-        loginUser:Actions.loginUser,
-        logoutUser:Actions.logoutUser,
     })(GlobalBar)
 
 export default GlobalBar

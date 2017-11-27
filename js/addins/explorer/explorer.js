@@ -22,7 +22,6 @@ let ReactGA = require('react-ga');
 var { Chart } = require('../../../forked_modules/react-google-charts/Chart.js');
 const explorerbranch_1 = require("./components/explorerbranch");
 const searchdialog_1 = require("./components/searchdialog");
-const Actions = require("../../core/actions/actions");
 const ExplorerActions = require("./actions");
 const branch_class_1 = require("./classes/branch.class");
 const reducers_1 = require("./reducers");
@@ -1030,8 +1029,6 @@ let mapStateToProps = state => {
     };
 };
 Explorer = react_redux_1.connect(mapStateToProps, {
-    showWaitingMessage: Actions.showWaitingMessage,
-    hideWaitingMessage: Actions.hideWaitingMessage,
     onetimeNotification: ExplorerActions.onetimeNotification,
     addBranchDeclaration: ExplorerActions.addBranchDeclaration,
     cloneBranchDeclaration: ExplorerActions.cloneBranchDeclaration,

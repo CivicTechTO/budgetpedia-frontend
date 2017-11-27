@@ -1767,8 +1767,6 @@ let mapStateToProps = state => {
 
 Explorer = connect(mapStateToProps, {
     // presentation
-    showWaitingMessage: Actions.showWaitingMessage,
-    hideWaitingMessage: Actions.hideWaitingMessage,
     onetimeNotification: ExplorerActions.onetimeNotification,
     // toggleShowControls
 
