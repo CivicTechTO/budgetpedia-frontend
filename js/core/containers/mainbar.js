@@ -20,7 +20,11 @@ let MainBar = class extends React.Component {
     constructor(props) {
         super(props);
         this.handleAccountSidebarToggle = () => this.setState({ accountsidebaropen: !this.state.accountsidebaropen });
-        this.handleMenuSidebarToggle = () => this.setState({ menusidebaropen: !this.state.menusidebaropen });
+        this.handleMenuSidebarToggle = (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            this.setState({ menusidebaropen: !this.state.menusidebaropen });
+        };
         this.close = () => {
             this.setState({ accountsidebaropen: false });
         };
@@ -133,7 +137,7 @@ let MainBar = class extends React.Component {
             React.createElement(menutile_1.MenuTile, { pushHistory: transitionToFunc, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
             React.createElement(Divider_1.default, null),
             menuitems);
-        let menuicon = React.createElement(IconButton_1.default, { onTouchTap: () => { appbar.handleMenuSidebarToggle(); } },
+        let menuicon = React.createElement(IconButton_1.default, { onTouchTap: (e) => { appbar.handleMenuSidebarToggle(e); } },
             React.createElement(FontIcon_1.default, { className: "material-icons", color: theme.palette.alternateTextColor, style: { cursor: "pointer" } }, "menu"));
         let accountmenu = React.createElement(IconMenu_1.default, { iconButtonElement: React.createElement(IconButton_1.default, null,
                 React.createElement(FontIcon_1.default, { className: "material-icons", color: theme.palette.alternateTextColor, style: { cursor: "pointer" } }, "account_circle")), targetOrigin: { horizontal: 'right', vertical: 'top' }, anchorOrigin: { horizontal: 'right', vertical: 'top' } },

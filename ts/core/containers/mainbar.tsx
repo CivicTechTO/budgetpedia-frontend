@@ -58,7 +58,11 @@ let MainBar = class extends React.Component<any, any> {
     }
 
     handleAccountSidebarToggle = () => this.setState({ accountsidebaropen: !this.state.accountsidebaropen });
-    handleMenuSidebarToggle = () => this.setState({ menusidebaropen: !this.state.menusidebaropen });
+    handleMenuSidebarToggle = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        this.setState({ menusidebaropen: !this.state.menusidebaropen })
+    }
     
     close = () => {
         this.setState({ accountsidebaropen: false })
@@ -271,7 +275,7 @@ let MainBar = class extends React.Component<any, any> {
 
         let menuicon = 
             <IconButton
-                onTouchTap = {() => { appbar.handleMenuSidebarToggle() } } >
+                onTouchTap = {(e) => { appbar.handleMenuSidebarToggle(e) } } >
 
                 <FontIcon
                     className = "material-icons"
