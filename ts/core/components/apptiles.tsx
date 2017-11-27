@@ -76,19 +76,34 @@ class AppTiles extends Component< AppTilesProps, any > {
         })
 // 152    102    103   #986667 
         return (
-            <div
-            style = { style }
-            >
+            <div style = {{position:'relative'}} >
+                <div style = {
+                    {
+                        position:'absolute',
+                        left:'0',
+                        top:'0',
+                        fontSize:'12px',
+                        padding:'0 3px',
+                        fontFamily:style['fontFamily'],
+                        color:'white',
+                    }
+                }>Main website pages (scroll &lt;--&gt;)
+                </div>
                 <div
+                style = { style }
+                >
+                    <div
 
-                    style       = {
-                        {
-                            display: 'block',
-                            whiteSpace:'nowrap',
-                        }
-                    }>
-                    { primarytiles }
-                    { secondarytiles }
+                        style       = {
+                            {
+                                display: 'block',
+                                whiteSpace:'nowrap',
+                                position:'relative',
+                            }
+                        }>
+                        { primarytiles }
+                        { secondarytiles }
+                    </div>
                 </div>
             </div>
         )

@@ -22,13 +22,24 @@ class AppTiles extends Component {
         let secondarytiles = secondarytiledata.map(function (data) {
             return (React.createElement(apptile_1.AppTile, { key: data.id, content: data.content, tilecolors: tilecolors, system: system, route: data.route, pushHistory: pushHistory }));
         });
-        return (React.createElement("div", { style: style },
+        return (React.createElement("div", { style: { position: 'relative' } },
             React.createElement("div", { style: {
-                    display: 'block',
-                    whiteSpace: 'nowrap',
-                } },
-                primarytiles,
-                secondarytiles)));
+                    position: 'absolute',
+                    left: '0',
+                    top: '0',
+                    fontSize: '12px',
+                    padding: '0 3px',
+                    fontFamily: style['fontFamily'],
+                    color: 'white',
+                } }, "Main website pages (scroll <-->)"),
+            React.createElement("div", { style: style },
+                React.createElement("div", { style: {
+                        display: 'block',
+                        whiteSpace: 'nowrap',
+                        position: 'relative',
+                    } },
+                    primarytiles,
+                    secondarytiles))));
     }
 }
 exports.AppTiles = AppTiles;
