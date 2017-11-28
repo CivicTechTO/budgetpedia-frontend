@@ -18,8 +18,7 @@ import { AppTiles } from "../components/apptiles"
 
 const mapStateToProps = ( { homegrid, resources } ) => 
 ({ 
-    hometiles:homegrid.hometiles,
-    homecols:homegrid.homecols,
+    pagetargets:homegrid.pagetargets,
     homepadding:homegrid.homepadding,
     theme:resources.theme,
     colors:resources.colors,
@@ -39,7 +38,7 @@ let Home = class extends React.Component<any, any> {
 
     render() {
 
-        let { hometiles, homepadding, theme, colors, system } = this.props
+        let { pagetargets, homepadding, theme, colors, system } = this.props
 
         // console.log('theme, props',theme,this.props)
 
@@ -129,7 +128,7 @@ let Home = class extends React.Component<any, any> {
                         overflowX: 'scroll', 
                     }
                 }
-                tiles =     { hometiles } 
+                tiles =     { pagetargets } 
                 padding =   { homepadding }
                 tilecolors = {
                     { 

@@ -8,8 +8,7 @@ const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
 const apptiles_1 = require("../components/apptiles");
 const mapStateToProps = ({ homegrid, resources }) => ({
-    hometiles: homegrid.hometiles,
-    homecols: homegrid.homecols,
+    pagetargets: homegrid.pagetargets,
     homepadding: homegrid.homepadding,
     theme: resources.theme,
     colors: resources.colors,
@@ -25,7 +24,7 @@ let Home = class extends React.Component {
         };
     }
     render() {
-        let { hometiles, homepadding, theme, colors, system } = this.props;
+        let { pagetargets, homepadding, theme, colors, system } = this.props;
         return (React.createElement("div", null,
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
@@ -92,7 +91,7 @@ let Home = class extends React.Component {
                     display: 'block',
                     backgroundColor: '#749261',
                     overflowX: 'scroll',
-                }, tiles: hometiles, padding: homepadding, tilecolors: {
+                }, tiles: pagetargets, padding: homepadding, tilecolors: {
                     front: colors.blue50,
                     back: colors.amber50,
                     helpbutton: theme.palette.primary3Color,

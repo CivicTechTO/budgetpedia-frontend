@@ -13,7 +13,7 @@ let system = {
 };
 let homecols = 2;
 let homepadding = 20;
-let hometiles = [
+let pagetargets = [
     {
         id: 9,
         content: {
@@ -171,7 +171,7 @@ let explorer = {
     }
 };
 var initialstate = {
-    hometiles,
+    pagetargets,
     homecols,
     homepadding,
     globalbar,

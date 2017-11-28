@@ -1,5 +1,5 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
-// class_mainbar.tsx
+// globalbar.controller.tsx
 
 /*
     TODO: 
@@ -39,7 +39,7 @@ let GlobalBar = class extends React.Component<any, any> {
     render() { 
         // console.log('props', this.props)
         let { globalbar, theme } = this.props
-        let hometiles = this.props.hometiles
+        let pagetargets = this.props.pagetargets
         let menutransition = (fn) => {
             this.setState({
                 menusidebaropen:false,
@@ -48,7 +48,7 @@ let GlobalBar = class extends React.Component<any, any> {
         }
 
         let transitionToFunc = compose(menutransition, this.props.push)
-        let menuitems = hometiles.map(menutile => {
+        let menuitems = pagetargets.map(menutile => {
             return <MenuRow
                 pushHistory = { transitionToFunc }
                 key = { menutile.id}
@@ -162,7 +162,7 @@ function mapStateToProps(state) {
 
         globalbar:ui.globalbar,
         theme:resources.theme,
-        hometiles:homegrid.hometiles,
+        pagetargets:homegrid.pagetargets,
     }
 
 }

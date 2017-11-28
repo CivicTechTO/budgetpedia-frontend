@@ -28,12 +28,12 @@ let ui = redux_1.combineReducers({
 let homepadding = (state = initialstate_1.default.homepadding, action) => {
     return state;
 };
-let hometiles = (state = initialstate_1.default.hometiles, action) => {
+let pagetargets = (state = initialstate_1.default.pagetargets, action) => {
     return state;
 };
 let homegrid = redux_1.combineReducers({
     homepadding,
-    hometiles,
+    pagetargets,
 });
 let mainReducerCore = {
     explorer: reducers_1.default,

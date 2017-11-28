@@ -71,7 +71,7 @@ let homecols: number = 2 // default
 let homepadding: number = 20
 
 // review apporpriateness of the following typescript type notation
-let hometiles: [Object] = [
+let pagetargets: [Object] = [
     {
         id: 9,
         content: {
@@ -289,7 +289,7 @@ let explorer = {
 }
 
 var initialstate = {
-    hometiles,
+    pagetargets,
     homecols,
     homepadding,
     globalbar,

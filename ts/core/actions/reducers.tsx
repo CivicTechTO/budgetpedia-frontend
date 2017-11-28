@@ -54,13 +54,13 @@ let homepadding = (state: any = initialstate.homepadding, action) => {
     return state
 }
 
-let hometiles = (state: any = initialstate.hometiles, action) => {
+let pagetargets = (state: any = initialstate.pagetargets, action) => {
     return state
 }
 
 let homegrid = combineReducers({
     homepadding,
-    hometiles,
+    pagetargets,
 })
 
 // ---------------------------[ main reducer ]--------------------------------

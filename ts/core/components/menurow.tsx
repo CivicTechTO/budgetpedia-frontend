@@ -1,5 +1,5 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
-// menutile.tsx
+// menurow.tsx
 
 'use strict'
 

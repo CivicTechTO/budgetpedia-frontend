@@ -26,7 +26,7 @@ let GlobalBar = class extends React.Component {
     }
     render() {
         let { globalbar, theme } = this.props;
-        let hometiles = this.props.hometiles;
+        let pagetargets = this.props.pagetargets;
         let menutransition = (fn) => {
             this.setState({
                 menusidebaropen: false,
@@ -34,7 +34,7 @@ let GlobalBar = class extends React.Component {
             return fn;
         };
         let transitionToFunc = redux_1.compose(menutransition, this.props.push);
-        let menuitems = hometiles.map(menutile => {
+        let menuitems = pagetargets.map(menutile => {
             return React.createElement(menurow_1.MenuRow, { pushHistory: transitionToFunc, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
         });
         let menusidebar = React.createElement(Drawer_1.default, { width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen },
@@ -81,7 +81,7 @@ function mapStateToProps(state) {
     return {
         globalbar: ui.globalbar,
         theme: resources.theme,
-        hometiles: homegrid.hometiles,
+        pagetargets: homegrid.pagetargets,
     };
 }
 GlobalBar = react_redux_1.connect(mapStateToProps, {
