@@ -5,51 +5,64 @@
 
 import * as React from 'react' // required by bundler
 
-import { PropTypes } from 'prop-types'
-
 import Drawer from 'material-ui/Drawer'
 import Divider from 'material-ui/Divider'
 
 import { MenuRowView } from './menurow.view'
 
 interface MenuSidebarViewProps {
-    headData: PropTypes.Object,
-    tailData: PropTypes.Object,
-    onSelect: PropTypes.Function
-    width: PropTypes.number,
-    docked:PropTypes.Boolean,
-    disableSwipeToOpen:PropTypes.Boolean,
-    onRequestChange:PropTypes.Function,
-    open:PropTypes.Boolean,
+    tailData: {
+        id:any, 
+        content:any, 
+        route:any,}[],
+    onSelect: Function,
+    headData: {
+        key: any,
+        primaryText: string, 
+        image: string, 
+        route: string, 
+        disabled?:boolean,
+    },
+    width: any,
+    docked: boolean,
+    disableSwipeToOpen: boolean,
+    onRequestChange: any,
+    open: boolean,
 }
 
 class MenuSidebarView extends React.Component<MenuSidebarViewProps, any> {
 
 
     render() {
-        let pagetargets = this.props.tailData
+        let tailtargets = this.props.tailData
         // console.log('pagetargets',pagetargets)
-        let menuitems = pagetargets.map(menutile => {
+        let menuitems = tailtargets.map(menurow => {
             return <MenuRowView
                 onSelect = { this.props.onSelect }
-                key = { menutile.id}
-                primaryText = { menutile.content.title }
-                image = {menutile.content.image}
-                route = {menutile.route}
-                disabled = {menutile.content.disabled}
+                key = { menurow.id}
+                primaryText = { menurow.content.title }
+                image = {menurow.content.image}
+                route = {menurow.route}
+                disabled = {menurow.content.disabled}
             />
 
         })
-        // console.log('headData',this.props.headData)
+
+        let { headData } = this.props
+
+        let { key, primaryText, image, route, disabled } = headData
+
         let menuhead = [
             <MenuRowView 
                 onSelect = { this.props.onSelect }
-                {...this.props.headData}
+                key = { key }
+                primaryText = { primaryText }
+                image = { image }
+                route = { route }
+                disabled = { disabled }
             />,
             <Divider key="divider"/>,
         ]
-
-        // console.log('menuhead, menuitems',menuhead, menuitems)
 
         return (
             <Drawer
@@ -69,4 +82,4 @@ class MenuSidebarView extends React.Component<MenuSidebarViewProps, any> {
 
 }
 
-export { MenuSidebarView }
+export default MenuSidebarView

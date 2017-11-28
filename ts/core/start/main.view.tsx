@@ -7,7 +7,7 @@ import * as React from 'react'
 
 import ReduxToastr from 'react-redux-toastr'
 
-import GlobalBar from '../features/globalbar.controller'
+import GlobalBar from '../global/globalbar.controller'
 
 import { Routes } from './routes.controller'
 

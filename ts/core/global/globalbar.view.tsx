@@ -4,6 +4,7 @@
 'use strict'
 
 import * as React from 'react' // required by bundler
+import PropTypes from 'prop-types'
 
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
@@ -13,13 +14,7 @@ import Divider from 'material-ui/Divider'
 
 import { StyleRoot } from 'radium'
 
-interface GlobalBarViewProps {
-    toolkit: Object,
-    data: Object,
-    styles: Object,
-}
-
-class GlobalBarView extends React.Component<GlobalBarViewProps, any> {
+class GlobalBarView extends React.Component<any, any> {
 
 
 }

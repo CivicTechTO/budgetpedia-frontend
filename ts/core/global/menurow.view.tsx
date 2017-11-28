@@ -3,29 +3,26 @@
 
 'use strict'
 
-// required by bundler
 import * as React from 'react'
 
 import MenuItem from 'material-ui/MenuItem'
 
-import { PropTypes } from 'prop-types'
-
-interface MenuRowProps {
-    onSelect:PropTypes.Function,
-    primaryText: PropTypes.string,
-    image: PropTypes.string,
-    route: PropTypes.string,
-    disabled?: PropTypes.Boolean,
+interface MenuRowViewProps {
+    route: string,
+    onSelect: Function,
+    primaryText: string,
+    image: string,
+    disabled: boolean,
 }
 
-export class MenuRowView extends React.Component<MenuRowProps, any> {
+export class MenuRowView extends React.Component<MenuRowViewProps, any> {
 
     pushHistory = (e) => {
-        // if (e.target.tagName == 'A') return;
-        // used exclusively for transition
+
         e.stopPropagation()
         e.preventDefault()
         this.props.onSelect(this.props.route)
+
     }
     
     render() {

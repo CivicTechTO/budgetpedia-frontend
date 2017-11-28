@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_toastr_1 = require("react-redux-toastr");
-const globalbar_controller_1 = require("../features/globalbar.controller");
+const globalbar_controller_1 = require("../global/globalbar.controller");
 const routes_controller_1 = require("./routes.controller");
 const MainView = ({ globalmessage, history }) => (React.createElement("div", null,
     React.createElement(globalbar_controller_1.default, null),

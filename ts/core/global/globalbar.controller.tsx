@@ -9,9 +9,9 @@
 'use strict'
 
 import * as React from 'react' // required by bundler
+import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { compose } from 'redux'
 
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
@@ -19,7 +19,7 @@ import FontIcon from 'material-ui/FontIcon'
 
 import { StyleRoot } from 'radium'
 
-import { MenuSidebarView } from './menusidebar.view'
+import MenuSidebarView from './menusidebar.view'
 
 let GlobalBar = class extends React.Component<any, any> {
 
@@ -47,6 +47,7 @@ let GlobalBar = class extends React.Component<any, any> {
         let { globalbar, theme } = this.props
         let pagetargets = this.props.pagetargets
 
+        // should be imported
         let headData = {
             key:'home',
             primaryText:"Budgetpedia Home",
@@ -121,14 +122,14 @@ let GlobalBar = class extends React.Component<any, any> {
                     </div>
 
                     <MenuSidebarView 
-                        headData = {headData}
-                        tailData = {this.props.pagetargets}
-                        onSelect = {this.doMenuTransition}
-                        width={300}
-                        docked={false}
+                        headData = { headData }
+                        tailData = { this.props.pagetargets }
+                        onSelect = { this.doMenuTransition }
+                        width = {300}
+                        docked = {false}
                         disableSwipeToOpen
-                        onRequestChange={open => this.setState({ menusidebaropen: open, }) }
-                        open={this.state.menusidebaropen}
+                        onRequestChange = {open => this.setState({ menusidebaropen: open, }) }
+                        open = { this.state.menusidebaropen }
                     />
 
                 </AppBar>
@@ -146,6 +147,7 @@ function mapStateToProps(state) {
         globalbar:ui.globalbar,
         theme:resources.theme,
         pagetargets:homepage.pagetargets,
+
     }
 
 }

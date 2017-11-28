@@ -1,16 +1,14 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const redux_1 = require("redux");
 const react_redux_1 = require("react-redux");
 const react_router_redux_1 = require("react-router-redux");
-const redux_1 = require("redux");
 const AppBar_1 = require("material-ui/AppBar");
-const Drawer_1 = require("material-ui/Drawer");
 const IconButton_1 = require("material-ui/IconButton");
 const FontIcon_1 = require("material-ui/FontIcon");
-const Divider_1 = require("material-ui/Divider");
 const radium_1 = require("radium");
-const menurow_1 = require("../components/menurow");
+const menusidebar_view_1 = require("./menusidebar.view");
 let GlobalBar = class extends React.Component {
     constructor() {
         super(...arguments);
@@ -33,16 +31,13 @@ let GlobalBar = class extends React.Component {
     render() {
         let { globalbar, theme } = this.props;
         let pagetargets = this.props.pagetargets;
-        let menuitems = pagetargets.map(menutile => {
-            return React.createElement(menurow_1.MenuRow, { pushHistory: this.doMenuTransition, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
-        });
-        let menuhead = [
-            React.createElement(menurow_1.MenuRow, { pushHistory: this.doMenuTransition, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
-            React.createElement(Divider_1.default, null),
-        ];
-        let menusidebar = React.createElement(Drawer_1.default, { width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen },
-            menuhead,
-            menuitems);
+        let headData = {
+            key: 'home',
+            primaryText: "Budgetpedia Home",
+            image: '../../public/icons/budgetpedia-logo.png',
+            route: '/',
+        };
+        let tagLine = "We're all about government budgets";
         let menuicon = React.createElement(IconButton_1.default, { onTouchTap: (e) => { this.handleMenuSidebarToggle(e); } },
             React.createElement(FontIcon_1.default, { className: "material-icons", color: theme.palette.alternateTextColor, style: { cursor: "pointer" } }, "menu"));
         return (React.createElement(radium_1.StyleRoot, null,
@@ -75,7 +70,7 @@ let GlobalBar = class extends React.Component {
                         left: 0,
                         padding: "3px",
                     } }, "We're all about government budgets"),
-                menusidebar)));
+                React.createElement(menusidebar_view_1.default, { headData: headData, tailData: this.props.pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen }))));
     }
 };
 function mapStateToProps(state) {

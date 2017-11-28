@@ -8,8 +8,8 @@ const react_redux_1 = require("react-redux");
 const react_transition_group_1 = require("react-transition-group");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
-const home_controller_1 = require("../features/home.controller");
-const nomatch_1 = require("../features/nomatch");
+const home_controller_1 = require("../components/home.controller");
+const nomatch_1 = require("../components/nomatch");
 const approutes_1 = require("../../addins/approutes");
 let logPageView = (location) => {
     if (window.location.hostname == 'budgetpedia.ca') {
