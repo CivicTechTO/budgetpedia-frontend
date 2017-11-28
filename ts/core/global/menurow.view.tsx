@@ -1,4 +1,4 @@
-// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 // menurow.tsx
 
 'use strict'
@@ -12,7 +12,7 @@ interface MenuRowViewProps {
     onSelect: Function,
     primaryText: string,
     image: string,
-    disabled: boolean,
+    disabled?: boolean,
 }
 
 export class MenuRowView extends React.Component<MenuRowViewProps, any> {

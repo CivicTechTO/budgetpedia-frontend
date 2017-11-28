@@ -14,7 +14,8 @@ interface MenuSidebarViewProps {
     tailData: {
         id:any, 
         content:any, 
-        route:any,}[],
+        route:string,
+    }[],
     onSelect: Function,
     headData: {
         key: any,
