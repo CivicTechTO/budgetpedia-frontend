@@ -14,14 +14,12 @@ import { push } from 'react-router-redux'
 import { compose } from 'redux'
 
 import AppBar from 'material-ui/AppBar'
-import Drawer from 'material-ui/Drawer'
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
-import Divider from 'material-ui/Divider'
 
 import { StyleRoot } from 'radium'
 
-import { MenuRow } from '../components/menurow'
+import { MenuSidebarView } from './menusidebar.view'
 
 let GlobalBar = class extends React.Component<any, any> {
 
@@ -49,42 +47,14 @@ let GlobalBar = class extends React.Component<any, any> {
         let { globalbar, theme } = this.props
         let pagetargets = this.props.pagetargets
 
-        let menuitems = pagetargets.map(menutile => {
-            return <MenuRow
-                pushHistory = { this.doMenuTransition }
-                key = { menutile.id}
-                primaryText = { menutile.content.title }
-                image = {menutile.content.image}
-                route = {menutile.route}
-                disabled = {menutile.content.disabled}
-                />
+        let headData = {
+            key:'home',
+            primaryText:"Budgetpedia Home",
+            image:'../../public/icons/budgetpedia-logo.png',
+            route: '/',
+        }
 
-        })
-
-        let menuhead = [
-            <MenuRow 
-                pushHistory = { this.doMenuTransition }
-                key = {'home'}
-                primaryText = "Budgetpedia Home"
-                image = '../../public/icons/budgetpedia-logo.png'
-                route = '/'
-            />,
-            <Divider />,
-        ]
-
-        let menusidebar = 
-            <Drawer
-                width={300}
-                docked={false}
-                disableSwipeToOpen
-                onRequestChange={open => this.setState({ menusidebaropen: open, }) }
-                open={this.state.menusidebaropen} >
-
-                { menuhead }
-
-                { menuitems }
-
-            </Drawer>
+        let tagLine = "We're all about government budgets"
 
         let menuicon = 
             <IconButton
@@ -150,7 +120,16 @@ let GlobalBar = class extends React.Component<any, any> {
                         We're all about government budgets
                     </div>
 
-                    { menusidebar }
+                    <MenuSidebarView 
+                        headData = {headData}
+                        tailData = {this.props.pagetargets}
+                        onSelect = {this.doMenuTransition}
+                        width={300}
+                        docked={false}
+                        disableSwipeToOpen
+                        onRequestChange={open => this.setState({ menusidebaropen: open, }) }
+                        open={this.state.menusidebaropen}
+                    />
 
                 </AppBar>
             </StyleRoot>

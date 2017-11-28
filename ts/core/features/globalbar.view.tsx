@@ -13,8 +13,6 @@ import Divider from 'material-ui/Divider'
 
 import { StyleRoot } from 'radium'
 
-import { MenuRow } from '../components/menurow'
-
 interface GlobalBarViewProps {
     toolkit: Object,
     data: Object,
