@@ -9,7 +9,6 @@
 'use strict'
 
 import * as React from 'react' // required by bundler
-var { Component } = React
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import { compose } from 'redux'
@@ -43,7 +42,7 @@ let GlobalBar = class extends React.Component<any, any> {
         return fn
     }
 
-    domenutransition = compose(this.menutransition, this.props.push)
+    doMenuTransition = compose(this.menutransition, this.props.push)
 
     render() { 
 
@@ -52,7 +51,7 @@ let GlobalBar = class extends React.Component<any, any> {
 
         let menuitems = pagetargets.map(menutile => {
             return <MenuRow
-                pushHistory = { this.domenutransition }
+                pushHistory = { this.doMenuTransition }
                 key = { menutile.id}
                 primaryText = { menutile.content.title }
                 image = {menutile.content.image}
@@ -62,6 +61,17 @@ let GlobalBar = class extends React.Component<any, any> {
 
         })
 
+        let menuhead = [
+            <MenuRow 
+                pushHistory = { this.doMenuTransition }
+                key = {'home'}
+                primaryText = "Budgetpedia Home"
+                image = '../../public/icons/budgetpedia-logo.png'
+                route = '/'
+            />,
+            <Divider />,
+        ]
+
         let menusidebar = 
             <Drawer
                 width={300}
@@ -70,15 +80,7 @@ let GlobalBar = class extends React.Component<any, any> {
                 onRequestChange={open => this.setState({ menusidebaropen: open, }) }
                 open={this.state.menusidebaropen} >
 
-                <MenuRow 
-                    pushHistory = { this.domenutransition }
-                    key = {'home'}
-                    primaryText = "Budgetpedia Home"
-                    image = '../../public/icons/budgetpedia-logo.png'
-                    route = '/'
-                />
-
-                <Divider />
+                { menuhead }
 
                 { menuitems }
 

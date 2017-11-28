@@ -16,9 +16,9 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
-import Home from '../containers/home.controller'
+import Home from '../features/home.controller'
 
-import NoMatch  from '../containers/nomatch'
+import NoMatch  from '../features/nomatch'
 
 import approutes from '../../addins/approutes'
 

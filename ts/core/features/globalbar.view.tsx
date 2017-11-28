@@ -4,7 +4,6 @@
 'use strict'
 
 import * as React from 'react' // required by bundler
-var { Component } = React
 
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
