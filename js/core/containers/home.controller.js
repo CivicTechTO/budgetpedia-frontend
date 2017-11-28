@@ -7,9 +7,9 @@ const react_router_dom_1 = require("react-router-dom");
 const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
 const apptiles_1 = require("../components/apptiles");
-const mapStateToProps = ({ homegrid, resources }) => ({
-    pagetargets: homegrid.pagetargets,
-    homepadding: homegrid.homepadding,
+const mapStateToProps = ({ homepage, resources }) => ({
+    pagetargets: homepage.pagetargets,
+    homepadding: homepage.homepadding,
     theme: resources.theme,
     colors: resources.colors,
     system: resources.system,

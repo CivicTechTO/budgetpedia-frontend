@@ -36,21 +36,23 @@ let GlobalBar = class extends React.Component<any, any> {
         this.setState({ menusidebaropen: !this.state.menusidebaropen })
     }
     
+    menutransition = (fn) => {
+        this.setState({
+            menusidebaropen:false,
+        })
+        return fn
+    }
+
+    domenutransition = compose(this.menutransition, this.props.push)
+
     render() { 
-        // console.log('props', this.props)
+
         let { globalbar, theme } = this.props
         let pagetargets = this.props.pagetargets
-        let menutransition = (fn) => {
-            this.setState({
-                menusidebaropen:false,
-            })
-            return fn
-        }
 
-        let transitionToFunc = compose(menutransition, this.props.push)
         let menuitems = pagetargets.map(menutile => {
             return <MenuRow
-                pushHistory = { transitionToFunc }
+                pushHistory = { this.domenutransition }
                 key = { menutile.id}
                 primaryText = { menutile.content.title }
                 image = {menutile.content.image}
@@ -69,7 +71,7 @@ let GlobalBar = class extends React.Component<any, any> {
                 open={this.state.menusidebaropen} >
 
                 <MenuRow 
-                    pushHistory = { transitionToFunc }
+                    pushHistory = { this.domenutransition }
                     key = {'home'}
                     primaryText = "Budgetpedia Home"
                     image = '../../public/icons/budgetpedia-logo.png'
@@ -156,13 +158,13 @@ let GlobalBar = class extends React.Component<any, any> {
 
 function mapStateToProps(state) {
 
-    let { resources, homegrid, ui } = state
+    let { resources, homepage, ui } = state
 
     return {
 
         globalbar:ui.globalbar,
         theme:resources.theme,
-        pagetargets:homegrid.pagetargets,
+        pagetargets:homepage.pagetargets,
     }
 
 }

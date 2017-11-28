@@ -23,22 +23,22 @@ let GlobalBar = class extends React.Component {
             e.preventDefault();
             this.setState({ menusidebaropen: !this.state.menusidebaropen });
         };
-    }
-    render() {
-        let { globalbar, theme } = this.props;
-        let pagetargets = this.props.pagetargets;
-        let menutransition = (fn) => {
+        this.menutransition = (fn) => {
             this.setState({
                 menusidebaropen: false,
             });
             return fn;
         };
-        let transitionToFunc = redux_1.compose(menutransition, this.props.push);
+        this.domenutransition = redux_1.compose(this.menutransition, this.props.push);
+    }
+    render() {
+        let { globalbar, theme } = this.props;
+        let pagetargets = this.props.pagetargets;
         let menuitems = pagetargets.map(menutile => {
-            return React.createElement(menurow_1.MenuRow, { pushHistory: transitionToFunc, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
+            return React.createElement(menurow_1.MenuRow, { pushHistory: this.domenutransition, key: menutile.id, primaryText: menutile.content.title, image: menutile.content.image, route: menutile.route, disabled: menutile.content.disabled });
         });
         let menusidebar = React.createElement(Drawer_1.default, { width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen },
-            React.createElement(menurow_1.MenuRow, { pushHistory: transitionToFunc, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
+            React.createElement(menurow_1.MenuRow, { pushHistory: this.domenutransition, key: 'home', primaryText: "Budgetpedia Home", image: '../../public/icons/budgetpedia-logo.png', route: '/' }),
             React.createElement(Divider_1.default, null),
             menuitems);
         let menuicon = React.createElement(IconButton_1.default, { onTouchTap: (e) => { this.handleMenuSidebarToggle(e); } },
@@ -77,11 +77,11 @@ let GlobalBar = class extends React.Component {
     }
 };
 function mapStateToProps(state) {
-    let { resources, homegrid, ui } = state;
+    let { resources, homepage, ui } = state;
     return {
         globalbar: ui.globalbar,
         theme: resources.theme,
-        pagetargets: homegrid.pagetargets,
+        pagetargets: homepage.pagetargets,
     };
 }
 GlobalBar = react_redux_1.connect(mapStateToProps, {

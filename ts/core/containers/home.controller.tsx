@@ -16,10 +16,10 @@ import { Timeline } from 'react-twitter-widgets'
 
 import { AppTiles } from "../components/apptiles"
 
-const mapStateToProps = ( { homegrid, resources } ) => 
+const mapStateToProps = ( { homepage, resources } ) => 
 ({ 
-    pagetargets:homegrid.pagetargets,
-    homepadding:homegrid.homepadding,
+    pagetargets:homepage.pagetargets,
+    homepadding:homepage.homepadding,
     theme:resources.theme,
     colors:resources.colors,
     system:resources.system,

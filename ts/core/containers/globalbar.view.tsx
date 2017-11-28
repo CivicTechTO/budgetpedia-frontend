@@ -16,7 +16,13 @@ import { StyleRoot } from 'radium'
 
 import { MenuRow } from '../components/menurow'
 
-class GlobalBarView extends React.Component<any, any> {
+interface GlobalBarViewProps {
+    toolkit: Object,
+    data: Object,
+    styles: Object,
+}
+
+class GlobalBarView extends React.Component<GlobalBarViewProps, any> {
 
 
 }

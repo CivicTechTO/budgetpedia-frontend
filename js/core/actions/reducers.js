@@ -31,7 +31,7 @@ let homepadding = (state = initialstate_1.default.homepadding, action) => {
 let pagetargets = (state = initialstate_1.default.pagetargets, action) => {
     return state;
 };
-let homegrid = redux_1.combineReducers({
+let homepage = redux_1.combineReducers({
     homepadding,
     pagetargets,
 });
@@ -39,7 +39,7 @@ let mainReducerCore = {
     explorer: reducers_1.default,
     resources,
     router: react_router_redux_1.routerReducer,
-    homegrid,
+    homepage,
     toastr: react_redux_toastr_1.reducer,
     ui,
 };

@@ -58,14 +58,14 @@ let pagetargets = (state: any = initialstate.pagetargets, action) => {
     return state
 }
 
-let homegrid = combineReducers({
+let homepage = combineReducers({
     homepadding,
     pagetargets,
 })
 
 // ---------------------------[ main reducer ]--------------------------------
 
-let mainReducerCore = //combineReducers(
+let mainReducerCore = 
     { 
         // app data
         explorer,
@@ -75,28 +75,12 @@ let mainReducerCore = //combineReducers(
         router:routerReducer, // import
 
         // user login management
-        homegrid,
+        homepage,
 
         toastr:toastrReducer,
 
         // ui management
         ui,
-        // workingmessagestate,
-        // appnavbar,
     }
-//)
-
-// let mainReducer = (state,action) => {
-//     if (!isFSA( action )) {
-
-//         console.error('System Error: non-FSA action',action)
-//         throw 'non-FSA action, see console for details'
-
-//     } else {
-
-//         return mainReducerCore(state,action)
-        
-//     }
-// }
 
 export default mainReducerCore
