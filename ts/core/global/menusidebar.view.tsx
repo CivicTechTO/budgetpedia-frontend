@@ -10,7 +10,7 @@ import Divider from 'material-ui/Divider'
 
 import { MenuRowView } from './menurow.view'
 
-interface MenuSidebarViewProps {
+interface Props {
     tailData: {
         id:any, 
         content:any, 
@@ -31,8 +31,7 @@ interface MenuSidebarViewProps {
     open: boolean,
 }
 
-class MenuSidebarView extends React.Component<MenuSidebarViewProps, any> {
-
+class MenuSidebarView extends React.Component<Props, any> {
 
     render() {
         let tailtargets = this.props.tailData

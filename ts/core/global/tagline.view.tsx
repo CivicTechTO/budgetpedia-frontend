@@ -4,10 +4,16 @@
 'use strict'
 
 import * as React from 'react'
+
 import * as Radium from 'radium'
 let { StyleRoot } = Radium
 
-class TaglineView extends React.Component<any, any> {
+interface Props {
+    style?:any,
+    text: string,
+}
+
+class TaglineView extends React.Component<Props, any> {
 
     render() {
 

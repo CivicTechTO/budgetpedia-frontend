@@ -18,18 +18,19 @@ let { StyleRoot } = Radium
 
 let IconButton = Radium(IconButtonClass) // anticipate merging styles
 
-interface MenuIconViewProps {
+interface Props {
     style?:any,
     onSelect: Function,
     color: any,
 }
 
-class MenuIconView extends React.Component<MenuIconViewProps, any> {
+class MenuIconView extends React.Component<Props, any> {
 
     render() {
 
         return (
             <StyleRoot>
+            
                 <IconButton
                     onTouchTap = {this.props.onSelect} 
                     style = {[this.props.style]} 
@@ -45,6 +46,7 @@ class MenuIconView extends React.Component<MenuIconViewProps, any> {
                     </FontIcon>
 
                 </IconButton>
+
             </StyleRoot>
         )
 

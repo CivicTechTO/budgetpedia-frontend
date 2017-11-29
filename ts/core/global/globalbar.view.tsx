@@ -7,10 +7,45 @@ import * as React from 'react' // required by bundler
 
 import AppBar from 'material-ui/AppBar'
 
-import * as Radium from 'radium'
-let { StyleRoot } = Radium
+// Radium not working on AppBar here
+// import * as Radium from 'radium'
+// let { StyleRoot } = Radium
 
 class GlobalBarView extends React.Component<any, any> {
+
+    render() {
+
+        let defaultStyle = {
+            position: "fixed",
+            backgroundColor:"#336797" 
+        }
+
+        let defaultTitleStyle = {
+            cursor:'pointer',
+        }
+
+        let titleStyle = this.props.titleStyle || {}
+
+        return (
+            <AppBar
+                onTitleTouchTap = { () => this.props.onSelect() }
+                titleStyle = {{
+                    ...defaultTitleStyle,
+                    ...titleStyle
+                }}
+                style={{
+                    ...defaultStyle,...this.props.style
+                }}
+                title={ <span>{ this.props.title }</span> }
+
+                iconElementLeft={ this.props.iconElementLeft }
+                >
+
+                { this.props.children }
+
+            </AppBar>
+        )
+    }
 
 
 }

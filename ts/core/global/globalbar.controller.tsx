@@ -13,14 +13,11 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
-import AppBar from 'material-ui/AppBar'
-
-import * as Radium from 'radium'
-let { StyleRoot } = Radium
-
-import MenuSidebarView from './menusidebar.view'
+import GlobalBarView from './globalbar.view'
 import MenuIconView from './menuicon.view'
+import MenuSidebarView from './menusidebar.view'
 import TaglineView from './tagline.view'
+import ContactView from './contact.view'
 
 let GlobalBar = class extends React.Component<any, any> {
 
@@ -46,6 +43,7 @@ let GlobalBar = class extends React.Component<any, any> {
     render() { 
 
         let { globalbar, theme } = this.props
+        
         let pagetargets = this.props.pagetargets
 
         // should be imported
@@ -56,77 +54,62 @@ let GlobalBar = class extends React.Component<any, any> {
             route: '/',
         }
 
-        let tagLineView = <TaglineView
+        let taglineView = <TaglineView
                 text = "We're all about government budgets"
                 style = {{                
                     position: "absolute",
                     bottom: 0,
                     left: 0,
-                    color:'green',
                 }}
             />
 
-        let menuicon = 
+        let contactView = 
+            <ContactView 
+                style = {{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                }}
+                contactAddress = "mailto:mail@budgetpedia.ca"
+                contactPrompt = "mail@budgetpedia.ca"
+            />
+
+        let menuiconView = 
             <MenuIconView 
                 onSelect = {(e) => { this.handleMenuSidebarToggle(e) }}
                 color = {theme.palette.alternateTextColor}
             />
 
+        let menuSidebarView = 
+            <MenuSidebarView 
+                headData = { headData }
+                tailData = { this.props.pagetargets }
+                onSelect = { this.doMenuTransition }
+                width = {300}
+                docked = {false}
+                disableSwipeToOpen
+                onRequestChange = {open => this.setState({ menusidebaropen: open, }) }
+                open = { this.state.menusidebaropen }
+            />
+
         return (
-            <StyleRoot>
-                <AppBar
-                    onTitleTouchTap = { () => this.props.push('/') }
-                    titleStyle = {{cursor:'pointer'}}
-                    style={ 
-                        { 
-                            position: "fixed",
-                            backgroundColor:"#336797" 
-                        } 
-                    }
-                    title={ <span>{ globalbar.title }</span> }
+            <GlobalBarView
+                onSelect = { () => this.props.push('/') }
+                titleStyle = {{cursor:'pointer'}}
+                title= "Budgetpedia v0.1.3"
 
-                    iconElementLeft={ menuicon }
-                    >
-                    <div style={{
-                        position: "absolute",
-                        fontSize: "12px",
-                        color: "white",
-                        top: 0,
-                        right: 0,
-                        padding: "3px",
-                    }}>
-                        contact: <a 
-                            style = {{
-                                color:'white',
-                                ':hover':{
-                                    color:'white',
-                                    background: 'black',
-                                },
-                                ':visited':{color:'gold'},
-                            }}
-                            target="_blank" href="mailto:mail@budgetpedia.ca"
-                            >
-                                mail@budgetpedia.ca
-                            </a>
-                    </div>
+                iconElementLeft={ menuiconView }
+                >
 
-                    { tagLineView }
+                { taglineView }
 
-                    <MenuSidebarView 
-                        headData = { headData }
-                        tailData = { this.props.pagetargets }
-                        onSelect = { this.doMenuTransition }
-                        width = {300}
-                        docked = {false}
-                        disableSwipeToOpen
-                        onRequestChange = {open => this.setState({ menusidebaropen: open, }) }
-                        open = { this.state.menusidebaropen }
-                    />
+                { contactView }
 
-                </AppBar>
-            </StyleRoot>
+                { menuSidebarView }
+
+            </GlobalBarView>
         )
-    } // render
+    }
 }
 
 function mapStateToProps(state) {

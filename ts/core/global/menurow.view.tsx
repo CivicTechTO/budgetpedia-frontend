@@ -7,7 +7,7 @@ import * as React from 'react'
 
 import MenuItem from 'material-ui/MenuItem'
 
-interface MenuRowViewProps {
+interface Props {
     route: string,
     onSelect: Function,
     primaryText: string,
@@ -15,7 +15,7 @@ interface MenuRowViewProps {
     disabled?: boolean,
 }
 
-export class MenuRowView extends React.Component<MenuRowViewProps, any> {
+export class MenuRowView extends React.Component<Props, any> {
 
     pushHistory = (e) => {
 

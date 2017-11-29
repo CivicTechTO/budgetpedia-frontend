@@ -5,7 +5,48 @@
 
 import * as React from 'react' // required by bundler
 
-class ContactView extends React.Component<any, any> {
+import * as Radium from 'radium'
+let { StyleRoot } = Radium
+
+interface Props {
+    style?:any,
+    contactStyle?:any,
+    contactAddress:string,
+    contactPrompt: string,
+}
+
+class ContactView extends React.Component<Props, any> {
+
+    render() {
+        
+        let defaultStyle = {
+            fontSize: "12px",
+            color: "white",
+            padding: "3px",
+        }
+
+        return (
+
+            <StyleRoot>
+                <div style={[defaultStyle,this.props.style]}>
+                    contact: <a 
+                        style = {[{
+                            color:'white',
+                            ':hover':{
+                                color:'white',
+                                background: 'black',
+                            },
+                            ':visited':{color:'gold'},
+                        },this.props.contactStyle]}
+                        target="_blank" href={this.props.contactAddress}
+                        >
+                            {this.props.contactPrompt}
+                        </a>
+                </div>
+            </StyleRoot>
+        )
+
+    }
 
 }
 
