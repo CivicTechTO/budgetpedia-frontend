@@ -14,7 +14,7 @@ import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import { AppTiles } from "../components/apptiles"
+import { AppTiles } from "./apptiles"
 
 const mapStateToProps = ( { pages, resources } ) => 
 ({ 
