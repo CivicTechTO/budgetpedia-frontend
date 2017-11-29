@@ -126,8 +126,6 @@ function mapStateToProps(state) {
 
 }
 
-// if returned as default all is good; of returned by name then
-// fails to apply result of mapStateToProps (??)
 GlobalBar = connect(
     mapStateToProps, 
     {
