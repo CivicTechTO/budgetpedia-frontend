@@ -34,6 +34,8 @@ class GlobalBarView extends React.Component<Props, any> {
 
         let titleStyle = this.props.titleStyle || {}
 
+        let style = this.props.style || {}
+
         return (
             <AppBar
                 onTitleTouchTap = { () => this.props.onSelect() }
@@ -42,7 +44,7 @@ class GlobalBarView extends React.Component<Props, any> {
                     ...titleStyle
                 }}
                 style={{
-                    ...defaultStyle,...this.props.style
+                    ...defaultStyle,...style
                 }}
                 title={ <span>{ this.props.title }</span> }
 
@@ -54,7 +56,6 @@ class GlobalBarView extends React.Component<Props, any> {
             </AppBar>
         )
     }
-
 
 }
 

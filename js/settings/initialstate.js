@@ -4,6 +4,9 @@ const lightBaseTheme_1 = require("material-ui/styles/baseThemes/lightBaseTheme")
 const colors = require("material-ui/styles/colors");
 let globalbar = {
     title: 'Budgetpedia v0.1.3',
+    contactAddress: 'mailto:mail@budgetpedia.ca',
+    contactPrompt: 'mail@budgetpedia.ca',
+    tagLine: "We're all about government budgets",
     username: 'anonymous',
     accountoptions: [],
     menuoptions: [],

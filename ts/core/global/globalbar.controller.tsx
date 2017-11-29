@@ -8,7 +8,7 @@
 
 'use strict'
 
-import * as React from 'react' // required by bundler
+import * as React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
@@ -55,7 +55,7 @@ let GlobalBar = class extends React.Component<any, any> {
         }
 
         let taglineView = <TaglineView
-                text = "We're all about government budgets"
+                text = {this.props.globalbar.tagLine}
                 style = {{                
                     position: "absolute",
                     bottom: 0,
@@ -70,8 +70,8 @@ let GlobalBar = class extends React.Component<any, any> {
                     top: 0,
                     right: 0,
                 }}
-                contactAddress = "mailto:mail@budgetpedia.ca"
-                contactPrompt = "mail@budgetpedia.ca"
+                contactAddress = {this.props.globalbar.contactAddress}
+                contactPrompt = {this.props.globalbar.contactPrompt}
             />
 
         let menuiconView = 
@@ -96,10 +96,10 @@ let GlobalBar = class extends React.Component<any, any> {
             <GlobalBarView
                 onSelect = { () => this.props.push('/') }
                 titleStyle = {{cursor:'pointer'}}
-                title= "Budgetpedia v0.1.3"
+                title= {this.props.globalbar.title}
 
                 iconElementLeft={ menuiconView }
-                >
+            >
 
                 { taglineView }
 

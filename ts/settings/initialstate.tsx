@@ -52,6 +52,9 @@ import * as colors from 'material-ui/styles/colors'
 
 let globalbar = {
 	title: 'Budgetpedia v0.1.3',
+    contactAddress:'mailto:mail@budgetpedia.ca',
+    contactPrompt:'mail@budgetpedia.ca',
+    tagLine:"We're all about government budgets",
 	username: 'anonymous',
 	accountoptions: [],
 	menuoptions: [],
@@ -71,7 +74,7 @@ let homecols: number = 2 // default
 let homepadding: number = 20
 
 // review apporpriateness of the following typescript type notation
-let pagetargets: [Object] = [
+let pagetargets: Object[] = [
     {
         id: 9,
         content: {

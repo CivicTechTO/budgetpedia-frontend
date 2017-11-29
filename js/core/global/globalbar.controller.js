@@ -37,7 +37,7 @@ let GlobalBar = class extends React.Component {
             image: '../../public/icons/budgetpedia-logo.png',
             route: '/',
         };
-        let taglineView = React.createElement(tagline_view_1.default, { text: "We're all about government budgets", style: {
+        let taglineView = React.createElement(tagline_view_1.default, { text: this.props.globalbar.tagLine, style: {
                 position: "absolute",
                 bottom: 0,
                 left: 0,
@@ -46,10 +46,10 @@ let GlobalBar = class extends React.Component {
                 position: "absolute",
                 top: 0,
                 right: 0,
-            }, contactAddress: "mailto:mail@budgetpedia.ca", contactPrompt: "mail@budgetpedia.ca" });
+            }, contactAddress: this.props.globalbar.contactAddress, contactPrompt: this.props.globalbar.contactPrompt });
         let menuiconView = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
         let menuSidebarView = React.createElement(menusidebar_view_1.default, { headData: headData, tailData: this.props.pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
-        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push('/'), titleStyle: { cursor: 'pointer' }, title: "Budgetpedia v0.1.3", iconElementLeft: menuiconView },
+        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push('/'), titleStyle: { cursor: 'pointer' }, title: this.props.globalbar.title, iconElementLeft: menuiconView },
             taglineView,
             contactView,
             menuSidebarView));
