@@ -145,14 +145,6 @@ let Explorer = class extends Component {
                 dialogOpen: false
             });
         };
-        this.workingStatus = status => {
-            if (status) {
-                this.props.showWaitingMessage();
-            }
-            else {
-                this.props.hideWaitingMessage();
-            }
-        };
         this.updateNode = branchuid => nodeuid => this.props.updateNode(branchuid, nodeuid);
         this.changeTab = branchuid => (nodeuid, tabvalue) => this.props.changeTab(branchuid, nodeuid, tabvalue);
         this.addCellDeclarations = branchuid => (nodeuid, settingslist) => this.props.addCellDeclarations(branchuid, nodeuid, settingslist);
@@ -912,9 +904,6 @@ let Explorer = class extends Component {
                     resetLastAction: this.props.resetLastAction,
                     harmonizeCells: this.props.harmonizeCells,
                 };
-                let displayCallbackFunctions = {
-                    workingStatus: explorer.workingStatus,
-                };
                 return React.createElement(Card_1.Card, { initiallyExpanded: true, key: budgetBranch.uid, onExpandChange: (expanded) => {
                         this.onExpandChange(expanded);
                     } },
@@ -937,7 +926,7 @@ let Explorer = class extends Component {
                             })(budgetBranch.uid), tooltip: "Move up" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_upward"))) : null,
                     React.createElement(Card_1.CardText, { expandable: false },
-                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, displayCallbacks: displayCallbackFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleSearchDialogOpen: this.handleSearchDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
+                        React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleSearchDialogOpen: this.handleSearchDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
                     React.createElement(Card_1.CardActions, { expandable: false },
                         React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
                                 this.addBranch(uid);

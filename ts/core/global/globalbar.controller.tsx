@@ -56,7 +56,7 @@ let GlobalBar = class extends React.Component<any, any> {
             route: '/',
         }
 
-        let tagLine = <TaglineView
+        let tagLineView = <TaglineView
                 text = "We're all about government budgets"
                 style = {{                
                     position: "absolute",
@@ -110,7 +110,7 @@ let GlobalBar = class extends React.Component<any, any> {
                             </a>
                     </div>
 
-                    { tagLine }
+                    { tagLineView }
 
                     <MenuSidebarView 
                         headData = { headData }

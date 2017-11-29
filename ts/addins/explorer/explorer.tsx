@@ -444,16 +444,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         })
     }
 
-    // callbacks
-    workingStatus = status => {
-        if (status) {
-            this.props.showWaitingMessage()
-        } else {
-            this.props.hideWaitingMessage()
-        }
-
-    }
-
     // ---------------[ create action calls versions for currying (branchid) ]---------------
 
     // node consumer
@@ -1450,11 +1440,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     harmonizeCells: this.props.harmonizeCells,
                 }
 
-                let displayCallbackFunctions = { 
-                    workingStatus: explorer.workingStatus,
-                    // updateChartSelections: explorer.updateChartSelections(branchIndex),
-                }
-
                 // ----------------[ Contains ExplorerBranch ]-------------------------
 
                 // console.log('explorer branchindex and stories',branchIndex,this.stories)
@@ -1537,7 +1522,6 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         budgetBranch = { budgetBranch }
                         declarationData = { explorer.props.declarationData }
                         globalStateActions = { actionFunctions }
-                        displayCallbacks = { displayCallbackFunctions }
                         urlparms = { urlparms }
                         clearUrlParms = {this.clearUrlParms}
                         clearStories = {this.clearStories}

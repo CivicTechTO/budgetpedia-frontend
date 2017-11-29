@@ -214,15 +214,13 @@ class ExplorerBranch extends Component {
         };
         this._initialize = () => {
             let branch = this;
-            let { budgetBranch, globalStateActions: actions, displayCallbacks, declarationData } = branch.props;
+            let { budgetBranch, globalStateActions: actions, declarationData } = branch.props;
             branch._stateActions = Object.assign({}, actions);
             branch._stateActions.addNodeDeclaration = branch.addNodeDeclaration(budgetBranch.uid);
             branch._stateActions.addNodeDeclarations = branch.addNodeDeclarations(budgetBranch.uid);
             branch._stateActions.removeNodeDeclarations = branch.removeNodeDeclarations(budgetBranch.uid);
             let { onPortalCreation } = branch;
-            let { workingStatus } = displayCallbacks;
             branch._nodeDisplayCallbacks = {
-                workingStatus,
                 onPortalCreation,
             };
             budgetBranch.getProps = branch.getProps;

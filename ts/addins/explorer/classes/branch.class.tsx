@@ -634,7 +634,6 @@ class BudgetBranch {
         let { aspectName, viewpointName } = budgetNode
 
         let {
-            workingStatus,
             onPortalCreation,
         } = callbacks
 
@@ -672,7 +671,6 @@ class BudgetBranch {
         if (!newnode.Components && !newnode.CommonDimension) {
             return
         }
-        workingStatus(true)
         let newrange = Object.assign({}, budgetNode.yearsRange
             )
         let newselections
@@ -701,7 +699,6 @@ class BudgetBranch {
 
         setTimeout(() => {
 
-            workingStatus(false)
             onPortalCreation()
 
         })

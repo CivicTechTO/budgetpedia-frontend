@@ -97,9 +97,6 @@ interface SnackbarProps {
 
 interface ExplorerBranchProps {
     budgetBranch: BudgetBranch,
-    displayCallbacks:{
-        workingStatus:Function,
-    },
     globalStateActions: ExplorerBranchActions,
     declarationData: DeclarationData,
     urlparms: {
@@ -435,7 +432,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         let branch = this
 
-        let { budgetBranch, globalStateActions:actions, displayCallbacks, declarationData } = branch.props
+        let { budgetBranch, globalStateActions:actions, declarationData } = branch.props
 
         // create global actions bundle for children
         branch._stateActions = Object.assign({}, actions)
@@ -445,13 +442,9 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         branch._stateActions.removeNodeDeclarations = branch.removeNodeDeclarations(budgetBranch.uid)
 
         let { onPortalCreation } = branch
-        let { workingStatus } = displayCallbacks
 
         // create display callbacks bundle for children
         branch._nodeDisplayCallbacks = {
-            // updateChartSelections,
-            workingStatus,
-            // local
             onPortalCreation,
         }
 

@@ -376,7 +376,7 @@ class BudgetBranch {
                 budgetNode.priorCellSettings = priorCellSettings;
             }
             let { aspectName, viewpointName } = budgetNode;
-            let { workingStatus, onPortalCreation, } = callbacks;
+            let { onPortalCreation, } = callbacks;
             let childdatapath = budgetNode.dataPath.slice();
             let treeNodeData = budgetNode.treeNodeData;
             if (!treeNodeData.Components) {
@@ -397,7 +397,6 @@ class BudgetBranch {
             if (!newnode.Components && !newnode.CommonDimension) {
                 return;
             }
-            workingStatus(true);
             let newrange = Object.assign({}, budgetNode.yearsRange);
             let newselections;
             let newCellIndex = cellIndex;
@@ -420,7 +419,6 @@ class BudgetBranch {
             };
             actions.addNodeDeclaration(newnodeconfigparms);
             setTimeout(() => {
-                workingStatus(false);
                 onPortalCreation();
             });
         };

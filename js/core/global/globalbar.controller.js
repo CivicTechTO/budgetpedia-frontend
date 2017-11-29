@@ -38,7 +38,7 @@ let GlobalBar = class extends React.Component {
             image: '../../public/icons/budgetpedia-logo.png',
             route: '/',
         };
-        let tagLine = React.createElement(tagline_view_1.default, { text: "We're all about government budgets", style: {
+        let tagLineView = React.createElement(tagline_view_1.default, { text: "We're all about government budgets", style: {
                 position: "absolute",
                 bottom: 0,
                 left: 0,
@@ -67,7 +67,7 @@ let GlobalBar = class extends React.Component {
                             },
                             ':visited': { color: 'gold' },
                         }, target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca")),
-                tagLine,
+                tagLineView,
                 React.createElement(menusidebar_view_1.default, { headData: headData, tailData: this.props.pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen }))));
     }
 };
