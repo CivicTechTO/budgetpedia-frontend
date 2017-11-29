@@ -46,14 +46,16 @@ let GlobalBar = class extends React.Component<any, any> {
         
         let { pagetargets, homepagedata} = this.props
 
+        let {title:primaryText, image, route} = homepagedata
+
         let headData = {
-            primaryText:homepagedata.title,
-            image:homepagedata.image,
-            route:homepagedata.route,
+            primaryText,
+            image,
+            route,
         }
 
         let taglineView = <TaglineView
-                text = {this.props.globalbar.tagLine}
+                text = {globalbar.tagLine}
                 style = {{                
                     position: "absolute",
                     bottom: 0,
@@ -68,8 +70,8 @@ let GlobalBar = class extends React.Component<any, any> {
                     top: 0,
                     right: 0,
                 }}
-                contactAddress = {this.props.globalbar.contactAddress}
-                contactPrompt = {this.props.globalbar.contactPrompt}
+                contactAddress = {globalbar.contactAddress}
+                contactPrompt = {globalbar.contactPrompt}
             />
 
         let menuiconView = 
@@ -94,7 +96,7 @@ let GlobalBar = class extends React.Component<any, any> {
             <GlobalBarView
                 onSelect = { () => this.props.push(homepagedata.route) }
                 titleStyle = {{cursor:'pointer'}}
-                title= {this.props.globalbar.title}
+                title= {globalbar.title}
 
                 iconElementLeft={ menuiconView }
             >
