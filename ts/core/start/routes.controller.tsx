@@ -18,7 +18,7 @@ ReactGA.initialize('UA-4105209-11')
 
 import Home from '../components/home.controller'
 
-import NoMatch  from '../components/nomatch'
+import NoMatch  from '../common/nomatch'
 
 import pageroutes from '../../addins/pageroutes'
 
