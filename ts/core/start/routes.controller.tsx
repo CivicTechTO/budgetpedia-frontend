@@ -20,7 +20,7 @@ import Home from '../components/home.controller'
 
 import NoMatch  from '../components/nomatch'
 
-import approutes from '../../addins/approutes'
+import pageroutes from '../../addins/pageroutes'
 
 let logPageView = (location) => {
 
@@ -41,7 +41,7 @@ let coreroutes = routedata.map((item, index) => (
 
 let home = <Route key = 'home' exact path="/" component={ Home } />
 
-let routes = [home, ...approutes, ...coreroutes]
+let routes = [home, ...pageroutes, ...coreroutes]
 
 logPageView(window.location) // first hit
 

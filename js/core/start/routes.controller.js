@@ -10,7 +10,7 @@ let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
 const home_controller_1 = require("../components/home.controller");
 const nomatch_1 = require("../components/nomatch");
-const approutes_1 = require("../../addins/approutes");
+const pageroutes_1 = require("../../addins/pageroutes");
 let logPageView = (location) => {
     if (window.location.hostname == 'budgetpedia.ca') {
         ReactGA.pageview(location.pathname + location.search);
@@ -21,7 +21,7 @@ let routedata = [
 ];
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
 let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: home_controller_1.default });
-let routes = [home, ...approutes_1.default, ...coreroutes];
+let routes = [home, ...pageroutes_1.default, ...coreroutes];
 logPageView(window.location);
 let Routes = class extends Component {
     constructor() {

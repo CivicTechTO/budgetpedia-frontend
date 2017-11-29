@@ -1,5 +1,5 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
-// approutes.tsx
+// pageroutes.tsx
 
 'use strict'
 
@@ -37,8 +37,8 @@ let routedata = [
     { path: "/pathways", component: Pathways },
 ]
 
-const approutes = routedata.map((item, index) => (
-   <Route key = { 'approute'+ index } path={item.path} component = {item.component} />
+const pageroutes = routedata.map((item, index) => (
+   <Route key = { 'pageroute'+ index } path={item.path} component = {item.component} />
 ))
 
-export default approutes
+export default pageroutes
