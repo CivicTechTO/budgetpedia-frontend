@@ -11,7 +11,15 @@ import AppBar from 'material-ui/AppBar'
 // import * as Radium from 'radium'
 // let { StyleRoot } = Radium
 
-class GlobalBarView extends React.Component<any, any> {
+interface Props {
+    titleStyle?:any,
+    style?:any,
+    onSelect:any,
+    title:string,
+    iconElementLeft:JSX.Element,
+}
+
+class GlobalBarView extends React.Component<Props, any> {
 
     render() {
 
