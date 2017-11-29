@@ -44,10 +44,8 @@ let GlobalBar = class extends React.Component<any, any> {
 
         let { globalbar, theme } = this.props
         
-        let pagetargets = this.props.pagetargets
+        let { pagetargets, homepagedata} = this.props
 
-        // should be imported
-        let homepagedata = this.props.homepagedata
         let headData = {
             primaryText:homepagedata.title,
             image:homepagedata.image,
@@ -83,7 +81,7 @@ let GlobalBar = class extends React.Component<any, any> {
         let menuSidebarView = 
             <MenuSidebarView 
                 headData = { headData }
-                tailData = { this.props.pagetargets }
+                tailData = { pagetargets }
                 onSelect = { this.doMenuTransition }
                 width = {300}
                 docked = {false}

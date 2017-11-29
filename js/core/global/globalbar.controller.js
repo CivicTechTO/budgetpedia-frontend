@@ -30,8 +30,7 @@ let GlobalBar = class extends React.Component {
     }
     render() {
         let { globalbar, theme } = this.props;
-        let pagetargets = this.props.pagetargets;
-        let homepagedata = this.props.homepagedata;
+        let { pagetargets, homepagedata } = this.props;
         let headData = {
             primaryText: homepagedata.title,
             image: homepagedata.image,
@@ -48,7 +47,7 @@ let GlobalBar = class extends React.Component {
                 right: 0,
             }, contactAddress: this.props.globalbar.contactAddress, contactPrompt: this.props.globalbar.contactPrompt });
         let menuiconView = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
-        let menuSidebarView = React.createElement(menusidebar_view_1.default, { headData: headData, tailData: this.props.pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
+        let menuSidebarView = React.createElement(menusidebar_view_1.default, { headData: headData, tailData: pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
         return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push(homepagedata.route), titleStyle: { cursor: 'pointer' }, title: this.props.globalbar.title, iconElementLeft: menuiconView },
             taglineView,
             contactView,
