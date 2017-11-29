@@ -57,9 +57,9 @@ let GlobalBar = class extends React.Component {
     }
 };
 function mapStateToProps(state) {
-    let { resources, pages, ui } = state;
+    let { resources, pages, global } = state;
     return {
-        globalbar: ui.globalbar,
+        globalbar: global.globalbar,
         theme: resources.theme,
         pagetargets: pages.pagetargets,
         homepage: pages.homepage,

@@ -22,7 +22,7 @@ let resources = redux_1.combineReducers({
 let globalbar = (state = master_model_1.default.globalbar, action) => {
     return state;
 };
-let ui = redux_1.combineReducers({
+let global = redux_1.combineReducers({
     globalbar,
 });
 let homepage = (state = master_model_1.default.homepage, action) => {
@@ -41,6 +41,6 @@ let mainReducerCore = {
     router: react_router_redux_1.routerReducer,
     pages,
     toastr: react_redux_toastr_1.reducer,
-    ui,
+    global,
 };
 exports.default = mainReducerCore;

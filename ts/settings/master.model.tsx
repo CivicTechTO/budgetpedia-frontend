@@ -256,8 +256,6 @@ let pagetargets: Object[] = [
     },
 */]
 
-let workingmessagestate = false
-
 let branchDefaults:BranchSettings = {
     repository: "Toronto",
     viewpoint: "FUNCTIONAL",
@@ -326,8 +324,6 @@ var masterModel = {
 	colors,
 	system,
     explorer,
-    // budgetdata,
-    workingmessagestate,
 }
 
 export default masterModel

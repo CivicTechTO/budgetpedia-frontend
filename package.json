@@ -15,7 +15,6 @@
     "draft-js": "^0.10.4",
     "draftjs-to-html": "^0.7.6",
     "eslint-config-react-tools": "^1.0.10",
-    "flux-standard-action": "^2.0.0",
     "history": "^4.7.2",
     "html-to-draftjs": "^1.0.1",
     "isomorphic-fetch": "^2.2.1",

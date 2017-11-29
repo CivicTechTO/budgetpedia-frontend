@@ -142,7 +142,6 @@ let pagetargets = [
         parent: 'home',
     },
 ];
-let workingmessagestate = false;
 let branchDefaults = {
     repository: "Toronto",
     viewpoint: "FUNCTIONAL",
@@ -207,6 +206,5 @@ var masterModel = {
     colors,
     system,
     explorer,
-    workingmessagestate,
 };
 exports.default = masterModel;

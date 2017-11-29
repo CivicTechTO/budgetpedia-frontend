@@ -6,10 +6,9 @@
 'use strict'
 
 import { combineReducers } from 'redux'
-import { isFSA } from 'flux-standard-action'
 import { handleActions } from 'redux-actions'; // handleAction doesn't work with combineReducers
-import { routerReducer } from 'react-router-redux'
-import {reducer as toastrReducer} from 'react-redux-toastr'
+import { routerReducer as router} from 'react-router-redux'
+import {reducer as toastr} from 'react-redux-toastr'
 
 // -------------[ app resources ]---------------
 import * as Actions from './actions'
@@ -44,7 +43,7 @@ let globalbar = (state: any = masterModel.globalbar, action) => {
     return state
 }
 
-let ui = combineReducers({
+let global = combineReducers({
     globalbar,
 })
 
@@ -72,15 +71,15 @@ let mainReducerCore =
         // system data
         resources,
         
-        router:routerReducer, // import
+        router, // import
 
-        // user login management
+        // page model
         pages,
 
-        toastr:toastrReducer,
+        toastr,
 
-        // ui management
-        ui,
+        // global ui management
+        global,
     }
 
 export default mainReducerCore
