@@ -2,19 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_router_dom_1 = require("react-router-dom");
-const about_1 = require("./containers/about");
-const roadmap_1 = require("./containers/roadmap");
-const deputations_1 = require("./containers/deputations");
+const about_1 = require("./pages/about");
+const roadmap_1 = require("./pages/roadmap");
+const deputations_1 = require("./pages/deputations");
 const explorer_1 = require("./explorer/explorer");
-const communities_1 = require("./containers/communities");
-const socialmedia_1 = require("./containers/socialmedia");
-const newsletter_1 = require("./containers/newsletter");
-const resources_1 = require("./containers/resources");
-const teams_1 = require("./containers/teams");
-const stories_1 = require("./containers/stories");
-const demos_1 = require("./containers/demos");
-const announcements_1 = require("./containers/announcements");
-const pathways_1 = require("./containers/pathways");
+const communities_1 = require("./pages/communities");
+const socialmedia_1 = require("./pages/socialmedia");
+const newsletter_1 = require("./pages/newsletter");
+const resources_1 = require("./pages/resources");
+const teams_1 = require("./pages/teams");
+const stories_1 = require("./pages/stories");
+const demos_1 = require("./pages/demos");
+const announcements_1 = require("./pages/announcements");
+const pathways_1 = require("./pages/pathways");
 let routedata = [
     { path: "/about", component: about_1.default },
     { path: "/roadmap", component: roadmap_1.default },
