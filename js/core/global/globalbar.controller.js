@@ -9,6 +9,7 @@ const Radium = require("radium");
 let { StyleRoot } = Radium;
 const menusidebar_view_1 = require("./menusidebar.view");
 const menuicon_view_1 = require("./menuicon.view");
+const tagline_view_1 = require("./tagline.view");
 let GlobalBar = class extends React.Component {
     constructor() {
         super(...arguments);
@@ -37,7 +38,12 @@ let GlobalBar = class extends React.Component {
             image: '../../public/icons/budgetpedia-logo.png',
             route: '/',
         };
-        let tagLine = "We're all about government budgets";
+        let tagLine = React.createElement(tagline_view_1.default, { text: "We're all about government budgets", style: {
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                color: 'green',
+            } });
         let menuicon = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
         return (React.createElement(StyleRoot, null,
             React.createElement(AppBar_1.default, { onTitleTouchTap: () => this.props.push('/'), titleStyle: { cursor: 'pointer' }, style: {
@@ -61,14 +67,7 @@ let GlobalBar = class extends React.Component {
                             },
                             ':visited': { color: 'gold' },
                         }, target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca")),
-                React.createElement("div", { style: {
-                        position: "absolute",
-                        fontSize: "12px",
-                        color: "gold",
-                        bottom: 0,
-                        left: 0,
-                        padding: "3px",
-                    } }, "We're all about government budgets"),
+                tagLine,
                 React.createElement(menusidebar_view_1.default, { headData: headData, tailData: this.props.pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen }))));
     }
 };

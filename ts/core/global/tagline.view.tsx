@@ -3,9 +3,28 @@
 
 'use strict'
 
-import * as React from 'react' // required by bundler
+import * as React from 'react'
+import * as Radium from 'radium'
+let { StyleRoot } = Radium
 
 class TaglineView extends React.Component<any, any> {
+
+    render() {
+
+        let defaultstyle = {
+                fontSize: "12px",
+                color: "gold",
+                padding: "3px",
+            }
+        return  (
+            <StyleRoot>
+                <div style={[defaultstyle,this.props.style]}>
+                    {this.props.text}
+                </div>
+            </StyleRoot>
+        )
+
+    }
 
 }
 

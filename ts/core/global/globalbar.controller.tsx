@@ -20,6 +20,7 @@ let { StyleRoot } = Radium
 
 import MenuSidebarView from './menusidebar.view'
 import MenuIconView from './menuicon.view'
+import TaglineView from './tagline.view'
 
 let GlobalBar = class extends React.Component<any, any> {
 
@@ -55,7 +56,15 @@ let GlobalBar = class extends React.Component<any, any> {
             route: '/',
         }
 
-        let tagLine = "We're all about government budgets"
+        let tagLine = <TaglineView
+                text = "We're all about government budgets"
+                style = {{                
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    color:'green',
+                }}
+            />
 
         let menuicon = 
             <MenuIconView 
@@ -101,16 +110,7 @@ let GlobalBar = class extends React.Component<any, any> {
                             </a>
                     </div>
 
-                    <div style={{
-                        position: "absolute",
-                        fontSize: "12px",
-                        color: "gold",
-                        bottom: 0,
-                        left: 0,
-                        padding: "3px",
-                    }}>
-                        We're all about government budgets
-                    </div>
+                    { tagLine }
 
                     <MenuSidebarView 
                         headData = { headData }
