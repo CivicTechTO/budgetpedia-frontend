@@ -16,6 +16,11 @@ let system = {
 };
 let homecols = 2;
 let homepadding = 20;
+let homepage = {
+    title: "Budgetpedia Home",
+    image: '../../public/icons/budgetpedia-logo.png',
+    route: '/',
+};
 let pagetargets = [
     {
         id: 9,
@@ -174,6 +179,7 @@ let explorer = {
     }
 };
 var initialstate = {
+    homepage,
     pagetargets,
     homecols,
     homepadding,

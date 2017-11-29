@@ -18,7 +18,6 @@ interface Props {
     }[],
     onSelect: Function,
     headData: {
-        key: any,
         primaryText: string, 
         image: string, 
         route: string, 
@@ -50,12 +49,12 @@ class MenuSidebarView extends React.Component<Props, any> {
 
         let { headData } = this.props
 
-        let { key, primaryText, image, route, disabled } = headData
+        let { primaryText, image, route, disabled } = headData
 
         let menuhead = [
             <MenuRowView 
                 onSelect = { this.props.onSelect }
-                key = { key }
+                key = { 'home' }
                 primaryText = { primaryText }
                 image = { image }
                 route = { route }

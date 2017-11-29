@@ -54,11 +54,16 @@ let homepadding = (state: any = initialstate.homepadding, action) => {
     return state
 }
 
+let homepagedata = (state:any = initialstate.homepage,action) => {
+    return state
+}
+
 let pagetargets = (state: any = initialstate.pagetargets, action) => {
     return state
 }
 
 let homepage = combineReducers({
+    homepagedata,
     homepadding,
     pagetargets,
 })

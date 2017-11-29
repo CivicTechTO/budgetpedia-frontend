@@ -31,11 +31,11 @@ let GlobalBar = class extends React.Component {
     render() {
         let { globalbar, theme } = this.props;
         let pagetargets = this.props.pagetargets;
+        let homepagedata = this.props.homepagedata;
         let headData = {
-            key: 'home',
-            primaryText: "Budgetpedia Home",
-            image: '../../public/icons/budgetpedia-logo.png',
-            route: '/',
+            primaryText: homepagedata.title,
+            image: homepagedata.image,
+            route: homepagedata.route,
         };
         let taglineView = React.createElement(tagline_view_1.default, { text: this.props.globalbar.tagLine, style: {
                 position: "absolute",
@@ -49,7 +49,7 @@ let GlobalBar = class extends React.Component {
             }, contactAddress: this.props.globalbar.contactAddress, contactPrompt: this.props.globalbar.contactPrompt });
         let menuiconView = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
         let menuSidebarView = React.createElement(menusidebar_view_1.default, { headData: headData, tailData: this.props.pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
-        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push('/'), titleStyle: { cursor: 'pointer' }, title: this.props.globalbar.title, iconElementLeft: menuiconView },
+        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push(homepagedata.route), titleStyle: { cursor: 'pointer' }, title: this.props.globalbar.title, iconElementLeft: menuiconView },
             taglineView,
             contactView,
             menuSidebarView));
@@ -61,6 +61,7 @@ function mapStateToProps(state) {
         globalbar: ui.globalbar,
         theme: resources.theme,
         pagetargets: homepage.pagetargets,
+        homepagedata: homepage.homepagedata,
     };
 }
 GlobalBar = react_redux_1.connect(mapStateToProps, {

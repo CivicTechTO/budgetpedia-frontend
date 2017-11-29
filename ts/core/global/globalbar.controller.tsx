@@ -47,11 +47,11 @@ let GlobalBar = class extends React.Component<any, any> {
         let pagetargets = this.props.pagetargets
 
         // should be imported
+        let homepagedata = this.props.homepagedata
         let headData = {
-            key:'home',
-            primaryText:"Budgetpedia Home",
-            image:'../../public/icons/budgetpedia-logo.png',
-            route: '/',
+            primaryText:homepagedata.title,
+            image:homepagedata.image,
+            route:homepagedata.route,
         }
 
         let taglineView = <TaglineView
@@ -94,7 +94,7 @@ let GlobalBar = class extends React.Component<any, any> {
 
         return (
             <GlobalBarView
-                onSelect = { () => this.props.push('/') }
+                onSelect = { () => this.props.push(homepagedata.route) }
                 titleStyle = {{cursor:'pointer'}}
                 title= {this.props.globalbar.title}
 
@@ -121,7 +121,7 @@ function mapStateToProps(state) {
         globalbar:ui.globalbar,
         theme:resources.theme,
         pagetargets:homepage.pagetargets,
-
+        homepagedata:homepage.homepagedata,
     }
 
 }

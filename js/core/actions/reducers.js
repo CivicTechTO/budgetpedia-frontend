@@ -28,10 +28,14 @@ let ui = redux_1.combineReducers({
 let homepadding = (state = initialstate_1.default.homepadding, action) => {
     return state;
 };
+let homepagedata = (state = initialstate_1.default.homepage, action) => {
+    return state;
+};
 let pagetargets = (state = initialstate_1.default.pagetargets, action) => {
     return state;
 };
 let homepage = redux_1.combineReducers({
+    homepagedata,
     homepadding,
     pagetargets,
 });

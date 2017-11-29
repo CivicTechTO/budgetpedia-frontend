@@ -73,6 +73,12 @@ let system = {
 let homecols: number = 2 // default
 let homepadding: number = 20
 
+let homepage = {
+    title:"Budgetpedia Home",
+    image:'../../public/icons/budgetpedia-logo.png',
+    route: '/',
+}
+
 // review apporpriateness of the following typescript type notation
 let pagetargets: Object[] = [
     {
@@ -292,6 +298,7 @@ let explorer = {
 }
 
 var initialstate = {
+    homepage,
     pagetargets,
     homecols,
     homepadding,
