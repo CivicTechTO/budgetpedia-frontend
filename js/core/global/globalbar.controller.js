@@ -5,10 +5,10 @@ const redux_1 = require("redux");
 const react_redux_1 = require("react-redux");
 const react_router_redux_1 = require("react-router-redux");
 const AppBar_1 = require("material-ui/AppBar");
-const IconButton_1 = require("material-ui/IconButton");
-const FontIcon_1 = require("material-ui/FontIcon");
-const radium_1 = require("radium");
+const Radium = require("radium");
+let { StyleRoot } = Radium;
 const menusidebar_view_1 = require("./menusidebar.view");
+const menuicon_view_1 = require("./menuicon.view");
 let GlobalBar = class extends React.Component {
     constructor() {
         super(...arguments);
@@ -38,9 +38,8 @@ let GlobalBar = class extends React.Component {
             route: '/',
         };
         let tagLine = "We're all about government budgets";
-        let menuicon = React.createElement(IconButton_1.default, { onTouchTap: (e) => { this.handleMenuSidebarToggle(e); } },
-            React.createElement(FontIcon_1.default, { className: "material-icons", color: theme.palette.alternateTextColor, style: { cursor: "pointer" } }, "menu"));
-        return (React.createElement(radium_1.StyleRoot, null,
+        let menuicon = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
+        return (React.createElement(StyleRoot, null,
             React.createElement(AppBar_1.default, { onTitleTouchTap: () => this.props.push('/'), titleStyle: { cursor: 'pointer' }, style: {
                     position: "fixed",
                     backgroundColor: "#336797"

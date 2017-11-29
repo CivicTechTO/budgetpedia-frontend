@@ -14,12 +14,12 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
 import AppBar from 'material-ui/AppBar'
-import IconButton from 'material-ui/IconButton'
-import FontIcon from 'material-ui/FontIcon'
 
-import { StyleRoot } from 'radium'
+import * as Radium from 'radium'
+let { StyleRoot } = Radium
 
 import MenuSidebarView from './menusidebar.view'
+import MenuIconView from './menuicon.view'
 
 let GlobalBar = class extends React.Component<any, any> {
 
@@ -58,19 +58,10 @@ let GlobalBar = class extends React.Component<any, any> {
         let tagLine = "We're all about government budgets"
 
         let menuicon = 
-            <IconButton
-                onTouchTap = {(e) => { this.handleMenuSidebarToggle(e) } } >
-
-                <FontIcon
-                    className = "material-icons"
-                    color = {theme.palette.alternateTextColor}
-                    style = {{ cursor: "pointer" }} >
-
-                    menu
-
-                </FontIcon>
-
-            </IconButton>
+            <MenuIconView 
+                onSelect = {(e) => { this.handleMenuSidebarToggle(e) }}
+                color = {theme.palette.alternateTextColor}
+            />
 
         return (
             <StyleRoot>
