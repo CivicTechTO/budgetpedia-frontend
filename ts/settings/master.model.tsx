@@ -1,4 +1,4 @@
-// initialstate.tsx
+// master.model.tsx
 /*
     TODO: purge system of navitiles - old wordy tiles = maintiles
     TODO: break file into backend config bundle and frontend package bundle components; merge in index.tsx?
@@ -14,7 +14,7 @@
 
 import theme from 'material-ui/styles/baseThemes/lightBaseTheme'
 
-import {BranchSettings} from '../addins/explorer/modules/interfaces'
+import { BranchSettings } from '../addins/explorer/modules/interfaces'
 
 // import database, {CurrencyDataset,ItemDataset} from '../addins/classes/databaseapi'
 
@@ -70,13 +70,19 @@ let system = {
 	ischrome: /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
 }
 
-let homecols: number = 2 // default
-let homepadding: number = 20
-
 let homepage = {
-    title:"Budgetpedia Home",
-    image:'../../public/icons/budgetpedia-logo.png',
+    id:0,
+    content: {
+        title:"Budgetpedia Home",
+        subtitle:"we're all about government budgets",
+        image:'../../public/icons/budgetpedia-logo.png',
+        category:'master',
+    },
+    index:0,
+    tier:'master',
     route: '/',
+    tag:'home',
+    parent:null,
 }
 
 // review apporpriateness of the following typescript type notation
@@ -88,11 +94,12 @@ let pagetargets: Object[] = [
             subtitle: `Interactive tools`,
             image: '../../public/icons/ic_explore_48px.svg',
             category: 'tools',
-            cols: 2,
         },
         index: 0,
         tier:'primary',
         route: '/explorer',
+        tag:'explorer',
+        parent:'home',
     },
     {
         id: 7,
@@ -101,11 +108,12 @@ let pagetargets: Object[] = [
             subtitle: `About budget decisions`,
             image: '../../public/icons/ic_map_48px.svg',
             category: 'tools',
-            cols:2,
         },
         index: 1,
         tier:'primary',
         route: '/roadmap',
+        tag:'roadmap',
+        parent:'home',
     },
     {
         id: 15,
@@ -118,6 +126,8 @@ let pagetargets: Object[] = [
         index: 2,
         tier:'primary',
         route: '/resources',
+        tag:'resources',
+        parent:'home',
     },
     {
         id: 14,
@@ -130,6 +140,8 @@ let pagetargets: Object[] = [
         index: 3,
         tier:'primary',
         route: '/pathways',
+        tag:'pathways',
+        parent:'home',
     },
     {
         id: 6,
@@ -141,7 +153,9 @@ let pagetargets: Object[] = [
         },
         index: 4,
         tier:'secondary',
-        route: '/about',
+        route: 'about',
+        tag:'about',
+        parent:'home',
     },
     {
         id: 16,
@@ -154,6 +168,8 @@ let pagetargets: Object[] = [
         index: 5,
         tier:'secondary',
         route: '/announcements',
+        tag:'announcements',
+        parent:'home',
     },
     {
         id: 13,
@@ -166,6 +182,8 @@ let pagetargets: Object[] = [
         index: 6,
         tier:'secondary',
         route: '/demos',
+        tag:'demos',
+        parent:'home',
     },
     {
         id: 10,
@@ -178,6 +196,8 @@ let pagetargets: Object[] = [
         index: 7,
         tier:'secondary',
         route: '/teams',
+        tag:'teams',
+        parent:'home',
     },
 /*    {
         id: 1,
@@ -297,11 +317,9 @@ let explorer = {
     }
 }
 
-var initialstate = {
+var masterModel = {
     homepage,
     pagetargets,
-    homecols,
-    homepadding,
     globalbar,
 	// toolsnavbar,
 	theme,
@@ -312,4 +330,4 @@ var initialstate = {
     workingmessagestate,
 }
 
-export default initialstate
+export default masterModel

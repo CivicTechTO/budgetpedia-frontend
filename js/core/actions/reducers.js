@@ -3,15 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
 const react_router_redux_1 = require("react-router-redux");
 const react_redux_toastr_1 = require("react-redux-toastr");
-const initialstate_1 = require("../../settings/initialstate");
+const master_model_1 = require("../../settings/master.model");
 const reducers_1 = require("../../addins/explorer/reducers");
-let theme = (state = initialstate_1.default.theme) => {
+let theme = (state = master_model_1.default.theme) => {
     return state;
 };
-let system = (state = initialstate_1.default.system) => {
+let system = (state = master_model_1.default.system) => {
     return state;
 };
-let colors = (state = initialstate_1.default.colors) => {
+let colors = (state = master_model_1.default.colors) => {
     return state;
 };
 let resources = redux_1.combineReducers({
@@ -19,31 +19,27 @@ let resources = redux_1.combineReducers({
     system,
     colors,
 });
-let globalbar = (state = initialstate_1.default.globalbar, action) => {
+let globalbar = (state = master_model_1.default.globalbar, action) => {
     return state;
 };
 let ui = redux_1.combineReducers({
     globalbar,
 });
-let homepadding = (state = initialstate_1.default.homepadding, action) => {
+let homepage = (state = master_model_1.default.homepage, action) => {
     return state;
 };
-let homepagedata = (state = initialstate_1.default.homepage, action) => {
+let pagetargets = (state = master_model_1.default.pagetargets, action) => {
     return state;
 };
-let pagetargets = (state = initialstate_1.default.pagetargets, action) => {
-    return state;
-};
-let homepage = redux_1.combineReducers({
-    homepagedata,
-    homepadding,
+let pages = redux_1.combineReducers({
+    homepage,
     pagetargets,
 });
 let mainReducerCore = {
     explorer: reducers_1.default,
     resources,
     router: react_router_redux_1.routerReducer,
-    homepage,
+    pages,
     toastr: react_redux_toastr_1.reducer,
     ui,
 };

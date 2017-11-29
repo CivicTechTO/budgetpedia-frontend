@@ -44,9 +44,10 @@ let GlobalBar = class extends React.Component<any, any> {
 
         let { globalbar, theme } = this.props
         
-        let { pagetargets, homepagedata} = this.props
+        let { pagetargets, homepage} = this.props
 
-        let {title:primaryText, image, route} = homepagedata
+        let {title:primaryText, image} = homepage.content
+        let {route} = homepage
 
         let headData = {
             primaryText,
@@ -94,7 +95,7 @@ let GlobalBar = class extends React.Component<any, any> {
 
         return (
             <GlobalBarView
-                onSelect = { () => this.props.push(homepagedata.route) }
+                onSelect = { () => this.props.push(homepage.route) }
                 titleStyle = {{cursor:'pointer'}}
                 title= {globalbar.title}
 
@@ -114,14 +115,14 @@ let GlobalBar = class extends React.Component<any, any> {
 
 function mapStateToProps(state) {
 
-    let { resources, homepage, ui } = state
+    let { resources, pages, ui } = state
 
     return {
 
         globalbar:ui.globalbar,
         theme:resources.theme,
-        pagetargets:homepage.pagetargets,
-        homepagedata:homepage.homepagedata,
+        pagetargets:pages.pagetargets,
+        homepage:pages.homepage,
     }
 
 }

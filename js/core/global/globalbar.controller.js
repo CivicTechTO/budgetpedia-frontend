@@ -30,8 +30,9 @@ let GlobalBar = class extends React.Component {
     }
     render() {
         let { globalbar, theme } = this.props;
-        let { pagetargets, homepagedata } = this.props;
-        let { title: primaryText, image, route } = homepagedata;
+        let { pagetargets, homepage } = this.props;
+        let { title: primaryText, image } = homepage.content;
+        let { route } = homepage;
         let headData = {
             primaryText,
             image,
@@ -49,19 +50,19 @@ let GlobalBar = class extends React.Component {
             }, contactAddress: globalbar.contactAddress, contactPrompt: globalbar.contactPrompt });
         let menuiconView = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
         let menuSidebarView = React.createElement(menusidebar_view_1.default, { headData: headData, tailData: pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
-        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push(homepagedata.route), titleStyle: { cursor: 'pointer' }, title: globalbar.title, iconElementLeft: menuiconView },
+        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push(homepage.route), titleStyle: { cursor: 'pointer' }, title: globalbar.title, iconElementLeft: menuiconView },
             taglineView,
             contactView,
             menuSidebarView));
     }
 };
 function mapStateToProps(state) {
-    let { resources, homepage, ui } = state;
+    let { resources, pages, ui } = state;
     return {
         globalbar: ui.globalbar,
         theme: resources.theme,
-        pagetargets: homepage.pagetargets,
-        homepagedata: homepage.homepagedata,
+        pagetargets: pages.pagetargets,
+        homepage: pages.homepage,
     };
 }
 GlobalBar = react_redux_1.connect(mapStateToProps, {

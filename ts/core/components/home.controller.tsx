@@ -16,10 +16,9 @@ import { Timeline } from 'react-twitter-widgets'
 
 import { AppTiles } from "../components/apptiles"
 
-const mapStateToProps = ( { homepage, resources } ) => 
+const mapStateToProps = ( { pages, resources } ) => 
 ({ 
-    pagetargets:homepage.pagetargets,
-    homepadding:homepage.homepadding,
+    pagetargets:pages.pagetargets,
     theme:resources.theme,
     colors:resources.colors,
     system:resources.system,
@@ -38,7 +37,7 @@ let Home = class extends React.Component<any, any> {
 
     render() {
 
-        let { pagetargets, homepadding, theme, colors, system } = this.props
+        let { pagetargets, theme, colors, system } = this.props
 
         // console.log('theme, props',theme,this.props)
 
@@ -129,7 +128,7 @@ let Home = class extends React.Component<any, any> {
                     }
                 }
                 tiles =     { pagetargets } 
-                padding =   { homepadding }
+                padding =   { 20 }
                 tilecolors = {
                     { 
                         front: colors.blue50,

@@ -14,21 +14,21 @@ import {reducer as toastrReducer} from 'react-redux-toastr'
 // -------------[ app resources ]---------------
 import * as Actions from './actions'
 
-import initialstate from "../../settings/initialstate"
+import masterModel from "../../settings/master.model"
 
 // ----------[ app settings ]----------------------
 import explorer from '../../addins/explorer/reducers'
 // -----------[ system resource reducers ]------------
 
-let theme = (state: any = initialstate.theme) => {
+let theme = (state: any = masterModel.theme) => {
     return state
 }
 
-let system = (state:any = initialstate.system) => {
+let system = (state:any = masterModel.system) => {
     return state
 }
 
-let colors = (state: any = initialstate.colors) => {
+let colors = (state: any = masterModel.colors) => {
     return state
 }
 
@@ -40,7 +40,7 @@ let resources = combineReducers({
 
 // ---------------------[ ui core services reducers ]------------------------
 
-let globalbar = (state: any = initialstate.globalbar, action) => {
+let globalbar = (state: any = masterModel.globalbar, action) => {
     return state
 }
 
@@ -50,21 +50,16 @@ let ui = combineReducers({
 
 // ---------------------[ home grid reducers ]------------------------
 
-let homepadding = (state: any = initialstate.homepadding, action) => {
+let homepage = (state:any = masterModel.homepage,action) => {
     return state
 }
 
-let homepagedata = (state:any = initialstate.homepage,action) => {
+let pagetargets = (state: any = masterModel.pagetargets, action) => {
     return state
 }
 
-let pagetargets = (state: any = initialstate.pagetargets, action) => {
-    return state
-}
-
-let homepage = combineReducers({
-    homepagedata,
-    homepadding,
+let pages = combineReducers({
+    homepage,
     pagetargets,
 })
 
@@ -80,7 +75,7 @@ let mainReducerCore =
         router:routerReducer, // import
 
         // user login management
-        homepage,
+        pages,
 
         toastr:toastrReducer,
 

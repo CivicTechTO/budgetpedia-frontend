@@ -5,14 +5,14 @@
     TODO: change chartSelection from yearScope to root cell
 */
 import { combineReducers } from 'redux'
-import initialstate from "../../settings/initialstate"
+import masterModel from "../../settings/master.model"
 import { types as actiontypes} from './actions'
 import { BranchSettings } from './modules/interfaces'
 import { TimeScope } from './constants'
 
 let generationcounter = 0
 
-let defaults = (state = initialstate.explorer.defaults, action) => {
+let defaults = (state = masterModel.explorer.defaults, action) => {
     return state
 }
 

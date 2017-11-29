@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
-const initialstate_1 = require("../../settings/initialstate");
+const master_model_1 = require("../../settings/master.model");
 const actions_1 = require("./actions");
 const constants_1 = require("./constants");
 let generationcounter = 0;
-let defaults = (state = initialstate_1.default.explorer.defaults, action) => {
+let defaults = (state = master_model_1.default.explorer.defaults, action) => {
     return state;
 };
 let branchList = (state = [], action) => {
