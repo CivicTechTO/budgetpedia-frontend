@@ -38,7 +38,7 @@ let Home = class extends React.Component {
                         fontSize: "18px"
                     } },
                     React.createElement("div", { style: { float: "right", margin: "9px 3px 3px 3px", borderRadius: "8px" } },
-                        React.createElement("img", { style: { width: "100px" }, src: "./public/icons/budgetpedia-logo.png" })),
+                        React.createElement("img", { style: { width: "100px" }, src: "./public/icons/budgetpedia-logo-2.png" })),
                     React.createElement("div", { style: { clear: 'right', float: "right", margin: "0px 3px 3px 3px", borderRadius: "8px", lineHeight: '9px' } },
                         React.createElement("span", { style: { fontStyle: 'italic', fontSize: '9px' } }, "fostered by:"),
                         React.createElement("br", null),

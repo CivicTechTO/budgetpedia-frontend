@@ -62,7 +62,7 @@ let Home = class extends React.Component<any, any> {
                 }
             }>
                 <div style = {{float:"right",margin:"9px 3px 3px 3px",borderRadius:"8px"}}>
-                    <img style={{width:"100px"}} src= "./public/icons/budgetpedia-logo.png" />
+                    <img style={{width:"100px"}} src= "./public/icons/budgetpedia-logo-2.png" />
                 </div>
                 <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
                     <span style={{fontStyle:'italic',fontSize:'9px'}} >fostered by:</span><br />
