@@ -66,9 +66,9 @@ let globalbar = {
 
 // TODO: no longer needed with switch away from flipcards
 // for more detail: https://www.npmjs.com/package/snifferjs
-let system = {
-	ischrome: /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
-}
+// let system = {
+// 	ischrome: /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
+// }
 
 let homepage = {
     id:0,
@@ -322,7 +322,6 @@ var masterModel = {
 	// toolsnavbar,
 	theme,
 	colors,
-	system,
     explorer,
 }
 

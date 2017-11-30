@@ -23,9 +23,9 @@ let theme = (state: any = masterModel.theme) => {
     return state
 }
 
-let system = (state:any = masterModel.system) => {
-    return state
-}
+// let system = (state:any = masterModel.system) => {
+//     return state
+// }
 
 let colors = (state: any = masterModel.colors) => {
     return state
@@ -33,7 +33,6 @@ let colors = (state: any = masterModel.colors) => {
 
 let resources = combineReducers({
     theme,
-    system,
     colors,
 })
 

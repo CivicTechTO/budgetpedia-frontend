@@ -1,15 +1,13 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
-// navtiles.tsx
+// nuggestlist.controller.tsx
 
 'use strict'
 
-// required by bundler
 import * as React from 'react'
-var { Component } = React
 
 import { NuggetView } from "./nugget.view"
 
-interface NavTilesData {
+interface NuggetData {
 
     id:         number,
     content:    Object,
@@ -19,25 +17,24 @@ interface NavTilesData {
 
 }
 
-interface Props extends React.Props< NuggetPack > {
+interface Props extends React.Props< NuggetList > {
 
-    tiles:      Array< NavTilesData >,
+    tiles:      Array< NuggetData >,
     tilecols?:  number,
     padding?:   number,
     style?:     Object,
     tilecolors: Object,
-    system:     Object,
     route?:     string,
     pushHistory: Function,
     cellHeight?: number,
 
 }
 
-class NuggetPack extends Component< Props, any > {
+class NuggetList extends React.Component< Props, any > {
 
     render() {
 
-        let { tiles, tilecols, padding, tilecolors, style, system, route, pushHistory, cellHeight } = this.props
+        let { tiles, tilecolors, style, route, pushHistory, cellHeight } = this.props
         let primarytiledata = []
         let secondarytiledata = []
         for (let tiledata of tiles) {
@@ -48,27 +45,15 @@ class NuggetPack extends Component< Props, any > {
             }
         }
 
-        let primarytiles = primarytiledata.map ( function ( data ) {
+        let nuggetsdata = [...primarytiledata,...secondarytiledata]
+
+        let nuggets = nuggetsdata.map ( function ( data ) {
 
             return (
                 <NuggetView 
                     key     = { data.id } 
                     content  = { data.content }
                     tilecolors = { tilecolors }
-                    system = { system }
-                    route = { data.route }
-                    pushHistory = { pushHistory } 
-                    />
-            )
-        })
-        let secondarytiles = secondarytiledata.map ( function ( data ) {
-
-            return (
-                <NuggetView 
-                    key     = { data.id } 
-                    content  = { data.content }
-                    tilecolors = { tilecolors }
-                    system = { system }
                     route = { data.route }
                     pushHistory = { pushHistory } 
                     />
@@ -94,15 +79,14 @@ class NuggetPack extends Component< Props, any > {
                 >
                     <div
 
-                        style       = {
+                        style = {
                             {
                                 display: 'block',
                                 whiteSpace:'nowrap',
                                 position:'relative',
                             }
                         }>
-                        { primarytiles }
-                        { secondarytiles }
+                        { nuggets }
                     </div>
                 </div>
             </div>
@@ -110,4 +94,4 @@ class NuggetPack extends Component< Props, any > {
     }
 }
 
-export { NuggetPack }
+export default NuggetList

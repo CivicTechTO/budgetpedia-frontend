@@ -11,9 +11,6 @@ let globalbar = {
     accountoptions: [],
     menuoptions: [],
 };
-let system = {
-    ischrome: /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
-};
 let homepage = {
     id: 0,
     content: {
@@ -204,7 +201,6 @@ var masterModel = {
     globalbar,
     theme: lightBaseTheme_1.default,
     colors,
-    system,
     explorer,
 };
 exports.default = masterModel;

@@ -15,7 +15,7 @@ import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import { NuggetPack } from "./nuggetpack.controller"
+import NuggetList from "./nuggetlist.controller"
 
 let Home = class extends React.Component<any, any> {
 
@@ -29,7 +29,7 @@ let Home = class extends React.Component<any, any> {
 
     render() {
 
-        let { pagetargets, theme, colors, system } = this.props
+        let { pagetargets, theme, colors } = this.props
 
         return (
             <div>
@@ -113,7 +113,7 @@ let Home = class extends React.Component<any, any> {
                         </CardText>
                     </Card>
                 </div>
-                <NuggetPack
+                <NuggetList
 
                     style = {
                         {
@@ -133,7 +133,6 @@ let Home = class extends React.Component<any, any> {
                             helpbutton: theme.palette.primary3Color,
                         }
                     }
-                    system = { system }
                     pushHistory = { this.props.push }
                     cellHeight = { 180 }
                 />
@@ -214,7 +213,6 @@ const mapStateToProps = ( { pages, resources } ) =>
     pagetargets:pages.pagetargets,
     theme:resources.theme,
     colors:resources.colors,
-    system:resources.system,
 })
 
 Home = connect ( 

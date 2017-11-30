@@ -8,15 +8,11 @@ const reducers_1 = require("../../addins/explorer/reducers");
 let theme = (state = master_model_1.default.theme) => {
     return state;
 };
-let system = (state = master_model_1.default.system) => {
-    return state;
-};
 let colors = (state = master_model_1.default.colors) => {
     return state;
 };
 let resources = redux_1.combineReducers({
     theme,
-    system,
     colors,
 });
 let globalbar = (state = master_model_1.default.globalbar, action) => {

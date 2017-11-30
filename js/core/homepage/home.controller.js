@@ -6,7 +6,7 @@ const react_router_dom_1 = require("react-router-dom");
 const react_router_redux_1 = require("react-router-redux");
 const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
-const nuggetpack_controller_1 = require("./nuggetpack.controller");
+const nuggetlist_controller_1 = require("./nuggetlist.controller");
 let Home = class extends React.Component {
     constructor() {
         super(...arguments);
@@ -17,7 +17,7 @@ let Home = class extends React.Component {
         };
     }
     render() {
-        let { pagetargets, theme, colors, system } = this.props;
+        let { pagetargets, theme, colors } = this.props;
         return (React.createElement("div", null,
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
@@ -77,7 +77,7 @@ let Home = class extends React.Component {
                                 " For in-depth articles: ",
                                 React.createElement("a", { href: "http://medium.com/budgetpedia", target: "_blank" }, "Medium"))),
                         React.createElement("div", { style: { clear: "both" } })))),
-            React.createElement(nuggetpack_controller_1.NuggetPack, { style: {
+            React.createElement(nuggetlist_controller_1.default, { style: {
                     padding: "16px",
                     fontFamily: theme.fontFamily,
                     display: 'block',
@@ -87,7 +87,7 @@ let Home = class extends React.Component {
                     front: colors.blue50,
                     back: colors.amber50,
                     helpbutton: theme.palette.primary3Color,
-                }, system: system, pushHistory: this.props.push, cellHeight: 180 }),
+                }, pushHistory: this.props.push, cellHeight: 180 }),
             React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver' } },
                 React.createElement("div", { style: { maxWidth: '600px', margin: '0 auto' } },
                     React.createElement(react_twitter_widgets_1.Timeline, { dataSource: {
@@ -143,7 +143,6 @@ const mapStateToProps = ({ pages, resources }) => ({
     pagetargets: pages.pagetargets,
     theme: resources.theme,
     colors: resources.colors,
-    system: resources.system,
 });
 Home = react_redux_1.connect(mapStateToProps, {
     push: react_router_redux_1.push,
