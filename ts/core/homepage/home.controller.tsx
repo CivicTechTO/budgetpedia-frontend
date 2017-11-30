@@ -6,8 +6,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 // import { compose } from 'redux'
-import * as Actions from '../actions/actions'
+// import * as Actions from '../actions/actions'
 import { Link } from 'react-router-dom'
+import { push } from 'react-router-redux'
 
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
@@ -31,7 +32,7 @@ let Home = class extends React.Component<any, any> {
 
         e.stopPropagation()
         e.preventDefault()
-        this.props.history.push(target)
+        this.props.push(target)
 
     }
 
@@ -137,7 +138,7 @@ let Home = class extends React.Component<any, any> {
                     }
                 }
                 system = { system }
-                pushHistory = { this.props.pushHistory }
+                pushHistory = { this.props.push }
                 cellHeight = { 180 }
             />
             <div style = {{padding:'32px',backgroundColor:'silver'}} >
@@ -215,7 +216,8 @@ let Home = class extends React.Component<any, any> {
 // dependency injection
 Home = connect ( mapStateToProps,
     {
-        pushHistory:Actions.pushHistory,
+        push,
+        // pushHistory:Actions.pushHistory,
     } 
 ) ( Home )
 

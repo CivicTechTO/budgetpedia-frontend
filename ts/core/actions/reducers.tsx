@@ -11,7 +11,7 @@ import { routerReducer as router} from 'react-router-redux'
 import {reducer as toastr} from 'react-redux-toastr'
 
 // -------------[ app resources ]---------------
-import * as Actions from './actions'
+// import * as Actions from './actions'
 
 import masterModel from "../../settings/master.model"
 

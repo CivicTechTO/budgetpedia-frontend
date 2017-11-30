@@ -1,7 +1,7 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 // actions.tsx
 
-import { createAction } from 'redux-actions';
+// import { createAction } from 'redux-actions';
 /*
     https://github.com/acdlite/redux-actions
     actions must be FSA - Flux Standard Actions:
@@ -13,22 +13,22 @@ import { createAction } from 'redux-actions';
     }
     createAction(type, payloadCreator = Identity, ?metaCreator)
 */
-import { push } from 'react-router-redux'
+// import { push } from 'react-router-redux'
 
-import { getQuery } from '../utilities/utilities'
+// import { getQuery } from '../utilities/utilities'
 
 //===============================================
 /*------------- tile management -----------*/
 
-export const pushHistory = route => {
-    return dispatch => {
-        dispatch(push(route))
-    }
-}
+// export const pushHistory = route => {
+//     return dispatch => {
+//         dispatch(push(route))
+//     }
+// }
 
-interface RequestInit {
-    method:string,
-    headers: any,
-    body:string,
-}
+// interface RequestInit {
+//     method:string,
+//     headers: any,
+//     body:string,
+// }
 

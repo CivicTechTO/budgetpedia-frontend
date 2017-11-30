@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
-const Actions = require("../actions/actions");
 const react_router_dom_1 = require("react-router-dom");
+const react_router_redux_1 = require("react-router-redux");
 const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
 const apptiles_1 = require("./apptiles");
@@ -19,7 +19,7 @@ let Home = class extends React.Component {
         this.pushHistory = (e, target) => {
             e.stopPropagation();
             e.preventDefault();
-            this.props.history.push(target);
+            this.props.push(target);
         };
     }
     render() {
@@ -94,7 +94,7 @@ let Home = class extends React.Component {
                     front: colors.blue50,
                     back: colors.amber50,
                     helpbutton: theme.palette.primary3Color,
-                }, system: system, pushHistory: this.props.pushHistory, cellHeight: 180 }),
+                }, system: system, pushHistory: this.props.push, cellHeight: 180 }),
             React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver' } },
                 React.createElement("div", { style: { maxWidth: '600px', margin: '0 auto' } },
                     React.createElement(react_twitter_widgets_1.Timeline, { dataSource: {
@@ -147,6 +147,6 @@ let Home = class extends React.Component {
     }
 };
 Home = react_redux_1.connect(mapStateToProps, {
-    pushHistory: Actions.pushHistory,
+    push: react_router_redux_1.push,
 })(Home);
 exports.default = Home;
