@@ -17,7 +17,7 @@
                     "aspect":"Expenses",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Expenses by program",
+                    "title":"General City Services: Expenses by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -27,7 +27,7 @@
                     "aspect":"Expenses",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Expenses by type",
+                    "title":"General City Services: Expenses by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -37,7 +37,7 @@
                     "aspect":"Expenses",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Expense trends",
+                    "title":"General City Services: Expense trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 },
@@ -47,7 +47,7 @@
                     "aspect":"Revenues",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Revenues by program",
+                    "title":"General City Services: Revenues by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -57,7 +57,7 @@
                     "aspect":"Revenues",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Revenues by type",
+                    "title":"General City Services: Revenues by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -67,7 +67,7 @@
                     "aspect":"Revenues",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Revenue trends",
+                    "title":"General City Services: Revenue trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 },
@@ -77,7 +77,7 @@
                     "aspect":"Staffing",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Staffing by program",
+                    "title":"General City Services: Staffing by program",
                     "tab":0,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -87,7 +87,7 @@
                     "aspect":"Staffing",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Staffing by type",
+                    "title":"General City Services: Staffing by type",
                     "tab":1,
                     "leafchart":"OneYear:ColumnChart"
                 },
@@ -97,7 +97,7 @@
                     "aspect":"Staffing",
                     "level":"Taxonomy",
                     "code":"SHARED",
-                    "title":"General Services: Staffing trends",
+                    "title":"General City Services: Staffing trends",
                     "tab":0,
                     "leafchart":"AllYears:TimeLine"
                 }
