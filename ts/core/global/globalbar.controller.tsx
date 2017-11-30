@@ -27,7 +27,6 @@ let GlobalBar = class extends React.Component<any, any> {
 
     handleMenuSidebarToggle = (e) => {
         e.stopPropagation()
-        e.preventDefault()
         this.setState({ menusidebaropen: !this.state.menusidebaropen })
     }
     
@@ -55,7 +54,8 @@ let GlobalBar = class extends React.Component<any, any> {
             route,
         }
 
-        let taglineView = <TaglineView
+        let taglineView = 
+            <TaglineView
                 text = {globalbar.tagLine}
                 style = {{                
                     position: "absolute",
