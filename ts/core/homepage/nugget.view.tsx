@@ -10,7 +10,7 @@ import { push } from 'react-router-redux'
 
 import { GridTile } from 'material-ui/GridList'
 
-class AppTile extends React.Component<any, any> {
+class NuggetView extends React.Component<any, any> {
     constructor(props) {
         super(props);
     }
@@ -81,5 +81,5 @@ class AppTile extends React.Component<any, any> {
     }
 }
 
-export { AppTile }
+export { NuggetView }
 

@@ -15,16 +15,7 @@ import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import { AppTiles } from "./apptiles"
-
-const mapStateToProps = ( { pages, resources } ) => 
-({ 
-    pagetargets:pages.pagetargets,
-    theme:resources.theme,
-    colors:resources.colors,
-    system:resources.system,
-})
-
+import { NuggetPack } from "./nuggetpack.controller"
 
 let Home = class extends React.Component<any, any> {
 
@@ -40,184 +31,196 @@ let Home = class extends React.Component<any, any> {
 
         let { pagetargets, theme, colors, system } = this.props
 
-        // console.log('theme, props',theme,this.props)
-
         return (
             <div>
-            <div 
-                style = {
-                    {
-                        backgroundColor:"#404244",
-                        padding:"8px",
+                <div 
+                    style = {
+                        {
+                            backgroundColor:"#404244",
+                            padding:"8px",
+                        }
                     }
-                }
-            >
-            <Card style={
-                {
-                    backgroundImage:"url(./public/icons/WebsiteBanner.png)",
-                    backgroundSize:"cover",
-                    margin:"8px",
-                    border:"2px solid silver",
-                    borderRadius:"8px",
-                    fontSize:"18px"
-                }
-            }>
-                <div style = {{float:"right",margin:"9px 3px 3px 3px",borderRadius:"8px"}}>
-                    <img style={{width:"100px"}} src= "./public/icons/budgetpedia-logo-2.png" />
-                </div>
-                <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
-                    <span style={{fontStyle:'italic',fontSize:'9px'}} >fostered by:</span><br />
-                    <a target = "_blank" href="http://civictech.ca">
-                    <img style={{width:"100px"}} src= "./public/icons/CTTO-logo-sm.png" /></a>
-                </div>
-                <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
-                    <span style={{fontStyle:'italic',fontSize:'9px'}} >in collaboration with:</span><br />
-                    <a target = "_blank" href="http://betterbudget.ca">
-                    <img style={{width:"100px"}} src= "./public/icons/bbtoLogo_04.jpg" /></a>
-                </div>
-                <CardTitle style = {{padding:"16px 16px 0 16px"}} >
-                Welcome to Budgetpedia.
-                </CardTitle>
-                <CardText>
-                <hr />
-                <p style={{margin:0,padding:0}}>Browse our site:</p>
-                <ul> <li>Explore the Toronto budget with our <span
-                    style = {{whiteSpace:'pre'}} ><img 
-                    style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_explore_48px.svg'}
-                    />
-                    <Link to='/explorer'>Budget Explorer</Link></span></li>
+                >
+                    <Card style={
+                        {
+                            backgroundImage:"url(./public/icons/WebsiteBanner.png)",
+                            backgroundSize:"cover",
+                            margin:"8px",
+                            border:"2px solid silver",
+                            borderRadius:"8px",
+                            fontSize:"18px"
+                        }
+                    }>
+                        <div style = {{float:"right",margin:"9px 3px 3px 3px",borderRadius:"8px"}}>
+                            <img style={{width:"100px"}} src= "./public/icons/budgetpedia-logo-2.png" />
+                        </div>
+                        <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
+                            <span style={{fontStyle:'italic',fontSize:'9px'}} >fostered by:</span><br />
+                            <a target = "_blank" href="http://civictech.ca">
+                            <img style={{width:"100px"}} src= "./public/icons/CTTO-logo-sm.png" /></a>
+                        </div>
+                        <div style = {{clear:'right',float:"right",margin:"0px 3px 3px 3px",borderRadius:"8px",lineHeight:'9px'}}>
+                            <span style={{fontStyle:'italic',fontSize:'9px'}} >in collaboration with:</span><br />
+                            <a target = "_blank" href="http://betterbudget.ca">
+                            <img style={{width:"100px"}} src= "./public/icons/bbtoLogo_04.jpg" /></a>
+                        </div>
+                        <CardTitle style = {{padding:"16px 16px 0 16px"}} >
+                            Welcome to Budgetpedia.
+                        </CardTitle>
+                        <CardText>
+                            <hr />
+                            <p style={{margin:0,padding:0}}>Browse our site:</p>
+                            <ul> 
+                                <li>Explore the Toronto budget with our <span
+                                    style = {{whiteSpace:'pre'}} ><img 
+                                    style = {{height:'18px',verticalAlign:'middle'}}
+                                    src={'./public/icons/ic_explore_48px.svg'}
+                                />
+                                    <Link to='/explorer'>Budget Explorer</Link></span>
+                                </li>
 
-                <li>See information about Toronto's budget decision schedule at our <span
-                    style = {{whiteSpace:'pre'}} ><img 
-                    style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_map_48px.svg'}/>
-                    <Link to='/roadmap'>Budget Roadmap</Link></span></li>
-                    <li>Find related <span
-                    style = {{whiteSpace:'pre'}} ><img 
-                    style = {{height:'18px',verticalAlign:'middle'}}
-                    src={'./public/icons/ic_library_books_48px.svg'}/>
-                    <Link to='/resources'>Resources</Link></span></li></ul>
-                    <hr />
-                <p>Follow us on:</p>
-                <ul>
-                <li><a 
-                    href="http://twitter.com/budgetpedia" 
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/twitter.png"/></a> <a 
-                    href="http://twitter.com/budgetpedia" 
-                    target="_blank">Twitter</a></li>
-                <li><a href="http://medium.com/budgetpedia"
-                    target = "_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/medium.png"/></a> For 
-                    in-depth articles: <a href="http://medium.com/budgetpedia"
-                    target = "_blank">Medium</a></li>
-                </ul>
-                <div style = {{clear:"both"}}></div>
-                </CardText>
-            </Card>
-            </div>
-            <AppTiles 
+                                <li>See information about Toronto's budget decision schedule at our <span
+                                    style = {{whiteSpace:'pre'}} ><img 
+                                    style = {{height:'18px',verticalAlign:'middle'}}
+                                    src={'./public/icons/ic_map_48px.svg'}/>
+                                    <Link to='/roadmap'>Budget Roadmap</Link></span>
+                                </li>
+                                <li>Find related <span
+                                    style = {{whiteSpace:'pre'}} ><img 
+                                    style = {{height:'18px',verticalAlign:'middle'}}
+                                    src={'./public/icons/ic_library_books_48px.svg'}/>
+                                    <Link to='/resources'>Resources</Link></span>
+                                </li>
+                            </ul>
+                            <hr />
+                            <p>Follow us on:</p>
+                            <ul>
+                                <li><a 
+                                    href="http://twitter.com/budgetpedia" 
+                                    target="_blank">
+                                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/twitter.png"/></a> <a 
+                                    href="http://twitter.com/budgetpedia" 
+                                    target="_blank">Twitter</a>
+                                </li>
+                                <li><a href="http://medium.com/budgetpedia"
+                                    target = "_blank">
+                                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/medium.png"/></a> For 
+                                    in-depth articles: <a href="http://medium.com/budgetpedia"
+                                    target = "_blank">Medium</a>
+                                </li>
+                            </ul>
+                            <div style = {{clear:"both"}}></div>
+                        </CardText>
+                    </Card>
+                </div>
+                <NuggetPack
 
-                style = {
-                    {
-                        padding:"16px",
-                        fontFamily:theme.fontFamily,
-                        display: 'block',
-                        backgroundColor: '#749261',               
-                        overflowX: 'scroll', 
+                    style = {
+                        {
+                            padding:"16px",
+                            fontFamily:theme.fontFamily,
+                            display: 'block',
+                            backgroundColor: '#749261',               
+                            overflowX: 'scroll', 
+                        }
                     }
-                }
-                tiles =     { pagetargets } 
-                padding =   { 20 }
-                tilecolors = {
-                    { 
-                        front: colors.blue50,
-                        back: colors.amber50,
-                        helpbutton: theme.palette.primary3Color,
+                    tiles =     { pagetargets } 
+                    padding =   { 20 }
+                    tilecolors = {
+                        { 
+                            front: colors.blue50,
+                            back: colors.amber50,
+                            helpbutton: theme.palette.primary3Color,
+                        }
                     }
-                }
-                system = { system }
-                pushHistory = { this.props.push }
-                cellHeight = { 180 }
-            />
-            <div style = {{padding:'32px',backgroundColor:'silver'}} >
-            <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
-            <Timeline
-                dataSource={{
-                  sourceType: 'url',
-                  url: 'https://twitter.com/budgetpedia'
-                }}
-                options={{
-                  username: 'Budgetpedia',
-                  height: '400'
-                }}
-              />
-           </div>
-           </div>
-           <div 
-                style = {
-                    {
-                        backgroundColor:"#404244",
-                        padding:"8px",
+                    system = { system }
+                    pushHistory = { this.props.push }
+                    cellHeight = { 180 }
+                />
+                <div style = {{padding:'32px',backgroundColor:'silver'}} >
+                    <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
+                    <Timeline
+                        dataSource={{
+                          sourceType: 'url',
+                          url: 'https://twitter.com/budgetpedia'
+                        }}
+                        options={{
+                          username: 'Budgetpedia',
+                          height: '400'
+                        }}
+                      />
+                   </div>
+               </div>
+               <div 
+                    style = {
+                        {
+                            backgroundColor:"#404244",
+                            padding:"8px",
+                        }
                     }
-                }
-            >
-            <Card style={
-                {
-                    backgroundImage:"url(./public/icons/WebsiteBanner.png)",
-                    backgroundSize:"cover",
-                    margin:"8px",
-                    border:"2px solid silver",
-                    borderRadius:"8px",
-                    fontSize:"18px"
-                }
-            }>
-                <CardText>
-                <p>More media (experimental):</p>
-                <ul>
-                <li><a 
-                    href="http://facebook.com/budgetpedia" 
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
-                    href="http://facebook.com/budgetpedia" 
-                    target="_blank">our Facebook page</a></li>
-                <li><a 
-                    href="http://facebook.com/groups/budgetpedia" 
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
-                    href="http://facebook.com/groups/budgetpedia" 
-                    target="_blank">
-                    our Facebook group</a></li>
-                <li><a href="http://groups.google.com/d/forum/budgetpedia"
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/g-logo.png"/></a> For 
-                    technical discussions: <a href="http://groups.google.com/d/forum/budgetpedia"
-                    target="_blank">our Google forum</a></li>
-                <li><a href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/YouTube-icon-full_color.png"/></a> Videos: <a
-                     href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
-                    target="_blank">YouTube</a></li>
-                <li><a href="http://budgetpedia.blogspot.ca/"
-                    target="_blank">
-                    <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/blogspot.jpeg"/></a> Blog: <a
-                     href="http://budgetpedia.blogspot.ca/"
-                    target="_blank">Blogspot</a></li>
-                </ul>
-                </CardText>
-            </Card>
-            </div>
+                >
+                    <Card style={
+                        {
+                            backgroundImage:"url(./public/icons/WebsiteBanner.png)",
+                            backgroundSize:"cover",
+                            margin:"8px",
+                            border:"2px solid silver",
+                            borderRadius:"8px",
+                            fontSize:"18px"
+                        }
+                    }>
+                        <CardText>
+                            <p>More media (experimental):</p>
+                            <ul>
+                            <li><a 
+                                href="http://facebook.com/budgetpedia" 
+                                target="_blank">
+                                <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
+                                href="http://facebook.com/budgetpedia" 
+                                target="_blank">our Facebook page</a></li>
+                            <li><a 
+                                href="http://facebook.com/groups/budgetpedia" 
+                                target="_blank">
+                                <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/facebook.png"/></a> <a 
+                                href="http://facebook.com/groups/budgetpedia" 
+                                target="_blank">
+                                our Facebook group</a></li>
+                            <li><a href="http://groups.google.com/d/forum/budgetpedia"
+                                target="_blank">
+                                <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/g-logo.png"/></a> For 
+                                technical discussions: <a href="http://groups.google.com/d/forum/budgetpedia"
+                                target="_blank">our Google forum</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
+                                target="_blank">
+                                <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/YouTube-icon-full_color.png"/></a> Videos: <a
+                                 href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
+                                target="_blank">YouTube</a></li>
+                            <li><a href="http://budgetpedia.blogspot.ca/"
+                                target="_blank">
+                                <img style={{height:"16px",verticalAlign:"middle"}} src="./public/icons/blogspot.jpeg"/></a> Blog: <a
+                                 href="http://budgetpedia.blogspot.ca/"
+                                target="_blank">Blogspot</a></li>
+                            </ul>
+                        </CardText>
+                    </Card>
+                </div>
             </div>
         )
     }
 }
 
-// dependency injection
-Home = connect ( mapStateToProps,
+const mapStateToProps = ( { pages, resources } ) => 
+({ 
+    pagetargets:pages.pagetargets,
+    theme:resources.theme,
+    colors:resources.colors,
+    system:resources.system,
+})
+
+Home = connect ( 
+    mapStateToProps,
     {
         push,
-        // pushHistory:Actions.pushHistory,
     } 
 ) ( Home )
 

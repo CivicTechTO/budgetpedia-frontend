@@ -7,7 +7,7 @@
 import * as React from 'react'
 var { Component } = React
 
-import { AppTile } from "./apptile"
+import { NuggetView } from "./nugget.view"
 
 interface NavTilesData {
 
@@ -19,7 +19,7 @@ interface NavTilesData {
 
 }
 
-interface AppTilesProps extends React.Props< AppTiles > {
+interface Props extends React.Props< NuggetPack > {
 
     tiles:      Array< NavTilesData >,
     tilecols?:  number,
@@ -33,7 +33,7 @@ interface AppTilesProps extends React.Props< AppTiles > {
 
 }
 
-class AppTiles extends Component< AppTilesProps, any > {
+class NuggetPack extends Component< Props, any > {
 
     render() {
 
@@ -51,7 +51,7 @@ class AppTiles extends Component< AppTilesProps, any > {
         let primarytiles = primarytiledata.map ( function ( data ) {
 
             return (
-                <AppTile 
+                <NuggetView 
                     key     = { data.id } 
                     content  = { data.content }
                     tilecolors = { tilecolors }
@@ -64,7 +64,7 @@ class AppTiles extends Component< AppTilesProps, any > {
         let secondarytiles = secondarytiledata.map ( function ( data ) {
 
             return (
-                <AppTile 
+                <NuggetView 
                     key     = { data.id } 
                     content  = { data.content }
                     tilecolors = { tilecolors }
@@ -110,4 +110,4 @@ class AppTiles extends Component< AppTilesProps, any > {
     }
 }
 
-export { AppTiles }
+export { NuggetPack }
