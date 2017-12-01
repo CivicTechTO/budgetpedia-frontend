@@ -11,21 +11,15 @@ import { push } from 'react-router-redux'
 import { GridTile } from 'material-ui/GridList'
 
 class NuggetView extends React.Component<any, any> {
-    constructor(props) {
-        super(props);
-    }
 
     pushHistory = (e) => {
-        // if (e.target.tagName == 'A') return;
-        // used exclusively for transition
+
         if (this.props.content.disabled) {
-            // alert('this page not yet available')
             return
         }
         e.stopPropagation()
-        e.preventDefault()
-        var self = this;
-        self.props.pushHistory(self.props.route)
+        this.props.onSelect(this.props.route)
+
     }
     
     render() {

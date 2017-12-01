@@ -20,12 +20,9 @@ interface NuggetData {
 interface Props extends React.Props< NuggetList > {
 
     tiles:      Array< NuggetData >,
-    tilecols?:  number,
-    padding?:   number,
     style?:     Object,
-    tilecolors: Object,
     route?:     string,
-    pushHistory: Function,
+    onSelect: Function,
     cellHeight?: number,
 
 }
@@ -34,7 +31,7 @@ class NuggetList extends React.Component< Props, any > {
 
     render() {
 
-        let { tiles, tilecolors, style, route, pushHistory, cellHeight } = this.props
+        let { tiles, style, route, onSelect, cellHeight } = this.props
         let primarytiledata = []
         let secondarytiledata = []
         for (let tiledata of tiles) {
@@ -53,10 +50,9 @@ class NuggetList extends React.Component< Props, any > {
                 <NuggetView 
                     key     = { data.id } 
                     content  = { data.content }
-                    tilecolors = { tilecolors }
                     route = { data.route }
-                    pushHistory = { pushHistory } 
-                    />
+                    onSelect = { onSelect } 
+                />
             )
         })
 // 152    102    103   #986667 

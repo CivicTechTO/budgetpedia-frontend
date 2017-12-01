@@ -3,16 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const GridList_1 = require("material-ui/GridList");
 class NuggetView extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super(...arguments);
         this.pushHistory = (e) => {
             if (this.props.content.disabled) {
                 return;
             }
             e.stopPropagation();
-            e.preventDefault();
-            var self = this;
-            self.props.pushHistory(self.props.route);
+            this.props.onSelect(this.props.route);
         };
     }
     render() {

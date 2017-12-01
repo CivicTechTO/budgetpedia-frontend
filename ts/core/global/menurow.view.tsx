@@ -20,7 +20,6 @@ export class MenuRowView extends React.Component<Props, any> {
     pushHistory = (e) => {
 
         e.stopPropagation()
-        e.preventDefault()
         this.props.onSelect(this.props.route)
 
     }

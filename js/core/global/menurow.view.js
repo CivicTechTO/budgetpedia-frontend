@@ -7,7 +7,6 @@ class MenuRowView extends React.Component {
         super(...arguments);
         this.pushHistory = (e) => {
             e.stopPropagation();
-            e.preventDefault();
             this.props.onSelect(this.props.route);
         };
     }

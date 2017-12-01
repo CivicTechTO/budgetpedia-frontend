@@ -24,7 +24,17 @@ module.exports = {
   module: {
     rules: [
       // .ts(x) files should first pass through the Typescript loader, and then through babel
-      { test: /\.tsx?$/, use:['babel-loader','ts-loader'] }
+      { test: /\.tsx?$/, use:['babel-loader','ts-loader'] },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      { test: /\.txt$/, 
+        use: ['raw-loader'] 
+      },
+      { test: /\.html$/, 
+        use: ['html-loader'] 
+      }
     ]
   },
   plugins: [
