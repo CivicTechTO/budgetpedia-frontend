@@ -2,24 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
-const react_router_dom_1 = require("react-router-dom");
 const react_router_redux_1 = require("react-router-redux");
 const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
 const nuggetlist_controller_1 = require("./nuggetlist.controller");
 const html_view_1 = require("../common/html.view");
+const linklist_view_1 = require("./linklist.view");
 let headerimages = require('./html/headerimages.html');
 let headertitle = require('./html/headertitle.html');
 let headercontent = require('./html/headercontent.html');
 let footercontent = require('./html/footercontent.html');
 let Home = class extends React.Component {
-    constructor() {
-        super(...arguments);
-        this.pushHistory = (e, target) => {
-            e.stopPropagation();
-            this.props.push(target);
-        };
-    }
     render() {
         let { pagetargets, theme, colors } = this.props;
         let headercardstyle = {
@@ -45,6 +38,27 @@ let Home = class extends React.Component {
             borderRadius: "8px",
             fontSize: "18px"
         };
+        let toplinklistheader = 'Browse our site:';
+        let toplinklistitems = [
+            {
+                prompt: 'Explore the Toronto budget with our ',
+                icon: '/public/icons/ic_explore_48px.svg',
+                target: '/explorer',
+                targetText: 'Budget Explorer',
+            },
+            {
+                prompt: "See information about Toronto's budget decision schedule at our ",
+                icon: '/public/icons/ic_map_48px.svg',
+                target: '/roadmap',
+                targetText: 'Budget Roadmap',
+            },
+            {
+                prompt: 'Find related',
+                icon: '/public/icons/ic_library_books_48px.svg',
+                target: '/resources',
+                targetText: 'Resources',
+            },
+        ];
         return (React.createElement("div", null,
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
@@ -56,23 +70,8 @@ let Home = class extends React.Component {
                         React.createElement(html_view_1.default, { html: headertitle })),
                     React.createElement(Card_1.CardText, null,
                         React.createElement("hr", null),
-                        React.createElement("p", { style: { margin: 0, padding: 0 } }, "Browse our site:"),
-                        React.createElement("ul", null,
-                            React.createElement("li", null,
-                                "Explore the Toronto budget with our ",
-                                React.createElement("span", { style: { whiteSpace: 'pre' } },
-                                    React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: '/public/icons/ic_explore_48px.svg' }),
-                                    React.createElement(react_router_dom_1.Link, { to: '/explorer' }, "Budget Explorer"))),
-                            React.createElement("li", null,
-                                "See information about Toronto's budget decision schedule at our ",
-                                React.createElement("span", { style: { whiteSpace: 'pre' } },
-                                    React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: '/public/icons/ic_map_48px.svg' }),
-                                    React.createElement(react_router_dom_1.Link, { to: '/roadmap' }, "Budget Roadmap"))),
-                            React.createElement("li", null,
-                                "Find related ",
-                                React.createElement("span", { style: { whiteSpace: 'pre' } },
-                                    React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: '/public/icons/ic_library_books_48px.svg' }),
-                                    React.createElement(react_router_dom_1.Link, { to: '/resources' }, "Resources")))),
+                        React.createElement(linklist_view_1.default, { header: toplinklistheader, items: toplinklistitems }),
+                        React.createElement("hr", null),
                         React.createElement(html_view_1.default, { html: headercontent }),
                         React.createElement("div", { style: { clear: "both" } })))),
             React.createElement(nuggetlist_controller_1.default, { style: nuggetliststyle, tiles: pagetargets, onSelect: this.props.push, cellHeight: 180 }),

@@ -1,12 +1,11 @@
-// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 // maintiles.tsx
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 
 'use strict'
 
 import * as React from 'react';
 import { connect } from 'react-redux'
-// import { compose } from 'redux'
-// import * as Actions from '../actions/actions'
+
 import { Link } from 'react-router-dom'
 import { push } from 'react-router-redux'
 
@@ -17,6 +16,7 @@ import { Timeline } from 'react-twitter-widgets'
 import NuggetList from "./nuggetlist.controller"
 
 import HtmlView from '../common/html.view'
+import LinkList from './linklist.view'
 
 let headerimages = require('./html/headerimages.html')
 let headertitle = require('./html/headertitle.html')
@@ -25,12 +25,12 @@ let footercontent = require('./html/footercontent.html')
 
 let Home = class extends React.Component<any, any> {
 
-    pushHistory = (e, target) => {
+    // pushHistory = (e, target) => {
 
-        e.stopPropagation()
-        this.props.push(target)
+    //     e.stopPropagation()
+    //     this.props.push(target)
 
-    }
+    // }
 
     render() {
 
@@ -65,6 +65,29 @@ let Home = class extends React.Component<any, any> {
                 fontSize:"18px"
             }
 
+        let toplinklistheader = 'Browse our site:'
+
+        let toplinklistitems = [
+            {
+                prompt:'Explore the Toronto budget with our ',
+                icon:'/public/icons/ic_explore_48px.svg',
+                target:'/explorer',
+                targetText:'Budget Explorer',
+            },
+            {
+                prompt:"See information about Toronto's budget decision schedule at our ",
+                icon:'/public/icons/ic_map_48px.svg',
+                target:'/roadmap',
+                targetText:'Budget Roadmap',
+            },
+            {
+                prompt:'Find related',
+                icon:'/public/icons/ic_library_books_48px.svg',
+                target:'/resources',
+                targetText:'Resources',
+            },
+        ]
+
         return (
             <div>
                 <div 
@@ -82,29 +105,11 @@ let Home = class extends React.Component<any, any> {
                         </CardTitle>
                         <CardText>
                             <hr />
-                            <p style={{margin:0,padding:0}}>Browse our site:</p>
-                            <ul> 
-                                <li>Explore the Toronto budget with our <span
-                                    style = {{whiteSpace:'pre'}} ><img 
-                                    style = {{height:'18px',verticalAlign:'middle'}}
-                                    src={'/public/icons/ic_explore_48px.svg'}
-                                />
-                                    <Link to='/explorer'>Budget Explorer</Link></span>
-                                </li>
-
-                                <li>See information about Toronto's budget decision schedule at our <span
-                                    style = {{whiteSpace:'pre'}} ><img 
-                                    style = {{height:'18px',verticalAlign:'middle'}}
-                                    src={'/public/icons/ic_map_48px.svg'}/>
-                                    <Link to='/roadmap'>Budget Roadmap</Link></span>
-                                </li>
-                                <li>Find related <span
-                                    style = {{whiteSpace:'pre'}} ><img 
-                                    style = {{height:'18px',verticalAlign:'middle'}}
-                                    src={'/public/icons/ic_library_books_48px.svg'}/>
-                                    <Link to='/resources'>Resources</Link></span>
-                                </li>
-                            </ul>
+                            <LinkList
+                                header = { toplinklistheader }
+                                items = { toplinklistitems }
+                            />
+                            <hr />
                             <HtmlView html={ headercontent }/>
                             <div style = {{clear:"both"}}></div>
                         </CardText>
