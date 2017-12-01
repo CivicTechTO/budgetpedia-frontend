@@ -13,11 +13,6 @@ import * as React from 'react' // required by bundler
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 
-// import * as Radium from 'radium'
-// let { StyleRoot } = Radium
-
-// let IconButton = Radium(IconButtonClass) // anticipate merging styles
-
 interface Props {
     style?:any,
     onSelect: any,

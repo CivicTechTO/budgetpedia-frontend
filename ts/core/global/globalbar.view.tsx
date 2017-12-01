@@ -7,10 +7,6 @@ import * as React from 'react' // required by bundler
 
 import AppBar from 'material-ui/AppBar'
 
-// Radium not working on AppBar here
-// import * as Radium from 'radium'
-// let { StyleRoot } = Radium
-
 interface Props {
     titleStyle?:any,
     style?:any,

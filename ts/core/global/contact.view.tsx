@@ -5,6 +5,8 @@
 
 import * as React from 'react' // required by bundler
 
+// TODO: replace radium with css classes
+
 import * as Radium from 'radium'
 let { StyleRoot } = Radium
 
