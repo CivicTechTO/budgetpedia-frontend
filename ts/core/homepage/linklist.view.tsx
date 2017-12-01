@@ -9,6 +9,8 @@ import LinkView from './link.view'
 interface Props {
     header: string,
     items: any[],
+    upperDivider?: boolean,
+    lowerDivider?: boolean,
 }
 
 class LinkListView extends React.Component<Props, any> {
@@ -26,11 +28,19 @@ class LinkListView extends React.Component<Props, any> {
             />
         })
 
-        return ([
+        let upperelements = []
+        let lowerelements = []
+
+        if (props.upperDivider) upperelements.push(<hr />)
+
+        if (props.lowerDivider) lowerelements.push(<hr />)
+
+        return ([...upperelements,
             <p style={{margin:0,padding:0}}>{props.header}</p>,
             <ul>
                 { items }
-            </ul>
+            </ul>,
+            ...lowerelements,
             ]
         )
     }

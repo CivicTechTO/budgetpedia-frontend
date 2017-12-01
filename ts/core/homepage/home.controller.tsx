@@ -25,13 +25,6 @@ let footercontent = require('./html/footercontent.html')
 
 let Home = class extends React.Component<any, any> {
 
-    // pushHistory = (e, target) => {
-
-    //     e.stopPropagation()
-    //     this.props.push(target)
-
-    // }
-
     render() {
 
         let { pagetargets, theme, colors } = this.props
@@ -104,8 +97,8 @@ let Home = class extends React.Component<any, any> {
                             <HtmlView html={ headertitle }/>
                         </CardTitle>
                         <CardText>
-                            <hr />
                             <LinkList
+                                upperDivider
                                 header = { toplinklistheader }
                                 items = { toplinklistitems }
                             />
