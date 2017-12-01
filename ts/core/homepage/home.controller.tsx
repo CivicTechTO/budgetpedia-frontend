@@ -12,20 +12,15 @@ import { push } from 'react-router-redux'
 
 import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card'
 
-
 import { Timeline } from 'react-twitter-widgets'
 
 import NuggetList from "./nuggetlist.controller"
-
-var HtmlToReactParser = require('html-to-react').Parser
-
-var htmlToReactParser = new HtmlToReactParser()
 
 import HtmlView from '../common/html.view'
 
 let headerimages = require('./html/headerimages.html')
 let headertitle = require('./html/headertitle.html')
-let headercontent = require('./html/headercontent.txt')
+let headercontent = require('./html/headercontent.html')
 let footercontent = require('./html/footercontent.html')
 
 let Home = class extends React.Component<any, any> {
@@ -66,7 +61,7 @@ let Home = class extends React.Component<any, any> {
                             <HtmlView html={ headertitle }/>
                         </CardTitle>
                         <CardText>
-                            { htmlToReactParser.parse(headercontent) }
+                            <HtmlView html = { headercontent } />
                         </CardText>
                     </Card>
                 </div>

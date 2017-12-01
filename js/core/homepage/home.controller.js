@@ -6,12 +6,10 @@ const react_router_redux_1 = require("react-router-redux");
 const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
 const nuggetlist_controller_1 = require("./nuggetlist.controller");
-var HtmlToReactParser = require('html-to-react').Parser;
-var htmlToReactParser = new HtmlToReactParser();
 const html_view_1 = require("../common/html.view");
 let headerimages = require('./html/headerimages.html');
 let headertitle = require('./html/headertitle.html');
-let headercontent = require('./html/headercontent.txt');
+let headercontent = require('./html/headercontent.html');
 let footercontent = require('./html/footercontent.html');
 let Home = class extends React.Component {
     constructor() {
@@ -39,7 +37,8 @@ let Home = class extends React.Component {
                     React.createElement(html_view_1.default, { html: headerimages }),
                     React.createElement(Card_1.CardTitle, { style: { padding: "16px 16px 0 16px" } },
                         React.createElement(html_view_1.default, { html: headertitle })),
-                    React.createElement(Card_1.CardText, null, htmlToReactParser.parse(headercontent)))),
+                    React.createElement(Card_1.CardText, null,
+                        React.createElement(html_view_1.default, { html: headercontent })))),
             React.createElement(nuggetlist_controller_1.default, { style: {
                     padding: "16px",
                     fontFamily: theme.fontFamily,

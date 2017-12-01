@@ -10,17 +10,17 @@
 
 import * as React from 'react' // required by bundler
 
-import IconButtonClass from 'material-ui/IconButton'
+import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 
-import * as Radium from 'radium'
-let { StyleRoot } = Radium
+// import * as Radium from 'radium'
+// let { StyleRoot } = Radium
 
-let IconButton = Radium(IconButtonClass) // anticipate merging styles
+// let IconButton = Radium(IconButtonClass) // anticipate merging styles
 
 interface Props {
     style?:any,
-    onSelect: Function,
+    onSelect: any,
     color: any,
 }
 
@@ -29,11 +29,10 @@ class MenuIconView extends React.Component<Props, any> {
     render() {
 
         return (
-            <StyleRoot>
             
                 <IconButton
                     onTouchTap = {this.props.onSelect} 
-                    style = {[this.props.style]} 
+                    style = {this.props.style} 
                 >
 
                     <FontIcon
@@ -47,7 +46,6 @@ class MenuIconView extends React.Component<Props, any> {
 
                 </IconButton>
 
-            </StyleRoot>
         )
 
     }
