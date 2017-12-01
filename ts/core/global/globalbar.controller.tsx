@@ -41,6 +41,8 @@ let GlobalBar = class extends React.Component<any, any> {
 
     render() { 
 
+        // console.log('globalbar.controller props',this.props)
+
         let { globalbar, theme } = this.props
         
         let { pagetargets, homepage} = this.props
