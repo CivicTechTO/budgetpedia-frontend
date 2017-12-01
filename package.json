@@ -37,6 +37,7 @@
     "react-dnd-touch-backend": "^0.3.17",
     "react-dom": "^16.2.0",
     "react-draft-wysiwyg": "^1.10.12",
+    "react-draggable-list": "^3.4.1",
     "react-ga": "^2.3.5",
     "react-google-charts": "^1.5.5",
     "react-helmet": "^5.2.0",
