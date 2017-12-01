@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
+const react_router_dom_1 = require("react-router-dom");
 const react_router_redux_1 = require("react-router-redux");
 const Card_1 = require("material-ui/Card");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
@@ -21,31 +22,60 @@ let Home = class extends React.Component {
     }
     render() {
         let { pagetargets, theme, colors } = this.props;
+        let headercardstyle = {
+            backgroundImage: "url(/public/icons/WebsiteBanner.png)",
+            backgroundSize: "cover",
+            margin: "8px",
+            border: "2px solid silver",
+            borderRadius: "8px",
+            fontSize: "18px"
+        };
+        let nuggetliststyle = {
+            padding: "16px",
+            fontFamily: theme.fontFamily,
+            display: 'block',
+            backgroundColor: '#749261',
+            overflowX: 'scroll',
+        };
+        let footercardstyle = {
+            backgroundImage: "url(/public/icons/WebsiteBanner.png)",
+            backgroundSize: "cover",
+            margin: "8px",
+            border: "2px solid silver",
+            borderRadius: "8px",
+            fontSize: "18px"
+        };
         return (React.createElement("div", null,
             React.createElement("div", { style: {
                     backgroundColor: "#404244",
                     padding: "8px",
                 } },
-                React.createElement(Card_1.Card, { style: {
-                        backgroundImage: "url(/public/icons/WebsiteBanner.png)",
-                        backgroundSize: "cover",
-                        margin: "8px",
-                        border: "2px solid silver",
-                        borderRadius: "8px",
-                        fontSize: "18px"
-                    } },
+                React.createElement(Card_1.Card, { style: headercardstyle },
                     React.createElement(html_view_1.default, { html: headerimages }),
                     React.createElement(Card_1.CardTitle, { style: { padding: "16px 16px 0 16px" } },
                         React.createElement(html_view_1.default, { html: headertitle })),
                     React.createElement(Card_1.CardText, null,
-                        React.createElement(html_view_1.default, { html: headercontent })))),
-            React.createElement(nuggetlist_controller_1.default, { style: {
-                    padding: "16px",
-                    fontFamily: theme.fontFamily,
-                    display: 'block',
-                    backgroundColor: '#749261',
-                    overflowX: 'scroll',
-                }, tiles: pagetargets, onSelect: this.props.push, cellHeight: 180 }),
+                        React.createElement("hr", null),
+                        React.createElement("p", { style: { margin: 0, padding: 0 } }, "Browse our site:"),
+                        React.createElement("ul", null,
+                            React.createElement("li", null,
+                                "Explore the Toronto budget with our ",
+                                React.createElement("span", { style: { whiteSpace: 'pre' } },
+                                    React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: '/public/icons/ic_explore_48px.svg' }),
+                                    React.createElement(react_router_dom_1.Link, { to: '/explorer' }, "Budget Explorer"))),
+                            React.createElement("li", null,
+                                "See information about Toronto's budget decision schedule at our ",
+                                React.createElement("span", { style: { whiteSpace: 'pre' } },
+                                    React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: '/public/icons/ic_map_48px.svg' }),
+                                    React.createElement(react_router_dom_1.Link, { to: '/roadmap' }, "Budget Roadmap"))),
+                            React.createElement("li", null,
+                                "Find related ",
+                                React.createElement("span", { style: { whiteSpace: 'pre' } },
+                                    React.createElement("img", { style: { height: '18px', verticalAlign: 'middle' }, src: '/public/icons/ic_library_books_48px.svg' }),
+                                    React.createElement(react_router_dom_1.Link, { to: '/resources' }, "Resources")))),
+                        React.createElement(html_view_1.default, { html: headercontent }),
+                        React.createElement("div", { style: { clear: "both" } })))),
+            React.createElement(nuggetlist_controller_1.default, { style: nuggetliststyle, tiles: pagetargets, onSelect: this.props.push, cellHeight: 180 }),
             React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver' } },
                 React.createElement("div", { style: { maxWidth: '600px', margin: '0 auto' } },
                     React.createElement(react_twitter_widgets_1.Timeline, { dataSource: {
@@ -59,43 +89,9 @@ let Home = class extends React.Component {
                     backgroundColor: "#404244",
                     padding: "8px",
                 } },
-                React.createElement(Card_1.Card, { style: {
-                        backgroundImage: "url(/public/icons/WebsiteBanner.png)",
-                        backgroundSize: "cover",
-                        margin: "8px",
-                        border: "2px solid silver",
-                        borderRadius: "8px",
-                        fontSize: "18px"
-                    } },
+                React.createElement(Card_1.Card, { style: footercardstyle },
                     React.createElement(Card_1.CardText, null,
-                        React.createElement(html_view_1.default, { html: footercontent }),
-                        React.createElement("p", null, "More media (experimental):"),
-                        React.createElement("ul", null,
-                            React.createElement("li", null,
-                                React.createElement("a", { href: "http://facebook.com/budgetpedia", target: "_blank" },
-                                    React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "/public/icons/facebook.png" })),
-                                " ",
-                                React.createElement("a", { href: "http://facebook.com/budgetpedia", target: "_blank" }, "our Facebook page")),
-                            React.createElement("li", null,
-                                React.createElement("a", { href: "http://facebook.com/groups/budgetpedia", target: "_blank" },
-                                    React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "/public/icons/facebook.png" })),
-                                " ",
-                                React.createElement("a", { href: "http://facebook.com/groups/budgetpedia", target: "_blank" }, "our Facebook group")),
-                            React.createElement("li", null,
-                                React.createElement("a", { href: "http://groups.google.com/d/forum/budgetpedia", target: "_blank" },
-                                    React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "/public/icons/g-logo.png" })),
-                                " For technical discussions: ",
-                                React.createElement("a", { href: "http://groups.google.com/d/forum/budgetpedia", target: "_blank" }, "our Google forum")),
-                            React.createElement("li", null,
-                                React.createElement("a", { href: "https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig", target: "_blank" },
-                                    React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "/public/icons/YouTube-icon-full_color.png" })),
-                                " Videos: ",
-                                React.createElement("a", { href: "https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig", target: "_blank" }, "YouTube")),
-                            React.createElement("li", null,
-                                React.createElement("a", { href: "http://budgetpedia.blogspot.ca/", target: "_blank" },
-                                    React.createElement("img", { style: { height: "16px", verticalAlign: "middle" }, src: "/public/icons/blogspot.jpeg" })),
-                                " Blog: ",
-                                React.createElement("a", { href: "http://budgetpedia.blogspot.ca/", target: "_blank" }, "Blogspot"))))))));
+                        React.createElement(html_view_1.default, { html: footercontent }))))));
     }
 };
 const mapStateToProps = ({ pages, resources }) => ({

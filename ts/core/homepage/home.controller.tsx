@@ -36,6 +36,35 @@ let Home = class extends React.Component<any, any> {
 
         let { pagetargets, theme, colors } = this.props
 
+        let headercardstyle = 
+            {
+                backgroundImage:"url(/public/icons/WebsiteBanner.png)",
+                backgroundSize:"cover",
+                margin:"8px",
+                border:"2px solid silver",
+                borderRadius:"8px",
+                fontSize:"18px"
+            }
+
+        let nuggetliststyle = 
+            {
+                padding:"16px",
+                fontFamily:theme.fontFamily,
+                display: 'block',
+                backgroundColor: '#749261',               
+                overflowX: 'scroll', 
+            }
+
+        let footercardstyle =
+            {
+                backgroundImage:"url(/public/icons/WebsiteBanner.png)",
+                backgroundSize:"cover",
+                margin:"8px",
+                border:"2px solid silver",
+                borderRadius:"8px",
+                fontSize:"18px"
+            }
+
         return (
             <div>
                 <div 
@@ -46,36 +75,44 @@ let Home = class extends React.Component<any, any> {
                         }
                     }
                 >
-                    <Card style={
-                        {
-                            backgroundImage:"url(/public/icons/WebsiteBanner.png)",
-                            backgroundSize:"cover",
-                            margin:"8px",
-                            border:"2px solid silver",
-                            borderRadius:"8px",
-                            fontSize:"18px"
-                        }
-                    }>
+                    <Card style={ headercardstyle }>
                         <HtmlView html={ headerimages }/>
                         <CardTitle style = {{padding:"16px 16px 0 16px"}} >
                             <HtmlView html={ headertitle }/>
                         </CardTitle>
                         <CardText>
-                            <HtmlView html = { headercontent } />
+                            <hr />
+                            <p style={{margin:0,padding:0}}>Browse our site:</p>
+                            <ul> 
+                                <li>Explore the Toronto budget with our <span
+                                    style = {{whiteSpace:'pre'}} ><img 
+                                    style = {{height:'18px',verticalAlign:'middle'}}
+                                    src={'/public/icons/ic_explore_48px.svg'}
+                                />
+                                    <Link to='/explorer'>Budget Explorer</Link></span>
+                                </li>
+
+                                <li>See information about Toronto's budget decision schedule at our <span
+                                    style = {{whiteSpace:'pre'}} ><img 
+                                    style = {{height:'18px',verticalAlign:'middle'}}
+                                    src={'/public/icons/ic_map_48px.svg'}/>
+                                    <Link to='/roadmap'>Budget Roadmap</Link></span>
+                                </li>
+                                <li>Find related <span
+                                    style = {{whiteSpace:'pre'}} ><img 
+                                    style = {{height:'18px',verticalAlign:'middle'}}
+                                    src={'/public/icons/ic_library_books_48px.svg'}/>
+                                    <Link to='/resources'>Resources</Link></span>
+                                </li>
+                            </ul>
+                            <HtmlView html={ headercontent }/>
+                            <div style = {{clear:"both"}}></div>
                         </CardText>
                     </Card>
                 </div>
                 <NuggetList
 
-                    style = {
-                        {
-                            padding:"16px",
-                            fontFamily:theme.fontFamily,
-                            display: 'block',
-                            backgroundColor: '#749261',               
-                            overflowX: 'scroll', 
-                        }
-                    }
+                    style = { nuggetliststyle }
                     tiles =     { pagetargets } 
                     onSelect = { this.props.push }
                     cellHeight = { 180 }
@@ -102,49 +139,9 @@ let Home = class extends React.Component<any, any> {
                         }
                     }
                 >
-                    <Card style={
-                        {
-                            backgroundImage:"url(/public/icons/WebsiteBanner.png)",
-                            backgroundSize:"cover",
-                            margin:"8px",
-                            border:"2px solid silver",
-                            borderRadius:"8px",
-                            fontSize:"18px"
-                        }
-                    }>
+                    <Card style={ footercardstyle }>
                         <CardText>
                             <HtmlView html={ footercontent }/>
-                            <p>More media (experimental):</p>
-                            <ul>
-                            <li><a 
-                                href="http://facebook.com/budgetpedia" 
-                                target="_blank">
-                                <img style={{height:"16px",verticalAlign:"middle"}} src="/public/icons/facebook.png"/></a> <a 
-                                href="http://facebook.com/budgetpedia" 
-                                target="_blank">our Facebook page</a></li>
-                            <li><a 
-                                href="http://facebook.com/groups/budgetpedia" 
-                                target="_blank">
-                                <img style={{height:"16px",verticalAlign:"middle"}} src="/public/icons/facebook.png"/></a> <a 
-                                href="http://facebook.com/groups/budgetpedia" 
-                                target="_blank">
-                                our Facebook group</a></li>
-                            <li><a href="http://groups.google.com/d/forum/budgetpedia"
-                                target="_blank">
-                                <img style={{height:"16px",verticalAlign:"middle"}} src="/public/icons/g-logo.png"/></a> For 
-                                technical discussions: <a href="http://groups.google.com/d/forum/budgetpedia"
-                                target="_blank">our Google forum</a></li>
-                            <li><a href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
-                                target="_blank">
-                                <img style={{height:"16px",verticalAlign:"middle"}} src="/public/icons/YouTube-icon-full_color.png"/></a> Videos: <a
-                                 href="https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig"
-                                target="_blank">YouTube</a></li>
-                            <li><a href="http://budgetpedia.blogspot.ca/"
-                                target="_blank">
-                                <img style={{height:"16px",verticalAlign:"middle"}} src="/public/icons/blogspot.jpeg"/></a> Blog: <a
-                                 href="http://budgetpedia.blogspot.ca/"
-                                target="_blank">Blogspot</a></li>
-                            </ul>
                         </CardText>
                     </Card>
                 </div>
