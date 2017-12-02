@@ -8,7 +8,7 @@ let headercardstyle = {
     borderRadius: "8px",
     fontSize: "18px"
 };
-let nuggetliststyle = {
+let tileliststyle = {
     padding: "16px",
     display: 'block',
     backgroundColor: '#749261',
@@ -100,7 +100,7 @@ let thirdlinklistitems = [
 ];
 let model = {
     headercardstyle,
-    nuggetliststyle,
+    tileliststyle,
     footercardstyle,
     toplinklistheader,
     toplinklistitems,

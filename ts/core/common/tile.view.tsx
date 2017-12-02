@@ -10,7 +10,7 @@ import { push } from 'react-router-redux'
 
 import { GridTile } from 'material-ui/GridList'
 
-class NuggetView extends React.Component<any, any> {
+class TileView extends React.Component<any, any> {
 
     pushHistory = (e) => {
 
@@ -77,5 +77,5 @@ class NuggetView extends React.Component<any, any> {
     }
 }
 
-export { NuggetView }
+export default TileView
 

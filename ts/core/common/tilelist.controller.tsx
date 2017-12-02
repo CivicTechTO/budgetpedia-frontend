@@ -5,9 +5,9 @@
 
 import * as React from 'react'
 
-import { NuggetView } from "./nugget.view"
+import TileView from "./tile.view"
 
-interface NuggetData {
+interface TileData {
 
     id: number,
     content: Object,
@@ -18,9 +18,9 @@ interface NuggetData {
 
 }
 
-interface Props extends React.Props< NuggetList > {
+interface Props extends React.Props< TileList > {
 
-    tiles: Array< NuggetData >,
+    tiles: Array< TileData >,
     style?: Object,
     route?: string,
     onSelect: Function,
@@ -28,7 +28,7 @@ interface Props extends React.Props< NuggetList > {
 
 }
 
-class NuggetList extends React.Component< Props, any > {
+class TileList extends React.Component< Props, any > {
 
     render() {
 
@@ -48,7 +48,7 @@ class NuggetList extends React.Component< Props, any > {
         let nuggets = nuggetsdata.map ( function ( data ) {
 
             return (
-                <NuggetView 
+                <TileView 
                     key     = { data.id } 
                     content  = { data.content }
                     route = { data.route }
@@ -91,4 +91,4 @@ class NuggetList extends React.Component< Props, any > {
     }
 }
 
-export default NuggetList
+export default TileList

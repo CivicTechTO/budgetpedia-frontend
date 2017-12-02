@@ -10,7 +10,7 @@ let headercardstyle =
         fontSize:"18px"
     }
 
-let nuggetliststyle = 
+let tileliststyle = 
     {
         padding:"16px",
         display: 'block',
@@ -112,7 +112,7 @@ let thirdlinklistitems = [
 
 let model = {
     headercardstyle,
-    nuggetliststyle,
+    tileliststyle,
     footercardstyle,
     toplinklistheader,
     toplinklistitems,

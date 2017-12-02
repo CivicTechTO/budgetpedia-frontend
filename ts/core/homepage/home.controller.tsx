@@ -12,7 +12,7 @@ import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import NuggetList from "../common/nuggetlist.controller"
+import TileList from "../common/tilelist.controller"
 import HtmlView from '../common/html.view'
 import LinkList from '../common/linklist.view'
 
@@ -29,7 +29,7 @@ let Home = class extends React.Component<any, any> {
 
         let {
             headercardstyle,
-            nuggetliststyle,
+            tileliststyle,
             footercardstyle,
             toplinklistheader,
             toplinklistitems,
@@ -38,8 +38,6 @@ let Home = class extends React.Component<any, any> {
             thirdlinklistheader,
             thirdlinklistitems,
         } = model
-
-        nuggetliststyle = Object.assign({},nuggetliststyle)
 
         return (
             <div>
@@ -66,8 +64,8 @@ let Home = class extends React.Component<any, any> {
                     </Card>
                 </div>
                 {/* main pages tiles */}
-                <NuggetList
-                    style = { nuggetliststyle }
+                <TileList
+                    style = { tileliststyle }
                     tiles =     { pagetargets } 
                     onSelect = { this.props.push }
                     cellHeight = { 180 }
