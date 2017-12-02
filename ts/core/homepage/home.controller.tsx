@@ -19,7 +19,6 @@ import LinkList from '../common/linklist.view'
 import model from './home.model'
 
 let headerimages = require('./html/headerimages.html')
-let headertitle = require('./html/headertitle.html')
 
 let Home = class extends React.Component<any, any> {
 
@@ -29,6 +28,8 @@ let Home = class extends React.Component<any, any> {
 
         let {
             headercardstyle,
+            headertitle,
+            headersubtitle,
             tileliststyle,
             tilelisttitle,
             footercardstyle,
@@ -46,9 +47,22 @@ let Home = class extends React.Component<any, any> {
                 <div style = {{ backgroundColor:"#404244", padding:"8px", }} >
                     <Card style={ headercardstyle }>
                         <HtmlView html={ headerimages }/>
-                        <CardTitle style = {{padding:"16px 16px 0 16px",fontSize:'20px',fontWeight:'bold'}} >
-                            <HtmlView html={ headertitle }/>
-                        </CardTitle>
+                        <CardTitle 
+                            style = {
+                                {
+                                    padding:"16px 16px 0 16px",
+                                }
+                            }
+                            title = { headertitle }
+                            titleStyle = {
+                                {
+                                    fontSize:'20px',
+                                    fontWeight:'bold'
+                                }
+                            } 
+                            subtitle = { headersubtitle }
+                        />
+                            
                         <CardText style = {{fontSize:'16px'}}>
                             <LinkList
                                 upperDivider

@@ -7,6 +7,8 @@ let headercardstyle = {
     border: "2px solid silver",
     borderRadius: "8px",
 };
+let headertitle = "Welcome to Budgetpedia";
+let headersubtitle = "Supporting informed debate about the Toronto budget";
 let tileliststyle = {
     padding: "16px",
     display: 'block',
@@ -50,7 +52,7 @@ let secondlinklistitems = [
         icon: '/public/icons/twitter.png',
         target: 'http://twitter.com/budgetpedia',
         targetText: 'Twitter account',
-        description: '... and see the twitter feed below',
+        description: '... or see the twitter feed below',
         imageStyle: { height: '14px' }
     },
     {
@@ -99,6 +101,8 @@ let thirdlinklistitems = [
 ];
 let model = {
     headercardstyle,
+    headertitle,
+    headersubtitle,
     tileliststyle,
     tilelisttitle,
     footercardstyle,

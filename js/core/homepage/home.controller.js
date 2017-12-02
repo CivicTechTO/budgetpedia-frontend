@@ -10,17 +10,20 @@ const html_view_1 = require("../common/html.view");
 const linklist_view_1 = require("../common/linklist.view");
 const home_model_1 = require("./home.model");
 let headerimages = require('./html/headerimages.html');
-let headertitle = require('./html/headertitle.html');
 let Home = class extends React.Component {
     render() {
         let { pagetargets, theme, colors } = this.props;
-        let { headercardstyle, tileliststyle, tilelisttitle, footercardstyle, toplinklistheader, toplinklistitems, secondlinklistheader, secondlinklistitems, thirdlinklistheader, thirdlinklistitems, } = home_model_1.default;
+        let { headercardstyle, headertitle, headersubtitle, tileliststyle, tilelisttitle, footercardstyle, toplinklistheader, toplinklistitems, secondlinklistheader, secondlinklistitems, thirdlinklistheader, thirdlinklistitems, } = home_model_1.default;
         return (React.createElement("div", null,
             React.createElement("div", { style: { backgroundColor: "#404244", padding: "8px", } },
                 React.createElement(Card_1.Card, { style: headercardstyle },
                     React.createElement(html_view_1.default, { html: headerimages }),
-                    React.createElement(Card_1.CardTitle, { style: { padding: "16px 16px 0 16px", fontSize: '20px', fontWeight: 'bold' } },
-                        React.createElement(html_view_1.default, { html: headertitle })),
+                    React.createElement(Card_1.CardTitle, { style: {
+                            padding: "16px 16px 0 16px",
+                        }, title: headertitle, titleStyle: {
+                            fontSize: '20px',
+                            fontWeight: 'bold'
+                        }, subtitle: headersubtitle }),
                     React.createElement(Card_1.CardText, { style: { fontSize: '16px' } },
                         React.createElement(linklist_view_1.default, { upperDivider: true, header: toplinklistheader, items: toplinklistitems }),
                         React.createElement(linklist_view_1.default, { upperDivider: true, header: secondlinklistheader, items: secondlinklistitems }),
