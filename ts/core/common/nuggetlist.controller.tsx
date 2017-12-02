@@ -9,9 +9,9 @@ import { NuggetView } from "./nugget.view"
 
 interface NuggetData {
 
-    id:         number,
-    content:    Object,
-    route:     string,
+    id: number,
+    content: Object,
+    route: string,
     index: number,
     tier: string,
 
@@ -19,9 +19,9 @@ interface NuggetData {
 
 interface Props extends React.Props< NuggetList > {
 
-    tiles:      Array< NuggetData >,
-    style?:     Object,
-    route?:     string,
+    tiles: Array< NuggetData >,
+    style?: Object,
+    route?: string,
     onSelect: Function,
     cellHeight?: number,
 

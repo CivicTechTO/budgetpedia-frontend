@@ -4,7 +4,7 @@ const React = require("react");
 const react_redux_toastr_1 = require("react-redux-toastr");
 const globalbar_controller_1 = require("../global/globalbar.controller");
 const routes_controller_1 = require("./routes.controller");
-const MainView = ({ globalmessage, history }) => (React.createElement("div", null,
+const MainView = ({ globalmessage, history, style }) => (React.createElement("div", { style: style },
     React.createElement(globalbar_controller_1.default, null),
     React.createElement("div", { style: { height: "64px" } }, " "),
     globalmessage,

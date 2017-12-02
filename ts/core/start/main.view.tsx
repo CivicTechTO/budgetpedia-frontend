@@ -11,8 +11,8 @@ import GlobalBar from '../global/globalbar.controller'
 
 import { Routes } from './routes.controller'
 
-const MainView = ({globalmessage, history}) => (
-    <div >
+const MainView = ({globalmessage, history, style}) => (
+    <div style = {style}>
         <GlobalBar />
         <div style={{ height: "64px" }} > {/* space for top fixed appbar */}
         </div>

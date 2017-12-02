@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "ace-builds": "^1.2.9",
-    "ajv": "^5.5.0",
+    "ajv": "^5.5.1",
     "csv": "^2.0.0",
     "draft-js": "^0.10.4",
     "draftjs-to-html": "^0.7.6",
@@ -95,7 +95,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0",
-    "webpack": "^3.8.1",
+    "webpack": "^3.9.1",
     "when": "^3.7.8"
   }
 }
