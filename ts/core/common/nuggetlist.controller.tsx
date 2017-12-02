@@ -14,6 +14,7 @@ interface NuggetData {
     route: string,
     index: number,
     tier: string,
+    imageStyle?:any,
 
 }
 
@@ -51,6 +52,7 @@ class NuggetList extends React.Component< Props, any > {
                     key     = { data.id } 
                     content  = { data.content }
                     route = { data.route }
+                    imageStyle = { data.imageStyle }
                     onSelect = { onSelect } 
                 />
             )
@@ -65,7 +67,6 @@ class NuggetList extends React.Component< Props, any > {
                         top:'0',
                         fontSize:'12px',
                         padding:'0 3px',
-                        fontFamily:style['fontFamily'],
                         color:'white',
                     }
                 }>Main website pages (scroll &lt;--&gt;)

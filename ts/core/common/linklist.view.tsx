@@ -26,6 +26,7 @@ class LinkListView extends React.Component<Props, any> {
                 target = { item.target }
                 targetText = { item.targetText }
                 description = {item.description?item.description:null}
+                imageStyle = {item.imageStyle}
             />
         })
 

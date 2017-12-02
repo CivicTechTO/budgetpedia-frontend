@@ -15,18 +15,20 @@ interface Props {
     target:string,
     targetText:string,
     description?:string,
+    imageStyle?:any,
 }
 
 class LinkView extends React.Component<Props, any> {
 
     render() {
         let { props } = this
+        let defaultImageStyle = {height:'18px',verticalAlign:'middle'}
         return (
             <li>{ props.prompt }&nbsp;<span
                 style = {{whiteSpace:'pre'}} ><img 
-                style = {{height:'18px',verticalAlign:'middle'}}
+                style = {{...defaultImageStyle,...props.imageStyle}}
                 src={ props.icon }
-            />
+                />&nbsp;
                 {props.external
                     ?<a href = {props.target}
                         target = "_blank">{props.targetText}</a>                    

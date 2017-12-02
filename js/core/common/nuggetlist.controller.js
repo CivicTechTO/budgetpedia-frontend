@@ -17,7 +17,7 @@ class NuggetList extends React.Component {
         }
         let nuggetsdata = [...primarytiledata, ...secondarytiledata];
         let nuggets = nuggetsdata.map(function (data) {
-            return (React.createElement(nugget_view_1.NuggetView, { key: data.id, content: data.content, route: data.route, onSelect: onSelect }));
+            return (React.createElement(nugget_view_1.NuggetView, { key: data.id, content: data.content, route: data.route, imageStyle: data.imageStyle, onSelect: onSelect }));
         });
         return (React.createElement("div", { style: { position: 'relative' } },
             React.createElement("div", { style: {
@@ -26,7 +26,6 @@ class NuggetList extends React.Component {
                     top: '0',
                     fontSize: '12px',
                     padding: '0 3px',
-                    fontFamily: style['fontFamily'],
                     color: 'white',
                 } }, "Main website pages (scroll <-->)"),
             React.createElement("div", { style: style },

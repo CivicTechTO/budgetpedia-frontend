@@ -51,7 +51,8 @@ let secondlinklistitems = [
         icon: '/public/icons/twitter.png',
         target: 'http://twitter.com/budgetpedia',
         targetText: 'Twitter',
-        description: '... and see the twitter feed below'
+        description: '... and see the twitter feed below',
+        imageStyle: { height: '14px' }
     },
     {
         external: true,
