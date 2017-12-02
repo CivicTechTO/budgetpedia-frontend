@@ -4,7 +4,7 @@ const React = require("react");
 const tile_view_1 = require("./tile.view");
 class TileList extends React.Component {
     render() {
-        let { tiles, style, route, onSelect, cellHeight } = this.props;
+        let { tiles, style, route, onSelect, cellHeight, title } = this.props;
         let primarytiledata = [];
         let secondarytiledata = [];
         for (let tiledata of tiles) {
@@ -27,7 +27,7 @@ class TileList extends React.Component {
                     fontSize: '12px',
                     padding: '0 3px',
                     color: 'white',
-                } }, "Main website pages (scroll <-->)"),
+                } }, title),
             React.createElement("div", { style: style },
                 React.createElement("div", { style: {
                         display: 'block',

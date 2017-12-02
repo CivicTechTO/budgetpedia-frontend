@@ -25,6 +25,7 @@ interface Props extends React.Props< TileList > {
     route?: string,
     onSelect: Function,
     cellHeight?: number,
+    title?:string,
 
 }
 
@@ -32,7 +33,7 @@ class TileList extends React.Component< Props, any > {
 
     render() {
 
-        let { tiles, style, route, onSelect, cellHeight } = this.props
+        let { tiles, style, route, onSelect, cellHeight, title } = this.props
         let primarytiledata = []
         let secondarytiledata = []
         for (let tiledata of tiles) {
@@ -69,7 +70,7 @@ class TileList extends React.Component< Props, any > {
                         padding:'0 3px',
                         color:'white',
                     }
-                }>Main website pages (scroll &lt;--&gt;)
+                }>{ title }
                 </div>
                 <div
                 style = { style }

@@ -15,12 +15,14 @@ import { Provider } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
+const muiTheme = getMuiTheme()
+
 import MainView from './main.view'
 
 //TODO: assign version to state (DEVELOPMENT|STAGING|PRODUCTION)
 const Main = ({globalmessage, version}) => (
     <Provider store={ store }>
-        <MuiThemeProvider muiTheme = {getMuiTheme()}>
+        <MuiThemeProvider muiTheme = {muiTheme}>
             <MainView history = {history} globalmessage={globalmessage} 
             style = {{fontFamily:state.resources.theme.fontFamily}}/>
         </MuiThemeProvider>

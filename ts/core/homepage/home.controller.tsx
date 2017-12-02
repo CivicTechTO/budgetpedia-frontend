@@ -30,6 +30,7 @@ let Home = class extends React.Component<any, any> {
         let {
             headercardstyle,
             tileliststyle,
+            tilelisttitle,
             footercardstyle,
             toplinklistheader,
             toplinklistitems,
@@ -45,10 +46,10 @@ let Home = class extends React.Component<any, any> {
                 <div style = {{ backgroundColor:"#404244", padding:"8px", }} >
                     <Card style={ headercardstyle }>
                         <HtmlView html={ headerimages }/>
-                        <CardTitle style = {{padding:"16px 16px 0 16px"}} >
+                        <CardTitle style = {{padding:"16px 16px 0 16px",fontSize:'20px',fontWeight:'bold'}} >
                             <HtmlView html={ headertitle }/>
                         </CardTitle>
-                        <CardText>
+                        <CardText style = {{fontSize:'16px'}}>
                             <LinkList
                                 upperDivider
                                 header = { toplinklistheader }
@@ -69,6 +70,7 @@ let Home = class extends React.Component<any, any> {
                     tiles =     { pagetargets } 
                     onSelect = { this.props.push }
                     cellHeight = { 180 }
+                    title = { tilelisttitle }
                 />
                 {/* twitter */}
                 <div style = {{padding:'32px',backgroundColor:'silver'}} >

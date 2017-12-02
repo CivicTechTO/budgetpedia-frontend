@@ -6,7 +6,6 @@ let headercardstyle = {
     margin: "8px",
     border: "2px solid silver",
     borderRadius: "8px",
-    fontSize: "18px"
 };
 let tileliststyle = {
     padding: "16px",
@@ -14,13 +13,13 @@ let tileliststyle = {
     backgroundColor: '#749261',
     overflowX: 'scroll',
 };
+let tilelisttitle = 'Main website pages (scroll <-->)';
 let footercardstyle = {
     backgroundImage: "url(/public/icons/WebsiteBanner.png)",
     backgroundSize: "cover",
     margin: "8px",
     border: "2px solid silver",
     borderRadius: "8px",
-    fontSize: "18px"
 };
 let toplinklistheader = 'Browse our site:';
 let toplinklistitems = [
@@ -47,19 +46,19 @@ let secondlinklistheader = 'Follow us:';
 let secondlinklistitems = [
     {
         external: true,
-        prompt: 'For news check out',
+        prompt: 'For news check out our',
         icon: '/public/icons/twitter.png',
         target: 'http://twitter.com/budgetpedia',
-        targetText: 'Twitter',
+        targetText: 'Twitter account',
         description: '... and see the twitter feed below',
         imageStyle: { height: '14px' }
     },
     {
         external: true,
-        prompt: 'For in-depth articles see',
+        prompt: 'For in-depth articles see our',
         icon: '/public/icons/medium.png',
         target: 'http://medium.com/budgetpedia',
-        targetText: 'Medium',
+        targetText: 'Medium publication',
     },
 ];
 let thirdlinklistheader = 'More media (experimental):';
@@ -101,6 +100,7 @@ let thirdlinklistitems = [
 let model = {
     headercardstyle,
     tileliststyle,
+    tilelisttitle,
     footercardstyle,
     toplinklistheader,
     toplinklistitems,
