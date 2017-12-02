@@ -10,8 +10,6 @@ const html_view_1 = require("../common/html.view");
 const linklist_view_1 = require("./linklist.view");
 let headerimages = require('./html/headerimages.html');
 let headertitle = require('./html/headertitle.html');
-let headercontent = require('./html/headercontent.html');
-let footercontent = require('./html/footercontent.html');
 let Home = class extends React.Component {
     render() {
         let { pagetargets, theme, colors } = this.props;
@@ -41,13 +39,13 @@ let Home = class extends React.Component {
         let toplinklistheader = 'Browse our site:';
         let toplinklistitems = [
             {
-                prompt: 'Explore the Toronto budget with our ',
+                prompt: 'Explore the Toronto budget with our',
                 icon: '/public/icons/ic_explore_48px.svg',
                 target: '/explorer',
                 targetText: 'Budget Explorer',
             },
             {
-                prompt: "See information about Toronto's budget decision schedule at our ",
+                prompt: "See information about Toronto's budget decision schedule at our",
                 icon: '/public/icons/ic_map_48px.svg',
                 target: '/roadmap',
                 targetText: 'Budget Roadmap',
@@ -57,6 +55,60 @@ let Home = class extends React.Component {
                 icon: '/public/icons/ic_library_books_48px.svg',
                 target: '/resources',
                 targetText: 'Resources',
+            },
+        ];
+        let secondlinklistheader = 'Follow us:';
+        let secondlinklistitems = [
+            {
+                external: true,
+                prompt: 'For news check out',
+                icon: '/public/icons/twitter.png',
+                target: 'http://twitter.com/budgetpedia',
+                targetText: 'Twitter',
+                description: '... and see the twitter feed below'
+            },
+            {
+                external: true,
+                prompt: 'For in-depth articles see',
+                icon: '/public/icons/medium.png',
+                target: 'http://medium.com/budgetpedia',
+                targetText: 'Medium',
+            },
+        ];
+        let thirdlinklistheader = 'More media (experimental):';
+        let thirdlinklistitems = [
+            {
+                external: true,
+                icon: '/public/icons/facebook.png',
+                target: 'http://facebook.com/budgetpedia',
+                targetText: 'our Facebook page',
+            },
+            {
+                external: true,
+                icon: '/public/icons/facebook.png',
+                target: 'http://facebook.com/groups/budgetpedia',
+                targetText: 'our Facebook group',
+            },
+            {
+                external: true,
+                prompt: 'For technical discussions:',
+                icon: '/public/icons/g-logo.png',
+                target: 'http://groups.google.com/d/forum/budgetpedia',
+                targetText: 'our Google forum',
+            },
+            {
+                external: true,
+                prompt: 'Videos:',
+                icon: '/public/icons/YouTube-icon-full_color.png',
+                target: 'https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig',
+                targetText: 'YouTube',
+            },
+            {
+                external: true,
+                prompt: 'Blog:',
+                icon: '/public/icons/blogspot.jpeg',
+                target: 'http://budgetpedia.blogspot.ca/',
+                targetText: 'Blogspot',
             },
         ];
         return (React.createElement("div", null,
@@ -70,8 +122,7 @@ let Home = class extends React.Component {
                         React.createElement(html_view_1.default, { html: headertitle })),
                     React.createElement(Card_1.CardText, null,
                         React.createElement(linklist_view_1.default, { upperDivider: true, header: toplinklistheader, items: toplinklistitems }),
-                        React.createElement("hr", null),
-                        React.createElement(html_view_1.default, { html: headercontent }),
+                        React.createElement(linklist_view_1.default, { upperDivider: true, header: secondlinklistheader, items: secondlinklistitems }),
                         React.createElement("div", { style: { clear: "both" } })))),
             React.createElement(nuggetlist_controller_1.default, { style: nuggetliststyle, tiles: pagetargets, onSelect: this.props.push, cellHeight: 180 }),
             React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver' } },
@@ -89,7 +140,7 @@ let Home = class extends React.Component {
                 } },
                 React.createElement(Card_1.Card, { style: footercardstyle },
                     React.createElement(Card_1.CardText, null,
-                        React.createElement(html_view_1.default, { html: footercontent }))))));
+                        React.createElement(linklist_view_1.default, { header: thirdlinklistheader, items: thirdlinklistitems }))))));
     }
 };
 const mapStateToProps = ({ pages, resources }) => ({

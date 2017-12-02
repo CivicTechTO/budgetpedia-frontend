@@ -20,8 +20,6 @@ import LinkList from './linklist.view'
 
 let headerimages = require('./html/headerimages.html')
 let headertitle = require('./html/headertitle.html')
-let headercontent = require('./html/headercontent.html')
-let footercontent = require('./html/footercontent.html')
 
 let Home = class extends React.Component<any, any> {
 
@@ -62,13 +60,13 @@ let Home = class extends React.Component<any, any> {
 
         let toplinklistitems = [
             {
-                prompt:'Explore the Toronto budget with our ',
+                prompt:'Explore the Toronto budget with our',
                 icon:'/public/icons/ic_explore_48px.svg',
                 target:'/explorer',
                 targetText:'Budget Explorer',
             },
             {
-                prompt:"See information about Toronto's budget decision schedule at our ",
+                prompt:"See information about Toronto's budget decision schedule at our",
                 icon:'/public/icons/ic_map_48px.svg',
                 target:'/roadmap',
                 targetText:'Budget Roadmap',
@@ -78,6 +76,64 @@ let Home = class extends React.Component<any, any> {
                 icon:'/public/icons/ic_library_books_48px.svg',
                 target:'/resources',
                 targetText:'Resources',
+            },
+        ]
+
+        let secondlinklistheader = 'Follow us:'
+
+        let secondlinklistitems = [
+            {
+                external:true,
+                prompt:'For news check out',
+                icon:'/public/icons/twitter.png',
+                target:'http://twitter.com/budgetpedia',
+                targetText:'Twitter',
+                description:'... and see the twitter feed below'
+            },
+            {
+                external:true,
+                prompt:'For in-depth articles see',
+                icon:'/public/icons/medium.png',
+                target:'http://medium.com/budgetpedia',
+                targetText:'Medium',
+            },
+        ]
+
+        let thirdlinklistheader = 'More media (experimental):'
+
+        let thirdlinklistitems = [
+            {
+                external:true,
+                icon:'/public/icons/facebook.png',
+                target:'http://facebook.com/budgetpedia',
+                targetText:'our Facebook page',
+            },
+            {
+                external:true,
+                icon:'/public/icons/facebook.png',
+                target:'http://facebook.com/groups/budgetpedia',
+                targetText:'our Facebook group',
+            },
+            {
+                external:true,
+                prompt:'For technical discussions:',
+                icon:'/public/icons/g-logo.png',
+                target:'http://groups.google.com/d/forum/budgetpedia',
+                targetText:'our Google forum',
+            },
+            {
+                external:true,
+                prompt:'Videos:',
+                icon:'/public/icons/YouTube-icon-full_color.png',
+                target:'https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig',
+                targetText:'YouTube',
+            },
+            {
+                external:true,
+                prompt:'Blog:',
+                icon:'/public/icons/blogspot.jpeg',
+                target:'http://budgetpedia.blogspot.ca/',
+                targetText:'Blogspot',
             },
         ]
 
@@ -102,8 +158,11 @@ let Home = class extends React.Component<any, any> {
                                 header = { toplinklistheader }
                                 items = { toplinklistitems }
                             />
-                            <hr />
-                            <HtmlView html={ headercontent }/>
+                            <LinkList
+                                upperDivider
+                                header = { secondlinklistheader }
+                                items = { secondlinklistitems }
+                            />
                             <div style = {{clear:"both"}}></div>
                         </CardText>
                     </Card>
@@ -139,7 +198,10 @@ let Home = class extends React.Component<any, any> {
                 >
                     <Card style={ footercardstyle }>
                         <CardText>
-                            <HtmlView html={ footercontent }/>
+                            <LinkList
+                                header = { thirdlinklistheader }
+                                items = { thirdlinklistitems }
+                            />
                         </CardText>
                     </Card>
                 </div>

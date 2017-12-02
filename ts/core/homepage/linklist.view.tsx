@@ -20,24 +20,25 @@ class LinkListView extends React.Component<Props, any> {
 
         let items = props.items.map((item, index) => {
             return <LinkView 
-                key = {index}
-                prompt = {item.prompt}
+                key = { index }
+                prompt = { item.prompt }
                 icon = { item.icon }
                 target = { item.target }
                 targetText = { item.targetText }
+                description = {item.description?item.description:null}
             />
         })
 
         let upperelements = []
         let lowerelements = []
 
-        if (props.upperDivider) upperelements.push(<hr />)
+        if (props.upperDivider) upperelements.push(<hr key = "upper"/>)
 
-        if (props.lowerDivider) lowerelements.push(<hr />)
+        if (props.lowerDivider) lowerelements.push(<hr key = "lower"/>)
 
         return ([...upperelements,
-            <p style={{margin:0,padding:0}}>{props.header}</p>,
-            <ul>
+            <p key = "header" style={{margin:0,padding:0}}>{props.header}</p>,
+            <ul key = "list">
                 { items }
             </ul>,
             ...lowerelements,
