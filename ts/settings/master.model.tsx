@@ -54,7 +54,7 @@ let globalbar = {
 	title: 'Budgetpedia v0.1.3',
     contactAddress:'mailto:mail@budgetpedia.ca',
     contactPrompt:'mail@budgetpedia.ca',
-    tagLine:"We're all about government budgets",
+//    tagLine:"We're all about government budgets",
 	username: 'anonymous',
 	accountoptions: [],
 	menuoptions: [],
@@ -74,7 +74,7 @@ let homepage = {
     id:0,
     content: {
         title:"Budgetpedia Home",
-        subtitle:"we're all about government budgets",
+        // subtitle:"we're all about government budgets",
         image:'../../public/icons/budgetpedia-logo.png',
         category:'master',
     },
