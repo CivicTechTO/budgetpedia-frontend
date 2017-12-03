@@ -106,6 +106,7 @@ class NuggetList extends React.Component< Props, any > {
                                 display: 'block',
                                 whiteSpace:'nowrap',
                                 position:'relative',
+                                marginTop:'20px',
                             }
                         }>
                         { nuggets }

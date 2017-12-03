@@ -37,11 +37,11 @@ class Nugget extends React.Component< Props, any > {
             width:'180px',
             height:'180px',
             marginRight:'16px',
-            marginTop: '16px',
             overflow:'clip',
             position:'relative',
             fontWeight: '300',
             whiteSpace:'normal',
+            verticalAlign:'top',
         }
         let defaultinfixstyle = {
             fontSize:'2.5em',

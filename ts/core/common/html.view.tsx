@@ -2,8 +2,9 @@
 
 import * as React from 'react';
 
-let HtmlView = ({html}) => {
-    return <div 
+let HtmlView = (props) => {
+    let { style, html } = props
+    return <div style = {style}
        dangerouslySetInnerHTML = {{__html:html}}
     />
 }

@@ -50,6 +50,7 @@ class NuggetList extends React.Component {
                         display: 'block',
                         whiteSpace: 'nowrap',
                         position: 'relative',
+                        marginTop: '20px',
                     } }, nuggets))));
     }
 }

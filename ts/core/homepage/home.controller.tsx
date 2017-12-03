@@ -27,30 +27,13 @@ let Home = class extends React.Component<any, any> {
 
         let { pagetargets, theme, colors } = this.props
 
-        let torontonuggetlist = [
-            {
-                prefix: 'something',
-                infix: '1000',
-                suffix: 'else',
-                contrast: true,
-            }
-        ]
-
-        let financenuggetlist = [
-            {
-                prefix: 'money that goes<br>to the boss and comes back',
-                infix: 
-`$200B<span 
-    class="material-icons" 
-    style="color:green;font-size:1.1em;vertical-align:top">
-        arrow_upward
-</span>`,
-                suffix: '(2016 [audit](http://toronto.ca){style=color:white target=_blank})',
-                contrast: true,
-            }
-        ]
-
         let {
+            torontonuggettitle,
+            torontonuggetlist,
+            financenuggettitle,
+            financenuggetlist,
+            financechangestitle,
+            financechangeslist,
             headercardstyle,
             headertitle,
             headersubtitle,
@@ -106,20 +89,20 @@ let Home = class extends React.Component<any, any> {
 
                 {/* quick stats */}
                 <NuggetList
-                    title = 'About Toronto'
+                    title = { torontonuggettitle }
                     nuggets = {torontonuggetlist}
                     image = '/public/images/city-people-faded2.jpg'
                 />
 
                 <NuggetList
-                    title = 'About Toronto Finances'
-                    nuggets = {financenuggetlist}
+                    title = { financenuggettitle }
+                    nuggets = { financenuggetlist }
                     image = '/public/images/cityscape-night.jpg'
                 />
 
                 <NuggetList
-                    title = 'About Toronto Finance *Changes*'
-                    nuggets = {financenuggetlist}
+                    title = { financechangestitle }
+                    nuggets = {financechangeslist}
                     image = '/public/images/ttc-faded.jpg'
                 />
 
