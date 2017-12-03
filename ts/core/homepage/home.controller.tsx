@@ -38,7 +38,7 @@ let Home = class extends React.Component<any, any> {
 
         let financenuggetlist = [
             {
-                prefix: 'money',
+                prefix: 'money that goes<br>to the boss and comes back',
                 infix: 
 `$200B<span 
     class="material-icons" 

@@ -42,6 +42,7 @@ class Nugget extends React.Component< Props, any > {
             overflow:'clip',
             position:'relative',
             fontWeight: '300',
+            whiteSpace:'normal',
         }
         let defaultinfixstyle = {
             fontSize:'2.5em',
@@ -50,7 +51,7 @@ class Nugget extends React.Component< Props, any > {
 
 
         return <div style = {{...defaultstyle,...style}}>
-            <div style = {{marginTop:'40px',minWidth:'20px'}}>
+            <div style = {{marginTop:'30px',minWidth:'20px'}}>
                 { <HtmlView html={md.renderInline(prefix)} /> }
             </div>
             <div style = {defaultinfixstyle}>

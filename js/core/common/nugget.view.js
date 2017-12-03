@@ -24,13 +24,14 @@ class Nugget extends React.Component {
             overflow: 'clip',
             position: 'relative',
             fontWeight: '300',
+            whiteSpace: 'normal',
         };
         let defaultinfixstyle = {
             fontSize: '2.5em',
             color: '#f1c40f'
         };
         return React.createElement("div", { style: Object.assign({}, defaultstyle, style) },
-            React.createElement("div", { style: { marginTop: '40px', minWidth: '20px' } }, React.createElement(html_view_1.default, { html: md.renderInline(prefix) })),
+            React.createElement("div", { style: { marginTop: '30px', minWidth: '20px' } }, React.createElement(html_view_1.default, { html: md.renderInline(prefix) })),
             React.createElement("div", { style: defaultinfixstyle }, React.createElement(html_view_1.default, { html: md.renderInline(infix) })),
             React.createElement("div", null, React.createElement(html_view_1.default, { html: md.renderInline(suffix) })));
     }
