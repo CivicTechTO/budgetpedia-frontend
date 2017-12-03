@@ -41,6 +41,7 @@ class NuggetList extends React.Component< Props, any > {
             backgroundColor: image?'none':'green',
             backgroundImage: image?`url(${image})`:'none',
             backgroundSize: image?'cover':'auto',
+            marginBottom:'30px',
         }
 
         let defaultScrollBlockstyle = {
@@ -91,8 +92,8 @@ class NuggetList extends React.Component< Props, any > {
                             verticalAlign:'top',
                         }
                     }>
-                        <span className = 'material-icons'>chevron_left</span>
-                        <span className = 'material-icons'>chevron_right</span>
+                        <span className = 'material-icons'>arrow_back</span>
+                        <span className = 'material-icons'>arrow_forward</span>
                     </div>
 
                 </div>

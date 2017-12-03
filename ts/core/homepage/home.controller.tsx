@@ -106,7 +106,7 @@ let Home = class extends React.Component<any, any> {
 
                 {/* quick stats */}
                 <NuggetList
-                    title = 'About _**Toronto**_'
+                    title = 'About Toronto'
                     nuggets = {torontonuggetlist}
                     image = '/public/images/city-people-faded2.jpg'
                 />
@@ -117,8 +117,14 @@ let Home = class extends React.Component<any, any> {
                     image = '/public/images/cityscape-night.jpg'
                 />
 
+                <NuggetList
+                    title = 'About Toronto Finance *Changes*'
+                    nuggets = {financenuggetlist}
+                    image = '/public/images/ttc-faded.jpg'
+                />
+
                 {/* twitter */}
-                <div style = {{padding:'32px',backgroundColor:'silver'}} >
+                <div style = {{padding:'32px',backgroundColor:'silver',marginBottom:'30px'}} >
                     <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
                     <Timeline
                         dataSource={{

@@ -49,9 +49,10 @@ let Home = class extends React.Component {
                         React.createElement(linklist_view_1.default, { upperDivider: true, header: toplinklistheader, items: toplinklistitems }),
                         React.createElement(linklist_view_1.default, { upperDivider: true, header: secondlinklistheader, items: secondlinklistitems }),
                         React.createElement("div", { style: { clear: "both" } })))),
-            React.createElement(nuggetlist_view_1.default, { title: 'About _**Toronto**_', nuggets: torontonuggetlist, image: '/public/images/city-people-faded2.jpg' }),
+            React.createElement(nuggetlist_view_1.default, { title: 'About Toronto', nuggets: torontonuggetlist, image: '/public/images/city-people-faded2.jpg' }),
             React.createElement(nuggetlist_view_1.default, { title: 'About Toronto Finances', nuggets: financenuggetlist, image: '/public/images/cityscape-night.jpg' }),
-            React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver' } },
+            React.createElement(nuggetlist_view_1.default, { title: 'About Toronto Finance *Changes*', nuggets: financenuggetlist, image: '/public/images/ttc-faded.jpg' }),
+            React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver', marginBottom: '30px' } },
                 React.createElement("div", { style: { maxWidth: '600px', margin: '0 auto' } },
                     React.createElement(react_twitter_widgets_1.Timeline, { dataSource: {
                             sourceType: 'url',

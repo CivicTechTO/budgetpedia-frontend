@@ -15,6 +15,7 @@ class NuggetList extends React.Component {
             backgroundColor: image ? 'none' : 'green',
             backgroundImage: image ? `url(${image})` : 'none',
             backgroundSize: image ? 'cover' : 'auto',
+            marginBottom: '30px',
         };
         let defaultScrollBlockstyle = {
             padding: "16px",
@@ -42,8 +43,8 @@ class NuggetList extends React.Component {
                         marginLeft: '32px',
                         verticalAlign: 'top',
                     } },
-                    React.createElement("span", { className: 'material-icons' }, "chevron_left"),
-                    React.createElement("span", { className: 'material-icons' }, "chevron_right"))),
+                    React.createElement("span", { className: 'material-icons' }, "arrow_back"),
+                    React.createElement("span", { className: 'material-icons' }, "arrow_forward"))),
             React.createElement("div", { style: defaultScrollBlockstyle },
                 React.createElement("div", { style: {
                         display: 'block',
