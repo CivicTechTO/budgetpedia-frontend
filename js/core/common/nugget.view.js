@@ -1,9 +1,14 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const html_view_1 = require("./html.view");
+let mdit = require('markdown-it');
+let mda = require('markdown-it-attrs');
+let md = new mdit({ html: true });
+md.use(mda);
 class Nugget extends React.Component {
     render() {
-        let { image, style, kickerStyle, contrast, prefix, infix, suffix } = this.props;
+        let { image, style, contrast, prefix, infix, suffix } = this.props;
         let defaultstyle = {
             display: 'inline-block',
             textAlign: 'center',
@@ -20,14 +25,14 @@ class Nugget extends React.Component {
             position: 'relative',
             fontWeight: '300',
         };
-        let defaultkickerstyle = {
+        let defaultinfixstyle = {
             fontSize: '2.5em',
             color: '#f1c40f'
         };
         return React.createElement("div", { style: Object.assign({}, defaultstyle, style) },
-            React.createElement("div", { style: { marginTop: '40px', minWidth: '20px' } }, prefix),
-            React.createElement("div", { style: Object.assign({}, defaultkickerstyle, kickerStyle) }, infix),
-            React.createElement("div", null, suffix));
+            React.createElement("div", { style: { marginTop: '40px', minWidth: '20px' } }, React.createElement(html_view_1.default, { html: md.renderInline(prefix) })),
+            React.createElement("div", { style: defaultinfixstyle }, React.createElement(html_view_1.default, { html: md.renderInline(infix) })),
+            React.createElement("div", null, React.createElement(html_view_1.default, { html: md.renderInline(suffix) })));
     }
 }
 exports.default = Nugget;

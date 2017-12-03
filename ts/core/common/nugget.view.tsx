@@ -3,12 +3,18 @@
 
 'use strict'
 
-import * as React from 'react';
+import * as React from 'react'
+
+import HtmlView from './html.view'
+
+let mdit = require('markdown-it')
+let mda = require('markdown-it-attrs')
+let md = new mdit({html:true})
+md.use(mda)
 
 interface Props {
     image?:string,
     style?: object,
-    kickerStyle?:object,
     prefix?:string,
     infix?:string,
     suffix?:string,
@@ -19,7 +25,7 @@ class Nugget extends React.Component< Props, any > {
 
     render() {
 
-        let { image, style, kickerStyle, contrast, prefix, infix, suffix } = this.props
+        let { image, style, contrast, prefix, infix, suffix } = this.props
 
         let defaultstyle = {
             display:'inline-block',
@@ -37,16 +43,22 @@ class Nugget extends React.Component< Props, any > {
             position:'relative',
             fontWeight: '300',
         }
-        let defaultkickerstyle = {
+        let defaultinfixstyle = {
             fontSize:'2.5em',
             color:'#f1c40f'
         }
 
 
         return <div style = {{...defaultstyle,...style}}>
-            <div style = {{marginTop:'40px',minWidth:'20px'}}>{ prefix }</div>
-            <div style = {{...defaultkickerstyle, ...kickerStyle}}>{ infix }</div>
-            <div>{ suffix }</div>
+            <div style = {{marginTop:'40px',minWidth:'20px'}}>
+                { <HtmlView html={md.renderInline(prefix)} /> }
+            </div>
+            <div style = {defaultinfixstyle}>
+                { <HtmlView html={md.renderInline(infix)} /> }
+            </div>
+            <div>
+                { <HtmlView html={md.renderInline(suffix)} /> }
+            </div>
         </div>
     }
 }

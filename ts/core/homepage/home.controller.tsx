@@ -39,8 +39,13 @@ let Home = class extends React.Component<any, any> {
         let financenuggetlist = [
             {
                 prefix: 'money',
-                infix: '$200B',
-                suffix: '(2016 audit)',
+                infix: 
+`$200B<span 
+    class="material-icons" 
+    style="color:green;font-size:1.1em;vertical-align:top">
+        arrow_upward
+</span>`,
+                suffix: '(2016 [audit](http://toronto.ca){style=color:white target=_blank})',
                 contrast: true,
             }
         ]
@@ -62,7 +67,8 @@ let Home = class extends React.Component<any, any> {
 
         return (
             <div>
-                {/* top section */}
+
+                {/* welcome section */}
                 <div style = {{ backgroundColor:"#404244", padding:"8px", }} >
                     <Card style={ headercardstyle }>
                         <HtmlView html={ headerimages }/>
@@ -98,6 +104,7 @@ let Home = class extends React.Component<any, any> {
                     </Card>
                 </div>
 
+                {/* quick stats */}
                 <NuggetList
                     title = 'About Toronto'
                     nuggets = {torontonuggetlist}

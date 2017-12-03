@@ -17,7 +17,7 @@ class NuggetList extends React.Component {
             overflowX: 'scroll',
         };
         let nuggets = nuggetdata.map(function (data, index) {
-            return (React.createElement(nugget_view_1.default, { key: index, image: data.image, style: data.style, kickerStyle: data.kickerStyle, prefix: data.prefix, infix: data.infix, suffix: data.suffix, contrast: data.contrast }));
+            return (React.createElement(nugget_view_1.default, { key: index, image: data.image, style: data.style, prefix: data.prefix, infix: data.infix, suffix: data.suffix, contrast: data.contrast }));
         });
         return (React.createElement("div", { style: Object.assign({}, defaultstyle, style) },
             React.createElement("div", { style: {

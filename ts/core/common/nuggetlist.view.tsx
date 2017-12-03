@@ -49,7 +49,6 @@ class NuggetList extends React.Component< Props, any > {
                     key     = { index } 
                     image  = { data.image }
                     style = { data.style }
-                    kickerStyle = { data.kickerStyle }
                     prefix = { data.prefix } 
                     infix = { data.infix }
                     suffix = { data.suffix }
