@@ -1,7 +1,7 @@
 // home.model.tsx
 
 //http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All
-let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source [StatsCan](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>'
+let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source: [StatsCan](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>'
 let torontonuggetlist = [
     {
         prefix: 'Population',
@@ -12,7 +12,7 @@ let torontonuggetlist = [
     {
         prefix: 'Households',
         infix: '1.11M',
-        suffix: 'for 2016, including <span style="color:gold">~693K</span> for 1 or 2<br>persons; <span style="color:gold">587K</span><br>owned',
+        suffix: 'for 2016, including <span style="color:gold">693K</span> for 1 or 2 persons;<br><span style="color:gold">587K</span> owned',
         contrast: true,
     },
     {
@@ -36,7 +36,7 @@ let torontonuggetlist = [
     {
         prefix: 'Income',
         infix: '$30K',
-        suffix: 'for 2015, individual, median, for <span style="color:gold">2.19M</span><br>earners (work or not)',
+        suffix: 'for 2015, individual, median, for <span style="color:gold">2.19M</span><br>earners (work<br>or not)',
         contrast: true,
     },
     {
@@ -66,7 +66,7 @@ let torontonuggetlist = [
     {
         prefix: 'Full time workers',
         infix: '751K',
-        suffix: '<span style="color:gold">752K</span> worked part year or part time',
+        suffix: 'plus <span style="color:gold">752K</span> worked part year or part time',
         contrast: true,
     },
 ]
