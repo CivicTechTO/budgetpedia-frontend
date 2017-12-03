@@ -4,7 +4,7 @@ const React = require("react");
 const tile_view_1 = require("./tile.view");
 class TileList extends React.Component {
     render() {
-        let { tiles: tilelist, style, onSelect, cellHeight, title } = this.props;
+        let { tiles: tilelist, style, onSelect, title } = this.props;
         let primarytiledata = [];
         let secondarytiledata = [];
         for (let tiledata of tilelist) {

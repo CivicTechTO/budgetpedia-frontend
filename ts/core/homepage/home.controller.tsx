@@ -15,6 +15,7 @@ import { Timeline } from 'react-twitter-widgets'
 import TileList from "../common/tilelist.view"
 import HtmlView from '../common/html.view'
 import LinkList from '../common/linklist.view'
+import NuggetList from '../common/nuggetlist.view'
 
 import model from './home.model'
 
@@ -25,6 +26,24 @@ let Home = class extends React.Component<any, any> {
     render() {
 
         let { pagetargets, theme, colors } = this.props
+
+        let torontonuggetlist = [
+            {
+                prefix: 'something',
+                infix: '1000',
+                suffix: 'else',
+                contrast: true,
+            }
+        ]
+
+        let financenuggetlist = [
+            {
+                prefix: 'money',
+                infix: '$200B',
+                suffix: '(2016 audit)',
+                contrast: true,
+            }
+        ]
 
         let {
             headercardstyle,
@@ -79,13 +98,16 @@ let Home = class extends React.Component<any, any> {
                     </Card>
                 </div>
 
-                {/* main pages tiles */}
-                <TileList
-                    style = { tileliststyle }
-                    tiles =     { pagetargets } 
-                    onSelect = { this.props.push }
-                    cellHeight = { 180 }
-                    title = { tilelisttitle }
+                <NuggetList
+                    title = 'About Toronto'
+                    nuggets = {torontonuggetlist}
+                    image = '/public/images/city-people-faded2.jpg'
+                />
+
+                <NuggetList
+                    title = 'About Toronto Finances'
+                    nuggets = {financenuggetlist}
+                    image = '/public/images/cityscape-night.jpg'
                 />
 
                 {/* twitter */}
@@ -103,6 +125,14 @@ let Home = class extends React.Component<any, any> {
                       />
                    </div>
                 </div>
+
+                {/* main pages tiles */}
+                <TileList
+                    style = { tileliststyle }
+                    tiles =     { pagetargets } 
+                    onSelect = { this.props.push }
+                    title = { tilelisttitle }
+                />
 
                 {/* footer */}
                 <div style = {{ backgroundColor:"#404244", padding:"8px", }} >

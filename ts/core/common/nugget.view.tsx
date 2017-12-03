@@ -10,7 +10,7 @@ interface Props {
     style?: object,
     kickerStyle?:object,
     prefix?:string,
-    kicker?:string,
+    infix?:string,
     suffix?:string,
     contrast?: boolean,
 }
@@ -19,7 +19,7 @@ class Nugget extends React.Component< Props, any > {
 
     render() {
 
-        let { image, style, kickerStyle, contrast, prefix, kicker, suffix } = this.props
+        let { image, style, kickerStyle, contrast, prefix, infix, suffix } = this.props
 
         let defaultstyle = {
             display:'inline-block',
@@ -32,8 +32,10 @@ class Nugget extends React.Component< Props, any > {
             width:'180px',
             height:'180px',
             marginRight:'16px',
+            marginTop: '16px',
             overflow:'clip',
             position:'relative',
+            fontWeight: '300',
         }
         let defaultkickerstyle = {
             fontSize:'2.5em',
@@ -42,8 +44,8 @@ class Nugget extends React.Component< Props, any > {
 
 
         return <div style = {{...defaultstyle,...style}}>
-            <div>{ prefix }</div>
-            <div style = {{...defaultkickerstyle, ...kickerStyle}}>{ kicker }</div>
+            <div style = {{marginTop:'40px',minWidth:'20px'}}>{ prefix }</div>
+            <div style = {{...defaultkickerstyle, ...kickerStyle}}>{ infix }</div>
             <div>{ suffix }</div>
         </div>
     }

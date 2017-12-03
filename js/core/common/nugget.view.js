@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 class Nugget extends React.Component {
     render() {
-        let { image, style, kickerStyle, contrast, prefix, kicker, suffix } = this.props;
+        let { image, style, kickerStyle, contrast, prefix, infix, suffix } = this.props;
         let defaultstyle = {
             display: 'inline-block',
             textAlign: 'center',
@@ -15,16 +15,18 @@ class Nugget extends React.Component {
             width: '180px',
             height: '180px',
             marginRight: '16px',
+            marginTop: '16px',
             overflow: 'clip',
             position: 'relative',
+            fontWeight: '300',
         };
         let defaultkickerstyle = {
             fontSize: '2.5em',
             color: '#f1c40f'
         };
         return React.createElement("div", { style: Object.assign({}, defaultstyle, style) },
-            React.createElement("div", null, prefix),
-            React.createElement("div", { style: Object.assign({}, defaultkickerstyle, kickerStyle) }, kicker),
+            React.createElement("div", { style: { marginTop: '40px', minWidth: '20px' } }, prefix),
+            React.createElement("div", { style: Object.assign({}, defaultkickerstyle, kickerStyle) }, infix),
             React.createElement("div", null, suffix));
     }
 }
