@@ -22,7 +22,6 @@ interface Props extends React.Props< TileList > {
 
     tiles: Array< TileData >,
     style?: Object,
-    route?: string,
     onSelect: Function,
     cellHeight?: number,
     title?:string,
@@ -33,10 +32,10 @@ class TileList extends React.Component< Props, any > {
 
     render() {
 
-        let { tiles, style, route, onSelect, cellHeight, title } = this.props
+        let { tiles:tilelist, style, onSelect, cellHeight, title } = this.props
         let primarytiledata = []
         let secondarytiledata = []
-        for (let tiledata of tiles) {
+        for (let tiledata of tilelist) {
             if (tiledata.tier == 'primary') {
                 primarytiledata.push(tiledata)
             } else {
@@ -44,9 +43,9 @@ class TileList extends React.Component< Props, any > {
             }
         }
 
-        let nuggetsdata = [...primarytiledata,...secondarytiledata]
+        let tiledata = [...primarytiledata,...secondarytiledata]
 
-        let nuggets = nuggetsdata.map ( function ( data ) {
+        let tiles = tiledata.map ( function ( data ) {
 
             return (
                 <TileView 
@@ -84,7 +83,7 @@ class TileList extends React.Component< Props, any > {
                                 position:'relative',
                             }
                         }>
-                        { nuggets }
+                        { tiles }
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@ let tileliststyle =
         overflowX: 'scroll', 
     }
 
-let tilelisttitle = 'Main website pages (scroll <-->)'
+let tilelisttitle = 'Main pages (scroll <-->)'
 
 let footercardstyle =
     {

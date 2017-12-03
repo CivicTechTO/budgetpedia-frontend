@@ -12,7 +12,7 @@ import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import TileList from "../common/tilelist.controller"
+import TileList from "../common/tilelist.view"
 import HtmlView from '../common/html.view'
 import LinkList from '../common/linklist.view'
 
@@ -78,6 +78,7 @@ let Home = class extends React.Component<any, any> {
                         </CardText>
                     </Card>
                 </div>
+
                 {/* main pages tiles */}
                 <TileList
                     style = { tileliststyle }
@@ -86,6 +87,7 @@ let Home = class extends React.Component<any, any> {
                     cellHeight = { 180 }
                     title = { tilelisttitle }
                 />
+
                 {/* twitter */}
                 <div style = {{padding:'32px',backgroundColor:'silver'}} >
                     <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
@@ -101,6 +103,7 @@ let Home = class extends React.Component<any, any> {
                       />
                    </div>
                 </div>
+
                 {/* footer */}
                 <div style = {{ backgroundColor:"#404244", padding:"8px", }} >
                     <Card style={ footercardstyle }>

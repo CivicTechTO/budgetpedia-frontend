@@ -15,7 +15,7 @@ let tileliststyle = {
     backgroundColor: '#749261',
     overflowX: 'scroll',
 };
-let tilelisttitle = 'Main website pages (scroll <-->)';
+let tilelisttitle = 'Main pages (scroll <-->)';
 let footercardstyle = {
     backgroundImage: "url(/public/icons/WebsiteBanner.png)",
     backgroundSize: "cover",
