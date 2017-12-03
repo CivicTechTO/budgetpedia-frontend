@@ -6,7 +6,6 @@
 import * as React from 'react'
 
 import HtmlView from './html.view'
-
 let mdit = require('markdown-it')
 let mda = require('markdown-it-attrs')
 let md = new mdit({html:true})

@@ -7,6 +7,13 @@ import * as React from 'react';
 
 import NuggetView from './nugget.view'
 
+import HtmlView from './html.view'
+let mdit = require('markdown-it')
+let mda = require('markdown-it-attrs')
+let md = new mdit({html:true})
+md.use(mda)
+
+
 interface Props {
     nuggets: {
         image?:string,
@@ -73,7 +80,7 @@ class NuggetList extends React.Component< Props, any > {
                             color:'white',
                             verticalAlign:'top',
                         }
-                    }><span>{ title }</span>
+                    }>{ <HtmlView html={md.renderInline(title)} /> }
                     </div>
 
                     <div style = {

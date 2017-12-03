@@ -2,6 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const nugget_view_1 = require("./nugget.view");
+const html_view_1 = require("./html.view");
+let mdit = require('markdown-it');
+let mda = require('markdown-it-attrs');
+let md = new mdit({ html: true });
+md.use(mda);
 class NuggetList extends React.Component {
     render() {
         let { nuggets: nuggetdata, image, title, style, contrast } = this.props;
@@ -30,8 +35,7 @@ class NuggetList extends React.Component {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'top',
-                    } },
-                    React.createElement("span", null, title)),
+                    } }, React.createElement(html_view_1.default, { html: md.renderInline(title) })),
                 React.createElement("div", { style: {
                         display: 'inline-block',
                         color: 'silver',

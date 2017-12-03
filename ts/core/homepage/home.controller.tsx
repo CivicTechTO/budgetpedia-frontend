@@ -106,7 +106,7 @@ let Home = class extends React.Component<any, any> {
 
                 {/* quick stats */}
                 <NuggetList
-                    title = 'About Toronto'
+                    title = 'About _**Toronto**_'
                     nuggets = {torontonuggetlist}
                     image = '/public/images/city-people-faded2.jpg'
                 />
