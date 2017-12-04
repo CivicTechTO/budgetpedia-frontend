@@ -72,6 +72,7 @@ class NuggetList extends React.Component< Props, any > {
                         left:'0',
                         top:'0',
                         padding:'8px 3px',
+                        zIndex:2,
                     }
                 }>
 

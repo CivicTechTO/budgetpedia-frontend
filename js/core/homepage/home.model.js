@@ -1,5 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let headercardstyle = {
+    backgroundImage: "url(/public/icons/WebsiteBanner.png)",
+    backgroundSize: "cover",
+    margin: "8px",
+    border: "2px solid silver",
+    borderRadius: "8px",
+};
+let footercardstyle = {
+    backgroundImage: "url(/public/icons/WebsiteBanner.png)",
+    backgroundSize: "cover",
+    margin: "8px",
+    border: "2px solid silver",
+    borderRadius: "8px",
+};
+let tileliststyle = {
+    padding: "36px 16px 16px",
+    display: 'block',
+    backgroundColor: '#749261',
+    overflowX: 'scroll',
+};
 let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source: [StatsCan](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>';
 let torontonuggetlist = [
     {
@@ -79,14 +99,14 @@ let financenuggetlist = [
     },
     {
         prefix: 'Expenses',
-        infix: '$10.95B',
+        infix: '- $10.95B',
         suffix: 'for 2016, <span style="color:gold">$950M</span> under budget',
         contrast: true,
     },
     {
         prefix: 'Surplus',
-        infix: '<span style=color:lightgreen>$1.25B</span>',
-        suffix: 'for 2016, <span style="color:gold">$840M</span> over budget',
+        infix: '<span style=color:lightgreen>= $1.25B</span>',
+        suffix: 'for 2016, <span style="color:gold">= $840M</span> over budget',
         contrast: true,
     },
     {
@@ -96,27 +116,27 @@ let financenuggetlist = [
         contrast: true,
     },
     {
-        prefix: 'Libilities',
-        infix: '$15.8B',
+        prefix: 'Liabilities',
+        infix: '- $15.8B',
         suffix: 'for 2016, <span style="color:gold">~$5,850</span> per person',
         contrast: true,
     },
     {
         prefix: 'Net debt',
-        infix: '$6.5B',
+        infix: '<span style=color:red> = $6.5B</span>',
         suffix: 'for 2016, (financial assets less liabilities)<span style="color:gold">~$2,380</span> per person',
         contrast: true,
     },
     {
-        prefix: 'Tangible Assets',
-        infix: '$29B',
+        prefix: 'Tangible assets',
+        infix: '+ $29B',
         suffix: '(including inventories and prepaids) for 2016, <span style="color:gold">~$10,600</span> per person',
         contrast: true,
     },
     {
-        prefix: 'Accumulated Surplus',
-        infix: '$22.5B',
-        suffix: '(like "net equity") for 2016, <span style="color:gold">~$8,220</span> per<br>person',
+        prefix: 'Net worth',
+        infix: '<span style=color:lightgreen> = $22.5B</span>',
+        suffix: 'Accumulated Surplus for 2016, <span style="color:gold">~$8,220</span> per<br>person',
         contrast: true,
     },
     {
@@ -127,49 +147,107 @@ let financenuggetlist = [
     },
     {
         prefix: 'Cash applied to<br>capital activities',
-        infix: '$2.57B',
+        infix: '- $2.57B',
+        suffix: 'for 2016',
+        contrast: true,
+    },
+    {
+        prefix: 'Cash provided by investing activities',
+        infix: '+ $1.02B',
+        suffix: 'for 2016',
+        contrast: true,
+    },
+    {
+        prefix: 'Cash provided by financing activities',
+        infix: '+ $271K',
         suffix: 'for 2016',
         contrast: true,
     },
     {
         prefix: 'Net increase in cash during the year',
-        infix: '<span style=color:lightgreen>$1.24B</span>',
-        suffix: 'for 2016, including ops, financing, investing,<br>& capital',
+        infix: '<span style=color:lightgreen>= $1.24B</span>',
+        suffix: 'for 2016',
         contrast: true,
     },
 ];
-let financechangestitle = 'Toronto Finance *Trends*';
+let financechangestitle = 'Toronto Finance Trends <span style=font-size:smaller>(source: audited data on [Budgetpedia](http://budgetpedia.ca/explorer){target=_blank style=color:white})</span> <span style=font-size:x-small;white-space:nowrap>*adjusted for inflation to 2017$*</span>';
 let financechangeslist = [
     {
-        prefix: 'something',
-        infix: '1000',
-        suffix: 'else',
+        prefix: '2010:2016<br>Overall revenues',
+        infix: '<span style=color:red>1.9%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
+        suffix: 'Down by <span style=color:gold>$237M</span> to <span style=color:gold>$12.5B</span><span style=color:gold>',
         contrast: true,
-    }
+    },
+    {
+        prefix: '2010:2016<br>Government transfers',
+        infix: '<span style=color:red>23.3%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
+        suffix: 'Down by <span style=color:gold>$847M</span> to <span style=color:gold>$2.9B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>User fees',
+        infix: '<span style=color:lightgreen>8.4%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>$245M</span> to <span style=color:gold>$3.1B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>General revenues',
+        infix: '<span style=color:lightgreen>8.0%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>$127M</span> to <span style=color:gold>$1.7B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Property taxes',
+        infix: '<span style=color:red>9.2%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
+        suffix: 'Down by <span style=color:gold>$410M</span> to <span style=color:gold>$4B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Overall costs',
+        infix: '<span style=color:red>7.6%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
+        suffix: 'Down by <span style=color:gold>$919M</span> to <span style=color:gold>$11.2B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Staffing costs',
+        infix: '<span style=color:lightgreen>3.5%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>$194M</span> to <span style=color:gold>$5.7B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Transfer payments to persons',
+        infix: '<span style=color:red>34.7%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
+        suffix: 'Down by <span style=color:gold>$651M</span> to <span style=color:gold>$1.3B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>All other costs',
+        infix: '<span style=color:red>9.9%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
+        suffix: 'Down by <span style=color:gold>$546M</span> to <span style=color:gold>$4.2B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Changes in net worth',
+        infix: '<span style=color:lightgreen>29.2%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>$5.2B</span> to <span style=color:gold>$23B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Changes in net debt',
+        infix: '<span style=color:red>31.8%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>$1.6B</span> to <span style=color:gold>$6.6B</span>',
+        contrast: true,
+    },
+    {
+        prefix: '2010:2016<br>Changes in tangible assets',
+        infix: '<span style=color:lightgreen>29.7%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>$6.7B</span> to <span style=color:gold>$29.5B</span>',
+        contrast: true,
+    },
 ];
-let headercardstyle = {
-    backgroundImage: "url(/public/icons/WebsiteBanner.png)",
-    backgroundSize: "cover",
-    margin: "8px",
-    border: "2px solid silver",
-    borderRadius: "8px",
-};
 let headertitle = "Welcome to Budgetpedia";
 let headersubtitle = "Supporting informed debate about the Toronto budget";
-let tileliststyle = {
-    padding: "36px 16px 16px",
-    display: 'block',
-    backgroundColor: '#749261',
-    overflowX: 'scroll',
-};
 let tilelisttitle = 'Main website pages';
-let footercardstyle = {
-    backgroundImage: "url(/public/icons/WebsiteBanner.png)",
-    backgroundSize: "cover",
-    margin: "8px",
-    border: "2px solid silver",
-    borderRadius: "8px",
-};
 let toplinklistheader = 'Browse our site:';
 let toplinklistitems = [
     {

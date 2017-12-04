@@ -1785,8 +1785,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'ACTUALREVENUES'} primaryText={this.taxonomychoices.ACTUALREVENUES}/>
             <MenuItem value={'EXPENDITURES'} primaryText={this.taxonomychoices.EXPENDITURES}/>
             <MenuItem value={'FINANCIALASSETS'} primaryText={this.taxonomychoices.FINANCIALASSETS}/>
-            <MenuItem value={'NONFINANCIALASSETS'} primaryText={this.taxonomychoices.TANGIBLEASSETS}/>
             <MenuItem value={'LIABILITIES'} primaryText={this.taxonomychoices.LIABILITIES}/>
+            <MenuItem value={'NONFINANCIALASSETS'} primaryText={this.taxonomychoices.TANGIBLEASSETS}/>
 
         </DropDownMenu>
         </div>

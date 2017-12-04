@@ -31,6 +31,7 @@ class NuggetList extends React.Component {
                     left: '0',
                     top: '0',
                     padding: '8px 3px',
+                    zIndex: 2,
                 } },
                 React.createElement("div", { style: {
                         display: 'inline-block',

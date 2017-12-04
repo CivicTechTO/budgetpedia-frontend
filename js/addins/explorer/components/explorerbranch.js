@@ -1160,8 +1160,8 @@ class ExplorerBranch extends Component {
                     React.createElement(MenuItem_1.default, { value: 'ACTUALREVENUES', primaryText: this.taxonomychoices.ACTUALREVENUES }),
                     React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }),
                     React.createElement(MenuItem_1.default, { value: 'FINANCIALASSETS', primaryText: this.taxonomychoices.FINANCIALASSETS }),
-                    React.createElement(MenuItem_1.default, { value: 'NONFINANCIALASSETS', primaryText: this.taxonomychoices.TANGIBLEASSETS }),
-                    React.createElement(MenuItem_1.default, { value: 'LIABILITIES', primaryText: this.taxonomychoices.LIABILITIES }))));
+                    React.createElement(MenuItem_1.default, { value: 'LIABILITIES', primaryText: this.taxonomychoices.LIABILITIES }),
+                    React.createElement(MenuItem_1.default, { value: 'NONFINANCIALASSETS', primaryText: this.taxonomychoices.TANGIBLEASSETS }))));
         let governmentselection = React.createElement("div", { style: { display: 'inline-block' } },
             React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                 React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
