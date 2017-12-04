@@ -71,22 +71,77 @@ let torontonuggetlist = [
     },
 ]
 
-let financenuggettitle = 'About Toronto Finances'
+let financenuggettitle = 'About Toronto Finances <span style="font-size:smaller">(source: [audited statements](https://drive.google.com/open?id=0B208oCU9D8OuZW9OVU5sUVZtVDg){target="_blank" style="color:white"})</span>'
 let financenuggetlist = [
     {
-        prefix: 'money that goes<br>to the boss and comes back',
-        infix: 
-`$200B<span 
-class="material-icons" 
-style="color:green;font-size:1.1em;vertical-align:top">
-arrow_upward
-</span>`,
-        suffix: '(2016 [audit](http://toronto.ca){style=color:white target=_blank})',
+        prefix: 'Revenue',
+        infix: '$12.2B',
+        suffix: 'for 2016, <span style="color:gold">$109M</span> under budget',
         contrast: true,
-    }
+    },
+    {
+        prefix: 'Expenses',
+        infix: '$10.95B',
+        suffix: 'for 2016, <span style="color:gold">$950M</span> under budget',
+        contrast: true,
+    },
+    {
+        prefix: 'Surplus',
+        infix: '<span style=color:lightgreen>$1.25B</span>',
+        suffix: 'for 2016, <span style="color:gold">$840M</span> over budget',
+        contrast: true,
+    },
+    {
+        prefix: 'Financial Assets',
+        infix: '$9.3B',
+        suffix: 'for 2016, <span style="color:gold">~$3,400</span> per person',
+        contrast: true,
+    },
+    {
+        prefix: 'Libilities',
+        infix: '$15.8B',
+        suffix: 'for 2016, <span style="color:gold">~$5,850</span> per person',
+        contrast: true,
+    },
+    {
+        prefix: 'Net debt',
+        infix: '$6.5B',
+        suffix: 'for 2016, (financial assets less liabilities)<span style="color:gold">~$2,380</span> per person',
+        contrast: true,
+    },
+    {
+        prefix: 'Tangible Assets',
+        infix: '$29B',
+        suffix: '(including inventories and prepaids) for 2016, <span style="color:gold">~$10,600</span> per person',
+        contrast: true,
+    },
+    {
+        prefix: 'Accumulated Surplus',
+        infix: '$22.5B',
+        suffix: '(like "net equity") for 2016, <span style="color:gold">~$8,220</span> per<br>person',
+        contrast: true,
+    },
+    {
+        prefix: 'Cash provided by operating activities',
+        infix: '$2.53B',
+        suffix: 'for 2016',
+        contrast: true,
+    },
+    {
+        prefix: 'Cash applied to capital activities',
+        infix: '$2.57B',
+        suffix: 'for 2016',
+        contrast: true,
+    },
+    {
+        prefix: 'Net increase in cash during the year',
+        infix: '<span style=color:lightgreen>$1.24B</span>',
+        suffix: 'for 2016, including ops, financing, investing,<br>& capital',
+        contrast: true,
+    },
 ]
 
-let financechangestitle = 'About Toronto Finance *Changes*'
+let financechangestitle = 'About Toronto Finance *Trends*'
 let financechangeslist = [
     {
         prefix: 'something',
