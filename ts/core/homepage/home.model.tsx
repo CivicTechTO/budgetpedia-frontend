@@ -5,7 +5,7 @@ let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source:
 let torontonuggetlist = [
     {
         prefix: 'Population',
-        infix: '2.73M',
+        infix: '<span style=color:lightgreen>2.73M</span>',
         suffix: 'for 2016, including <span style="color:gold">~400K</span> 14 or under',
         contrast: true,
     },
@@ -128,7 +128,7 @@ let financenuggetlist = [
         contrast: true,
     },
     {
-        prefix: 'Cash applied to capital activities',
+        prefix: 'Cash applied to<br>capital activities',
         infix: '$2.57B',
         suffix: 'for 2016',
         contrast: true,
@@ -141,7 +141,7 @@ let financenuggetlist = [
     },
 ]
 
-let financechangestitle = 'About Toronto Finance *Trends*'
+let financechangestitle = 'Toronto Finance *Trends*'
 let financechangeslist = [
     {
         prefix: 'something',
@@ -166,13 +166,13 @@ let headersubtitle = "Supporting informed debate about the Toronto budget"
 
 let tileliststyle = 
     {
-        padding:"16px",
+        padding:"36px 16px 16px",
         display: 'block',
         backgroundColor: '#749261',               
         overflowX: 'scroll', 
     }
 
-let tilelisttitle = 'Main pages (scroll <-->)'
+let tilelisttitle = 'Main website pages'
 
 let footercardstyle =
     {

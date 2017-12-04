@@ -28,24 +28,25 @@ let Home = class extends React.Component<any, any> {
         let { pagetargets, theme, colors } = this.props
 
         let {
-            torontonuggettitle,
-            torontonuggetlist,
-            financenuggettitle,
-            financenuggetlist,
-            financechangestitle,
-            financechangeslist,
-            headercardstyle,
-            headertitle,
-            headersubtitle,
-            tileliststyle,
-            tilelisttitle,
+
+            torontonuggettitle, torontonuggetlist,
+
+            financenuggettitle, financenuggetlist,
+
+            financechangestitle, financechangeslist,
+
+            headercardstyle, headertitle, headersubtitle,      
+
+            tileliststyle, tilelisttitle,
+
             footercardstyle,
-            toplinklistheader,
-            toplinklistitems,
-            secondlinklistheader,
-            secondlinklistitems,
-            thirdlinklistheader,
-            thirdlinklistitems,
+            
+            toplinklistheader, toplinklistitems,
+
+            secondlinklistheader, secondlinklistitems,
+
+            thirdlinklistheader, thirdlinklistitems,
+            
         } = model
 
         return (

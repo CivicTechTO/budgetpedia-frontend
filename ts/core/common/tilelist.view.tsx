@@ -7,6 +7,12 @@ import * as React from 'react'
 
 import TileView from "./tile.view"
 
+import HtmlView from './html.view'
+let mdit = require('markdown-it')
+let mda = require('markdown-it-attrs')
+let md = new mdit({html:true})
+md.use(mda)
+
 interface TileData {
 
     id: number,
@@ -64,11 +70,31 @@ class TileList extends React.Component< Props, any > {
                         position:'absolute',
                         left:'0',
                         top:'0',
-                        fontSize:'12px',
-                        padding:'0 3px',
-                        color:'white',
+                        padding:'8px 3px',
                     }
-                }>{ title }
+                }>
+
+                    <div style = {
+                        {
+                            display:'inline-block',
+                            color:'white',
+                            verticalAlign:'top',
+                        }
+                    }>{ <HtmlView html={md.renderInline(title)} /> }
+                    </div>
+
+                    <div style = {
+                        {
+                            display:'inline-block',
+                            color:'silver',
+                            marginLeft:'32px',
+                            verticalAlign:'top',
+                        }
+                    }>
+                        <span className = 'material-icons'>arrow_back</span>
+                        <span className = 'material-icons'>arrow_forward</span>
+                    </div>
+
                 </div>
                 <div
                 style = { style }
@@ -91,3 +117,16 @@ class TileList extends React.Component< Props, any > {
 }
 
 export default TileList
+
+// <div style = {
+//     {
+//         position:'absolute',
+//         left:'0',
+//         top:'0',
+//         fontSize:'12px',
+//         padding:'0 3px',
+//         color:'white',
+//     }
+// }>{ title }
+// </div>
+
