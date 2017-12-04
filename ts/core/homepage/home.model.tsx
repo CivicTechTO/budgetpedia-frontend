@@ -26,7 +26,7 @@ let tileliststyle =
         overflowX: 'scroll', 
     }
 
-let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source: [StatsCan](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>'
+let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source: [StatsCan Census](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>'
 let torontonuggetlist = [
     {
         prefix: 'Population',
@@ -37,7 +37,7 @@ let torontonuggetlist = [
     {
         prefix: 'Households',
         infix: '1.11M',
-        suffix: 'for 2016, including <span style="color:gold">693K</span> for 1 or 2 persons;<br><span style="color:gold">587K</span> owned',
+        suffix: 'for 2016, including <span style="color:gold">693K</span> for 1 or 2 persons;<br><span style="color:gold">~53%</span> owned; <span style="color:gold">~47%</span> rented',
         contrast: true,
     },
     {
@@ -190,8 +190,14 @@ let financenuggetlist = [
     change in government transfers
 */
 
-let financechangestitle = 'Toronto Finance Trends <span style=font-size:smaller>(source: audited data on [Budgetpedia](http://budgetpedia.ca/explorer){target=_blank style=color:white})</span> <span style=font-size:x-small;white-space:nowrap>*adjusted for inflation to 2017$*</span>'
+let financechangestitle = 'Toronto Finance Trends <span style=font-size:smaller>(source: audited statements on [Budgetpedia](http://budgetpedia.ca/explorer){target=_blank style=color:white})</span> <span style=font-size:x-small;white-space:nowrap>*adjusted for inflation to 2017$*</span>'
 let financechangeslist = [
+    {
+        prefix: '2010:2016<br>Population (for comparison)',
+        infix: '<span style=color:lightgreen>6.2%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
+        suffix: 'Up by <span style=color:gold>166K</span> to <span style=color:gold>2.84M</span><span style=color:gold>',
+        contrast: true,
+    },
     {
         prefix: '2010:2016<br>Overall revenues',
         infix: '<span style=color:red>1.9%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_downward</span></span>',
