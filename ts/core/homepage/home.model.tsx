@@ -47,7 +47,7 @@ let torontonuggetlist = [
         contrast: true,
     },
     {
-        prefix: 'Families',
+        prefix: 'Family units',
         infix: '719K',
         suffix: 'for 2016; two or more related people in a household',
         contrast: true,
