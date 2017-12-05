@@ -34,7 +34,7 @@ class GlobalBarView extends React.Component<Props, any> {
 
         return (
             <AppBar
-                onTitleTouchTap = { () => this.props.onSelect() }
+                onTitleClick = { () => this.props.onSelect() }
                 titleStyle = {{
                     ...defaultTitleStyle,
                     ...titleStyle

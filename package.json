@@ -14,10 +14,10 @@
     "ajv": "^5.5.1",
     "csv": "^2.0.0",
     "draft-js": "^0.10.4",
-    "draftjs-to-html": "^0.7.6",
+    "draftjs-to-html": "^0.8.0",
     "eslint-config-react-tools": "^1.0.10",
     "history": "^4.7.2",
-    "html-to-draftjs": "^1.0.1",
+    "html-to-draftjs": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "joi-validation-strategy": "^0.3.3",
     "jsonpack": "^1.1.5",
@@ -25,7 +25,7 @@
     "lodash.assign": "^4.2.0",
     "markdown-it": "^8.4.0",
     "markdown-it-attrs": "^1.2.0",
-    "material-ui": "^0.19.4",
+    "material-ui": "^0.20.0",
     "moment": "^2.19.3",
     "node-uuid": "^1.4.8",
     "prop-types": "^15.6.0",
@@ -66,7 +66,7 @@
   "devDependencies": {
     "@types/material-ui": "^0.18.5",
     "@types/node": "^8.0.54",
-    "@types/react": "^16.0.26",
+    "@types/react": "^16.0.27",
     "@types/react-router-redux": "^5.0.10",
     "@types/react-tap-event-plugin": "0.0.30",
     "babel-core": "^6.26.0",
@@ -96,7 +96,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0",
-    "webpack": "^3.9.1",
+    "webpack": "^3.10.0",
     "when": "^3.7.8"
   }
 }

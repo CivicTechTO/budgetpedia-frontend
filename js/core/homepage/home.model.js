@@ -199,7 +199,7 @@ let financechangeslist = [
     {
         prefix: '2010:2016<br>General revenues',
         infix: '<span style=color:lightgreen>8.0%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
-        suffix: 'Up by <span style=color:gold>$127M</span> to <span style=color:gold>$1.7B</span>',
+        suffix: 'Up by <span style=color:gold>$127M</span> to <span style=color:gold>$1.7B</span><br>(like development charges)',
         contrast: true,
     },
     {

@@ -178,18 +178,6 @@ let financenuggetlist = [
     },
 ]
 
-/*
-    population change
-    change in spending
-    change in staffing
-    surplus history
-    net debt history
-    accumulated surplus
-    change in user fees
-    change in property tax
-    change in government transfers
-*/
-
 let financechangestitle = 'Toronto Finance Trends <span style=font-size:smaller>(source: audited statements on [Budgetpedia](http://budgetpedia.ca/explorer){target=_blank style=color:white})</span> <span style=font-size:x-small;white-space:nowrap>*adjusted for inflation to 2017$*</span>'
 let financechangeslist = [
     {
@@ -219,7 +207,7 @@ let financechangeslist = [
     {
         prefix: '2010:2016<br>General revenues',
         infix: '<span style=color:lightgreen>8.0%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
-        suffix: 'Up by <span style=color:gold>$127M</span> to <span style=color:gold>$1.7B</span>',
+        suffix: 'Up by <span style=color:gold>$127M</span> to <span style=color:gold>$1.7B</span><br>(like development charges)',
         contrast: true,
     },
     {

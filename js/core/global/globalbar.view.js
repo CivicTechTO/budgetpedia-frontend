@@ -13,7 +13,7 @@ class GlobalBarView extends React.Component {
         };
         let titleStyle = this.props.titleStyle || {};
         let style = this.props.style || {};
-        return (React.createElement(AppBar_1.default, { onTitleTouchTap: () => this.props.onSelect(), titleStyle: Object.assign({}, defaultTitleStyle, titleStyle), style: Object.assign({}, defaultStyle, style), title: React.createElement("span", null, this.props.title), iconElementLeft: this.props.iconElementLeft }, this.props.children));
+        return (React.createElement(AppBar_1.default, { onTitleClick: () => this.props.onSelect(), titleStyle: Object.assign({}, defaultTitleStyle, titleStyle), style: Object.assign({}, defaultStyle, style), title: React.createElement("span", null, this.props.title), iconElementLeft: this.props.iconElementLeft }, this.props.children));
     }
 }
 exports.default = GlobalBarView;
