@@ -113,7 +113,7 @@ let financenuggetlist = [
     {
         prefix: 'Surplus',
         infix: '<span style=color:lightgreen>$1.25B</span>',
-        suffix: 'for 2016, <span style="color:gold">= $840M</span> over budget',
+        suffix: 'for 2016, <span style="color:gold">$840M</span> over budget',
         contrast: true,
     },
     {
