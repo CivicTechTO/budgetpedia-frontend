@@ -18,6 +18,7 @@ import LinkList from '../common/linklist.view'
 import NuggetList from '../common/nuggetlist.view'
 
 import model from './home.model'
+import styles from '../styles/core.styles'
 
 let headerimages = require('./html/headerimages.html')
 
@@ -27,6 +28,12 @@ let Home = class extends React.Component<any, any> {
 
         let { pagetargets, theme, colors } = this.props
 
+        let { 
+            headercardstyle,
+            footercardstyle,
+            tileliststyle,
+        } = styles
+
         let {
 
             torontonuggettitle, torontonuggetlist,
@@ -35,12 +42,10 @@ let Home = class extends React.Component<any, any> {
 
             financechangestitle, financechangeslist,
 
-            headercardstyle, headertitle, headersubtitle,      
+            headertitle, headersubtitle,      
 
-            tileliststyle, tilelisttitle,
+            tilelisttitle,
 
-            footercardstyle,
-            
             toplinklistheader, toplinklistitems,
 
             secondlinklistheader, secondlinklistitems,

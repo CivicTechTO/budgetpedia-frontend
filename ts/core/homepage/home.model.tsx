@@ -1,31 +1,5 @@
 // home.model.tsx
 
-let headercardstyle = 
-    {
-        backgroundImage:"url(/public/icons/WebsiteBanner.png)",
-        backgroundSize:"cover",
-        margin:"8px",
-        border:"2px solid silver",
-        borderRadius:"8px",
-    }
-
-let footercardstyle =
-    {
-        backgroundImage:"url(/public/icons/WebsiteBanner.png)",
-        backgroundSize:"cover",
-        margin:"8px",
-        border:"2px solid silver",
-        borderRadius:"8px",
-    }
-
-let tileliststyle = 
-    {
-        padding:"36px 16px 16px",
-        display: 'block',
-        backgroundColor: '#749261',               
-        overflowX: 'scroll', 
-    }
-
 let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source: [StatsCan Census](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>'
 let torontonuggetlist = [
     {
@@ -351,12 +325,9 @@ let model = {
     financenuggetlist,
     financechangestitle,
     financechangeslist,
-    headercardstyle,
     headertitle,
     headersubtitle,
-    tileliststyle,
     tilelisttitle,
-    footercardstyle,
     toplinklistheader,
     toplinklistitems,
     secondlinklistheader,
