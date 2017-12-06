@@ -1,9 +1,9 @@
 // pages.index.tsx
 
 let pages = {
-    'home':{
+    home:{
         type: 'page',
-        id: 'home',
+        key: 'home',
         fields: {
             browser: {
                 title:'Budgetpedia',
@@ -13,7 +13,7 @@ let pages = {
         components: [
             {
                 type:'section',
-                id:'header',
+                key:'header',
                 description:'header for main page of website',
                 fields:{
                     title:null,
@@ -23,13 +23,13 @@ let pages = {
                     {
                         repo:'cards',
                         type:'card',
-                        id:'mainpageheader',
+                        key:'mainpageheader',
                     }
                 ]
             },
             {
                 type:'section',
-                id:'nuggets',
+                key:'nuggets',
                 description:'sets of introductory nugget lists',
                 fields: {
                     title:'Quick Stats',
@@ -43,24 +43,24 @@ Here are some quick statistics about Toronto and its finances
                     {
                         type:'nuggetlist',
                         repo:'nuggetlists',
-                        id:'abouttoronto',
+                        key:'abouttoronto',
                     },
                     {
                         type:'nuggetlist',
                         repo:'nuggetlists',
-                        id:'torontofinances',
+                        key:'torontofinances',
                     },
                     {
                         type:'nuggetlist',
                         repo:'nuggetlists',
-                        id:'torontotrends',
+                        key:'torontotrends',
                     },
                 ]
 
             },
             {
                 type:'section',
-                id:'twitterfeed',
+                key:'twitterfeed',
                 description:'twitter feed for budgetpedia',
                 fields: {
                     tag:'Twitter',
@@ -69,31 +69,31 @@ Here are some quick statistics about Toronto and its finances
                     {
                         type:'twitterfeed',
                         repo:'twitterfeeds',
-                        id:'budgetpedia',
+                        key:'budgetpedia',
                     },
                 ]
             },
             {
                 type:'section',
-                id:'tiles',
+                key:'tiles',
                 description:'navigation tiles to the site main pages',
                 components:[
                     {
                         type:'tilelist',
-                        id:'mainpages',
+                        key:'mainpages',
                         repo:'tilelists',
                     },
                 ]
             },
             {
                 type:'section',
-                id:'footer',
+                key:'footer',
                 description:'footer for the main page',
                 components:[
                     {
                         type:'card',
                         repo:'cards',
-                        id:'mainpagefooter',
+                        key:'mainpagefooter',
                     }
                 ]
             },

@@ -13,7 +13,7 @@ import {reducer as toastr} from 'react-redux-toastr'
 // -------------[ app resources ]---------------
 // import * as Actions from './actions'
 
-import masterModel from "../../settings/master.model"
+import masterModel from "../../gateway/budgetpedia.model"
 
 // ----------[ app settings ]----------------------
 import explorer from '../../addins/explorer/reducers'

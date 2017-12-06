@@ -5,17 +5,16 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { push } from 'react-router-redux'
 
 import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import TileList from "../common/tilelist.view"
-import HtmlView from '../common/html.view'
-import LinkList from '../common/linklist.view'
-import NuggetList from '../common/nuggetlist.view'
+import TileList from "../common/components/tilelist.view"
+import HtmlView from '../common/components/html.view'
+import LinkList from '../common/components/linklist.view'
+import NuggetList from '../common/components/nuggetlist.view'
 
 import model from './home.model'
 import styles from '../styles/core.styles'
