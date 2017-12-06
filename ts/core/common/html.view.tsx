@@ -2,11 +2,10 @@
 
 import * as React from 'react';
 
-let HtmlView = (props) => {
-    let { style, html } = props
-    return <div style = {style}
+let HtmlView = ({ style, html }:{style?:object,html:string}) => (
+    <div style = {style}
        dangerouslySetInnerHTML = {{__html:html}}
     />
-}
+)
 
 export default HtmlView
