@@ -7,11 +7,7 @@ import * as React from 'react'
 
 import TileView from "./tile.view"
 
-import HtmlView from './html.view'
-let mdit = require('markdown-it')
-let mda = require('markdown-it-attrs')
-let md = new mdit({html:true})
-md.use(mda)
+import MarkupLine from './markupline.view'
 
 interface TileData {
 
@@ -80,7 +76,7 @@ class TileList extends React.Component< Props, any > {
                             color:'white',
                             verticalAlign:'top',
                         }
-                    }>{ <HtmlView html={md.renderInline(title)} /> }
+                    }>{ <MarkupLine markup = {title} /> }
                     </div>
 
                     <div style = {

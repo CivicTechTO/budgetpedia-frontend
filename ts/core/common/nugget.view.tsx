@@ -5,11 +5,7 @@
 
 import * as React from 'react'
 
-import HtmlView from './html.view'
-let mdit = require('markdown-it')
-let mda = require('markdown-it-attrs')
-let md = new mdit({html:true})
-md.use(mda)
+import MarkupLine from './markupline.view'
 
 interface Props {
     image?:string,
@@ -51,13 +47,13 @@ class Nugget extends React.Component< Props, any > {
 
         return <div style = {{...defaultstyle,...style}}>
             <div style = {{marginTop:'30px',minWidth:'20px'}}>
-                { <HtmlView html={md.renderInline(prefix)} /> }
+                { <MarkupLine markup={prefix} /> }
             </div>
             <div style = {defaultinfixstyle}>
-                { <HtmlView html={md.renderInline(infix)} /> }
+                { <MarkupLine markup={infix} /> }
             </div>
             <div>
-                { <HtmlView html={md.renderInline(suffix)} /> }
+                { <MarkupLine markup={suffix} /> }
             </div>
         </div>
     }

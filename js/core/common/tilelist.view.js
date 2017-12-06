@@ -2,11 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const tile_view_1 = require("./tile.view");
-const html_view_1 = require("./html.view");
-let mdit = require('markdown-it');
-let mda = require('markdown-it-attrs');
-let md = new mdit({ html: true });
-md.use(mda);
+const markupline_view_1 = require("./markupline.view");
 class TileList extends React.Component {
     render() {
         let { tiles: tilelist, style, onSelect, title } = this.props;
@@ -35,7 +31,7 @@ class TileList extends React.Component {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'top',
-                    } }, React.createElement(html_view_1.default, { html: md.renderInline(title) })),
+                    } }, React.createElement(markupline_view_1.default, { markup: title })),
                 React.createElement("div", { style: {
                         display: 'inline-block',
                         color: 'silver',
