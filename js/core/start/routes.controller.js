@@ -10,7 +10,7 @@ let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
 const home_controller_1 = require("../../legacy/homepage/home.controller");
 const page_controller_1 = require("../common/page.controller");
-const nomatch_1 = require("../common/components/nomatch");
+const nomatch_1 = require("../common/sub-components/nomatch");
 const pageroutes_1 = require("../../addons/pageroutes");
 let logPageView = (location) => {
     if (window.location.hostname == 'budgetpedia.ca') {
