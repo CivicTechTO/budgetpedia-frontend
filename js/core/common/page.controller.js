@@ -31,12 +31,20 @@ let Page = class extends base_controller_1.default {
         let response = this.assertModel(model);
         if (response)
             return response;
-        let { controller, index, repo, description, fields, components, composition } = model;
+        let { components } = model;
         let sections = components.map((component, key) => {
             let { controller, repo, index, description, fields, components, composition, } = component;
+            let model = {
+                repo,
+                index,
+                description,
+                fields,
+                components,
+                composition,
+            };
             switch (controller) {
                 case 'section': {
-                    return React.createElement(section_controller_1.default, { key: key, description: description, fields: fields, components: components, composition: composition });
+                    return React.createElement(section_controller_1.default, { key: key, model: model });
                 }
                 default: {
                     return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);

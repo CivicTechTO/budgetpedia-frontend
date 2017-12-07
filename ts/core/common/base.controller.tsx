@@ -1,5 +1,4 @@
 // controller.base.tsx
-
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 
 'use strict'
@@ -37,10 +36,13 @@ class BaseController<P>  extends React.Component<P, any> {
             if (!this.state.waiting) {
                 this.settleModelPromise(model)
             }
+        } else {
+            setTimeout(() => {
+                this.setState({
+                    model,
+                })
+            })
         }
-        this.setState({
-            model,
-        })
     }
 
     assertModel = model => {

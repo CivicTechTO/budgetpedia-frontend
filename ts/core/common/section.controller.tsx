@@ -10,39 +10,62 @@ import BaseController from './base.controller'
 import Lists from './lists.controller'
 import Cards from './cards.controller'
 import Sheets from './sheets.controller'
-import Embeds from './media.controller'
+import Media from './media.controller'
 import Custom from './custom.controller'
 
 interface Props {
-    description:string, 
-    fields: object, 
-    components: {
-        controller:string,
-        repo:string,
+    model: {
         index?:string,
-        type?:string,
-        description?:string,
-        fields?:object,
-        components?:Array<any>,
-        composition?:Array<any>,
-    }[],
-    composition: object[],
+        repo?:string,
+        description:string, 
+        fields: object, 
+        components: {
+            controller:string,
+            repo:string,
+            index?:string,
+            type?:string,
+            description?:string,
+            fields?:object,
+            components?:Array<any>,
+            composition?:Array<any>,
+        }[],
+        composition: object[],
+    }
 }
 
 let Section = class extends BaseController<Props> {
 
+    state = {
+        model:null,
+        waiting:false,
+    }
+
+    componentDidMount() {
+        let { model } = this.props
+
+        this.setState({
+            model,
+        })
+    }
+
     render() {
 
+        let { model } = this.state
+
+        let response = this.assertModel(model)
+        if (response) return response
+
         let {
+            index,
             description, 
             fields, 
             components, 
             composition,
-        } = this.props
+        } = model
 
-        // console.log('section props',this.props)
-
-        components = components?components:[]
+        if (!components) {
+            return <div>{`Section components not fournd for ${index}:${description}`}</div>
+        }
 
         let children = components.map((component, key) => {
 
@@ -57,18 +80,22 @@ let Section = class extends BaseController<Props> {
                 composition, 
             } = component
 
-            // TODO test for repo and acquire data where required
+            let model = {
+                repo, 
+                index, 
+                type,
+                description, 
+                fields, 
+                components, 
+                composition, 
+            }
 
             switch (controller) {
                 case 'lists': {
 
                     return <Lists
                         key = { key }
-                        type = { type }
-                        description = { description }
-                        fields = { fields }
-                        components = { components }
-                        composition = { composition }
+                        model = { model }
                     />
 
                 }
@@ -76,11 +103,7 @@ let Section = class extends BaseController<Props> {
 
                     return <Cards
                         key = { key }
-                        type = { type }
-                        description = { description }
-                        fields = { fields }
-                        components = { components }
-                        composition = { composition }
+                        model = { model }
                     />
 
                 }
@@ -88,23 +111,15 @@ let Section = class extends BaseController<Props> {
 
                     return <Sheets
                         key = { key }
-                        type = { type }
-                        description = { description }
-                        fields = { fields }
-                        components = { components }
-                        composition = { composition }
+                        model = { model }
                     />
 
                 }
                 case 'media': {
 
-                    return <Embeds
+                    return <Media
                         key = { key }
-                        type = { type }
-                        description = { description }
-                        fields = { fields }
-                        components = { components }
-                        composition = { composition }
+                        model = { model }
                     />
 
                 }
@@ -112,11 +127,7 @@ let Section = class extends BaseController<Props> {
 
                     return <Custom
                         key = { key }
-                        type = { type }
-                        description = { description }
-                        fields = { fields }
-                        components = { components }
-                        composition = { composition }
+                        model = { model }
                     />
 
                 }
@@ -127,8 +138,6 @@ let Section = class extends BaseController<Props> {
                 }
             }
         })
-
-        // console.log('children',children)
 
         return children
     }

@@ -24,8 +24,10 @@ class BaseController extends React.Component {
                     this.settleModelPromise(model);
                 }
             }
-            this.setState({
-                model,
+            setTimeout(() => {
+                this.setState({
+                    model,
+                });
             });
         };
         this.assertModel = model => {

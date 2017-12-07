@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const lightBaseTheme_1 = require("material-ui/styles/baseThemes/lightBaseTheme");
 const colors = require("material-ui/styles/colors");
 let globalbar = {
-    title: 'Budgetpedia v0.1.4',
+    title: 'Budgetpedia v0.1.5',
     contactAddress: 'mailto:mail@budgetpedia.ca',
     contactPrompt: 'mail@budgetpedia.ca',
     username: 'anonymous',

@@ -38,15 +38,7 @@ let Page = class extends BaseController<any> {
         let response = this.assertModel(model)
         if (response) return response
 
-        let { 
-            controller, 
-            index, 
-            repo, 
-            description, 
-            fields, 
-            components, 
-            composition 
-        } = model
+        let { components } = model
 
         // TODO use page fields to populate browser fields - title and description
 
@@ -60,28 +52,23 @@ let Page = class extends BaseController<any> {
                 fields, 
                 components, 
                 composition, 
-            }:
-            {
-                controller:string,
-                repo:string,
-                index:string,
-                description?:string,
-                fields?:object,
-                components?:Array<any>,
-                composition?:Array<any>,
             } = component
 
-            // TODO test for repo and acquire data where required
+            let model = {
+                repo, 
+                index, 
+                description, 
+                fields, 
+                components, 
+                composition, 
+            }
 
             switch (controller) {
                 case 'section': {
 
                     return <Section
                         key = { key }
-                        description = { description }
-                        fields = { fields }
-                        components = { components }
-                        composition = { composition }
+                        model = { model }
                     />
 
                 }
@@ -91,7 +78,7 @@ let Page = class extends BaseController<any> {
 
                 }
             }
-        }) // components map
+        })
 
         return (
             <div>

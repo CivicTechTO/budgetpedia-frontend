@@ -51,7 +51,7 @@ import { BranchSettings } from '../addons/explorer/modules/interfaces'
 import * as colors from 'material-ui/styles/colors'
 
 let globalbar = {
-	title: 'Budgetpedia v0.1.4',
+	title: 'Budgetpedia v0.1.5',
     contactAddress:'mailto:mail@budgetpedia.ca',
     contactPrompt:'mail@budgetpedia.ca',
 //    tagLine:"We're all about government budgets",
