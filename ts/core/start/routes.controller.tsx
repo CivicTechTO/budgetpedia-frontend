@@ -24,7 +24,9 @@ import pageroutes from '../../addins/pageroutes'
 
 let logPageView = (location) => {
 
+    console.log('hostname',window.location)
     if (window.location.hostname == 'budgetpedia.ca') {
+        console.log('logging',location.pathname + location.search)
         ReactGA.pageview(location.pathname + location.search);
     }
 

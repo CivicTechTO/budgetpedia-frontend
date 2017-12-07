@@ -13,7 +13,9 @@ const page_controller_1 = require("../common/page.controller");
 const nomatch_1 = require("../common/nomatch");
 const pageroutes_1 = require("../../addins/pageroutes");
 let logPageView = (location) => {
+    console.log('hostname', window.location);
     if (window.location.hostname == 'budgetpedia.ca') {
+        console.log('logging', location.pathname + location.search);
         ReactGA.pageview(location.pathname + location.search);
     }
 };
