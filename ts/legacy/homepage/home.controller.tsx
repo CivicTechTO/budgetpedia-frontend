@@ -11,13 +11,13 @@ import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import TileList from "../common/components/tilelist.view"
-import HtmlView from '../common/components/html.view'
-import LinkList from '../common/components/linklist.view'
-import NuggetList from '../common/components/nuggetlist.view'
+import TileList from "../../core/common/components/tilelist.view"
+import HtmlView from '../../core/common/components/html.view'
+import LinkList from '../../core/common/components/linklist.view'
+import NuggetList from '../../core/common/components/nuggetlist.view'
 
 import model from './home.model'
-import styles from '../styles/core.styles'
+import styles from '../../styles/core.styles'
 
 let headerimages = require('./html/headerimages.html')
 

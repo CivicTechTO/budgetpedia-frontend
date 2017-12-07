@@ -8,6 +8,17 @@ let Page = class extends React.Component {
         super(...arguments);
         this.state = {
             model: null,
+            waiting: false,
+        };
+        this.updateModel = model => {
+            this.setState({
+                waiting: true,
+            }, model.then(model => {
+                this.setState({
+                    waiting: false,
+                    model,
+                });
+            }));
         };
     }
     componentDidMount() {
@@ -15,9 +26,14 @@ let Page = class extends React.Component {
         let { path } = match;
         let index = master_model_1.default.getPageIndex(path);
         let model = master_model_1.default.getPageModel(index);
-        this.setState({
-            model,
-        });
+        if (master_model_1.default.isPromise(model)) {
+            this.updateModel(model);
+        }
+        else {
+            this.setState({
+                model,
+            });
+        }
     }
     render() {
         let { model } = this.state;
@@ -27,7 +43,14 @@ let Page = class extends React.Component {
         if (model.repo) {
             model = master_model_1.default.getDocument(model.repo, model.index);
             if (master_model_1.default.isPromise(model)) {
+                if (!this.state.waiting) {
+                    this.updateModel(model);
+                }
+                return React.createElement("div", null, "waiting...");
             }
+            this.setState({
+                model,
+            });
         }
         let { controller, index, repo, description, fields, components, composition } = model;
         let sections = components.map((component, key) => {

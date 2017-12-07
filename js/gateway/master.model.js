@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pages_index_1 = require("../model/pages.index");
-const routes_index_1 = require("../model/routes.index");
-const repos_index_1 = require("../model/repos.index");
+const pages_index_1 = require("../repos/pages.index");
+const routes_index_1 = require("../gateway/routes.index");
+const repos_index_1 = require("../repos/repos.index");
 const getPageIndex = path => {
     return routes_index_1.default[path];
 };

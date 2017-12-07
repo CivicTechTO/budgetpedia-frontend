@@ -16,17 +16,17 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
-import Home from '../homepage/home.controller'
+import Home from '../../legacy/homepage/home.controller'
 import Page from '../common/page.controller'
-import NoMatch  from '../common/nomatch'
+import NoMatch  from '../common/components/nomatch'
 
-import pageroutes from '../../addins/pageroutes'
+import pageroutes from '../../addons/pageroutes'
 
 let logPageView = (location) => {
 
-    console.log('hostname',window.location)
+    // console.log('hostname',window.location)
     if (window.location.hostname == 'budgetpedia.ca') {
-        console.log('logging',location.pathname + location.search)
+        // console.log('logging',location.pathname + location.search)
         ReactGA.pageview(location.pathname + location.search);
     }
 

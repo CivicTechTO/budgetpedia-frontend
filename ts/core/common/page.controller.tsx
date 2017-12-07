@@ -13,6 +13,7 @@ let Page = class extends React.Component<any, any> {
 
     state = {
         model:null,
+        waiting:false,
     }
 
     componentDidMount() {
@@ -20,9 +21,26 @@ let Page = class extends React.Component<any, any> {
         let { path } = match
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
+        if (master.isPromise(model)) {
+            this.updateModel(model)
+        } else {
+            this.setState({
+                model,
+            })
+        }
+    }
+
+    updateModel = model => {
         this.setState({
-            model,
-        })
+            waiting:true,
+        },
+            model.then(model => {
+                this.setState({
+                    waiting:false,
+                    model,
+                })
+            })
+        )
     }
 
     render() {
@@ -36,10 +54,15 @@ let Page = class extends React.Component<any, any> {
         // test for repo and acquire data where required
         if (model.repo) {
             model = master.getDocument(model.repo,model.index)
-
             if (master.isPromise(model)) {
-                // handle async
+                if (!this.state.waiting) {
+                    this.updateModel(model)
+                }
+                return <div>waiting...</div>
             }
+            this.setState({
+                model,
+            })
         }
 
         let { 
@@ -105,7 +128,6 @@ let Page = class extends React.Component<any, any> {
             </div>
         )
     }
-
 }
 
 export default Page

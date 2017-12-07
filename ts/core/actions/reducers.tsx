@@ -13,10 +13,10 @@ import {reducer as toastr} from 'react-redux-toastr'
 // -------------[ app resources ]---------------
 // import * as Actions from './actions'
 
-import masterModel from "../../gateway/budgetpedia.model"
+import masterModel from "../../repos/budgetpedia.model"
 
 // ----------[ app settings ]----------------------
-import explorer from '../../addins/explorer/reducers'
+import explorer from '../../addons/explorer/reducers'
 // -----------[ system resource reducers ]------------
 
 let theme = (state: any = masterModel.theme) => {

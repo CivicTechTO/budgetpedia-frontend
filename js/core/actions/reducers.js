@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
 const react_router_redux_1 = require("react-router-redux");
 const react_redux_toastr_1 = require("react-redux-toastr");
-const budgetpedia_model_1 = require("../../gateway/budgetpedia.model");
-const reducers_1 = require("../../addins/explorer/reducers");
+const budgetpedia_model_1 = require("../../repos/budgetpedia.model");
+const reducers_1 = require("../../addons/explorer/reducers");
 let theme = (state = budgetpedia_model_1.default.theme) => {
     return state;
 };

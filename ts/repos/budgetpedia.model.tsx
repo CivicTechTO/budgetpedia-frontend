@@ -14,7 +14,7 @@
 
 import theme from 'material-ui/styles/baseThemes/lightBaseTheme'
 
-import { BranchSettings } from '../addins/explorer/modules/interfaces'
+import { BranchSettings } from '../addons/explorer/modules/interfaces'
 
 // import database, {CurrencyDataset,ItemDataset} from '../addins/classes/databaseapi'
 
