@@ -1,12 +1,13 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const base_controller_1 = require("./base.controller");
 const lists_controller_1 = require("./lists.controller");
 const cards_controller_1 = require("./cards.controller");
 const sheets_controller_1 = require("./sheets.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
-let Section = class extends React.Component {
+let Section = class extends base_controller_1.default {
     render() {
         let { description, fields, components, composition, } = this.props;
         components = components ? components : [];

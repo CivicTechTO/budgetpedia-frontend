@@ -5,11 +5,11 @@
 
 import * as React from 'react';
 
+import BaseController from './base.controller'
+
 import Section from './section.controller'
 
-import master from '../../gateway/master.model'
-
-let Page = class extends React.Component<any, any> {
+let Page = class extends BaseController<any> {
 
     state = {
         model:null,
@@ -19,10 +19,11 @@ let Page = class extends React.Component<any, any> {
     componentDidMount() {
         let { match } = this.props
         let { path } = match
+        let { master } = this
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
         if (master.isPromise(model)) {
-            this.updateModel(model)
+            this.settleModelPromise(model)
         } else {
             this.setState({
                 model,
@@ -30,40 +31,12 @@ let Page = class extends React.Component<any, any> {
         }
     }
 
-    updateModel = model => {
-        this.setState({
-            waiting:true,
-        },
-            model.then(model => {
-                this.setState({
-                    waiting:false,
-                    model,
-                })
-            })
-        )
-    }
-
     render() {
 
         let { model } = this.state
 
-        if ( !model ) {
-            return <div>loading...</div>
-        }
-
-        // test for repo and acquire data where required
-        if (model.repo) {
-            model = master.getDocument(model.repo,model.index)
-            if (master.isPromise(model)) {
-                if (!this.state.waiting) {
-                    this.updateModel(model)
-                }
-                return <div>waiting...</div>
-            }
-            this.setState({
-                model,
-            })
-        }
+        let response = this.assertModel(model)
+        if (response) return response
 
         let { 
             controller, 

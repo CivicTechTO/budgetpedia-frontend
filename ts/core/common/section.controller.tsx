@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-import master from '../../gateway/master.model'
+import BaseController from './base.controller'
 
 import Lists from './lists.controller'
 import Cards from './cards.controller'
@@ -29,7 +29,7 @@ interface Props {
     composition: object[],
 }
 
-let Section = class extends React.Component<Props, any> {
+let Section = class extends BaseController<Props> {
 
     render() {
 
