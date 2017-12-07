@@ -15,21 +15,13 @@ let Page = class extends React.Component<any, any> {
         model:null,
     }
 
-    repos:object = null
-
-    styles:object = null
-
     componentDidMount() {
         let { match } = this.props
         let { path } = match
-        let { pages, routes, repos, styles } = master // static
-        let key = routes[path]
-
-        this.repos = repos
-        this.styles = styles
-
+        let index = master.getPageIndex(path)
+        let model = master.getPageModel(index)
         this.setState({
-            model:pages[key],
+            model,
         })
     }
 

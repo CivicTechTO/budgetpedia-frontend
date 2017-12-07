@@ -5,6 +5,8 @@
 
 import * as React from 'react';
 
+import master from '../../gateway/master.model'
+
 import Lists from './lists.controller'
 import Cards from './cards.controller'
 import Sheets from './sheets.controller'

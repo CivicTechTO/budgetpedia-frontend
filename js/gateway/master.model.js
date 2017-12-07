@@ -2,12 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const pages_index_1 = require("../model/pages.index");
 const routes_index_1 = require("../model/routes.index");
-const repos_index_1 = require("../model/repos.index");
-const core_styles_1 = require("../core/styles/core.styles");
+const getPageIndex = path => {
+    return routes_index_1.default[path];
+};
+const getPageModel = index => {
+    return pages_index_1.default[index];
+};
 let master = {
-    pages: pages_index_1.default,
-    routes: routes_index_1.default,
-    repos: repos_index_1.default,
-    styles: core_styles_1.default,
+    getPageIndex,
+    getPageModel,
 };
 exports.default = master;

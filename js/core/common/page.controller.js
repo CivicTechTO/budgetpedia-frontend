@@ -9,18 +9,14 @@ let Page = class extends React.Component {
         this.state = {
             model: null,
         };
-        this.repos = null;
-        this.styles = null;
     }
     componentDidMount() {
         let { match } = this.props;
         let { path } = match;
-        let { pages, routes, repos, styles } = master_model_1.default;
-        let key = routes[path];
-        this.repos = repos;
-        this.styles = styles;
+        let index = master_model_1.default.getPageIndex(path);
+        let model = master_model_1.default.getPageModel(index);
         this.setState({
-            model: pages[key],
+            model,
         });
     }
     render() {
