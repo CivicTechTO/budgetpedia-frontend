@@ -4,7 +4,7 @@ const React = require("react");
 const lists_controller_1 = require("./lists.controller");
 const cards_controller_1 = require("./cards.controller");
 const sheets_controller_1 = require("./sheets.controller");
-const embeds_controller_1 = require("./embeds.controller");
+const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
 let Section = class extends React.Component {
     render() {
@@ -22,8 +22,8 @@ let Section = class extends React.Component {
                 case 'sheets': {
                     return React.createElement(sheets_controller_1.default, { key: key, type: type, description: description, fields: fields, components: components, composition: composition });
                 }
-                case 'embeds': {
-                    return React.createElement(embeds_controller_1.default, { key: key, type: type, description: description, fields: fields, components: components, composition: composition });
+                case 'media': {
+                    return React.createElement(media_controller_1.default, { key: key, type: type, description: description, fields: fields, components: components, composition: composition });
                 }
                 case 'custom': {
                     return React.createElement(custom_controller_1.default, { key: key, type: type, description: description, fields: fields, components: components, composition: composition });

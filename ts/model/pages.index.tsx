@@ -67,7 +67,7 @@ Here are some quick statistics about Toronto and its finances
                 },
                 components:[
                     {
-                        controller: 'embeds',
+                        controller: 'media',
                         repo:'twitterfeeds',
                         index:'budgetpedia',
                     },

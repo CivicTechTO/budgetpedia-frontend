@@ -8,7 +8,7 @@ import * as React from 'react';
 import Lists from './lists.controller'
 import Cards from './cards.controller'
 import Sheets from './sheets.controller'
-import Embeds from './embeds.controller'
+import Embeds from './media.controller'
 import Custom from './custom.controller'
 
 interface Props {
@@ -94,7 +94,7 @@ let Section = class extends React.Component<Props, any> {
                     />
 
                 }
-                case 'embeds': {
+                case 'media': {
 
                     return <Embeds
                         key = { key }
