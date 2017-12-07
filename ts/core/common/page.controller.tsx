@@ -69,10 +69,10 @@ let Page = class extends React.Component<any, any> {
                 controller:string,
                 repo:string,
                 index:string,
-                description:string,
-                fields:object,
-                components:object[],
-                composition:object[]
+                description?:string,
+                fields?:object,
+                components?:Array<any>,
+                composition?:Array<any>,
             } = component
 
             // TODO test for repo and acquire data where required
