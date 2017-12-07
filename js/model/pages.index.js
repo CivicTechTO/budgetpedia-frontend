@@ -19,7 +19,7 @@ let pages = {
                     title: null,
                     description: null,
                 },
-                compononents: [
+                components: [
                     {
                         controller: 'cards',
                         repo: 'cards',

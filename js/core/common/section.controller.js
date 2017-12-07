@@ -9,6 +9,7 @@ const custom_controller_1 = require("./custom.controller");
 let Section = class extends React.Component {
     render() {
         let { description, fields, components, composition, } = this.props;
+        console.log('section props', this.props);
         components = components ? components : [];
         let children = components.map((component, key) => {
             let { controller, repo, index, type, description, fields, components, composition, } = component;

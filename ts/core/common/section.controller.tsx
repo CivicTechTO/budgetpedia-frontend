@@ -38,6 +38,8 @@ let Section = class extends React.Component<Props, any> {
             composition,
         } = this.props
 
+        console.log('section props',this.props)
+
         components = components?components:[]
 
         let children = components.map((component, key) => {
