@@ -38,7 +38,7 @@ let Section = class extends React.Component<Props, any> {
             composition,
         } = this.props
 
-        console.log('section props',this.props)
+        // console.log('section props',this.props)
 
         components = components?components:[]
 
@@ -126,7 +126,7 @@ let Section = class extends React.Component<Props, any> {
             }
         })
 
-        console.log('children',children)
+        // console.log('children',children)
 
         return children
     }
