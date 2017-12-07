@@ -28,15 +28,15 @@ let Page = class extends React.Component {
         if (!model) {
             return React.createElement("div", null, "loading...");
         }
-        let { type, index, repo, description, fields, components, composition } = model;
+        let { controller, index, repo, description, fields, components, composition } = model;
         let sections = components.map((component, key) => {
-            let { type, index, description, fields, components, composition } = model;
-            switch (component.type) {
+            let { controller, repo, index, description, fields, components, composition, } = component;
+            switch (controller) {
                 case 'section': {
-                    return React.createElement(section_controller_1.default, { key: key, index: index, description: description, fields: fields, model: components, composition: composition });
+                    return React.createElement(section_controller_1.default, { key: key, description: description, fields: fields, components: components, composition: composition });
                 }
                 default: {
-                    return React.createElement("div", null, component.type + ' not found');
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
                 }
             }
         });

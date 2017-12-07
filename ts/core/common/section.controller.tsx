@@ -5,9 +5,24 @@
 
 import * as React from 'react';
 
-let Section = class extends React.Component<any, any> {
+interface Props {
+    description:string, 
+    fields: object, 
+    components: object[], 
+    composition: object[],
+}
+
+let Section = class extends React.Component<Props, any> {
 
     render() {
+
+        let {
+            description, 
+            fields, 
+            components, 
+            composition 
+        } = this.props
+
         return <div>hello</div>
     }
 

@@ -41,37 +41,61 @@ let Page = class extends React.Component<any, any> {
             return <div>loading...</div>
         }
 
-        let { type, index, repo, description, fields, components, composition } = model
+        let { 
+            controller, 
+            index, 
+            repo, 
+            description, 
+            fields, 
+            components, 
+            composition 
+        } = model
 
         // TODO test for repo and acquire data where required
-
         // TODO use page fields to populate browser fields - title and description
 
         let sections = components.map((component, key) => {
 
-            let { type, index, description, fields, components, composition } = model
+            let { 
+                controller,
+                repo, 
+                index, 
+                description, 
+                fields, 
+                components, 
+                composition, 
+            }:
+            {
+                controller:string,
+                repo:string,
+                index:string,
+                description:string,
+                fields:object,
+                components:object[],
+                composition:object[]
+            } = component
 
-            switch (component.type) {
+            // TODO test for repo and acquire data where required
+
+            switch (controller) {
                 case 'section': {
-
 
                     return <Section
                         key = { key }
-                        index = { index /* repo index of the item */ }
                         description = { description }
                         fields = { fields }
-                        model = { components }
+                        components = { components }
                         composition = { composition }
                     />
 
                 }
                 default: {
 
-                    return <div>{ component.type + ' not found'}</div>
+                    return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
 
                 }
             }
-        })
+        }) // components map
 
         return (
             <div>
