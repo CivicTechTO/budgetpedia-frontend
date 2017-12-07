@@ -15,18 +15,67 @@ let Page = class extends React.Component<any, any> {
         model:null,
     }
 
-    componentHasMounted() {
+    repos:object = null
+
+    styles:object = null
+
+    componentDidMount() {
         let { match } = this.props
         let { path } = match
         let { pages, routes, repos, styles } = master
         let key = routes[path]
+
+        this.repos = repos
+        this.styles = styles
+
         this.setState({
             model:pages[key],
         })
     }
 
     render() {
-        return <div>hello</div>
+
+        let { model } = this.state
+
+        if (!model) {
+            return <div>loading...</div>
+        }
+
+        let { type, index, description, fields, components, composition } = model
+
+        let sections = components.map((component, key) => {
+
+            let { type, index, description, fields, components, composition } = model
+
+            // TODO use page fields to populate browser fields - title and description
+
+            switch (component.type) {
+                case 'section': {
+
+
+                    return <Section
+                        key = { key }
+                        index = { index /* repo index of the item */ }
+                        description = { description }
+                        fields = { fields }
+                        model = { components }
+                        composition = { composition }
+                    />
+
+                }
+                default: {
+
+                    return <div>{ component.type + ' not found'}</div>
+
+                }
+            }
+        })
+
+        return (
+            <div>
+                { sections }
+            </div>
+        )
     }
 
 }

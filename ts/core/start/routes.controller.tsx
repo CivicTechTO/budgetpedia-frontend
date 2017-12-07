@@ -17,7 +17,7 @@ let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
 import Home from '../homepage/home.controller'
-
+import Page from '../common/page.controller'
 import NoMatch  from '../common/nomatch'
 
 import pageroutes from '../../addins/pageroutes'
@@ -32,6 +32,7 @@ let logPageView = (location) => {
 
 let routedata = [
 
+    { path: '/test', component: Page},
     { path: "*", component: NoMatch }, // must be LAST, or else will pre-empt other paths
 ]
 

@@ -1,7 +1,7 @@
 // routes.index.tsx
 
 let routes = {
-    '/':'home',
+    '/test':'home',
 }
 
 export default routes
