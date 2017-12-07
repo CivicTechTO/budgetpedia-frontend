@@ -22,7 +22,7 @@ let Page = class extends React.Component<any, any> {
     componentDidMount() {
         let { match } = this.props
         let { path } = match
-        let { pages, routes, repos, styles } = master
+        let { pages, routes, repos, styles } = master // static
         let key = routes[path]
 
         this.repos = repos
@@ -37,17 +37,19 @@ let Page = class extends React.Component<any, any> {
 
         let { model } = this.state
 
-        if (!model) {
+        if ( !model ) {
             return <div>loading...</div>
         }
 
-        let { type, index, description, fields, components, composition } = model
+        let { type, index, repo, description, fields, components, composition } = model
+
+        // TODO test for repo and acquire data where required
+
+        // TODO use page fields to populate browser fields - title and description
 
         let sections = components.map((component, key) => {
 
             let { type, index, description, fields, components, composition } = model
-
-            // TODO use page fields to populate browser fields - title and description
 
             switch (component.type) {
                 case 'section': {
@@ -73,7 +75,9 @@ let Page = class extends React.Component<any, any> {
 
         return (
             <div>
+
                 { sections }
+
             </div>
         )
     }

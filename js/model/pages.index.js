@@ -22,7 +22,7 @@ let pages = {
                 compononents: [
                     {
                         repo: 'cards',
-                        type: 'card',
+                        type: 'cards',
                         index: 'mainpageheader',
                     }
                 ]

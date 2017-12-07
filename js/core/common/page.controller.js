@@ -28,7 +28,7 @@ let Page = class extends React.Component {
         if (!model) {
             return React.createElement("div", null, "loading...");
         }
-        let { type, index, description, fields, components, composition } = model;
+        let { type, index, repo, description, fields, components, composition } = model;
         let sections = components.map((component, key) => {
             let { type, index, description, fields, components, composition } = model;
             switch (component.type) {
