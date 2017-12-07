@@ -1,8 +1,12 @@
 // repos.index.tsx
 
 
-let repos = {
+const getDocument = (repo, index) => {
+    return {}
+}
 
+let repos = {
+    getDocument,
 }
 
 export default repos

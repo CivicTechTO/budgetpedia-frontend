@@ -24,6 +24,11 @@ let Page = class extends React.Component {
         if (!model) {
             return React.createElement("div", null, "loading...");
         }
+        if (model.repo) {
+            model = master_model_1.default.getDocument(model.repo, model.index);
+            if (master_model_1.default.isPromise(model)) {
+            }
+        }
         let { controller, index, repo, description, fields, components, composition } = model;
         let sections = components.map((component, key) => {
             let { controller, repo, index, description, fields, components, composition, } = component;
@@ -32,7 +37,7 @@ let Page = class extends React.Component {
                     return React.createElement(section_controller_1.default, { key: key, description: description, fields: fields, components: components, composition: composition });
                 }
                 default: {
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
                 }
             }
         });

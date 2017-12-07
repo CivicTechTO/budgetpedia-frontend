@@ -13,9 +13,19 @@ const getPageModel = index => {
     return pages[index]
 }
 
+const getDocument = (repo, index) => {
+    return repos.getDocument(repo,index)
+}
+
+const isPromise = object => {
+    return !!object.then
+}
+
 let master = {
+    isPromise,
     getPageIndex,
     getPageModel,
+    getDocument,
 }
 
 export default master

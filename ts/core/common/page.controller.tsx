@@ -33,6 +33,15 @@ let Page = class extends React.Component<any, any> {
             return <div>loading...</div>
         }
 
+        // test for repo and acquire data where required
+        if (model.repo) {
+            model = master.getDocument(model.repo,model.index)
+
+            if (master.isPromise(model)) {
+                // handle async
+            }
+        }
+
         let { 
             controller, 
             index, 
@@ -43,7 +52,6 @@ let Page = class extends React.Component<any, any> {
             composition 
         } = model
 
-        // TODO test for repo and acquire data where required
         // TODO use page fields to populate browser fields - title and description
 
         let sections = components.map((component, key) => {
@@ -83,7 +91,7 @@ let Page = class extends React.Component<any, any> {
                 }
                 default: {
 
-                    return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
+                    return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
 
                 }
             }
