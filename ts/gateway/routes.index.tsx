@@ -2,6 +2,7 @@
 
 let routes = {
     '/test':'home',
+    '/':'home',
 }
 
 export default routes
