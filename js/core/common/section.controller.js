@@ -14,16 +14,15 @@ let SectionController = class extends base_controller_1.default {
             model: null,
             waiting: false,
         };
+        this.getChildren = components => {
+            let children = components.map((component, key) => {
+                return this.emitComponent(component, key);
+            });
+            return children;
+        };
         this.emitComponent = (component, key) => {
-            let { controller, repo, index, type, description, properties, components, } = component;
-            let model = {
-                repo,
-                index,
-                type,
-                description,
-                properties,
-                components,
-            };
+            let { controller } = component;
+            let model = this.filterImportedBaseProps(component);
             switch (controller) {
                 case 'card': {
                     return React.createElement(card_controller_1.default, { key: key, model: model });
@@ -41,6 +40,7 @@ let SectionController = class extends base_controller_1.default {
                     return React.createElement(custom_controller_1.default, { key: key, model: model });
                 }
                 default: {
+                    let { description } = model;
                     return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
                 }
             }
@@ -62,9 +62,7 @@ let SectionController = class extends base_controller_1.default {
         if (!components) {
             return React.createElement("div", null, `Section components not found for ${index}:${description}`);
         }
-        let children = components.map((component, key) => {
-            return this.emitComponent(component, key);
-        });
+        let children = this.getChildren(components);
         return (React.createElement("div", null, children));
     }
 };

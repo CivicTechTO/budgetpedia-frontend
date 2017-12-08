@@ -30,28 +30,23 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
         })
     }
 
+    getChildren = components => {
+
+        let children = components.map((component:ModelImportedBaseProps, key) => {
+
+            return this.emitComponent(component,key)
+
+        })
+
+        return children
+
+    }
+
     emitComponent = (component,key) => {
 
-        // common props for all allowed children
-        let { 
-            controller,
-            repo, 
-            index, 
-            type,
-            description, 
-            properties, 
-            components, 
-        } = component
+        let { controller } = component
 
-        // lose the controller prop
-        let model:ModelInheritedBaseProps = {
-            repo, 
-            index, 
-            type,
-            description, 
-            properties, 
-            components, 
-        }
+        let model = this.filterImportedBaseProps(component)
 
         switch (controller) {
             case 'card': {
@@ -96,6 +91,8 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             }
             default: {
 
+                let { description } = model
+
                 return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
 
             }
@@ -123,11 +120,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             return <div>{`Section components not found for ${index}:${description}`}</div>
         }
 
-        let children = components.map((component:ModelImportedBaseProps, key) => {
-
-            return this.emitComponent(component,key)
-
-        })
+        let children = this.getChildren(components)
 
         return (
             <div>
