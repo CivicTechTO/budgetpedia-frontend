@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const base_controller_1 = require("./base.controller");
 const section_controller_1 = require("./section.controller");
-let Page = class extends base_controller_1.default {
+let PageController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.state = {
@@ -54,4 +54,4 @@ let Page = class extends base_controller_1.default {
         return (React.createElement("div", null, sections));
     }
 };
-exports.default = Page;
+exports.default = PageController;

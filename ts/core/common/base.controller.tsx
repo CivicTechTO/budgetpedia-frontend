@@ -20,7 +20,7 @@ class BaseController<P>  extends React.Component<P, any> {
         this.setState({
             waiting:true,
         },
-            model.then(model => {
+            model.then((model) => {
                 this.setState({
                     waiting:false,
                     model,

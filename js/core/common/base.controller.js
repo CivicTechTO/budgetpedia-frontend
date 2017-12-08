@@ -9,7 +9,7 @@ class BaseController extends React.Component {
         this.settleModelPromise = model => {
             this.setState({
                 waiting: true,
-            }, model.then(model => {
+            }, model.then((model) => {
                 this.setState({
                     waiting: false,
                     model,

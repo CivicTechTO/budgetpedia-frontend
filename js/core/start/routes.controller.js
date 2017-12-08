@@ -25,7 +25,7 @@ let coreroutes = routedata.map((item, index) => (React.createElement(react_route
 let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: home_controller_1.default });
 let routes = [home, ...pageroutes_1.default, ...coreroutes];
 logPageView(window.location);
-let Routes = class extends Component {
+let RoutesController = class extends Component {
     constructor() {
         super(...arguments);
         this.historyListener = (location, action) => {
@@ -45,11 +45,11 @@ let Routes = class extends Component {
                     React.createElement(react_router_dom_1.Switch, { location: location }, routes)))));
     }
 };
-exports.Routes = Routes;
+exports.RoutesController = RoutesController;
 let mapStateToProps = state => {
     let { router } = state;
     return {
         router,
     };
 };
-exports.Routes = Routes = react_redux_1.connect(mapStateToProps)(Routes);
+exports.RoutesController = RoutesController = react_redux_1.connect(mapStateToProps)(RoutesController);

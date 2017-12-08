@@ -7,19 +7,19 @@ import * as React from 'react'
 
 import ReduxToastr from 'react-redux-toastr'
 
-import GlobalBar from '../global/globalbar.controller'
+import GlobalBarController from '../global/globalbar.controller'
 
-import { Routes } from './routes.controller'
+import { RoutesController } from './routes.controller'
 
 const MainView = ({globalmessage, history, style}) => (
     <div style = {style}>
-        <GlobalBar />
+        <GlobalBarController />
         <div style={{ height: "64px" }} > {/* space for top fixed appbar */}
         </div>
 
         {globalmessage}
 
-        <Routes history={history}/>
+        <RoutesController history={history}/>
         
         <ReduxToastr
               timeOut={4000}

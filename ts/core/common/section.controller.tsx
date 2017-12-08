@@ -7,33 +7,15 @@ import * as React from 'react';
 
 import BaseController from './base.controller'
 
-import Lists from './lists.controller'
-import Cards from './cards.controller'
-import Sheets from './sheets.controller'
-import Media from './media.controller'
-import Custom from './custom.controller'
+import ListsController from './lists.controller'
+import CardsController from './cards.controller'
+import SheetsController from './sheets.controller'
+import MediaController from './media.controller'
+import CustomController from './custom.controller'
 
-interface Props {
-    model: {
-        index?:string,
-        repo?:string,
-        description:string, 
-        fields: object, 
-        components: {
-            controller:string,
-            repo:string,
-            index?:string,
-            type?:string,
-            description?:string,
-            fields?:object,
-            components?:Array<any>,
-            composition?:Array<any>,
-        }[],
-        composition: object[],
-    }
-}
+import { ModelImportedBaseProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
 
-let Section = class extends BaseController<Props> {
+let SectionController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
     state = {
         model:null,
@@ -67,7 +49,7 @@ let Section = class extends BaseController<Props> {
             return <div>{`Section components not fournd for ${index}:${description}`}</div>
         }
 
-        let children = components.map((component, key) => {
+        let children = components.map((component:ModelImportedBaseProps, key) => {
 
             let { 
                 controller,
@@ -80,7 +62,8 @@ let Section = class extends BaseController<Props> {
                 composition, 
             } = component
 
-            let model = {
+            // lose the controller prop
+            let model:ModelInheritedBaseProps = {
                 repo, 
                 index, 
                 type,
@@ -91,17 +74,17 @@ let Section = class extends BaseController<Props> {
             }
 
             switch (controller) {
-                case 'lists': {
+                case 'cards': {
 
-                    return <Lists
+                    return <CardsController
                         key = { key }
                         model = { model }
                     />
 
                 }
-                case 'cards': {
+                case 'lists': {
 
-                    return <Cards
+                    return <ListsController
                         key = { key }
                         model = { model }
                     />
@@ -109,7 +92,7 @@ let Section = class extends BaseController<Props> {
                 }
                 case 'sheets': {
 
-                    return <Sheets
+                    return <SheetsController
                         key = { key }
                         model = { model }
                     />
@@ -117,7 +100,7 @@ let Section = class extends BaseController<Props> {
                 }
                 case 'media': {
 
-                    return <Media
+                    return <MediaController
                         key = { key }
                         model = { model }
                     />
@@ -125,7 +108,7 @@ let Section = class extends BaseController<Props> {
                 }
                 case 'custom': {
 
-                    return <Custom
+                    return <CustomController
                         key = { key }
                         model = { model }
                     />
@@ -144,4 +127,4 @@ let Section = class extends BaseController<Props> {
 
 }
 
-export default Section
+export default SectionController

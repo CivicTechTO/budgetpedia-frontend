@@ -9,7 +9,7 @@ const menuicon_view_1 = require("./menuicon.view");
 const menusidebar_view_1 = require("./menusidebar.view");
 const tagline_view_1 = require("./tagline.view");
 const contact_view_1 = require("./contact.view");
-let GlobalBar = class extends React.Component {
+let GlobalBarController = class extends React.Component {
     constructor() {
         super(...arguments);
         this.state = {
@@ -64,7 +64,7 @@ function mapStateToProps(state) {
         homepage: pages.homepage,
     };
 }
-GlobalBar = react_redux_1.connect(mapStateToProps, {
+GlobalBarController = react_redux_1.connect(mapStateToProps, {
     push: react_router_redux_1.push,
-})(GlobalBar);
-exports.default = GlobalBar;
+})(GlobalBarController);
+exports.default = GlobalBarController;

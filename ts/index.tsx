@@ -11,7 +11,7 @@ import injectTapEventPlugin = require( 'react-tap-event-plugin' )
 injectTapEventPlugin()
 require('isomorphic-fetch')
 
-import Main from './core/start/main.controller'
+import MainController from './core/start/main.controller'
 
 // TODO concept of globalmessage needs to be fleshed out; source behind api
 let globalmessage = null
@@ -19,7 +19,7 @@ try {
     // TODO implement {version} as controlling variable, for example for google analytics
     // TODO refine error handling here
     render(
-    	<Main globalmessage = {globalmessage} version={"DEVELOPMENT"}/>,
+    	<MainController globalmessage = {globalmessage} version={"DEVELOPMENT"}/>,
     	document.getElementById('main')
     )
 } catch (e) {

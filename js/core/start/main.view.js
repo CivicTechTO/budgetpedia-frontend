@@ -8,6 +8,6 @@ const MainView = ({ globalmessage, history, style }) => (React.createElement("di
     React.createElement(globalbar_controller_1.default, null),
     React.createElement("div", { style: { height: "64px" } }, " "),
     globalmessage,
-    React.createElement(routes_controller_1.Routes, { history: history }),
+    React.createElement(routes_controller_1.RoutesController, { history: history }),
     React.createElement(react_redux_toastr_1.default, { timeOut: 4000, newestOnTop: false, position: "top-left" })));
 exports.default = MainView;

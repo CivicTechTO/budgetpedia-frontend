@@ -1,5 +1,5 @@
 // copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
-// nuggestlist.controller.tsx
+// tilelist.controller.tsx
 
 'use strict'
 
@@ -20,7 +20,7 @@ interface TileData {
 
 }
 
-interface Props extends React.Props< TileList > {
+interface Props extends React.Props< TileListController > {
 
     tiles: Array< TileData >,
     style?: Object,
@@ -29,7 +29,7 @@ interface Props extends React.Props< TileList > {
 
 }
 
-class TileList extends React.Component< Props, any > {
+class TileListController extends React.Component< Props, any > {
 
     render() {
 
@@ -112,7 +112,7 @@ class TileList extends React.Component< Props, any > {
     }
 }
 
-export default TileList
+export default TileListController
 
 // <div style = {
 //     {

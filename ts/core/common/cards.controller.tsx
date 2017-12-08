@@ -7,27 +7,9 @@ import * as React from 'react';
 
 import BaseController from './base.controller'
 
-interface Props {
-    model: {
-        index?:string,
-        repo?:string,
-        description:string, 
-        fields: object, 
-        components: {
-            controller:string,
-            repo:string,
-            index?:string,
-            type?:string,
-            description?:string,
-            fields?:object,
-            components?:Array<any>,
-            composition?:Array<any>,
-        }[],
-        composition: object[],
-    }
-}
+import { ModelImportedCardProps, ModelInheritedCardProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
 
-let Cards = class extends BaseController<Props> {
+let CardsController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
     state = {
         model:null,
@@ -38,7 +20,7 @@ let Cards = class extends BaseController<Props> {
 
         console.log('card props',this.props)
 
-        let { model } = this.props
+        let model:ModelInheritedBaseProps = this.props.model
 
         this.setState({
             model,
@@ -60,11 +42,13 @@ let Cards = class extends BaseController<Props> {
             composition,
         } = model
 
-        console.log('card model',model)
+        // TODO implement fields display
 
-        components = components?components:[]
+        // console.log('card model',model)
 
-        let children = components.map((component, key) => {
+        if (!components) components = []
+
+        let children = components.map((component,key) => { //:ModelImportedCardProps, key) => {
 
             let { 
                 controller,
@@ -77,7 +61,7 @@ let Cards = class extends BaseController<Props> {
                 composition, 
             } = component
 
-            let model = {
+            let model = {//:ModelInheritedCardProps = {
                 repo, 
                 index, 
                 type,
@@ -86,9 +70,24 @@ let Cards = class extends BaseController<Props> {
                 components, 
                 composition, 
             }
+
+            switch (controller) {
+
+                case 'card': {
+
+                    return <div>A Card</div>
+
+                }
+
+                default: {
+
+                    return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
+
+                }
+            }
         })
         return <div>cards</div>
     }
 }
 
-export default Cards
+export default CardsController

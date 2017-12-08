@@ -5,8 +5,8 @@
 
 import * as React from 'react';
 
-let Sheets = (props) => (
+let SheetsController = (props) => (
     <div>sheets</div>
     )
 
-export default Sheets
+export default SheetsController

@@ -19,7 +19,7 @@ import MenuSidebarView from './menusidebar.view'
 import TaglineView from './tagline.view'
 import ContactView from './contact.view'
 
-let GlobalBar = class extends React.Component<any, any> {
+let GlobalBarController = class extends React.Component<any, any> {
 
     state = { 
         menusidebaropen: false,
@@ -127,10 +127,10 @@ function mapStateToProps(state) {
 
 }
 
-GlobalBar = connect(
+GlobalBarController = connect(
     mapStateToProps, 
     {
         push,
-    })(GlobalBar)
+    })(GlobalBarController)
 
-export default GlobalBar
+export default GlobalBarController

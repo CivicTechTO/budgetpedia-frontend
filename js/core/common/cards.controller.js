@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const base_controller_1 = require("./base.controller");
-let Cards = class extends base_controller_1.default {
+let CardsController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.state = {
@@ -12,7 +12,7 @@ let Cards = class extends base_controller_1.default {
     }
     componentDidMount() {
         console.log('card props', this.props);
-        let { model } = this.props;
+        let model = this.props.model;
         this.setState({
             model,
         });
@@ -23,8 +23,8 @@ let Cards = class extends base_controller_1.default {
         if (response)
             return response;
         let { index, description, fields, components, composition, } = model;
-        console.log('card model', model);
-        components = components ? components : [];
+        if (!components)
+            components = [];
         let children = components.map((component, key) => {
             let { controller, repo, index, type, description, fields, components, composition, } = component;
             let model = {
@@ -36,8 +36,16 @@ let Cards = class extends base_controller_1.default {
                 components,
                 composition,
             };
+            switch (controller) {
+                case 'card': {
+                    return React.createElement("div", null, "A Card");
+                }
+                default: {
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
+                }
+            }
         });
         return React.createElement("div", null, "cards");
     }
 };
-exports.default = Cards;
+exports.default = CardsController;

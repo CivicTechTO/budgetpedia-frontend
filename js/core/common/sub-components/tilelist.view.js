@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const tile_view_1 = require("./tile.view");
 const markupline_view_1 = require("./markupline.view");
-class TileList extends React.Component {
+class TileListController extends React.Component {
     render() {
         let { tiles: tilelist, style, onSelect, title } = this.props;
         let primarytiledata = [];
@@ -48,4 +48,4 @@ class TileList extends React.Component {
                     } }, tiles))));
     }
 }
-exports.default = TileList;
+exports.default = TileListController;

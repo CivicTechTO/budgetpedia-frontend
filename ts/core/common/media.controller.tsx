@@ -5,8 +5,8 @@
 
 import * as React from 'react';
 
-let Media = (props) => (
+let MediaController = (props) => (
     <div>media</div>
     )
 
-export default Media
+export default MediaController

@@ -5,8 +5,8 @@
 
 import * as React from 'react';
 
-let Custom = (props) => (
+let CustomController = (props) => (
     <div>Custom</div>
     )
 
-export default Custom
+export default CustomController

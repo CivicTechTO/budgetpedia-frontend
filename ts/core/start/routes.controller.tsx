@@ -16,8 +16,8 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
-import Home from '../../legacy/homepage/home.controller'
-import Page from '../common/page.controller'
+import HomeController from '../../legacy/homepage/home.controller'
+import PageController from '../common/page.controller'
 import NoMatch  from '../common/sub-components/nomatch'
 
 import pageroutes from '../../addons/pageroutes'
@@ -34,7 +34,7 @@ let logPageView = (location) => {
 
 let routedata = [
 
-    { path: '/test', component: Page},
+    { path: '/test', component: PageController},
     { path: "*", component: NoMatch }, // must be LAST, or else will pre-empt other paths
 ]
 
@@ -42,13 +42,13 @@ let coreroutes = routedata.map((item, index) => (
    <Route key = {'coreroute'+index} path={item.path} component = {item.component} />
 ))
 
-let home = <Route key = 'home' exact path="/" component={ Home } />
+let home = <Route key = 'home' exact path="/" component={ HomeController } />
 
 let routes = [home, ...pageroutes, ...coreroutes]
 
 logPageView(window.location) // first hit
 
-let Routes = class extends Component<any,any> { 
+let RoutesController = class extends Component<any,any> { 
 
     historyListener = (location,action) => {
         logPageView(location)
@@ -91,6 +91,6 @@ let mapStateToProps = state => {
     }
 }
 
-Routes = connect(mapStateToProps)(Routes)
+RoutesController = connect(mapStateToProps)(RoutesController)
 
-export { Routes }
+export { RoutesController }

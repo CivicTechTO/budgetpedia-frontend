@@ -7,7 +7,7 @@ const cards_controller_1 = require("./cards.controller");
 const sheets_controller_1 = require("./sheets.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
-let Section = class extends base_controller_1.default {
+let SectionController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.state = {
@@ -42,11 +42,11 @@ let Section = class extends base_controller_1.default {
                 composition,
             };
             switch (controller) {
-                case 'lists': {
-                    return React.createElement(lists_controller_1.default, { key: key, model: model });
-                }
                 case 'cards': {
                     return React.createElement(cards_controller_1.default, { key: key, model: model });
+                }
+                case 'lists': {
+                    return React.createElement(lists_controller_1.default, { key: key, model: model });
                 }
                 case 'sheets': {
                     return React.createElement(sheets_controller_1.default, { key: key, model: model });
@@ -65,4 +65,4 @@ let Section = class extends base_controller_1.default {
         return children;
     }
 };
-exports.default = Section;
+exports.default = SectionController;

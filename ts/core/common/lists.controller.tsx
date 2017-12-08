@@ -5,8 +5,8 @@
 
 import * as React from 'react';
 
-let Lists = (props) => (
+let ListsController = (props) => (
     <div>lists</div>
     )
 
-export default Lists
+export default ListsController

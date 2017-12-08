@@ -7,9 +7,11 @@ import * as React from 'react';
 
 import BaseController from './base.controller'
 
-import Section from './section.controller'
+import SectionController from './section.controller'
 
-let Page = class extends BaseController<any> {
+import { ModelImportedBaseProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
+
+let PageController = class extends BaseController<any> {
 
     state = {
         model:null,
@@ -21,7 +23,7 @@ let Page = class extends BaseController<any> {
         let { path } = match
         let { master } = this
         let index = master.getPageIndex(path)
-        let model = master.getPageModel(index)
+        let model:ModelImportedBaseProps = master.getPageModel(index)
         if (master.isPromise(model)) {
             this.settleModelPromise(model)
         } else {
@@ -33,7 +35,7 @@ let Page = class extends BaseController<any> {
 
     render() {
 
-        let { model } = this.state
+        let { model }:{model:ModelInheritedBaseProps} = this.state
 
         let response = this.assertModel(model)
         if (response) return response
@@ -42,7 +44,7 @@ let Page = class extends BaseController<any> {
 
         // TODO use page fields to populate browser fields - title and description
 
-        let sections = components.map((component, key) => {
+        let sections = components.map((component:ModelImportedBaseProps, key) => {
 
             let { 
                 controller,
@@ -54,7 +56,7 @@ let Page = class extends BaseController<any> {
                 composition, 
             } = component
 
-            let model = {
+            let model:ModelInheritedBaseProps = {
                 repo, 
                 index, 
                 description, 
@@ -66,7 +68,7 @@ let Page = class extends BaseController<any> {
             switch (controller) {
                 case 'section': {
 
-                    return <Section
+                    return <SectionController
                         key = { key }
                         model = { model }
                     />
@@ -90,4 +92,4 @@ let Page = class extends BaseController<any> {
     }
 }
 
-export default Page
+export default PageController
