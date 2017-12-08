@@ -11,7 +11,8 @@ const linklist_view_1 = require("../../core/common/sub-components/linklist.view"
 const nuggetlist_view_1 = require("../../core/common/sub-components/nuggetlist.view");
 const home_model_1 = require("./home.model");
 const styles_index_1 = require("../../repos/styles.index");
-let headerimages = require('../../repos/data/html/headerimages.html');
+const master_model_1 = require("../../gateway/master.model");
+let headerimages = master_model_1.default.getData('html', 'headerimages');
 let Home = class extends React.Component {
     render() {
         let { pagetargets, theme, colors } = this.props;

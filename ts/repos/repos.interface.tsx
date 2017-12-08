@@ -4,12 +4,14 @@ import cards from './cards.index'
 import pages from './pages.index'
 import routes from './routes.index'
 import styles from './styles.index'
+import html from './data/html.index'
 
 let repositories = {
     cards,
     pages,
     routes,
     styles,
+    html,
 }
 
 const getDocument = (repo, index) => {

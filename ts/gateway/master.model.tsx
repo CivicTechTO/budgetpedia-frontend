@@ -14,6 +14,10 @@ const getDocument = (repo, index) => {
     return repos.getDocument(repo,index)
 }
 
+const getData = (repo, index) => {
+    return repos.getDocument(repo,index)
+}
+
 const isPromise = object => {
     return !!object.then
 }
@@ -23,6 +27,7 @@ let master = {
     getPageIndex,
     getPageModel,
     getDocument,
+    getData,
 }
 
 export default master

@@ -10,6 +10,9 @@ const getPageModel = index => {
 const getDocument = (repo, index) => {
     return repos_interface_1.default.getDocument(repo, index);
 };
+const getData = (repo, index) => {
+    return repos_interface_1.default.getDocument(repo, index);
+};
 const isPromise = object => {
     return !!object.then;
 };
@@ -18,5 +21,6 @@ let master = {
     getPageIndex,
     getPageModel,
     getDocument,
+    getData,
 };
 exports.default = master;
