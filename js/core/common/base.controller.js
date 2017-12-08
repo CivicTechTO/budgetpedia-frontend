@@ -6,6 +6,17 @@ class BaseController extends React.Component {
     constructor(props) {
         super(props);
         this.master = null;
+        this.filterImportedBaseProps = (props) => {
+            let { controller, repo, index, description, fields, components, } = props;
+            let model = {
+                repo,
+                index,
+                description,
+                fields,
+                components,
+            };
+            return model;
+        };
         this.settleModelPromise = model => {
             this.setState({
                 waiting: true,

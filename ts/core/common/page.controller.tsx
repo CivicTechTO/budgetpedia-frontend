@@ -9,7 +9,7 @@ import BaseController from './base.controller'
 
 import SectionController from './section.controller'
 
-import { ModelImportedBaseProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
+import { ModelImportedBaseProps, ModelInheritedBaseProps } from './common.interfaces'
 
 let PageController = class extends BaseController<any> {
 
@@ -35,22 +35,9 @@ let PageController = class extends BaseController<any> {
 
     emitComponent = (component,key) => {
 
-        let { 
-            controller,
-            repo, 
-            index, 
-            description, 
-            fields, 
-            components, 
-        } = component
+        let { controller } = component
 
-        let model:ModelInheritedBaseProps = {
-            repo, 
-            index, 
-            description, 
-            fields, 
-            components, 
-        }
+        let model = this.filterImportedBaseProps(component)
 
         switch (controller) {
             case 'section': {
@@ -62,6 +49,8 @@ let PageController = class extends BaseController<any> {
 
             }
             default: {
+
+                let { index, description } = model
 
                 return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
 
@@ -90,7 +79,7 @@ let PageController = class extends BaseController<any> {
             <div>
 
                 { sections }
-                { /* add secion menu */ }
+                { /* add section menu */ }
 
             </div>
         )

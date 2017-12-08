@@ -7,6 +7,8 @@ import * as React from 'react'
 
 import master from '../../gateway/master.model'
 
+import { ModelImportedBaseProps, ModelInheritedBaseProps } from './common.interfaces'
+
 class BaseController<P>  extends React.Component<P, any> {
 
     constructor(props) {
@@ -15,6 +17,28 @@ class BaseController<P>  extends React.Component<P, any> {
     }
 
     master = null
+
+    filterImportedBaseProps = (props:ModelImportedBaseProps) => {
+        let { 
+            controller,
+            repo, 
+            index, 
+            description, 
+            fields, 
+            components, 
+        } = props
+
+        // lose controller property
+        let model:ModelInheritedBaseProps = {
+            repo, 
+            index, 
+            description, 
+            fields, 
+            components, 
+        }
+
+        return model
+    } 
 
     settleModelPromise = model => {
         this.setState({
