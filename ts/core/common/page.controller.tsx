@@ -60,7 +60,7 @@ let PageController = class extends BaseController<any> {
 
     render() {
 
-        let { model }:{model:ModelInheritedBaseProps} = this.state
+        let { model }:{ model:ModelInheritedBaseProps } = this.state
 
         let response = this.assertModel(model)
         if (response) return response

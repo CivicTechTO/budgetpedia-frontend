@@ -19,7 +19,7 @@ import NuggetList from '../../core/common/sub-components/nuggetlist.view'
 import model from './home.model'
 import styles from '../../repos/styles.index'
 
-let headerimages = require('./html/headerimages.html')
+let headerimages = require('../../repos/data/html/headerimages.html')
 
 let Home = class extends React.Component<any, any> {
 
