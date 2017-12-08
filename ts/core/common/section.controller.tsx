@@ -39,7 +39,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             index, 
             type,
             description, 
-            fields, 
+            properties, 
             components, 
         } = component
 
@@ -49,7 +49,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             index, 
             type,
             description, 
-            fields, 
+            properties, 
             components, 
         }
 
@@ -115,7 +115,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
         let {
             index,
             description, 
-            fields, 
+            properties, 
             components, 
         } = finalmodel
 
@@ -131,7 +131,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
         return (
             <div>
-                { /* header fields */ }
+                { /* header properties */ }
                 { children }
             </div>
         )

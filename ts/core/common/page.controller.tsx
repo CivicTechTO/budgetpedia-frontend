@@ -67,7 +67,7 @@ let PageController = class extends BaseController<any> {
 
         let { components } = model
 
-        // TODO use page fields to populate browser fields - title and description
+        // TODO use page properties to populate browser properties - title and description
 
         let sections = components.map((component:ModelImportedBaseProps, key) => {
 

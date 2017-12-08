@@ -6,7 +6,7 @@ let cards = {
         controller:'card',
         index:'mainpageheader',
         description:'header for the main page',
-        fields:{},
+        properties:{},
         components:[
             {
                 type:'htmlview',
@@ -34,7 +34,7 @@ let cards = {
         type:'card',
         index:'mainpagefooter',
         description:'footer for the main page',
-        fields:{},
+        properties:{},
         components:[],
     }
 }

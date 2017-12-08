@@ -4,7 +4,7 @@ let pages = {
     home: {
         controller: 'page',
         index: 'home',
-        fields: {
+        properties: {
             browser: {
                 title: 'Budgetpedia',
                 description: 'supporting informed debate about the Toronto budget'
@@ -15,7 +15,7 @@ let pages = {
                 controller: 'section',
                 index: 'header',
                 description: 'header for main page of website',
-                fields: {
+                properties: {
                     title: null,
                     description: null,
                 },
@@ -31,7 +31,7 @@ let pages = {
                 controller: 'section',
                 index: 'nuggets',
                 description: 'sets of introductory nugget lists',
-                fields: {
+                properties: {
                     title: 'Quick Statistics',
                     description: `
 Here are some quick statistics about Toronto and its finances
@@ -60,7 +60,7 @@ Here are some quick statistics about Toronto and its finances
                 controller: 'section',
                 index: 'twitterfeed',
                 description: 'twitter feed for budgetpedia',
-                fields: {
+                properties: {
                     tag: 'Twitter',
                 },
                 components: [

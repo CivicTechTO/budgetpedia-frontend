@@ -22,7 +22,7 @@ let CardController = class extends base_controller_1.default {
         let response = this.assertModel(model);
         if (response)
             return response;
-        let { index, description, fields, components, } = model;
+        let { index, description, properties, components, } = model;
         console.log('cardscontroller model', model);
         if (!components)
             components = [];

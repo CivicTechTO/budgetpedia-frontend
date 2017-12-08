@@ -7,7 +7,7 @@ export interface ModelFinalBaseProps {
     index:string,
     type:string,
     description:string,
-    fields?:object,
+    properties?:object,
     components?:ModelImportedBaseProps[],
 }
 
@@ -17,7 +17,7 @@ export interface ModelInheritedBaseProps {
     index:string,
     type?:string,
     description?:string,
-    fields?:object,
+    properties?:object,
     components?:ModelImportedBaseProps[],
 }
 

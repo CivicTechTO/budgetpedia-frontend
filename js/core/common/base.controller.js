@@ -7,12 +7,12 @@ class BaseController extends React.Component {
         super(props);
         this.master = null;
         this.filterImportedBaseProps = (props) => {
-            let { controller, repo, index, description, fields, components, } = props;
+            let { controller, repo, index, description, properties, components, } = props;
             let model = {
                 repo,
                 index,
                 description,
-                fields,
+                properties,
                 components,
             };
             return model;

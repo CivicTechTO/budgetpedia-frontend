@@ -37,11 +37,11 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
         let {
             index,
             description, 
-            fields, 
+            properties, 
             components, 
         } = model
 
-        // TODO implement fields display
+        // TODO implement properties display
 
         console.log('cardscontroller model',model)
 
@@ -57,7 +57,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             //     index, 
             //     type,
             //     description, 
-            //     fields, 
+            //     properties, 
             //     components, 
             // } = component
 
@@ -66,7 +66,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             //     index, 
             //     type,
             //     description, 
-            //     fields, 
+            //     properties, 
             //     components, 
             // }
 

@@ -24,7 +24,7 @@ class BaseController<P>  extends React.Component<P, any> {
             repo, 
             index, 
             description, 
-            fields, 
+            properties, 
             components, 
         } = props
 
@@ -33,7 +33,7 @@ class BaseController<P>  extends React.Component<P, any> {
             repo, 
             index, 
             description, 
-            fields, 
+            properties, 
             components, 
         }
 

@@ -15,13 +15,13 @@ let SectionController = class extends base_controller_1.default {
             waiting: false,
         };
         this.emitComponent = (component, key) => {
-            let { controller, repo, index, type, description, fields, components, } = component;
+            let { controller, repo, index, type, description, properties, components, } = component;
             let model = {
                 repo,
                 index,
                 type,
                 description,
-                fields,
+                properties,
                 components,
             };
             switch (controller) {
@@ -58,7 +58,7 @@ let SectionController = class extends base_controller_1.default {
         if (response)
             return response;
         let finalmodel = model;
-        let { index, description, fields, components, } = finalmodel;
+        let { index, description, properties, components, } = finalmodel;
         if (!components) {
             return React.createElement("div", null, `Section components not found for ${index}:${description}`);
         }
