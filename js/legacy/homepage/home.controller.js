@@ -10,12 +10,12 @@ const html_view_1 = require("../../core/common/sub-components/html.view");
 const linklist_view_1 = require("../../core/common/sub-components/linklist.view");
 const nuggetlist_view_1 = require("../../core/common/sub-components/nuggetlist.view");
 const home_model_1 = require("./home.model");
-const core_styles_1 = require("../../styles/core.styles");
+const styles_index_1 = require("../../repos/styles.index");
 let headerimages = require('./html/headerimages.html');
 let Home = class extends React.Component {
     render() {
         let { pagetargets, theme, colors } = this.props;
-        let { headercardstyle, footercardstyle, tileliststyle, } = core_styles_1.default;
+        let { headercardstyle, footercardstyle, tileliststyle, } = styles_index_1.default;
         let { torontonuggettitle, torontonuggetlist, financenuggettitle, financenuggetlist, financechangestitle, financechangeslist, headertitle, headersubtitle, tilelisttitle, toplinklistheader, toplinklistitems, secondlinklistheader, secondlinklistitems, thirdlinklistheader, thirdlinklistitems, } = home_model_1.default;
         return (React.createElement("div", null,
             React.createElement("div", { style: { backgroundColor: "#404244", padding: "8px", } },

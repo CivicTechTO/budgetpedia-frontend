@@ -17,7 +17,7 @@ import LinkList from '../../core/common/sub-components/linklist.view'
 import NuggetList from '../../core/common/sub-components/nuggetlist.view'
 
 import model from './home.model'
-import styles from '../../styles/core.styles'
+import styles from '../../repos/styles.index'
 
 let headerimages = require('./html/headerimages.html')
 
