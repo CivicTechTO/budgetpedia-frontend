@@ -11,7 +11,7 @@ let CardsController = class extends base_controller_1.default {
         };
     }
     componentDidMount() {
-        console.log('card props', this.props);
+        console.log('cards controller props', this.props);
         let model = this.props.model;
         this.setState({
             model,
@@ -23,6 +23,7 @@ let CardsController = class extends base_controller_1.default {
         if (response)
             return response;
         let { index, description, fields, components, composition, } = model;
+        console.log('cardscontroller model', model);
         if (!components)
             components = [];
         let children = components.map((component, key) => {

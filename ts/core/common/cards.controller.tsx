@@ -18,7 +18,7 @@ let CardsController = class extends BaseController<{model:ModelInheritedBaseProp
 
     componentDidMount() {
 
-        console.log('card props',this.props)
+        console.log('cards controller props',this.props)
 
         let model:ModelInheritedBaseProps = this.props.model
 
@@ -44,7 +44,7 @@ let CardsController = class extends BaseController<{model:ModelInheritedBaseProp
 
         // TODO implement fields display
 
-        // console.log('card model',model)
+        console.log('cardscontroller model',model)
 
         if (!components) components = []
 
