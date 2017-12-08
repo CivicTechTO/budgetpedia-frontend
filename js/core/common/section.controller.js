@@ -10,10 +10,6 @@ const custom_controller_1 = require("./custom.controller");
 let SectionController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
-        this.state = {
-            model: null,
-            waiting: false,
-        };
         this.getChildren = components => {
             let children = components.map((component, key) => {
                 return this.emitComponent(component, key);

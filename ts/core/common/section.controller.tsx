@@ -17,11 +17,6 @@ import { ModelImportedBaseProps, ModelInheritedBaseProps, ModelFinalBaseProps } 
 
 let SectionController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
-    state = {
-        model:null,
-        waiting:false,
-    }
-
     componentDidMount() {
         let { model } = this.props
 

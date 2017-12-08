@@ -11,11 +11,6 @@ import { ModelImportedCardProps, ModelInheritedCardProps, ModelInheritedBaseProp
 
 let CardController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
-    state = {
-        model:null,
-        waiting:false,
-    }
-
     componentDidMount() {
 
         console.log('cards controller props',this.props)

@@ -13,11 +13,6 @@ import { ModelImportedBaseProps, ModelInheritedBaseProps } from './common.interf
 
 let PageController = class extends BaseController<any> {
 
-    state = {
-        model:null,
-        waiting:false,
-    }
-
     componentDidMount() {
         let { match } = this.props
         let { path } = match

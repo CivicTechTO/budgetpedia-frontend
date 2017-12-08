@@ -16,6 +16,11 @@ class BaseController<P>  extends React.Component<P, any> {
         this.master = master
     }
 
+    state = {
+        model:null,
+        waiting:false,
+    }
+
     master = null
 
     filterImportedBaseProps = (props:ModelImportedBaseProps) => {

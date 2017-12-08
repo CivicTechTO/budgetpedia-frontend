@@ -5,6 +5,10 @@ const master_model_1 = require("../../gateway/master.model");
 class BaseController extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            model: null,
+            waiting: false,
+        };
         this.master = null;
         this.filterImportedBaseProps = (props) => {
             let { controller, repo, index, description, properties, components, } = props;

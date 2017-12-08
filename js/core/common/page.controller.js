@@ -6,10 +6,6 @@ const section_controller_1 = require("./section.controller");
 let PageController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
-        this.state = {
-            model: null,
-            waiting: false,
-        };
         this.emitComponent = (component, key) => {
             let { controller } = component;
             let model = this.filterImportedBaseProps(component);
