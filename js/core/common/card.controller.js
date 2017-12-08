@@ -3,13 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const base_controller_1 = require("./base.controller");
 let CardController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
-        this.state = {
-            model: null,
-            waiting: false,
-        };
-    }
     componentDidMount() {
         console.log('cards controller props', this.props);
         let model = this.props.model;

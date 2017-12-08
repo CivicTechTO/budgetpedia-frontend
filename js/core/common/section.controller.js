@@ -8,14 +8,8 @@ const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
 let SectionController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
-        this.getChildren = components => {
-            let children = components.map((component, key) => {
-                return this.emitComponent(component, key);
-            });
-            return children;
-        };
+    constructor(props) {
+        super(props);
         this.emitComponent = (component, key) => {
             let { controller } = component;
             let model = this.filterImportedBaseProps(component);
@@ -41,6 +35,7 @@ let SectionController = class extends base_controller_1.default {
                 }
             }
         };
+        this.getChildren.bind(this);
     }
     componentDidMount() {
         let { model } = this.props;

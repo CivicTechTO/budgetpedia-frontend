@@ -13,6 +13,11 @@ import { ModelImportedBaseProps, ModelInheritedBaseProps } from './common.interf
 
 let PageController = class extends BaseController<any> {
 
+    constructor(props) {
+        super(props)
+        this.getChildren.bind(this)
+    }
+
     componentDidMount() {
         let { match } = this.props
         let { path } = match
@@ -64,11 +69,13 @@ let PageController = class extends BaseController<any> {
 
         // TODO use page properties to populate browser properties - title and description
 
-        let sections = components.map((component:ModelImportedBaseProps, key) => {
+        let sections = this.getChildren(components)
 
-            return this.emitComponent(component, key)
+        // let sections = components.map((component:ModelImportedBaseProps, key) => {
 
-        })
+        //     return this.emitComponent(component, key)
+
+        // })
 
         return (
             <div>

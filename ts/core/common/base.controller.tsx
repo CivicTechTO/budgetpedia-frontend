@@ -89,6 +89,20 @@ class BaseController<P>  extends React.Component<P, any> {
         return null
     }
 
+    emitComponent = (component, key) => {} // placeholder unused
+
+    // bound to instances by instances
+    getChildren = (components) => {
+
+        let children = components.map((component:ModelImportedBaseProps, key) => {
+
+            return this.emitComponent(component,key)
+
+        })
+
+        return children
+
+    }
 }
 
 export default BaseController

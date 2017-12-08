@@ -4,8 +4,8 @@ const React = require("react");
 const base_controller_1 = require("./base.controller");
 const section_controller_1 = require("./section.controller");
 let PageController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
+    constructor(props) {
+        super(props);
         this.emitComponent = (component, key) => {
             let { controller } = component;
             let model = this.filterImportedBaseProps(component);
@@ -19,6 +19,7 @@ let PageController = class extends base_controller_1.default {
                 }
             }
         };
+        this.getChildren.bind(this);
     }
     componentDidMount() {
         let { match } = this.props;
@@ -41,9 +42,7 @@ let PageController = class extends base_controller_1.default {
         if (response)
             return response;
         let { components } = model;
-        let sections = components.map((component, key) => {
-            return this.emitComponent(component, key);
-        });
+        let sections = this.getChildren(components);
         return (React.createElement("div", null, sections));
     }
 };

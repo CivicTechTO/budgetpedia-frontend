@@ -57,6 +57,13 @@ class BaseController extends React.Component {
             }
             return null;
         };
+        this.emitComponent = (component, key) => { };
+        this.getChildren = (components) => {
+            let children = components.map((component, key) => {
+                return this.emitComponent(component, key);
+            });
+            return children;
+        };
         this.master = master_model_1.default;
     }
 }

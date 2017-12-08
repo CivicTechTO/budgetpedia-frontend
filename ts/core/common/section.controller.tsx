@@ -17,24 +17,17 @@ import { ModelImportedBaseProps, ModelInheritedBaseProps, ModelFinalBaseProps } 
 
 let SectionController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
+    constructor(props) {
+        super(props)
+        this.getChildren.bind(this)
+    }
+
     componentDidMount() {
         let { model } = this.props
 
         this.setState({
             model,
         })
-    }
-
-    getChildren = components => {
-
-        let children = components.map((component:ModelImportedBaseProps, key) => {
-
-            return this.emitComponent(component,key)
-
-        })
-
-        return children
-
     }
 
     emitComponent = (component,key) => {
