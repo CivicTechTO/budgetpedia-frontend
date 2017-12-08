@@ -75,7 +75,6 @@ let Home = class extends React.Component<any, any> {
                             } 
                             subtitle = { headersubtitle }
                         />
-                            
                         <CardText style = {{fontSize:'16px'}}>
                             <LinkList
                                 upperDivider

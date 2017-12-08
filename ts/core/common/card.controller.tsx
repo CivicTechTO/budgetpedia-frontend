@@ -9,7 +9,7 @@ import BaseController from './base.controller'
 
 import { ModelImportedCardProps, ModelInheritedCardProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
 
-let CardsController = class extends BaseController<{model:ModelInheritedBaseProps}> {
+let CardController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
     state = {
         model:null,
@@ -90,4 +90,4 @@ let CardsController = class extends BaseController<{model:ModelInheritedBaseProp
     }
 }
 
-export default CardsController
+export default CardController

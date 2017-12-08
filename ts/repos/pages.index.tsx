@@ -21,7 +21,7 @@ let pages = {
                 },
                 components:[
                     {
-                        controller: 'cards',
+                        controller: 'card',
                         repo:'cards',
                         index:'mainpageheader',
                     }
@@ -41,17 +41,17 @@ Here are some quick statistics about Toronto and its finances
                 },
                 components: [
                     {
-                        controller: 'lists',
+                        controller: 'list',
                         repo:'nuggetlists',
                         index:'abouttoronto',
                     },
                     {
-                        controller: 'lists',
+                        controller: 'list',
                         repo:'nuggetlists',
                         index:'torontofinances',
                     },
                     {
-                        controller: 'lists',
+                        controller: 'list',
                         repo:'nuggetlists',
                         index:'torontotrends',
                     },
@@ -79,7 +79,7 @@ Here are some quick statistics about Toronto and its finances
                 description:'navigation tiles to the site main pages',
                 components:[
                     {
-                        controller: 'lists',
+                        controller: 'list',
                         index:'mainpages',
                         repo:'tilelists',
                     },
@@ -91,7 +91,7 @@ Here are some quick statistics about Toronto and its finances
                 description:'footer for the main page',
                 components:[
                     {
-                        controller: 'cards',
+                        controller: 'card',
                         repo:'cards',
                         index:'mainpagefooter',
                     }

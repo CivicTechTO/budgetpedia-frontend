@@ -7,9 +7,9 @@ import * as React from 'react';
 
 import BaseController from './base.controller'
 
-import ListsController from './lists.controller'
-import CardsController from './cards.controller'
-import SheetsController from './sheets.controller'
+import ListController from './list.controller'
+import CardController from './card.controller'
+import SheetController from './sheet.controller'
 import MediaController from './media.controller'
 import CustomController from './custom.controller'
 
@@ -28,6 +28,80 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
         this.setState({
             model,
         })
+    }
+
+    emitComponent = (component,key) => {
+
+        let { 
+            controller,
+            repo, 
+            index, 
+            type,
+            description, 
+            fields, 
+            components, 
+            composition, 
+        } = component
+
+        // lose the controller prop
+        let model:ModelInheritedBaseProps = {
+            repo, 
+            index, 
+            type,
+            description, 
+            fields, 
+            components, 
+            composition, 
+        }
+
+        switch (controller) {
+            case 'card': {
+
+                return <CardController
+                    key = { key }
+                    model = { model }
+                />
+
+            }
+            case 'list': {
+
+                return <ListController
+                    key = { key }
+                    model = { model }
+                />
+
+            }
+            case 'sheet': {
+
+                return <SheetController
+                    key = { key }
+                    model = { model }
+                />
+
+            }
+            case 'media': {
+
+                return <MediaController
+                    key = { key }
+                    model = { model }
+                />
+
+            }
+            case 'custom': {
+
+                return <CustomController
+                    key = { key }
+                    model = { model }
+                />
+
+            }
+            default: {
+
+                return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
+
+            }
+        }
+
     }
 
     render() {
@@ -51,75 +125,8 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
         let children = components.map((component:ModelImportedBaseProps, key) => {
 
-            let { 
-                controller,
-                repo, 
-                index, 
-                type,
-                description, 
-                fields, 
-                components, 
-                composition, 
-            } = component
+            return this.emitComponent(component,key)
 
-            // lose the controller prop
-            let model:ModelInheritedBaseProps = {
-                repo, 
-                index, 
-                type,
-                description, 
-                fields, 
-                components, 
-                composition, 
-            }
-
-            switch (controller) {
-                case 'cards': {
-
-                    return <CardsController
-                        key = { key }
-                        model = { model }
-                    />
-
-                }
-                case 'lists': {
-
-                    return <ListsController
-                        key = { key }
-                        model = { model }
-                    />
-
-                }
-                case 'sheets': {
-
-                    return <SheetsController
-                        key = { key }
-                        model = { model }
-                    />
-
-                }
-                case 'media': {
-
-                    return <MediaController
-                        key = { key }
-                        model = { model }
-                    />
-
-                }
-                case 'custom': {
-
-                    return <CustomController
-                        key = { key }
-                        model = { model }
-                    />
-
-                }
-                default: {
-
-                    return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
-
-                }
-            }
         })
 
         return children
