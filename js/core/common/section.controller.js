@@ -58,9 +58,10 @@ let SectionController = class extends base_controller_1.default {
         let response = this.assertModel(model);
         if (response)
             return response;
-        let { index, description, fields, components, composition, } = model;
+        let finalmodel = model;
+        let { index, description, fields, components, composition, } = finalmodel;
         if (!components) {
-            return React.createElement("div", null, `Section components not fournd for ${index}:${description}`);
+            return React.createElement("div", null, `Section components not found for ${index}:${description}`);
         }
         let children = components.map((component, key) => {
             return this.emitComponent(component, key);

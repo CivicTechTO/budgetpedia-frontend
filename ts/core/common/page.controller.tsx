@@ -33,6 +33,44 @@ let PageController = class extends BaseController<any> {
         }
     }
 
+    emitComponent = (component,key) => {
+
+        let { 
+            controller,
+            repo, 
+            index, 
+            description, 
+            fields, 
+            components, 
+            composition, 
+        } = component
+
+        let model:ModelInheritedBaseProps = {
+            repo, 
+            index, 
+            description, 
+            fields, 
+            components, 
+            composition, 
+        }
+
+        switch (controller) {
+            case 'section': {
+
+                return <SectionController
+                    key = { key }
+                    model = { model }
+                />
+
+            }
+            default: {
+
+                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
+
+            }
+        }
+    }
+
     render() {
 
         let { model }:{model:ModelInheritedBaseProps} = this.state
@@ -46,40 +84,8 @@ let PageController = class extends BaseController<any> {
 
         let sections = components.map((component:ModelImportedBaseProps, key) => {
 
-            let { 
-                controller,
-                repo, 
-                index, 
-                description, 
-                fields, 
-                components, 
-                composition, 
-            } = component
+            return this.emitComponent(component, key)
 
-            let model:ModelInheritedBaseProps = {
-                repo, 
-                index, 
-                description, 
-                fields, 
-                components, 
-                composition, 
-            }
-
-            switch (controller) {
-                case 'section': {
-
-                    return <SectionController
-                        key = { key }
-                        model = { model }
-                    />
-
-                }
-                default: {
-
-                    return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
-
-                }
-            }
         })
 
         return (

@@ -27,16 +27,7 @@ let CardController = class extends base_controller_1.default {
         if (!components)
             components = [];
         let children = components.map((component, key) => {
-            let { controller, repo, index, type, description, fields, components, composition, } = component;
-            let model = {
-                repo,
-                index,
-                type,
-                description,
-                fields,
-                components,
-                composition,
-            };
+            let { controller } = component;
             switch (controller) {
                 case 'card': {
                     return React.createElement("div", null, "A Card");
@@ -46,7 +37,7 @@ let CardController = class extends base_controller_1.default {
                 }
             }
         });
-        return React.createElement("div", null, "cards");
+        return React.createElement("div", null, "card");
     }
 };
 exports.default = CardController;

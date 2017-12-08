@@ -50,26 +50,28 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
         let children = components.map((component,key) => { //:ModelImportedCardProps, key) => {
 
-            let { 
-                controller,
-                repo, 
-                index, 
-                type,
-                description, 
-                fields, 
-                components, 
-                composition, 
-            } = component
+            let { controller } = component
 
-            let model = {//:ModelInheritedCardProps = {
-                repo, 
-                index, 
-                type,
-                description, 
-                fields, 
-                components, 
-                composition, 
-            }
+            // let { 
+            //     controller,
+            //     repo, 
+            //     index, 
+            //     type,
+            //     description, 
+            //     fields, 
+            //     components, 
+            //     composition, 
+            // } = component
+
+            // let model = {//:ModelInheritedCardProps = {
+            //     repo, 
+            //     index, 
+            //     type,
+            //     description, 
+            //     fields, 
+            //     components, 
+            //     composition, 
+            // }
 
             switch (controller) {
 
@@ -86,7 +88,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
                 }
             }
         })
-        return <div>cards</div>
+        return <div>card</div>
     }
 }
 

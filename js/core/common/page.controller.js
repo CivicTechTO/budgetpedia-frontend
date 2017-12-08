@@ -10,6 +10,25 @@ let PageController = class extends base_controller_1.default {
             model: null,
             waiting: false,
         };
+        this.emitComponent = (component, key) => {
+            let { controller, repo, index, description, fields, components, composition, } = component;
+            let model = {
+                repo,
+                index,
+                description,
+                fields,
+                components,
+                composition,
+            };
+            switch (controller) {
+                case 'section': {
+                    return React.createElement(section_controller_1.default, { key: key, model: model });
+                }
+                default: {
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
+                }
+            }
+        };
     }
     componentDidMount() {
         let { match } = this.props;
@@ -33,23 +52,7 @@ let PageController = class extends base_controller_1.default {
             return response;
         let { components } = model;
         let sections = components.map((component, key) => {
-            let { controller, repo, index, description, fields, components, composition, } = component;
-            let model = {
-                repo,
-                index,
-                description,
-                fields,
-                components,
-                composition,
-            };
-            switch (controller) {
-                case 'section': {
-                    return React.createElement(section_controller_1.default, { key: key, model: model });
-                }
-                default: {
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
-                }
-            }
+            return this.emitComponent(component, key);
         });
         return (React.createElement("div", null, sections));
     }

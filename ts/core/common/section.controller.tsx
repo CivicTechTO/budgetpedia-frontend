@@ -32,6 +32,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
     emitComponent = (component,key) => {
 
+        // common props for all allowed children
         let { 
             controller,
             repo, 
@@ -111,16 +112,18 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
         let response = this.assertModel(model)
         if (response) return response
 
+        let finalmodel:ModelFinalBaseProps = model
+
         let {
             index,
             description, 
             fields, 
             components, 
             composition,
-        } = model
+        } = finalmodel
 
         if (!components) {
-            return <div>{`Section components not fournd for ${index}:${description}`}</div>
+            return <div>{`Section components not found for ${index}:${description}`}</div>
         }
 
         let children = components.map((component:ModelImportedBaseProps, key) => {
