@@ -9,7 +9,6 @@ export interface ModelFinalBaseProps {
     description:string,
     fields?:object,
     components?:ModelImportedBaseProps[],
-    composition?:Array<any>,
 }
 
 // controller is dropped, type and description are optional
@@ -20,7 +19,6 @@ export interface ModelInheritedBaseProps {
     description?:string,
     fields?:object,
     components?:ModelImportedBaseProps[],
-    composition?:Array<any>,
 }
 
 // imported: controller is required

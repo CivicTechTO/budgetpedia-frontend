@@ -11,14 +11,13 @@ let PageController = class extends base_controller_1.default {
             waiting: false,
         };
         this.emitComponent = (component, key) => {
-            let { controller, repo, index, description, fields, components, composition, } = component;
+            let { controller, repo, index, description, fields, components, } = component;
             let model = {
                 repo,
                 index,
                 description,
                 fields,
                 components,
-                composition,
             };
             switch (controller) {
                 case 'section': {

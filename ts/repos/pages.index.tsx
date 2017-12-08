@@ -32,7 +32,7 @@ let pages = {
                 index:'nuggets',
                 description:'sets of introductory nugget lists',
                 fields: {
-                    title:'Quick Stats',
+                    title:'Quick Statistics',
                     description:
 `
 Here are some quick statistics about Toronto and its finances
@@ -98,7 +98,6 @@ Here are some quick statistics about Toronto and its finances
                 ]
             },
         ],
-        // composition: [],
     }
 }
 

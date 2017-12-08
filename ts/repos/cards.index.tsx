@@ -1,7 +1,5 @@
 // cards.index.tsx
 
-let headerimages = require('../../legacy/homepage/html/headerimages.html')
-
 let cards = {
     mainpageheader: {
         type:'card',
@@ -16,7 +14,8 @@ let cards = {
                 index:'htmlview',
                 description:'images at right of header',
                 properties:{
-                    html:headerimages,
+                    htmlindex:'headerimages',
+                    htmlrepo:'html',
                 },
             },
             {
@@ -24,12 +23,11 @@ let cards = {
                 controller:'card',
                 index:'cardtitle',
                 properties: {
-                    headertitle:"Welcome to Budgetpedia",
-                    headersubtitle:"Supporting informed debate about the Toronto budget",
+                    Title:"Welcome to Budgetpedia",
+                    Subtitle:"Supporting informed debate about the Toronto budget",
                 }
             }
         ],
-        composition:[],
     },
     mainpagefooter: {
         controller:'card',
@@ -38,7 +36,6 @@ let cards = {
         description:'footer for the main page',
         fields:{},
         components:[],
-        composition:[],
     }
 }
 

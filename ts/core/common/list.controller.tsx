@@ -6,7 +6,7 @@
 import * as React from 'react';
 
 let ListController = (props) => (
-    <div>lists</div>
+    <div>list</div>
     )
 
 export default ListController

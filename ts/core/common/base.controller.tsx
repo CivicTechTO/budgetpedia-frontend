@@ -45,6 +45,7 @@ class BaseController<P>  extends React.Component<P, any> {
         }
     }
 
+    // return false if not model?
     assertModel = model => {
         if ( !model ) {
             return <div>loading...</div>

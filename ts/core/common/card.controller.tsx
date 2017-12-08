@@ -39,7 +39,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             description, 
             fields, 
             components, 
-            composition,
         } = model
 
         // TODO implement fields display
@@ -60,7 +59,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             //     description, 
             //     fields, 
             //     components, 
-            //     composition, 
             // } = component
 
             // let model = {//:ModelInheritedCardProps = {
@@ -70,7 +68,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             //     description, 
             //     fields, 
             //     components, 
-            //     composition, 
             // }
 
             switch (controller) {

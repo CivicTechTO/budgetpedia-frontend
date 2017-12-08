@@ -42,7 +42,6 @@ let PageController = class extends BaseController<any> {
             description, 
             fields, 
             components, 
-            composition, 
         } = component
 
         let model:ModelInheritedBaseProps = {
@@ -51,7 +50,6 @@ let PageController = class extends BaseController<any> {
             description, 
             fields, 
             components, 
-            composition, 
         }
 
         switch (controller) {
@@ -92,6 +90,7 @@ let PageController = class extends BaseController<any> {
             <div>
 
                 { sections }
+                { /* add secion menu */ }
 
             </div>
         )

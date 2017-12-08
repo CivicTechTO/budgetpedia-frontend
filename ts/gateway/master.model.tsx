@@ -1,16 +1,13 @@
 // master.model.tsx
 
-import pages from '../repos/pages.index'
-import routes from '../gateway/routes.index'
-import repos from '../repos/repos.index'
-import styles from '../styles/core.styles'
+import repos from '../repos/repos.interface'
 
 const getPageIndex = path => {
-    return routes[path]
+    return repos.getDocument('routes',path)
 }
 
 const getPageModel = index => {
-    return pages[index]
+    return repos.getDocument('pages',index)
 }
 
 const getDocument = (repo, index) => {

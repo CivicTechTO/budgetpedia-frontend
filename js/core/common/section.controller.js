@@ -15,7 +15,7 @@ let SectionController = class extends base_controller_1.default {
             waiting: false,
         };
         this.emitComponent = (component, key) => {
-            let { controller, repo, index, type, description, fields, components, composition, } = component;
+            let { controller, repo, index, type, description, fields, components, } = component;
             let model = {
                 repo,
                 index,
@@ -23,7 +23,6 @@ let SectionController = class extends base_controller_1.default {
                 description,
                 fields,
                 components,
-                composition,
             };
             switch (controller) {
                 case 'card': {
@@ -59,14 +58,14 @@ let SectionController = class extends base_controller_1.default {
         if (response)
             return response;
         let finalmodel = model;
-        let { index, description, fields, components, composition, } = finalmodel;
+        let { index, description, fields, components, } = finalmodel;
         if (!components) {
             return React.createElement("div", null, `Section components not found for ${index}:${description}`);
         }
         let children = components.map((component, key) => {
             return this.emitComponent(component, key);
         });
-        return children;
+        return (React.createElement("div", null, children));
     }
 };
 exports.default = SectionController;

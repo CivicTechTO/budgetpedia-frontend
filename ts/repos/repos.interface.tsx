@@ -1,10 +1,13 @@
 // repos.index.tsx
 
-import cards from './data/cards.index'
-
+import cards from './cards.index'
+import pages from './pages.index'
+import routes from './routes.index'
 
 let repositories = {
     cards,
+    pages,
+    routes,
 }
 
 const getDocument = (repo, index) => {

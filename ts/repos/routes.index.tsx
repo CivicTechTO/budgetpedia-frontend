@@ -1,4 +1,4 @@
-// routes.index.tsx
+// routes.repo.tsx
 
 let routes = {
     '/test':'home',

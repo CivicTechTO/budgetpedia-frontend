@@ -41,7 +41,6 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             description, 
             fields, 
             components, 
-            composition, 
         } = component
 
         // lose the controller prop
@@ -52,7 +51,6 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             description, 
             fields, 
             components, 
-            composition, 
         }
 
         switch (controller) {
@@ -119,7 +117,6 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             description, 
             fields, 
             components, 
-            composition,
         } = finalmodel
 
         if (!components) {
@@ -132,7 +129,12 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
         })
 
-        return children
+        return (
+            <div>
+                { /* header fields */ }
+                { children }
+            </div>
+        )
     }
 
 }
