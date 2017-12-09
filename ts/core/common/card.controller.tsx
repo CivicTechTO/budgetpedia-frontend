@@ -11,6 +11,14 @@ import { ModelImportedCardProps, ModelInheritedCardProps, ModelInheritedBaseProp
 
 let CardController = class extends BaseController<{model:ModelInheritedBaseProps}> {
 
+    constructor(props) {
+        super(props)
+        this.getChildren.bind(this)
+        this.assertModel.bind(this)
+        this.setRepoModel.bind(this)
+        this.componentDidUpdate.bind(this)
+    }
+
     componentDidMount() {
 
         console.log('cards controller props',this.props)
@@ -26,8 +34,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
         let { model } = this.state
 
-        let response = this.assertModel(model)
-        if (response) return response
+        if (!model || model.repo) return null
 
         let {
             index,

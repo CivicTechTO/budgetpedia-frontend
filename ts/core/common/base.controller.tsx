@@ -23,6 +23,10 @@ class BaseController<P>  extends React.Component<P, any> {
 
     master = null
 
+    componentDidUpdate() {
+        this.assertModel(this.state.model)
+    }
+
     filterImportedBaseProps = (props:ModelImportedBaseProps) => {
         let { 
             controller,
@@ -62,14 +66,13 @@ class BaseController<P>  extends React.Component<P, any> {
         let { master } = this
         let model = master.getDocument(repo,index)
         if (master.isPromise(model)) {
+            console.log('master is promise')
             if (!this.state.waiting) {
                 this.settleModelPromise(model)
             }
         } else {
-            setTimeout(() => {
-                this.setState({
-                    model,
-                })
+            this.setState({
+                model,
             })
         }
     }
@@ -77,19 +80,20 @@ class BaseController<P>  extends React.Component<P, any> {
     // return false if not model?
     assertModel = model => {
         if ( !model ) {
-            return <div>loading...</div>
+            return false
         }
 
         // test for repo and acquire data where required
         if (model.repo) {
             this.setRepoModel(model.repo,model.index)
-            return <div>waiting...</div>
+            return false
         }
 
-        return null
+        return true
     }
 
-    emitComponent = (component, key) => {} // placeholder unused
+    // placeholder for compiler; unused
+    emitComponent = (component, key) => {}
 
     // bound to instances by instances
     getChildren = (components) => {

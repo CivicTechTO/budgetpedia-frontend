@@ -16,6 +16,9 @@ let PageController = class extends BaseController<any> {
     constructor(props) {
         super(props)
         this.getChildren.bind(this)
+        this.assertModel.bind(this)
+        this.setRepoModel.bind(this)
+        this.componentDidUpdate.bind(this)
     }
 
     componentDidMount() {
@@ -62,20 +65,13 @@ let PageController = class extends BaseController<any> {
 
         let { model }:{ model:ModelInheritedBaseProps } = this.state
 
-        let response = this.assertModel(model)
-        if (response) return response
+        if (!model || model.repo) return null
 
         let { components } = model
 
         // TODO use page properties to populate browser properties - title and description
 
         let sections = this.getChildren(components)
-
-        // let sections = components.map((component:ModelImportedBaseProps, key) => {
-
-        //     return this.emitComponent(component, key)
-
-        // })
 
         return (
             <div>

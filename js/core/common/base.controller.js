@@ -35,27 +35,26 @@ class BaseController extends React.Component {
             let { master } = this;
             let model = master.getDocument(repo, index);
             if (master.isPromise(model)) {
+                console.log('master is promise');
                 if (!this.state.waiting) {
                     this.settleModelPromise(model);
                 }
             }
             else {
-                setTimeout(() => {
-                    this.setState({
-                        model,
-                    });
+                this.setState({
+                    model,
                 });
             }
         };
         this.assertModel = model => {
             if (!model) {
-                return React.createElement("div", null, "loading...");
+                return false;
             }
             if (model.repo) {
                 this.setRepoModel(model.repo, model.index);
-                return React.createElement("div", null, "waiting...");
+                return false;
             }
-            return null;
+            return true;
         };
         this.emitComponent = (component, key) => { };
         this.getChildren = (components) => {
@@ -65,6 +64,9 @@ class BaseController extends React.Component {
             return children;
         };
         this.master = master_model_1.default;
+    }
+    componentDidUpdate() {
+        this.assertModel(this.state.model);
     }
 }
 exports.default = BaseController;

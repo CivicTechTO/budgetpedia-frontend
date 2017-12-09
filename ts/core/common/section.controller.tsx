@@ -20,6 +20,9 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
     constructor(props) {
         super(props)
         this.getChildren.bind(this)
+        this.assertModel.bind(this)
+        this.setRepoModel.bind(this)
+        this.componentDidUpdate.bind(this)
     }
 
     componentDidMount() {
@@ -92,8 +95,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
         let { model } = this.state
 
-        let response = this.assertModel(model)
-        if (response) return response
+        if (!model || model.repo) return null
 
         let finalmodel:ModelFinalBaseProps = model
 

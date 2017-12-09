@@ -3,6 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const base_controller_1 = require("./base.controller");
 let CardController = class extends base_controller_1.default {
+    constructor(props) {
+        super(props);
+        this.getChildren.bind(this);
+        this.assertModel.bind(this);
+        this.setRepoModel.bind(this);
+        this.componentDidUpdate.bind(this);
+    }
     componentDidMount() {
         console.log('cards controller props', this.props);
         let model = this.props.model;
@@ -12,9 +19,8 @@ let CardController = class extends base_controller_1.default {
     }
     render() {
         let { model } = this.state;
-        let response = this.assertModel(model);
-        if (response)
-            return response;
+        if (!model || model.repo)
+            return null;
         let { index, description, properties, components, } = model;
         console.log('cardscontroller model', model);
         if (!components)

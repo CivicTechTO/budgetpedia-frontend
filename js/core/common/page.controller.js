@@ -20,6 +20,9 @@ let PageController = class extends base_controller_1.default {
             }
         };
         this.getChildren.bind(this);
+        this.assertModel.bind(this);
+        this.setRepoModel.bind(this);
+        this.componentDidUpdate.bind(this);
     }
     componentDidMount() {
         let { match } = this.props;
@@ -38,9 +41,8 @@ let PageController = class extends base_controller_1.default {
     }
     render() {
         let { model } = this.state;
-        let response = this.assertModel(model);
-        if (response)
-            return response;
+        if (!model || model.repo)
+            return null;
         let { components } = model;
         let sections = this.getChildren(components);
         return (React.createElement("div", null, sections));
