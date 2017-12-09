@@ -62,11 +62,11 @@ let PageController = class extends BaseController<any> {
 
         if (!model || model.repo) return null
 
-        let { components } = model
+        let { children } = model
 
         // TODO use page properties to populate browser properties - title and description
 
-        let sections = this.getChildren(components)
+        let sections = this.getChildren(children)
 
         return (
             <div>

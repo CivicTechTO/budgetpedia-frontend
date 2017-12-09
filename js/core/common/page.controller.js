@@ -40,8 +40,8 @@ let PageController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model || model.repo)
             return null;
-        let { components } = model;
-        let sections = this.getChildren(components);
+        let { children } = model;
+        let sections = this.getChildren(children);
         return (React.createElement("div", null, sections));
     }
 };

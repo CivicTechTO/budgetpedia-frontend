@@ -27,14 +27,15 @@ class BaseController extends React.Component {
             }
             return props;
         };
-        this.filterImportedBaseProps = (props) => {
-            let { controller, repo, index, description, properties, components, } = props;
+        this.filterImportedBaseProps = (component) => {
+            let { controller, repo, index, description, type, properties, children, } = component;
             let model = {
                 repo,
                 index,
                 description,
+                type,
                 properties,
-                components,
+                children,
             };
             return model;
         };
@@ -74,11 +75,11 @@ class BaseController extends React.Component {
             return true;
         };
         this.emitComponent = (component, key) => { };
-        this.getChildren = (components) => {
-            let children = components.map((component, key) => {
-                return this.emitComponent(component, key);
+        this.getChildren = (children) => {
+            let output = children.map((child, key) => {
+                return this.emitComponent(child, key);
             });
-            return children;
+            return output;
         };
         this.master = master_model_1.default;
     }

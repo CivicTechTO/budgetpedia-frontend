@@ -4,22 +4,22 @@ let pages = {
     home: {
         controller: 'page',
         index: 'home',
+        type: 'page',
         properties: {
-            browser: {
-                title: 'Budgetpedia',
-                description: 'supporting informed debate about the Toronto budget'
-            }
+            title: 'Budgetpedia',
+            description: 'supporting informed debate about the Toronto budget',
         },
-        components: [
+        children: [
             {
                 controller: 'section',
                 index: 'header',
                 description: 'header for main page of website',
+                type: 'section',
                 properties: {
                     title: null,
                     description: null,
                 },
-                components: [
+                children: [
                     {
                         controller: 'card',
                         repo: 'cards',
@@ -31,6 +31,7 @@ let pages = {
                 controller: 'section',
                 index: 'nuggets',
                 description: 'sets of introductory nugget lists',
+                type: 'section',
                 properties: {
                     title: 'Quick Statistics',
                     description: `
@@ -38,7 +39,7 @@ Here are some quick statistics about Toronto and its finances
 `,
                     tag: 'Quick Stats',
                 },
-                components: [
+                children: [
                     {
                         controller: 'list',
                         repo: 'nuggetlists',
@@ -60,10 +61,11 @@ Here are some quick statistics about Toronto and its finances
                 controller: 'section',
                 index: 'twitterfeed',
                 description: 'twitter feed for budgetpedia',
+                type: 'section',
                 properties: {
                     tag: 'Twitter',
                 },
-                components: [
+                children: [
                     {
                         controller: 'media',
                         repo: 'twitterfeeds',
@@ -75,7 +77,8 @@ Here are some quick statistics about Toronto and its finances
                 controller: 'section',
                 index: 'tiles',
                 description: 'navigation tiles to the site main pages',
-                components: [
+                type: 'section',
+                children: [
                     {
                         controller: 'list',
                         index: 'mainpages',
@@ -87,7 +90,8 @@ Here are some quick statistics about Toronto and its finances
                 controller: 'section',
                 index: 'footer',
                 description: 'footer for the main page',
-                components: [
+                type: 'section',
+                children: [
                     {
                         controller: 'card',
                         repo: 'cards',

@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let mainpageheader = {
-    type: 'card',
     controller: 'card',
     index: 'mainpageheader',
     description: 'header for the main page',
@@ -11,10 +10,10 @@ let mainpageheader = {
             index: 'headercardstyle',
         },
     },
+    type: 'card',
     properties: {},
-    components: [
+    children: [
         {
-            type: 'htmlview',
             controller: 'card',
             index: 'htmlview',
             description: 'images at right of header',
@@ -24,12 +23,13 @@ let mainpageheader = {
                     repo: 'html',
                 }
             },
+            type: 'htmlview',
             properties: {},
         },
         {
-            type: 'cardtitle',
             controller: 'card',
             index: 'cardtitle',
+            type: 'cardtitle',
             properties: {
                 title: "Welcome to Budgetpedia",
                 subtitle: "Supporting informed debate about the Toronto budget",
@@ -43,15 +43,15 @@ let mainpageheader = {
             },
         },
         {
-            type: 'cardtext',
             controller: 'card',
             index: 'cardtext',
+            type: 'cardtext',
             properties: {
                 style: {
                     fontSize: '16px',
                 },
             },
-            components: [
+            children: [
                 {
                     controller: 'list',
                     index: 'toplinklist',
@@ -72,7 +72,7 @@ let mainpagefooter = {
     index: 'mainpagefooter',
     description: 'footer for the main page',
     properties: {},
-    components: [],
+    children: [],
 };
 let cards = {
     mainpageheader,

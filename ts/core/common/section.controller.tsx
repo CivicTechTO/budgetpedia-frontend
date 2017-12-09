@@ -96,19 +96,19 @@ let SectionController = class extends BaseController<{model}> {
             index,
             description, 
             properties, 
-            components, 
+            children, 
         } = model
 
-        if (!components) {
-            return <div>{`Section components not found for ${index}:${description}`}</div>
+        if (!children) {
+            return <div>{`Section children not found for ${index}:${description}`}</div>
         }
 
-        let children = this.getChildren(components)
+        let components = this.getChildren(children)
 
         return (
             <div>
                 { /* header properties */ }
-                { children }
+                { components }
             </div>
         )
     }

@@ -3,24 +3,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const base_controller_1 = require("./base.controller");
 const Card_1 = require("material-ui/Card");
-const html_view_1 = require("../../core/common/sub-components/html.view");
+const html_view_1 = require("./sub-components/html.view");
 const list_controller_1 = require("./list.controller");
 let CardController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
-        this.emitLocalComponent = (component, key, childprop = null) => {
-            let { type, index, description, properties, lookups, propComponents, components, } = component;
+        this.emitLocalComponent = (component, key, childrenarg = null) => {
+            let { type, index, description, properties, lookups, propComponents, children, } = component;
             let props = this.updateProperties(properties, lookups, propComponents);
             props.key = key;
-            if (!childprop)
-                childprop = [];
-            let children = [...childprop];
+            if (!childrenarg)
+                childrenarg = [];
+            let childcomponents = [...childrenarg];
             let componentType = null;
             switch (type) {
                 case 'card': {
                     componentType = Card_1.Card;
-                    children = [
-                        ...children,
+                    childcomponents = [
+                        ...childcomponents,
                         React.createElement("div", { key: 'clear', style: { clear: "both" } }),
                     ];
                     break;
@@ -35,14 +35,14 @@ let CardController = class extends base_controller_1.default {
                 }
                 case 'cardtext': {
                     componentType = Card_1.CardText;
-                    children = this.getChildren(component.components);
+                    childcomponents = this.getChildren(component.children);
                     break;
                 }
                 default: {
                     return React.createElement("div", { key: key }, "Pending");
                 }
             }
-            let output = React.createElement(componentType, props, children);
+            let output = React.createElement(componentType, props, childcomponents);
             return output;
         };
         this.emitComponent = (component, key) => {
@@ -73,11 +73,11 @@ let CardController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model || model.repo)
             return null;
-        let { components, index } = model;
-        if (!components)
-            components = [];
-        let children = this.getChildren(components);
-        return this.emitLocalComponent(model, index, children);
+        let { children, index } = model;
+        if (!children)
+            children = [];
+        let components = this.getChildren(children);
+        return this.emitLocalComponent(model, index, components);
     }
 };
 exports.default = CardController;

@@ -27,7 +27,7 @@ let CardController = class extends BaseController<{model}> {
         })
     }
 
-    emitLocalComponent = (component,key,childprop = null) => {
+    emitLocalComponent = (component,key,childrenarg = null) => {
 
         let {
             type,
@@ -36,24 +36,24 @@ let CardController = class extends BaseController<{model}> {
             properties,
             lookups,
             propComponents, 
-            components, 
+            children, 
         } = component
 
         let props = this.updateProperties(properties, lookups, propComponents)
 
         props.key = key
 
-        if (!childprop) childprop = []
+        if (!childrenarg) childrenarg = []
 
-        let children = [...childprop] // work with copy
+        let childcomponents = [...childrenarg] // work with copy
 
         let componentType = null
 
         switch (type) {
             case 'card': {
                 componentType = Card
-                children = [ 
-                    ...children, 
+                childcomponents = [ 
+                    ...childcomponents, 
                     <div key = 'clear' style = {{clear:"both"}}></div>,
                  ]
                 break
@@ -68,7 +68,7 @@ let CardController = class extends BaseController<{model}> {
             }
             case 'cardtext': {
                 componentType = CardText
-                children = this.getChildren(component.components)
+                childcomponents = this.getChildren(component.children)
                 break
             }
             default: {
@@ -76,7 +76,7 @@ let CardController = class extends BaseController<{model}> {
             }
         }
 
-        let output = React.createElement(componentType, props, children)
+        let output = React.createElement(componentType, props, childcomponents)
 
         return output
     }
@@ -116,13 +116,13 @@ let CardController = class extends BaseController<{model}> {
 
         if (!model || model.repo) return null
 
-        let { components, index } = model
+        let { children, index } = model
 
-        if (!components) components = []
+        if (!children) children = []
 
-        let children = this.getChildren(components)
+        let components = this.getChildren(children)
 
-        return this.emitLocalComponent(model,index,children)
+        return this.emitLocalComponent(model,index,components)
 
     }
 }

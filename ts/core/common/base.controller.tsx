@@ -45,23 +45,25 @@ class BaseController<P>  extends React.Component<P, any> {
         return props
     }
 
-    filterImportedBaseProps = (props) => {
+    filterImportedBaseProps = (component) => {
         let { 
             controller,
             repo, 
             index, 
             description, 
+            type,
             properties, 
-            components, 
-        } = props
+            children, 
+        } = component
 
         // lose controller property
         let model = {
             repo, 
             index, 
             description, 
+            type,
             properties, 
-            components, 
+            children, 
         }
 
         return model
@@ -114,15 +116,15 @@ class BaseController<P>  extends React.Component<P, any> {
     emitComponent = (component, key) => {}
 
     // bound to instances by instances
-    getChildren = (components) => {
+    getChildren = (children) => {
 
-        let children = components.map((component, key) => {
+        let output = children.map((child, key) => {
 
-            return this.emitComponent(component,key)
+            return this.emitComponent(child,key)
 
         })
 
-        return children
+        return output
 
     }
 }

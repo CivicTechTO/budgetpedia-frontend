@@ -47,12 +47,12 @@ let SectionController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model || model.repo)
             return null;
-        let { index, description, properties, components, } = model;
-        if (!components) {
-            return React.createElement("div", null, `Section components not found for ${index}:${description}`);
+        let { index, description, properties, children, } = model;
+        if (!children) {
+            return React.createElement("div", null, `Section children not found for ${index}:${description}`);
         }
-        let children = this.getChildren(components);
-        return (React.createElement("div", null, children));
+        let components = this.getChildren(children);
+        return (React.createElement("div", null, components));
     }
 };
 exports.default = SectionController;
