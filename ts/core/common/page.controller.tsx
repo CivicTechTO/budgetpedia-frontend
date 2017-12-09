@@ -15,10 +15,7 @@ let PageController = class extends BaseController<any> {
 
     constructor(props) {
         super(props)
-        this.assertModel.bind(this)
-        this.setRepoModel.bind(this)
-        this.componentDidUpdate.bind(this)
-        this.getChildren.bind(this)
+        this.bindingsToInstance(this)
     }
 
     componentDidMount() {

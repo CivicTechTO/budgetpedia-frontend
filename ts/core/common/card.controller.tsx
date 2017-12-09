@@ -8,6 +8,7 @@ import * as React from 'react';
 import BaseController from './base.controller'
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 import HtmlView from '../../core/common/sub-components/html.view'
+import ListController from './list.controller'
 
 import { ModelImportedCardProps, ModelInheritedCardProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
 
@@ -15,10 +16,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
     constructor(props) {
         super(props)
-        this.assertModel.bind(this)
-        this.setRepoModel.bind(this)
-        this.componentDidUpdate.bind(this)
-        this.getChildren.bind(this)
+        this.bindingsToInstance(this)
     }
 
     componentDidMount() {
@@ -43,7 +41,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
         if (!childprop) childprop = []
 
-        let children = [...childprop]
+        let children = [...childprop] // work with copy
 
         if (lookups) {
             for (let key in lookups) {
@@ -52,7 +50,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             } 
         }
 
-        let props = Object.assign({},properties)
+        let props = Object.assign({},properties) // work with copy
         props.key = key
 
         let componentType = null
@@ -100,7 +98,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
             }
         }
-
     }
 
     render() {

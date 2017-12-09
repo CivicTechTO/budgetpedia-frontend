@@ -23,6 +23,14 @@ class BaseController<P>  extends React.Component<P, any> {
 
     master = null
 
+    bindingsToInstance = (instance) => {
+        this.settleModelPromise.bind(instance)
+        this.assertModel.bind(instance)
+        this.setRepoModel.bind(instance)
+        this.componentDidUpdate.bind(instance)
+        this.getChildren.bind(instance)        
+    }
+
     componentDidUpdate() {
         this.assertModel(this.state.model)
     }

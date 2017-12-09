@@ -19,10 +19,7 @@ let PageController = class extends base_controller_1.default {
                 }
             }
         };
-        this.assertModel.bind(this);
-        this.setRepoModel.bind(this);
-        this.componentDidUpdate.bind(this);
-        this.getChildren.bind(this);
+        this.bindingsToInstance(this);
     }
     componentDidMount() {
         let { match } = this.props;

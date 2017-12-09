@@ -10,6 +10,13 @@ class BaseController extends React.Component {
             waiting: false,
         };
         this.master = null;
+        this.bindingsToInstance = (instance) => {
+            this.settleModelPromise.bind(instance);
+            this.assertModel.bind(instance);
+            this.setRepoModel.bind(instance);
+            this.componentDidUpdate.bind(instance);
+            this.getChildren.bind(instance);
+        };
         this.filterImportedBaseProps = (props) => {
             let { controller, repo, index, description, properties, components, } = props;
             let model = {
