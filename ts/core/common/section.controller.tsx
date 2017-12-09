@@ -7,6 +7,7 @@ import * as React from 'react';
 
 import BaseController from './base.controller'
 
+// legal components
 import ListController from './list.controller'
 import CardController from './card.controller'
 import SheetController from './sheet.controller'
@@ -88,7 +89,6 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
             }
         }
-
     }
 
     render() {

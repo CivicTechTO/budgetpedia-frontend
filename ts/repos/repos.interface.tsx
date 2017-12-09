@@ -5,6 +5,7 @@ import pages from './pages.index'
 import routes from './routes.index'
 import styles from './styles.index'
 import html from './data/html.index'
+import linklists from './linklists.index'
 
 let repositories = {
     cards,
