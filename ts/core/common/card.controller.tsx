@@ -8,7 +8,7 @@ import * as React from 'react';
 import BaseController from './base.controller'
 
 import { Card, CardTitle, CardText } from 'material-ui/Card'
-import HtmlView from '../../core/common/sub-components/html.view'
+import HtmlView from './sub-components/html.view'
 import ListController from './list.controller'
 
 let CardController = class extends BaseController<{model}> {

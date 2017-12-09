@@ -5,6 +5,8 @@
 
 import * as React from 'react';
 
+import LinkListView from './sub-components/linklist.view'
+
 let ListController = (props) => (
     <div>list</div>
     )
