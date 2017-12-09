@@ -33,11 +33,11 @@ let PageController = class extends BaseController<any> {
 
     emitComponent = (component,key) => {
 
-        let { controller } = component
+        let { type } = component
 
         let model = this.filterImportedBaseProps(component)
 
-        switch (controller) {
+        switch (type) {
             case 'section': {
 
                 return <SectionController
@@ -50,7 +50,7 @@ let PageController = class extends BaseController<any> {
 
                 let { index, description } = model
 
-                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
+                return <div key = {'default' + key} >{`${type} (${index}:${description}) not found`}</div>
 
             }
         }

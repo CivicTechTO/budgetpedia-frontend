@@ -7,15 +7,15 @@ let PageController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
         this.emitComponent = (component, key) => {
-            let { controller } = component;
+            let { type } = component;
             let model = this.filterImportedBaseProps(component);
-            switch (controller) {
+            switch (type) {
                 case 'section': {
                     return React.createElement(section_controller_1.default, { key: key, model: model });
                 }
                 default: {
                     let { index, description } = model;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
+                    return React.createElement("div", { key: 'default' + key }, `${type} (${index}:${description}) not found`);
                 }
             }
         };
