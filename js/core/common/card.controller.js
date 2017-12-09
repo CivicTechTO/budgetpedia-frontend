@@ -8,24 +8,20 @@ let CardController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
         this.emitLocalComponent = (component, key, childprop = null) => {
-            let { type, index, description, properties, lookups, components, } = component;
+            let { type, index, description, properties, lookups, propComponents, components, } = component;
+            let props = this.updateProperties(properties, lookups, propComponents);
+            props.key = key;
             if (!childprop)
                 childprop = [];
             let children = [...childprop];
-            if (lookups) {
-                for (let key in lookups) {
-                    let { repo, index } = lookups[key];
-                    properties[key] = this.master.getDocument(repo, index);
-                }
-            }
-            let props = Object.assign({}, properties);
-            props.key = key;
             let componentType = null;
             switch (type) {
                 case 'card': {
                     componentType = Card_1.Card;
-                    children = [...children,
-                        React.createElement("div", { key: 'clear', style: { clear: "both" } })];
+                    children = [
+                        ...children,
+                        React.createElement("div", { key: 'clear', style: { clear: "both" } }),
+                    ];
                     break;
                 }
                 case 'htmlview': {
@@ -40,8 +36,8 @@ let CardController = class extends base_controller_1.default {
                     return React.createElement("div", { key: key }, "Pending");
                 }
             }
-            let result = React.createElement(componentType, props, children);
-            return result;
+            let output = React.createElement(componentType, props, children);
+            return output;
         };
         this.emitComponent = (component, key) => {
             let { controller } = component;
@@ -55,7 +51,7 @@ let CardController = class extends base_controller_1.default {
                 }
             }
         };
-        this.bindingsToInstance(this);
+        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let model = this.props.model;

@@ -10,12 +10,22 @@ class BaseController extends React.Component {
             waiting: false,
         };
         this.master = null;
-        this.bindingsToInstance = (instance) => {
+        this.baseBindingsToInstance = (instance) => {
             this.settleModelPromise.bind(instance);
             this.assertModel.bind(instance);
             this.setRepoModel.bind(instance);
             this.componentDidUpdate.bind(instance);
             this.getChildren.bind(instance);
+        };
+        this.updateProperties = (properties, lookups, propComponents) => {
+            let props = Object.assign({}, properties);
+            if (lookups) {
+                for (let key in lookups) {
+                    let { repo, index } = lookups[key];
+                    props[key] = this.master.getDocument(repo, index);
+                }
+            }
+            return props;
         };
         this.filterImportedBaseProps = (props) => {
             let { controller, repo, index, description, properties, components, } = props;
@@ -42,7 +52,7 @@ class BaseController extends React.Component {
             let { master } = this;
             let model = master.getDocument(repo, index);
             if (master.isPromise(model)) {
-                console.log('master is promise');
+                console.log('model is a promise', model);
                 if (!this.state.waiting) {
                     this.settleModelPromise(model);
                 }

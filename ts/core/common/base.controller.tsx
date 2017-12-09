@@ -7,8 +7,6 @@ import * as React from 'react'
 
 import master from '../../gateway/master.model'
 
-import { ModelImportedBaseProps, ModelInheritedBaseProps } from './common.interfaces'
-
 class BaseController<P>  extends React.Component<P, any> {
 
     constructor(props) {
@@ -23,7 +21,7 @@ class BaseController<P>  extends React.Component<P, any> {
 
     master = null
 
-    bindingsToInstance = (instance) => {
+    baseBindingsToInstance = (instance) => {
         this.settleModelPromise.bind(instance)
         this.assertModel.bind(instance)
         this.setRepoModel.bind(instance)
@@ -35,7 +33,19 @@ class BaseController<P>  extends React.Component<P, any> {
         this.assertModel(this.state.model)
     }
 
-    filterImportedBaseProps = (props:ModelImportedBaseProps) => {
+    // TODO: implement import of propComponents
+    updateProperties = (properties, lookups, propComponents) => {
+        let props = Object.assign({},properties) // work with copy
+        if (lookups) {
+            for (let key in lookups) {
+                let {repo, index} = lookups[key]
+                props[key] = this.master.getDocument(repo, index)
+            } 
+        }
+        return props
+    }
+
+    filterImportedBaseProps = (props) => {
         let { 
             controller,
             repo, 
@@ -46,7 +56,7 @@ class BaseController<P>  extends React.Component<P, any> {
         } = props
 
         // lose controller property
-        let model:ModelInheritedBaseProps = {
+        let model = {
             repo, 
             index, 
             description, 
@@ -74,7 +84,7 @@ class BaseController<P>  extends React.Component<P, any> {
         let { master } = this
         let model = master.getDocument(repo,index)
         if (master.isPromise(model)) {
-            console.log('master is promise')
+            console.log('model is a promise', model)
             if (!this.state.waiting) {
                 this.settleModelPromise(model)
             }
@@ -85,7 +95,7 @@ class BaseController<P>  extends React.Component<P, any> {
         }
     }
 
-    // return false if not model?
+    // return false if not model
     assertModel = model => {
         if ( !model ) {
             return false
@@ -106,7 +116,7 @@ class BaseController<P>  extends React.Component<P, any> {
     // bound to instances by instances
     getChildren = (components) => {
 
-        let children = components.map((component:ModelImportedBaseProps, key) => {
+        let children = components.map((component, key) => {
 
             return this.emitComponent(component,key)
 

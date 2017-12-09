@@ -14,13 +14,11 @@ import SheetController from './sheet.controller'
 import MediaController from './media.controller'
 import CustomController from './custom.controller'
 
-import { ModelImportedBaseProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
-
-let SectionController = class extends BaseController<{model:ModelInheritedBaseProps}> {
+let SectionController = class extends BaseController<{model}> {
 
     constructor(props) {
         super(props)
-        this.bindingsToInstance(this)
+        this.baseBindingsToInstance(this)
     }
 
     componentDidMount() {
@@ -80,9 +78,9 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
             }
             default: {
 
-                let { description } = model
+                let { description, index } = model
 
-                return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
+                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
 
             }
         }
@@ -94,7 +92,7 @@ let SectionController = class extends BaseController<{model:ModelInheritedBasePr
 
         if (!model || model.repo) return null
 
-        let finalmodel:ModelFinalBaseProps = model
+        let finalmodel = model
 
         let {
             index,

@@ -30,12 +30,12 @@ let SectionController = class extends base_controller_1.default {
                     return React.createElement(custom_controller_1.default, { key: key, model: model });
                 }
                 default: {
-                    let { description } = model;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
+                    let { description, index } = model;
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
                 }
             }
         };
-        this.bindingsToInstance(this);
+        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let { model } = this.props;

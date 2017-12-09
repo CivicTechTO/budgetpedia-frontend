@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const repos_interface_1 = require("../repos/repos.interface");
+const model_interface_1 = require("../model/model.interface");
 const getPageIndex = path => {
-    return repos_interface_1.default.getDocument('routes', path);
+    return model_interface_1.default.getDocument('routes', path);
 };
 const getPageModel = index => {
-    return repos_interface_1.default.getDocument('pages', index);
+    return model_interface_1.default.getDocument('pages', index);
 };
 const getDocument = (repo, index) => {
-    return repos_interface_1.default.getDocument(repo, index);
+    return model_interface_1.default.getDocument(repo, index);
 };
 const getData = (repo, index) => {
-    return repos_interface_1.default.getDocument(repo, index);
+    return model_interface_1.default.getDocument(repo, index);
 };
 const isPromise = object => {
     return !!object.then;

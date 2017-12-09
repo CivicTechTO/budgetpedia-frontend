@@ -19,7 +19,7 @@ let PageController = class extends base_controller_1.default {
                 }
             }
         };
-        this.bindingsToInstance(this);
+        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let { match } = this.props;

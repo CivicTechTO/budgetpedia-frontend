@@ -9,13 +9,11 @@ import BaseController from './base.controller'
 
 import SectionController from './section.controller'
 
-import { ModelImportedBaseProps, ModelInheritedBaseProps } from './common.interfaces'
-
 let PageController = class extends BaseController<any> {
 
     constructor(props) {
         super(props)
-        this.bindingsToInstance(this)
+        this.baseBindingsToInstance(this)
     }
 
     componentDidMount() {
@@ -23,7 +21,7 @@ let PageController = class extends BaseController<any> {
         let { path } = match
         let { master } = this
         let index = master.getPageIndex(path)
-        let model:ModelImportedBaseProps = master.getPageModel(index)
+        let model = master.getPageModel(index)
         if (master.isPromise(model)) {
             this.settleModelPromise(model)
         } else {
@@ -60,7 +58,7 @@ let PageController = class extends BaseController<any> {
 
     render() {
 
-        let { model }:{ model:ModelInheritedBaseProps } = this.state
+        let { model } = this.state
 
         if (!model || model.repo) return null
 
@@ -74,7 +72,7 @@ let PageController = class extends BaseController<any> {
             <div>
 
                 { sections }
-                { /* add section menu */ }
+                { /* TODO add section menu */ }
 
             </div>
         )

@@ -10,18 +10,16 @@ import { Card, CardTitle, CardText } from 'material-ui/Card'
 import HtmlView from '../../core/common/sub-components/html.view'
 import ListController from './list.controller'
 
-import { ModelImportedCardProps, ModelInheritedCardProps, ModelInheritedBaseProps, ModelFinalBaseProps } from './common.interfaces'
-
-let CardController = class extends BaseController<{model:ModelInheritedBaseProps}> {
+let CardController = class extends BaseController<{model}> {
 
     constructor(props) {
         super(props)
-        this.bindingsToInstance(this)
+        this.baseBindingsToInstance(this)
     }
 
     componentDidMount() {
 
-        let model:ModelInheritedBaseProps = this.props.model
+        let model = this.props.model
 
         this.setState({
             model,
@@ -35,31 +33,28 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             index,
             description, 
             properties,
-            lookups, 
+            lookups,
+            propComponents, 
             components, 
         } = component
+
+        let props = this.updateProperties(properties, lookups, propComponents)
+
+        props.key = key
 
         if (!childprop) childprop = []
 
         let children = [...childprop] // work with copy
-
-        if (lookups) {
-            for (let key in lookups) {
-                let {repo, index} = lookups[key]
-                properties[key] = this.master.getDocument(repo, index)
-            } 
-        }
-
-        let props = Object.assign({},properties) // work with copy
-        props.key = key
 
         let componentType = null
 
         switch (type) {
             case 'card': {
                 componentType = Card
-                children = [ ...children, 
-                <div key = 'clear' style = {{clear:"both"}}></div>]
+                children = [ 
+                    ...children, 
+                    <div key = 'clear' style = {{clear:"both"}}></div>,
+                 ]
                 break
             }
             case 'htmlview': {
@@ -75,9 +70,9 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             }
         }
 
-        let result = React.createElement(componentType, props, children)
+        let output = React.createElement(componentType, props, children)
 
-        return result
+        return output
     }
 
     emitComponent = (component, key) => {

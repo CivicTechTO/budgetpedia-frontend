@@ -17,7 +17,7 @@ import LinkList from '../../core/common/sub-components/linklist.view'
 import NuggetList from '../../core/common/sub-components/nuggetlist.view'
 
 import model from './home.model'
-import styles from '../../repos/styles.index'
+import styles from '../../model/styles.index'
 
 import master from '../../gateway/master.model'
 

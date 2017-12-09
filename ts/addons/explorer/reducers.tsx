@@ -5,7 +5,7 @@
     TODO: change chartSelection from yearScope to root cell
 */
 import { combineReducers } from 'redux'
-import masterModel from "../../repos/budgetpedia.model"
+import masterModel from "../../model/budgetpedia.model"
 import { types as actiontypes} from './actions'
 import { BranchSettings } from './modules/interfaces'
 import { TimeScope } from './constants'

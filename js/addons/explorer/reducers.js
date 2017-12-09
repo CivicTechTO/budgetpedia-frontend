@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const redux_1 = require("redux");
-const budgetpedia_model_1 = require("../../repos/budgetpedia.model");
+const budgetpedia_model_1 = require("../../model/budgetpedia.model");
 const actions_1 = require("./actions");
 const constants_1 = require("./constants");
 let generationcounter = 0;

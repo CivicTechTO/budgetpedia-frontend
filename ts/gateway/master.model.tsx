@@ -1,6 +1,6 @@
 // master.model.tsx
 
-import repos from '../repos/repos.interface'
+import repos from '../model/model.interface'
 
 const getPageIndex = path => {
     return repos.getDocument('routes',path)
