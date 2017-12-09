@@ -7,7 +7,7 @@ import * as React from 'react';
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
-import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
+import { Card, CardTitle, CardText } from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 

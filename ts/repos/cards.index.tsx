@@ -5,17 +5,27 @@ let mainpageheader = {
     controller:'card',
     index:'mainpageheader',
     description:'header for the main page',
-    properties:{},
+    lookups:{
+        style: {
+            repo:'styles',
+            index:'headercardstyle',
+        },
+    },
+    properties:{
+    },
     components:[
         {
             type:'htmlview',
             controller:'card',
             index:'htmlview',
             description:'images at right of header',
-            properties:{
-                htmlindex:'headerimages',
-                htmlrepo:'html',
+            lookups: {
+                html: {
+                    index:'headerimages',
+                    repo:'html',
+                }
             },
+            properties:{},
         },
         {
             type:'cardtitle',
@@ -23,7 +33,7 @@ let mainpageheader = {
             index:'cardtitle',
             properties: {
                 title:"Welcome to Budgetpedia",
-                tubtitle:"Supporting informed debate about the Toronto budget",
+                subtitle:"Supporting informed debate about the Toronto budget",
                 style:{
                     padding:"16px 16px 0 16px",
                 },
