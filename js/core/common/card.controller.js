@@ -5,10 +5,10 @@ const base_controller_1 = require("./base.controller");
 let CardController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
-        this.getChildren.bind(this);
         this.assertModel.bind(this);
         this.setRepoModel.bind(this);
         this.componentDidUpdate.bind(this);
+        this.getChildren.bind(this);
     }
     componentDidMount() {
         console.log('cards controller props', this.props);

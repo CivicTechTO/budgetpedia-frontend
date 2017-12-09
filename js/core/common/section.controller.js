@@ -35,10 +35,10 @@ let SectionController = class extends base_controller_1.default {
                 }
             }
         };
-        this.getChildren.bind(this);
         this.assertModel.bind(this);
         this.setRepoModel.bind(this);
         this.componentDidUpdate.bind(this);
+        this.getChildren.bind(this);
     }
     componentDidMount() {
         let { model } = this.props;
