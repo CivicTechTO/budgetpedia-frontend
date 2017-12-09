@@ -12,7 +12,6 @@ let CardController = class extends base_controller_1.default {
             if (!childprop)
                 childprop = [];
             let children = [...childprop];
-            console.log('local component', component);
             if (lookups) {
                 for (let key in lookups) {
                     let { repo, index } = lookups[key];
@@ -26,7 +25,7 @@ let CardController = class extends base_controller_1.default {
                 case 'card': {
                     componentType = Card_1.Card;
                     children = [...children,
-                        React.createElement("div", { key: 'closer', style: { clear: "both" } })];
+                        React.createElement("div", { key: 'clear', style: { clear: "both" } })];
                     break;
                 }
                 case 'htmlview': {
@@ -62,7 +61,6 @@ let CardController = class extends base_controller_1.default {
         this.getChildren.bind(this);
     }
     componentDidMount() {
-        console.log('cards controller props', this.props);
         let model = this.props.model;
         this.setState({
             model,
@@ -73,7 +71,6 @@ let CardController = class extends base_controller_1.default {
         if (!model || model.repo)
             return null;
         let { components, index } = model;
-        console.log('cardscontroller model', model);
         if (!components)
             components = [];
         let children = this.getChildren(components);

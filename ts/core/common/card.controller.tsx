@@ -23,8 +23,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
     componentDidMount() {
 
-        console.log('cards controller props',this.props)
-
         let model:ModelInheritedBaseProps = this.props.model
 
         this.setState({
@@ -47,8 +45,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
 
         let children = [...childprop]
 
-        console.log('local component',component)
-
         if (lookups) {
             for (let key in lookups) {
                 let {repo, index} = lookups[key]
@@ -65,7 +61,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             case 'card': {
                 componentType = Card
                 children = [ ...children, 
-                <div key = 'closer' style = {{clear:"both"}}></div>]
+                <div key = 'clear' style = {{clear:"both"}}></div>]
                 break
             }
             case 'htmlview': {
@@ -114,8 +110,6 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
         if (!model || model.repo) return null
 
         let { components, index } = model
-
-        console.log('cardscontroller model',model)
 
         if (!components) components = []
 
