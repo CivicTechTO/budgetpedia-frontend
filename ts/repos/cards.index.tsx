@@ -22,10 +22,39 @@ let mainpageheader = {
             controller:'card',
             index:'cardtitle',
             properties: {
-                Title:"Welcome to Budgetpedia",
-                Subtitle:"Supporting informed debate about the Toronto budget",
-            }
-        }
+                title:"Welcome to Budgetpedia",
+                tubtitle:"Supporting informed debate about the Toronto budget",
+                style:{
+                    padding:"16px 16px 0 16px",
+                },
+                titleStyle: {
+                    fontSize:'20px',
+                    fontWeight:'bold'
+                },
+            },
+        },
+        {
+            type:'cardtext',
+            controller:'card',
+            index:'cardtext',
+            properties: {
+                style: {
+                    fontSize:'16px',
+                },
+            },
+            components:[
+                {
+                    controller:'list',
+                    index:'toplinklist',
+                    repo:'linklists',
+                },
+                {
+                    controller:'list',
+                    index:'secondlinklist',
+                    repo:'linklists',
+                },
+            ],
+        },
     ],
 }
 
