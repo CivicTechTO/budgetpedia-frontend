@@ -32,7 +32,7 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
         })
     }
 
-    emitLocalComponent = (component,key,children = null) => {
+    emitLocalComponent = (component,key,childprop = null) => {
 
         let {
             type,
@@ -43,9 +43,11 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             components, 
         } = component
 
-        console.log('local component',component)
+        if (!childprop) childprop = []
 
-        let result = <div key = {key}>Hello</div>
+        let children = [...childprop]
+
+        console.log('local component',component)
 
         if (lookups) {
             for (let key in lookups) {
@@ -54,27 +56,32 @@ let CardController = class extends BaseController<{model:ModelInheritedBaseProps
             } 
         }
 
+        let props = Object.assign({},properties)
+        props.key = key
+
+        let componentType = null
+
         switch (type) {
             case 'card': {
-                return <Card key = {key} style = {properties.style}>
-                    { children }
-                    <div style = {{clear:"both"}}></div>                    
-                </Card>
+                componentType = Card
+                children = [ ...children, 
+                <div key = 'closer' style = {{clear:"both"}}></div>]
+                break
             }
             case 'htmlview': {
-                return <HtmlView key = {key} html = {properties.html} />
+                componentType = HtmlView
+                break
             }
             case 'cardtitle': {
-                let { title, subtitle, style, titleStyle } = properties
-                return <CardTitle 
-                    key = {key}
-                    title = {title} 
-                    subtitle = {subtitle}
-                    style = {style}
-                    titleStyle = { titleStyle }
-                />
+                componentType = CardTitle
+                break
+            }
+            default: {
+                return <div key = {key}>Pending</div>
             }
         }
+
+        let result = React.createElement(componentType, props, children)
 
         return result
     }

@@ -7,30 +7,41 @@ const html_view_1 = require("../../core/common/sub-components/html.view");
 let CardController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
-        this.emitLocalComponent = (component, key, children = null) => {
+        this.emitLocalComponent = (component, key, childprop = null) => {
             let { type, index, description, properties, lookups, components, } = component;
+            if (!childprop)
+                childprop = [];
+            let children = [...childprop];
             console.log('local component', component);
-            let result = React.createElement("div", { key: key }, "Hello");
             if (lookups) {
                 for (let key in lookups) {
                     let { repo, index } = lookups[key];
                     properties[key] = this.master.getDocument(repo, index);
                 }
             }
+            let props = Object.assign({}, properties);
+            props.key = key;
+            let componentType = null;
             switch (type) {
                 case 'card': {
-                    return React.createElement(Card_1.Card, { key: key, style: properties.style },
-                        children,
-                        React.createElement("div", { style: { clear: "both" } }));
+                    componentType = Card_1.Card;
+                    children = [...children,
+                        React.createElement("div", { key: 'closer', style: { clear: "both" } })];
+                    break;
                 }
                 case 'htmlview': {
-                    return React.createElement(html_view_1.default, { key: key, html: properties.html });
+                    componentType = html_view_1.default;
+                    break;
                 }
                 case 'cardtitle': {
-                    let { title, subtitle, style, titleStyle } = properties;
-                    return React.createElement(Card_1.CardTitle, { key: key, title: title, subtitle: subtitle, style: style, titleStyle: titleStyle });
+                    componentType = Card_1.CardTitle;
+                    break;
+                }
+                default: {
+                    return React.createElement("div", { key: key }, "Pending");
                 }
             }
+            let result = React.createElement(componentType, props, children);
             return result;
         };
         this.emitComponent = (component, key) => {
