@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 let toplinklist = {
     type: 'linklist',
     properties: {
+        upperDivider: true,
         header: 'Browse our site:',
         items: [
             {
@@ -38,6 +39,7 @@ let toplinklist = {
 let secondlinklist = {
     type: 'linklist',
     properties: {
+        upperDivider: true,
         header: 'Follow us:',
         items: [
             {
