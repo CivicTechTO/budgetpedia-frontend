@@ -1,21 +1,21 @@
 // master.model.tsx
 
-import repos from '../model/model.interface'
+import model from '../model/model.interface'
 
 const getPageIndex = path => {
-    return repos.getDocument('routes',path)
+    return model.getDocument('routes',path)
 }
 
 const getPageModel = index => {
-    return repos.getDocument('pages',index)
+    return model.getDocument('pages',index)
 }
 
 const getDocument = (repo, index) => {
-    return repos.getDocument(repo,index)
+    return model.getDocument(repo,index)
 }
 
 const getData = (repo, index) => {
-    return repos.getDocument(repo,index)
+    return model.getDocument(repo,index)
 }
 
 const isPromise = object => {

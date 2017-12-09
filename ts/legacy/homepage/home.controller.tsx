@@ -21,7 +21,7 @@ import styles from '../../model/styles.index'
 
 import master from '../../gateway/master.model'
 
-let headerimages = master.getData('html','headerimages') // require('../../repos/data/html/headerimages.html')
+let headerimages = master.getData('html','headerimages')
 
 let Home = class extends React.Component<any, any> {
 

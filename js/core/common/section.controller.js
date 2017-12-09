@@ -47,8 +47,7 @@ let SectionController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model || model.repo)
             return null;
-        let finalmodel = model;
-        let { index, description, properties, components, } = finalmodel;
+        let { index, description, properties, components, } = model;
         if (!components) {
             return React.createElement("div", null, `Section components not found for ${index}:${description}`);
         }

@@ -13,15 +13,17 @@ let repositories = {
     routes,
     styles,
     html,
+    linklists,
 }
 
 const getDocument = (repo, index) => {
     console.log('requested document(repo, index)',repo, index)
-    return repositories[repo][index] || {}
+    if (!repositories[repo] || !repositories[repo][index]) return {}
+    return repositories[repo][index]
 }
 
-let repos = {
+let model = {
     getDocument,
 }
 
-export default repos
+export default model

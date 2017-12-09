@@ -4,6 +4,7 @@ const React = require("react");
 const base_controller_1 = require("./base.controller");
 const Card_1 = require("material-ui/Card");
 const html_view_1 = require("../../core/common/sub-components/html.view");
+const list_controller_1 = require("./list.controller");
 let CardController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
@@ -32,6 +33,11 @@ let CardController = class extends base_controller_1.default {
                     componentType = Card_1.CardTitle;
                     break;
                 }
+                case 'cardtext': {
+                    componentType = Card_1.CardText;
+                    children = this.getChildren(component.components);
+                    break;
+                }
                 default: {
                     return React.createElement("div", { key: key }, "Pending");
                 }
@@ -44,7 +50,11 @@ let CardController = class extends base_controller_1.default {
             if (controller == 'card') {
                 return this.emitLocalComponent(component, key);
             }
+            let model = this.filterImportedBaseProps(component);
             switch (controller) {
+                case 'list': {
+                    return React.createElement(list_controller_1.default, { key: key, model: model });
+                }
                 default: {
                     let { description } = component;
                     return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);

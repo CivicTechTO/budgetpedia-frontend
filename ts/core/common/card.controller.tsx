@@ -6,6 +6,7 @@
 import * as React from 'react';
 
 import BaseController from './base.controller'
+
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 import HtmlView from '../../core/common/sub-components/html.view'
 import ListController from './list.controller'
@@ -65,6 +66,11 @@ let CardController = class extends BaseController<{model}> {
                 componentType = CardTitle
                 break
             }
+            case 'cardtext': {
+                componentType = CardText
+                children = this.getChildren(component.components)
+                break
+            }
             default: {
                 return <div key = {key}>Pending</div>
             }
@@ -83,7 +89,16 @@ let CardController = class extends BaseController<{model}> {
             return this.emitLocalComponent(component,key)
         }
 
+        let model = this.filterImportedBaseProps(component)
+
         switch (controller) {
+
+            case 'list': {
+                return <ListController
+                    key = { key }
+                    model = { model }
+                />
+            }
 
             default: {
 

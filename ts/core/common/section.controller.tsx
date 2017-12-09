@@ -92,14 +92,12 @@ let SectionController = class extends BaseController<{model}> {
 
         if (!model || model.repo) return null
 
-        let finalmodel = model
-
         let {
             index,
             description, 
             properties, 
             components, 
-        } = finalmodel
+        } = model
 
         if (!components) {
             return <div>{`Section components not found for ${index}:${description}`}</div>
