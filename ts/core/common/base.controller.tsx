@@ -16,6 +16,8 @@ class BaseController<P>  extends React.Component<P, any> {
 
     state = {
         model:null,
+        children:null,
+        component:null,
         waiting:false,
     }
 
@@ -30,7 +32,7 @@ class BaseController<P>  extends React.Component<P, any> {
     }
 
     componentDidUpdate() {
-        this.assertModel(this.state.model)
+        // this.assertModel(this.state.model)
     }
 
     // TODO: implement import of propComponents
@@ -80,6 +82,16 @@ class BaseController<P>  extends React.Component<P, any> {
                 })
             })
         )
+    }
+
+    updateModel = (model) => {
+        if (model.repo) {
+            model = this.master.getDocument(model.repo,model.index)
+        }
+        let { properties, lookups, propComponents } = model
+        let props = this.updateProperties(properties, lookups, propComponents)
+        model.properties = props
+        return model        
     }
 
     setRepoModel = (repo,index) => {

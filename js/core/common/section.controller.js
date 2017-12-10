@@ -12,7 +12,7 @@ let SectionController = class extends base_controller_1.default {
         super(props);
         this.emitComponent = (component, key) => {
             let { controller } = component;
-            let model = this.filterImportedBaseProps(component);
+            let model = component;
             switch (controller) {
                 case 'card': {
                     return React.createElement(card_controller_1.default, { key: key, model: model });
@@ -39,20 +39,18 @@ let SectionController = class extends base_controller_1.default {
     }
     componentDidMount() {
         let { model } = this.props;
+        model = this.updateModel(model);
         this.setState({
             model,
         });
     }
     render() {
         let { model } = this.state;
-        if (!model || model.repo)
+        if (!model)
             return null;
-        let { index, description, properties, children, } = model;
-        if (!children) {
-            return React.createElement("div", null, `Section children not found for ${index}:${description}`);
-        }
-        let components = this.getChildren(children);
-        return (React.createElement("div", null, components));
+        let children = this.getChildren(model.children);
+        let { index, description, properties, } = model;
+        return (React.createElement("div", null, children));
     }
 };
 exports.default = SectionController;

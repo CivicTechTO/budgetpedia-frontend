@@ -8,7 +8,7 @@ let PageController = class extends base_controller_1.default {
         super(props);
         this.emitComponent = (component, key) => {
             let { type } = component;
-            let model = this.filterImportedBaseProps(component);
+            let model = component;
             switch (type) {
                 case 'section': {
                     return React.createElement(section_controller_1.default, { key: key, model: model });
@@ -27,22 +27,17 @@ let PageController = class extends base_controller_1.default {
         let { master } = this;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
-        if (master.isPromise(model)) {
-            this.settleModelPromise(model);
-        }
-        else {
-            this.setState({
-                model,
-            });
-        }
+        model = this.updateModel(model);
+        this.setState({
+            model,
+        });
     }
     render() {
         let { model } = this.state;
-        if (!model || model.repo)
+        if (!model)
             return null;
-        let { children } = model;
-        let sections = this.getChildren(children);
-        return (React.createElement("div", null, sections));
+        let children = this.getChildren(model.children);
+        return (React.createElement("div", null, children));
     }
 };
 exports.default = PageController;

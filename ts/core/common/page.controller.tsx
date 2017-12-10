@@ -22,20 +22,18 @@ let PageController = class extends BaseController<any> {
         let { master } = this
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
-        if (master.isPromise(model)) {
-            this.settleModelPromise(model)
-        } else {
-            this.setState({
-                model,
-            })
-        }
+        model = this.updateModel(model)
+        this.setState({
+            model,
+        })
     }
 
     emitComponent = (component,key) => {
 
         let { type } = component
 
-        let model = this.filterImportedBaseProps(component)
+        // let model = this.filterImportedBaseProps(component)
+        let model = component
 
         switch (type) {
             case 'section': {
@@ -60,18 +58,14 @@ let PageController = class extends BaseController<any> {
 
         let { model } = this.state
 
-        if (!model || model.repo) return null
+        if (!model) return null
 
-        let { children } = model
-
-        // TODO use page properties to populate browser properties - title and description
-
-        let sections = this.getChildren(children)
+        let children = this.getChildren(model.children)
 
         return (
             <div>
 
-                { sections }
+                { children }
                 { /* TODO add section menu */ }
 
             </div>

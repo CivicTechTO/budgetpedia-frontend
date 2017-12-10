@@ -7,6 +7,8 @@ class BaseController extends React.Component {
         super(props);
         this.state = {
             model: null,
+            children: null,
+            component: null,
             waiting: false,
         };
         this.master = null;
@@ -49,6 +51,15 @@ class BaseController extends React.Component {
                 });
             }));
         };
+        this.updateModel = (model) => {
+            if (model.repo) {
+                model = this.master.getDocument(model.repo, model.index);
+            }
+            let { properties, lookups, propComponents } = model;
+            let props = this.updateProperties(properties, lookups, propComponents);
+            model.properties = props;
+            return model;
+        };
         this.setRepoModel = (repo, index) => {
             let { master } = this;
             let model = master.getDocument(repo, index);
@@ -86,7 +97,6 @@ class BaseController extends React.Component {
         this.master = master_model_1.default;
     }
     componentDidUpdate() {
-        this.assertModel(this.state.model);
     }
 }
 exports.default = BaseController;

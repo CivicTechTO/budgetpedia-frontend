@@ -20,11 +20,20 @@ let CardController = class extends BaseController<{model}> {
 
     componentDidMount() {
 
-        let model = this.props.model
-
-        this.setState({
-            model,
-        })
+        let { model } = this.props
+        if (this.master.isPromise(model)) {
+            model.then((model) => {
+                model = this.updateModel(model)
+                this.setState({
+                    model,
+                })
+            })
+        } else {
+            model = this.updateModel(model)
+            this.setState({
+                model,
+            })
+        }
     }
 
     emitLocalComponent = (component,key) => {
@@ -39,9 +48,8 @@ let CardController = class extends BaseController<{model}> {
             children, 
         } = component
 
-        let props = this.updateProperties(properties, lookups, propComponents)
 
-        props.key = key
+        properties.key = key
 
         let childcomponents = this.getChildren(children)
 
@@ -77,7 +85,7 @@ let CardController = class extends BaseController<{model}> {
             }
         }
 
-        let output = React.createElement(componentType, props, childcomponents)
+        let output = React.createElement(componentType, properties, childcomponents)
 
         return output
     }
@@ -90,7 +98,7 @@ let CardController = class extends BaseController<{model}> {
             return this.emitLocalComponent(component,key)
         }
 
-        let model = this.filterImportedBaseProps(component)
+        let model = component
 
         switch (controller) {
 
@@ -115,11 +123,11 @@ let CardController = class extends BaseController<{model}> {
 
         let { model } = this.state
 
-        if (!model || model.repo) return null
+        if (!model) return null
 
-        let { index } = model
+        let component = this.emitLocalComponent(model,model.index)
 
-        return this.emitLocalComponent(model,index)
+        return component
 
     }
 }

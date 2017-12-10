@@ -19,11 +19,21 @@ let ListController = class extends BaseController<{model}> {
 
     componentDidMount() {
 
-        let model = this.props.model
+        let { model } = this.props
 
-        this.setState({
-            model,
-        })
+        if (this.master.isPromise(model)) {
+            model.then((model) => {
+                model = this.updateModel(model)
+                this.setState({
+                    model,
+                })
+            })
+        } else {
+            model = this.updateModel(model)
+            this.setState({
+                model,
+            })
+        }
     }
 
     emitLocalComponent = (component,key) => {
@@ -38,15 +48,7 @@ let ListController = class extends BaseController<{model}> {
             children, 
         } = component
 
-        let props = this.updateProperties(properties, lookups, propComponents)
-
-        props.key = key
-
         let childcomponents = this.getChildren(children)
-
-        if (childcomponents) {
-            childcomponents = [...childcomponents] // work with copy
-        }
 
         let componentType = null
 
@@ -64,7 +66,7 @@ let ListController = class extends BaseController<{model}> {
             }
         }
 
-        let output = React.createElement(componentType, props, childcomponents)
+        let output = React.createElement(componentType, properties, childcomponents)
 
         return output
     }
@@ -95,7 +97,7 @@ let ListController = class extends BaseController<{model}> {
 
         let { model } = this.state
 
-        if (!model || model.repo) return null
+        if (!model) return null
 
         let { index } = model
 

@@ -23,6 +23,7 @@ let SectionController = class extends BaseController<{model}> {
 
     componentDidMount() {
         let { model } = this.props
+        model = this.updateModel(model)
 
         this.setState({
             model,
@@ -33,7 +34,8 @@ let SectionController = class extends BaseController<{model}> {
 
         let { controller } = component
 
-        let model = this.filterImportedBaseProps(component)
+        let model = component
+        // let model = this.filterImportedBaseProps(component)
 
         switch (controller) {
             case 'card': {
@@ -90,25 +92,20 @@ let SectionController = class extends BaseController<{model}> {
 
         let { model } = this.state
 
-        if (!model || model.repo) return null
+        if (!model) return null
+
+        let children = this.getChildren(model.children)
 
         let {
             index,
             description, 
             properties, 
-            children, 
         } = model
-
-        if (!children) {
-            return <div>{`Section children not found for ${index}:${description}`}</div>
-        }
-
-        let components = this.getChildren(children)
 
         return (
             <div>
                 { /* header properties */ }
-                { components }
+                { children }
             </div>
         )
     }
