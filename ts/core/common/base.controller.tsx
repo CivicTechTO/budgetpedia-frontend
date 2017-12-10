@@ -37,8 +37,18 @@ class BaseController<P>  extends React.Component<P, any> {
         }
     }
 
+    private updateModel = (model) => {
+        if (model.repo) {
+            model = this.master.getDocument(model.repo,model.index)
+        }
+        let { properties, lookups, propComponents } = model
+        let props = this.updateProperties(properties, lookups, propComponents)
+        model.properties = props
+        return model        
+    }
+
     // TODO: implement import of propComponents
-    updateProperties = (properties, lookups, propComponents) => {
+    private updateProperties = (properties, lookups, propComponents) => {
         let props = Object.assign({},properties) // work with copy
         if (lookups) {
             for (let key in lookups) {
@@ -47,16 +57,6 @@ class BaseController<P>  extends React.Component<P, any> {
             } 
         }
         return props
-    }
-
-    updateModel = (model) => {
-        if (model.repo) {
-            model = this.master.getDocument(model.repo,model.index)
-        }
-        let { properties, lookups, propComponents } = model
-        let props = this.updateProperties(properties, lookups, propComponents)
-        model.properties = props
-        return model        
     }
 
     getChildren = (self, children) => {

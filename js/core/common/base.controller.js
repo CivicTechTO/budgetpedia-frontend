@@ -25,6 +25,15 @@ class BaseController extends React.Component {
                 });
             }
         };
+        this.updateModel = (model) => {
+            if (model.repo) {
+                model = this.master.getDocument(model.repo, model.index);
+            }
+            let { properties, lookups, propComponents } = model;
+            let props = this.updateProperties(properties, lookups, propComponents);
+            model.properties = props;
+            return model;
+        };
         this.updateProperties = (properties, lookups, propComponents) => {
             let props = Object.assign({}, properties);
             if (lookups) {
@@ -34,15 +43,6 @@ class BaseController extends React.Component {
                 }
             }
             return props;
-        };
-        this.updateModel = (model) => {
-            if (model.repo) {
-                model = this.master.getDocument(model.repo, model.index);
-            }
-            let { properties, lookups, propComponents } = model;
-            let props = this.updateProperties(properties, lookups, propComponents);
-            model.properties = props;
-            return model;
         };
         this.getChildren = (self, children) => {
             if (!children || children.length == 0)
