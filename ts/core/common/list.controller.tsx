@@ -8,7 +8,7 @@ import * as React from 'react'
 import BaseController from './base.controller'
 
 import LinkListView from './sub-components/linklist.view'
-import TileListView from './sub-components/tilelist.view'
+import NuggetListView from './sub-components/nuggetlist.view'
 
 let ListController = class extends BaseController<{model}> {
 
@@ -55,8 +55,8 @@ let ListController = class extends BaseController<{model}> {
                 componentType = LinkListView
                 break
             }
-            case 'tilelist': {
-                componentType = TileListView
+            case 'nuggetlist': {
+                componentType = NuggetListView
                 break
             }
             default: {

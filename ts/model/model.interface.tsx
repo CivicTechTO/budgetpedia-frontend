@@ -6,6 +6,7 @@ import routes from './routes.index'
 import styles from './styles.index'
 import html from './data/html.index'
 import linklists from './linklists.index'
+import nuggetlists from './nuggetlists.index'
 
 let repositories = {
     cards,
@@ -14,12 +15,18 @@ let repositories = {
     styles,
     html,
     linklists,
+    nuggetlists,
 }
 
 const getDocument = (repo, index) => {
-    console.log('requested document(repo, index)',repo, index)
-    if (!repositories[repo] || !repositories[repo][index]) return {}
-    return repositories[repo][index]
+    // console.log('requested document(repo, index)',repo, index)
+    let output
+    if (!repositories[repo] || !repositories[repo][index]) {
+        output =  {}
+    } else {
+        output = repositories[repo][index]
+    }
+    return output
 }
 
 let model = {

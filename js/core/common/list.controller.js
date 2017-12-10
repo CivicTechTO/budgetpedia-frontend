@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const base_controller_1 = require("./base.controller");
 const linklist_view_1 = require("./sub-components/linklist.view");
-const tilelist_view_1 = require("./sub-components/tilelist.view");
+const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
 let ListController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
@@ -21,8 +21,8 @@ let ListController = class extends base_controller_1.default {
                     componentType = linklist_view_1.default;
                     break;
                 }
-                case 'tilelist': {
-                    componentType = tilelist_view_1.default;
+                case 'nuggetlist': {
+                    componentType = nuggetlist_view_1.default;
                     break;
                 }
                 default: {
