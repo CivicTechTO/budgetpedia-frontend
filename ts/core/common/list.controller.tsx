@@ -1,5 +1,5 @@
 // list.controller.tsx
-// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
 'use strict'
 

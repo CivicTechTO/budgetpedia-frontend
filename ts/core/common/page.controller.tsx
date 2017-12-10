@@ -1,5 +1,5 @@
 // page.controller.tsx
-// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
 'use strict'
 
@@ -51,7 +51,7 @@ let PageController = class extends BaseController<any> {
         if (!model) return <div></div>
 
         let children = this.getChildren(this,model.children)
-
+        // use PageView component
         return (
             <div>
 

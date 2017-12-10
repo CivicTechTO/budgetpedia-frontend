@@ -44,18 +44,17 @@ let CardController = class extends base_controller_1.default {
             let output = React.createElement(componentType, properties, childcomponents);
             return output;
         };
-        this.emitComponent = (component, key) => {
-            let { controller } = component;
+        this.emitComponent = (model, key) => {
+            let { controller } = model;
             if (controller == 'card') {
-                return this.emitLocalComponent(component, key);
+                return this.emitLocalComponent(model, key);
             }
-            let model = component;
             switch (controller) {
                 case 'list': {
                     return React.createElement(list_controller_1.default, { key: key, model: model });
                 }
                 default: {
-                    let { description } = component;
+                    let { description } = model;
                     return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
                 }
             }

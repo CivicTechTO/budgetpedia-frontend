@@ -1,5 +1,5 @@
 // cards.controller.tsx
-// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
 'use strict'
 
@@ -37,7 +37,7 @@ let CardController = class extends BaseController<{model}> {
         let childcomponents = this.getChildren(this,children)
 
         if (childcomponents) {
-            childcomponents = [...childcomponents] // work with copy
+            childcomponents = [...childcomponents] // work with copy; anticipate change below
         }
 
         let componentType = null
@@ -73,15 +73,13 @@ let CardController = class extends BaseController<{model}> {
         return output
     }
 
-    emitComponent = (component, key) => {
+    emitComponent = (model, key) => {
 
-        let { controller } = component
+        let { controller } = model
 
         if (controller == 'card') {
-            return this.emitLocalComponent(component,key)
+            return this.emitLocalComponent(model,key)
         }
-
-        let model = component
 
         switch (controller) {
 
@@ -94,7 +92,7 @@ let CardController = class extends BaseController<{model}> {
 
             default: {
 
-                let { description } = component
+                let { description } = model
 
                 return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
 
