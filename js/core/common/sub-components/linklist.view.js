@@ -6,7 +6,7 @@ class LinkListView extends React.Component {
     render() {
         let { props } = this;
         let items = props.items.map((item, index) => {
-            return React.createElement(link_view_1.default, { key: index, prompt: item.prompt, icon: item.icon, target: item.target, targetText: item.targetText, description: item.description ? item.description : null, imageStyle: item.imageStyle });
+            return React.createElement(link_view_1.default, { external: item.external, key: index, prompt: item.prompt, icon: item.icon, target: item.target, targetText: item.targetText, description: item.description ? item.description : null, imageStyle: item.imageStyle });
         });
         let upperelements = [];
         let lowerelements = [];

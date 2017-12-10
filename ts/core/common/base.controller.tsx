@@ -118,6 +118,8 @@ class BaseController<P>  extends React.Component<P, any> {
     // bound to instances by instances
     getChildren = (children) => {
 
+        if (!children || children.length == 0) return children
+
         let output = children.map((child, key) => {
 
             return this.emitComponent(child,key)

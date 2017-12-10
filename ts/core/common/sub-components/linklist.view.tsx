@@ -20,6 +20,7 @@ class LinkListView extends React.Component<Props, any> {
 
         let items = props.items.map((item, index) => {
             return <LinkView 
+                external = { item.external }
                 key = { index }
                 prompt = { item.prompt }
                 icon = { item.icon }

@@ -27,15 +27,15 @@ let CardController = class extends BaseController<{model}> {
         })
     }
 
-    emitLocalComponent = (component,key,childrenarg = null) => {
+    emitLocalComponent = (component,key) => {
 
         let {
-            type,
             index,
             description, 
-            properties,
             lookups,
             propComponents, 
+            type,
+            properties,
             children, 
         } = component
 
@@ -43,9 +43,11 @@ let CardController = class extends BaseController<{model}> {
 
         props.key = key
 
-        if (!childrenarg) childrenarg = []
+        let childcomponents = this.getChildren(children)
 
-        let childcomponents = [...childrenarg] // work with copy
+        if (childcomponents) {
+            childcomponents = [...childcomponents] // work with copy
+        }
 
         let componentType = null
 
@@ -68,7 +70,6 @@ let CardController = class extends BaseController<{model}> {
             }
             case 'cardtext': {
                 componentType = CardText
-                childcomponents = this.getChildren(component.children)
                 break
             }
             default: {
@@ -116,13 +117,9 @@ let CardController = class extends BaseController<{model}> {
 
         if (!model || model.repo) return null
 
-        let { children, index } = model
+        let { index } = model
 
-        if (!children) children = []
-
-        let components = this.getChildren(children)
-
-        return this.emitLocalComponent(model,index,components)
+        return this.emitLocalComponent(model,index)
 
     }
 }

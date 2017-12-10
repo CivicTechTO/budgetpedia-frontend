@@ -76,6 +76,8 @@ class BaseController extends React.Component {
         };
         this.emitComponent = (component, key) => { };
         this.getChildren = (children) => {
+            if (!children || children.length == 0)
+                return children;
             let output = children.map((child, key) => {
                 return this.emitComponent(child, key);
             });

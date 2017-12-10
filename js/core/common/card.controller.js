@@ -8,13 +8,14 @@ const list_controller_1 = require("./list.controller");
 let CardController = class extends base_controller_1.default {
     constructor(props) {
         super(props);
-        this.emitLocalComponent = (component, key, childrenarg = null) => {
-            let { type, index, description, properties, lookups, propComponents, children, } = component;
+        this.emitLocalComponent = (component, key) => {
+            let { index, description, lookups, propComponents, type, properties, children, } = component;
             let props = this.updateProperties(properties, lookups, propComponents);
             props.key = key;
-            if (!childrenarg)
-                childrenarg = [];
-            let childcomponents = [...childrenarg];
+            let childcomponents = this.getChildren(children);
+            if (childcomponents) {
+                childcomponents = [...childcomponents];
+            }
             let componentType = null;
             switch (type) {
                 case 'card': {
@@ -35,7 +36,6 @@ let CardController = class extends base_controller_1.default {
                 }
                 case 'cardtext': {
                     componentType = Card_1.CardText;
-                    childcomponents = this.getChildren(component.children);
                     break;
                 }
                 default: {
@@ -73,11 +73,8 @@ let CardController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model || model.repo)
             return null;
-        let { children, index } = model;
-        if (!children)
-            children = [];
-        let components = this.getChildren(children);
-        return this.emitLocalComponent(model, index, components);
+        let { index } = model;
+        return this.emitLocalComponent(model, index);
     }
 };
 exports.default = CardController;
