@@ -68,11 +68,31 @@ let mainpageheader = {
 };
 let mainpagefooter = {
     controller: 'card',
-    type: 'card',
     index: 'mainpagefooter',
     description: 'footer for the main page',
+    lookups: {
+        style: {
+            repo: 'styles',
+            index: 'footercardstyle',
+        },
+    },
+    type: 'card',
     properties: {},
-    children: [],
+    children: [
+        {
+            controller: 'card',
+            index: 'cardtext',
+            type: 'cardtext',
+            properties: {},
+            children: [
+                {
+                    controller: 'list',
+                    index: 'thirdlinklist',
+                    repo: 'linklists',
+                },
+            ],
+        },
+    ],
 };
 let cards = {
     mainpageheader,

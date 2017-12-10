@@ -17,6 +17,7 @@ let repositories = {
     nuggetlists: nuggetlists_index_1.default,
 };
 const getDocument = (repo, index) => {
+    console.log('requested document(repo, index)', repo, index);
     let output;
     if (!repositories[repo] || !repositories[repo][index]) {
         output = {};

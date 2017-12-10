@@ -1,5 +1,6 @@
 // linklists.index.tsx
 let toplinklist = {
+    index:'toplinklist',
     type:'linklist',
     properties: {
         upperDivider:true,
@@ -28,6 +29,7 @@ let toplinklist = {
 }
 
 let secondlinklist = {
+    index:'seondlinklist',
     type:'linklist',
     properties: {
         upperDivider:true,
@@ -55,9 +57,56 @@ let secondlinklist = {
     },
 }
 
+
+// let thirdlinklistheader = 'More media (experimental):'
+// let thirdlinklistitems = [
+let thirdlinklist = {
+    index:'thirdlinklist',
+    type:'linklist',
+    properties: {
+        header:'More media (experimental):',
+        items: [
+            {
+                external:true,
+                icon:'/public/icons/facebook.png',
+                target:'http://facebook.com/budgetpedia',
+                targetText:'our Facebook page',
+            },
+            {
+                external:true,
+                icon:'/public/icons/facebook.png',
+                target:'http://facebook.com/groups/budgetpedia',
+                targetText:'our Facebook group',
+            },
+            {
+                external:true,
+                prompt:'For technical discussions:',
+                icon:'/public/icons/g-logo.png',
+                target:'http://groups.google.com/d/forum/budgetpedia',
+                targetText:'our Google forum',
+            },
+            {
+                external:true,
+                prompt:'Videos:',
+                icon:'/public/icons/YouTube-icon-full_color.png',
+                target:'https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig',
+                targetText:'YouTube',
+            },
+            {
+                external:true,
+                prompt:'Blog:',
+                icon:'/public/icons/blogspot.jpeg',
+                target:'http://budgetpedia.blogspot.ca/',
+                targetText:'Blogspot',
+            },
+        ]
+    }
+}
+
 let linklists = {
     toplinklist,
     secondlinklist,
+    thirdlinklist,
 }
 
 export default linklists
