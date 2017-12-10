@@ -16,20 +16,9 @@ class BaseController<P>  extends React.Component<P, any> {
 
     state = {
         model:null,
-        children:null,
-        component:null,
-        waiting:false,
     }
 
     master = null
-
-    baseBindingsToInstance = (instance) => {
-        this.settleModelPromise.bind(instance)
-        this.assertModel.bind(instance)
-        this.setRepoModel.bind(instance)
-        this.componentDidUpdate.bind(instance)
-        this.getChildren.bind(instance) 
-    }
 
     setStateModel = (self, model) => {
 
@@ -48,10 +37,6 @@ class BaseController<P>  extends React.Component<P, any> {
         }
     }
 
-    componentDidUpdate() {
-        // this.assertModel(this.state.model)
-    }
-
     // TODO: implement import of propComponents
     updateProperties = (properties, lookups, propComponents) => {
         let props = Object.assign({},properties) // work with copy
@@ -64,43 +49,6 @@ class BaseController<P>  extends React.Component<P, any> {
         return props
     }
 
-    filterImportedBaseProps = (component) => {
-        let { 
-            controller,
-            repo, 
-            index, 
-            description, 
-            type,
-            properties, 
-            children, 
-        } = component
-
-        // lose controller property
-        let model = {
-            repo, 
-            index, 
-            description, 
-            type,
-            properties, 
-            children, 
-        }
-
-        return model
-    } 
-
-    settleModelPromise = model => {
-        this.setState({
-            waiting:true,
-        },
-            model.then((model) => {
-                this.setState({
-                    waiting:false,
-                    model,
-                })
-            })
-        )
-    }
-
     updateModel = (model) => {
         if (model.repo) {
             model = this.master.getDocument(model.repo,model.index)
@@ -111,47 +59,13 @@ class BaseController<P>  extends React.Component<P, any> {
         return model        
     }
 
-    setRepoModel = (repo,index) => {
-        let { master } = this
-        let model = master.getDocument(repo,index)
-        if (master.isPromise(model)) {
-            console.log('model is a promise', model)
-            if (!this.state.waiting) {
-                this.settleModelPromise(model)
-            }
-        } else {
-            this.setState({
-                model,
-            })
-        }
-    }
-
-    // return false if not model
-    assertModel = model => {
-        if ( !model ) {
-            return false
-        }
-
-        // test for repo and acquire data where required
-        if (model.repo) {
-            this.setRepoModel(model.repo,model.index)
-            return false
-        }
-
-        return true
-    }
-
-    // placeholder for compiler; unused
-    emitComponent = (component, key) => {}
-
-    // bound to instances by instances
-    getChildren = (children) => {
+    getChildren = (self, children) => {
 
         if (!children || children.length == 0) return children
 
         let output = children.map((child, key) => {
 
-            return this.emitComponent(child,key)
+            return self.emitComponent(child,key)
 
         })
 

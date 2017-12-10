@@ -16,11 +16,6 @@ import CustomController from './custom.controller'
 
 let SectionController = class extends BaseController<{model}> {
 
-    constructor(props) {
-        super(props)
-        this.baseBindingsToInstance(this)
-    }
-
     componentDidMount() {
 
         let { model } = this.props
@@ -33,7 +28,6 @@ let SectionController = class extends BaseController<{model}> {
         let { controller } = component
 
         let model = component
-        // let model = this.filterImportedBaseProps(component)
 
         switch (controller) {
             case 'card': {
@@ -92,7 +86,7 @@ let SectionController = class extends BaseController<{model}> {
 
         if (!model) return <div></div>
 
-        let children = this.getChildren(model.children)
+        let children = this.getChildren(this,model.children)
 
         let {
             index,

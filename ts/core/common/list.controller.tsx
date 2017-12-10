@@ -12,11 +12,6 @@ import NuggetListView from './sub-components/nuggetlist.view'
 
 let ListController = class extends BaseController<{model}> {
 
-    constructor(props) {
-        super(props)
-        this.baseBindingsToInstance(this)
-    }
-
     componentDidMount() {
 
         let { model } = this.props
@@ -36,7 +31,7 @@ let ListController = class extends BaseController<{model}> {
             children, 
         } = component
 
-        let childcomponents = this.getChildren(children)
+        let childcomponents = this.getChildren(this,children)
 
         let componentType = null
 
@@ -67,8 +62,6 @@ let ListController = class extends BaseController<{model}> {
             return this.emitLocalComponent(component,key)
         }
 
-        let model = this.filterImportedBaseProps(component)
-
         switch (controller) {
 
             default: {
@@ -89,7 +82,9 @@ let ListController = class extends BaseController<{model}> {
 
         let { index } = model
 
-        return this.emitLocalComponent(model,index)
+        let component = this.emitLocalComponent(model,index)
+
+        return component
 
     }
 }

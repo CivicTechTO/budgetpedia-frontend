@@ -11,11 +11,6 @@ import SectionController from './section.controller'
 
 let PageController = class extends BaseController<any> {
 
-    constructor(props) {
-        super(props)
-        this.baseBindingsToInstance(this)
-    }
-
     componentDidMount() {
         let { match } = this.props
         let { path } = match
@@ -26,12 +21,9 @@ let PageController = class extends BaseController<any> {
         this.setStateModel(this, model)
     }
 
-    emitComponent = (component,key) => {
+    emitComponent = (model,key) => {
 
-        let { type } = component
-
-        // let model = this.filterImportedBaseProps(component)
-        let model = component
+        let { type } = model
 
         switch (type) {
             case 'section': {
@@ -58,7 +50,7 @@ let PageController = class extends BaseController<any> {
 
         if (!model) return <div></div>
 
-        let children = this.getChildren(model.children)
+        let children = this.getChildren(this,model.children)
 
         return (
             <div>

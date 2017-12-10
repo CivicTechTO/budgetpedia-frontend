@@ -5,11 +5,11 @@ const base_controller_1 = require("./base.controller");
 const linklist_view_1 = require("./sub-components/linklist.view");
 const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
 let ListController = class extends base_controller_1.default {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super(...arguments);
         this.emitLocalComponent = (component, key) => {
             let { index, description, lookups, propComponents, type, properties, children, } = component;
-            let childcomponents = this.getChildren(children);
+            let childcomponents = this.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'linklist': {
@@ -32,7 +32,6 @@ let ListController = class extends base_controller_1.default {
             if (controller == 'list') {
                 return this.emitLocalComponent(component, key);
             }
-            let model = this.filterImportedBaseProps(component);
             switch (controller) {
                 default: {
                     let { description } = component;
@@ -40,7 +39,6 @@ let ListController = class extends base_controller_1.default {
                 }
             }
         };
-        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let { model } = this.props;
@@ -51,7 +49,8 @@ let ListController = class extends base_controller_1.default {
         if (!model)
             return React.createElement("div", null);
         let { index } = model;
-        return this.emitLocalComponent(model, index);
+        let component = this.emitLocalComponent(model, index);
+        return component;
     }
 };
 exports.default = ListController;

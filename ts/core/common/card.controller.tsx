@@ -13,11 +13,6 @@ import ListController from './list.controller'
 
 let CardController = class extends BaseController<{model}> {
 
-    constructor(props) {
-        super(props)
-        this.baseBindingsToInstance(this)
-    }
-
     componentDidMount() {
 
         let { model } = this.props
@@ -39,7 +34,7 @@ let CardController = class extends BaseController<{model}> {
 
         properties.key = key
 
-        let childcomponents = this.getChildren(children)
+        let childcomponents = this.getChildren(this,children)
 
         if (childcomponents) {
             childcomponents = [...childcomponents] // work with copy

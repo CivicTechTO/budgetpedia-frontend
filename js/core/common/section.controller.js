@@ -8,8 +8,8 @@ const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
 let SectionController = class extends base_controller_1.default {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super(...arguments);
         this.emitComponent = (component, key) => {
             let { controller } = component;
             let model = component;
@@ -35,7 +35,6 @@ let SectionController = class extends base_controller_1.default {
                 }
             }
         };
-        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let { model } = this.props;
@@ -45,7 +44,7 @@ let SectionController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model)
             return React.createElement("div", null);
-        let children = this.getChildren(model.children);
+        let children = this.getChildren(this, model.children);
         let { index, description, properties, } = model;
         return (React.createElement("div", null, children));
     }

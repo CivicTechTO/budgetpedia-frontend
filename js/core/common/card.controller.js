@@ -6,12 +6,12 @@ const Card_1 = require("material-ui/Card");
 const html_view_1 = require("./sub-components/html.view");
 const list_controller_1 = require("./list.controller");
 let CardController = class extends base_controller_1.default {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super(...arguments);
         this.emitLocalComponent = (component, key) => {
             let { index, description, lookups, propComponents, type, properties, children, } = component;
             properties.key = key;
-            let childcomponents = this.getChildren(children);
+            let childcomponents = this.getChildren(this, children);
             if (childcomponents) {
                 childcomponents = [...childcomponents];
             }
@@ -60,7 +60,6 @@ let CardController = class extends base_controller_1.default {
                 }
             }
         };
-        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let { model } = this.props;

@@ -4,11 +4,10 @@ const React = require("react");
 const base_controller_1 = require("./base.controller");
 const section_controller_1 = require("./section.controller");
 let PageController = class extends base_controller_1.default {
-    constructor(props) {
-        super(props);
-        this.emitComponent = (component, key) => {
-            let { type } = component;
-            let model = component;
+    constructor() {
+        super(...arguments);
+        this.emitComponent = (model, key) => {
+            let { type } = model;
             switch (type) {
                 case 'section': {
                     return React.createElement(section_controller_1.default, { key: key, model: model });
@@ -19,7 +18,6 @@ let PageController = class extends base_controller_1.default {
                 }
             }
         };
-        this.baseBindingsToInstance(this);
     }
     componentDidMount() {
         let { match } = this.props;
@@ -33,7 +31,7 @@ let PageController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model)
             return React.createElement("div", null);
-        let children = this.getChildren(model.children);
+        let children = this.getChildren(this, model.children);
         return (React.createElement("div", null, children));
     }
 };
