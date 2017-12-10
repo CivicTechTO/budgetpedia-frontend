@@ -9,7 +9,7 @@ let CardController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.emitLocalComponent = (component, key) => {
-            let { index, description, lookups, propComponents, type, properties, children, } = component;
+            let { controller, index, description, lookups, propComponents, type, properties, children, } = component;
             properties.key = key;
             let childcomponents = this.getChildren(this, children);
             if (childcomponents) {
@@ -38,7 +38,12 @@ let CardController = class extends base_controller_1.default {
                     break;
                 }
                 default: {
-                    return React.createElement("div", { key: key }, "Pending");
+                    return React.createElement("div", { key: key },
+                        "Component type ",
+                        type,
+                        " not found in ",
+                        controller,
+                        " controller");
                 }
             }
             let output = React.createElement(componentType, properties, childcomponents);
@@ -46,10 +51,10 @@ let CardController = class extends base_controller_1.default {
         };
         this.emitComponent = (model, key) => {
             let { controller } = model;
-            if (controller == 'card') {
-                return this.emitLocalComponent(model, key);
-            }
             switch (controller) {
+                case 'card': {
+                    return this.emitLocalComponent(model, key);
+                }
                 case 'list': {
                     return React.createElement(list_controller_1.default, { key: key, model: model });
                 }
@@ -68,7 +73,8 @@ let CardController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model)
             return React.createElement("div", null);
-        let component = this.emitLocalComponent(model, model.index);
+        let { index } = model;
+        let component = this.emitComponent(model, index);
         return component;
     }
 };

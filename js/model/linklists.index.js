@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let toplinklist = {
+    controller: 'list',
     index: 'toplinklist',
     type: 'linklist',
     properties: {
@@ -29,7 +30,8 @@ let toplinklist = {
     }
 };
 let secondlinklist = {
-    index: 'seondlinklist',
+    controller: 'list',
+    index: 'secondlinklist',
     type: 'linklist',
     properties: {
         upperDivider: true,
@@ -57,6 +59,7 @@ let secondlinklist = {
     },
 };
 let thirdlinklist = {
+    controller: 'list',
     index: 'thirdlinklist',
     type: 'linklist',
     properties: {

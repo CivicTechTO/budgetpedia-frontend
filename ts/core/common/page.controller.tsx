@@ -9,6 +9,8 @@ import BaseController from './base.controller'
 
 import SectionController from './section.controller'
 
+import PageView from './sub-components/page.view'
+
 let PageController = class extends BaseController<any> {
 
     componentDidMount() {
@@ -21,11 +23,48 @@ let PageController = class extends BaseController<any> {
         this.setStateModel(this, model)
     }
 
-    emitComponent = (model,key) => {
+    emitLocalComponent = (component,key) => {
 
-        let { type } = model
+        let {
+            controller,
+            index,
+            description, 
+            lookups,
+            propComponents, 
+            type,
+            properties,
+            children, 
+        } = component
+
+        let childcomponents = this.getChildren(this,children)
+
+        let componentType = null
 
         switch (type) {
+            case 'page': {
+                componentType = PageView
+                break
+            }
+
+            default: {
+                return <div key = {key}>Component type { type } not found in { controller } controller</div>
+            }
+        }
+
+        let output = React.createElement(componentType, properties, childcomponents)
+
+        return output
+
+    }
+
+    emitComponent = (model,key) => {
+
+        let { controller } = model
+
+        switch (controller) {
+            case 'page': {
+                return this.emitLocalComponent(model,key)
+            }
             case 'section': {
 
                 return <SectionController
@@ -38,7 +77,7 @@ let PageController = class extends BaseController<any> {
 
                 let { index, description } = model
 
-                return <div key = {'default' + key} >{`${type} (${index}:${description}) not found`}</div>
+                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
 
             }
         }
@@ -50,16 +89,12 @@ let PageController = class extends BaseController<any> {
 
         if (!model) return <div></div>
 
-        let children = this.getChildren(this,model.children)
-        // use PageView component
-        return (
-            <div>
+        let { index } = model
 
-                { children }
-                { /* TODO add section menu */ }
+        let component = this.emitComponent(model,index)
 
-            </div>
-        )
+        return component
+
     }
 }
 

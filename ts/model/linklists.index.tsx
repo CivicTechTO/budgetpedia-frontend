@@ -1,5 +1,6 @@
 // linklists.index.tsx
 let toplinklist = {
+    controller:'list',
     index:'toplinklist',
     type:'linklist',
     properties: {
@@ -29,7 +30,8 @@ let toplinklist = {
 }
 
 let secondlinklist = {
-    index:'seondlinklist',
+    controller:'list',
+    index:'secondlinklist',
     type:'linklist',
     properties: {
         upperDivider:true,
@@ -61,6 +63,7 @@ let secondlinklist = {
 // let thirdlinklistheader = 'More media (experimental):'
 // let thirdlinklistitems = [
 let thirdlinklist = {
+    controller:'list',
     index:'thirdlinklist',
     type:'linklist',
     properties: {

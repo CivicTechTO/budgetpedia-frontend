@@ -1,6 +1,7 @@
 // nuggetlists.index.tsx
 
 let abouttoronto = {
+    controller: 'list',
     index:'abouttoronto',
     description:'basic stats about toronto',
     type:'nuggetlist',
@@ -79,6 +80,7 @@ let abouttoronto = {
 }
 
 let torontofinances = {
+    controller: 'list',
     index:'torontofinances',
     description:'basic stats about toronto audited statements',
     type:'nuggetlist',
@@ -170,6 +172,7 @@ let torontofinances = {
 
 // let financechangeslist = [
 let torontotrends = {
+    controller: 'list',
     index:'torontotrends',
     description:'basic stats about toronto audited statement changes',
     type:'nuggetlist',

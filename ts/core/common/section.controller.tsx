@@ -14,12 +14,48 @@ import SheetController from './sheet.controller'
 import MediaController from './media.controller'
 import CustomController from './custom.controller'
 
+import SectionView from './sub-components/section.view'
+
 let SectionController = class extends BaseController<{model}> {
 
     componentDidMount() {
 
         let { model } = this.props
         this.setStateModel(this,model)
+
+    }
+
+    emitLocalComponent = (component,key) => {
+
+        let {
+            controller,
+            index,
+            description, 
+            lookups,
+            propComponents, 
+            type,
+            properties,
+            children, 
+        } = component
+
+        let childcomponents = this.getChildren(this,children)
+
+        let componentType = null
+
+        switch (type) {
+            case 'section': {
+                componentType = SectionView
+                break
+            }
+
+            default: {
+                return <div key = {key}>Component type { type } not found in { controller } controller</div>
+            }
+        }
+
+        let output = React.createElement(componentType, properties, childcomponents)
+
+        return output
 
     }
 
@@ -30,6 +66,9 @@ let SectionController = class extends BaseController<{model}> {
         let model = component
 
         switch (controller) {
+            case 'section': {
+                return this.emitLocalComponent(component,key)
+            }
             case 'card': {
 
                 return <CardController
@@ -86,20 +125,11 @@ let SectionController = class extends BaseController<{model}> {
 
         if (!model) return <div></div>
 
-        let children = this.getChildren(this,model.children)
+        let { index } = model
 
-        let {
-            index,
-            description, 
-            properties, 
-        } = model
+        let component = this.emitComponent(model,index)
 
-        return (
-            <div>
-                { /* header properties */ }
-                { children }
-            </div>
-        )
+        return component
     }
 
 }

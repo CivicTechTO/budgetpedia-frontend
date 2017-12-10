@@ -22,6 +22,7 @@ let CardController = class extends BaseController<{model}> {
     emitLocalComponent = (component,key) => {
 
         let {
+            controller,
             index,
             description, 
             lookups,
@@ -64,7 +65,7 @@ let CardController = class extends BaseController<{model}> {
                 break
             }
             default: {
-                return <div key = {key}>Pending</div>
+                return <div key = {key}>Component type { type } not found in { controller } controller</div>
             }
         }
 
@@ -77,17 +78,21 @@ let CardController = class extends BaseController<{model}> {
 
         let { controller } = model
 
-        if (controller == 'card') {
-            return this.emitLocalComponent(model,key)
-        }
 
         switch (controller) {
 
+            case 'card':{
+
+                return this.emitLocalComponent(model,key)
+
+            }
             case 'list': {
+
                 return <ListController
                     key = { key }
                     model = { model }
                 />
+
             }
 
             default: {
@@ -106,7 +111,9 @@ let CardController = class extends BaseController<{model}> {
 
         if (!model) return <div></div>
 
-        let component = this.emitLocalComponent(model,model.index)
+        let { index } = model
+
+        let component = this.emitComponent(model,index)
 
         return component
 

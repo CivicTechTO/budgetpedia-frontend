@@ -4,11 +4,12 @@ const React = require("react");
 const base_controller_1 = require("./base.controller");
 const linklist_view_1 = require("./sub-components/linklist.view");
 const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
+const tilelist_view_1 = require("./sub-components/tilelist.view");
 let ListController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.emitLocalComponent = (component, key) => {
-            let { index, description, lookups, propComponents, type, properties, children, } = component;
+            let { controller, index, description, lookups, propComponents, type, properties, children, } = component;
             let childcomponents = this.getChildren(this, children);
             let componentType = null;
             switch (type) {
@@ -20,22 +21,31 @@ let ListController = class extends base_controller_1.default {
                     componentType = nuggetlist_view_1.default;
                     break;
                 }
+                case 'tilelist': {
+                    componentType = tilelist_view_1.default;
+                    break;
+                }
                 default: {
-                    return React.createElement("div", { key: key }, "Pending");
+                    return React.createElement("div", { key: key },
+                        "Component type ",
+                        type,
+                        " not found in ",
+                        controller,
+                        " controller");
                 }
             }
             let output = React.createElement(componentType, properties, childcomponents);
             return output;
         };
-        this.emitComponent = (component, key) => {
-            let { controller } = component;
-            if (controller == 'list') {
-                return this.emitLocalComponent(component, key);
-            }
+        this.emitComponent = (model, key) => {
+            let { controller } = model;
             switch (controller) {
+                case 'list': {
+                    return this.emitLocalComponent(model, key);
+                }
                 default: {
-                    let { description } = component;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
+                    let { description } = model;
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found in List processor`);
                 }
             }
         };
@@ -49,7 +59,7 @@ let ListController = class extends base_controller_1.default {
         if (!model)
             return React.createElement("div", null);
         let { index } = model;
-        let component = this.emitLocalComponent(model, index);
+        let component = this.emitComponent(model, index);
         return component;
     }
 };

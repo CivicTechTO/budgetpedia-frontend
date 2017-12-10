@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let abouttoronto = {
+    controller: 'list',
     index: 'abouttoronto',
     description: 'basic stats about toronto',
     type: 'nuggetlist',
@@ -78,6 +79,7 @@ let abouttoronto = {
     },
 };
 let torontofinances = {
+    controller: 'list',
     index: 'torontofinances',
     description: 'basic stats about toronto audited statements',
     type: 'nuggetlist',
@@ -167,6 +169,7 @@ let torontofinances = {
     },
 };
 let torontotrends = {
+    controller: 'list',
     index: 'torontotrends',
     description: 'basic stats about toronto audited statement changes',
     type: 'nuggetlist',

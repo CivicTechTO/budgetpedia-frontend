@@ -9,6 +9,7 @@ import BaseController from './base.controller'
 
 import LinkListView from './sub-components/linklist.view'
 import NuggetListView from './sub-components/nuggetlist.view'
+import TileListView from './sub-components/tilelist.view'
 
 let ListController = class extends BaseController<{model}> {
 
@@ -22,6 +23,7 @@ let ListController = class extends BaseController<{model}> {
     emitLocalComponent = (component,key) => {
 
         let {
+            controller,
             index,
             description, 
             lookups,
@@ -44,8 +46,12 @@ let ListController = class extends BaseController<{model}> {
                 componentType = NuggetListView
                 break
             }
+            case 'tilelist': {
+                componentType = TileListView
+                break
+            }
             default: {
-                return <div key = {key}>Pending</div>
+                return <div key = {key}>Component type { type } not found in { controller } controller</div>
             }
         }
 
@@ -54,21 +60,23 @@ let ListController = class extends BaseController<{model}> {
         return output
     }
 
-    emitComponent = (component, key) => {
+    emitComponent = (model, key) => {
 
-        let { controller } = component
-
-        if (controller == 'list') {
-            return this.emitLocalComponent(component,key)
-        }
+        let { controller } = model
 
         switch (controller) {
 
+            case 'list': {
+
+                return this.emitLocalComponent(model,key)
+
+            }
+
             default: {
 
-                let { description } = component
+                let { description } = model
 
-                return <div key = {'default' + key} >{`${controller} (${description}) not found`}</div>
+                return <div key = {'default' + key} >{`${controller} (${description}) not found in List processor`}</div>
 
             }
         }
@@ -82,7 +90,7 @@ let ListController = class extends BaseController<{model}> {
 
         let { index } = model
 
-        let component = this.emitLocalComponent(model,index)
+        let component = this.emitComponent(model,index)
 
         return component
 
