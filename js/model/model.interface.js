@@ -7,6 +7,7 @@ const styles_index_1 = require("./styles.index");
 const html_index_1 = require("./data/html.index");
 const linklists_index_1 = require("./linklists.index");
 const nuggetlists_index_1 = require("./nuggetlists.index");
+const tilelists_index_1 = require("./tilelists.index");
 let repositories = {
     cards: cards_index_1.default,
     pages: pages_index_1.default,
@@ -15,6 +16,7 @@ let repositories = {
     html: html_index_1.default,
     linklists: linklists_index_1.default,
     nuggetlists: nuggetlists_index_1.default,
+    tilelists: tilelists_index_1.default,
 };
 const getDocument = (repo, index) => {
     console.log('requested document(repo, index)', repo, index);

@@ -7,6 +7,7 @@ import styles from './styles.index'
 import html from './data/html.index'
 import linklists from './linklists.index'
 import nuggetlists from './nuggetlists.index'
+import tilelists from './tilelists.index'
 
 let repositories = {
     cards,
@@ -16,6 +17,7 @@ let repositories = {
     html,
     linklists,
     nuggetlists,
+    tilelists,
 }
 
 const getDocument = (repo, index) => {
