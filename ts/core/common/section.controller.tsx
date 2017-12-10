@@ -22,12 +22,10 @@ let SectionController = class extends BaseController<{model}> {
     }
 
     componentDidMount() {
-        let { model } = this.props
-        model = this.updateModel(model)
 
-        this.setState({
-            model,
-        })
+        let { model } = this.props
+        this.setStateModel(this,model)
+
     }
 
     emitComponent = (component,key) => {
@@ -92,7 +90,7 @@ let SectionController = class extends BaseController<{model}> {
 
         let { model } = this.state
 
-        if (!model) return null
+        if (!model) return <div></div>
 
         let children = this.getChildren(model.children)
 

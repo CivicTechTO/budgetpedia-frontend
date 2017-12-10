@@ -20,20 +20,8 @@ let ListController = class extends BaseController<{model}> {
     componentDidMount() {
 
         let { model } = this.props
+        this.setStateModel(this,model)
 
-        if (this.master.isPromise(model)) {
-            model.then((model) => {
-                model = this.updateModel(model)
-                this.setState({
-                    model,
-                })
-            })
-        } else {
-            model = this.updateModel(model)
-            this.setState({
-                model,
-            })
-        }
     }
 
     emitLocalComponent = (component,key) => {
@@ -97,7 +85,7 @@ let ListController = class extends BaseController<{model}> {
 
         let { model } = this.state
 
-        if (!model) return null
+        if (!model) return <div></div>
 
         let { index } = model
 

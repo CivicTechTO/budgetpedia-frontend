@@ -22,10 +22,8 @@ let PageController = class extends BaseController<any> {
         let { master } = this
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
-        model = this.updateModel(model)
-        this.setState({
-            model,
-        })
+
+        this.setStateModel(this, model)
     }
 
     emitComponent = (component,key) => {
@@ -58,7 +56,7 @@ let PageController = class extends BaseController<any> {
 
         let { model } = this.state
 
-        if (!model) return null
+        if (!model) return <div></div>
 
         let children = this.getChildren(model.children)
 

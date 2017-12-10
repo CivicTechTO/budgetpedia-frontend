@@ -27,15 +27,12 @@ let PageController = class extends base_controller_1.default {
         let { master } = this;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
-        model = this.updateModel(model);
-        this.setState({
-            model,
-        });
+        this.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
         if (!model)
-            return null;
+            return React.createElement("div", null);
         let children = this.getChildren(model.children);
         return (React.createElement("div", null, children));
     }

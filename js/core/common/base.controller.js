@@ -19,6 +19,22 @@ class BaseController extends React.Component {
             this.componentDidUpdate.bind(instance);
             this.getChildren.bind(instance);
         };
+        this.setStateModel = (self, model) => {
+            if (this.master.isPromise(model)) {
+                model.then((model) => {
+                    model = this.updateModel(model);
+                    self.setState({
+                        model,
+                    });
+                });
+            }
+            else {
+                model = this.updateModel(model);
+                self.setState({
+                    model,
+                });
+            }
+        };
         this.updateProperties = (properties, lookups, propComponents) => {
             let props = Object.assign({}, properties);
             if (lookups) {

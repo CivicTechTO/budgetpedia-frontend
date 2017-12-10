@@ -44,25 +44,12 @@ let ListController = class extends base_controller_1.default {
     }
     componentDidMount() {
         let { model } = this.props;
-        if (this.master.isPromise(model)) {
-            model.then((model) => {
-                model = this.updateModel(model);
-                this.setState({
-                    model,
-                });
-            });
-        }
-        else {
-            model = this.updateModel(model);
-            this.setState({
-                model,
-            });
-        }
+        this.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
         if (!model)
-            return null;
+            return React.createElement("div", null);
         let { index } = model;
         return this.emitLocalComponent(model, index);
     }
