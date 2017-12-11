@@ -3,7 +3,9 @@
 
 'use strict'
 
-import * as React from 'react';
+import * as React from 'react'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 
 import BaseController from './base.controller'
 
@@ -133,5 +135,12 @@ let SectionController = class extends BaseController<{model}> {
     }
 
 }
+
+SectionController = connect ( null,
+    {
+        push,
+    } 
+) ( SectionController )
+
 
 export default SectionController

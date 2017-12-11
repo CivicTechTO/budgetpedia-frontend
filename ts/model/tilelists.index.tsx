@@ -1,10 +1,16 @@
 // tilelists.index.tsx
-let pagetargets = {
+let mainpages = {
+    controller:'list',
+    index:'mainpages',
+    type:'tilelist',
     lookups: {
         style:{
             repo:'styles',
             index:'tileliststyle',
         }
+    },
+    propReferences: {
+        onSelect: 'push',
     },
     properties: {
         onSelect:'something',
@@ -127,7 +133,7 @@ let pagetargets = {
 }
 
 let tilelists = {
-    pagetargets,
+    mainpages,
 }
 
 export default tilelists

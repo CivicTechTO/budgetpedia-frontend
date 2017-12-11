@@ -24,32 +24,37 @@ class BaseController<P>  extends React.Component<P, any> {
 
         if (this.master.isPromise(model)) {
             model.then((model) => {
-                model = this.updateModel(model)
+                model = this.updateModel(self,model)
                 self.setState({
                     model,
                 })
             })
         } else {
-            model = this.updateModel(model)
+            model = this.updateModel(self,model)
             self.setState({
                 model,
             })
         }
     }
 
-    private updateModel = (model) => {
+    private updateModel = (self,model) => {
         if (model.repo) {
             model = this.master.getDocument(model.repo,model.index)
         }
-        let { properties, lookups, propComponents } = model
-        let props = this.updateProperties(properties, lookups, propComponents)
+        let props = this.updateProperties(self,model)
         model.properties = props
         return model        
     }
 
     // TODO: implement import of propComponents
-    private updateProperties = (properties, lookups, propComponents) => {
+    private updateProperties = (self,model) => {
+        let { properties, lookups, propComponents, propReferences } = model
         let props = Object.assign({},properties) // work with copy
+        if (propReferences) {
+            for (let key in propReferences) {
+                props[key] = self.props[propReferences[key]]
+            }
+        }
         if (lookups) {
             for (let key in lookups) {
                 let {repo, index} = lookups[key]

@@ -1,6 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const react_redux_1 = require("react-redux");
+const react_router_redux_1 = require("react-router-redux");
 const base_controller_1 = require("./base.controller");
 const linklist_view_1 = require("./sub-components/linklist.view");
 const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
@@ -63,4 +65,7 @@ let ListController = class extends base_controller_1.default {
         return component;
     }
 };
+ListController = react_redux_1.connect(null, {
+    push: react_router_redux_1.push,
+})(ListController);
 exports.default = ListController;

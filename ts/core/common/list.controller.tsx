@@ -4,6 +4,8 @@
 'use strict'
 
 import * as React from 'react'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 
 import BaseController from './base.controller'
 
@@ -96,5 +98,12 @@ let ListController = class extends BaseController<{model}> {
 
     }
 }
+
+ListController = connect ( null,
+    {
+        push,
+    } 
+) ( ListController )
+
 
 export default ListController
