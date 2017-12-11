@@ -10,6 +10,15 @@ let mainpageheader = {
             index: 'headercardstyle',
         },
     },
+    wrapper: {
+        type: 'div',
+        properties: {
+            style: {
+                backgroundColor: "#404244",
+                padding: "8px",
+            },
+        },
+    },
     type: 'card',
     properties: {},
     children: [
@@ -74,6 +83,15 @@ let mainpagefooter = {
         style: {
             repo: 'styles',
             index: 'footercardstyle',
+        },
+    },
+    wrapper: {
+        type: 'div',
+        properties: {
+            style: {
+                backgroundColor: "#404244",
+                padding: "8px",
+            },
         },
     },
     type: 'card',
