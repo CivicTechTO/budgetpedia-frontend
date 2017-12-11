@@ -34,7 +34,7 @@ let logPageView = (location) => {
 
 let routedata = [
 
-    { path: '/test', component: PageController},
+    // { path: '/test', component: PageController},
     { path: "*", component: NoMatch }, // must be LAST, or else will pre-empt other paths
 ]
 
@@ -42,7 +42,7 @@ let coreroutes = routedata.map((item, index) => (
    <Route key = {'coreroute'+index} path={item.path} component = {item.component} />
 ))
 
-let home = <Route key = 'home' exact path="/" component={ HomeController } />
+let home = <Route key = 'home' exact path="/" component={ PageController } /> // HomeController } />
 
 let routes = [home, ...pageroutes, ...coreroutes]
 

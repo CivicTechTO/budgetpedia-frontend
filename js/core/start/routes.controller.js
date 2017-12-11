@@ -8,7 +8,6 @@ const react_redux_1 = require("react-redux");
 const react_transition_group_1 = require("react-transition-group");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
-const home_controller_1 = require("../../legacy/homepage/home.controller");
 const page_controller_1 = require("../common/page.controller");
 const nomatch_1 = require("../common/sub-components/nomatch");
 const pageroutes_1 = require("../../addons/pageroutes");
@@ -18,11 +17,10 @@ let logPageView = (location) => {
     }
 };
 let routedata = [
-    { path: '/test', component: page_controller_1.default },
     { path: "*", component: nomatch_1.default },
 ];
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
-let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: home_controller_1.default });
+let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: page_controller_1.default });
 let routes = [home, ...pageroutes_1.default, ...coreroutes];
 logPageView(window.location);
 let RoutesController = class extends Component {
