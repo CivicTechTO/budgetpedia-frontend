@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-let PageView = (props) => (
+let PageView = props => (
     <div>{props.children}</div>
     )
 
