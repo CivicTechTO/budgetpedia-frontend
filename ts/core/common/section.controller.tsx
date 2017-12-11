@@ -32,9 +32,6 @@ let SectionController = class extends BaseController<{model}> {
         let {
             controller,
             index,
-            description, 
-            lookups,
-            propComponents, 
             type,
             properties,
             children, 
@@ -55,21 +52,21 @@ let SectionController = class extends BaseController<{model}> {
             }
         }
 
+        properties.key = key
+
         let output = React.createElement(componentType, properties, childcomponents)
 
         return output
 
     }
 
-    emitComponent = (component,key) => {
+    emitComponent = (model,key) => {
 
-        let { controller } = component
-
-        let model = component
+        let { controller } = model
 
         switch (controller) {
             case 'section': {
-                return this.emitLocalComponent(component,key)
+                return this.emitLocalComponent(model,key)
             }
             case 'card': {
 
@@ -125,22 +122,13 @@ let SectionController = class extends BaseController<{model}> {
 
         let { model } = this.state
 
-        if (!model) return <div></div>
+        if (!model) return <SectionView />
 
-        let { index } = model
-
-        let component = this.emitComponent(model,index)
+        let component = this.emitComponent(model,model.index)
 
         return component
     }
 
 }
-
-// SectionController = connect ( null,
-//     {
-//         push,
-//     } 
-// ) ( SectionController )
-
 
 export default SectionController

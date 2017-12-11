@@ -27,10 +27,7 @@ let ListController = class extends BaseController<{model}> {
         let {
             controller,
             index,
-            description, 
-            lookups,
             wrapper,
-            propComponents, 
             type,
             properties,
             children, 

@@ -14,8 +14,7 @@ import PageView from './sub-components/page.view'
 let PageController = class extends BaseController<any> {
 
     componentDidMount() {
-        let { match } = this.props
-        let { path } = match
+        let { match :{ path } } = this.props
         let { master } = this
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
@@ -28,9 +27,6 @@ let PageController = class extends BaseController<any> {
         let {
             controller,
             index,
-            // description, 
-            // lookups,
-            // propComponents, 
             type,
             properties,
             children, 
@@ -47,7 +43,7 @@ let PageController = class extends BaseController<any> {
             }
 
             default: {
-                return <div key = { key }>Component type { type } not found in { controller } controller</div>
+                return <div key = { key }>Illegal component type { type } of { controller } controller</div>
             }
         }
 
@@ -77,7 +73,7 @@ let PageController = class extends BaseController<any> {
 
                 let { index, description } = model
 
-                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
+                return <div key = {'default' + key} >{`illegal controller ${controller} (${index}:${description}) of PageController`}</div>
 
             }
         }

@@ -7,7 +7,7 @@ let MediaController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.emitLocalComponent = (component, key) => {
-            let { controller, index, description, lookups, propComponents, type, properties, children, wrapper, } = component;
+            let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.getChildren(this, children);
             let componentType = null;
             switch (type) {
@@ -50,8 +50,7 @@ let MediaController = class extends base_controller_1.default {
         let { model } = this.state;
         if (!model)
             return React.createElement("div", null);
-        let { index } = model;
-        let component = this.emitComponent(model, index);
+        let component = this.emitComponent(model, model.index);
         return component;
     }
 };

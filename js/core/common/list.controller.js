@@ -11,7 +11,7 @@ let ListController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.emitLocalComponent = (component, key) => {
-            let { controller, index, description, lookups, wrapper, propComponents, type, properties, children, } = component;
+            let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.getChildren(this, children);
             let componentType = null;
             switch (type) {

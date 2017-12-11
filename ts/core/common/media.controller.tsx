@@ -23,13 +23,10 @@ let MediaController = class extends BaseController<{model}> {
         let {
             controller,
             index,
-            description, 
-            lookups,
-            propComponents, 
+            wrapper,
             type,
             properties,
             children, 
-            wrapper,
         } = component
 
         let childcomponents = this.getChildren(this,children)
@@ -83,9 +80,7 @@ let MediaController = class extends BaseController<{model}> {
 
         if (!model) return <div></div>
 
-        let { index } = model
-
-        let component = this.emitComponent(model,index)
+        let component = this.emitComponent(model, model.index)
 
         return component
 

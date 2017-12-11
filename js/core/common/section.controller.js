@@ -12,7 +12,7 @@ let SectionController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.emitLocalComponent = (component, key) => {
-            let { controller, index, description, lookups, propComponents, type, properties, children, } = component;
+            let { controller, index, type, properties, children, } = component;
             let childcomponents = this.getChildren(this, children);
             let componentType = null;
             switch (type) {
@@ -29,15 +29,15 @@ let SectionController = class extends base_controller_1.default {
                         " controller");
                 }
             }
+            properties.key = key;
             let output = React.createElement(componentType, properties, childcomponents);
             return output;
         };
-        this.emitComponent = (component, key) => {
-            let { controller } = component;
-            let model = component;
+        this.emitComponent = (model, key) => {
+            let { controller } = model;
             switch (controller) {
                 case 'section': {
-                    return this.emitLocalComponent(component, key);
+                    return this.emitLocalComponent(model, key);
                 }
                 case 'card': {
                     return React.createElement(card_controller_1.default, { key: key, model: model });
@@ -68,9 +68,8 @@ let SectionController = class extends base_controller_1.default {
     render() {
         let { model } = this.state;
         if (!model)
-            return React.createElement("div", null);
-        let { index } = model;
-        let component = this.emitComponent(model, index);
+            return React.createElement(section_view_1.default, null);
+        let component = this.emitComponent(model, model.index);
         return component;
     }
 };

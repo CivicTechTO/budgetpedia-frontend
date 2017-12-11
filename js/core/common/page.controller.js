@@ -18,9 +18,9 @@ let PageController = class extends base_controller_1.default {
                 }
                 default: {
                     return React.createElement("div", { key: key },
-                        "Component type ",
+                        "Illegal component type ",
                         type,
-                        " not found in ",
+                        " of ",
                         controller,
                         " controller");
                 }
@@ -39,14 +39,13 @@ let PageController = class extends base_controller_1.default {
                 }
                 default: {
                     let { index, description } = model;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
+                    return React.createElement("div", { key: 'default' + key }, `illegal controller ${controller} (${index}:${description}) of PageController`);
                 }
             }
         };
     }
     componentDidMount() {
-        let { match } = this.props;
-        let { path } = match;
+        let { match: { path } } = this.props;
         let { master } = this;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);

@@ -17,6 +17,7 @@ let CardController = class extends BaseController<{model}> {
 
         let { model } = this.props
         this.setStateModel(this,model)
+
     }
 
     emitLocalComponent = (component,key) => {
@@ -24,10 +25,7 @@ let CardController = class extends BaseController<{model}> {
         let {
             controller,
             index,
-            description, 
-            lookups,
             wrapper,
-            propComponents, 
             type,
             properties,
             children, 
@@ -89,6 +87,7 @@ let CardController = class extends BaseController<{model}> {
                 return this.emitLocalComponent(model,key)
 
             }
+
             case 'list': {
 
                 return <ListController
@@ -114,9 +113,7 @@ let CardController = class extends BaseController<{model}> {
 
         if (!model) return <div></div>
 
-        let { index } = model
-
-        let component = this.emitComponent(model,index)
+        let component = this.emitComponent( model, model.index )
 
         return component
 
