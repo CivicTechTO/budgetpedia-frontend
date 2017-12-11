@@ -87,7 +87,7 @@ let PageController = class extends BaseController<any> {
 
         let { model } = this.state
 
-        if (!model) return <div></div>
+        if (!model) return <PageView />
 
         let component = this.emitComponent(model,model.index)
 

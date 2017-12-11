@@ -24,7 +24,7 @@
     "markdown-it": "^8.4.0",
     "markdown-it-attrs": "^1.2.0",
     "material-ui": "^0.20.0",
-    "moment": "^2.19.3",
+    "moment": "^2.19.4",
     "node-uuid": "^1.4.8",
     "prop-types": "^15.6.0",
     "q": "^1.5.1",

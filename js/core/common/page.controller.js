@@ -55,7 +55,7 @@ let PageController = class extends base_controller_1.default {
     render() {
         let { model } = this.state;
         if (!model)
-            return React.createElement("div", null);
+            return React.createElement(page_view_1.default, null);
         let component = this.emitComponent(model, model.index);
         return component;
     }
