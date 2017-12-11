@@ -28,9 +28,9 @@ let PageController = class extends BaseController<any> {
         let {
             controller,
             index,
-            description, 
-            lookups,
-            propComponents, 
+            // description, 
+            // lookups,
+            // propComponents, 
             type,
             properties,
             children, 
@@ -47,7 +47,7 @@ let PageController = class extends BaseController<any> {
             }
 
             default: {
-                return <div key = {key}>Component type { type } not found in { controller } controller</div>
+                return <div key = { key }>Component type { type } not found in { controller } controller</div>
             }
         }
 
@@ -59,7 +59,7 @@ let PageController = class extends BaseController<any> {
 
     emitComponent = (model,key) => {
 
-        let { controller } = model
+        let { controller, description } = model
 
         switch (controller) {
             case 'page': {
@@ -89,9 +89,7 @@ let PageController = class extends BaseController<any> {
 
         if (!model) return <div></div>
 
-        let { index } = model
-
-        let component = this.emitComponent(model,index)
+        let component = this.emitComponent(model,model.index)
 
         return component
 
