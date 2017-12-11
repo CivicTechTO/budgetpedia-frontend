@@ -26,14 +26,13 @@ let CardController = class extends BaseController<{model}> {
             index,
             description, 
             lookups,
+            wrapper,
             propComponents, 
             type,
             properties,
             children, 
         } = component
 
-
-        properties.key = key
 
         let childcomponents = this.getChildren(this,children)
 
@@ -69,7 +68,11 @@ let CardController = class extends BaseController<{model}> {
             }
         }
 
+        properties.key = key
+
         let output = React.createElement(componentType, properties, childcomponents)
+
+        output = this.wrapComponent(output,wrapper,key)
 
         return output
     }

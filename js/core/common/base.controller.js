@@ -57,6 +57,19 @@ class BaseController extends React.Component {
             });
             return output;
         };
+        this.wrapComponent = (component, wrapper, key) => {
+            if (!wrapper)
+                return component;
+            let testwrapper = wrapper;
+            let output = component;
+            while (testwrapper) {
+                let { type, properties } = testwrapper;
+                properties.key = key;
+                output = React.createElement(type, properties, output);
+                testwrapper = testwrapper.wrapper;
+            }
+            return output;
+        };
         this.master = master_model_1.default;
     }
 }

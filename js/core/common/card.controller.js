@@ -9,8 +9,7 @@ let CardController = class extends base_controller_1.default {
     constructor() {
         super(...arguments);
         this.emitLocalComponent = (component, key) => {
-            let { controller, index, description, lookups, propComponents, type, properties, children, } = component;
-            properties.key = key;
+            let { controller, index, description, lookups, wrapper, propComponents, type, properties, children, } = component;
             let childcomponents = this.getChildren(this, children);
             if (childcomponents) {
                 childcomponents = [...childcomponents];
@@ -46,7 +45,9 @@ let CardController = class extends base_controller_1.default {
                         " controller");
                 }
             }
+            properties.key = key;
             let output = React.createElement(componentType, properties, childcomponents);
+            output = this.wrapComponent(output, wrapper, key);
             return output;
         };
         this.emitComponent = (model, key) => {

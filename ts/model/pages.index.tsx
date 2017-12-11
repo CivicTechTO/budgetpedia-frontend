@@ -70,8 +70,8 @@ Here are some quick statistics about Toronto and its finances
                 children:[
                     {
                         controller: 'media',
-                        repo:'twitterfeeds',
-                        index:'budgetpedia',
+                        repo:'media',
+                        index:'budgetpediatwitter',
                     },
                 ]
             },
