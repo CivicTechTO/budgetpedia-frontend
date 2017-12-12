@@ -25,16 +25,32 @@ class BaseController<P>  extends React.Component<P, any> {
         if (this.master.isPromise(model)) {
             model.then((model) => {
                 model = this.updateModel(self,model)
+                model.children = this.updateChildren(self,model.children)
                 self.setState({
                     model,
                 })
             })
         } else {
             model = this.updateModel(self,model)
+            model.children = this.updateChildren(self,model.children)
             self.setState({
                 model,
             })
         }
+    }
+
+    private updateChildren = (self,children) => {
+
+        if (!children || children.length == 0) return children
+
+        let output = children.map((child, key) => {
+
+            return this.updateModel(self,child)
+
+        })
+
+        return output
+
     }
 
     private updateModel = (self,model) => {
@@ -49,19 +65,23 @@ class BaseController<P>  extends React.Component<P, any> {
     // TODO: implement import of propComponents
     private updateProperties = (self,model) => {
         let { properties, lookups, propComponents, propReferences } = model
-        let props = Object.assign({},properties) // work with copy
+        // let props = Object.assign({},properties) // work with copy
+        if (!properties) properties = {}
         if (propReferences) {
             for (let key in propReferences) {
-                props[key] = self.props[propReferences[key]]
+                properties[key] = self.props[propReferences[key]]
             }
+            properties.propReferences = null
         }
         if (lookups) {
+            // console.log('lookups',lookups)
             for (let key in lookups) {
                 let {repo, index} = lookups[key]
-                props[key] = this.master.getDocument(repo, index)
+                properties[key] = this.master.getDocument(repo, index)
             } 
+            properties.lookups = null
         }
-        return props
+        return properties
     }
 
     getChildren = (self, children) => {

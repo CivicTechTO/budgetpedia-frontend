@@ -50,6 +50,7 @@ let CardController = class extends BaseController<{model}> {
                 break
             }
             case 'htmlview': {
+                // console.log('htmlview',component,childcomponents)
                 componentType = HtmlView
                 break
             }
@@ -78,7 +79,6 @@ let CardController = class extends BaseController<{model}> {
     emitComponent = (model, key) => {
 
         let { controller } = model
-
 
         switch (controller) {
 

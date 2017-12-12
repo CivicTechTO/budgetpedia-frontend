@@ -23,13 +23,13 @@ let repositories = {
 }
 
 const getDocument = (repo, index) => {
-    // console.log('requested document(repo, index)',repo, index)
     let output
     if (!repositories[repo] || !repositories[repo][index]) {
         output =  {}
     } else {
         output = repositories[repo][index]
     }
+    // console.log('requested document(repo, index)',repo, index) //, output)
     return output
 }
 

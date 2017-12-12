@@ -13,6 +13,7 @@ class BaseController extends React.Component {
             if (this.master.isPromise(model)) {
                 model.then((model) => {
                     model = this.updateModel(self, model);
+                    model.children = this.updateChildren(self, model.children);
                     self.setState({
                         model,
                     });
@@ -20,10 +21,19 @@ class BaseController extends React.Component {
             }
             else {
                 model = this.updateModel(self, model);
+                model.children = this.updateChildren(self, model.children);
                 self.setState({
                     model,
                 });
             }
+        };
+        this.updateChildren = (self, children) => {
+            if (!children || children.length == 0)
+                return children;
+            let output = children.map((child, key) => {
+                return this.updateModel(self, child);
+            });
+            return output;
         };
         this.updateModel = (self, model) => {
             if (model.repo) {
@@ -35,19 +45,22 @@ class BaseController extends React.Component {
         };
         this.updateProperties = (self, model) => {
             let { properties, lookups, propComponents, propReferences } = model;
-            let props = Object.assign({}, properties);
+            if (!properties)
+                properties = {};
             if (propReferences) {
                 for (let key in propReferences) {
-                    props[key] = self.props[propReferences[key]];
+                    properties[key] = self.props[propReferences[key]];
                 }
+                properties.propReferences = null;
             }
             if (lookups) {
                 for (let key in lookups) {
                     let { repo, index } = lookups[key];
-                    props[key] = this.master.getDocument(repo, index);
+                    properties[key] = this.master.getDocument(repo, index);
                 }
+                properties.lookups = null;
             }
-            return props;
+            return properties;
         };
         this.getChildren = (self, children) => {
             if (!children || children.length == 0)
