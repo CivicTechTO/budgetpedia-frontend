@@ -4,6 +4,8 @@
 'use strict'
 
 import * as React from 'react';
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 
 import BaseController from './base.controller'
 
@@ -91,5 +93,11 @@ let PageController = class extends BaseController<any> {
 
     }
 }
+
+PageController = connect ( null,
+    {
+        push,
+    } 
+) ( PageController )
 
 export default PageController

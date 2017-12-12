@@ -1,6 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const react_redux_1 = require("react-redux");
+const react_router_redux_1 = require("react-router-redux");
 const base_controller_1 = require("./base.controller");
 const list_controller_1 = require("./list.controller");
 const card_controller_1 = require("./card.controller");
@@ -73,4 +75,7 @@ let SectionController = class extends base_controller_1.default {
         return component;
     }
 };
+SectionController = react_redux_1.connect(null, {
+    push: react_router_redux_1.push,
+})(SectionController);
 exports.default = SectionController;

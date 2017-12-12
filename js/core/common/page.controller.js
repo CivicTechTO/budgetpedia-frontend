@@ -1,6 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const react_redux_1 = require("react-redux");
+const react_router_redux_1 = require("react-router-redux");
 const base_controller_1 = require("./base.controller");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./sub-components/page.view");
@@ -59,4 +61,7 @@ let PageController = class extends base_controller_1.default {
         return component;
     }
 };
+PageController = react_redux_1.connect(null, {
+    push: react_router_redux_1.push,
+})(PageController);
 exports.default = PageController;
