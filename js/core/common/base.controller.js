@@ -36,11 +36,14 @@ class BaseController extends React.Component {
             return output;
         };
         this.updateModel = (self, model) => {
+            if (model.updated)
+                return model;
             if (model.repo) {
                 model = this.master.getDocument(model.repo, model.index);
             }
             let props = this.updateProperties(self, model);
             model.properties = props;
+            model.updated = true;
             return model;
         };
         this.updateProperties = (self, model) => {
@@ -51,14 +54,12 @@ class BaseController extends React.Component {
                 for (let key in propReferences) {
                     properties[key] = self.props[propReferences[key]];
                 }
-                properties.propReferences = null;
             }
             if (lookups) {
                 for (let key in lookups) {
                     let { repo, index } = lookups[key];
                     properties[key] = this.master.getDocument(repo, index);
                 }
-                properties.lookups = null;
             }
             return properties;
         };

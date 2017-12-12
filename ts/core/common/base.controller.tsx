@@ -1,6 +1,11 @@
 // controller.base.tsx
 // copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
+/*
+    TODO: update all code to async requirements
+    puzzle: route /, page home, and linklists x 3 are only data loaded on go back to page
+*/
+
 'use strict'
 
 import * as React from 'react'
@@ -53,12 +58,14 @@ class BaseController<P>  extends React.Component<P, any> {
 
     }
 
-    private updateModel = (self,model) => {
+    updateModel = (self,model) => {
+        if (model.updated) return model
         if (model.repo) {
             model = this.master.getDocument(model.repo,model.index)
         }
         let props = this.updateProperties(self,model)
         model.properties = props
+        model.updated = true
         return model        
     }
 
@@ -71,7 +78,7 @@ class BaseController<P>  extends React.Component<P, any> {
             for (let key in propReferences) {
                 properties[key] = self.props[propReferences[key]]
             }
-            properties.propReferences = null
+            // properties.propReferences = null
         }
         if (lookups) {
             // console.log('lookups',lookups)
@@ -79,7 +86,7 @@ class BaseController<P>  extends React.Component<P, any> {
                 let {repo, index} = lookups[key]
                 properties[key] = this.master.getDocument(repo, index)
             } 
-            properties.lookups = null
+            // properties.lookups = null
         }
         return properties
     }

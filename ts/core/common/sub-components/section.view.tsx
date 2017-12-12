@@ -1,6 +1,10 @@
 // section.view.tsx
 // copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
+/*
+    TODO: upgrade to component; use markdown for title/description
+*/
+
 'use strict'
 
 import * as React from 'react';
