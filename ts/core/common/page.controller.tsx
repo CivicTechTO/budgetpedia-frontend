@@ -19,6 +19,7 @@ let PageController = class extends BaseController<any> {
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
 
+        // TODO: do updateModel here, so it only happens once (setStateModel always updates children)
         this.setStateModel(this, model)
     }
 

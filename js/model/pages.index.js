@@ -35,7 +35,7 @@ let pages = {
                 properties: {
                     title: 'Quick Statistics',
                     description: `
-Here are some quick statistics about Toronto and its finances
+Here are some quick statistics about Toronto and its finances. Each row scrolls left and right.
 `,
                     tag: 'Quick Stats',
                 },

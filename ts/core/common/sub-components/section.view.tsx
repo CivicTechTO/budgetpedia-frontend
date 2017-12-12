@@ -6,7 +6,18 @@
 import * as React from 'react';
 
 let SectionView = (props) => (
-    <div>{props.children}</div>
+    <div>
+
+    {props.title?<div style = {{backgroundColor:"#d9d9d9",padding:"8px",borderTop:"4px solid silver"}}>
+        {props.title?<h1>{props.title}</h1>:null}
+
+        {props.description?<p>{props.description}</p>:null}
+        </div>:null
+    }
+
+        { props.children }
+
+    </div>
     )
 
 export default SectionView
