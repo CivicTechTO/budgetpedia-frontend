@@ -16,6 +16,7 @@
     "draft-js": "^0.10.4",
     "draft-js-plugins-editor": "^2.0.3",
     "history": "^4.7.2",
+    "hoist-non-react-statics": "^2.3.1",
     "isomorphic-fetch": "^2.2.1",
     "joi-validation-strategy": "^0.3.3",
     "jsonpack": "^1.1.5",

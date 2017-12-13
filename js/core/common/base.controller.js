@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const master_model_1 = require("../../gateway/master.model");
-class BaseController extends React.Component {
+let BaseController = class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -86,5 +86,5 @@ class BaseController extends React.Component {
         };
         this.master = master_model_1.default;
     }
-}
+};
 exports.default = BaseController;

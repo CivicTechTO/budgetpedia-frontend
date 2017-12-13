@@ -1,20 +1,16 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const core_controller_composer_1 = require("./core.controller.composer");
+const base_controller_1 = require("./base.controller");
 const Card_1 = require("material-ui/Card");
 const html_view_1 = require("./sub-components/html.view");
 const list_controller_1 = require("./list.controller");
-let CardController = class extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            model: null
-        };
-        this.toolkit = null;
+let CardController = class extends base_controller_1.default {
+    constructor() {
+        super(...arguments);
         this.emitLocalComponent = (component, key) => {
             let { controller, index, wrapper, type, properties, children, } = component;
-            let childcomponents = this.toolkit.getChildren(this, children);
+            let childcomponents = this.getChildren(this, children);
             if (childcomponents) {
                 childcomponents = [...childcomponents];
             }
@@ -51,7 +47,7 @@ let CardController = class extends React.Component {
             }
             properties.key = key;
             let output = React.createElement(componentType, properties, childcomponents);
-            output = this.toolkit.wrapComponent(output, wrapper, key);
+            output = this.wrapComponent(output, wrapper, key);
             return output;
         };
         this.emitComponent = (model, key) => {
@@ -69,11 +65,10 @@ let CardController = class extends React.Component {
                 }
             }
         };
-        this.toolkit = props.toolkit;
     }
     componentDidMount() {
         let { model } = this.props;
-        this.toolkit.setStateModel(this, model);
+        this.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
@@ -83,5 +78,4 @@ let CardController = class extends React.Component {
         return component;
     }
 };
-CardController = core_controller_composer_1.default(CardController);
 exports.default = CardController;

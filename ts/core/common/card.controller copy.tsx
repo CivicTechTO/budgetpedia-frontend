@@ -5,30 +5,18 @@
 
 import * as React from 'react';
 
-import coreController from './core.controller.composer'
+import BaseController from './base.controller'
 
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 import HtmlView from './sub-components/html.view'
 import ListController from './list.controller'
 
-let CardController = class extends React.Component<any,any> {
-
-
-    constructor(props) {
-        super(props)
-        this.toolkit = props.toolkit
-    }
-
-    state = {
-        model:null
-    }
-
-    toolkit = null
+let CardController = class extends BaseController<{model}> {
 
     componentDidMount() {
 
         let { model } = this.props
-        this.toolkit.setStateModel(this,model)
+        this.setStateModel(this,model)
 
     }
 
@@ -44,7 +32,7 @@ let CardController = class extends React.Component<any,any> {
         } = component
 
 
-        let childcomponents = this.toolkit.getChildren(this,children)
+        let childcomponents = this.getChildren(this,children)
 
         if (childcomponents) {
             childcomponents = [...childcomponents] // work with copy; anticipate change below
@@ -83,7 +71,7 @@ let CardController = class extends React.Component<any,any> {
 
         let output = React.createElement(componentType, properties, childcomponents)
 
-        output = this.toolkit.wrapComponent(output,wrapper,key)
+        output = this.wrapComponent(output,wrapper,key)
 
         return output
     }
@@ -131,7 +119,5 @@ let CardController = class extends React.Component<any,any> {
 
     }
 }
-
-CardController = coreController(CardController) as any
 
 export default CardController
