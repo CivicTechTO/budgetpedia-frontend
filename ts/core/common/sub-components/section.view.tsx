@@ -9,19 +9,33 @@
 
 import * as React from 'react';
 
-let SectionView = (props) => (
-    <div>
+import MarkupBlock from './markupblock.view'
 
-    {props.title?<div style = {{backgroundColor:"#d9d9d9",padding:"8px",borderTop:"4px solid silver"}}>
-        {props.title?<h1>{props.title}</h1>:null}
+class SectionView extends React.Component<any,any>{
 
-        {props.description?<p>{props.description}</p>:null}
-        </div>:null
+    render() {
+
+        let { title, description, children } = this.props
+
+        return <div>
+
+            {
+                title?
+                <div style = {{backgroundColor:"#d9d9d9",padding:"8px",borderTop:"4px solid silver"}}>
+                    <MarkupBlock markup = {title} />
+
+
+                    {description?
+                        <MarkupBlock markup = {description} />:null}
+
+                </div>:null
+            }
+
+            { children }
+
+        </div>
     }
 
-        { props.children }
-
-    </div>
-    )
+}
 
 export default SectionView

@@ -33,7 +33,7 @@ let pages = {
                 description: 'sets of introductory nugget lists',
                 type: 'section',
                 properties: {
-                    title: 'Quick Statistics',
+                    title: '# Quick Statistics',
                     description: `
 Here are some quick statistics about Toronto and its finances. Each row scrolls left and right.
 `,
