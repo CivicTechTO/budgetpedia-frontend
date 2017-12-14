@@ -59,59 +59,59 @@ Here are some quick statistics about Toronto and its finances. We've highlighted
                 ]
 
             },
-            {
-                controller:'section',
-                index:'basics',
-                description:'basic help text and links',
-                type:'section',
-                properties: {
-                    title:'The Basics',
-                    description:
-`
-What the City does, and how the budget process works.
-`,
-                    tag:'The Basics',
-                    style:{
-                        marginBottom: '12px'
-                    },
-                },
-                children: [
-                    {
-                        controller: 'sheet',
-                        repo:'sheets',
-                        index:'citybasics',
-                    },
-                    {
-                        controller: 'sheet',
-                        repo:'sheets',
-                        index:'cityprocess',
-                    },
-                ]
-            },
-            {
-                controller:'section',
-                index:'concerns',
-                description:'links to issues',
-                type:'section',
-                properties: {
-                    title:'Our Concerns',
-                    description:
-`
-Some basic issues we think should be addressed.
-`,
-                    tag:'Our Concerns',
-                    style:{
-                        marginBottom: '12px'
-                    },
-                },
-                children: [
-                    {
-                        controller: 'sheet',
-                        repo:'sheets',
-                        index:'concerns',
-                    },
-                ]
-            },
+//             {
+//                 controller:'section',
+//                 index:'basics',
+//                 description:'basic help text and links',
+//                 type:'section',
+//                 properties: {
+//                     title:'The Basics',
+//                     description:
+// `
+// What the City does, and how the budget process works.
+// `,
+//                     tag:'The Basics',
+//                     style:{
+//                         marginBottom: '12px'
+//                     },
+//                 },
+//                 children: [
+//                     {
+//                         controller: 'sheet',
+//                         repo:'sheets',
+//                         index:'citybasics',
+//                     },
+//                     {
+//                         controller: 'sheet',
+//                         repo:'sheets',
+//                         index:'cityprocess',
+//                     },
+//                 ]
+//             },
+//             {
+//                 controller:'section',
+//                 index:'concerns',
+//                 description:'links to issues',
+//                 type:'section',
+//                 properties: {
+//                     title:'Our Concerns',
+//                     description:
+// `
+// Some basic issues we think should be addressed.
+// `,
+//                     tag:'Our Concerns',
+//                     style:{
+//                         marginBottom: '12px'
+//                     },
+//                 },
+//                 children: [
+//                     {
+//                         controller: 'sheet',
+//                         repo:'sheets',
+//                         index:'concerns',
+//                     },
+//                 ]
+//             },
             {
                 controller:'section',
                 index:'tiles',
