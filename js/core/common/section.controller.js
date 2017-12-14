@@ -1,21 +1,23 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const react_redux_1 = require("react-redux");
-const react_router_redux_1 = require("react-router-redux");
-const base_controller_1 = require("./base.controller");
+const core_controller_composer_1 = require("./core.controller.composer");
 const list_controller_1 = require("./list.controller");
 const card_controller_1 = require("./card.controller");
 const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
 const section_view_1 = require("./sub-components/section.view");
-let SectionController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
+let SectionController = class extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            model: null
+        };
+        this.toolkit = null;
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
-            let childcomponents = this.getChildren(this, children);
+            let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'section': {
@@ -62,10 +64,11 @@ let SectionController = class extends base_controller_1.default {
                 }
             }
         };
+        this.toolkit = props.toolkit;
     }
     componentDidMount() {
         let { model } = this.props;
-        this.setStateModel(this, model);
+        this.toolkit.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
@@ -75,7 +78,5 @@ let SectionController = class extends base_controller_1.default {
         return component;
     }
 };
-SectionController = react_redux_1.connect(null, {
-    push: react_router_redux_1.push,
-})(SectionController);
+SectionController = core_controller_composer_1.default(SectionController);
 exports.default = SectionController;

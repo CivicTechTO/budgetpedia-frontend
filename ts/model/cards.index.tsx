@@ -20,8 +20,7 @@ let mainpageheader = {
         },
     },
     type:'card',
-    properties:{
-    },
+    properties:{},
     children:[
         {
             controller:'card',

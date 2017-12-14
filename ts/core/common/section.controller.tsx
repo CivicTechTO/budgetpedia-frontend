@@ -4,10 +4,8 @@
 'use strict'
 
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
 
-import BaseController from './base.controller'
+import coreController from './core.controller.composer'
 
 // legal components
 import ListController from './list.controller'
@@ -18,12 +16,23 @@ import CustomController from './custom.controller'
 
 import SectionView from './sub-components/section.view'
 
-let SectionController = class extends BaseController<{model}> {
+let SectionController = class extends React.Component<any,any> {
+
+    constructor(props) {
+        super(props)
+        this.toolkit = props.toolkit
+    }
+
+    state = {
+        model:null
+    }
+
+    toolkit = null
 
     componentDidMount() {
 
         let { model } = this.props
-        this.setStateModel(this,model)
+        this.toolkit.setStateModel(this,model)
 
     }
 
@@ -37,7 +46,7 @@ let SectionController = class extends BaseController<{model}> {
             children, 
         } = component
 
-        let childcomponents = this.getChildren(this,children)
+        let childcomponents = this.toolkit.getChildren(this,children)
 
         let componentType = null
 
@@ -131,10 +140,6 @@ let SectionController = class extends BaseController<{model}> {
 
 }
 
-SectionController = connect ( null,
-    {
-        push,
-    } 
-) ( SectionController )
+SectionController = coreController(SectionController) as any // avoid compiler complaints
 
 export default SectionController

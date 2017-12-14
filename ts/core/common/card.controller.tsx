@@ -13,7 +13,6 @@ import ListController from './list.controller'
 
 let CardController = class extends React.Component<any,any> {
 
-
     constructor(props) {
         super(props)
         this.toolkit = props.toolkit
@@ -44,7 +43,7 @@ let CardController = class extends React.Component<any,any> {
         } = component
 
 
-        let childcomponents = this.toolkit.getChildren(this,children)
+        let childcomponents = this.toolkit.getChildren(this, children)
 
         if (childcomponents) {
             childcomponents = [...childcomponents] // work with copy; anticipate change below
@@ -132,6 +131,6 @@ let CardController = class extends React.Component<any,any> {
     }
 }
 
-CardController = coreController(CardController) as any
+CardController = coreController(CardController) as any // avoid compiler complaints
 
 export default CardController

@@ -24,7 +24,7 @@ let setStateModel = (self, model) => {
 
     if (master.isPromise(model)) {
         model.then((model) => {
-            model = this.updateModel(self,model)
+            model = updateModel(self,model)
             model.children = updateChildren(self,model.children)
             self.setState({
                 model,
@@ -113,7 +113,17 @@ let wrapComponent = (component,wrapper,key) => {
     return output
 }
 
-let coreController = (Controller) => {
+let toolkit = {
+    master,
+    setStateModel,
+    updateChildren,
+    updateModel,
+    updateProperties,
+    getChildren,
+    wrapComponent,
+}
+
+let coreController = Controller => {
 
     let ConnectedController = connect(
         state =>(
@@ -126,19 +136,8 @@ let coreController = (Controller) => {
 
     let BaseController = class extends React.Component<any,any> {
 
-        toolkit = {
-            master,
-            setStateModel,
-            updateChildren,
-            updateModel,
-            updateProperties,
-            getChildren,
-            wrapComponent,
-        }
-
         render() {
-            // return React.createElement(ConnectedController,{toolkit,...this.props})
-            return <ConnectedController toolkit = {this.toolkit} {...this.props} />
+            return React.createElement(ConnectedController, {toolkit,...this.props})
         }    
     }
 

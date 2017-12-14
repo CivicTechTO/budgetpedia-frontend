@@ -5,16 +5,27 @@
 
 import * as React from 'react';
 
-import BaseController from './base.controller'
+import coreController from './core.controller.composer'
 
 import { Timeline } from 'react-twitter-widgets'
 
-let MediaController = class extends BaseController<{model}> {
+let MediaController = class extends React.Component<any,any> {
+
+    constructor(props) {
+        super(props)
+        this.toolkit = props.toolkit
+    }
+
+    state = {
+        model:null
+    }
+
+    toolkit = null
 
     componentDidMount() {
 
         let { model } = this.props
-        this.setStateModel(this,model)
+        this.toolkit.setStateModel(this,model)
 
     }
 
@@ -29,7 +40,7 @@ let MediaController = class extends BaseController<{model}> {
             children, 
         } = component
 
-        let childcomponents = this.getChildren(this,children)
+        let childcomponents = this.toolkit.getChildren(this,children)
 
         let componentType = null
 
@@ -47,7 +58,7 @@ let MediaController = class extends BaseController<{model}> {
 
         let output = React.createElement(componentType, properties, childcomponents)
 
-        output = this.wrapComponent(output,wrapper,key)
+        output = this.toolkit.wrapComponent(output,wrapper,key)
 
         return output
     }
@@ -86,5 +97,7 @@ let MediaController = class extends BaseController<{model}> {
 
     }
 }
+
+MediaController = coreController(MediaController) as any // avoid compiler complaints
 
 export default MediaController

@@ -4,21 +4,30 @@
 'use strict'
 
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
 
-import BaseController from './base.controller'
+import coreController from './core.controller.composer'
 
 import LinkListView from './sub-components/linklist.view'
 import NuggetListView from './sub-components/nuggetlist.view'
 import TileListView from './sub-components/tilelist.view'
 
-let ListController = class extends BaseController<{model}> {
+let ListController = class extends React.Component<any,any> {
+
+    constructor(props) {
+        super(props)
+        this.toolkit = props.toolkit
+    }
+
+    state = {
+        model:null
+    }
+
+    toolkit = null
 
     componentDidMount() {
 
         let { model } = this.props
-        this.setStateModel(this,model)
+        this.toolkit.setStateModel(this,model)
 
     }
 
@@ -33,7 +42,7 @@ let ListController = class extends BaseController<{model}> {
             children, 
         } = component
 
-        let childcomponents = this.getChildren(this,children)
+        let childcomponents = this.toolkit.getChildren(this,children)
 
         let componentType = null
 
@@ -59,7 +68,7 @@ let ListController = class extends BaseController<{model}> {
 
         let output = React.createElement(componentType, properties, childcomponents)
 
-        output = this.wrapComponent(output,wrapper,key)
+        output = this.toolkit.wrapComponent(output,wrapper,key)
 
         return output
     }
@@ -101,11 +110,6 @@ let ListController = class extends BaseController<{model}> {
     }
 }
 
-ListController = connect ( null,
-    {
-        push,
-    } 
-) ( ListController )
-
+ListController = coreController(ListController) as any // avoid compiler complaints
 
 export default ListController

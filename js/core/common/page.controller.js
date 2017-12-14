@@ -1,17 +1,21 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const react_redux_1 = require("react-redux");
-const react_router_redux_1 = require("react-router-redux");
-const base_controller_1 = require("./base.controller");
+const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./sub-components/page.view");
-let PageController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
+const master_model_1 = require("../../gateway/master.model");
+let PageController = class extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            model: null
+        };
+        this.toolkit = null;
+        this.master = master_model_1.default;
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
-            let childcomponents = this.getChildren(this, children);
+            let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'page': {
@@ -45,13 +49,14 @@ let PageController = class extends base_controller_1.default {
                 }
             }
         };
+        this.toolkit = props.toolkit;
     }
     componentDidMount() {
         let { match: { path } } = this.props;
         let { master } = this;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
-        this.setStateModel(this, model);
+        this.toolkit.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
@@ -61,7 +66,5 @@ let PageController = class extends base_controller_1.default {
         return component;
     }
 };
-PageController = react_redux_1.connect(null, {
-    push: react_router_redux_1.push,
-})(PageController);
+PageController = core_controller_composer_1.default(PageController);
 exports.default = PageController;

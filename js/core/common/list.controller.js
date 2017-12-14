@@ -1,18 +1,20 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const react_redux_1 = require("react-redux");
-const react_router_redux_1 = require("react-router-redux");
-const base_controller_1 = require("./base.controller");
+const core_controller_composer_1 = require("./core.controller.composer");
 const linklist_view_1 = require("./sub-components/linklist.view");
 const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
 const tilelist_view_1 = require("./sub-components/tilelist.view");
-let ListController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
+let ListController = class extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            model: null
+        };
+        this.toolkit = null;
         this.emitLocalComponent = (component, key) => {
             let { controller, index, wrapper, type, properties, children, } = component;
-            let childcomponents = this.getChildren(this, children);
+            let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'linklist': {
@@ -38,7 +40,7 @@ let ListController = class extends base_controller_1.default {
             }
             properties.key = key;
             let output = React.createElement(componentType, properties, childcomponents);
-            output = this.wrapComponent(output, wrapper, key);
+            output = this.toolkit.wrapComponent(output, wrapper, key);
             return output;
         };
         this.emitComponent = (model, key) => {
@@ -53,10 +55,11 @@ let ListController = class extends base_controller_1.default {
                 }
             }
         };
+        this.toolkit = props.toolkit;
     }
     componentDidMount() {
         let { model } = this.props;
-        this.setStateModel(this, model);
+        this.toolkit.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
@@ -67,7 +70,5 @@ let ListController = class extends base_controller_1.default {
         return component;
     }
 };
-ListController = react_redux_1.connect(null, {
-    push: react_router_redux_1.push,
-})(ListController);
+ListController = core_controller_composer_1.default(ListController);
 exports.default = ListController;

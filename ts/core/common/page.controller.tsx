@@ -4,16 +4,29 @@
 'use strict'
 
 import * as React from 'react';
-import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
 
-import BaseController from './base.controller'
+import coreController from './core.controller.composer'
 
 import SectionController from './section.controller'
 
 import PageView from './sub-components/page.view'
 
-let PageController = class extends BaseController<any> {
+import master from '../../gateway/master.model'
+
+let PageController = class extends React.Component<any,any> {
+
+    constructor(props) {
+        super(props)
+        this.toolkit = props.toolkit
+    }
+
+    state = {
+        model:null
+    }
+
+    toolkit = null
+
+    master = master
 
     componentDidMount() {
         let { match :{ path } } = this.props
@@ -21,7 +34,7 @@ let PageController = class extends BaseController<any> {
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
 
-        this.setStateModel(this, model)
+        this.toolkit.setStateModel(this, model)
     }
 
     emitLocalComponent = (component,key) => {
@@ -34,7 +47,7 @@ let PageController = class extends BaseController<any> {
             children, 
         } = component
 
-        let childcomponents = this.getChildren(this,children)
+        let childcomponents = this.toolkit.getChildren(this,children)
 
         let componentType = null
 
@@ -94,10 +107,6 @@ let PageController = class extends BaseController<any> {
     }
 }
 
-PageController = connect ( null,
-    {
-        push,
-    } 
-) ( PageController )
+PageController = coreController(PageController) as any // avoid compiler complaints
 
 export default PageController

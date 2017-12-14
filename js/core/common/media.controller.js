@@ -1,14 +1,18 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const base_controller_1 = require("./base.controller");
+const core_controller_composer_1 = require("./core.controller.composer");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
-let MediaController = class extends base_controller_1.default {
-    constructor() {
-        super(...arguments);
+let MediaController = class extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            model: null
+        };
+        this.toolkit = null;
         this.emitLocalComponent = (component, key) => {
             let { controller, index, wrapper, type, properties, children, } = component;
-            let childcomponents = this.getChildren(this, children);
+            let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'timeline': {
@@ -26,7 +30,7 @@ let MediaController = class extends base_controller_1.default {
             }
             properties.key = key;
             let output = React.createElement(componentType, properties, childcomponents);
-            output = this.wrapComponent(output, wrapper, key);
+            output = this.toolkit.wrapComponent(output, wrapper, key);
             return output;
         };
         this.emitComponent = (model, key) => {
@@ -41,10 +45,11 @@ let MediaController = class extends base_controller_1.default {
                 }
             }
         };
+        this.toolkit = props.toolkit;
     }
     componentDidMount() {
         let { model } = this.props;
-        this.setStateModel(this, model);
+        this.toolkit.setStateModel(this, model);
     }
     render() {
         let { model } = this.state;
@@ -54,4 +59,5 @@ let MediaController = class extends base_controller_1.default {
         return component;
     }
 };
+MediaController = core_controller_composer_1.default(MediaController);
 exports.default = MediaController;
