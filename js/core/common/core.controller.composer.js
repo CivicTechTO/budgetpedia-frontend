@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
 const react_router_redux_1 = require("react-router-redux");
-let hoistNonReactStatics = require('hoist-non-react-statics');
 const master_model_1 = require("../../gateway/master.model");
 let setStateModel = (self, model) => {
     if (master_model_1.default.isPromise(model)) {
@@ -98,7 +97,6 @@ let coreController = Controller => {
             return React.createElement(ConnectedController, Object.assign({ toolkit }, this.props));
         }
     }
-    hoistNonReactStatics(BaseController, ConnectedController);
     return BaseController;
 };
 exports.default = coreController;

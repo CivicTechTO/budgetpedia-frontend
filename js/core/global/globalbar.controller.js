@@ -17,6 +17,7 @@ let GlobalBarController = class extends React.Component {
         };
         this.handleMenuSidebarToggle = (e) => {
             e.stopPropagation();
+            e.preventDefault();
             this.setState({ menusidebaropen: !this.state.menusidebaropen });
         };
         this.menutransition = (fn) => {
