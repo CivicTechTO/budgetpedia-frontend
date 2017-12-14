@@ -110,6 +110,6 @@ class ListControllerClass extends React.Component<any,any> {
     }
 }
 
-let ListController = coreController(ListControllerClass) // as any // avoid compiler complaints
+let ListController = coreController(ListControllerClass) 
 
 export default ListController

@@ -131,6 +131,6 @@ class CardControllerClass extends React.Component<any,any> {
     }
 }
 
-let CardController = coreController(CardControllerClass) // as any // avoid compiler complaints
+let CardController = coreController(CardControllerClass) 
 
 export default CardController

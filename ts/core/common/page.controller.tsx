@@ -103,6 +103,6 @@ class PageControllerClass extends React.Component<any,any> {
     }
 }
 
-let PageController = coreController(PageControllerClass) // as any // avoid compiler complaints
+let PageController = coreController(PageControllerClass) 
 
 export default PageController

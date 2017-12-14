@@ -4,10 +4,6 @@
 /*
     TODO: update all code to async requirements
     puzzle: route /, page home, and linklists x 3 are only data loaded on go back to page
-
-    TODO: resolve issue of making redux state values available to propReferences in the right context
-    - research copmosition
-    - create a higher order component that passes redux state
 */
 
 'use strict'

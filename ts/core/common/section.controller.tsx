@@ -140,6 +140,6 @@ class SectionControllerClass extends React.Component<any,any> {
 
 }
 
-let SectionController = coreController(SectionControllerClass) as any // avoid compiler complaints
+let SectionController = coreController(SectionControllerClass) 
 
 export default SectionController

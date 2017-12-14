@@ -98,6 +98,6 @@ class MediaControllerClass extends React.Component<any,any> {
     }
 }
 
-let MediaController = coreController(MediaControllerClass) as any // avoid compiler complaints
+let MediaController = coreController(MediaControllerClass) 
 
 export default MediaController
