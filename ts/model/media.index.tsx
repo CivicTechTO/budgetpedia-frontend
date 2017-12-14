@@ -28,7 +28,6 @@ let budgetpediatwitter = {
                 style: {
                     padding:'32px',
                     backgroundColor:'silver',
-                    marginBottom:'30px'
                 },
             },
         },

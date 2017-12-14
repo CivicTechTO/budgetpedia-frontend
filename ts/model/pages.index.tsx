@@ -33,7 +33,7 @@ let pages = {
                 description:'sets of introductory nugget lists',
                 type:'section',
                 properties: {
-                    title:'# Quick Statistics',
+                    title:'Quick Statistics',
                     description:
 `
 Here are some quick statistics about Toronto and its finances. Each row scrolls left and right.
@@ -61,17 +61,54 @@ Here are some quick statistics about Toronto and its finances. Each row scrolls 
             },
             {
                 controller:'section',
-                index:'twitterfeed',
-                description:'twitter feed for budgetpedia',
+                index:'basics',
+                description:'basic help text and links',
                 type:'section',
                 properties: {
-                    tag:'Twitter',
+                    title:'The Basics',
+                    description:
+`
+What the City does, and how the budget process works.
+`,
+                    tag:'The Basics',
+                    style:{
+                        marginBottom: '12px'
+                    },
                 },
-                children:[
+                children: [
                     {
-                        controller: 'media',
-                        repo:'media',
-                        index:'budgetpediatwitter',
+                        controller: 'sheet',
+                        repo:'sheets',
+                        index:'citybasics',
+                    },
+                    {
+                        controller: 'sheet',
+                        repo:'sheets',
+                        index:'cityprocess',
+                    },
+                ]
+            },
+            {
+                controller:'section',
+                index:'concerns',
+                description:'links to issues',
+                type:'section',
+                properties: {
+                    title:'Our Concerns',
+                    description:
+`
+Some basic issues we think should be addressed.
+`,
+                    tag:'Our Concerns',
+                    style:{
+                        marginBottom: '12px'
+                    },
+                },
+                children: [
+                    {
+                        controller: 'sheet',
+                        repo:'sheets',
+                        index:'concerns',
                     },
                 ]
             },
@@ -80,11 +117,39 @@ Here are some quick statistics about Toronto and its finances. Each row scrolls 
                 index:'tiles',
                 description:'navigation tiles to the site main pages',
                 type:'section',
+                properties: {
+                    title: 'Our Website',
+                    description: 'The main pages of our website. The tiles scroll left and right.',
+                    style:{
+                        marginBottom: '12px'
+                    },
+                },
                 children:[
                     {
                         controller: 'list',
                         index:'mainpages',
                         repo:'tilelists',
+                    },
+                ]
+            },
+            {
+                controller:'section',
+                index:'twitterfeed',
+                description:'twitter feed for budgetpedia',
+                type:'section',
+                properties: {
+                    tag:'Twitter',
+                    title: 'Our Twitter Feed',
+                    description:'Jump into the conversation [here](http://twitter.com/budgetpedia){target=_blank}.',
+                    style:{
+                        marginBottom: '12px'
+                    },
+                },
+                children:[
+                    {
+                        controller: 'media',
+                        repo:'media',
+                        index:'budgetpediatwitter',
                     },
                 ]
             },
