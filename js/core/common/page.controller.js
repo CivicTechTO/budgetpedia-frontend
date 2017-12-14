@@ -4,7 +4,6 @@ const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./sub-components/page.view");
-const master_model_1 = require("../../gateway/master.model");
 let PageController = class extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +11,6 @@ let PageController = class extends React.Component {
             model: null
         };
         this.toolkit = null;
-        this.master = master_model_1.default;
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
@@ -53,7 +51,7 @@ let PageController = class extends React.Component {
     }
     componentDidMount() {
         let { match: { path } } = this.props;
-        let { master } = this;
+        let { master } = this.toolkit;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
         this.toolkit.setStateModel(this, model);

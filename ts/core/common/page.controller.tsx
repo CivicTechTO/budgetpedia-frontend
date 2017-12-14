@@ -11,8 +11,6 @@ import SectionController from './section.controller'
 
 import PageView from './sub-components/page.view'
 
-import master from '../../gateway/master.model'
-
 let PageController = class extends React.Component<any,any> {
 
     constructor(props) {
@@ -26,11 +24,9 @@ let PageController = class extends React.Component<any,any> {
 
     toolkit = null
 
-    master = master
-
     componentDidMount() {
         let { match :{ path } } = this.props
-        let { master } = this
+        let { master } = this.toolkit
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
 
