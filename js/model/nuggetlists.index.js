@@ -36,7 +36,7 @@ let abouttoronto = {
             {
                 prefix: 'Non-official language speakers',
                 infix: '702K',
-                suffix: 'people speaking non-official languages<br>at home',
+                suffix: 'residents speaking non-official languages<br>at home',
                 contrast: true,
             },
             {
@@ -60,13 +60,16 @@ let abouttoronto = {
             {
                 prefix: 'Visible minorities',
                 infix: '1.39M',
-                suffix: 'people',
+                suffix: 'residents. Just over half<br>the population',
                 contrast: true,
+                style: {
+                    border: '3px solid orange',
+                }
             },
             {
                 prefix: 'Post secondary',
                 infix: '1.07M',
-                suffix: 'people with post-secondary certificate, diploma or degree',
+                suffix: 'residents with post-secondary certificate, diploma or degree',
                 contrast: true,
             },
             {
@@ -108,32 +111,35 @@ let torontofinances = {
             {
                 prefix: 'Financial Assets',
                 infix: '$9.3B',
-                suffix: 'for 2016, <span style="color:gold">~$3,400</span> per person',
+                suffix: 'at 2016, <span style="color:gold">~$3,400</span> per resident',
                 contrast: true,
             },
             {
                 prefix: 'Liabilities',
                 infix: '$15.8B',
-                suffix: 'for 2016, <span style="color:gold">~$5,850</span> per person',
+                suffix: 'at 2016, <span style="color:gold">~$5,850</span> per resident',
                 contrast: true,
             },
             {
                 prefix: 'Net debt',
                 infix: '<span style=color:red>$6.5B</span>',
-                suffix: 'for 2016, (financial assets less liabilities)<span style="color:gold">~$2,380</span> per person',
+                suffix: 'at 2016, (financial assets less liabilities)<span style="color:gold">~$2,380</span> per resident',
                 contrast: true,
             },
             {
                 prefix: 'Tangible assets',
                 infix: '$29B',
-                suffix: '(including inventories and prepaids) for 2016, <span style="color:gold">~$10,600</span> per person',
+                suffix: '(including inventories and prepaids) at 2016, <span style="color:gold">~$10,600</span> per resident',
                 contrast: true,
             },
             {
                 prefix: 'Net worth',
                 infix: '<span style=color:lightgreen>$22.5B</span>',
-                suffix: 'Accumulated Surplus for 2016, <span style="color:gold">~$8,220</span> per<br>person',
+                suffix: 'Accumulated Surplus at 2016, <span style="color:gold">~$8,220</span> per<br>resident',
                 contrast: true,
+                style: {
+                    border: '3px solid orange',
+                }
             },
             {
                 prefix: 'Cash provided by operating activities',
@@ -242,6 +248,9 @@ let torontotrends = {
                 infix: '<span style=color:lightgreen>29.2%<span class=material-icons style=font-size:1.1em;vertical-align:top>arrow_upward</span></span>',
                 suffix: 'Up by <span style=color:gold>$5.2B</span> to <span style=color:gold>$23B</span>',
                 contrast: true,
+                style: {
+                    border: '3px solid orange',
+                }
             },
             {
                 prefix: '2010:2016<br>Changes in net debt',

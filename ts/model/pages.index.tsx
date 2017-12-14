@@ -36,7 +36,7 @@ let pages = {
                     title:'Quick Statistics',
                     description:
 `
-Here are some quick statistics about Toronto and its finances. Each row scrolls left and right.
+Here are some quick statistics about Toronto and its finances. We've highlighted a few. Each row scrolls left and right.
 `,
                     tag:'Quick Stats',
                 },
