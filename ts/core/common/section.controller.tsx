@@ -16,7 +16,7 @@ import CustomController from './custom.controller'
 
 import SectionView from './sub-components/section.view'
 
-let SectionController = class extends React.Component<any,any> {
+class SectionControllerClass extends React.Component<any,any> {
 
     constructor(props) {
         super(props)
@@ -140,6 +140,6 @@ let SectionController = class extends React.Component<any,any> {
 
 }
 
-SectionController = coreController(SectionController) as any // avoid compiler complaints
+let SectionController = coreController(SectionControllerClass) as any // avoid compiler complaints
 
 export default SectionController

@@ -8,7 +8,7 @@ const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
 const section_view_1 = require("./sub-components/section.view");
-let SectionController = class extends React.Component {
+class SectionControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -77,6 +77,6 @@ let SectionController = class extends React.Component {
         let component = this.emitComponent(model, model.index);
         return component;
     }
-};
-SectionController = core_controller_composer_1.default(SectionController);
+}
+let SectionController = core_controller_composer_1.default(SectionControllerClass);
 exports.default = SectionController;

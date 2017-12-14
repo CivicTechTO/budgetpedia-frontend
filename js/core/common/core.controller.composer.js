@@ -93,11 +93,11 @@ let coreController = Controller => {
     let ConnectedController = react_redux_1.connect(state => ({ state }), {
         push: react_router_redux_1.push,
     })(Controller);
-    let BaseController = class extends React.Component {
+    class BaseController extends React.Component {
         render() {
             return React.createElement(ConnectedController, Object.assign({ toolkit }, this.props));
         }
-    };
+    }
     hoistNonReactStatics(BaseController, ConnectedController);
     return BaseController;
 };

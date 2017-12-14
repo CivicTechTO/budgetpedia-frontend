@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
 const react_twitter_widgets_1 = require("react-twitter-widgets");
-let MediaController = class extends React.Component {
+class MediaControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -58,6 +58,6 @@ let MediaController = class extends React.Component {
         let component = this.emitComponent(model, model.index);
         return component;
     }
-};
-MediaController = core_controller_composer_1.default(MediaController);
+}
+let MediaController = core_controller_composer_1.default(MediaControllerClass);
 exports.default = MediaController;

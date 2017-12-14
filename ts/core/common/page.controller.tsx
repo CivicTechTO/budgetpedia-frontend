@@ -11,7 +11,7 @@ import SectionController from './section.controller'
 
 import PageView from './sub-components/page.view'
 
-let PageController = class extends React.Component<any,any> {
+class PageControllerClass extends React.Component<any,any> {
 
     constructor(props) {
         super(props)
@@ -103,6 +103,6 @@ let PageController = class extends React.Component<any,any> {
     }
 }
 
-PageController = coreController(PageController) as any // avoid compiler complaints
+let PageController = coreController(PageControllerClass) // as any // avoid compiler complaints
 
 export default PageController

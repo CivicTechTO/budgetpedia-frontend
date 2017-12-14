@@ -5,7 +5,7 @@ const core_controller_composer_1 = require("./core.controller.composer");
 const Card_1 = require("material-ui/Card");
 const html_view_1 = require("./sub-components/html.view");
 const list_controller_1 = require("./list.controller");
-let CardController = class extends React.Component {
+class CardControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -82,6 +82,6 @@ let CardController = class extends React.Component {
         let component = this.emitComponent(model, model.index);
         return component;
     }
-};
-CardController = core_controller_composer_1.default(CardController);
+}
+let CardController = core_controller_composer_1.default(CardControllerClass);
 exports.default = CardController;

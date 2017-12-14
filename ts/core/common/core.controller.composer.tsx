@@ -134,7 +134,7 @@ let coreController = Controller => {
         }
     )(Controller)
 
-    let BaseController = class extends React.Component<any,any> {
+    class BaseController extends React.Component<any,any> {
 
         render() {
             return React.createElement(ConnectedController, {toolkit,...this.props})

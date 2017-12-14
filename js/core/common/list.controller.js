@@ -5,7 +5,7 @@ const core_controller_composer_1 = require("./core.controller.composer");
 const linklist_view_1 = require("./sub-components/linklist.view");
 const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
 const tilelist_view_1 = require("./sub-components/tilelist.view");
-let ListController = class extends React.Component {
+class ListControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,6 +69,6 @@ let ListController = class extends React.Component {
         let component = this.emitComponent(model, index);
         return component;
     }
-};
-ListController = core_controller_composer_1.default(ListController);
+}
+let ListController = core_controller_composer_1.default(ListControllerClass);
 exports.default = ListController;

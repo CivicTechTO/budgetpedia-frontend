@@ -11,7 +11,7 @@ import { Card, CardTitle, CardText } from 'material-ui/Card'
 import HtmlView from './sub-components/html.view'
 import ListController from './list.controller'
 
-let CardController = class extends React.Component<any,any> {
+class CardControllerClass extends React.Component<any,any> {
 
     constructor(props) {
         super(props)
@@ -131,6 +131,6 @@ let CardController = class extends React.Component<any,any> {
     }
 }
 
-CardController = coreController(CardController) as any // avoid compiler complaints
+let CardController = coreController(CardControllerClass) // as any // avoid compiler complaints
 
 export default CardController

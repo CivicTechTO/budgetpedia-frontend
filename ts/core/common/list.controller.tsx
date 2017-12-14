@@ -11,7 +11,7 @@ import LinkListView from './sub-components/linklist.view'
 import NuggetListView from './sub-components/nuggetlist.view'
 import TileListView from './sub-components/tilelist.view'
 
-let ListController = class extends React.Component<any,any> {
+class ListControllerClass extends React.Component<any,any> {
 
     constructor(props) {
         super(props)
@@ -110,6 +110,6 @@ let ListController = class extends React.Component<any,any> {
     }
 }
 
-ListController = coreController(ListController) as any // avoid compiler complaints
+let ListController = coreController(ListControllerClass) // as any // avoid compiler complaints
 
 export default ListController

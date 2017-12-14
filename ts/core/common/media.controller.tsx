@@ -9,7 +9,7 @@ import coreController from './core.controller.composer'
 
 import { Timeline } from 'react-twitter-widgets'
 
-let MediaController = class extends React.Component<any,any> {
+class MediaControllerClass extends React.Component<any,any> {
 
     constructor(props) {
         super(props)
@@ -98,6 +98,6 @@ let MediaController = class extends React.Component<any,any> {
     }
 }
 
-MediaController = coreController(MediaController) as any // avoid compiler complaints
+let MediaController = coreController(MediaControllerClass) as any // avoid compiler complaints
 
 export default MediaController

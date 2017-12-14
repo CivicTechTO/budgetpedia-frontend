@@ -4,7 +4,7 @@ const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./sub-components/page.view");
-let PageController = class extends React.Component {
+class PageControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -63,6 +63,6 @@ let PageController = class extends React.Component {
         let component = this.emitComponent(model, model.index);
         return component;
     }
-};
-PageController = core_controller_composer_1.default(PageController);
+}
+let PageController = core_controller_composer_1.default(PageControllerClass);
 exports.default = PageController;
