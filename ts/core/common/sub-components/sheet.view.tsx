@@ -7,68 +7,34 @@ import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
 
-import { Editor, EditorState, ContentState, convertFromHTML, convertFromRaw, CompositeDecorator } from 'draft-js'
+import  Editor from 'draft-js-plugins-editor'
 
-/*
-    outer div = frameStyles
-    inner dif = linerStyles
-*/
+import { EditorState } from 'draft-js'
 
-const sampleMarkup =
-  '<b>Bold text</b>, <i>Italic text</i><br/ ><br />' +
-  '<a href="http://www.facebook.com">Example link</a>'
+import createHashtagPlugin from 'draft-js-hashtag-plugin'
+import createLinkifyPlugin from 'draft-js-linkify-plugin'
+import 'draft-js-linkify-plugin/lib/plugin.css'
+import 'draft-js-hashtag-plugin/lib/plugin.css'
+import 'draft-js/dist/Draft.css'
 
-const blocksFromHTML = convertFromHTML(sampleMarkup)
-console.log('blocksFromHTML',blocksFromHTML)
-const state = ContentState.createFromBlockArray(
-  blocksFromHTML.contentBlocks,
-  blocksFromHTML.entityMap
-)
+const hashtagPlugin = createHashtagPlugin();
+const linkifyPlugin = createLinkifyPlugin();
 
-function findLinkEntities(contentBlock, callback, contentState) {
-contentBlock.findEntityRanges(
-  (character) => {
-    const entityKey = character.getEntity();
-    return (
-      entityKey !== null &&
-      contentState.getEntity(entityKey).getType() === 'LINK'
-    );
-  },
-  callback
-);
-}
-const Link = (props) => {
-    const {url} = props.contentState.getEntity(props.entityKey).getData();
-    return (
-      <a href={url} target = '_blank'>
-        {props.children}
-      </a>
-    );
-};
-
-const decorator = new CompositeDecorator([
-{
-  strategy: findLinkEntities,
-  component: Link,
-},
-// {
-//   strategy: findImageEntities,
-//   component: Image,
-// },
-])
+const plugins = [
+  linkifyPlugin,
+  hashtagPlugin,
+];
 
 
 class SheetView extends React.Component<any,any> {
 
     state = {
-      editorState: EditorState.createWithContent(state,decorator),
+      editorState: EditorState.createEmpty(),
     }
+
+    editor
 
     onEditorChange = (editorState) => this.setState({editorState});
-
-    componentDidMount() {
-        console.log('sheet props',this.props)
-    }
 
     render() {
 
@@ -79,7 +45,9 @@ class SheetView extends React.Component<any,any> {
                         <Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
-                            readOnly = {true}
+                            plugins = {plugins}
+                            readOnly = {false}
+                            ref={(element) => { this.editor = element; }}
                         />
                     </div>
                 </Paper>
