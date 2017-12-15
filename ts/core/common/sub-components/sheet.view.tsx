@@ -7,10 +7,19 @@ import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
 
+/*
+    outer div = frameStyles
+    inner dif = linerStyles
+*/
+
+let content = 'Sheet View'
+
 let SheetView = props => (
     <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
         <Paper  zDepth = {3}>
-        <div style = {{padding:'16px'}}>Sheet View</div>
+            <div style = {{padding:'16px'}}>
+                {content}
+            </div>
         </Paper>
     </div>)
 
