@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-import coreController from './core.controller.composer'
+import coreControllerComposer from './core.controller.composer'
 
 import { Timeline } from 'react-twitter-widgets'
 
@@ -98,6 +98,6 @@ class MediaControllerClass extends React.Component<any,any> {
     }
 }
 
-let MediaController = coreController(MediaControllerClass) 
+let MediaController = coreControllerComposer(MediaControllerClass) 
 
 export default MediaController

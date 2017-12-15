@@ -5,7 +5,7 @@
 
 import * as React from 'react'
 
-import coreController from './core.controller.composer'
+import coreControllerComposer from './core.controller.composer'
 
 // legal components
 import ListController from './list.controller'
@@ -140,6 +140,6 @@ class SectionControllerClass extends React.Component<any,any> {
 
 }
 
-let SectionController = coreController(SectionControllerClass) 
+let SectionController = coreControllerComposer(SectionControllerClass) 
 
 export default SectionController

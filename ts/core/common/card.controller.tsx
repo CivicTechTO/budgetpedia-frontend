@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-import coreController from './core.controller.composer'
+import coreControllerComposer from './core.controller.composer'
 
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 import HtmlView from './sub-components/html.view'
@@ -131,6 +131,6 @@ class CardControllerClass extends React.Component<any,any> {
     }
 }
 
-let CardController = coreController(CardControllerClass) 
+let CardController = coreControllerComposer(CardControllerClass) 
 
 export default CardController

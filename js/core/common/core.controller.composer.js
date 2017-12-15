@@ -88,7 +88,7 @@ let toolkit = {
     getChildren,
     wrapComponent,
 };
-let coreController = Controller => {
+let coreControllerComposer = Controller => {
     let ConnectedController = react_redux_1.connect(state => ({ state }), {
         push: react_router_redux_1.push,
     })(Controller);
@@ -99,4 +99,4 @@ let coreController = Controller => {
     }
     return BaseController;
 };
-exports.default = coreController;
+exports.default = coreControllerComposer;

@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-import coreController from './core.controller.composer'
+import coreControllerComposer from './core.controller.composer'
 
 import SectionController from './section.controller'
 
@@ -103,6 +103,6 @@ class PageControllerClass extends React.Component<any,any> {
     }
 }
 
-let PageController = coreController(PageControllerClass) 
+let PageController = coreControllerComposer(PageControllerClass) 
 
 export default PageController

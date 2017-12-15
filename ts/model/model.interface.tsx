@@ -9,6 +9,7 @@ import linklists from './linklists.index'
 import nuggetlists from './nuggetlists.index'
 import tilelists from './tilelists.index'
 import media from './media.index'
+import sheets from './sheets.index'
 
 let repositories = {
     cards,
@@ -20,6 +21,7 @@ let repositories = {
     nuggetlists,
     tilelists,
     media,
+    sheets,
 }
 
 const getDocument = (repo, index) => {
@@ -29,7 +31,7 @@ const getDocument = (repo, index) => {
     } else {
         output = repositories[repo][index]
     }
-    // console.log('requested document(repo, index)',repo, index) //, output)
+    console.log('requested document(repo, index)',repo, index) //, output)
     return output
 }
 

@@ -5,7 +5,7 @@
 
 import * as React from 'react'
 
-import coreController from './core.controller.composer'
+import coreControllerComposer from './core.controller.composer'
 
 import LinkListView from './sub-components/linklist.view'
 import NuggetListView from './sub-components/nuggetlist.view'
@@ -110,6 +110,6 @@ class ListControllerClass extends React.Component<any,any> {
     }
 }
 
-let ListController = coreController(ListControllerClass) 
+let ListController = coreControllerComposer(ListControllerClass) 
 
 export default ListController

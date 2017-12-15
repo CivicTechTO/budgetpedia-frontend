@@ -119,7 +119,7 @@ let toolkit = {
     wrapComponent,
 }
 
-let coreController = Controller => {
+let coreControllerComposer = Controller => {
 
     let ConnectedController = connect(
         state =>(
@@ -143,5 +143,5 @@ let coreController = Controller => {
 
 }
 
-export default coreController
+export default coreControllerComposer
 
