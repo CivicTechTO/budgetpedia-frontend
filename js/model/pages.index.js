@@ -34,9 +34,7 @@ let pages = {
                 type: 'section',
                 properties: {
                     title: 'Quick Statistics',
-                    description: `
-Here are some quick statistics about Toronto and its finances. We've highlighted a few. Each row scrolls left and right.
-`,
+                    description: "Here are some quick statistics about Toronto and its finances. We've highlighted a few. Each row scrolls left and right.",
                     tag: 'Quick Stats',
                 },
                 children: [
@@ -64,9 +62,7 @@ Here are some quick statistics about Toronto and its finances. We've highlighted
                 type: 'section',
                 properties: {
                     title: 'The Basics',
-                    description: `
-What the City does, and how the budget process works.
-`,
+                    description: 'What the City does, and how the budget process works.',
                     tag: 'The Basics',
                     style: {
                         marginBottom: '12px'
@@ -92,9 +88,7 @@ What the City does, and how the budget process works.
                 type: 'section',
                 properties: {
                     title: 'Our Concerns',
-                    description: `
-Some basic issues we think should be addressed.
-`,
+                    description: 'Some basic issues we think should be addressed.',
                     tag: 'Our Concerns',
                     style: {
                         marginBottom: '12px'
