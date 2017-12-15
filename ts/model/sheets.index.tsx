@@ -5,7 +5,7 @@ let citybasics = {
     index:'citybasics',
     description: 'describe the basics of what the city does',
     lookups: {
-        draftjs: {
+        draftjsdata: {
             repo:'draftjs',
             index:'citybasics',
         },
@@ -20,7 +20,7 @@ let cityprocess = {
     index:'cityprocess',
     description:'describe the process of basic budgeting',
     lookups:{
-        draftjs:{
+        draftjsdata:{
             repo:'draftjs',
             index:'cityprocess',
         },
@@ -36,7 +36,7 @@ let concerns = {
     index:'concerns',
     description: 'the concerns of budgetpedia relating to the City of Toronto budget',
     lookups: {
-        draftjs: {
+        draftjsdata: {
             repo:'draftjs',
             index:'concerns',
         }
