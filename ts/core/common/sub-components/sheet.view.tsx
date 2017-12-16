@@ -9,22 +9,95 @@ import Paper from 'material-ui/Paper'
 
 import { EditorState, RichUtils } from 'draft-js'
 import  Editor from 'draft-js-plugins-editor'
-import createToolbarPlugin from 'draft-js-static-toolbar-plugin'
+import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 
 import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import './editorstyles.css'
 
+import {
+  ItalicButton,
+  BoldButton,
+  UnderlineButton,
+  CodeButton,
+  HeadlineOneButton,
+  HeadlineTwoButton,
+  HeadlineThreeButton,
+  UnorderedListButton,
+  OrderedListButton,
+  BlockquoteButton,
+  CodeBlockButton,
+} from 'draft-js-buttons';
+
+class HeadlinesPicker extends React.Component<any,any> {
+  componentDidMount() {
+    setTimeout(() => { window.addEventListener('click', this.onWindowClick); });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('click', this.onWindowClick);
+  }
+
+  onWindowClick = () =>
+    // Call `onOverrideContent` again with `undefined`
+    // so the toolbar can show its regular content again.
+    this.props.onOverrideContent(undefined);
+
+  render() {
+    const buttons = [HeadlineOneButton, HeadlineTwoButton, HeadlineThreeButton];
+    return (
+      <div>
+        {buttons.map((Button, i) => // eslint-disable-next-line
+          <Button key={i} {...this.props} />
+        )}
+      </div>
+    );
+  }
+}
+
+class HeadlinesButton extends React.Component<any,any> {
+  onClick = () =>
+    // A button can call `onOverrideContent` to replace the content
+    // of the toolbar. This can be useful for displaying sub
+    // menus or requesting additional information from the user.
+    this.props.onOverrideContent(HeadlinesPicker);
+
+  render() {
+    return (
+      <div className={"headlineButtonWrapper"}>
+        <button onClick={this.onClick} className={"headlineButton"}>
+          H
+        </button>
+      </div>
+    );
+  }
+}
+
 class SheetView extends React.Component<any,any> {
 
     constructor(props) {
       super(props)
-      let staticToolbarPlugin = createToolbarPlugin()
 
-      let { Toolbar } = staticToolbarPlugin
+
+        const toolbarPlugin = createToolbarPlugin({
+          structure: [
+            BoldButton,
+            ItalicButton,
+            UnderlineButton,
+            CodeButton,
+            Separator,
+            HeadlinesButton,
+            UnorderedListButton,
+            OrderedListButton,
+            BlockquoteButton,
+            CodeBlockButton
+          ]
+        });
+        const { Toolbar } = toolbarPlugin;
+        const plugins = [toolbarPlugin];
+
       this.Toolbar = Toolbar
 
-      let plugins = [staticToolbarPlugin]
       this.plugins = plugins
     }
 
