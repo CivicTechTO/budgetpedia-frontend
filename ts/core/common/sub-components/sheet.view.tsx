@@ -8,21 +8,11 @@ import * as React from 'react'
 import Paper from 'material-ui/Paper'
 
 import  Editor from 'draft-js-plugins-editor'
+import { EditorState, RichUtils } from 'draft-js'
 
-import { EditorState } from 'draft-js'
-
-import createHashtagPlugin from 'draft-js-hashtag-plugin'
-import createLinkifyPlugin from 'draft-js-linkify-plugin'
-import 'draft-js-linkify-plugin/lib/plugin.css'
-import 'draft-js-hashtag-plugin/lib/plugin.css'
 import 'draft-js/dist/Draft.css'
 
-const hashtagPlugin = createHashtagPlugin();
-const linkifyPlugin = createLinkifyPlugin();
-
 const plugins = [
-  linkifyPlugin,
-  hashtagPlugin,
 ];
 
 
@@ -36,6 +26,15 @@ class SheetView extends React.Component<any,any> {
 
     onEditorChange = (editorState) => this.setState({editorState});
 
+    handleKeyCommand = (command, editorState) => {
+        const newState = RichUtils.handleKeyCommand(editorState, command);
+        if (newState) {
+          this.onEditorChange(newState);
+          return 'handled';
+        }
+        return 'not-handled';
+    }
+    
     render() {
 
         return (
@@ -46,6 +45,7 @@ class SheetView extends React.Component<any,any> {
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
                             plugins = {plugins}
+                            handleKeyCommand={this.handleKeyCommand}
                             readOnly = {false}
                             ref={(element) => { this.editor = element; }}
                         />
