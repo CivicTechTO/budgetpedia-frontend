@@ -10,7 +10,7 @@ import tilelists from './tilelists.index'
 import media from './media.index'
 import sheets from './sheets.index'
 import html from './data/html.index'
-import draftjs from './data/draftjs.index'
+import draft from './data/draft.index'
 
 let repositories = {
     cards,
@@ -23,7 +23,7 @@ let repositories = {
     media,
     sheets,
     html,
-    draftjs,
+    draft,
 }
 
 const getDocument = (repo, index) => {

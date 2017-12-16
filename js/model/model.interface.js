@@ -10,7 +10,7 @@ const tilelists_index_1 = require("./tilelists.index");
 const media_index_1 = require("./media.index");
 const sheets_index_1 = require("./sheets.index");
 const html_index_1 = require("./data/html.index");
-const draftjs_index_1 = require("./data/draftjs.index");
+const draft_index_1 = require("./data/draft.index");
 let repositories = {
     cards: cards_index_1.default,
     pages: pages_index_1.default,
@@ -22,7 +22,7 @@ let repositories = {
     media: media_index_1.default,
     sheets: sheets_index_1.default,
     html: html_index_1.default,
-    draftjs: draftjs_index_1.default,
+    draft: draft_index_1.default,
 };
 const getDocument = (repo, index) => {
     let output;
