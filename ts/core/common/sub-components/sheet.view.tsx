@@ -7,20 +7,36 @@ import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
 
-import  Editor from 'draft-js-plugins-editor'
 import { EditorState, RichUtils } from 'draft-js'
+import  Editor from 'draft-js-plugins-editor'
+import createToolbarPlugin from 'draft-js-static-toolbar-plugin'
 
 import 'draft-js/dist/Draft.css'
-
-const plugins = []
+import 'draft-js-static-toolbar-plugin/lib/plugin.css'
+import './editorstyles.css'
 
 class SheetView extends React.Component<any,any> {
+
+    constructor(props) {
+      super(props)
+      let staticToolbarPlugin = createToolbarPlugin()
+
+      let { Toolbar } = staticToolbarPlugin
+      this.Toolbar = Toolbar
+
+      let plugins = [staticToolbarPlugin]
+      this.plugins = plugins
+    }
 
     state = {
       editorState: EditorState.createEmpty(),
     }
 
-    editor
+    staticToolbarPlugin
+    Toolbar
+    plugins
+
+    editor = null
 
     focus = () => {
         this.editor.focus();
@@ -39,18 +55,23 @@ class SheetView extends React.Component<any,any> {
 
     render() {
 
+        let Toolbar = this.Toolbar
+
+        let plugins = this.plugins
+
         return (
-            <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}} onClick={this.focus}>
-                <Paper  zDepth = {3}>
-                    <div style = {{padding:'16px'}}>
+            <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
+                <Paper  zDepth = {3} >
+                    <div style = {{padding:'16px'}} onClick={this.focus}>
                         <Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
                             plugins = {plugins}
-                            handleKeyCommand={this.handleKeyCommand}
                             readOnly = {false}
+                            handleKeyCommand={this.handleKeyCommand}
                             ref={(element) => { this.editor = element; }}
                         />
+                        <Toolbar />
                     </div>
                 </Paper>
             </div>
