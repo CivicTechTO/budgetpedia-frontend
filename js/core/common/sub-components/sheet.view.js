@@ -12,6 +12,9 @@ class SheetView extends React.Component {
         this.state = {
             editorState: draft_js_1.EditorState.createEmpty(),
         };
+        this.focus = () => {
+            this.editor.focus();
+        };
         this.onEditorChange = (editorState) => this.setState({ editorState });
         this.handleKeyCommand = (command, editorState) => {
             const newState = draft_js_1.RichUtils.handleKeyCommand(editorState, command);
@@ -23,7 +26,7 @@ class SheetView extends React.Component {
         };
     }
     render() {
-        return (React.createElement("div", { style: { backgroundColor: '#d9d9d9', padding: '16px' } },
+        return (React.createElement("div", { style: { backgroundColor: '#d9d9d9', padding: '16px' }, onClick: this.focus },
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: { padding: '16px' } },
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, handleKeyCommand: this.handleKeyCommand, readOnly: false, ref: (element) => { this.editor = element; } })))));
