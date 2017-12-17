@@ -16,6 +16,10 @@ class SheetControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'sheet': {
+                    let { lookups } = component;
+                    if (lookups && lookups.draftdata) {
+                        properties.draftsource = lookups.draftdata;
+                    }
                     componentType = sheet_view_1.default;
                     break;
                 }

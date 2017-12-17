@@ -6,6 +6,7 @@ const Paper_1 = require("material-ui/Paper");
 const FloatingActionButton_1 = require("material-ui/FloatingActionButton");
 const mode_edit_1 = require("material-ui/svg-icons/editor/mode-edit");
 const file_download_1 = require("material-ui/svg-icons/file/file-download");
+var fileDownload = require('js-file-download');
 const draft_js_1 = require("draft-js");
 const draft_js_plugins_editor_1 = require("draft-js-plugins-editor");
 const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin");
@@ -58,15 +59,24 @@ const RenderedLink = ({ children, className, entityKey, getEditorState, target, 
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            editorState: draft_js_1.EditorState.createEmpty(),
-            editorReadonly: true,
-        };
+        this.state = null;
         this.editor = null;
         this.focus = () => {
             this.editor.focus();
         };
         this.onEditorChange = (editorState) => this.setState({ editorState });
+        this.onDownload = () => {
+            let { draftsource } = this.props;
+            if (!draftsource)
+                return;
+            let { index } = draftsource;
+            if (!index)
+                return;
+            let content = this.state.editorState.getCurrentContent();
+            let rawcontent = draft_js_1.convertToRaw(content);
+            let json = JSON.stringify(rawcontent);
+            fileDownload(json, index + '.json');
+        };
         this.handleKeyCommand = (command, editorState) => {
             const newState = draft_js_1.RichUtils.handleKeyCommand(editorState, command);
             if (newState) {
@@ -95,6 +105,19 @@ class SheetView extends React.Component {
         });
         const { Toolbar } = toolbarPlugin;
         const plugins = [toolbarPlugin, linkPlugin];
+        let { draftdata } = this.props;
+        let startdata;
+        if (!draftdata || !Object.keys(draftdata).length) {
+            startdata = draft_js_1.EditorState.createEmpty();
+        }
+        else {
+            startdata = draft_js_1.EditorState.createWithContent(draft_js_1.convertFromRaw(draftdata));
+        }
+        console.log('draftdata, startdata', draftdata, startdata);
+        this.state = {
+            editorState: startdata,
+            editorReadonly: true
+        };
         this.Toolbar = Toolbar;
         this.plugins = plugins;
     }
@@ -111,11 +134,7 @@ class SheetView extends React.Component {
                                 });
                             } },
                             React.createElement(mode_edit_1.default, null)),
-                        React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: () => {
-                                this.setState({
-                                    editorReadonly: !this.state.editorReadonly
-                                });
-                            } },
+                        React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
                             React.createElement(file_download_1.default, null))),
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }),
                     (!this.state.editorReadonly) ? React.createElement(Toolbar, null) : null))));

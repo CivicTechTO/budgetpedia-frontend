@@ -11,11 +11,16 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
 import FileDownload from 'material-ui/svg-icons/file/file-download'
 
-import { EditorState, RichUtils } from 'draft-js'
+var fileDownload = require('js-file-download')
+
+import { EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
 import  Editor from 'draft-js-plugins-editor'
 import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
 
+
+// -----------------------------[ plugin compliance ]-------------------------------
+// from draft-js-plugins.com
 import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import 'draft-js-anchor-plugin/lib/plugin.css'
@@ -35,6 +40,7 @@ import {
   CodeBlockButton,
 } from 'draft-js-buttons'
 
+// copy-paste below
 class HeadlinesPicker extends React.Component<any,any> {
   componentDidMount() {
     setTimeout(() => { window.addEventListener('click', this.onWindowClick); });
@@ -61,6 +67,7 @@ class HeadlinesPicker extends React.Component<any,any> {
   }
 }
 
+// copy-paste below (more or less)
 class HeadlinesButton extends React.Component<any,any> {
   onClick = () =>
     // A button can call `onOverrideContent` to replace the content
@@ -79,7 +86,12 @@ class HeadlinesButton extends React.Component<any,any> {
   }
 }
 
-// taken after https://github.com/draft-js-plugins/draft-js-plugins/blob/master/draft-js-anchor-plugin/src/components/Link/index.js
+// --------------------------------[ end of plugins compliance ]---------------------------------
+
+// RenderedLink taken after 
+// https://github.com/draft-js-plugins/draft-js-plugins/blob/master/draft-js-anchor-plugin/src/components/Link/index.js
+// modified by adding conditional for when user enters 'local.link/somepath' 
+// that generates a router Link instead of an anchor link
 const RenderedLink = ({
   children,
   className,
@@ -92,13 +104,16 @@ const RenderedLink = ({
   const entityData = entity ? entity.get('data') : undefined;
   const href = (entityData && entityData.url) || undefined;
 
+  // conditional added by HB
   let test = 'local.link'
   let pos = href.indexOf(test)
   if (pos != -1) {
     let to = href.substring(pos + test.length)
     if (!to) to = '/'
+    // TODO not sure about className -- needs testing
     return <Link className = {className} to = {to}>{children}</Link>
   }
+  // end of conditional
 
   return (
     <a
@@ -119,38 +134,49 @@ class SheetView extends React.Component<any,any> {
     constructor(props) {
       super(props)
 
-
       const linkPlugin = createLinkPlugin({
-          Link:RenderedLink,
+        Link:RenderedLink,
       })
 
-        const toolbarPlugin = createToolbarPlugin({
-          structure: [
-            BoldButton,
-            ItalicButton,
-            UnderlineButton,
-            CodeButton,
-            linkPlugin.LinkButton,
-            Separator,
-            HeadlinesButton,
-            UnorderedListButton,
-            OrderedListButton,
-            BlockquoteButton,
-            CodeBlockButton
-          ]
-        });
-        const { Toolbar } = toolbarPlugin;
-        const plugins = [toolbarPlugin, linkPlugin];
+      const toolbarPlugin = createToolbarPlugin({
+        structure: [
+          BoldButton,
+          ItalicButton,
+          UnderlineButton,
+          CodeButton,
+          linkPlugin.LinkButton,
+          Separator,
+          HeadlinesButton,
+          UnorderedListButton,
+          OrderedListButton,
+          BlockquoteButton,
+          CodeBlockButton
+        ]
+      });
+      const { Toolbar } = toolbarPlugin;
+      const plugins = [toolbarPlugin, linkPlugin];
+
+
+      let { draftdata } = this.props
+
+      let startstate
+      if (!draftdata || !Object.keys(draftdata).length) {
+        startstate = EditorState.createEmpty()
+      } else {
+        startstate = EditorState.createWithContent(convertFromRaw(draftdata))
+      }
+
+      this.state = {
+        editorState: startstate,
+        editorReadonly: true
+      }
 
       this.Toolbar = Toolbar
 
       this.plugins = plugins
     }
 
-    state = {
-      editorState: EditorState.createEmpty(),
-      editorReadonly: true,
-    }
+    state = null
 
     staticToolbarPlugin
     Toolbar
@@ -163,6 +189,22 @@ class SheetView extends React.Component<any,any> {
     }
 
     onEditorChange = (editorState) => this.setState({editorState});
+
+    // workaround until back end is set up. 
+    // Downloads rawContent, which dev than has to save to model/data/draft/ 
+    onDownload = () => {
+
+      let { draftsource } = this.props
+      if (!draftsource) return
+      let { index } =  draftsource
+      if (!index) return
+
+      let content = this.state.editorState.getCurrentContent()
+      let rawcontent = convertToRaw(content)
+      let json = JSON.stringify(rawcontent)
+      fileDownload(json,index + '.json')
+
+    }
 
     handleKeyCommand = (command, editorState) => {
         const newState = RichUtils.handleKeyCommand(editorState, command);
@@ -200,13 +242,7 @@ class SheetView extends React.Component<any,any> {
                             <FloatingActionButton 
                                 mini={true} 
                                 style={{marginRight:'20px',zIndex:2}}
-                                onTouchTap = { () => 
-                                    {
-                                        this.setState({
-                                            editorReadonly: !this.state.editorReadonly
-                                        })
-                                    }
-                                }
+                                onTouchTap = { this.onDownload }
                             >
                                 <FileDownload />
                             </FloatingActionButton>

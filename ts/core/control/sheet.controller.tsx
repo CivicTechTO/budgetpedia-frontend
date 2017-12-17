@@ -45,6 +45,10 @@ class SheetControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'sheet': {
+                let { lookups } = component
+                if (lookups && lookups.draftdata) {
+                    properties.draftsource = lookups.draftdata
+                }
                 componentType = SheetView
                 break
             }
