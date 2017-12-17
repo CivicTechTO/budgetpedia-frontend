@@ -6,6 +6,9 @@
 import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
+import FileDownload from 'material-ui/svg-icons/file/file-download'
 
 import { EditorState, RichUtils } from 'draft-js'
 import  Editor from 'draft-js-plugins-editor'
@@ -81,7 +84,9 @@ class SheetView extends React.Component<any,any> {
       super(props)
 
 
-      const linkPlugin = createLinkPlugin()
+      const linkPlugin = createLinkPlugin({
+          linkTarget:'_blank',
+      })
 
         const toolbarPlugin = createToolbarPlugin({
           structure: [
@@ -108,6 +113,7 @@ class SheetView extends React.Component<any,any> {
 
     state = {
       editorState: EditorState.createEmpty(),
+      editorReadonly: true,
     }
 
     staticToolbarPlugin
@@ -140,16 +146,44 @@ class SheetView extends React.Component<any,any> {
         return (
             <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
                 <Paper  zDepth = {3} >
-                    <div style = {{padding:'16px'}} onClick={this.focus}>
+                    <div style = {{padding:'16px',position:'relative',}} onClick={this.focus}>
+                        <div style = {{position:'absolute',top:'-20px',right:0}} >
+                            <FloatingActionButton 
+                                mini={true} 
+                                style={{marginRight:'20px',zIndex:2}}
+                                onTouchTap = { () => 
+                                    {
+                                        this.setState({
+                                            editorReadonly: !this.state.editorReadonly
+                                        })
+                                    }
+                                }
+                            >
+                                <ContentEdit />
+                            </FloatingActionButton>
+                            <FloatingActionButton 
+                                mini={true} 
+                                style={{marginRight:'20px',zIndex:2}}
+                                onTouchTap = { () => 
+                                    {
+                                        this.setState({
+                                            editorReadonly: !this.state.editorReadonly
+                                        })
+                                    }
+                                }
+                            >
+                                <FileDownload />
+                            </FloatingActionButton>
+                        </div>
                         <Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
                             plugins = {plugins}
-                            readOnly = {false}
+                            readOnly = {this.state.editorReadonly}
                             handleKeyCommand={this.handleKeyCommand}
                             ref={(element) => { this.editor = element; }}
                         />
-                        <Toolbar />
+                        {(!this.state.editorReadonly)?<Toolbar />:null}
                     </div>
                 </Paper>
             </div>
