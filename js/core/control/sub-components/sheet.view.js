@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const react_router_dom_1 = require("react-router-dom");
 const Paper_1 = require("material-ui/Paper");
 const FloatingActionButton_1 = require("material-ui/FloatingActionButton");
 const mode_edit_1 = require("material-ui/svg-icons/editor/mode-edit");
@@ -40,6 +41,20 @@ class HeadlinesButton extends React.Component {
             React.createElement("button", { onClick: this.onClick, className: "headlineButton" }, "H")));
     }
 }
+const RenderedLink = ({ children, className, entityKey, getEditorState, target, }) => {
+    const entity = getEditorState().getCurrentContent().getEntity(entityKey);
+    const entityData = entity ? entity.get('data') : undefined;
+    const href = (entityData && entityData.url) || undefined;
+    let test = 'local.link';
+    let pos = href.indexOf(test);
+    if (pos != -1) {
+        let to = href.substring(pos + test.length);
+        if (!to)
+            to = '/';
+        return React.createElement(react_router_dom_1.Link, { className: className, to: to }, children);
+    }
+    return (React.createElement("a", { className: className, title: href, href: href, target: '_blank', rel: "noopener noreferrer" }, children));
+};
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
@@ -61,7 +76,7 @@ class SheetView extends React.Component {
             return 'not-handled';
         };
         const linkPlugin = draft_js_anchor_plugin_1.default({
-            linkTarget: '_blank',
+            Link: RenderedLink,
         });
         const toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
             structure: [

@@ -4,6 +4,7 @@
 'use strict'
 
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import Paper from 'material-ui/Paper'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -32,7 +33,7 @@ import {
   OrderedListButton,
   BlockquoteButton,
   CodeBlockButton,
-} from 'draft-js-buttons';
+} from 'draft-js-buttons'
 
 class HeadlinesPicker extends React.Component<any,any> {
   componentDidMount() {
@@ -78,6 +79,41 @@ class HeadlinesButton extends React.Component<any,any> {
   }
 }
 
+// taken after https://github.com/draft-js-plugins/draft-js-plugins/blob/master/draft-js-anchor-plugin/src/components/Link/index.js
+const RenderedLink = ({
+  children,
+  className,
+  entityKey,
+  getEditorState,
+  target,
+}) => {
+
+  const entity = getEditorState().getCurrentContent().getEntity(entityKey);
+  const entityData = entity ? entity.get('data') : undefined;
+  const href = (entityData && entityData.url) || undefined;
+
+  let test = 'local.link'
+  let pos = href.indexOf(test)
+  if (pos != -1) {
+    let to = href.substring(pos + test.length)
+    if (!to) to = '/'
+    return <Link className = {className} to = {to}>{children}</Link>
+  }
+
+  return (
+    <a
+      className={className}
+      title={href}
+      href={href}
+      target='_blank'
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  )
+
+}
+
 class SheetView extends React.Component<any,any> {
 
     constructor(props) {
@@ -85,7 +121,7 @@ class SheetView extends React.Component<any,any> {
 
 
       const linkPlugin = createLinkPlugin({
-          linkTarget:'_blank',
+          Link:RenderedLink,
       })
 
         const toolbarPlugin = createToolbarPlugin({
