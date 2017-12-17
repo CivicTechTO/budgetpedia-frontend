@@ -10,9 +10,11 @@ import Paper from 'material-ui/Paper'
 import { EditorState, RichUtils } from 'draft-js'
 import  Editor from 'draft-js-plugins-editor'
 import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
+import createLinkPlugin from 'draft-js-anchor-plugin'
 
 import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
+import 'draft-js-anchor-plugin/lib/plugin.css'
 import './editorstyles.css'
 
 import {
@@ -79,12 +81,15 @@ class SheetView extends React.Component<any,any> {
       super(props)
 
 
+      const linkPlugin = createLinkPlugin()
+
         const toolbarPlugin = createToolbarPlugin({
           structure: [
             BoldButton,
             ItalicButton,
             UnderlineButton,
             CodeButton,
+            linkPlugin.LinkButton,
             Separator,
             HeadlinesButton,
             UnorderedListButton,
@@ -94,7 +99,7 @@ class SheetView extends React.Component<any,any> {
           ]
         });
         const { Toolbar } = toolbarPlugin;
-        const plugins = [toolbarPlugin];
+        const plugins = [toolbarPlugin, linkPlugin];
 
       this.Toolbar = Toolbar
 

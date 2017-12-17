@@ -5,8 +5,10 @@ const Paper_1 = require("material-ui/Paper");
 const draft_js_1 = require("draft-js");
 const draft_js_plugins_editor_1 = require("draft-js-plugins-editor");
 const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin");
+const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
+require("draft-js-anchor-plugin/lib/plugin.css");
 require("./editorstyles.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
 class HeadlinesPicker extends React.Component {
@@ -54,12 +56,14 @@ class SheetView extends React.Component {
             }
             return 'not-handled';
         };
+        const linkPlugin = draft_js_anchor_plugin_1.default();
         const toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
             structure: [
                 draft_js_buttons_1.BoldButton,
                 draft_js_buttons_1.ItalicButton,
                 draft_js_buttons_1.UnderlineButton,
                 draft_js_buttons_1.CodeButton,
+                linkPlugin.LinkButton,
                 draft_js_static_toolbar_plugin_1.Separator,
                 HeadlinesButton,
                 draft_js_buttons_1.UnorderedListButton,
@@ -69,7 +73,7 @@ class SheetView extends React.Component {
             ]
         });
         const { Toolbar } = toolbarPlugin;
-        const plugins = [toolbarPlugin];
+        const plugins = [toolbarPlugin, linkPlugin];
         this.Toolbar = Toolbar;
         this.plugins = plugins;
     }
