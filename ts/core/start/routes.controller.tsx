@@ -17,8 +17,8 @@ let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')
 
 import HomeController from '../../legacy/homepage/home.controller'
-import PageController from '../common/page.controller'
-import NoMatch  from '../common/sub-components/nomatch'
+import PageController from '../control/page.controller'
+import NoMatch  from '../control/sub-components/nomatch'
 
 import pageroutes from '../../addons/pageroutes'
 

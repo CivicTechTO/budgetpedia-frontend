@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ace-builds": "^1.2.9",
-    "ajv": "^5.5.1",
+    "ajv": "^5.5.2",
     "csv": "^2.0.0",
     "draft-js": "^0.10.4",
     "draft-js-anchor-plugin": "^2.0.1",
@@ -31,7 +31,7 @@
     "markdown-it": "^8.4.0",
     "markdown-it-attrs": "^1.2.0",
     "material-ui": "^0.20.0",
-    "moment": "^2.19.4",
+    "moment": "^2.20.0",
     "node-uuid": "^1.4.8",
     "prop-types": "^15.6.0",
     "q": "^1.5.1",

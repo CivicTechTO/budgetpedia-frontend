@@ -11,10 +11,10 @@ import { Card, CardTitle, CardText } from 'material-ui/Card'
 
 import { Timeline } from 'react-twitter-widgets'
 
-import TileList from "../../core/common/sub-components/tilelist.view"
-import HtmlView from '../../core/common/sub-components/html.view'
-import LinkList from '../../core/common/sub-components/linklist.view'
-import NuggetList from '../../core/common/sub-components/nuggetlist.view'
+import TileList from "../../core/control/sub-components/tilelist.view"
+import HtmlView from '../../core/control/sub-components/html.view'
+import LinkList from '../../core/control/sub-components/linklist.view'
+import NuggetList from '../../core/control/sub-components/nuggetlist.view'
 
 import model from './home.model'
 import styles from '../../model/styles.index'
