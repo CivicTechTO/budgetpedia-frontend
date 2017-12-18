@@ -18,7 +18,7 @@ import  Editor from 'draft-js-plugins-editor'
 import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
 import createImagePlugin from 'draft-js-image-plugin'
-import ImageAdd from './imageadd.view'
+import ImageAdd from '../forked-components/imageadd.view'
 // -----------------------------[ plugin compliance ]-------------------------------
 // from draft-js-plugins.com
 import './sheet.styles.css'

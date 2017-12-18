@@ -12,7 +12,7 @@ const draft_js_plugins_editor_1 = require("draft-js-plugins-editor");
 const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin");
 const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
 const draft_js_image_plugin_1 = require("draft-js-image-plugin");
-const imageadd_view_1 = require("./imageadd.view");
+const imageadd_view_1 = require("../forked-components/imageadd.view");
 require("./sheet.styles.css");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");

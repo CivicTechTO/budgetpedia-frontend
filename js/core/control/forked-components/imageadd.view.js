@@ -2,8 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 require("./imageadd.styles.css");
-let styles = require("./imageadd.styles.css");
-console.log('styles', styles);
 class ImageAdd extends React.Component {
     constructor() {
         super(...arguments);
