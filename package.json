@@ -16,6 +16,7 @@
     "draft-js-anchor-plugin": "^2.0.1",
     "draft-js-buttons": "^2.0.1",
     "draft-js-hashtag-plugin": "^2.0.1",
+    "draft-js-image-plugin": "^2.0.1",
     "draft-js-inline-toolbar-plugin": "^2.0.1",
     "draft-js-linkify-plugin": "^2.0.1",
     "draft-js-plugins-editor": "^2.0.3",

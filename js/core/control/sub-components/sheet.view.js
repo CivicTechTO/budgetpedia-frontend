@@ -11,10 +11,13 @@ const draft_js_1 = require("draft-js");
 const draft_js_plugins_editor_1 = require("draft-js-plugins-editor");
 const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin");
 const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
+const draft_js_image_plugin_1 = require("draft-js-image-plugin");
+const imageadd_view_1 = require("./imageadd.view");
+require("./sheet.styles.css");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
 require("draft-js-anchor-plugin/lib/plugin.css");
-require("./sheet.styles.css");
+require("draft-js-image-plugin/lib/plugin.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
 class HeadlinesPicker extends React.Component {
     constructor() {
@@ -88,6 +91,7 @@ class SheetView extends React.Component {
         const linkPlugin = draft_js_anchor_plugin_1.default({
             Link: RenderedLink,
         });
+        const imagePlugin = draft_js_image_plugin_1.default();
         const toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
             structure: [
                 draft_js_buttons_1.BoldButton,
@@ -104,7 +108,11 @@ class SheetView extends React.Component {
             ]
         });
         const { Toolbar } = toolbarPlugin;
-        const plugins = [toolbarPlugin, linkPlugin];
+        const plugins = [
+            toolbarPlugin,
+            linkPlugin,
+            imagePlugin
+        ];
         let { draftdata } = this.props;
         let startstate;
         if (!draftdata || !Object.keys(draftdata).length) {
@@ -119,6 +127,7 @@ class SheetView extends React.Component {
             editable: (window.location.hostname == 'budgetpedia')
         };
         this.Toolbar = Toolbar;
+        this.imagePlugin = imagePlugin;
         this.plugins = plugins;
     }
     render() {
@@ -135,7 +144,8 @@ class SheetView extends React.Component {
                             } },
                             React.createElement(mode_edit_1.default, null)),
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
-                            React.createElement(file_download_1.default, null))) : null,
+                            React.createElement(file_download_1.default, null)),
+                        React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage })) : null,
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }),
                     (!this.state.editorReadonly) ? React.createElement(Toolbar, null) : null))));
     }

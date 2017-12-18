@@ -17,14 +17,15 @@ import { EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
 import  Editor from 'draft-js-plugins-editor'
 import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
-
-
+import createImagePlugin from 'draft-js-image-plugin'
+import ImageAdd from './imageadd.view'
 // -----------------------------[ plugin compliance ]-------------------------------
 // from draft-js-plugins.com
+import './sheet.styles.css'
 import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import 'draft-js-anchor-plugin/lib/plugin.css'
-import './sheet.styles.css'
+import 'draft-js-image-plugin/lib/plugin.css'
 
 import {
   ItalicButton,
@@ -138,6 +139,8 @@ class SheetView extends React.Component<any,any> {
         Link:RenderedLink,
       })
 
+      const imagePlugin = createImagePlugin()
+
       const toolbarPlugin = createToolbarPlugin({
         structure: [
           BoldButton,
@@ -156,7 +159,14 @@ class SheetView extends React.Component<any,any> {
 
       const { Toolbar } = toolbarPlugin
 
-      const plugins = [toolbarPlugin, linkPlugin]
+      const plugins = [
+        toolbarPlugin, 
+        linkPlugin, 
+        // focusPlugin,
+        // alignmentPlugin,
+        // resizeablePlugin,
+        imagePlugin
+      ]
 
       let { draftdata } = this.props
 
@@ -175,6 +185,8 @@ class SheetView extends React.Component<any,any> {
 
       this.Toolbar = Toolbar
 
+      this.imagePlugin = imagePlugin
+
       this.plugins = plugins
     }
 
@@ -183,6 +195,7 @@ class SheetView extends React.Component<any,any> {
     staticToolbarPlugin
     Toolbar
     plugins
+    imagePlugin
 
     editor = null
 
@@ -248,6 +261,11 @@ class SheetView extends React.Component<any,any> {
                             >
                                 <FileDownload />
                             </FloatingActionButton>
+                            <ImageAdd
+                              editorState={this.state.editorState}
+                              onChange={this.onEditorChange}
+                              modifier={this.imagePlugin.addImage}
+                            />
                         </div>:null}
                         <Editor 
                             editorState = {this.state.editorState} 
