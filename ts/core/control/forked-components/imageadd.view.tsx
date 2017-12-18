@@ -68,7 +68,7 @@ export default class ImageAdd extends React.Component<any,any> {
           onMouseUp={this.openPopover}
           type="button"
         >
-          +
+          img
         </button>
         <div
           className={popoverClassName}

@@ -50,7 +50,7 @@ class ImageAdd extends React.Component {
             "addImagePressedButton" :
             "addImageButton";
         return (React.createElement("div", { className: "addImage" },
-            React.createElement("button", { className: buttonClassName, onMouseUp: this.openPopover, type: "button" }, "+"),
+            React.createElement("button", { className: buttonClassName, onMouseUp: this.openPopover, type: "button" }, "img"),
             React.createElement("div", { className: popoverClassName, onClick: this.onPopoverClick },
                 React.createElement("input", { type: "text", placeholder: "Paste the image url …", className: "addImageInput", onChange: this.changeUrl, value: this.state.url }),
                 React.createElement("button", { className: "addImageConfirmButton", type: "button", onClick: this.addImage }, "Add"))));
