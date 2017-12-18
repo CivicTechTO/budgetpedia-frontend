@@ -90,6 +90,7 @@ class SheetView extends React.Component {
         };
         const linkPlugin = draft_js_anchor_plugin_1.default({
             Link: RenderedLink,
+            placeholder: 'local.link/path, or external url',
         });
         const imagePlugin = draft_js_image_plugin_1.default();
         const toolbarPlugin = draft_js_static_toolbar_plugin_1.default({

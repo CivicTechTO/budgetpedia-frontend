@@ -137,6 +137,7 @@ class SheetView extends React.Component<any,any> {
 
       const linkPlugin = createLinkPlugin({
         Link:RenderedLink,
+        placeholder:'local.link/path, or external url',
       })
 
       const imagePlugin = createImagePlugin()
