@@ -262,11 +262,6 @@ class SheetView extends React.Component<any,any> {
                             >
                                 <FileDownload />
                             </FloatingActionButton>
-                            <ImageAdd
-                              editorState={this.state.editorState}
-                              onChange={this.onEditorChange}
-                              modifier={this.imagePlugin.addImage}
-                            />
                         </div>:null}
                         <Editor 
                             editorState = {this.state.editorState} 
@@ -276,8 +271,17 @@ class SheetView extends React.Component<any,any> {
                             handleKeyCommand={this.handleKeyCommand}
                             ref={(element) => { this.editor = element; }}
                         />
-                        {(!this.state.editorReadonly)?<Toolbar />:null}
+                        {(!this.state.editorReadonly)?
+                            <Toolbar />
+                          :null}
                     </div>
+                    {/* ImageAdd must be outside scope of auto-focus */}
+                    {(!this.state.editorReadonly)?
+                    <ImageAdd 
+                      editorState={this.state.editorState}
+                      onChange={this.onEditorChange}
+                      modifier={this.imagePlugin.addImage}
+                    />:null}
                 </Paper>
             </div>
         )

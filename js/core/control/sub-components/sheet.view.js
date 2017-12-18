@@ -145,10 +145,13 @@ class SheetView extends React.Component {
                             } },
                             React.createElement(mode_edit_1.default, null)),
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
-                            React.createElement(file_download_1.default, null)),
-                        React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage })) : null,
+                            React.createElement(file_download_1.default, null))) : null,
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }),
-                    (!this.state.editorReadonly) ? React.createElement(Toolbar, null) : null))));
+                    (!this.state.editorReadonly) ?
+                        React.createElement(Toolbar, null)
+                        : null),
+                (!this.state.editorReadonly) ?
+                    React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage }) : null)));
     }
 }
 exports.default = SheetView;
