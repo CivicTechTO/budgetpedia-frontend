@@ -24,7 +24,7 @@ import createLinkPlugin from 'draft-js-anchor-plugin'
 import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import 'draft-js-anchor-plugin/lib/plugin.css'
-import './editorstyles.css'
+import './sheet.styles.css'
 
 import {
   ItalicButton,
@@ -152,10 +152,11 @@ class SheetView extends React.Component<any,any> {
           BlockquoteButton,
           CodeBlockButton
         ]
-      });
-      const { Toolbar } = toolbarPlugin;
-      const plugins = [toolbarPlugin, linkPlugin];
+      })
 
+      const { Toolbar } = toolbarPlugin
+
+      const plugins = [toolbarPlugin, linkPlugin]
 
       let { draftdata } = this.props
 
@@ -168,7 +169,8 @@ class SheetView extends React.Component<any,any> {
 
       this.state = {
         editorState: startstate,
-        editorReadonly: true
+        editorReadonly: true,
+        editable: (window.location.hostname == 'budgetpedia') //TODO temporary
       }
 
       this.Toolbar = Toolbar
@@ -191,7 +193,7 @@ class SheetView extends React.Component<any,any> {
     onEditorChange = (editorState) => this.setState({editorState});
 
     // workaround until back end is set up. 
-    // Downloads rawContent, which dev than has to save to model/data/draft/ 
+    // Downloads rawContent, which dev than has to save to model/data/draft/, and recompile :-(
     onDownload = () => {
 
       let { draftsource } = this.props
@@ -225,7 +227,7 @@ class SheetView extends React.Component<any,any> {
             <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
                 <Paper  zDepth = {3} >
                     <div style = {{padding:'16px',position:'relative',}} onClick={this.focus}>
-                        <div style = {{position:'absolute',top:'-20px',right:0}} >
+                        {this.state.editable?<div style = {{position:'absolute',top:'-20px',right:0}} >
                             <FloatingActionButton 
                                 mini={true} 
                                 style={{marginRight:'20px',zIndex:2}}
@@ -246,7 +248,7 @@ class SheetView extends React.Component<any,any> {
                             >
                                 <FileDownload />
                             </FloatingActionButton>
-                        </div>
+                        </div>:null}
                         <Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}

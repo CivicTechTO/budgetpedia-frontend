@@ -14,7 +14,7 @@ const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
 require("draft-js-anchor-plugin/lib/plugin.css");
-require("./editorstyles.css");
+require("./sheet.styles.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
 class HeadlinesPicker extends React.Component {
     constructor() {
@@ -106,17 +106,17 @@ class SheetView extends React.Component {
         const { Toolbar } = toolbarPlugin;
         const plugins = [toolbarPlugin, linkPlugin];
         let { draftdata } = this.props;
-        let startdata;
+        let startstate;
         if (!draftdata || !Object.keys(draftdata).length) {
-            startdata = draft_js_1.EditorState.createEmpty();
+            startstate = draft_js_1.EditorState.createEmpty();
         }
         else {
-            startdata = draft_js_1.EditorState.createWithContent(draft_js_1.convertFromRaw(draftdata));
+            startstate = draft_js_1.EditorState.createWithContent(draft_js_1.convertFromRaw(draftdata));
         }
-        console.log('draftdata, startdata', draftdata, startdata);
         this.state = {
-            editorState: startdata,
-            editorReadonly: true
+            editorState: startstate,
+            editorReadonly: true,
+            editable: (window.location.hostname == 'budgetpedia')
         };
         this.Toolbar = Toolbar;
         this.plugins = plugins;
@@ -127,7 +127,7 @@ class SheetView extends React.Component {
         return (React.createElement("div", { style: { backgroundColor: '#d9d9d9', padding: '16px' } },
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: { padding: '16px', position: 'relative', }, onClick: this.focus },
-                    React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
+                    this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: () => {
                                 this.setState({
                                     editorReadonly: !this.state.editorReadonly
@@ -135,7 +135,7 @@ class SheetView extends React.Component {
                             } },
                             React.createElement(mode_edit_1.default, null)),
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
-                            React.createElement(file_download_1.default, null))),
+                            React.createElement(file_download_1.default, null))) : null,
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }),
                     (!this.state.editorReadonly) ? React.createElement(Toolbar, null) : null))));
     }
