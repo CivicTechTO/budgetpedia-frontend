@@ -13,11 +13,14 @@ const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin
 const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
 const draft_js_image_plugin_1 = require("draft-js-image-plugin");
 const imageadd_view_1 = require("../forked-components/imageadd.view");
+const draft_js_focus_plugin_1 = require("draft-js-focus-plugin");
+const draft_js_resizeable_plugin_1 = require("draft-js-resizeable-plugin");
 require("./sheet.styles.css");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
 require("draft-js-anchor-plugin/lib/plugin.css");
 require("draft-js-image-plugin/lib/plugin.css");
+require("draft-js-focus-plugin/lib/plugin.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
 class HeadlinesPicker extends React.Component {
     constructor() {
@@ -64,8 +67,15 @@ class SheetView extends React.Component {
         super(props);
         this.state = null;
         this.editor = null;
+        this.paper = null;
+        this.paperfocus = () => {
+            this.paper.focus();
+        };
         this.focus = () => {
             this.editor.focus();
+        };
+        this.blur = () => {
+            this.editor.blur();
         };
         this.onEditorChange = (editorState) => this.setState({ editorState });
         this.onDownload = () => {
@@ -88,12 +98,17 @@ class SheetView extends React.Component {
             }
             return 'not-handled';
         };
-        const linkPlugin = draft_js_anchor_plugin_1.default({
+        let linkPlugin = draft_js_anchor_plugin_1.default({
             Link: RenderedLink,
             placeholder: 'local.link/path, or external url',
         });
-        const imagePlugin = draft_js_image_plugin_1.default();
-        const toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
+        let focusPlugin = draft_js_focus_plugin_1.default();
+        let resizeablePlugin = draft_js_resizeable_plugin_1.default();
+        let decorator = draft_js_plugins_editor_1.composeDecorators(focusPlugin.decorator, resizeablePlugin.decorator);
+        let imagePlugin = draft_js_image_plugin_1.default({
+            decorator,
+        });
+        let toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
             structure: [
                 draft_js_buttons_1.BoldButton,
                 draft_js_buttons_1.ItalicButton,
@@ -108,11 +123,13 @@ class SheetView extends React.Component {
                 draft_js_buttons_1.CodeBlockButton
             ]
         });
-        const { Toolbar } = toolbarPlugin;
-        const plugins = [
+        let { Toolbar } = toolbarPlugin;
+        let plugins = [
             toolbarPlugin,
             linkPlugin,
-            imagePlugin
+            imagePlugin,
+            focusPlugin,
+            resizeablePlugin,
         ];
         let { draftdata } = this.props;
         let startstate;
@@ -124,8 +141,9 @@ class SheetView extends React.Component {
         }
         this.state = {
             editorState: startstate,
-            editorReadonly: true,
-            editable: (window.location.hostname == 'budgetpedia')
+            editorReadonly: false,
+            editable: (window.location.hostname == 'budgetpedia'),
+            renderAlignmentTool: true
         };
         this.Toolbar = Toolbar;
         this.imagePlugin = imagePlugin;
@@ -134,14 +152,30 @@ class SheetView extends React.Component {
     render() {
         let Toolbar = this.Toolbar;
         let plugins = this.plugins;
-        return (React.createElement("div", { style: { backgroundColor: '#d9d9d9', padding: '16px' } },
+        return (React.createElement("div", { ref: (element) => { this.paper = element; }, style: { backgroundColor: '#d9d9d9', padding: '16px' } },
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: { padding: '16px', position: 'relative', }, onClick: this.focus },
                     this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: () => {
-                                this.setState({
-                                    editorReadonly: !this.state.editorReadonly
-                                });
+                                if (!this.state.editorReadonly) {
+                                    console.log('readonly true');
+                                    this.setState({
+                                        editorReadonly: true
+                                    }, () => {
+                                        setTimeout(() => {
+                                            this.setState({
+                                                renderAlignmentTool: false
+                                            });
+                                        });
+                                    });
+                                }
+                                else {
+                                    console.log('readonly false');
+                                    this.setState({
+                                        editorReadonly: false,
+                                        renderAlignmentTool: true,
+                                    });
+                                }
                             } },
                             React.createElement(mode_edit_1.default, null)),
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
@@ -150,7 +184,7 @@ class SheetView extends React.Component {
                     (!this.state.editorReadonly) ?
                         React.createElement(Toolbar, null)
                         : null),
-                (!this.state.editorReadonly) ?
+                (this.state.renderAlignmentTool) ?
                     React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage }) : null)));
     }
 }

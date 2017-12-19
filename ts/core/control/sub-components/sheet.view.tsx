@@ -14,11 +14,14 @@ import FileDownload from 'material-ui/svg-icons/file/file-download'
 var fileDownload = require('js-file-download')
 
 import { EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
-import  Editor from 'draft-js-plugins-editor'
+import  Editor, { composeDecorators } from 'draft-js-plugins-editor'
 import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
 import createImagePlugin from 'draft-js-image-plugin'
 import ImageAdd from '../forked-components/imageadd.view'
+// import createAlignmentPlugin from 'draft-js-alignment-plugin';
+import createFocusPlugin from 'draft-js-focus-plugin';
+import createResizeablePlugin from 'draft-js-resizeable-plugin';
 // -----------------------------[ plugin compliance ]-------------------------------
 // from draft-js-plugins.com
 import './sheet.styles.css'
@@ -26,6 +29,8 @@ import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import 'draft-js-anchor-plugin/lib/plugin.css'
 import 'draft-js-image-plugin/lib/plugin.css'
+// import 'draft-js-alignment-plugin/lib/plugin.css';
+import 'draft-js-focus-plugin/lib/plugin.css';
 
 import {
   ItalicButton,
@@ -135,14 +140,27 @@ class SheetView extends React.Component<any,any> {
     constructor(props) {
       super(props)
 
-      const linkPlugin = createLinkPlugin({
+      let linkPlugin = createLinkPlugin({
         Link:RenderedLink,
         placeholder:'local.link/path, or external url',
       })
 
-      const imagePlugin = createImagePlugin()
+      let focusPlugin = createFocusPlugin();
+      let resizeablePlugin = createResizeablePlugin();
+      // let alignmentPlugin = createAlignmentPlugin();
+      // let { AlignmentTool } = alignmentPlugin;
 
-      const toolbarPlugin = createToolbarPlugin({
+      let decorator = composeDecorators(
+      //   // alignmentPlugin.decorator,
+        focusPlugin.decorator,
+        resizeablePlugin.decorator,
+      );
+      // let imagePlugin = createImagePlugin({ decorator });
+      let imagePlugin = createImagePlugin({
+        decorator,
+      });
+
+      let toolbarPlugin = createToolbarPlugin({
         structure: [
           BoldButton,
           ItalicButton,
@@ -158,15 +176,15 @@ class SheetView extends React.Component<any,any> {
         ]
       })
 
-      const { Toolbar } = toolbarPlugin
+      let { Toolbar } = toolbarPlugin
 
-      const plugins = [
+      let plugins = [
         toolbarPlugin, 
         linkPlugin, 
-        // focusPlugin,
         // alignmentPlugin,
-        // resizeablePlugin,
-        imagePlugin
+        imagePlugin,
+        focusPlugin,
+        resizeablePlugin,
       ]
 
       let { draftdata } = this.props
@@ -180,13 +198,16 @@ class SheetView extends React.Component<any,any> {
 
       this.state = {
         editorState: startstate,
-        editorReadonly: true,
-        editable: (window.location.hostname == 'budgetpedia') //TODO temporary
+        editorReadonly: false,
+        editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
+        renderAlignmentTool:true
       }
 
       this.Toolbar = Toolbar
 
       this.imagePlugin = imagePlugin
+
+      // this.AlignmentTool = AlignmentTool
 
       this.plugins = plugins
     }
@@ -195,13 +216,23 @@ class SheetView extends React.Component<any,any> {
 
     staticToolbarPlugin
     Toolbar
+    AlignmentTool
     plugins
     imagePlugin
 
     editor = null
+    paper = null
+
+    paperfocus = () => {
+        this.paper.focus();
+    }
 
     focus = () => {
         this.editor.focus();
+    }
+
+    blur = () => {
+        this.editor.blur();
     }
 
     onEditorChange = (editorState) => this.setState({editorState});
@@ -235,11 +266,13 @@ class SheetView extends React.Component<any,any> {
 
         let Toolbar = this.Toolbar
 
+        // let AlignmentTool = this.AlignmentTool
+
         let plugins = this.plugins
 
         return (
-            <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
-                <Paper  zDepth = {3} >
+            <div ref={(element) => { this.paper = element; }} style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
+                <Paper zDepth = {3} >
                     <div style = {{padding:'16px',position:'relative',}} onClick={this.focus}>
                         {this.state.editable?<div style = {{position:'absolute',top:'-20px',right:0}} >
                             <FloatingActionButton 
@@ -247,9 +280,26 @@ class SheetView extends React.Component<any,any> {
                                 style={{marginRight:'20px',zIndex:2}}
                                 onTouchTap = { () => 
                                     {
-                                        this.setState({
-                                            editorReadonly: !this.state.editorReadonly
-                                        })
+                                        if (!this.state.editorReadonly) {
+                                          console.log('readonly true')
+                                          // this.editor.blur()
+                                          // this.focus() // for AlignmentTool
+                                          this.setState({
+                                            editorReadonly:true
+                                          },() => {
+                                            setTimeout(()=>{
+                                              this.setState({
+                                                renderAlignmentTool:false
+                                              })
+                                            })
+                                          })
+                                        } else {
+                                          console.log('readonly false')
+                                          this.setState({
+                                            editorReadonly:false,
+                                            renderAlignmentTool:true,
+                                          })
+                                        }
                                     }
                                 }
                             >
@@ -269,19 +319,24 @@ class SheetView extends React.Component<any,any> {
                             plugins = {plugins}
                             readOnly = {this.state.editorReadonly}
                             handleKeyCommand={this.handleKeyCommand}
-                            ref={(element) => { this.editor = element; }}
+                            ref={(element) => { this.editor = element }}
                         />
+                        {
+                          // this.state.renderAlignmentTool?<AlignmentTool/>:null
+                          // false?<AlignmentTool/>:null
+                        }
                         {(!this.state.editorReadonly)?
                             <Toolbar />
                           :null}
                     </div>
                     {/* ImageAdd must be outside scope of auto-focus */}
-                    {(!this.state.editorReadonly)?
-                    <ImageAdd 
-                      editorState={this.state.editorState}
-                      onChange={this.onEditorChange}
-                      modifier={this.imagePlugin.addImage}
-                    />:null}
+                    {(this.state.renderAlignmentTool)?
+                      <ImageAdd 
+                        editorState={this.state.editorState}
+                        onChange={this.onEditorChange}
+                        modifier={this.imagePlugin.addImage}
+                      />:null
+                    }
                 </Paper>
             </div>
         )
