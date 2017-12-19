@@ -17,7 +17,7 @@ const imageadd_view_1 = require("../forked-components/imageadd.view");
 const draft_js_alignment_plugin_1 = require("draft-js-alignment-plugin");
 const draft_js_focus_plugin_1 = require("draft-js-focus-plugin");
 const draft_js_resizeable_plugin_1 = require("draft-js-resizeable-plugin");
-require("./sheet.styles.css");
+require("../forked-components/sheet.styles.css");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
 require("draft-js-anchor-plugin/lib/plugin.css");
@@ -28,6 +28,71 @@ const draft_js_buttons_1 = require("draft-js-buttons");
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
+        this.assemblePlugins = () => {
+            let linkPlugin = draft_js_anchor_plugin_1.default({
+                Link: renderedlink_view_1.default,
+                placeholder: 'local.link/path, or external url',
+            });
+            let focusPlugin = draft_js_focus_plugin_1.default();
+            let resizeablePlugin = draft_js_resizeable_plugin_1.default();
+            let alignmentPlugin = draft_js_alignment_plugin_1.default();
+            let { AlignmentTool } = alignmentPlugin;
+            let toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
+                structure: [
+                    draft_js_buttons_1.BoldButton,
+                    draft_js_buttons_1.ItalicButton,
+                    draft_js_buttons_1.UnderlineButton,
+                    draft_js_buttons_1.CodeButton,
+                    linkPlugin.LinkButton,
+                    draft_js_static_toolbar_plugin_1.Separator,
+                    headlinesbutton_view_1.default,
+                    draft_js_buttons_1.UnorderedListButton,
+                    draft_js_buttons_1.OrderedListButton,
+                    draft_js_buttons_1.BlockquoteButton,
+                    draft_js_buttons_1.CodeBlockButton
+                ]
+            });
+            let { Toolbar } = toolbarPlugin;
+            let decorator = draft_js_plugins_editor_1.composeDecorators(resizeablePlugin.decorator, alignmentPlugin.decorator, focusPlugin.decorator);
+            this.imageDecorator = decorator;
+            let imagePlugin = this.assembleImagePlugin(this.state.editorReadonly);
+            let pluginOptions = {
+                toolbarPlugin,
+                linkPlugin,
+                focusPlugin,
+                alignmentPlugin,
+                resizeablePlugin,
+                imagePlugin,
+            };
+            this.pluginOptions = pluginOptions;
+            let plugins = this.assemblePluginsList(this.state.editorReadonly);
+            this.Toolbar = Toolbar;
+            this.imagePlugin = imagePlugin;
+            this.AlignmentTool = AlignmentTool;
+            this.plugins = plugins;
+        };
+        this.assemblePluginsList = (readOnly) => {
+            let options = this.pluginOptions;
+            let editlist = [];
+            if (!readOnly) {
+                editlist = [options.focusPlugin, options, options.alignmentPlugin, options.resizeablePlugin];
+            }
+            let list = [options.toolbarPlugin, options.linkPlugin, ...editlist, options.imagePlugin];
+            return list;
+        };
+        this.assembleImagePlugin = (readOnly) => {
+            let decorator = this.imageDecorator;
+            let imagePlugin;
+            if (readOnly) {
+                imagePlugin = draft_js_image_plugin_1.default();
+            }
+            else {
+                imagePlugin = draft_js_image_plugin_1.default({
+                    decorator,
+                });
+            }
+            return imagePlugin;
+        };
         this.state = null;
         this.editor = null;
         this.focus = () => {
@@ -60,8 +125,9 @@ class SheetView extends React.Component {
         this.toggleEdit = () => {
             if (!this.state.editorReadonly) {
                 console.log('readonly true');
-                this.blur();
-                this.focus();
+                let imagePlugin = this.assembleImagePlugin(true);
+                this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin;
+                this.plugins = this.assemblePluginsList(true);
                 this.setState({
                     editorReadonly: true
                 }, () => {
@@ -74,6 +140,9 @@ class SheetView extends React.Component {
             }
             else {
                 console.log('readonly false');
+                let imagePlugin = this.assembleImagePlugin(false);
+                this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin;
+                this.plugins = this.assemblePluginsList(false);
                 this.setState({
                     editorReadonly: false,
                     renderImageTools: true,
@@ -98,42 +167,6 @@ class SheetView extends React.Component {
         };
         this.imagecontrol = () => ((this.state.renderImageTools) ?
             React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage }) : null);
-        let linkPlugin = draft_js_anchor_plugin_1.default({
-            Link: renderedlink_view_1.default,
-            placeholder: 'local.link/path, or external url',
-        });
-        let focusPlugin = draft_js_focus_plugin_1.default();
-        let resizeablePlugin = draft_js_resizeable_plugin_1.default();
-        let alignmentPlugin = draft_js_alignment_plugin_1.default();
-        let { AlignmentTool } = alignmentPlugin;
-        let decorator = draft_js_plugins_editor_1.composeDecorators(resizeablePlugin.decorator, alignmentPlugin.decorator, focusPlugin.decorator);
-        let imagePlugin = draft_js_image_plugin_1.default({
-            decorator,
-        });
-        let toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
-            structure: [
-                draft_js_buttons_1.BoldButton,
-                draft_js_buttons_1.ItalicButton,
-                draft_js_buttons_1.UnderlineButton,
-                draft_js_buttons_1.CodeButton,
-                linkPlugin.LinkButton,
-                draft_js_static_toolbar_plugin_1.Separator,
-                headlinesbutton_view_1.default,
-                draft_js_buttons_1.UnorderedListButton,
-                draft_js_buttons_1.OrderedListButton,
-                draft_js_buttons_1.BlockquoteButton,
-                draft_js_buttons_1.CodeBlockButton
-            ]
-        });
-        let { Toolbar } = toolbarPlugin;
-        let plugins = [
-            toolbarPlugin,
-            linkPlugin,
-            focusPlugin,
-            alignmentPlugin,
-            resizeablePlugin,
-            imagePlugin,
-        ];
         let { draftdata } = this.props;
         let startstate;
         if (!draftdata || !Object.keys(draftdata).length) {
@@ -143,15 +176,12 @@ class SheetView extends React.Component {
             startstate = draft_js_1.EditorState.createWithContent(draft_js_1.convertFromRaw(draftdata));
         }
         this.state = {
+            editable: (window.location.hostname == 'budgetpedia'),
             editorState: startstate,
             editorReadonly: false,
-            editable: (window.location.hostname == 'budgetpedia'),
-            renderImageTools: true
+            renderImageTools: true,
         };
-        this.Toolbar = Toolbar;
-        this.imagePlugin = imagePlugin;
-        this.AlignmentTool = AlignmentTool;
-        this.plugins = plugins;
+        this.assemblePlugins();
     }
     render() {
         let Toolbar = this.Toolbar;

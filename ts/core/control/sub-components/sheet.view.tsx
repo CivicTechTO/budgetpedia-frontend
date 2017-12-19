@@ -5,7 +5,7 @@
 
 import * as React from 'react'
 import Paper from 'material-ui/Paper'
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
 import FileDownload from 'material-ui/svg-icons/file/file-download'
 
@@ -20,27 +20,24 @@ import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
 import createImagePlugin from 'draft-js-image-plugin'
 import ImageAdd from '../forked-components/imageadd.view'
-import createAlignmentPlugin from 'draft-js-alignment-plugin';
-import createFocusPlugin from 'draft-js-focus-plugin';
-import createResizeablePlugin from 'draft-js-resizeable-plugin';
+import createAlignmentPlugin from 'draft-js-alignment-plugin'
+import createFocusPlugin from 'draft-js-focus-plugin'
+import createResizeablePlugin from 'draft-js-resizeable-plugin'
 // -----------------------------[ plugin compliance ]-------------------------------
 // from draft-js-plugins.com
-import './sheet.styles.css'
+import '../forked-components/sheet.styles.css'
 import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import 'draft-js-anchor-plugin/lib/plugin.css'
 import 'draft-js-image-plugin/lib/plugin.css'
-import 'draft-js-alignment-plugin/lib/plugin.css';
-import 'draft-js-focus-plugin/lib/plugin.css';
+import 'draft-js-alignment-plugin/lib/plugin.css'
+import 'draft-js-focus-plugin/lib/plugin.css'
 
 import {
   ItalicButton,
   BoldButton,
   UnderlineButton,
   CodeButton,
-  HeadlineOneButton,
-  HeadlineTwoButton,
-  HeadlineThreeButton,
   UnorderedListButton,
   OrderedListButton,
   BlockquoteButton,
@@ -55,6 +52,28 @@ class SheetView extends React.Component<any,any> {
     constructor(props) {
       super(props)
 
+      let { draftdata } = this.props
+
+      let startstate
+      if (!draftdata || !Object.keys(draftdata).length) {
+        startstate = EditorState.createEmpty()
+      } else {
+        startstate = EditorState.createWithContent(convertFromRaw(draftdata))
+      }
+
+      this.state = {
+        editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
+        editorState: startstate,
+        editorReadonly: false,
+        renderImageTools:true,
+      }
+
+      this.assemblePlugins()
+
+    }
+
+    assemblePlugins = () => {
+
       let linkPlugin = createLinkPlugin({
         Link:RenderedLink,
         placeholder:'local.link/path, or external url',
@@ -64,15 +83,6 @@ class SheetView extends React.Component<any,any> {
       let resizeablePlugin = createResizeablePlugin();
       let alignmentPlugin = createAlignmentPlugin();
       let { AlignmentTool } = alignmentPlugin;
-
-      let decorator = composeDecorators(
-        resizeablePlugin.decorator,
-        alignmentPlugin.decorator,
-        focusPlugin.decorator,
-      );
-      let imagePlugin = createImagePlugin({
-        decorator,
-      });
 
       let toolbarPlugin = createToolbarPlugin({
         structure: [
@@ -92,30 +102,28 @@ class SheetView extends React.Component<any,any> {
 
       let { Toolbar } = toolbarPlugin
 
-      let plugins = [
+      let decorator = composeDecorators(
+        resizeablePlugin.decorator,
+        alignmentPlugin.decorator,
+        focusPlugin.decorator,
+      );
+
+      this.imageDecorator = decorator
+
+      let imagePlugin = this.assembleImagePlugin(this.state.editorReadonly)
+
+      let pluginOptions = {
         toolbarPlugin, 
         linkPlugin, 
         focusPlugin,
         alignmentPlugin,
         resizeablePlugin,
         imagePlugin,
-      ]
-
-      let { draftdata } = this.props
-
-      let startstate
-      if (!draftdata || !Object.keys(draftdata).length) {
-        startstate = EditorState.createEmpty()
-      } else {
-        startstate = EditorState.createWithContent(convertFromRaw(draftdata))
       }
 
-      this.state = {
-        editorState: startstate,
-        editorReadonly: false,
-        editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
-        renderImageTools:true
-      }
+      this.pluginOptions = pluginOptions
+
+      let plugins = this.assemblePluginsList(this.state.editorReadonly)
 
       this.Toolbar = Toolbar
 
@@ -124,6 +132,34 @@ class SheetView extends React.Component<any,any> {
       this.AlignmentTool = AlignmentTool
 
       this.plugins = plugins
+    }
+
+    imageDecorator
+
+    assemblePluginsList = (readOnly) => {
+      let options = this.pluginOptions
+
+      let editlist = []
+      if (!readOnly) {
+        editlist = [options.focusPlugin, options, options.alignmentPlugin, options.resizeablePlugin]
+      }
+      let list = [options.toolbarPlugin,options.linkPlugin,...editlist,options.imagePlugin]
+      return list
+    }
+
+    pluginOptions
+
+    assembleImagePlugin = (readOnly) => {
+      let decorator = this.imageDecorator
+      let imagePlugin
+      if (readOnly) {
+        imagePlugin = createImagePlugin()
+      } else {
+        imagePlugin = createImagePlugin({
+          decorator,
+        })
+      }
+      return imagePlugin
     }
 
     state = null
@@ -175,8 +211,14 @@ class SheetView extends React.Component<any,any> {
     toggleEdit = () => {
       if (!this.state.editorReadonly) {
         console.log('readonly true')
-        this.blur()
-        this.focus() // for AlignmentTool
+
+        let imagePlugin = this.assembleImagePlugin(true)
+
+        this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin
+
+        this.plugins = this.assemblePluginsList(true)
+        // this.blur()
+        // this.focus() // for AlignmentTool
         this.setState({
           editorReadonly:true
         },() => {
@@ -188,6 +230,11 @@ class SheetView extends React.Component<any,any> {
         })
       } else {
         console.log('readonly false')
+        let imagePlugin = this.assembleImagePlugin(false)
+
+        this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin
+
+        this.plugins = this.assemblePluginsList(false)
         this.setState({
           editorReadonly:false,
           renderImageTools:true,
