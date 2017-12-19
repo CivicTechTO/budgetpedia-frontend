@@ -30,7 +30,6 @@ class SheetView extends React.Component {
         super(props);
         this.state = null;
         this.editor = null;
-        this.paper = null;
         this.focus = () => {
             this.editor.focus();
         };
@@ -158,7 +157,7 @@ class SheetView extends React.Component {
         let Toolbar = this.Toolbar;
         let AlignmentTool = this.AlignmentTool;
         let plugins = this.plugins;
-        return (React.createElement("div", { ref: (element) => { this.paper = element; }, style: { backgroundColor: '#d9d9d9', padding: '16px' } },
+        return (React.createElement("div", { style: { backgroundColor: '#d9d9d9', padding: '16px' } },
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: { padding: '16px', position: 'relative', }, onClick: this.focus },
                     this.actionbuttons(),

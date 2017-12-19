@@ -135,8 +135,7 @@ class SheetView extends React.Component<any,any> {
     plugins
     imagePlugin
 
-    editor = null
-    paper = null
+    editor = null // element ref
 
     focus = () => {
         this.editor.focus();
@@ -244,7 +243,7 @@ class SheetView extends React.Component<any,any> {
         let plugins = this.plugins
 
         return (
-            <div ref={(element) => { this.paper = element; }} style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
+            <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
                 <Paper zDepth = {3} >
                     <div style = {{padding:'16px',position:'relative',}} onClick={this.focus}>
 
