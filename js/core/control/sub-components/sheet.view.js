@@ -13,6 +13,7 @@ const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin
 const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
 const draft_js_image_plugin_1 = require("draft-js-image-plugin");
 const imageadd_view_1 = require("../forked-components/imageadd.view");
+const draft_js_alignment_plugin_1 = require("draft-js-alignment-plugin");
 const draft_js_focus_plugin_1 = require("draft-js-focus-plugin");
 const draft_js_resizeable_plugin_1 = require("draft-js-resizeable-plugin");
 require("./sheet.styles.css");
@@ -20,6 +21,7 @@ require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
 require("draft-js-anchor-plugin/lib/plugin.css");
 require("draft-js-image-plugin/lib/plugin.css");
+require("draft-js-alignment-plugin/lib/plugin.css");
 require("draft-js-focus-plugin/lib/plugin.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
 class HeadlinesPicker extends React.Component {
@@ -104,7 +106,9 @@ class SheetView extends React.Component {
         });
         let focusPlugin = draft_js_focus_plugin_1.default();
         let resizeablePlugin = draft_js_resizeable_plugin_1.default();
-        let decorator = draft_js_plugins_editor_1.composeDecorators(focusPlugin.decorator, resizeablePlugin.decorator);
+        let alignmentPlugin = draft_js_alignment_plugin_1.default();
+        let { AlignmentTool } = alignmentPlugin;
+        let decorator = draft_js_plugins_editor_1.composeDecorators(resizeablePlugin.decorator, alignmentPlugin.decorator, focusPlugin.decorator);
         let imagePlugin = draft_js_image_plugin_1.default({
             decorator,
         });
@@ -127,9 +131,10 @@ class SheetView extends React.Component {
         let plugins = [
             toolbarPlugin,
             linkPlugin,
-            imagePlugin,
             focusPlugin,
+            alignmentPlugin,
             resizeablePlugin,
+            imagePlugin,
         ];
         let { draftdata } = this.props;
         let startstate;
@@ -147,10 +152,12 @@ class SheetView extends React.Component {
         };
         this.Toolbar = Toolbar;
         this.imagePlugin = imagePlugin;
+        this.AlignmentTool = AlignmentTool;
         this.plugins = plugins;
     }
     render() {
         let Toolbar = this.Toolbar;
+        let AlignmentTool = this.AlignmentTool;
         let plugins = this.plugins;
         return (React.createElement("div", { ref: (element) => { this.paper = element; }, style: { backgroundColor: '#d9d9d9', padding: '16px' } },
             React.createElement(Paper_1.default, { zDepth: 3 },
@@ -159,6 +166,8 @@ class SheetView extends React.Component {
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: () => {
                                 if (!this.state.editorReadonly) {
                                     console.log('readonly true');
+                                    this.editor.blur();
+                                    this.focus();
                                     this.setState({
                                         editorReadonly: true
                                     }, () => {
@@ -181,6 +190,8 @@ class SheetView extends React.Component {
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
                             React.createElement(file_download_1.default, null))) : null,
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }),
+                    this.state.renderAlignmentTool ? React.createElement(AlignmentTool, null) : null,
+                    React.createElement("div", { style: { clear: "both" } }),
                     (!this.state.editorReadonly) ?
                         React.createElement(Toolbar, null)
                         : null),

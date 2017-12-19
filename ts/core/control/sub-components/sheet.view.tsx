@@ -19,7 +19,7 @@ import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
 import createImagePlugin from 'draft-js-image-plugin'
 import ImageAdd from '../forked-components/imageadd.view'
-// import createAlignmentPlugin from 'draft-js-alignment-plugin';
+import createAlignmentPlugin from 'draft-js-alignment-plugin';
 import createFocusPlugin from 'draft-js-focus-plugin';
 import createResizeablePlugin from 'draft-js-resizeable-plugin';
 // -----------------------------[ plugin compliance ]-------------------------------
@@ -29,7 +29,7 @@ import 'draft-js/dist/Draft.css'
 import 'draft-js-static-toolbar-plugin/lib/plugin.css'
 import 'draft-js-anchor-plugin/lib/plugin.css'
 import 'draft-js-image-plugin/lib/plugin.css'
-// import 'draft-js-alignment-plugin/lib/plugin.css';
+import 'draft-js-alignment-plugin/lib/plugin.css';
 import 'draft-js-focus-plugin/lib/plugin.css';
 
 import {
@@ -147,15 +147,14 @@ class SheetView extends React.Component<any,any> {
 
       let focusPlugin = createFocusPlugin();
       let resizeablePlugin = createResizeablePlugin();
-      // let alignmentPlugin = createAlignmentPlugin();
-      // let { AlignmentTool } = alignmentPlugin;
+      let alignmentPlugin = createAlignmentPlugin();
+      let { AlignmentTool } = alignmentPlugin;
 
       let decorator = composeDecorators(
-      //   // alignmentPlugin.decorator,
-        focusPlugin.decorator,
         resizeablePlugin.decorator,
+        alignmentPlugin.decorator,
+        focusPlugin.decorator,
       );
-      // let imagePlugin = createImagePlugin({ decorator });
       let imagePlugin = createImagePlugin({
         decorator,
       });
@@ -181,10 +180,10 @@ class SheetView extends React.Component<any,any> {
       let plugins = [
         toolbarPlugin, 
         linkPlugin, 
-        // alignmentPlugin,
-        imagePlugin,
         focusPlugin,
+        alignmentPlugin,
         resizeablePlugin,
+        imagePlugin,
       ]
 
       let { draftdata } = this.props
@@ -207,7 +206,7 @@ class SheetView extends React.Component<any,any> {
 
       this.imagePlugin = imagePlugin
 
-      // this.AlignmentTool = AlignmentTool
+      this.AlignmentTool = AlignmentTool
 
       this.plugins = plugins
     }
@@ -266,7 +265,7 @@ class SheetView extends React.Component<any,any> {
 
         let Toolbar = this.Toolbar
 
-        // let AlignmentTool = this.AlignmentTool
+        let AlignmentTool = this.AlignmentTool
 
         let plugins = this.plugins
 
@@ -282,8 +281,8 @@ class SheetView extends React.Component<any,any> {
                                     {
                                         if (!this.state.editorReadonly) {
                                           console.log('readonly true')
-                                          // this.editor.blur()
-                                          // this.focus() // for AlignmentTool
+                                          this.editor.blur()
+                                          this.focus() // for AlignmentTool
                                           this.setState({
                                             editorReadonly:true
                                           },() => {
@@ -322,9 +321,9 @@ class SheetView extends React.Component<any,any> {
                             ref={(element) => { this.editor = element }}
                         />
                         {
-                          // this.state.renderAlignmentTool?<AlignmentTool/>:null
-                          // false?<AlignmentTool/>:null
+                          this.state.renderAlignmentTool?<AlignmentTool/>:null
                         }
+                        <div style = {{clear:"both"}}></div>
                         {(!this.state.editorReadonly)?
                             <Toolbar />
                           :null}
