@@ -4,14 +4,15 @@
 'use strict'
 
 import * as React from 'react'
-import { Link } from 'react-router-dom'
-
 import Paper from 'material-ui/Paper'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
 import FileDownload from 'material-ui/svg-icons/file/file-download'
 
 var fileDownload = require('js-file-download')
+
+import RenderedLink from '../forked-components/renderedlink.view'
+import HeadlinesButton from '../forked-components/headlinesbutton.view'
 
 import { EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
 import  Editor, { composeDecorators } from 'draft-js-plugins-editor'
@@ -46,94 +47,8 @@ import {
   CodeBlockButton,
 } from 'draft-js-buttons'
 
-// copy-paste below
-class HeadlinesPicker extends React.Component<any,any> {
-  componentDidMount() {
-    setTimeout(() => { window.addEventListener('click', this.onWindowClick); });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('click', this.onWindowClick);
-  }
-
-  onWindowClick = () =>
-    // Call `onOverrideContent` again with `undefined`
-    // so the toolbar can show its regular content again.
-    this.props.onOverrideContent(undefined);
-
-  render() {
-    const buttons = [HeadlineOneButton, HeadlineTwoButton, HeadlineThreeButton];
-    return (
-      <div>
-        {buttons.map((Button, i) => // eslint-disable-next-line
-          <Button key={i} {...this.props} />
-        )}
-      </div>
-    );
-  }
-}
-
-// copy-paste below (more or less)
-class HeadlinesButton extends React.Component<any,any> {
-  onClick = () =>
-    // A button can call `onOverrideContent` to replace the content
-    // of the toolbar. This can be useful for displaying sub
-    // menus or requesting additional information from the user.
-    this.props.onOverrideContent(HeadlinesPicker);
-
-  render() {
-    return (
-      <div className={"headlineButtonWrapper"}>
-        <button onClick={this.onClick} className={"headlineButton"}>
-          H
-        </button>
-      </div>
-    );
-  }
-}
 
 // --------------------------------[ end of plugins compliance ]---------------------------------
-
-// RenderedLink taken after 
-// https://github.com/draft-js-plugins/draft-js-plugins/blob/master/draft-js-anchor-plugin/src/components/Link/index.js
-// modified by adding conditional for when user enters 'local.link/somepath' 
-// that generates a router Link instead of an anchor link
-const RenderedLink = ({
-  children,
-  className,
-  entityKey,
-  getEditorState,
-  target,
-}) => {
-
-  const entity = getEditorState().getCurrentContent().getEntity(entityKey);
-  const entityData = entity ? entity.get('data') : undefined;
-  const href = (entityData && entityData.url) || undefined;
-
-  // conditional added by HB
-  let test = 'local.link'
-  let pos = href.indexOf(test)
-  if (pos != -1) {
-    let to = href.substring(pos + test.length)
-    if (!to) to = '/'
-    // TODO not sure about className -- needs testing
-    return <Link className = {className} to = {to}>{children}</Link>
-  }
-  // end of conditional
-
-  return (
-    <a
-      className={className}
-      title={href}
-      href={href}
-      target='_blank'
-      rel="noopener noreferrer"
-    >
-      {children}
-    </a>
-  )
-
-}
 
 class SheetView extends React.Component<any,any> {
 

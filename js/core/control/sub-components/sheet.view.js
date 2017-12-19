@@ -1,12 +1,13 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const react_router_dom_1 = require("react-router-dom");
 const Paper_1 = require("material-ui/Paper");
 const FloatingActionButton_1 = require("material-ui/FloatingActionButton");
 const mode_edit_1 = require("material-ui/svg-icons/editor/mode-edit");
 const file_download_1 = require("material-ui/svg-icons/file/file-download");
 var fileDownload = require('js-file-download');
+const renderedlink_view_1 = require("../forked-components/renderedlink.view");
+const headlinesbutton_view_1 = require("../forked-components/headlinesbutton.view");
 const draft_js_1 = require("draft-js");
 const draft_js_plugins_editor_1 = require("draft-js-plugins-editor");
 const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin");
@@ -24,46 +25,6 @@ require("draft-js-image-plugin/lib/plugin.css");
 require("draft-js-alignment-plugin/lib/plugin.css");
 require("draft-js-focus-plugin/lib/plugin.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
-class HeadlinesPicker extends React.Component {
-    constructor() {
-        super(...arguments);
-        this.onWindowClick = () => this.props.onOverrideContent(undefined);
-    }
-    componentDidMount() {
-        setTimeout(() => { window.addEventListener('click', this.onWindowClick); });
-    }
-    componentWillUnmount() {
-        window.removeEventListener('click', this.onWindowClick);
-    }
-    render() {
-        const buttons = [draft_js_buttons_1.HeadlineOneButton, draft_js_buttons_1.HeadlineTwoButton, draft_js_buttons_1.HeadlineThreeButton];
-        return (React.createElement("div", null, buttons.map((Button, i) => React.createElement(Button, Object.assign({ key: i }, this.props)))));
-    }
-}
-class HeadlinesButton extends React.Component {
-    constructor() {
-        super(...arguments);
-        this.onClick = () => this.props.onOverrideContent(HeadlinesPicker);
-    }
-    render() {
-        return (React.createElement("div", { className: "headlineButtonWrapper" },
-            React.createElement("button", { onClick: this.onClick, className: "headlineButton" }, "H")));
-    }
-}
-const RenderedLink = ({ children, className, entityKey, getEditorState, target, }) => {
-    const entity = getEditorState().getCurrentContent().getEntity(entityKey);
-    const entityData = entity ? entity.get('data') : undefined;
-    const href = (entityData && entityData.url) || undefined;
-    let test = 'local.link';
-    let pos = href.indexOf(test);
-    if (pos != -1) {
-        let to = href.substring(pos + test.length);
-        if (!to)
-            to = '/';
-        return React.createElement(react_router_dom_1.Link, { className: className, to: to }, children);
-    }
-    return (React.createElement("a", { className: className, title: href, href: href, target: '_blank', rel: "noopener noreferrer" }, children));
-};
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
@@ -101,7 +62,7 @@ class SheetView extends React.Component {
             return 'not-handled';
         };
         let linkPlugin = draft_js_anchor_plugin_1.default({
-            Link: RenderedLink,
+            Link: renderedlink_view_1.default,
             placeholder: 'local.link/path, or external url',
         });
         let focusPlugin = draft_js_focus_plugin_1.default();
@@ -120,7 +81,7 @@ class SheetView extends React.Component {
                 draft_js_buttons_1.CodeButton,
                 linkPlugin.LinkButton,
                 draft_js_static_toolbar_plugin_1.Separator,
-                HeadlinesButton,
+                headlinesbutton_view_1.default,
                 draft_js_buttons_1.UnorderedListButton,
                 draft_js_buttons_1.OrderedListButton,
                 draft_js_buttons_1.BlockquoteButton,
