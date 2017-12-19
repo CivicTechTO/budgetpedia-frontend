@@ -31,9 +31,6 @@ class SheetView extends React.Component {
         this.state = null;
         this.editor = null;
         this.paper = null;
-        this.paperfocus = () => {
-            this.paper.focus();
-        };
         this.focus = () => {
             this.editor.focus();
         };
@@ -60,6 +57,29 @@ class SheetView extends React.Component {
                 return 'handled';
             }
             return 'not-handled';
+        };
+        this.toggleEdit = () => {
+            if (!this.state.editorReadonly) {
+                console.log('readonly true');
+                this.blur();
+                this.focus();
+                this.setState({
+                    editorReadonly: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            renderAlignmentTool: false
+                        });
+                    });
+                });
+            }
+            else {
+                console.log('readonly false');
+                this.setState({
+                    editorReadonly: false,
+                    renderAlignmentTool: true,
+                });
+            }
         };
         let linkPlugin = draft_js_anchor_plugin_1.default({
             Link: renderedlink_view_1.default,
@@ -124,29 +144,7 @@ class SheetView extends React.Component {
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: { padding: '16px', position: 'relative', }, onClick: this.focus },
                     this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
-                        React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: () => {
-                                if (!this.state.editorReadonly) {
-                                    console.log('readonly true');
-                                    this.editor.blur();
-                                    this.focus();
-                                    this.setState({
-                                        editorReadonly: true
-                                    }, () => {
-                                        setTimeout(() => {
-                                            this.setState({
-                                                renderAlignmentTool: false
-                                            });
-                                        });
-                                    });
-                                }
-                                else {
-                                    console.log('readonly false');
-                                    this.setState({
-                                        editorReadonly: false,
-                                        renderAlignmentTool: true,
-                                    });
-                                }
-                            } },
+                        React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.toggleEdit },
                             React.createElement(mode_edit_1.default, null)),
                         React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
                             React.createElement(file_download_1.default, null))) : null,

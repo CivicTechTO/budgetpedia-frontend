@@ -137,10 +137,6 @@ class SheetView extends React.Component<any,any> {
     editor = null
     paper = null
 
-    paperfocus = () => {
-        this.paper.focus();
-    }
-
     focus = () => {
         this.editor.focus();
     }
@@ -176,6 +172,29 @@ class SheetView extends React.Component<any,any> {
         return 'not-handled';
     }
 
+    toggleEdit = () => {
+      if (!this.state.editorReadonly) {
+        console.log('readonly true')
+        this.blur()
+        this.focus() // for AlignmentTool
+        this.setState({
+          editorReadonly:true
+        },() => {
+          setTimeout(()=>{
+            this.setState({
+              renderAlignmentTool:false
+            })
+          })
+        })
+      } else {
+        console.log('readonly false')
+        this.setState({
+          editorReadonly:false,
+          renderAlignmentTool:true,
+        })
+      }      
+    }
+
     render() {
 
         let Toolbar = this.Toolbar
@@ -192,30 +211,7 @@ class SheetView extends React.Component<any,any> {
                             <FloatingActionButton 
                                 mini={true} 
                                 style={{marginRight:'20px',zIndex:2}}
-                                onTouchTap = { () => 
-                                    {
-                                        if (!this.state.editorReadonly) {
-                                          console.log('readonly true')
-                                          this.editor.blur()
-                                          this.focus() // for AlignmentTool
-                                          this.setState({
-                                            editorReadonly:true
-                                          },() => {
-                                            setTimeout(()=>{
-                                              this.setState({
-                                                renderAlignmentTool:false
-                                              })
-                                            })
-                                          })
-                                        } else {
-                                          console.log('readonly false')
-                                          this.setState({
-                                            editorReadonly:false,
-                                            renderAlignmentTool:true,
-                                          })
-                                        }
-                                    }
-                                }
+                                onTouchTap = { this.toggleEdit }
                             >
                                 <ContentEdit />
                             </FloatingActionButton>
