@@ -114,7 +114,7 @@ class SheetView extends React.Component<any,any> {
         editorState: startstate,
         editorReadonly: false,
         editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
-        renderAlignmentTool:true
+        renderImageTools:true
       }
 
       this.Toolbar = Toolbar
@@ -128,6 +128,7 @@ class SheetView extends React.Component<any,any> {
 
     state = null
 
+    // declarations
     staticToolbarPlugin
     Toolbar
     AlignmentTool
@@ -182,7 +183,7 @@ class SheetView extends React.Component<any,any> {
         },() => {
           setTimeout(()=>{
             this.setState({
-              renderAlignmentTool:false
+              renderImageTools:false
             })
           })
         })
@@ -190,10 +191,49 @@ class SheetView extends React.Component<any,any> {
         console.log('readonly false')
         this.setState({
           editorReadonly:false,
-          renderAlignmentTool:true,
+          renderImageTools:true,
         })
       }      
     }
+
+    actionbuttons = () => (
+      this.state.editable?<div style = {{position:'absolute',top:'-20px',right:0}} >
+          <FloatingActionButton 
+              mini={true} 
+              style={{marginRight:'20px',zIndex:2}}
+              onTouchTap = { this.toggleEdit }
+          >
+              <ContentEdit />
+          </FloatingActionButton>
+          <FloatingActionButton 
+              mini={true} 
+              style={{marginRight:'20px',zIndex:2}}
+              onTouchTap = { this.onDownload }
+          >
+              <FileDownload />
+          </FloatingActionButton>
+      </div>:null )
+
+    editorcontrols = () => {
+      let AlignmentTool = this.AlignmentTool
+      let Toolbar = this.Toolbar
+      return [
+        ((this.state.renderImageTools)?<AlignmentTool key="alignment"/>:null),
+        <div key="clear" style = {{clear:"both"}}></div>,
+        (!this.state.editorReadonly)?
+            <Toolbar key="toolbar" />
+          :null
+      ]
+    }
+
+    imagecontrol = () => (
+      (this.state.renderImageTools)?
+        <ImageAdd 
+          editorState={this.state.editorState}
+          onChange={this.onEditorChange}
+          modifier={this.imagePlugin.addImage}
+        />:null
+    )
 
     render() {
 
@@ -207,22 +247,9 @@ class SheetView extends React.Component<any,any> {
             <div ref={(element) => { this.paper = element; }} style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
                 <Paper zDepth = {3} >
                     <div style = {{padding:'16px',position:'relative',}} onClick={this.focus}>
-                        {this.state.editable?<div style = {{position:'absolute',top:'-20px',right:0}} >
-                            <FloatingActionButton 
-                                mini={true} 
-                                style={{marginRight:'20px',zIndex:2}}
-                                onTouchTap = { this.toggleEdit }
-                            >
-                                <ContentEdit />
-                            </FloatingActionButton>
-                            <FloatingActionButton 
-                                mini={true} 
-                                style={{marginRight:'20px',zIndex:2}}
-                                onTouchTap = { this.onDownload }
-                            >
-                                <FileDownload />
-                            </FloatingActionButton>
-                        </div>:null}
+
+                        {this.actionbuttons()}
+
                         <Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
@@ -231,22 +258,14 @@ class SheetView extends React.Component<any,any> {
                             handleKeyCommand={this.handleKeyCommand}
                             ref={(element) => { this.editor = element }}
                         />
-                        {
-                          this.state.renderAlignmentTool?<AlignmentTool/>:null
-                        }
-                        <div style = {{clear:"both"}}></div>
-                        {(!this.state.editorReadonly)?
-                            <Toolbar />
-                          :null}
+
+                        {this.editorcontrols()}
+
                     </div>
                     {/* ImageAdd must be outside scope of auto-focus */}
-                    {(this.state.renderAlignmentTool)?
-                      <ImageAdd 
-                        editorState={this.state.editorState}
-                        onChange={this.onEditorChange}
-                        modifier={this.imagePlugin.addImage}
-                      />:null
-                    }
+
+                    {this.imagecontrol()}
+
                 </Paper>
             </div>
         )

@@ -68,7 +68,7 @@ class SheetView extends React.Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            renderAlignmentTool: false
+                            renderImageTools: false
                         });
                     });
                 });
@@ -77,10 +77,28 @@ class SheetView extends React.Component {
                 console.log('readonly false');
                 this.setState({
                     editorReadonly: false,
-                    renderAlignmentTool: true,
+                    renderImageTools: true,
                 });
             }
         };
+        this.actionbuttons = () => (this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
+            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.toggleEdit },
+                React.createElement(mode_edit_1.default, null)),
+            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
+                React.createElement(file_download_1.default, null))) : null);
+        this.editorcontrols = () => {
+            let AlignmentTool = this.AlignmentTool;
+            let Toolbar = this.Toolbar;
+            return [
+                ((this.state.renderImageTools) ? React.createElement(AlignmentTool, { key: "alignment" }) : null),
+                React.createElement("div", { key: "clear", style: { clear: "both" } }),
+                (!this.state.editorReadonly) ?
+                    React.createElement(Toolbar, { key: "toolbar" })
+                    : null
+            ];
+        };
+        this.imagecontrol = () => ((this.state.renderImageTools) ?
+            React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage }) : null);
         let linkPlugin = draft_js_anchor_plugin_1.default({
             Link: renderedlink_view_1.default,
             placeholder: 'local.link/path, or external url',
@@ -129,7 +147,7 @@ class SheetView extends React.Component {
             editorState: startstate,
             editorReadonly: false,
             editable: (window.location.hostname == 'budgetpedia'),
-            renderAlignmentTool: true
+            renderImageTools: true
         };
         this.Toolbar = Toolbar;
         this.imagePlugin = imagePlugin;
@@ -143,19 +161,10 @@ class SheetView extends React.Component {
         return (React.createElement("div", { ref: (element) => { this.paper = element; }, style: { backgroundColor: '#d9d9d9', padding: '16px' } },
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: { padding: '16px', position: 'relative', }, onClick: this.focus },
-                    this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
-                        React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.toggleEdit },
-                            React.createElement(mode_edit_1.default, null)),
-                        React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
-                            React.createElement(file_download_1.default, null))) : null,
+                    this.actionbuttons(),
                     React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }),
-                    this.state.renderAlignmentTool ? React.createElement(AlignmentTool, null) : null,
-                    React.createElement("div", { style: { clear: "both" } }),
-                    (!this.state.editorReadonly) ?
-                        React.createElement(Toolbar, null)
-                        : null),
-                (this.state.renderAlignmentTool) ?
-                    React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage }) : null)));
+                    this.editorcontrols()),
+                this.imagecontrol())));
     }
 }
 exports.default = SheetView;
