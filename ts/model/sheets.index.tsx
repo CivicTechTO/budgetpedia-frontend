@@ -47,11 +47,27 @@ let concerns = {
     },
 }
 
+let opportunities = {
+    controller: 'sheet',
+    index:'opportunities',
+    description: 'the opportunities for improvements in the budget process',
+    lookups: {
+        draftdata: {
+            repo:'draft',
+            index:'opportunities',
+        }
+    },
+    type:'sheet',
+    properties: {
+
+    },
+}
 
 let sheets = {
     citybasics,
     cityprocess,
     concerns,
+    opportunities,
 }
 
 export default sheets

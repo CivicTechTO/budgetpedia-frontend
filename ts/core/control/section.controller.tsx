@@ -121,7 +121,7 @@ class SectionControllerClass extends React.Component<any,any> {
 
                 let { description, index } = model
 
-                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found`}</div>
+                return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found in Section controller`}</div>
 
             }
         }

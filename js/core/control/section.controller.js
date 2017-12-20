@@ -60,7 +60,7 @@ class SectionControllerClass extends React.Component {
                 }
                 default: {
                     let { description, index } = model;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found`);
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found in Section controller`);
                 }
             }
         };

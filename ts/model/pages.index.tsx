@@ -88,14 +88,19 @@ let pages = {
                 description:'links to issues',
                 type:'section',
                 properties: {
-                    title:'Our Concerns',
-                    description:'Some basic issues we think should be addressed.',
+                    title:'Opportunities and Concerns',
+                    description:'Some basic opportunites and issues we think should be addressed.',
                     tag:'Our Concerns',
                     style:{
                         marginBottom: '12px'
                     },
                 },
                 children: [
+                    {
+                        controller: 'sheet',
+                        repo:'sheets',
+                        index:'opportunities',
+                    },
                     {
                         controller: 'sheet',
                         repo:'sheets',
