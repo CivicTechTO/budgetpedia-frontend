@@ -64,8 +64,8 @@ class SheetView extends React.Component<any,any> {
       this.state = {
         editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
         editorState: startstate,
-        editorReadonly: false,
-        renderImageTools:true,
+        editorReadonly: true,
+        renderImageTools:false,
       }
 
       this.assemblePlugins()
@@ -74,15 +74,12 @@ class SheetView extends React.Component<any,any> {
 
     assemblePlugins = () => {
 
+      // core initialization
+
       let linkPlugin = createLinkPlugin({
         Link:RenderedLink,
         placeholder:'local.link/path, or external url',
       })
-
-      let focusPlugin = createFocusPlugin();
-      let resizeablePlugin = createResizeablePlugin();
-      let alignmentPlugin = createAlignmentPlugin();
-      let { AlignmentTool } = alignmentPlugin;
 
       let toolbarPlugin = createToolbarPlugin({
         structure: [
@@ -102,57 +99,62 @@ class SheetView extends React.Component<any,any> {
 
       let { Toolbar } = toolbarPlugin
 
-      let decorator = composeDecorators(
-        resizeablePlugin.decorator,
-        alignmentPlugin.decorator,
-        focusPlugin.decorator,
-      );
+      this.Toolbar = Toolbar
 
-      this.imageDecorator = decorator
+      let focusPlugin = createFocusPlugin();
+      let alignmentPlugin = createAlignmentPlugin();
 
-      let imagePlugin = this.assembleImagePlugin(this.state.editorReadonly)
+      let { AlignmentTool } = alignmentPlugin
+      this.AlignmentTool = AlignmentTool      
 
       let pluginOptions = {
         toolbarPlugin, 
         linkPlugin, 
-        focusPlugin,
         alignmentPlugin,
-        resizeablePlugin,
-        imagePlugin,
+        focusPlugin,
       }
 
       this.pluginOptions = pluginOptions
 
-      let plugins = this.assemblePluginsList(this.state.editorReadonly)
+      // must be reset
+      let resizeablePlugin = createResizeablePlugin();
 
-      this.Toolbar = Toolbar
+      this.pluginOptions = {
+        ...this.pluginOptions,
+        resizeablePlugin,
+      }
 
-      this.imagePlugin = imagePlugin
+      let imagePlugin = this.assembleImagePlugin()
 
-      this.AlignmentTool = AlignmentTool
+      this.pluginOptions.imagePlugin = imagePlugin
+
+      let plugins = this.assemblePluginsList()
 
       this.plugins = plugins
     }
 
     imageDecorator
 
-    assemblePluginsList = (readOnly) => {
+    pluginOptions = null
+
+    assembleImagePlugin = () => {
       let options = this.pluginOptions
-
-      let editlist = []
-      if (!readOnly) {
-        editlist = [options.focusPlugin, options, options.alignmentPlugin, options.resizeablePlugin]
+      let decorator
+      if (!this.state.editorReadonly) {
+        decorator = composeDecorators(
+          options.resizeablePlugin.decorator,
+          options.alignmentPlugin.decorator,
+          options.focusPlugin.decorator,
+        )
+      } else {
+        decorator = composeDecorators(
+          options.resizeablePlugin.decorator,
+          options.alignmentPlugin.decorator,
+        )
       }
-      let list = [options.toolbarPlugin,options.linkPlugin,...editlist,options.imagePlugin]
-      return list
-    }
-
-    pluginOptions
-
-    assembleImagePlugin = (readOnly) => {
-      let decorator = this.imageDecorator
+      this.imageDecorator = decorator
       let imagePlugin
-      if (readOnly) {
+      if (this.state.editorReadonly) {
         imagePlugin = createImagePlugin()
       } else {
         imagePlugin = createImagePlugin({
@@ -162,6 +164,19 @@ class SheetView extends React.Component<any,any> {
       return imagePlugin
     }
 
+    assemblePluginsList = () => {
+      let options = this.pluginOptions
+
+      let editlist = []
+      if (!this.state.editorReadonly) { // edit mode
+        editlist = [options.focusPlugin, options.alignmentPlugin, options.resizeablePlugin]
+      } else {
+        editlist = [options.alignmentPlugin, options.resizeablePlugin]
+      }
+      let list = [options.toolbarPlugin,options.linkPlugin,...editlist,options.imagePlugin]
+      return list
+    }
+
     state = null
 
     // declarations
@@ -169,7 +184,6 @@ class SheetView extends React.Component<any,any> {
     Toolbar
     AlignmentTool
     plugins
-    imagePlugin
 
     editor = null // element ref
 
@@ -210,19 +224,19 @@ class SheetView extends React.Component<any,any> {
 
     toggleEdit = () => {
       if (!this.state.editorReadonly) {
-        console.log('readonly true')
+        console.log('set readonly true')
 
-        let imagePlugin = this.assembleImagePlugin(true)
-
-        this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin
-
-        this.plugins = this.assemblePluginsList(true)
         // this.blur()
         // this.focus() // for AlignmentTool
         this.setState({
           editorReadonly:true
         },() => {
           setTimeout(()=>{
+            let imagePlugin = this.assembleImagePlugin()
+
+            this.pluginOptions.imagePlugin = imagePlugin
+
+            this.plugins = this.assemblePluginsList()
             this.setState({
               renderImageTools:false
             })
@@ -230,14 +244,18 @@ class SheetView extends React.Component<any,any> {
         })
       } else {
         console.log('readonly false')
-        let imagePlugin = this.assembleImagePlugin(false)
-
-        this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin
-
-        this.plugins = this.assemblePluginsList(false)
         this.setState({
           editorReadonly:false,
           renderImageTools:true,
+        },() => {
+          console.log('assembling image plugin')
+          let imagePlugin = this.assembleImagePlugin()
+
+          this.pluginOptions.imagePlugin = imagePlugin
+
+          console.log('assembling plugins list')
+          this.plugins = this.assemblePluginsList()
+
         })
       }      
     }
@@ -264,7 +282,8 @@ class SheetView extends React.Component<any,any> {
       let AlignmentTool = this.AlignmentTool
       let Toolbar = this.Toolbar
       return [
-        ((this.state.renderImageTools)?<AlignmentTool key="alignment"/>:null),
+        // ((this.state.renderImageTools)?<AlignmentTool key="alignment"/>:null),
+        <AlignmentTool key="alignment"/>,
         <div key="clear" style = {{clear:"both"}}></div>,
         (!this.state.editorReadonly)?
             <Toolbar key="toolbar" />
@@ -277,7 +296,7 @@ class SheetView extends React.Component<any,any> {
         <ImageAdd 
           editorState={this.state.editorState}
           onChange={this.onEditorChange}
-          modifier={this.imagePlugin.addImage}
+          modifier={this.pluginOptions.imagePlugin.addImage}
         />:null
     )
 

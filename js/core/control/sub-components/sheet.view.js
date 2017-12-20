@@ -33,10 +33,6 @@ class SheetView extends React.Component {
                 Link: renderedlink_view_1.default,
                 placeholder: 'local.link/path, or external url',
             });
-            let focusPlugin = draft_js_focus_plugin_1.default();
-            let resizeablePlugin = draft_js_resizeable_plugin_1.default();
-            let alignmentPlugin = draft_js_alignment_plugin_1.default();
-            let { AlignmentTool } = alignmentPlugin;
             let toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
                 structure: [
                     draft_js_buttons_1.BoldButton,
@@ -53,37 +49,38 @@ class SheetView extends React.Component {
                 ]
             });
             let { Toolbar } = toolbarPlugin;
-            let decorator = draft_js_plugins_editor_1.composeDecorators(resizeablePlugin.decorator, alignmentPlugin.decorator, focusPlugin.decorator);
-            this.imageDecorator = decorator;
-            let imagePlugin = this.assembleImagePlugin(this.state.editorReadonly);
+            this.Toolbar = Toolbar;
+            let focusPlugin = draft_js_focus_plugin_1.default();
+            let alignmentPlugin = draft_js_alignment_plugin_1.default();
+            let { AlignmentTool } = alignmentPlugin;
+            this.AlignmentTool = AlignmentTool;
             let pluginOptions = {
                 toolbarPlugin,
                 linkPlugin,
-                focusPlugin,
                 alignmentPlugin,
-                resizeablePlugin,
-                imagePlugin,
+                focusPlugin,
             };
             this.pluginOptions = pluginOptions;
-            let plugins = this.assemblePluginsList(this.state.editorReadonly);
-            this.Toolbar = Toolbar;
-            this.imagePlugin = imagePlugin;
-            this.AlignmentTool = AlignmentTool;
+            let resizeablePlugin = draft_js_resizeable_plugin_1.default();
+            this.pluginOptions = Object.assign({}, this.pluginOptions, { resizeablePlugin });
+            let imagePlugin = this.assembleImagePlugin();
+            this.pluginOptions.imagePlugin = imagePlugin;
+            let plugins = this.assemblePluginsList();
             this.plugins = plugins;
         };
-        this.assemblePluginsList = (readOnly) => {
+        this.pluginOptions = null;
+        this.assembleImagePlugin = () => {
             let options = this.pluginOptions;
-            let editlist = [];
-            if (!readOnly) {
-                editlist = [options.focusPlugin, options, options.alignmentPlugin, options.resizeablePlugin];
+            let decorator;
+            if (!this.state.editorReadonly) {
+                decorator = draft_js_plugins_editor_1.composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator, options.focusPlugin.decorator);
             }
-            let list = [options.toolbarPlugin, options.linkPlugin, ...editlist, options.imagePlugin];
-            return list;
-        };
-        this.assembleImagePlugin = (readOnly) => {
-            let decorator = this.imageDecorator;
+            else {
+                decorator = draft_js_plugins_editor_1.composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator);
+            }
+            this.imageDecorator = decorator;
             let imagePlugin;
-            if (readOnly) {
+            if (this.state.editorReadonly) {
                 imagePlugin = draft_js_image_plugin_1.default();
             }
             else {
@@ -92,6 +89,18 @@ class SheetView extends React.Component {
                 });
             }
             return imagePlugin;
+        };
+        this.assemblePluginsList = () => {
+            let options = this.pluginOptions;
+            let editlist = [];
+            if (!this.state.editorReadonly) {
+                editlist = [options.focusPlugin, options.alignmentPlugin, options.resizeablePlugin];
+            }
+            else {
+                editlist = [options.alignmentPlugin, options.resizeablePlugin];
+            }
+            let list = [options.toolbarPlugin, options.linkPlugin, ...editlist, options.imagePlugin];
+            return list;
         };
         this.state = null;
         this.editor = null;
@@ -124,14 +133,14 @@ class SheetView extends React.Component {
         };
         this.toggleEdit = () => {
             if (!this.state.editorReadonly) {
-                console.log('readonly true');
-                let imagePlugin = this.assembleImagePlugin(true);
-                this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin;
-                this.plugins = this.assemblePluginsList(true);
+                console.log('set readonly true');
                 this.setState({
                     editorReadonly: true
                 }, () => {
                     setTimeout(() => {
+                        let imagePlugin = this.assembleImagePlugin();
+                        this.pluginOptions.imagePlugin = imagePlugin;
+                        this.plugins = this.assemblePluginsList();
                         this.setState({
                             renderImageTools: false
                         });
@@ -140,12 +149,15 @@ class SheetView extends React.Component {
             }
             else {
                 console.log('readonly false');
-                let imagePlugin = this.assembleImagePlugin(false);
-                this.imagePlugin = this.pluginOptions.imagePlugin = imagePlugin;
-                this.plugins = this.assemblePluginsList(false);
                 this.setState({
                     editorReadonly: false,
                     renderImageTools: true,
+                }, () => {
+                    console.log('assembling image plugin');
+                    let imagePlugin = this.assembleImagePlugin();
+                    this.pluginOptions.imagePlugin = imagePlugin;
+                    console.log('assembling plugins list');
+                    this.plugins = this.assemblePluginsList();
                 });
             }
         };
@@ -158,7 +170,7 @@ class SheetView extends React.Component {
             let AlignmentTool = this.AlignmentTool;
             let Toolbar = this.Toolbar;
             return [
-                ((this.state.renderImageTools) ? React.createElement(AlignmentTool, { key: "alignment" }) : null),
+                React.createElement(AlignmentTool, { key: "alignment" }),
                 React.createElement("div", { key: "clear", style: { clear: "both" } }),
                 (!this.state.editorReadonly) ?
                     React.createElement(Toolbar, { key: "toolbar" })
@@ -166,7 +178,7 @@ class SheetView extends React.Component {
             ];
         };
         this.imagecontrol = () => ((this.state.renderImageTools) ?
-            React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.imagePlugin.addImage }) : null);
+            React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.pluginOptions.imagePlugin.addImage }) : null);
         let { draftdata } = this.props;
         let startstate;
         if (!draftdata || !Object.keys(draftdata).length) {
@@ -178,8 +190,8 @@ class SheetView extends React.Component {
         this.state = {
             editable: (window.location.hostname == 'budgetpedia'),
             editorState: startstate,
-            editorReadonly: false,
-            renderImageTools: true,
+            editorReadonly: true,
+            renderImageTools: false,
         };
         this.assemblePlugins();
     }
