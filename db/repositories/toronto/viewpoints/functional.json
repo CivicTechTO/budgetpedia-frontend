@@ -6,24 +6,8 @@
             "Index": 0,
             "NamingConfigRef": "ACTIVITYTYPE",
             "Components": {
-                "WASTEWATER": {
-                    "Index": 0,
-                    "NamingConfigRef": "CLUSTER",
-                    "Components": {
-                        "SOLIDWASTE": {
-                            "Index": 0,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "WATER": {
-                            "Index": 1,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        }
-                    }
-                },
                 "TRANSTRANSIT": {
-                    "Index": 1,
+                    "Index": 0,
                     "NamingConfigRef": "CLUSTER",
                     "Components": {
                         "TTCCONV": {
@@ -43,6 +27,22 @@
                         },
                         "PARKING": {
                             "Index": 3,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        }
+                    }
+                },
+                "WASTEWATER": {
+                    "Index": 1,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "SOLIDWASTE": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "WATER": {
+                            "Index": 1,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         }
@@ -128,12 +128,44 @@
             "Index": 1,
             "NamingConfigRef": "ACTIVITYTYPE",
             "Components": {
+                "WELFARE": {
+                    "Index": 0,
+                    "NamingConfigRef": "CLUSTER",
+                    "Components": {
+                        "SOCIALSERV": {
+                            "Index": 0,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "HOUSING" : {
+                            "Index": 1,
+                            "NamingConfigRef":"CLUSTER",
+                            "Components": {
+                                "SHELTERADMIN": {
+                                    "Index": 1,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                },
+                                "AFFHOUSING": {
+                                    "Index": 2,
+                                    "NamingConfigRef": "PROGRAM",
+                                    "Baseline": true
+                                }
+                            }
+                        },
+                        "CHILDSERV": {
+                            "Index": 2,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        }
+                    }
+                },
                 "EMERGSERV": {
                     "Index": 0,
                     "NamingConfigRef": "CLUSTER",
                     "Components": {
                         "FIRE": {
-                            "Index": 0,
+                            "Index": 1,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
@@ -162,38 +194,6 @@
                                     "Baseline": true
                                 }
                             }
-                        }
-                    }
-                },
-                "WELFARE": {
-                    "Index": 1,
-                    "NamingConfigRef": "CLUSTER",
-                    "Components": {
-                        "SOCIALSERV": {
-                            "Index": 0,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "HOUSING" : {
-                            "Index": 1,
-                            "NamingConfigRef":"CLUSTER",
-                            "Components": {
-                                "SHELTERADMIN": {
-                                    "Index": 1,
-                                    "NamingConfigRef": "PROGRAM",
-                                    "Baseline": true
-                                },
-                                "AFFHOUSING": {
-                                    "Index": 2,
-                                    "NamingConfigRef": "PROGRAM",
-                                    "Baseline": true
-                                }
-                            }
-                        },
-                        "CHILDSERV": {
-                            "Index": 2,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
                         }
                     }
                 },
@@ -405,7 +405,7 @@
                 "CORPORATEACCOUNTS": "Corporate Accounts",
                 "CORPACCOUNTS":"Corporate Accounts",
                 "DESTINATIONS": "Public Attractions",
-                "EMERGSERV": "Emergency Services",
+                "EMERGSERV": "Protective Services",
                 "INITIATIVES": "Planning & Development",
                 "INTERNALSERV": "Internal Services",
                 "MAINTSTANDARDS": "Division Support",

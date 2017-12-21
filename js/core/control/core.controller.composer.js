@@ -26,9 +26,12 @@ let updateChildren = (self, children) => {
     if (!children || children.length == 0)
         return children;
     let output = children.map((child, key) => {
+        if (child.disabled)
+            return null;
         return updateModel(self, child);
     });
-    return output;
+    let result = output.filter(item => (!!item));
+    return result;
 };
 let updateModel = (self, model) => {
     if (model.updated)

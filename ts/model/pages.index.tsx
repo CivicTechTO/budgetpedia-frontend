@@ -17,7 +17,7 @@ let pages = {
                 type:'section',
                 properties:{
                     title:"Welcome",
-                    description: "We're a non-profit, volunteer organization based in Toronto, Canada.",
+                    description: "We're an independent, non-profit, volunteer organization based in Toronto, Canada.",
                     tag:'Welcome',
                 },
                 children:[
@@ -80,6 +80,7 @@ let pages = {
                         controller: 'sheet',
                         repo:'sheets',
                         index:'cityprocess',
+                        disabled:true,
                     },
                 ]
             },
@@ -88,6 +89,7 @@ let pages = {
                 index:'concerns',
                 description:'links to issues',
                 type:'section',
+                disabled:true,
                 properties: {
                     title:'Opportunities and Concerns',
                     description:'Some basic opportunites and issues we think should be addressed.',

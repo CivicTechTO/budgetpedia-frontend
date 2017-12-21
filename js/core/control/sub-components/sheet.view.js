@@ -63,7 +63,7 @@ class SheetView extends React.Component {
                 alignmentPlugin,
                 focusPlugin,
                 resizeablePlugin,
-                imagePlugin: null
+                imagePlugin: null,
             };
             let imagePlugin = this.assembleImagePlugin(pluginOptions);
             pluginOptions.imagePlugin = imagePlugin;
@@ -87,9 +87,6 @@ class SheetView extends React.Component {
         };
         this.focus = () => {
             this.editor.focus();
-        };
-        this.blur = () => {
-            this.editor.blur();
         };
         this.onEditorChange = (editorState) => this.setState({ editorState });
         this.onDownload = () => {

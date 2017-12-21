@@ -41,11 +41,14 @@ let updateChildren = (self,children) => {
 
     let output = children.map((child, key) => {
 
+        if (child.disabled) return null
         return updateModel(self,child)
 
     })
 
-    return output
+    let result = output.filter(item => (!!item)) // filter screened items
+
+    return result
 
 }
 

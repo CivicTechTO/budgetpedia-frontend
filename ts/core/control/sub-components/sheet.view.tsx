@@ -123,7 +123,7 @@ class SheetView extends React.Component<any,any> {
         alignmentPlugin,
         focusPlugin,
         resizeablePlugin,
-        imagePlugin:null
+        imagePlugin:null,
       }
 
       let imagePlugin = this.assembleImagePlugin(pluginOptions)
@@ -158,10 +158,6 @@ class SheetView extends React.Component<any,any> {
 
     focus = () => {
         this.editor.focus();
-    }
-
-    blur = () => {
-        this.editor.blur();
     }
 
     onEditorChange = (editorState) => this.setState({editorState});
@@ -290,7 +286,7 @@ class SheetView extends React.Component<any,any> {
             <div style = {styles.outderdiv}>
                 <Paper zDepth = {3} >
 
-                    <div style = {styles.innerdiv as any} onClick={this.focus} >
+                    <div style = {styles.innerdiv as any} onClick={ this.focus } >
 
                         {this.actionbuttons()}
 
