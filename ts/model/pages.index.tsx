@@ -64,7 +64,7 @@ let pages = {
                 type:'section',
                 properties: {
                     title:'The Basics',
-                    description: 'What the City of Toronto does, and how the budget process works.',
+                    description: 'What the City of Toronto does, (and how the budget process works - _pending_).',
                     tag:'The Basics',
                     style:{
                         marginBottom: '12px'
