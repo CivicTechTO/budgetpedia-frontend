@@ -16,8 +16,9 @@ let pages = {
                 description:'header for main page of website',
                 type:'section',
                 properties:{
-                    title:null,
-                    description: null,
+                    title:"Welcome",
+                    description: "We're a non-profit, volunteer organization based in Toronto, Canada.",
+                    tag:'Welcome',
                 },
                 children:[
                     {

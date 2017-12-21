@@ -73,6 +73,14 @@ class SheetView extends React.Component<any,any> {
 
     }
 
+    // declarations
+    state = null
+    pluginOptions
+    plugins
+    Toolbar
+    AlignmentTool
+    editor = null // element ref
+
     assemblePlugins = () => {
 
       // core initialization
@@ -135,10 +143,6 @@ class SheetView extends React.Component<any,any> {
 
     }
 
-    pluginOptions
-
-    imageDecorator
-
     assembleImagePlugin = (options) => {
       let decorator
       decorator = composeDecorators(
@@ -146,22 +150,11 @@ class SheetView extends React.Component<any,any> {
         options.alignmentPlugin.decorator,
         options.focusPlugin.decorator,
       )
-      this.imageDecorator = decorator
       let imagePlugin = createImagePlugin({
         decorator,
       })
       return imagePlugin
     }
-
-    state = null
-
-    // declarations
-    staticToolbarPlugin
-    Toolbar
-    AlignmentTool
-    plugins
-
-    editor = null // element ref
 
     focus = () => {
         this.editor.focus();
@@ -271,7 +264,7 @@ class SheetView extends React.Component<any,any> {
       return [
         (this.state.renderPluginTools)?<AlignmentTool key="alignment"/>:null,
         <div key="clear" style = {{clear:"both"}}></div>,
-        (!this.state.editorReadonly)?
+        (this.state.renderPluginTools)?
             <Toolbar key="toolbar" />
           :null
       ]

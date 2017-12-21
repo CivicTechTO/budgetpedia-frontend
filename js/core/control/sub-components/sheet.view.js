@@ -28,6 +28,8 @@ const draft_js_buttons_1 = require("draft-js-buttons");
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
+        this.state = null;
+        this.editor = null;
         this.assemblePlugins = () => {
             let linkPlugin = draft_js_anchor_plugin_1.default({
                 Link: renderedlink_view_1.default,
@@ -78,14 +80,11 @@ class SheetView extends React.Component {
         this.assembleImagePlugin = (options) => {
             let decorator;
             decorator = draft_js_plugins_editor_1.composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator, options.focusPlugin.decorator);
-            this.imageDecorator = decorator;
             let imagePlugin = draft_js_image_plugin_1.default({
                 decorator,
             });
             return imagePlugin;
         };
-        this.state = null;
-        this.editor = null;
         this.focus = () => {
             this.editor.focus();
         };
@@ -163,7 +162,7 @@ class SheetView extends React.Component {
             return [
                 (this.state.renderPluginTools) ? React.createElement(AlignmentTool, { key: "alignment" }) : null,
                 React.createElement("div", { key: "clear", style: { clear: "both" } }),
-                (!this.state.editorReadonly) ?
+                (this.state.renderPluginTools) ?
                     React.createElement(Toolbar, { key: "toolbar" })
                     : null
             ];
