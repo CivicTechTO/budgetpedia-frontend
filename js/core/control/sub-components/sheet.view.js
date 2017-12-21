@@ -54,35 +54,19 @@ class SheetView extends React.Component {
             let alignmentPlugin = draft_js_alignment_plugin_1.default();
             let { AlignmentTool } = alignmentPlugin;
             this.AlignmentTool = AlignmentTool;
+            let resizeablePlugin = draft_js_resizeable_plugin_1.default();
             let pluginOptions = {
                 toolbarPlugin,
                 linkPlugin,
                 alignmentPlugin,
                 focusPlugin,
+                resizeablePlugin,
+                imagePlugin: null
             };
+            let imagePlugin = this.assembleImagePlugin(pluginOptions);
+            pluginOptions.imagePlugin = imagePlugin;
             this.pluginOptions = pluginOptions;
-            let resizeablePlugin = draft_js_resizeable_plugin_1.default();
-            this.pluginOptions = Object.assign({}, this.pluginOptions, { resizeablePlugin });
-            let imagePlugin = this.assembleImagePlugin();
-            this.pluginOptions.imagePlugin = imagePlugin;
-            let plugins = this.assemblePluginsList();
-            this.plugins = plugins;
-        };
-        this.pluginOptions = null;
-        this.assembleImagePlugin = () => {
-            let options = this.pluginOptions;
-            let decorator;
-            decorator = draft_js_plugins_editor_1.composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator, options.focusPlugin.decorator);
-            this.imageDecorator = decorator;
-            let imagePlugin = draft_js_image_plugin_1.default({
-                decorator,
-            });
-            return imagePlugin;
-        };
-        this.assemblePluginsList = () => {
-            let options = this.pluginOptions;
-            let { toolbarPlugin, linkPlugin, alignmentPlugin, focusPlugin, resizeablePlugin, imagePlugin, } = options;
-            return [
+            this.plugins = [
                 toolbarPlugin,
                 linkPlugin,
                 alignmentPlugin,
@@ -90,6 +74,15 @@ class SheetView extends React.Component {
                 resizeablePlugin,
                 imagePlugin,
             ];
+        };
+        this.assembleImagePlugin = (options) => {
+            let decorator;
+            decorator = draft_js_plugins_editor_1.composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator, options.focusPlugin.decorator);
+            this.imageDecorator = decorator;
+            let imagePlugin = draft_js_image_plugin_1.default({
+                decorator,
+            });
+            return imagePlugin;
         };
         this.state = null;
         this.editor = null;
@@ -195,14 +188,15 @@ class SheetView extends React.Component {
         this.assemblePlugins();
     }
     render() {
-        let Toolbar = this.Toolbar;
-        let AlignmentTool = this.AlignmentTool;
-        let plugins = this.plugins;
-        return (React.createElement("div", { style: { backgroundColor: '#d9d9d9', padding: '16px' } },
+        let styles = {
+            outderdiv: { backgroundColor: '#d9d9d9', padding: '16px' },
+            innerdiv: { padding: '16px', position: "relative" },
+        };
+        return (React.createElement("div", { style: styles.outderdiv },
             React.createElement(Paper_1.default, { zDepth: 3 },
-                React.createElement("div", { style: { padding: '16px', position: 'relative', }, onClick: this.focus },
+                React.createElement("div", { style: styles.innerdiv, onClick: this.focus },
                     this.actionbuttons(),
-                    this.state.renderEditorTools ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }) : null,
+                    this.state.renderEditorTools ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }) : null,
                     this.state.renderEditorTools ? this.editorcontrols() : null),
                 this.state.renderEditorTools ? this.imagecontrol() : null)));
     }

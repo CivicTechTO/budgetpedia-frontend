@@ -99,7 +99,6 @@ class SheetView extends React.Component<any,any> {
       })
 
       let { Toolbar } = toolbarPlugin
-
       this.Toolbar = Toolbar
 
       let focusPlugin = createFocusPlugin();
@@ -108,38 +107,39 @@ class SheetView extends React.Component<any,any> {
       let { AlignmentTool } = alignmentPlugin
       this.AlignmentTool = AlignmentTool      
 
+      let resizeablePlugin = createResizeablePlugin()
+
       let pluginOptions = {
         toolbarPlugin, 
         linkPlugin, 
         alignmentPlugin,
         focusPlugin,
+        resizeablePlugin,
+        imagePlugin:null
       }
+
+      let imagePlugin = this.assembleImagePlugin(pluginOptions)
+
+      pluginOptions.imagePlugin = imagePlugin
 
       this.pluginOptions = pluginOptions
 
-      // must be reset
-      let resizeablePlugin = createResizeablePlugin();
-
-      this.pluginOptions = {
-        ...this.pluginOptions,
+      this.plugins = [
+        toolbarPlugin, 
+        linkPlugin, 
+        alignmentPlugin,
+        focusPlugin,
         resizeablePlugin,
-      }
+        imagePlugin,
+      ]
 
-      let imagePlugin = this.assembleImagePlugin()
-
-      this.pluginOptions.imagePlugin = imagePlugin
-
-      let plugins = this.assemblePluginsList()
-
-      this.plugins = plugins
     }
+
+    pluginOptions
 
     imageDecorator
 
-    pluginOptions = null
-
-    assembleImagePlugin = () => {
-      let options = this.pluginOptions
+    assembleImagePlugin = (options) => {
       let decorator
       decorator = composeDecorators(
         options.resizeablePlugin.decorator,
@@ -151,28 +151,6 @@ class SheetView extends React.Component<any,any> {
         decorator,
       })
       return imagePlugin
-    }
-
-    assemblePluginsList = () => {
-      let options = this.pluginOptions
-
-      let { 
-        toolbarPlugin, 
-        linkPlugin, 
-        alignmentPlugin,
-        focusPlugin,
-        resizeablePlugin,
-        imagePlugin,
-      } = options
-
-      return [
-        toolbarPlugin, 
-        linkPlugin, 
-        alignmentPlugin,
-        focusPlugin,
-        resizeablePlugin,
-        imagePlugin,
-      ]
     }
 
     state = null
@@ -310,23 +288,23 @@ class SheetView extends React.Component<any,any> {
 
     render() {
 
-        let Toolbar = this.Toolbar
-
-        let AlignmentTool = this.AlignmentTool
-
-        let plugins = this.plugins
+        let styles = {
+            outderdiv:{backgroundColor:'#d9d9d9',padding: '16px'},
+            innerdiv:{padding:'16px',position:"relative"},
+        }
 
         return (
-            <div style = {{backgroundColor:'#d9d9d9',padding: '16px'}}>
+            <div style = {styles.outderdiv}>
                 <Paper zDepth = {3} >
-                    <div style = {{padding:'16px',position:'relative',}} onClick={this.focus}>
+
+                    <div style = {styles.innerdiv as any} onClick={this.focus} >
 
                         {this.actionbuttons()}
 
                         {this.state.renderEditorTools?<Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
-                            plugins = {plugins}
+                            plugins = {this.plugins}
                             readOnly = {this.state.editorReadonly}
                             handleKeyCommand={this.handleKeyCommand}
                             ref={(element) => { this.editor = element }}
@@ -336,7 +314,6 @@ class SheetView extends React.Component<any,any> {
 
                     </div>
                     {/* ImageAdd must be outside scope of auto-focus */}
-
                     {this.state.renderEditorTools?this.imagecontrol():null}
 
                 </Paper>
