@@ -66,7 +66,7 @@ class SheetView extends React.Component<any,any> {
         editorState: startstate,
         editorReadonly: true,
         renderPluginTools:false,
-        renderEditorTools:true,
+        renderEditor:true,
       }
 
       this.assemblePlugins()
@@ -204,19 +204,19 @@ class SheetView extends React.Component<any,any> {
 
               setTimeout(()=> {
                 this.setState({
-                  renderEditorTools:false, // unmount editor
-                },
-                () => {
+                  renderEditor:false, // unmount editor
+                },() => {
 
-                    this.setState({
-                      renderEditorTools:true, // remount editor
-                    })
+                  this.setState({
+                    renderEditor:true, // remount editor
+                  })
 
                 })
-              })
+              }) // setTimeout
+
             })
 
-          })
+          }) // setTimeout
         })
       } else { // switch to EDIT
 
@@ -226,17 +226,17 @@ class SheetView extends React.Component<any,any> {
 
           setTimeout(()=> {
             this.setState({
-              renderEditorTools:false, // unmount editor
-            }, () => {
+              renderEditor:false, // unmount editor
+            },() => {
 
-                this.setState({
-                  renderEditorTools:true, // remount editor
-                  renderPluginTools:true, // remount plugins
-                })
+              this.setState({
+                renderEditor:true, // remount editor
+                renderPluginTools:true, // remount plugins
+              })
                 
             })
           })
-        })
+        }) // setTimeout
       }      
     }
 
@@ -294,7 +294,7 @@ class SheetView extends React.Component<any,any> {
 
                         {this.actionbuttons()}
 
-                        {this.state.renderEditorTools?<Editor 
+                        {this.state.renderEditor?<Editor 
                             editorState = {this.state.editorState} 
                             onChange = {this.onEditorChange}
                             plugins = {this.plugins}
@@ -303,11 +303,11 @@ class SheetView extends React.Component<any,any> {
                             ref={(element) => { this.editor = element }}
                         />:null}
 
-                        {this.state.renderEditorTools?this.editorcontrols():null}
+                        {this.editorcontrols()}
 
                     </div>
                     {/* ImageAdd must be outside scope of auto-focus */}
-                    {this.state.renderEditorTools?this.imagecontrol():null}
+                    {this.imagecontrol()}
 
                 </Paper>
             </div>

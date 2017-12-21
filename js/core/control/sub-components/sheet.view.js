@@ -123,10 +123,10 @@ class SheetView extends React.Component {
                         }, () => {
                             setTimeout(() => {
                                 this.setState({
-                                    renderEditorTools: false,
+                                    renderEditor: false,
                                 }, () => {
                                     this.setState({
-                                        renderEditorTools: true,
+                                        renderEditor: true,
                                     });
                                 });
                             });
@@ -140,10 +140,10 @@ class SheetView extends React.Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            renderEditorTools: false,
+                            renderEditor: false,
                         }, () => {
                             this.setState({
-                                renderEditorTools: true,
+                                renderEditor: true,
                                 renderPluginTools: true,
                             });
                         });
@@ -182,7 +182,7 @@ class SheetView extends React.Component {
             editorState: startstate,
             editorReadonly: true,
             renderPluginTools: false,
-            renderEditorTools: true,
+            renderEditor: true,
         };
         this.assemblePlugins();
     }
@@ -195,9 +195,9 @@ class SheetView extends React.Component {
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: styles.innerdiv, onClick: this.focus },
                     this.actionbuttons(),
-                    this.state.renderEditorTools ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }) : null,
-                    this.state.renderEditorTools ? this.editorcontrols() : null),
-                this.state.renderEditorTools ? this.imagecontrol() : null)));
+                    this.state.renderEditor ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }) : null,
+                    this.editorcontrols()),
+                this.imagecontrol())));
     }
 }
 exports.default = SheetView;
