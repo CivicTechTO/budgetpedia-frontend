@@ -65,7 +65,7 @@ class SheetView extends React.Component<any,any> {
         editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
         editorState: startstate,
         editorReadonly: true,
-        renderImageTools:false,
+        renderPluginTools:false,
         renderEditorTools:true,
       }
 
@@ -228,7 +228,7 @@ class SheetView extends React.Component<any,any> {
 
           setTimeout(()=>{
             this.setState({
-              renderImageTools:false, // unmount plugins
+              renderPluginTools:false, // unmount plugins
             },() => {
 
               setTimeout(()=> {
@@ -260,7 +260,7 @@ class SheetView extends React.Component<any,any> {
 
                 this.setState({
                   renderEditorTools:true, // remount editor
-                  renderImageTools:true, // remount plugins
+                  renderPluginTools:true, // remount plugins
                 })
                 
             })
@@ -291,8 +291,7 @@ class SheetView extends React.Component<any,any> {
       let AlignmentTool = this.AlignmentTool
       let Toolbar = this.Toolbar
       return [
-        // ((this.state.renderImageTools)?<AlignmentTool key="alignment"/>:null),
-        (this.state.renderImageTools)?<AlignmentTool key="alignment"/>:null,
+        (this.state.renderPluginTools)?<AlignmentTool key="alignment"/>:null,
         <div key="clear" style = {{clear:"both"}}></div>,
         (!this.state.editorReadonly)?
             <Toolbar key="toolbar" />
@@ -301,7 +300,7 @@ class SheetView extends React.Component<any,any> {
     }
 
     imagecontrol = () => (
-      (this.state.renderImageTools)?
+      (this.state.renderPluginTools)?
         <ImageAdd 
           editorState={this.state.editorState}
           onChange={this.onEditorChange}

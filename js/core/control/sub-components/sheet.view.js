@@ -127,7 +127,7 @@ class SheetView extends React.Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            renderImageTools: false,
+                            renderPluginTools: false,
                         }, () => {
                             setTimeout(() => {
                                 this.setState({
@@ -152,7 +152,7 @@ class SheetView extends React.Component {
                         }, () => {
                             this.setState({
                                 renderEditorTools: true,
-                                renderImageTools: true,
+                                renderPluginTools: true,
                             });
                         });
                     });
@@ -168,14 +168,14 @@ class SheetView extends React.Component {
             let AlignmentTool = this.AlignmentTool;
             let Toolbar = this.Toolbar;
             return [
-                (this.state.renderImageTools) ? React.createElement(AlignmentTool, { key: "alignment" }) : null,
+                (this.state.renderPluginTools) ? React.createElement(AlignmentTool, { key: "alignment" }) : null,
                 React.createElement("div", { key: "clear", style: { clear: "both" } }),
                 (!this.state.editorReadonly) ?
                     React.createElement(Toolbar, { key: "toolbar" })
                     : null
             ];
         };
-        this.imagecontrol = () => ((this.state.renderImageTools) ?
+        this.imagecontrol = () => ((this.state.renderPluginTools) ?
             React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.pluginOptions.imagePlugin.addImage }) : null);
         let { draftdata } = this.props;
         let startstate;
@@ -189,7 +189,7 @@ class SheetView extends React.Component {
             editable: (window.location.hostname == 'budgetpedia'),
             editorState: startstate,
             editorReadonly: true,
-            renderImageTools: false,
+            renderPluginTools: false,
             renderEditorTools: true,
         };
         this.assemblePlugins();
