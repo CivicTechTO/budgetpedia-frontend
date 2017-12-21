@@ -88,7 +88,7 @@ let pages = {
                 type: 'section',
                 properties: {
                     title: 'Opportunities and Concerns',
-                    description: 'Some basic issues we think should be addressed.',
+                    description: 'Some basic opportunites and issues we think should be addressed.',
                     tag: 'Our Concerns',
                     style: {
                         marginBottom: '12px'
