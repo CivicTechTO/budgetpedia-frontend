@@ -2,24 +2,8 @@
     "Index": 0,
     "NamingConfigRef": "AUDITED",
     "Components": {
-        "MUNICIPAL": {
-            "Index": 0,
-            "NamingConfigRef": "CATEGORY",
-            "Components": {
-                "GOVERNMENT": {
-                    "Index": 0,
-                    "NamingConfigRef": "EXPENSE",
-                    "Baseline": true
-                },
-                "PLANNING": {
-                    "Index": 1,
-                    "NamingConfigRef": "EXPENSE",
-                    "Baseline": true
-                }
-            }
-        },
         "SHARED": {
-            "Index": 1,
+            "Index": 0,
             "NamingConfigRef": "CATEGORY",
             "Components": {
                 "TRANSPORTATION": {
@@ -40,7 +24,7 @@
             }
         },
         "SUPPORT": {
-            "Index": 2,
+            "Index": 1,
             "NamingConfigRef": "CATEGORY",
             "Components": {
                 "SOCIALSERVICES": {
@@ -60,6 +44,22 @@
                 },
                 "HEALTH": {
                     "Index": 3,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                }
+            }
+        },
+        "MUNICIPAL": {
+            "Index": 2,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "GOVERNMENT": {
+                    "Index": 0,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
+                "PLANNING": {
+                    "Index": 1,
                     "NamingConfigRef": "EXPENSE",
                     "Baseline": true
                 }
