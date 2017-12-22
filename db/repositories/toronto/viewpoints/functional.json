@@ -164,18 +164,8 @@
                     "Index": 0,
                     "NamingConfigRef": "CLUSTER",
                     "Components": {
-                        "FIRE": {
-                            "Index": 1,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "PARAMEDIC": {
-                            "Index": 1,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
                         "POLICECOURT": {
-                            "Index": 2,
+                            "Index": 0,
                             "NamingConfigRef": "CLUSTER",
                             "Components": {
                                 "POLICE": {
@@ -194,6 +184,16 @@
                                     "Baseline": true
                                 }
                             }
+                        },
+                        "FIRE": {
+                            "Index": 1,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
+                        },
+                        "PARAMEDIC": {
+                            "Index": 2,
+                            "NamingConfigRef": "PROGRAM",
+                            "Baseline": true
                         }
                     }
                 },
@@ -201,12 +201,12 @@
                     "Index": 2,
                     "NamingConfigRef": "CLUSTER",
                     "Components": {
-                        "PUBLICHEALTH": {
+                        "LONGTERMHOME": {
                             "Index": 0,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "LONGTERMHOME": {
+                        "PUBLICHEALTH": {
                             "Index": 1,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
