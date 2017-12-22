@@ -379,12 +379,12 @@
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "PARKINGTAGS": {
+                        "CORPREVENUES": {
                             "Index": 2,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "CORPREVENUES": {
+                        "PARKINGTAGS": {
                             "Index": 3,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
