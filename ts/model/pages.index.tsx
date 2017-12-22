@@ -88,7 +88,6 @@ let pages = {
                 index:'concerns',
                 description:'links to issues',
                 type:'section',
-                disabled:true,
                 tag:'The Challenges',
                 properties: {
                     title:'The Challenges',
@@ -104,6 +103,7 @@ let pages = {
                         index:'opportunities',
                     },
                     {
+                        disabled:true,
                         controller: 'sheet',
                         repo:'sheets',
                         index:'concerns',
