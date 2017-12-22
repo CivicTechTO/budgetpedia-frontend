@@ -82,17 +82,17 @@
                             "Index": 2,
                             "NamingConfigRef": "CLUSTER",
                             "Components": {
-                                "EXHIBPLACE": {
+                                "ZOO": {
                                     "Index": 0,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "THEATRES": {
+                                "EXHIBPLACE": {
                                     "Index": 1,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
                                 },
-                                "ZOO": {
+                                "THEATRES": {
                                     "Index": 2,
                                     "NamingConfigRef": "PROGRAM",
                                     "Baseline": true
@@ -404,7 +404,7 @@
                 "CORPMANAGEMENT": "Corporate Management",
                 "CORPORATEACCOUNTS": "Corporate Accounts",
                 "CORPACCOUNTS":"Corporate Accounts",
-                "DESTINATIONS": "Public Attractions",
+                "DESTINATIONS": "Public Destinations",
                 "EMERGSERV": "Protective Services",
                 "INITIATIVES": "Planning & Development",
                 "INTERNALSERV": "Internal Services",
