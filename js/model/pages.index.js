@@ -64,7 +64,7 @@ let pages = {
                 tag: 'The Basics',
                 properties: {
                     title: 'The Basics',
-                    description: 'What the City of Toronto does, (and how the budget process works - _pending_).',
+                    description: 'What the City of Toronto does, and how the budget process works.',
                     style: {
                         marginBottom: '12px'
                     },
@@ -79,7 +79,6 @@ let pages = {
                         controller: 'sheet',
                         repo: 'sheets',
                         index: 'cityprocess',
-                        disabled: true,
                     },
                 ]
             },
@@ -89,9 +88,9 @@ let pages = {
                 description: 'links to issues',
                 type: 'section',
                 disabled: true,
-                tag: 'Challenges',
+                tag: 'The Challenges',
                 properties: {
-                    title: 'Challenges',
+                    title: 'The Challenges',
                     description: 'Some basic opportunites and issues we think should be addressed.',
                     style: {
                         marginBottom: '12px'
