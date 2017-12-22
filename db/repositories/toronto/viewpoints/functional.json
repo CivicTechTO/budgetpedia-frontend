@@ -36,12 +36,12 @@
                     "Index": 1,
                     "NamingConfigRef": "CLUSTER",
                     "Components": {
-                        "SOLIDWASTE": {
+                        "WATER": {
                             "Index": 0,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
                         },
-                        "WATER": {
+                        "SOLIDWASTE": {
                             "Index": 1,
                             "NamingConfigRef": "PROGRAM",
                             "Baseline": true
