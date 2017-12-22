@@ -15,10 +15,10 @@ let pages = {
                 index: 'header',
                 description: 'header for main page of website',
                 type: 'section',
+                tag: 'Welcome',
                 properties: {
                     title: "Welcome",
                     description: "We're an independent, non-profit, volunteer organization based in Toronto, Canada.",
-                    tag: 'Welcome',
                 },
                 children: [
                     {
@@ -33,10 +33,10 @@ let pages = {
                 index: 'nuggets',
                 description: 'sets of introductory nugget lists',
                 type: 'section',
+                tag: 'Quick Stats',
                 properties: {
                     title: 'Quick Statistics',
                     description: "Here are some quick statistics about Toronto and its finances. We've highlighted a few. Each row scrolls left and right.",
-                    tag: 'Quick Stats',
                 },
                 children: [
                     {
@@ -61,10 +61,10 @@ let pages = {
                 index: 'basics',
                 description: 'basic help text and links',
                 type: 'section',
+                tag: 'The Basics',
                 properties: {
                     title: 'The Basics',
                     description: 'What the City of Toronto does, (and how the budget process works - _pending_).',
-                    tag: 'The Basics',
                     style: {
                         marginBottom: '12px'
                     },
@@ -89,10 +89,10 @@ let pages = {
                 description: 'links to issues',
                 type: 'section',
                 disabled: true,
+                tag: 'Challenges',
                 properties: {
-                    title: 'Opportunities and Concerns',
+                    title: 'Challenges',
                     description: 'Some basic opportunites and issues we think should be addressed.',
-                    tag: 'Our Concerns',
                     style: {
                         marginBottom: '12px'
                     },
@@ -135,8 +135,8 @@ let pages = {
                 index: 'twitterfeed',
                 description: 'twitter feed for budgetpedia',
                 type: 'section',
+                tag: 'Twitter',
                 properties: {
-                    tag: 'Twitter',
                     title: 'Our Twitter Feed',
                     description: 'Jump into the conversation [here](http://twitter.com/budgetpedia){target=_blank}.',
                     style: {

@@ -22,6 +22,11 @@
             "Index": 1,
             "NamingConfigRef": "CATEGORY",
             "Components": {
+                "TRANSPORTATION": {
+                    "Index": 0,
+                    "NamingConfigRef": "EXPENSE",
+                    "Baseline": true
+                },
                 "CULTURE": {
                     "Index": 1,
                     "NamingConfigRef": "EXPENSE",
@@ -31,11 +36,6 @@
                     "Index": 2,
                     "NamingConfigRef": "EXPENSE",
                     "Baseline": true
-                },
-                "TRANSPORTATION": {
-                    "Index": 3,
-                    "NamingConfigRef": "EXPENSE",
-                    "Baseline": true
                 }
             }
         },
@@ -43,7 +43,7 @@
             "Index": 2,
             "NamingConfigRef": "CATEGORY",
             "Components": {
-                "HEALTH": {
+                "SOCIALSERVICES": {
                     "Index": 0,
                     "NamingConfigRef": "EXPENSE",
                     "Baseline": true
@@ -58,7 +58,7 @@
                     "NamingConfigRef": "EXPENSE",
                     "Baseline": true
                 },
-                "SOCIALSERVICES": {
+                "HEALTH": {
                     "Index": 3,
                     "NamingConfigRef": "EXPENSE",
                     "Baseline": true
