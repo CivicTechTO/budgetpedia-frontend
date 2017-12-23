@@ -63,11 +63,29 @@ let opportunities = {
     },
 }
 
+let stories = {
+    controller: 'sheet',
+    index:'stories',
+    description: 'the focus of the budgetpedia website',
+    lookups: {
+        draftdata: {
+            repo:'draft',
+            index:'stories',
+        }
+    },
+    type:'sheet',
+    properties: {
+
+    },
+}
+
+
 let sheets = {
     citybasics,
     cityprocess,
     concerns,
     opportunities,
+    stories,
 }
 
 export default sheets

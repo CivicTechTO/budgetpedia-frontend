@@ -26,7 +26,7 @@ let pages = {
                         repo:'cards',
                         index:'mainpageheader',
                     }
-                ]
+                ],
             },
             {
                 controller:'section',
@@ -54,7 +54,7 @@ let pages = {
                         repo:'nuggetlists',
                         index:'torontotrends',
                     },
-                ]
+                ],
 
             },
             {
@@ -81,7 +81,7 @@ let pages = {
                         repo:'sheets',
                         index:'cityprocess',
                     },
-                ]
+                ],
             },
             {
                 controller:'section',
@@ -107,7 +107,28 @@ let pages = {
                         repo:'sheets',
                         index:'concerns',
                     },
-                ]
+                ],
+            },
+            {
+                controller:'section',
+                index:'stories',
+                description:'introduction to stories',
+                type:'section',
+                tag:'The Stories',
+                properties: {
+                    title:'The Stories',
+                    description:"We're organizing around stories.",
+                    style:{
+                        marginBottom: '12px'
+                    },
+                },
+                children: [
+                    {
+                        controller: 'sheet',
+                        repo:'sheets',
+                        index:'stories',
+                    },
+                ],
             },
             {
                 controller:'section',
@@ -127,7 +148,7 @@ let pages = {
                         index:'mainpages',
                         repo:'tilelists',
                     },
-                ]
+                ],
             },
             {
                 controller:'section',
@@ -148,7 +169,7 @@ let pages = {
                         repo:'media',
                         index:'budgetpediatwitter',
                     },
-                ]
+                ],
             },
             {
                 controller:'section',
@@ -161,7 +182,7 @@ let pages = {
                         repo:'cards',
                         index:'mainpagefooter',
                     }
-                ]
+                ],
             },
         ],
     }
