@@ -103,7 +103,6 @@ let pages = {
                         index:'opportunities',
                     },
                     {
-                        disabled:true,
                         controller: 'sheet',
                         repo:'sheets',
                         index:'concerns',
