@@ -35,7 +35,7 @@ let pages = {
                 anchor:'statistics',
                 description:'sets of introductory nugget lists',
                 type:'section',
-                tag:'Quick Stats',
+                tag:'Quick Statistics',
                 properties: {
                     title:'Quick Statistics',
                     description: "Here are some quick statistics about Toronto and its finances. We've highlighted a few. Each row scrolls left and right.",
@@ -137,27 +137,6 @@ let pages = {
             },
             {
                 controller:'section',
-                index:'tiles',
-                anchor:'website',
-                description:'navigation tiles to the site main pages',
-                type:'section',
-                properties: {
-                    title: 'Our Website',
-                    description: 'The main pages of our website. The tiles scroll left and right.',
-                    style:{
-                        marginBottom: '12px'
-                    },
-                },
-                children:[
-                    {
-                        controller: 'list',
-                        index:'mainpages',
-                        repo:'tilelists',
-                    },
-                ],
-            },
-            {
-                controller:'section',
                 index:'twitterfeed',
                 anchor:'twitter',
                 description:'twitter feed for budgetpedia',
@@ -175,6 +154,28 @@ let pages = {
                         controller: 'media',
                         repo:'media',
                         index:'budgetpediatwitter',
+                    },
+                ],
+            },
+            {
+                controller:'section',
+                index:'tiles',
+                anchor:'website',
+                description:'navigation tiles to the site main pages',
+                type:'section',
+                tag:'More...',
+                properties: {
+                    title: 'Our Website',
+                    description: 'The main pages of our website. The tiles scroll left and right.',
+                    style:{
+                        marginBottom: '12px'
+                    },
+                },
+                children:[
+                    {
+                        controller: 'list',
+                        index:'mainpages',
+                        repo:'tilelists',
                     },
                 ],
             },
