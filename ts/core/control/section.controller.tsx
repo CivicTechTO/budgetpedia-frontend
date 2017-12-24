@@ -14,7 +14,7 @@ import SheetController from './sheet.controller'
 import MediaController from './media.controller'
 import CustomController from './custom.controller'
 
-import SectionView from './sub-components/section.view'
+import SectionView from './views/section.view'
 
 class SectionControllerClass extends React.Component<any,any> {
 

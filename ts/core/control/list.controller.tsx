@@ -7,9 +7,9 @@ import * as React from 'react'
 
 import coreControllerComposer from './core.controller.composer'
 
-import LinkListView from './sub-components/linklist.view'
-import NuggetListView from './sub-components/nuggetlist.view'
-import TileListView from './sub-components/tilelist.view'
+import LinkListView from './views/linklist.view'
+import NuggetListView from './views/nuggetlist.view'
+import TileListView from './views/tilelist.view'
 
 class ListControllerClass extends React.Component<any,any> {
 

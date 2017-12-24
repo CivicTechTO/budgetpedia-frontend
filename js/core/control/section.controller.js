@@ -7,7 +7,7 @@ const card_controller_1 = require("./card.controller");
 const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
-const section_view_1 = require("./sub-components/section.view");
+const section_view_1 = require("./views/section.view");
 class SectionControllerClass extends React.Component {
     constructor(props) {
         super(props);

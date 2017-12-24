@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
-const page_view_1 = require("./sub-components/page.view");
+const page_view_1 = require("./views/page.view");
+const pagemenu_controller_1 = require("./pagemenu.controller");
 class PageControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -17,6 +18,7 @@ class PageControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'page': {
+                    childcomponents = [React.createElement(pagemenu_controller_1.default, null), ...childcomponents];
                     componentType = page_view_1.default;
                     break;
                 }

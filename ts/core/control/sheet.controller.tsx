@@ -7,7 +7,7 @@ import * as React from 'react';
 
 import coreControllerComposer from './core.controller.composer'
 
-import SheetView from './sub-components/sheet.view'
+import SheetView from './views/sheet.view'
 
 class SheetControllerClass extends React.Component<any,any> {
     constructor(props) {

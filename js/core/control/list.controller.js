@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
-const linklist_view_1 = require("./sub-components/linklist.view");
-const nuggetlist_view_1 = require("./sub-components/nuggetlist.view");
-const tilelist_view_1 = require("./sub-components/tilelist.view");
+const linklist_view_1 = require("./views/linklist.view");
+const nuggetlist_view_1 = require("./views/nuggetlist.view");
+const tilelist_view_1 = require("./views/tilelist.view");
 class ListControllerClass extends React.Component {
     constructor(props) {
         super(props);

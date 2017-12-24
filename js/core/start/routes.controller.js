@@ -9,7 +9,7 @@ const react_transition_group_1 = require("react-transition-group");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
 const page_controller_1 = require("../control/page.controller");
-const nomatch_1 = require("../control/sub-components/nomatch");
+const nomatch_1 = require("../control/views/nomatch");
 const pageroutes_1 = require("../../addons/pageroutes");
 let logPageView = (location) => {
     if (window.location.hostname == 'budgetpedia.ca') {

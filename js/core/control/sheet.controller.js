@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
-const sheet_view_1 = require("./sub-components/sheet.view");
+const sheet_view_1 = require("./views/sheet.view");
 class SheetControllerClass extends React.Component {
     constructor(props) {
         super(props);

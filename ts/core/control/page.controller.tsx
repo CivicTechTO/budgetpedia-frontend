@@ -9,7 +9,9 @@ import coreControllerComposer from './core.controller.composer'
 
 import SectionController from './section.controller'
 
-import PageView from './sub-components/page.view'
+import PageView from './views/page.view'
+
+import PageMenuController from './pagemenu.controller'
 
 class PageControllerClass extends React.Component<any,any> {
 
@@ -49,6 +51,7 @@ class PageControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'page': {
+                childcomponents = [<PageMenuController />,...childcomponents]
                 componentType = PageView
                 break
             }
