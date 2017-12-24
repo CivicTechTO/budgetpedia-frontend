@@ -13,7 +13,7 @@ import SectionController from './section.controller'
 
 import PageView from './views/page.view'
 
-import PageMenuController from './pagemenu.controller'
+import PageMenuController from './views/pagemenu.view'
 
 var scrollToElement = require('scroll-to-element')
 
@@ -81,6 +81,7 @@ class PageControllerClass extends React.Component<any,any> {
                 chips = chips.filter((chip) => {
                     return !!chip
                 })
+                // TODO leave off page menu view if there are no chips
                 childcomponents = [<PageMenuController key = "menu">{chips}</PageMenuController>,...childcomponents,<div key = "filler" style = {{height:'38px'}}></div>]
                 componentType = PageView
                 break

@@ -5,7 +5,7 @@ const Chip_1 = require("material-ui/Chip");
 const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./views/page.view");
-const pagemenu_controller_1 = require("./pagemenu.controller");
+const pagemenu_view_1 = require("./views/pagemenu.view");
 var scrollToElement = require('scroll-to-element');
 class PageControllerClass extends React.Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class PageControllerClass extends React.Component {
                     chips = chips.filter((chip) => {
                         return !!chip;
                     });
-                    childcomponents = [React.createElement(pagemenu_controller_1.default, { key: "menu" }, chips), ...childcomponents, React.createElement("div", { key: "filler", style: { height: '38px' } })];
+                    childcomponents = [React.createElement(pagemenu_view_1.default, { key: "menu" }, chips), ...childcomponents, React.createElement("div", { key: "filler", style: { height: '38px' } })];
                     componentType = page_view_1.default;
                     break;
                 }
