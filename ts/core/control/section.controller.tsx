@@ -41,6 +41,7 @@ class SectionControllerClass extends React.Component<any,any> {
         let {
             controller,
             index,
+            anchor,
             type,
             properties,
             children, 
@@ -52,7 +53,7 @@ class SectionControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'section': {
-                properties.id = index
+                properties.id = anchor
                 componentType = SectionView
                 break
             }

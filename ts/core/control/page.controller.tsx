@@ -66,7 +66,7 @@ class PageControllerClass extends React.Component<any,any> {
                             key = {index} 
                             onClick = {
                                 (
-                                    () => this.onClickChip(child.index)
+                                    () => this.onClickChip(child.anchor)
                                 )
                             }
                             style = {

@@ -25,7 +25,7 @@ class PageControllerClass extends React.Component {
                 case 'page': {
                     let chips = children.map((child, index) => {
                         if (child.tag) {
-                            return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.index)), style: { margin: '4px' } }, child.tag));
+                            return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.anchor)), style: { margin: '4px' } }, child.tag));
                         }
                         else {
                             return null;

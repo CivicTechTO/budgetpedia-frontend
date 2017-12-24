@@ -13,6 +13,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'header',
+                anchor: 'header',
                 description: 'header for main page of website',
                 type: 'section',
                 tag: 'Welcome',
@@ -31,6 +32,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'nuggets',
+                anchor: 'statistics',
                 description: 'sets of introductory nugget lists',
                 type: 'section',
                 tag: 'Quick Stats',
@@ -59,6 +61,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'basics',
+                anchor: 'basics',
                 description: 'basic help text and links',
                 type: 'section',
                 tag: 'The Basics',
@@ -85,6 +88,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'concerns',
+                anchor: 'challenges',
                 description: 'links to issues',
                 type: 'section',
                 tag: 'The Challenges',
@@ -111,6 +115,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'stories',
+                anchor: 'stories',
                 description: 'introduction to stories',
                 type: 'section',
                 tag: 'The Stories',
@@ -132,6 +137,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'tiles',
+                anchor: 'website',
                 description: 'navigation tiles to the site main pages',
                 type: 'section',
                 properties: {
@@ -152,6 +158,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'twitterfeed',
+                anchor: 'twitter',
                 description: 'twitter feed for budgetpedia',
                 type: 'section',
                 tag: 'Twitter Feed',
@@ -173,6 +180,7 @@ let pages = {
             {
                 controller: 'section',
                 index: 'footer',
+                anchor: 'footer',
                 description: 'footer for the main page',
                 type: 'section',
                 children: [

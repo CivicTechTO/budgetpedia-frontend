@@ -16,12 +16,12 @@ class SectionControllerClass extends React.Component {
         };
         this.toolkit = null;
         this.emitLocalComponent = (component, key) => {
-            let { controller, index, type, properties, children, } = component;
+            let { controller, index, anchor, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'section': {
-                    properties.id = index;
+                    properties.id = anchor;
                     componentType = section_view_1.default;
                     break;
                 }
