@@ -55,8 +55,6 @@ class PageControllerClass extends React.Component<any,any> {
 
         let childcomponents = this.toolkit.getChildren(this,children)
 
-        console.log('children, childcompoonents',children, childcomponents)
-
         let componentType = null
 
         switch (type) {
@@ -76,14 +74,14 @@ class PageControllerClass extends React.Component<any,any> {
                             }>
                                 {child.tag}
                         </Chip>)
+                    } else {
+                        return null
                     }
                 })
-                console.log('chips pre filter',chips)
                 chips = chips.filter((chip) => {
                     return !!chip
                 })
-                console.log('chips post filter',chips)
-                childcomponents = [<PageMenuController key = "menu">{chips}</PageMenuController>,...childcomponents,<div key = "filler" style = {{height:'30px'}}></div>]
+                childcomponents = [<PageMenuController key = "menu">{chips}</PageMenuController>,...childcomponents,<div key = "filler" style = {{height:'38px'}}></div>]
                 componentType = PageView
                 break
             }

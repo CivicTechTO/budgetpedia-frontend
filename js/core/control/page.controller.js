@@ -20,7 +20,6 @@ class PageControllerClass extends React.Component {
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
-            console.log('children, childcompoonents', children, childcomponents);
             let componentType = null;
             switch (type) {
                 case 'page': {
@@ -28,13 +27,14 @@ class PageControllerClass extends React.Component {
                         if (child.tag) {
                             return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.index)), style: { margin: '4px' } }, child.tag));
                         }
+                        else {
+                            return null;
+                        }
                     });
-                    console.log('chips pre filter', chips);
                     chips = chips.filter((chip) => {
                         return !!chip;
                     });
-                    console.log('chips post filter', chips);
-                    childcomponents = [React.createElement(pagemenu_controller_1.default, { key: "menu" }, chips), ...childcomponents, React.createElement("div", { key: "filler", style: { height: '30px' } })];
+                    childcomponents = [React.createElement(pagemenu_controller_1.default, { key: "menu" }, chips), ...childcomponents, React.createElement("div", { key: "filler", style: { height: '38px' } })];
                     componentType = page_view_1.default;
                     break;
                 }
