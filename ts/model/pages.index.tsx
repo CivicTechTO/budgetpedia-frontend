@@ -155,7 +155,7 @@ let pages = {
                 index:'twitterfeed',
                 description:'twitter feed for budgetpedia',
                 type:'section',
-                tag:'Twitter',
+                tag:'Twitter Feed',
                 properties: {
                     title: 'Our Twitter Feed',
                     description:'Jump into the conversation [here](http://twitter.com/budgetpedia){target=_blank}.',

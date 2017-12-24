@@ -5,6 +5,8 @@
 
 import * as React from 'react';
 
+import Chip from 'material-ui/Chip'
+
 import coreControllerComposer from './core.controller.composer'
 
 import SectionController from './section.controller'
@@ -47,11 +49,23 @@ class PageControllerClass extends React.Component<any,any> {
 
         let childcomponents = this.toolkit.getChildren(this,children)
 
+        console.log('children, childcompoonents',children, childcomponents)
+
         let componentType = null
 
         switch (type) {
             case 'page': {
-                childcomponents = [<PageMenuController />,...childcomponents,<div style = {{height:'30px'}}></div>]
+                let chips = children.map((child, index) => {
+                    if (child.tag) {
+                        return <Chip key = {index} style = {{margin:'4px'}}>{child.tag}</Chip>
+                    }
+                })
+                console.log('chips pre filter',chips)
+                chips = chips.filter((chip) => {
+                    return !!chip
+                })
+                console.log('chips post filter',chips)
+                childcomponents = [<PageMenuController>{chips}</PageMenuController>,...childcomponents,<div style = {{height:'30px'}}></div>]
                 componentType = PageView
                 break
             }

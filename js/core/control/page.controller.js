@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const Chip_1 = require("material-ui/Chip");
 const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./views/page.view");
@@ -15,10 +16,21 @@ class PageControllerClass extends React.Component {
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
+            console.log('children, childcompoonents', children, childcomponents);
             let componentType = null;
             switch (type) {
                 case 'page': {
-                    childcomponents = [React.createElement(pagemenu_controller_1.default, null), ...childcomponents, React.createElement("div", { style: { height: '30px' } })];
+                    let chips = children.map((child, index) => {
+                        if (child.tag) {
+                            return React.createElement(Chip_1.default, { key: index, style: { margin: '4px' } }, child.tag);
+                        }
+                    });
+                    console.log('chips pre filter', chips);
+                    chips = chips.filter((chip) => {
+                        return !!chip;
+                    });
+                    console.log('chips post filter', chips);
+                    childcomponents = [React.createElement(pagemenu_controller_1.default, null, chips), ...childcomponents, React.createElement("div", { style: { height: '30px' } })];
                     componentType = page_view_1.default;
                     break;
                 }

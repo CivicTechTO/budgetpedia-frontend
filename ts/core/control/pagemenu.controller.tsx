@@ -9,7 +9,19 @@ import * as React from 'react';
 class PageMenuController extends React.Component<any,any> {
 
     render() {
-        return <div style = {{position:"fixed",height:"30px",backgroundColor:"red",bottom:0,left:0,right:0,zIndex:30}}></div>
+        return <div style = {
+            {display: 'flex',
+            flexWrap: 'nowrap',
+            position:"fixed",
+            height:"38px",
+            backgroundColor:"red",
+            bottom:0,
+            left:0,
+            right:0,
+            zIndex:30}
+        }>
+            {this.props.children}
+        </div>
     }
 
 }
