@@ -18,7 +18,7 @@ class PageControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'page': {
-                    childcomponents = [React.createElement(pagemenu_controller_1.default, null), ...childcomponents];
+                    childcomponents = [React.createElement(pagemenu_controller_1.default, null), ...childcomponents, React.createElement("div", { style: { height: '30px' } })];
                     componentType = page_view_1.default;
                     break;
                 }

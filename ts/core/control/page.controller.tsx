@@ -51,7 +51,7 @@ class PageControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'page': {
-                childcomponents = [<PageMenuController />,...childcomponents]
+                childcomponents = [<PageMenuController />,...childcomponents,<div style = {{height:'30px'}}></div>]
                 componentType = PageView
                 break
             }
