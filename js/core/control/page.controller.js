@@ -6,6 +6,7 @@ const core_controller_composer_1 = require("./core.controller.composer");
 const section_controller_1 = require("./section.controller");
 const page_view_1 = require("./views/page.view");
 const pagemenu_controller_1 = require("./pagemenu.controller");
+var scrollToElement = require('scroll-to-element');
 class PageControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -13,6 +14,9 @@ class PageControllerClass extends React.Component {
             model: null
         };
         this.toolkit = null;
+        this.onClickChip = index => {
+            scrollToElement('#' + index, { offset: -64 });
+        };
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
@@ -22,7 +26,7 @@ class PageControllerClass extends React.Component {
                 case 'page': {
                     let chips = children.map((child, index) => {
                         if (child.tag) {
-                            return React.createElement(Chip_1.default, { key: index, style: { margin: '4px' } }, child.tag);
+                            return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.index)), style: { margin: '4px' } }, child.tag));
                         }
                     });
                     console.log('chips pre filter', chips);
@@ -30,7 +34,7 @@ class PageControllerClass extends React.Component {
                         return !!chip;
                     });
                     console.log('chips post filter', chips);
-                    childcomponents = [React.createElement(pagemenu_controller_1.default, null, chips), ...childcomponents, React.createElement("div", { style: { height: '30px' } })];
+                    childcomponents = [React.createElement(pagemenu_controller_1.default, { key: "menu" }, chips), ...childcomponents, React.createElement("div", { key: "filler", style: { height: '30px' } })];
                     componentType = page_view_1.default;
                     break;
                 }

@@ -15,6 +15,8 @@ import PageView from './views/page.view'
 
 import PageMenuController from './pagemenu.controller'
 
+var scrollToElement = require('scroll-to-element')
+
 class PageControllerClass extends React.Component<any,any> {
 
     constructor(props) {
@@ -37,6 +39,10 @@ class PageControllerClass extends React.Component<any,any> {
         this.toolkit.setStateModel(this, model)
     }
 
+    onClickChip = index => {
+        scrollToElement('#'+index,{offset:-64})
+    }
+
     emitLocalComponent = (component,key) => {
 
         let {
@@ -57,7 +63,19 @@ class PageControllerClass extends React.Component<any,any> {
             case 'page': {
                 let chips = children.map((child, index) => {
                     if (child.tag) {
-                        return <Chip key = {index} style = {{margin:'4px'}}>{child.tag}</Chip>
+                        return (
+                        <Chip 
+                            key = {index} 
+                            onClick = {
+                                (
+                                    () => this.onClickChip(child.index)
+                                )
+                            }
+                            style = {
+                                {margin:'4px'}
+                            }>
+                                {child.tag}
+                        </Chip>)
                     }
                 })
                 console.log('chips pre filter',chips)
@@ -65,7 +83,7 @@ class PageControllerClass extends React.Component<any,any> {
                     return !!chip
                 })
                 console.log('chips post filter',chips)
-                childcomponents = [<PageMenuController>{chips}</PageMenuController>,...childcomponents,<div style = {{height:'30px'}}></div>]
+                childcomponents = [<PageMenuController key = "menu">{chips}</PageMenuController>,...childcomponents,<div key = "filler" style = {{height:'30px'}}></div>]
                 componentType = PageView
                 break
             }

@@ -52,6 +52,7 @@ class SectionControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'section': {
+                properties.id = index
                 componentType = SectionView
                 break
             }

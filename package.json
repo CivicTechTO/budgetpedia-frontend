@@ -66,6 +66,7 @@
     "redux-router": "^2.1.2",
     "redux-thunk": "^2.2.0",
     "scriptjs": "^2.5.8",
+    "scroll-to-element": "^2.0.0",
     "sortablejs": "^1.7.0",
     "valid-url": "^1.0.9"
   },

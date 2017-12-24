@@ -16,9 +16,9 @@ class SectionView extends React.Component<any,any>{
 
     render() {
 
-        let { title, description, children, style } = this.props
+        let { title, description, children, style, id } = this.props
 
-        return <div style = {style}>
+        return <div id = {id} style = {style}>
 
             {
                 title?

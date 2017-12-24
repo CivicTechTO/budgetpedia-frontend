@@ -21,6 +21,7 @@ class SectionControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'section': {
+                    properties.id = index;
                     componentType = section_view_1.default;
                     break;
                 }
