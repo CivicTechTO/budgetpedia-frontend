@@ -2,12 +2,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const nugget_view_1 = require("./nugget.view");
+const scrollcontrols_view_1 = require("./scrollcontrols.view");
 const html_view_1 = require("./html.view");
 let mdit = require('markdown-it');
 let mda = require('markdown-it-attrs');
 let md = new mdit({ html: true });
 md.use(mda);
 class NuggetList extends React.Component {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            scroller: null,
+        };
+    }
+    componentDidMount() {
+        this.setState({
+            scroller: this.refs.scroller
+        });
+    }
     render() {
         let { nuggets: nuggetdata, image, title, style, contrast } = this.props;
         let defaultstyle = {
@@ -46,13 +58,14 @@ class NuggetList extends React.Component {
                     } },
                     React.createElement("span", { className: 'material-icons' }, "arrow_back"),
                     React.createElement("span", { className: 'material-icons' }, "arrow_forward"))),
-            React.createElement("div", { style: defaultScrollBlockstyle },
-                React.createElement("div", { style: {
-                        display: 'block',
-                        whiteSpace: 'nowrap',
-                        position: 'relative',
-                        marginTop: '20px',
-                    } }, nuggets))));
+            React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
+                React.createElement("div", { style: defaultScrollBlockstyle, ref: "scroller" },
+                    React.createElement("div", { style: {
+                            display: 'block',
+                            whiteSpace: 'nowrap',
+                            position: 'relative',
+                            marginTop: '20px',
+                        } }, nuggets)))));
     }
 }
 exports.default = NuggetList;

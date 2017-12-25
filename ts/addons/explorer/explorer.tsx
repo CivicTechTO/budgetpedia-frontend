@@ -26,7 +26,6 @@
 
 'use strict'
 import * as React from 'react'
-import { findDOMNode } from 'react-dom'
 var { Component } = React
 // doesn't require .d.ts...! (reference available in index.tsx)
 import { connect } from 'react-redux'

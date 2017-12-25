@@ -7,6 +7,8 @@ import * as React from 'react';
 
 import NuggetView from './nugget.view'
 
+import ScrollControlsView from './scrollcontrols.view'
+
 import HtmlView from './html.view'
 let mdit = require('markdown-it')
 let mda = require('markdown-it-attrs')
@@ -31,6 +33,16 @@ interface Props {
 }
 
 class NuggetList extends React.Component< Props, any > {
+
+    componentDidMount() {
+        this.setState({
+            scroller:this.refs.scroller
+        })
+    }
+
+    state = {
+        scroller:null,
+    }
 
     render() {
 
@@ -98,8 +110,10 @@ class NuggetList extends React.Component< Props, any > {
                     </div>
 
                 </div>
-                <div
+                <ScrollControlsView scroller = {this.state.scroller}>
+                <div 
                     style = {defaultScrollBlockstyle as any /*ts typing issue*/}
+                    ref = "scroller"
                 >
                     <div
                         style = {
@@ -113,6 +127,7 @@ class NuggetList extends React.Component< Props, any > {
                         { nuggets }
                     </div>
                 </div>
+                </ScrollControlsView>
             </div>
         )
     }
