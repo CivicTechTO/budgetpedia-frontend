@@ -19,9 +19,19 @@ class ScrollControlsView extends React.Component<any,any> {
     componentWillReceiveProps(next) {
         // received on second render
         if (!this.scroller && next.scroller) {
+
             this.scroller = next.scroller
             this.scrollerData.height = this.scroller.clientHeight
+            this.scrollerData.offsetLeft = this.scroller.scrollLeft
+            this.scroller.addEventListener('scroll',this.onScroll)
+
+            console.log('scrollLeft',this.scroller.scrollLeft)
+
         }
+    }
+
+    onScroll = () => {
+        console.log('scrolling',this.scroller.scrollLeft)
     }
 
     render() {
