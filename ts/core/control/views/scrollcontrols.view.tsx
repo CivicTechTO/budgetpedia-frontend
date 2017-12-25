@@ -23,15 +23,24 @@ class ScrollControlsView extends React.Component<any,any> {
             this.scroller = next.scroller
             this.scrollerData.height = this.scroller.clientHeight
             this.scrollerData.offsetLeft = this.scroller.scrollLeft
+            this.scrollerData.offsetRight = this.calcScrollRight()
             this.scroller.addEventListener('scroll',this.onScroll)
-
-            console.log('scrollLeft',this.scroller.scrollLeft)
 
         }
     }
 
+    calcScrollRight = () => {
+
+        let { scrollLeft, scrollWidth, clientWidth } = this.scroller
+        return ( scrollWidth - (scrollLeft + clientWidth) )
+
+    }
+
     onScroll = () => {
-        console.log('scrolling',this.scroller.scrollLeft)
+        let scroller = this.scroller
+        let { scrollLeft, scrollWidth, clientWidth } = scroller
+        console.log('scrolling',scrollLeft, scrollWidth, clientWidth,
+            this.calcScrollRight())
     }
 
     render() {
