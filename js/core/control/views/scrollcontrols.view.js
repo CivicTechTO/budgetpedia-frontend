@@ -32,10 +32,17 @@ class ScrollControlsView extends React.Component {
                     border: '1px solid gray',
                     borderLeft: 0,
                     zIndex: 20,
+                    fontSize: '30px',
+                    color: 'darkgray',
                     overflow: 'hidden',
                     backgroundColor: 'rgba(255,215,0,.3)',
                 } },
-                React.createElement("span", { style: { marginLeft: '-10px', marginTop: '2px', fontSize: '36px', color: 'darkgray' }, className: 'material-icons' }, "chevron_left")) : null,
+                React.createElement("div", { style: {
+                        marginLeft: '-10px',
+                        marginTop: '2px',
+                        fontSize: '36px',
+                        color: 'darkgray'
+                    }, className: 'material-icons' }, "chevron_left")) : null,
             this.scroller ? React.createElement("div", { style: {
                     top: verticalpos + 'px',
                     position: 'absolute',
@@ -48,11 +55,11 @@ class ScrollControlsView extends React.Component {
                     borderRight: 0,
                     zIndex: 20,
                     fontSize: '30px',
-                    color: 'gray',
+                    color: 'darkgray',
                     overflow: 'hidden',
                     backgroundColor: 'rgba(255,215,0,.3)',
                 } },
-                React.createElement("span", { style: { marginLeft: '-6px', marginTop: '2px', fontSize: '36px', color: 'darkgray' }, className: 'material-icons' }, "chevron_right")) : null,
+                React.createElement("div", { style: { marginLeft: '-6px', marginTop: '2px', fontSize: '36px', color: 'darkgray' }, className: 'material-icons' }, "chevron_right")) : null,
             this.props.children));
     }
 }

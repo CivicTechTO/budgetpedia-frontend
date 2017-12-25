@@ -11,7 +11,9 @@ class ScrollControlsView extends React.Component<any,any> {
 
     scroller = null
     scrollerData = {
-        height:null
+        height:null,
+        offsetLeft:null,
+        offsetRight:null,
     }
 
     componentWillReceiveProps(next) {
@@ -41,11 +43,23 @@ class ScrollControlsView extends React.Component<any,any> {
                     border: '1px solid gray',
                     borderLeft: 0,
                     zIndex: 20,
+                    fontSize: '30px',
+                    color:'darkgray',
                     overflow:'hidden',
                     backgroundColor:'rgba(255,215,0,.3)',
 
                 }}>
-                    <span style = {{marginLeft: '-10px', marginTop: '2px',fontSize:'36px', color:'darkgray'}} className = 'material-icons'>chevron_left</span>
+                    <div style = {
+                        {
+                            marginLeft: '-10px', 
+                            marginTop: '2px',
+                            fontSize:'36px', 
+                            color:'darkgray'}
+                        } 
+                        className = 'material-icons'
+                    >
+                        chevron_left
+                    </div>
                 </div>:null}
                 {this.scroller?<div style = {{
 
@@ -60,12 +74,12 @@ class ScrollControlsView extends React.Component<any,any> {
                     borderRight: 0,
                     zIndex: 20,
                     fontSize: '30px',
-                    color:'gray',
+                    color:'darkgray',
                     overflow:'hidden',
                     backgroundColor:'rgba(255,215,0,.3)',
 
                 }}>
-                    <span style = {{marginLeft: '-6px', marginTop: '2px',fontSize:'36px', color:'darkgray'}} className = 'material-icons'>chevron_right</span>
+                    <div style = {{marginLeft: '-6px', marginTop: '2px',fontSize:'36px', color:'darkgray'}} className = 'material-icons'>chevron_right</div>
                 </div>:null}
                 {this.props.children}
             </div>
