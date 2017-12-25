@@ -40,7 +40,7 @@ class PageControllerClass extends React.Component<any,any> {
     }
 
     onClickChip = index => {
-        scrollToElement('#'+index,{offset:-64})
+        scrollToElement('#'+index,{offset:-64}) // space for global toolbar
     }
 
     emitLocalComponent = (component,key) => {
@@ -81,8 +81,15 @@ class PageControllerClass extends React.Component<any,any> {
                 chips = chips.filter((chip) => {
                     return !!chip
                 })
-                // TODO leave off page menu view if there are no chips
-                childcomponents = [<PageMenuController key = "menu">{chips}</PageMenuController>,...childcomponents,<div key = "filler" style = {{height:'38px'}}></div>]
+                if (chips.length) {
+                    childcomponents = [
+                        <PageMenuController key = "menu">
+                            {chips}
+                        </PageMenuController>,
+                        ...childcomponents,
+                        <div key = "filler" style = {{height:'38px'}}></div>
+                    ]
+                }
                 componentType = PageView
                 break
             }

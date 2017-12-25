@@ -12,8 +12,6 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
-// let hoistNonReactStatics = require('hoist-non-react-statics')
-
 import master from '../../gateway/master.model'
 
 let setStateModel = (self, model) => {
@@ -139,8 +137,6 @@ let coreControllerComposer = Controller => {
             return React.createElement(ConnectedController, {toolkit,...this.props})
         }    
     }
-
-    // hoistNonReactStatics(BaseController,ConnectedController)
 
     return BaseController
 

@@ -6,7 +6,7 @@ let pages = {
         index: 'home',
         type:'page',
         properties: {
-            title:'Budgetpedia',
+            title:'Budgetpedia Welcome',
             description: 'supporting informed debate about the Toronto budget',
         },
         children: [

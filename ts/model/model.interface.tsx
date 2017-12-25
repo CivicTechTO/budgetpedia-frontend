@@ -33,7 +33,7 @@ const getDocument = (repo, index) => {
     } else {
         output = repositories[repo][index]
     }
-    console.log('requested document(repo, index)',repo, index) //, output)
+    // console.log('requested document(repo, index)',repo, index) //, output)
     return output
 }
 

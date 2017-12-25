@@ -34,7 +34,13 @@ class PageControllerClass extends React.Component {
                     chips = chips.filter((chip) => {
                         return !!chip;
                     });
-                    childcomponents = [React.createElement(pagemenu_view_1.default, { key: "menu" }, chips), ...childcomponents, React.createElement("div", { key: "filler", style: { height: '38px' } })];
+                    if (chips.length) {
+                        childcomponents = [
+                            React.createElement(pagemenu_view_1.default, { key: "menu" }, chips),
+                            ...childcomponents,
+                            React.createElement("div", { key: "filler", style: { height: '38px' } })
+                        ];
+                    }
                     componentType = page_view_1.default;
                     break;
                 }

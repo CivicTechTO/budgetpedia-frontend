@@ -32,7 +32,6 @@ const getDocument = (repo, index) => {
     else {
         output = repositories[repo][index];
     }
-    console.log('requested document(repo, index)', repo, index);
     return output;
 };
 let model = {
