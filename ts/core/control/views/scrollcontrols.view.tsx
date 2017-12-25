@@ -26,8 +26,6 @@ class ScrollControlsView extends React.Component<any,any> {
             this.scrollerData.offsetRight = this.calcScrollRight()
             this.scroller.addEventListener('scroll',this.onScroll)
 
-            console.log('scroll controls refs',this.refs)
-
         }
     }
 
@@ -40,9 +38,28 @@ class ScrollControlsView extends React.Component<any,any> {
 
     onScroll = () => {
         let scroller = this.scroller
-        let { scrollLeft, scrollWidth, clientWidth } = scroller
-        console.log('scrolling',scrollLeft, scrollWidth, clientWidth,
-            this.calcScrollRight())
+        let { scrollLeft } = scroller
+        this.scrollerData.offsetLeft = scrollLeft
+        this.scrollerData.offsetRight = this.calcScrollRight()
+        this.updateControlVisibility()
+    }
+
+    updateControlVisibility = () => {
+        let { leftcontrol, rightcontrol } = this.refs
+
+        if (!leftcontrol || !rightcontrol ) return
+
+        let leftOpacity = Number(leftcontrol['style'].opacity)
+        let rightOpacity = Number(rightcontrol['style'].opacity)
+
+        let { offsetLeft, offsetRight } = this.scrollerData
+
+        if (!!offsetLeft && !leftOpacity) leftcontrol['style'].opacity = 1
+        if (!offsetLeft && !!leftOpacity) leftcontrol['style'].opacity = 0
+
+        if (!!offsetRight && !rightOpacity) rightcontrol['style'].opacity = 1
+        if (!offsetRight && !!rightOpacity) rightcontrol['style'].opacity = 0
+
     }
 
     render() {
@@ -50,9 +67,12 @@ class ScrollControlsView extends React.Component<any,any> {
         if (this.scroller) {
             verticalpos = (this.scrollerData.height / 2) - 20
         }
+
+        this.updateControlVisibility()
+
         return (
             <div style = {{position:'relative'}}>
-                {this.scroller?<div style = {{
+                <div style = {{
 
                     top: verticalpos + 'px',
                     position:'absolute',
@@ -85,8 +105,8 @@ class ScrollControlsView extends React.Component<any,any> {
                     >
                         chevron_left
                     </div>
-                </div>:null}
-                {this.scroller?<div style = {{
+                </div>
+                <div style = {{
 
                     top: verticalpos + 'px',
                     position:'absolute',
@@ -109,7 +129,7 @@ class ScrollControlsView extends React.Component<any,any> {
                 ref = "rightcontrol"
                 >
                     <div style = {{marginLeft: '-6px', marginTop: '2px',fontSize:'36px', color:'darkgray'}} className = 'material-icons'>chevron_right</div>
-                </div>:null}
+                </div>
                 {this.props.children}
             </div>
         )
