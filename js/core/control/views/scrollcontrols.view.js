@@ -27,6 +27,7 @@ class ScrollControlsView extends React.Component {
             this.scrollerData.offsetLeft = this.scroller.scrollLeft;
             this.scrollerData.offsetRight = this.calcScrollRight();
             this.scroller.addEventListener('scroll', this.onScroll);
+            console.log('scroll controls refs', this.refs);
         }
     }
     render() {
@@ -50,7 +51,9 @@ class ScrollControlsView extends React.Component {
                     color: 'darkgray',
                     overflow: 'hidden',
                     backgroundColor: 'rgba(255,215,0,.3)',
-                } },
+                    opacity: 0,
+                    transition: 'opacity 1s',
+                }, ref: "leftcontrol" },
                 React.createElement("div", { style: {
                         marginLeft: '-10px',
                         marginTop: '2px',
@@ -72,7 +75,9 @@ class ScrollControlsView extends React.Component {
                     color: 'darkgray',
                     overflow: 'hidden',
                     backgroundColor: 'rgba(255,215,0,.3)',
-                } },
+                    opacity: 0,
+                    transition: 'opacity 1s',
+                }, ref: "rightcontrol" },
                 React.createElement("div", { style: { marginLeft: '-6px', marginTop: '2px', fontSize: '36px', color: 'darkgray' }, className: 'material-icons' }, "chevron_right")) : null,
             this.props.children));
     }
