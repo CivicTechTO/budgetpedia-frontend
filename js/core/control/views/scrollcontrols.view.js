@@ -18,10 +18,10 @@ class ScrollControlsView extends React.Component {
             this.onScroll();
         };
         this.onScroll = () => {
-            let { scroller } = this;
+            let { scroller, scrollerData } = this;
             let { scrollLeft } = scroller;
-            this.scrollerData.offsetLeft = scrollLeft;
-            this.scrollerData.offsetRight = this.calcScrollRight();
+            scrollerData.offsetLeft = scrollLeft;
+            scrollerData.offsetRight = this.calcScrollRight();
             this.updateControlVisibility();
         };
         this.updateControlVisibility = () => {
@@ -64,6 +64,9 @@ class ScrollControlsView extends React.Component {
             let scroller = this.scroller;
             let original = scroller.scrollLeft;
             let target = incoming;
+            let ms = 500;
+            let fps = 60;
+            let frames = fps / (1000 / ms);
             if (target < 0)
                 target = 0;
             let rightmax = scroller.scrollwidth - scroller.clientwidth;
@@ -71,12 +74,12 @@ class ScrollControlsView extends React.Component {
                 target = rightmax;
             try {
                 let poschange = target - original;
-                let msperinterval = 500 / 30;
-                let tickslimit = 500 / msperinterval;
+                let msperinterval = ms / frames;
+                let tickslimit = ms / msperinterval;
                 let pospertick = poschange / tickslimit;
                 let ticks = 0;
                 let timer = setInterval(() => {
-                    if ((ticks * msperinterval) > 500) {
+                    if ((ticks * msperinterval) > ms) {
                         clearInterval(timer);
                         return;
                     }
@@ -89,6 +92,22 @@ class ScrollControlsView extends React.Component {
             catch (e) {
             }
         };
+        this.arrowStyle = {
+            position: 'absolute',
+            width: '20px',
+            height: '40px',
+            border: '1px solid gray',
+            zIndex: 20,
+            fontSize: '30px',
+            color: 'darkslategray',
+            overflow: 'hidden',
+            backgroundColor: 'rgba(240,248,255,.7)',
+            opacity: 0,
+            transition: 'opacity 1s',
+            cursor: 'pointer',
+        };
+        this.leftArrowStyle = Object.assign({}, this.arrowStyle, { left: 0, borderBottomRightRadius: '20px', borderTopRightRadius: '20px', borderLeft: 0 });
+        this.rightArrowStyle = Object.assign({}, this.arrowStyle, { right: 0, borderBottomLeftRadius: '20px', borderTopLeftRadius: '20px', borderRight: 0 });
     }
     componentWillReceiveProps(next) {
         if (!this.scroller && next.scroller) {
@@ -109,58 +128,22 @@ class ScrollControlsView extends React.Component {
         if (this.scroller) {
             verticalpos = (this.scrollerData.height / 2) - 20;
         }
+        let leftStyle = Object.assign({}, this.leftArrowStyle, { top: verticalpos + 'px' });
+        let rightStyle = Object.assign({}, this.rightArrowStyle, { top: verticalpos + 'px' });
         this.updateControlVisibility();
         return (React.createElement("div", { style: { position: 'relative' } },
-            React.createElement("div", { style: {
-                    top: verticalpos + 'px',
-                    position: 'absolute',
-                    left: 0,
-                    width: '20px',
-                    height: '40px',
-                    borderBottomRightRadius: '20px',
-                    borderTopRightRadius: '20px',
-                    border: '1px solid gray',
-                    borderLeft: 0,
-                    zIndex: 20,
-                    fontSize: '30px',
-                    color: 'darkslategray',
-                    overflow: 'hidden',
-                    backgroundColor: 'rgba(240,248,255,.7)',
-                    opacity: 0,
-                    transition: 'opacity 1s',
-                    cursor: 'pointer',
-                }, ref: "leftcontrol" },
+            React.createElement("div", { style: leftStyle, ref: "leftcontrol" },
                 React.createElement("div", { style: {
                         marginLeft: '-10px',
                         marginTop: '2px',
-                        fontSize: '36px',
                     }, onClick: this.scrollToLeft },
                     React.createElement("div", { style: {
                             fontSize: '36px',
                         }, className: 'material-icons' }, "chevron_left"))),
-            React.createElement("div", { style: {
-                    top: verticalpos + 'px',
-                    position: 'absolute',
-                    right: 0,
-                    width: '20px',
-                    height: '40px',
-                    borderBottomLeftRadius: '20px',
-                    borderTopLeftRadius: '20px',
-                    border: '1px solid gray',
-                    borderRight: 0,
-                    zIndex: 20,
-                    fontSize: '30px',
-                    color: 'darkslategray',
-                    overflow: 'hidden',
-                    backgroundColor: 'rgba(240,248,255,.7)',
-                    opacity: 0,
-                    transition: 'opacity 1s',
-                    cursor: 'pointer',
-                }, ref: "rightcontrol" },
+            React.createElement("div", { style: rightStyle, ref: "rightcontrol" },
                 React.createElement("div", { style: {
                         marginLeft: '-6px',
                         marginTop: '2px',
-                        fontSize: '36px',
                     }, onClick: this.scrollToRight },
                     React.createElement("div", { style: {
                             fontSize: '36px',
