@@ -89,7 +89,7 @@ take care of city-wide daily services (general services), and help boost or
 protect a bunch of us (resident support services).
 `,
                     'sheet:cityprocess': `
-Although this is a lenthy process, very little of it is public.
+Although this is a lengthy process, very little of it is public.
 `,
                 },
                 properties: {

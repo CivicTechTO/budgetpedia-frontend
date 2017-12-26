@@ -95,7 +95,7 @@ protect a bunch of us (resident support services).
 `,
                     'sheet:cityprocess':
 `
-Although this is a lenthy process, very little of it is public.
+Although this is a lengthy process, very little of it is public.
 `,
                 },
                 properties: {
