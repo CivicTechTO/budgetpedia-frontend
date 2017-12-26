@@ -94,9 +94,11 @@ class SectionControllerClass extends React.Component<any,any> {
     emitComponent = (model,key) => {
 
         let { controller, index, narrative } = model
+        let controllerclass = null
 
         switch (controller) {
             case 'section': {
+
                 let narratives = null
                 if (narrative) {
                     narratives = this.assembleNarratives(narrative)
@@ -105,59 +107,59 @@ class SectionControllerClass extends React.Component<any,any> {
                 }
                 this.narratives = narratives
 
-                return this.emitLocalComponent(model,key)
-            }
-            case 'card': {
-
-                return <CardController
-                    key = { key }
-                    model = { model }
-                />
-
-            }
-            case 'list': {
-
-                let narratives = this.narratives
-                let listcontroller = <ListController
-                    key = { key }
-                    model = { model }
-                />
-                let output = null
-
-                if (narratives[controller] && narratives[controller][index]) {
-                    output = <div key = {key}>
-                        {<NarrationBubbleView markup = {narratives[controller][index]} />}
-                        {listcontroller}
-                    </div>
-                } else {
-                    output = listcontroller
-                }
+                let output = this.emitLocalComponent(model,key)
 
                 return output
 
             }
-            case 'sheet': {
+            case 'card': {
 
-                return <SheetController
+                controllerclass =  <CardController
                     key = { key }
                     model = { model }
                 />
+
+                break
+
+            }
+            case 'list': {
+
+                controllerclass = <ListController
+                    key = { key }
+                    model = { model }
+                />
+
+                break
+
+            }
+            case 'sheet': {
+
+                controllerclass = <SheetController
+                    key = { key }
+                    model = { model }
+                />
+
+                break
 
             }
             case 'media': {
 
-                return <MediaController
+                controllerclass = <MediaController
                     key = { key }
                     model = { model }
                 />
+
+                break
 
             }
             case 'custom': {
 
-                return <CustomController
+                controllerclass =  <CustomController
                     key = { key }
                     model = { model }
                 />
+
+                break
 
             }
             default: {
@@ -165,21 +167,33 @@ class SectionControllerClass extends React.Component<any,any> {
                 let { description, index } = model
 
                 return <div key = {'default' + key} >{`${controller} (${index}:${description}) not found in Section controller`}</div>
-
             }
         }
+
+        let output = null
+        let narratives = this.narratives
+
+        if (narratives[controller] && narratives[controller][index]) {
+            output = <div key = {key}>
+                {<NarrationBubbleView markup = {narratives[controller][index]} />}
+                {controllerclass}
+            </div>
+        } else {
+            output = controllerclass
+        }
+
+        return output
     }
 
     render() {
-
         let { model } = this.state
 
         if (!model) return <SectionView />
 
         let component = this.emitComponent(model,model.index)
-
+    
         return component
-    }
+    }    
 
 }
 

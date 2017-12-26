@@ -55,6 +55,7 @@ class SectionControllerClass extends React.Component {
         this.narratives = null;
         this.emitComponent = (model, key) => {
             let { controller, index, narrative } = model;
+            let controllerclass = null;
             switch (controller) {
                 case 'section': {
                     let narratives = null;
@@ -65,39 +66,45 @@ class SectionControllerClass extends React.Component {
                         narratives = {};
                     }
                     this.narratives = narratives;
-                    return this.emitLocalComponent(model, key);
-                }
-                case 'card': {
-                    return React.createElement(card_controller_1.default, { key: key, model: model });
-                }
-                case 'list': {
-                    let narratives = this.narratives;
-                    let listcontroller = React.createElement(list_controller_1.default, { key: key, model: model });
-                    let output = null;
-                    if (narratives[controller] && narratives[controller][index]) {
-                        output = React.createElement("div", { key: key },
-                            React.createElement(narrationbubble_view_1.default, { markup: narratives[controller][index] }),
-                            listcontroller);
-                    }
-                    else {
-                        output = listcontroller;
-                    }
+                    let output = this.emitLocalComponent(model, key);
                     return output;
                 }
+                case 'card': {
+                    controllerclass = React.createElement(card_controller_1.default, { key: key, model: model });
+                    break;
+                }
+                case 'list': {
+                    controllerclass = React.createElement(list_controller_1.default, { key: key, model: model });
+                    break;
+                }
                 case 'sheet': {
-                    return React.createElement(sheet_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(sheet_controller_1.default, { key: key, model: model });
+                    break;
                 }
                 case 'media': {
-                    return React.createElement(media_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(media_controller_1.default, { key: key, model: model });
+                    break;
                 }
                 case 'custom': {
-                    return React.createElement(custom_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(custom_controller_1.default, { key: key, model: model });
+                    break;
                 }
                 default: {
                     let { description, index } = model;
                     return React.createElement("div", { key: 'default' + key }, `${controller} (${index}:${description}) not found in Section controller`);
                 }
             }
+            let output = null;
+            let narratives = this.narratives;
+            if (narratives[controller] && narratives[controller][index]) {
+                output = React.createElement("div", { key: key },
+                    React.createElement(narrationbubble_view_1.default, { markup: narratives[controller][index] }),
+                    controllerclass);
+            }
+            else {
+                output = controllerclass;
+            }
+            return output;
         };
         this.toolkit = props.toolkit;
     }

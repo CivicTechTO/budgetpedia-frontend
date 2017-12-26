@@ -23,7 +23,7 @@ class NarrationBubbleView extends React.Component<any,any> {
 
         borderStyle: 'solid',
         position: 'absolute',
-        borderColor: 'silver transparent transparent transparent',
+        borderColor: 'slategray transparent transparent transparent',
         borderWidth: '16px 16px 0px 16px',
         bottom: '-16px',
         left: '47px',
