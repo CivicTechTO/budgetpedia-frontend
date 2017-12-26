@@ -37,11 +37,15 @@ class ScrollControlsView extends React.Component<any,any> {
     }
 
     onScroll = () => {
-        let scroller = this.scroller
+
+        let { scroller } = this
         let { scrollLeft } = scroller
+
         this.scrollerData.offsetLeft = scrollLeft
         this.scrollerData.offsetRight = this.calcScrollRight()
+
         this.updateControlVisibility()
+
     }
 
     updateControlVisibility = () => {
@@ -54,11 +58,18 @@ class ScrollControlsView extends React.Component<any,any> {
 
         let { offsetLeft, offsetRight } = this.scrollerData
 
-        if (!!offsetLeft && !leftOpacity) leftcontrol['style'].opacity = 1
-        if (!offsetLeft && !!leftOpacity) leftcontrol['style'].opacity = 0
-
-        if (!!offsetRight && !rightOpacity) rightcontrol['style'].opacity = 1
-        if (!offsetRight && !!rightOpacity) rightcontrol['style'].opacity = 0
+        if (!!offsetLeft && !leftOpacity) {
+            leftcontrol['style'].opacity = 1
+        }
+        if (!offsetLeft && !!leftOpacity) {
+            leftcontrol['style'].opacity = 0
+        }
+        if (!!offsetRight && !rightOpacity) {
+            rightcontrol['style'].opacity = 1
+        }
+        if (!offsetRight && !!rightOpacity) {
+            rightcontrol['style'].opacity = 0
+        }
 
     }
 
@@ -72,7 +83,7 @@ class ScrollControlsView extends React.Component<any,any> {
 
         return (
             <div style = {{position:'relative'}}>
-                <div style = {{
+                <div style = {{ // left arrow
 
                     top: verticalpos + 'px',
                     position:'absolute',
@@ -100,7 +111,12 @@ class ScrollControlsView extends React.Component<any,any> {
                             marginTop: '2px',
                             fontSize:'36px', 
                         } }>
-                        <div style={{marginTop: '2px',fontSize:'36px',}} className = 'material-icons'>chevron_right</div>
+                        <div style={
+                            {
+                                marginTop: '2px',
+                                fontSize:'36px',
+                            }
+                        } className = 'material-icons'>chevron_left</div>
                    </div>
                 </div>
                 <div style = {{
@@ -125,7 +141,19 @@ class ScrollControlsView extends React.Component<any,any> {
                 }}
                 ref = "rightcontrol"
                 >
-                    <div style = {{marginLeft: '-6px', marginTop: '2px',fontSize:'36px',}} className = 'material-icons'>chevron_right</div>
+                    <div style = {
+                        {
+                            marginLeft: '-6px', 
+                            marginTop: '2px',
+                            fontSize:'36px',
+                        } }>
+                        <div style={
+                            {
+                                marginTop: '2px',
+                                fontSize:'36px',
+                            }
+                        } className = 'material-icons'>chevron_right</div>
+                    } className = 'material-icons'>chevron_right</div>
                 </div>
                 {this.props.children}
             </div>

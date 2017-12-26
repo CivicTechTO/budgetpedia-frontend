@@ -15,7 +15,7 @@ class ScrollControlsView extends React.Component {
             return (scrollWidth - (scrollLeft + clientWidth));
         };
         this.onScroll = () => {
-            let scroller = this.scroller;
+            let { scroller } = this;
             let { scrollLeft } = scroller;
             this.scrollerData.offsetLeft = scrollLeft;
             this.scrollerData.offsetRight = this.calcScrollRight();
@@ -28,14 +28,18 @@ class ScrollControlsView extends React.Component {
             let leftOpacity = Number(leftcontrol['style'].opacity);
             let rightOpacity = Number(rightcontrol['style'].opacity);
             let { offsetLeft, offsetRight } = this.scrollerData;
-            if (!!offsetLeft && !leftOpacity)
+            if (!!offsetLeft && !leftOpacity) {
                 leftcontrol['style'].opacity = 1;
-            if (!offsetLeft && !!leftOpacity)
+            }
+            if (!offsetLeft && !!leftOpacity) {
                 leftcontrol['style'].opacity = 0;
-            if (!!offsetRight && !rightOpacity)
+            }
+            if (!!offsetRight && !rightOpacity) {
                 rightcontrol['style'].opacity = 1;
-            if (!offsetRight && !!rightOpacity)
+            }
+            if (!offsetRight && !!rightOpacity) {
                 rightcontrol['style'].opacity = 0;
+            }
         };
     }
     componentWillReceiveProps(next) {
@@ -77,7 +81,10 @@ class ScrollControlsView extends React.Component {
                         marginTop: '2px',
                         fontSize: '36px',
                     } },
-                    React.createElement("div", { style: { marginTop: '2px', fontSize: '36px', }, className: 'material-icons' }, "chevron_right"))),
+                    React.createElement("div", { style: {
+                            marginTop: '2px',
+                            fontSize: '36px',
+                        }, className: 'material-icons' }, "chevron_left"))),
             React.createElement("div", { style: {
                     top: verticalpos + 'px',
                     position: 'absolute',
@@ -96,7 +103,16 @@ class ScrollControlsView extends React.Component {
                     opacity: 0,
                     transition: 'opacity 1s',
                 }, ref: "rightcontrol" },
-                React.createElement("div", { style: { marginLeft: '-6px', marginTop: '2px', fontSize: '36px', }, className: 'material-icons' }, "chevron_right")),
+                React.createElement("div", { style: {
+                        marginLeft: '-6px',
+                        marginTop: '2px',
+                        fontSize: '36px',
+                    } },
+                    React.createElement("div", { style: {
+                            marginTop: '2px',
+                            fontSize: '36px',
+                        }, className: 'material-icons' }, "chevron_right"),
+                    "} className = 'material-icons'>chevron_right")),
             this.props.children));
     }
 }
