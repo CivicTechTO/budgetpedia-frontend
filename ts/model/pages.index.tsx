@@ -36,6 +36,26 @@ let pages = {
                 description:'sets of introductory nugget lists',
                 type:'section',
                 tag:'Quick Statistics',
+                narratives: {
+                    "list:abouttoronto":
+`
+Check out the third item from the right. "Visible minorities". 
+If you think about it, this means that in most parts of Toronto, 
+these so-called minorities are collectively in the majority. 
+We're cosmopolitan.
+`,
+                    "list:torontofinances":
+`
+We've found the audited financial statements to be the most reliable 
+basis for a narrative about Toronto. The net worth (over $8000 per person)
+seems substantial (and growing). We haven't compared this with other cities yet, though.
+`,
+                    "list:torontotrends":
+`
+This row shows that Toronto has had a large increase in net worth (assets less liabilities) over
+the past few years. Short story: money is flowing into capital improvements and purchases.
+`
+                },
                 properties: {
                     title:'Quick Statistics',
                     description: "Here are some quick statistics about Toronto and its finances. We've highlighted a few. Each row scrolls left and right.",

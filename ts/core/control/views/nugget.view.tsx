@@ -38,6 +38,7 @@ class Nugget extends React.Component< Props, any > {
             fontWeight: '300',
             whiteSpace:'normal',
             verticalAlign:'top',
+            // cursor:'default'
         }
         let defaultinfixstyle = {
             fontSize:'2.5em',
