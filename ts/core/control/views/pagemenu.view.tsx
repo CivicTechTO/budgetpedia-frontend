@@ -4,9 +4,21 @@
 
 'use strict'
 
-import * as React from 'react';
+import * as React from 'react'
+
+import ScrollControlsView from './scrollcontrols.view'
 
 class PageMenuController extends React.Component<any,any> {
+
+    componentDidMount() {
+        this.setState({
+            scroller:this.refs.scroller
+        })
+    }
+
+    state = {
+        scroller:null,
+    }
 
     render() {
         return <div style = {
@@ -21,15 +33,19 @@ class PageMenuController extends React.Component<any,any> {
                 zIndex:30
             }
         }>
-        <div style = {
-                {
-                    display: 'flex',
-                    flexWrap: 'nowrap',
-                    overflow:"scroll",
-                }
-            } >
-            {this.props.children}
-        </div>
+        <ScrollControlsView scroller = {this.state.scroller}>
+            <div style = {
+                    {
+                        display: 'flex',
+                        flexWrap: 'nowrap',
+                        overflow:"scroll",
+                    }
+                } 
+                    ref = "scroller"
+            >
+                {this.props.children}
+            </div>
+        </ScrollControlsView>
         </div>
     }
 
