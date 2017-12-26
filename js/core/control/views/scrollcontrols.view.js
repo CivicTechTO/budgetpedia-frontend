@@ -14,6 +14,9 @@ class ScrollControlsView extends React.Component {
             let { scrollLeft, scrollWidth, clientWidth } = this.scroller;
             return (scrollWidth - (scrollLeft + clientWidth));
         };
+        this.onResize = () => {
+            this.onScroll();
+        };
         this.onScroll = () => {
             let { scroller } = this;
             let { scrollLeft } = scroller;
@@ -94,7 +97,12 @@ class ScrollControlsView extends React.Component {
             this.scrollerData.offsetLeft = this.scroller.scrollLeft;
             this.scrollerData.offsetRight = this.calcScrollRight();
             this.scroller.addEventListener('scroll', this.onScroll);
+            window.addEventListener('resize', this.onResize);
         }
+    }
+    componentWillUnmount() {
+        this.scroller.removeEventListener('scroll', this.onScroll);
+        window.removeEventListener('resize', this.onResize);
     }
     render() {
         let verticalpos = null;

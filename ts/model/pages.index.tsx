@@ -36,7 +36,7 @@ let pages = {
                 description:'sets of introductory nugget lists',
                 type:'section',
                 tag:'Quick Statistics',
-                narratives: {
+                narrative: {
                     "list:abouttoronto":
 `
 Check out the third item from the right. "Visible minorities". 
