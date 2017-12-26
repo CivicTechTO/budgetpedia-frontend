@@ -97,18 +97,6 @@ class NuggetList extends React.Component< Props, any > {
                     }>{ <HtmlView html={md.renderInline(title)} /> }
                     </div>
 
-                    <div style = {
-                        {
-                            display:'inline-block',
-                            color:'silver',
-                            marginLeft:'32px',
-                            verticalAlign:'top',
-                        }
-                    }>
-                        <span className = 'material-icons'>arrow_back</span>
-                        <span className = 'material-icons'>arrow_forward</span>
-                    </div>
-
                 </div>
                 <ScrollControlsView scroller = {this.state.scroller}>
                 <div 

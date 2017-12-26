@@ -73,6 +73,62 @@ class ScrollControlsView extends React.Component<any,any> {
 
     }
 
+    scrollToLeft = () => {
+        let original = this.scroller.scrollLeft
+
+        if (original == 0) return
+
+        let scrollleft = original - this.scroller.clientWidth
+        this.smoothScroll(scrollleft)
+    }
+
+    scrollToRight = () => {
+        let original = this.scroller.scrollLeft
+        let clientWidth = this.scroller.clientWidth
+        let scrollWidth = this.scroller.scrollWidth
+
+        if (original == (scrollWidth - clientWidth)) return
+
+        let scrollright = original + clientWidth
+        this.smoothScroll(scrollright)
+    }
+
+    // TODO apply some kind of easing; simplify, use requestAnimationFrame
+    private smoothScroll = incoming => {
+        let scroller = this.scroller
+        let original = scroller.scrollLeft
+        let target = incoming
+
+        if (target < 0) target = 0
+        let rightmax = scroller.scrollwidth - scroller.clientwidth
+        if (target > rightmax) target = rightmax
+
+        try {
+            let poschange = target - original
+            let msperinterval = 500/30 // desired time; frames per half second
+            let tickslimit = 500/msperinterval
+            let pospertick = poschange/tickslimit
+            let ticks = 0
+            let timer = setInterval(
+                ()=>{
+                    if ((ticks * msperinterval) > 500) {
+                        clearInterval(timer)
+                        return
+                    }
+                    ticks ++
+
+                    let span = ticks * pospertick
+                    let next = original + span
+
+                    scroller.scrollLeft = next
+
+                },msperinterval
+            )
+        } catch (e) {
+            // abandon
+        }
+    }
+
     render() {
         let verticalpos = null
         if (this.scroller) {
@@ -101,6 +157,7 @@ class ScrollControlsView extends React.Component<any,any> {
                     backgroundColor:'rgba(240,248,255,.7)',
                     opacity:0,
                     transition: 'opacity 1s',
+                    cursor:'pointer',
 
                 }}
                 ref = "leftcontrol"
@@ -110,7 +167,9 @@ class ScrollControlsView extends React.Component<any,any> {
                             marginLeft: '-10px', 
                             marginTop: '2px',
                             fontSize:'36px', 
-                        } }>
+                        }}
+                        onClick = {this.scrollToLeft}
+                        >
                         <div style={
                             {
                                 marginTop: '2px',
@@ -137,6 +196,7 @@ class ScrollControlsView extends React.Component<any,any> {
                     backgroundColor:'rgba(240,248,255,.7)',
                     opacity:0,
                     transition: 'opacity 1s',
+                    cursor:'pointer',
 
                 }}
                 ref = "rightcontrol"
@@ -146,14 +206,16 @@ class ScrollControlsView extends React.Component<any,any> {
                             marginLeft: '-6px', 
                             marginTop: '2px',
                             fontSize:'36px',
-                        } }>
+                        }}
+                        onClick = {this.scrollToRight}
+                        >
                         <div style={
                             {
                                 marginTop: '2px',
                                 fontSize:'36px',
                             }
                         } className = 'material-icons'>chevron_right</div>
-                    } className = 'material-icons'>chevron_right</div>
+                    </div>
                 </div>
                 {this.props.children}
             </div>

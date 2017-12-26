@@ -49,15 +49,7 @@ class NuggetList extends React.Component {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'top',
-                    } }, React.createElement(html_view_1.default, { html: md.renderInline(title) })),
-                React.createElement("div", { style: {
-                        display: 'inline-block',
-                        color: 'silver',
-                        marginLeft: '32px',
-                        verticalAlign: 'top',
-                    } },
-                    React.createElement("span", { className: 'material-icons' }, "arrow_back"),
-                    React.createElement("span", { className: 'material-icons' }, "arrow_forward"))),
+                    } }, React.createElement(html_view_1.default, { html: md.renderInline(title) }))),
             React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
                 React.createElement("div", { style: defaultScrollBlockstyle, ref: "scroller" },
                     React.createElement("div", { style: {
