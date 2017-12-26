@@ -85,9 +85,9 @@ class ScrollControlsView extends React.Component<any,any> {
                     borderLeft: 0,
                     zIndex: 20,
                     fontSize: '30px',
-                    color:'darkgray',
+                    color:'darkslategray',
                     overflow:'hidden',
-                    backgroundColor:'rgba(255,215,0,.3)',
+                    backgroundColor:'rgba(240,248,255,.7)',
                     opacity:0,
                     transition: 'opacity 1s',
 
@@ -99,12 +99,9 @@ class ScrollControlsView extends React.Component<any,any> {
                             marginLeft: '-10px', 
                             marginTop: '2px',
                             fontSize:'36px', 
-                            color:'darkgray'}
-                        } 
-                        className = 'material-icons'
-                    >
-                        chevron_left
-                    </div>
+                        } }>
+                        <div style={{marginTop: '2px',fontSize:'36px',}} className = 'material-icons'>chevron_right</div>
+                   </div>
                 </div>
                 <div style = {{
 
@@ -119,16 +116,16 @@ class ScrollControlsView extends React.Component<any,any> {
                     borderRight: 0,
                     zIndex: 20,
                     fontSize: '30px',
-                    color:'darkgray',
+                    color:'darkslategray',
                     overflow:'hidden',
-                    backgroundColor:'rgba(255,215,0,.3)',
+                    backgroundColor:'rgba(240,248,255,.7)',
                     opacity:0,
                     transition: 'opacity 1s',
 
                 }}
                 ref = "rightcontrol"
                 >
-                    <div style = {{marginLeft: '-6px', marginTop: '2px',fontSize:'36px', color:'darkgray'}} className = 'material-icons'>chevron_right</div>
+                    <div style = {{marginLeft: '-6px', marginTop: '2px',fontSize:'36px',}} className = 'material-icons'>chevron_right</div>
                 </div>
                 {this.props.children}
             </div>

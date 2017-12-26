@@ -66,9 +66,9 @@ class ScrollControlsView extends React.Component {
                     borderLeft: 0,
                     zIndex: 20,
                     fontSize: '30px',
-                    color: 'darkgray',
+                    color: 'darkslategray',
                     overflow: 'hidden',
-                    backgroundColor: 'rgba(255,215,0,.3)',
+                    backgroundColor: 'rgba(240,248,255,.7)',
                     opacity: 0,
                     transition: 'opacity 1s',
                 }, ref: "leftcontrol" },
@@ -76,8 +76,8 @@ class ScrollControlsView extends React.Component {
                         marginLeft: '-10px',
                         marginTop: '2px',
                         fontSize: '36px',
-                        color: 'darkgray'
-                    }, className: 'material-icons' }, "chevron_left")),
+                    } },
+                    React.createElement("div", { style: { marginTop: '2px', fontSize: '36px', }, className: 'material-icons' }, "chevron_right"))),
             React.createElement("div", { style: {
                     top: verticalpos + 'px',
                     position: 'absolute',
@@ -90,13 +90,13 @@ class ScrollControlsView extends React.Component {
                     borderRight: 0,
                     zIndex: 20,
                     fontSize: '30px',
-                    color: 'darkgray',
+                    color: 'darkslategray',
                     overflow: 'hidden',
-                    backgroundColor: 'rgba(255,215,0,.3)',
+                    backgroundColor: 'rgba(240,248,255,.7)',
                     opacity: 0,
                     transition: 'opacity 1s',
                 }, ref: "rightcontrol" },
-                React.createElement("div", { style: { marginLeft: '-6px', marginTop: '2px', fontSize: '36px', color: 'darkgray' }, className: 'material-icons' }, "chevron_right")),
+                React.createElement("div", { style: { marginLeft: '-6px', marginTop: '2px', fontSize: '36px', }, className: 'material-icons' }, "chevron_right")),
             this.props.children));
     }
 }
