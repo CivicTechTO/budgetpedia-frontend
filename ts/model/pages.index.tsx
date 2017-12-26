@@ -39,21 +39,22 @@ let pages = {
                 narrative: {
                     "list:abouttoronto":
 `
-Check out the third item from the right. "Visible minorities". 
-If you think about it, this means that in most parts of Toronto, 
+Check out the third item from the right, "Visible minorities" (you have to scroll to the right). 
+If you think about it, this means that in most parts of Toronto 
 these so-called minorities are collectively in the majority. 
 We're cosmopolitan.
 `,
                     "list:torontofinances":
 `
 We've found the audited financial statements to be the most reliable 
-basis for a narrative about Toronto. The net worth (over $8000 per person)
-seems substantial (and growing). We haven't compared this with other cities yet, though.
+basis for a narrative about Toronto. The _net worth_ (scroll to the middle)
+seems substantial and is growing. We haven't compared this with other cities yet, though.
 `,
                     "list:torontotrends":
 `
-This row shows that Toronto has had a large increase in net worth (assets less liabilities) over
-the past few years. Short story: money is flowing into capital improvements and purchases.
+Scroll to the "Changes in net worth" to the right. Toronto has had a large increase in 
+net worth (assets less liabilities) over
+the past few years. The short story: money is flowing into capital improvements and purchases.
 `
                 },
                 properties: {

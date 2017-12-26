@@ -1,21 +1,22 @@
 // page.controller.tsx
 // copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
+/*
+    TODO: add handling and animation for anchors -- in-page and url anchors, around titles
+*/
+
 'use strict'
 
 import * as React from 'react';
 
 import Chip from 'material-ui/Chip'
 
-import coreControllerComposer from './core.controller.composer'
-
-import SectionController from './section.controller'
-
-import PageView from './views/page.view'
-
-import PageMenuController from './views/pagemenu.view'
-
 var scrollToElement = require('scroll-to-element')
+
+import coreControllerComposer from './core.controller.composer'
+import SectionController from './section.controller'
+import PageView from './views/page.view'
+import PageMenuController from './views/pagemenu.view'
 
 class PageControllerClass extends React.Component<any,any> {
 

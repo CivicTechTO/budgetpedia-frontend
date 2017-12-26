@@ -7,6 +7,8 @@ import * as React from 'react'
 
 import coreControllerComposer from './core.controller.composer'
 
+import NarrationBubbleView from './views/narrationbubble.view'
+
 // legal components
 import ListController from './list.controller'
 import CardController from './card.controller'
@@ -71,12 +73,38 @@ class SectionControllerClass extends React.Component<any,any> {
 
     }
 
+    assembleNarratives = narrative => {
+        let narratives = {}
+
+        for (let index in narrative) {
+            let spec = index.split(':')
+            let controller = spec[0]
+            let narrative_index = spec[1]
+            if (!narratives[controller]) {
+                narratives[controller] = {}
+            }
+            narratives[controller][narrative_index] = narrative[index]
+        }
+
+        return narratives
+    }
+
+    narratives = null
+
     emitComponent = (model,key) => {
 
-        let { controller } = model
+        let { controller, index, narrative } = model
 
         switch (controller) {
             case 'section': {
+                let narratives = null
+                if (narrative) {
+                    narratives = this.assembleNarratives(narrative)
+                } else {
+                    narratives = {}
+                }
+                this.narratives = narratives
+
                 return this.emitLocalComponent(model,key)
             }
             case 'card': {
@@ -89,10 +117,23 @@ class SectionControllerClass extends React.Component<any,any> {
             }
             case 'list': {
 
-                return <ListController
+                let narratives = this.narratives
+                let listcontroller = <ListController
                     key = { key }
                     model = { model }
                 />
+                let output = null
+
+                if (narratives[controller] && narratives[controller][index]) {
+                    output = <div key = {key}>
+                        {<NarrationBubbleView markup = {narratives[controller][index]} />}
+                        {listcontroller}
+                    </div>
+                } else {
+                    output = listcontroller
+                }
+
+                return output
 
             }
             case 'sheet': {
