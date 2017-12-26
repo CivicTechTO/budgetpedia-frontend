@@ -136,7 +136,6 @@ class ScrollControlsView extends React.Component {
                         fontSize: '36px',
                     }, onClick: this.scrollToLeft },
                     React.createElement("div", { style: {
-                            marginTop: '2px',
                             fontSize: '36px',
                         }, className: 'material-icons' }, "chevron_left"))),
             React.createElement("div", { style: {
@@ -164,7 +163,6 @@ class ScrollControlsView extends React.Component {
                         fontSize: '36px',
                     }, onClick: this.scrollToRight },
                     React.createElement("div", { style: {
-                            marginTop: '2px',
                             fontSize: '36px',
                         }, className: 'material-icons' }, "chevron_right"))),
             this.props.children));

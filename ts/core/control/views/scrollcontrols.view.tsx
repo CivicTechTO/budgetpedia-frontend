@@ -182,7 +182,6 @@ class ScrollControlsView extends React.Component<any,any> {
                         >
                         <div style={
                             {
-                                marginTop: '2px',
                                 fontSize:'36px',
                             }
                         } className = 'material-icons'>chevron_left</div>
@@ -221,7 +220,6 @@ class ScrollControlsView extends React.Component<any,any> {
                         >
                         <div style={
                             {
-                                marginTop: '2px',
                                 fontSize:'36px',
                             }
                         } className = 'material-icons'>chevron_right</div>
