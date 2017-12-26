@@ -5,6 +5,8 @@
 
 import * as React from 'react'
 
+import ScrollControlsView from './scrollcontrols.view'
+
 import TileView from "./tile.view"
 
 import MarkupLine from './markupline.view'
@@ -30,6 +32,16 @@ interface Props extends React.Props< TileListController > {
 }
 
 class TileListController extends React.Component< Props, any > {
+
+    componentDidMount() {
+        this.setState({
+            scroller:this.refs.scroller
+        })
+    }
+
+    state = {
+        scroller:null,
+    }
 
     render() {
 
@@ -67,6 +79,7 @@ class TileListController extends React.Component< Props, any > {
                         left:'0',
                         top:'0',
                         padding:'8px 3px',
+                        zIndex:2,
                     }
                 }>
 
@@ -79,34 +92,25 @@ class TileListController extends React.Component< Props, any > {
                     }>{ <MarkupLine markup = {title} /> }
                     </div>
 
-                    <div style = {
-                        {
-                            display:'inline-block',
-                            color:'silver',
-                            marginLeft:'32px',
-                            verticalAlign:'top',
-                        }
-                    }>
-                        <span className = 'material-icons'>arrow_back</span>
-                        <span className = 'material-icons'>arrow_forward</span>
-                    </div>
-
                 </div>
-                <div
-                style = { style }
-                >
+                <ScrollControlsView scroller = {this.state.scroller}>
                     <div
+                        style = { style }
+                        ref = "scroller"
+                    >
+                        <div
 
-                        style = {
-                            {
-                                display: 'block',
-                                whiteSpace:'nowrap',
-                                position:'relative',
-                            }
-                        }>
-                        { tiles }
+                            style = {
+                                {
+                                    display: 'block',
+                                    whiteSpace:'nowrap',
+                                    position:'relative',
+                                }
+                            }>
+                            { tiles }
+                        </div>
                     </div>
-                </div>
+                </ScrollControlsView>
             </div>
         )
     }
