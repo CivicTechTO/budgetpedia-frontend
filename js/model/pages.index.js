@@ -39,7 +39,7 @@ let pages = {
                 narrative: {
                     "list:abouttoronto": `
 Check out the third item from the right, "Visible minorities" (you have to scroll to the right). 
-If you think about it, this means that for most parts of Toronto 
+If you think about it, this means that for most of Toronto,
 these so-called minorities are actually collectively in the majority. 
 We're cosmopolitan.
 `,
@@ -85,8 +85,8 @@ money is flowing into tangible asset improvements and purchases.
                 narrative: {
                     'sheet:citybasics': `
 At a general level there's not much to this. Outside City Hall, front line staff
-take care of city-wide daily services (general services), and help boost or 
-protect many of us (resident support services).
+take care of city-wide daily services (general services), and help boost and 
+protect many of us directly (resident support services).
 `,
                     'sheet:cityprocess': `
 Although this is a lengthy process, very little of it is public.
@@ -126,7 +126,7 @@ There really are incredible opportunities for improvement! Changes by design,
 to make everyone's life better.
 `,
                     'sheet:concerns': `
-We know many City staff don't like to hear this stuff, and we're sorry. But we
+We know many City staff don't like to hear this, and we're sorry. But we
 think these are issues that need to be discussed. They've been going on for decades,
 and it's time to resolve them. Any feedback on how best to go about this is very welcome.
 `,
