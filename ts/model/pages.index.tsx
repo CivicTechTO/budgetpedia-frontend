@@ -91,7 +91,7 @@ money is flowing into tangible asset improvements and purchases.
 `
 At a general level there's not much to this. Outside City Hall, front line staff
 take care of city-wide daily services (general services), and help boost or 
-protect a bunch of us (resident support services).
+protect many of us (resident support services).
 `,
                     'sheet:cityprocess':
 `
