@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let routes = {
-    '/test': 'home',
+    '/dev': 'roadmap',
     '/': 'home',
 };
 exports.default = routes;

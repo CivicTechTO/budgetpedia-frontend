@@ -1,6 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let pages = {
+    pathway: {
+        controller: 'page',
+        index: 'pathway',
+        type: 'page',
+        properties: {
+            title: 'Toronto budget roadmap',
+            description: 'Summary of Toronto budget processes over the years',
+        },
+        children: [
+            {
+                controller: 'section',
+                index: 'header',
+                anchor: 'header',
+                description: 'header for pathway page',
+                type: 'section',
+                tag: 'Overview',
+                properties: {
+                    title: "Overviiew",
+                    description: "Here are details about Toronto budgets.",
+                },
+                children: [
+                    {
+                        controller: 'card',
+                        repo: 'cards',
+                        index: 'pathwayheader',
+                    }
+                ],
+            },
+        ],
+    },
     home: {
         controller: 'page',
         index: 'home',
