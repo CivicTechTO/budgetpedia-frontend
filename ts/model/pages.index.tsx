@@ -40,13 +40,13 @@ let pages = {
                     "list:abouttoronto":
 `
 Check out the third item from the right, "Visible minorities" (you have to scroll to the right). 
-If you think about it, this means that in most parts of Toronto 
-these so-called minorities are collectively in the majority. 
+If you think about it, this means that for most parts of Toronto 
+these so-called minorities are actually collectively in the majority. 
 We're cosmopolitan.
 `,
                     "list:torontofinances":
 `
-We've found the audited financial statements to be the most reliable 
+We've found that audited financial statements are more reliable than budgets as the
 basis for a narrative about Toronto.
 `,
                     "list:torontotrends":
