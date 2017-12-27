@@ -149,7 +149,7 @@ let torontofinances = {
             },
             {
                 prefix: 'Cash applied to<br>capital activities',
-                infix: '$2.57B',
+                infix: '<span style=color:red>$2.57B</span>',
                 suffix: 'for 2016',
                 contrast: true,
             },
