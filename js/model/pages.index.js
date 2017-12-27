@@ -45,7 +45,7 @@ We're cosmopolitan.
 `,
                     "list:torontofinances": `
 We've found that audited financial statements are more reliable than budgets as the
-basis for a narrative about Toronto.
+basis for a narrative about Toronto. Scroll to the right and you'll see that cash is flowing into capital.
 `,
                     "list:torontotrends": `
 For a highlight, scroll right to the "Changes in net worth". Toronto has had a large increase in 
