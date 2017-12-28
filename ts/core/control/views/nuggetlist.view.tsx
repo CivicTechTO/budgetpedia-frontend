@@ -9,12 +9,7 @@ import NuggetView from './nugget.view'
 
 import ScrollControlsView from './scrollcontrols.view'
 
-import HtmlView from './html.view'
-let mdit = require('markdown-it')
-let mda = require('markdown-it-attrs')
-let md = new mdit({html:true})
-md.use(mda)
-
+import MarkupLine from './markupline.view'
 
 interface Props {
     nuggets: {
@@ -96,7 +91,7 @@ class NuggetList extends React.Component< Props, any > {
                             color:'white',
                             verticalAlign:'top',
                         }
-                    }>{ <HtmlView html={md.renderInline(title)} /> }
+                    }>{ <MarkupLine markup = {title} /> }
                     </div>
 
                 </div>

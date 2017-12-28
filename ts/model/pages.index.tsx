@@ -139,7 +139,7 @@ Although budgeting is a lengthy process, very little of it is public.
                 followup: {
                     'sheet:citybasics':
 `
-For detailed budget information, see our budget [explorer](/explorer){onClick=budgetpedia_global.navigateViaRouter(event)}. 
+For detailed budget information, see our budget [explorer](/explorer). 
 `,
                     'sheet:cityprocess':
 `
@@ -252,7 +252,7 @@ If you have suggestions for stories, or if you want to help, let us know.
                 tag:'Twitter Feed',
                 properties: {
                     title: 'Our Twitter Feed',
-                    description:'Jump into the conversation [here](http://twitter.com/budgetpedia){target=_blank}.',
+                    description:'Jump into the conversation [here](http://twitter.com/budgetpedia).',
                     style:{
                         marginBottom: '12px'
                     },

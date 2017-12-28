@@ -3,11 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const nugget_view_1 = require("./nugget.view");
 const scrollcontrols_view_1 = require("./scrollcontrols.view");
-const html_view_1 = require("./html.view");
-let mdit = require('markdown-it');
-let mda = require('markdown-it-attrs');
-let md = new mdit({ html: true });
-md.use(mda);
+const markupline_view_1 = require("./markupline.view");
 class NuggetList extends React.Component {
     constructor() {
         super(...arguments);
@@ -50,7 +46,7 @@ class NuggetList extends React.Component {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'top',
-                    } }, React.createElement(html_view_1.default, { html: md.renderInline(title) }))),
+                    } }, React.createElement(markupline_view_1.default, { markup: title }))),
             React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
                 React.createElement("div", { style: defaultScrollBlockstyle, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {
