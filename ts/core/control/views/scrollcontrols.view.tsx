@@ -16,22 +16,28 @@ class ScrollControlsView extends React.Component<any,any> {
     }
 
     componentWillReceiveProps(next) {
+
         // received on second render
         if (!this.scroller && next.scroller) {
 
-            this.scroller = next.scroller
-            this.scrollerData.height = this.scroller.clientHeight
-            this.scrollerData.offsetLeft = this.scroller.scrollLeft
-            this.scrollerData.offsetRight = this.calcScrollRight()
-            this.scroller.addEventListener('scroll',this.onScroll)
+            let scroller = this.scroller = next.scroller
+            let { scrollerData } = this
+
+            scrollerData.height = scroller.clientHeight
+            scrollerData.offsetLeft = scroller.scrollLeft
+            scrollerData.offsetRight = this.calcScrollRight()
+
+            scroller.addEventListener('scroll',this.onScroll)
             window.addEventListener('resize',this.onResize)
 
         }
     }
 
     componentWillUnmount() {
-            this.scroller.removeEventListener('scroll',this.onScroll)        
-            window.removeEventListener('resize',this.onResize)
+
+        this.scroller.removeEventListener('scroll',this.onScroll)        
+        window.removeEventListener('resize',this.onResize)
+
     }
 
     calcScrollRight = () => {
@@ -42,7 +48,9 @@ class ScrollControlsView extends React.Component<any,any> {
     }
 
     onResize = () => {
+
         this.onScroll()
+
     }
 
     onScroll = () => {
@@ -58,6 +66,7 @@ class ScrollControlsView extends React.Component<any,any> {
     }
 
     updateControlVisibility = () => {
+
         let { leftcontrol, rightcontrol } = this.refs
 
         if (!leftcontrol || !rightcontrol ) return
@@ -69,13 +78,14 @@ class ScrollControlsView extends React.Component<any,any> {
 
         if (!!offsetLeft && !leftOpacity) {
             leftcontrol['style'].opacity = 1
-        }
+        } else 
         if (!offsetLeft && !!leftOpacity) {
             leftcontrol['style'].opacity = 0
         }
+
         if (!!offsetRight && !rightOpacity) {
             rightcontrol['style'].opacity = 1
-        }
+        } else
         if (!offsetRight && !!rightOpacity) {
             rightcontrol['style'].opacity = 0
         }
@@ -83,15 +93,18 @@ class ScrollControlsView extends React.Component<any,any> {
     }
 
     scrollToLeft = () => {
+
         let original = this.scroller.scrollLeft
 
         if (original == 0) return
 
         let scrollleft = original - this.scroller.clientWidth
         this.smoothScroll(scrollleft)
+
     }
 
     scrollToRight = () => {
+
         let original = this.scroller.scrollLeft
         let clientWidth = this.scroller.clientWidth
         let scrollWidth = this.scroller.scrollWidth
@@ -100,13 +113,15 @@ class ScrollControlsView extends React.Component<any,any> {
 
         let scrollright = original + clientWidth
         this.smoothScroll(scrollright)
+
     }
 
     // TODO apply some kind of easing; simplify, use requestAnimationFrame
-    private smoothScroll = incoming => {
+    private smoothScroll = incomingtarget => {
+
         let scroller = this.scroller
         let original = scroller.scrollLeft
-        let target = incoming
+        let target = incomingtarget
         let ms = 500
         let fps = 60
         let frames = fps/(1000/ms)
@@ -116,17 +131,22 @@ class ScrollControlsView extends React.Component<any,any> {
         if (target > rightmax) target = rightmax
 
         try {
+
             let poschange = target - original
             let msperinterval = ms/frames // desired time; frames per half second
             let tickslimit = ms/msperinterval
             let pospertick = poschange/tickslimit
+
             let ticks = 0
             let timer = setInterval(
+
                 ()=>{
+
                     if ((ticks * msperinterval) > ms) {
                         clearInterval(timer)
                         return
                     }
+
                     ticks ++
 
                     let span = ticks * pospertick
@@ -134,8 +154,9 @@ class ScrollControlsView extends React.Component<any,any> {
 
                     scroller.scrollLeft = next
 
-                },msperinterval
+                }, msperinterval
             )
+
         } catch (e) {
             // abandon
         }
@@ -179,6 +200,7 @@ class ScrollControlsView extends React.Component<any,any> {
     }
 
     render() {
+
         let verticalpos = null
         if (this.scroller) {
             verticalpos = (this.scrollerData.height / 2) - 20
@@ -190,42 +212,70 @@ class ScrollControlsView extends React.Component<any,any> {
         this.updateControlVisibility()
 
         return (
-            <div style = {{position:'relative'}}>
-                <div style = {leftStyle as any}
-                ref = "leftcontrol"
+
+            <div style = {{ position:'relative' }}>{/* frame */}
+
+                { /* left control */ }
+                <div 
+                    style = { leftStyle as any }
+                    ref = "leftcontrol"
+                    onClick = { this.scrollToLeft }
                 >
-                    <div style = {
-                        {
+
+                    <div 
+                        style = {{
                             marginLeft: '-10px', 
                             marginTop: '2px',
                         }}
-                        onClick = {this.scrollToLeft}
-                        >
-                        <div style={
-                            {
+                    >
+
+                        <div 
+                            style={{
                                 fontSize:'36px', // over-ride material-icons
-                            }
-                        } className = 'material-icons'>chevron_left</div>
+                            }} 
+                            className = 'material-icons'
+                        >
+                        
+                            chevron_left
+
+                        </div>
+
                    </div>
+
                 </div>
-                <div style = {rightStyle as any}
-                ref = "rightcontrol"
+
+                { /* right control */ }
+                <div 
+                    style = { rightStyle as any }
+                    ref = "rightcontrol"
+                    onClick = { this.scrollToRight }
                 >
-                    <div style = {
-                        {
+
+                    <div 
+                        style = {{
                             marginLeft: '-6px', 
                             marginTop: '2px',
                         }}
-                        onClick = {this.scrollToRight}
-                        >
-                        <div style={
-                            {
+                    >
+
+                        <div 
+                            style={{
                                 fontSize:'36px',
-                            }
-                        } className = 'material-icons'>chevron_right</div>
+                            }} 
+                            className = 'material-icons'
+                        >
+
+                            chevron_right
+
+                        </div>
+
                     </div>
+
                 </div>
+
+                { /* contents */ }
                 {this.props.children}
+
             </div>
         )
     }
