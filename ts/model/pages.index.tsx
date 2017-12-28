@@ -196,7 +196,7 @@ and it's time to resolve them. Any feedback on how best to go about this is very
                 anchor:'stories',
                 description:'introduction to stories',
                 type:'section',
-                tag:'The Stories',
+                tag:'Stories',
                 narrative: {
                     'sheet:stories':
 `
@@ -205,7 +205,7 @@ If you have suggestions for stories, or if you want to help, let us know.
 `,
                 },
                 properties: {
-                    title:'The Stories',
+                    title:'Stories',
                     description:"We're organizing around stories.",
                     style:{
                         marginBottom: '12px',
