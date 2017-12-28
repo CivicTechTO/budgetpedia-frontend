@@ -197,7 +197,7 @@ If you have suggestions for stories, or if you want to help, let us know.
                 },
                 properties: {
                     title: 'Stories',
-                    description: "We're organizing around stories.",
+                    description: "We're organizing around data stories.",
                     style: {
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',
