@@ -43,7 +43,7 @@ let secondlinklist = {
                 icon:'/public/icons/twitter.png',
                 target:'http://twitter.com/budgetpedia',
                 targetText:'Twitter account',
-                description:'... or see the twitter feed below',
+                // description:'... or see the twitter feed below',
                 imageStyle:{
                     height:'14px'
                 }

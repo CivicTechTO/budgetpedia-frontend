@@ -192,6 +192,7 @@ If you have suggestions for stories, or if you want to help, let us know.
             },
             {
                 controller:'section',
+                disabled:true,
                 index:'twitterfeed',
                 anchor:'twitter',
                 description:'twitter feed for budgetpedia',
