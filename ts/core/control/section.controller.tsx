@@ -8,6 +8,7 @@ import * as React from 'react'
 import coreControllerComposer from './core.controller.composer'
 
 import NarrationBubbleView from './views/narrationbubble.view'
+import FollowupBubbleView from './views/followupbubble.view'
 
 // legal components
 import ListController from './list.controller'
@@ -73,39 +74,44 @@ class SectionControllerClass extends React.Component<any,any> {
 
     }
 
-    assembleNarratives = narrative => {
-        let narratives = {}
+    assembleCommentary = commentary => {
+        let comments = {}
 
-        for (let index in narrative) {
+        for (let index in commentary) {
             let spec = index.split(':')
             let controller = spec[0]
             let narrative_index = spec[1]
-            if (!narratives[controller]) {
-                narratives[controller] = {}
+            if (!comments[controller]) {
+                comments[controller] = {}
             }
-            narratives[controller][narrative_index] = narrative[index]
+            comments[controller][narrative_index] = commentary[index]
         }
 
-        return narratives
+        return comments
     }
 
     narratives = null
+    followups = null
 
     emitComponent = (model,key) => {
 
-        let { controller, index, narrative } = model
+        let { controller, index, narrative, followup } = model
         let controllerclass = null
 
         switch (controller) {
             case 'section': {
 
-                let narratives = null
+                let narratives = {}
                 if (narrative) {
-                    narratives = this.assembleNarratives(narrative)
-                } else {
-                    narratives = {}
+                    narratives = this.assembleCommentary(narrative)
                 }
                 this.narratives = narratives
+
+                let followups = {}
+                if (followup) {
+                    followups = this.assembleCommentary(followup)
+                }
+                this.followups = followups
 
                 let output = this.emitLocalComponent(model,key)
 
@@ -172,11 +178,16 @@ class SectionControllerClass extends React.Component<any,any> {
 
         let output = null
         let narratives = this.narratives
+        let followups = this.followups
 
-        if (narratives[controller] && narratives[controller][index]) {
+        let isNarratives = narratives[controller] && narratives[controller][index]
+        let isFollowups = followups[controller] && followups[controller][index]
+
+        if (isNarratives || isFollowups) {
             output = <div key = {key}>
-                {<NarrationBubbleView markup = {narratives[controller][index]} />}
+                {isNarratives?<NarrationBubbleView markup = {narratives[controller][index]} />:null}
                 {controllerclass}
+                {isFollowups?<FollowupBubbleView markup = {followups[controller][index]} />:null}
             </div>
         } else {
             output = controllerclass

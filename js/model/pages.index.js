@@ -35,6 +35,14 @@ let pages = {
         controller: 'page',
         index: 'home',
         type: 'page',
+        attribution: {
+            custodian: 'Henrik Bechmann',
+            custodianlink: 'mailto:henrik@budgetpedia.ca',
+            contact: 'mail@budgetpedia.ca',
+            contactlink: 'mailto:mail@budgetpedia.ca',
+            creationdate: '22-12-2017',
+            updatedate: '28-12-2017',
+        },
         properties: {
             title: 'Budgetpedia Welcome',
             description: 'supporting informed debate about the Toronto budget',
@@ -119,7 +127,19 @@ take care of city-wide daily services (general services), and help many of us
 directly (resident support services).
 `,
                     'sheet:cityprocess': `
-Although this is a lengthy process, very little of it is public.
+Although budgeting is a lengthy process, very little of it is public.
+`,
+                },
+                followup: {
+                    'sheet:citybasics': `
+For detailed budget information, see our budget [explorer](/explorer){onClick=budgetpedia_global.navigateViaRouter(event)}. 
+`,
+                    'sheet:cityprocess': `
+For more information on the City of Toronto Budget Process, see the City of Toronto 
+[website](https://www.toronto.ca/city-government/budget-finances/city-budget/), 
+and our [Budget Roadmap](/roadmap) page. The 2016 section of our budget roadmap has a set of about 50 
+budget decision points that were collected by a volunteer through interviews and public records 
+at the time. Since then the budget process has become even more closed.
 `,
                 },
                 properties: {

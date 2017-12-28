@@ -31,8 +31,19 @@ let RoutesController = class extends Component {
             logPageView(location);
         };
     }
-    compoinentWillMount() {
+    componentWillMount() {
         this.props.history.listen(this.historyListener);
+        window['budgetpedia_global'] = {
+            navigateViaRouter: (event) => {
+                let target = event.currentTarget;
+                let path = target.getAttribute('href');
+                event.preventDefault();
+                this.props.history.push(path);
+            }
+        };
+    }
+    componentWillUnmount() {
+        delete window['budgetpedia_global'];
     }
     render() {
         let location = this.props.router.location || {};

@@ -54,9 +54,27 @@ let RoutesController = class extends Component<any,any> {
         logPageView(location)
     }
 
-    compoinentWillMount() {
-        
+    componentWillMount() {
+
         this.props.history.listen(this.historyListener)        
+        // global function to deal with markdown local links
+        window['budgetpedia_global'] = {
+
+            navigateViaRouter :(event) => {
+                let target = event.currentTarget
+                let path = target.getAttribute('href') // limited to original '/somepath'
+                event.preventDefault()
+                // history.push(event.currentTarget.href) // includes protocol prefix - 'http://'
+                this.props.history.push(path)
+            }
+        } 
+
+    }
+
+    componentWillUnmount() {
+
+        delete window['budgetpedia_global']
+
     }
 
     render() {

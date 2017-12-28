@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
 const narrationbubble_view_1 = require("./views/narrationbubble.view");
+const followupbubble_view_1 = require("./views/followupbubble.view");
 const list_controller_1 = require("./list.controller");
 const card_controller_1 = require("./card.controller");
 const sheet_controller_1 = require("./sheet.controller");
@@ -39,33 +40,36 @@ class SectionControllerClass extends React.Component {
             let output = React.createElement(componentType, properties, childcomponents);
             return output;
         };
-        this.assembleNarratives = narrative => {
-            let narratives = {};
-            for (let index in narrative) {
+        this.assembleCommentary = commentary => {
+            let comments = {};
+            for (let index in commentary) {
                 let spec = index.split(':');
                 let controller = spec[0];
                 let narrative_index = spec[1];
-                if (!narratives[controller]) {
-                    narratives[controller] = {};
+                if (!comments[controller]) {
+                    comments[controller] = {};
                 }
-                narratives[controller][narrative_index] = narrative[index];
+                comments[controller][narrative_index] = commentary[index];
             }
-            return narratives;
+            return comments;
         };
         this.narratives = null;
+        this.followups = null;
         this.emitComponent = (model, key) => {
-            let { controller, index, narrative } = model;
+            let { controller, index, narrative, followup } = model;
             let controllerclass = null;
             switch (controller) {
                 case 'section': {
-                    let narratives = null;
+                    let narratives = {};
                     if (narrative) {
-                        narratives = this.assembleNarratives(narrative);
-                    }
-                    else {
-                        narratives = {};
+                        narratives = this.assembleCommentary(narrative);
                     }
                     this.narratives = narratives;
+                    let followups = {};
+                    if (followup) {
+                        followups = this.assembleCommentary(followup);
+                    }
+                    this.followups = followups;
                     let output = this.emitLocalComponent(model, key);
                     return output;
                 }
@@ -96,10 +100,14 @@ class SectionControllerClass extends React.Component {
             }
             let output = null;
             let narratives = this.narratives;
-            if (narratives[controller] && narratives[controller][index]) {
+            let followups = this.followups;
+            let isNarratives = narratives[controller] && narratives[controller][index];
+            let isFollowups = followups[controller] && followups[controller][index];
+            if (isNarratives || isFollowups) {
                 output = React.createElement("div", { key: key },
-                    React.createElement(narrationbubble_view_1.default, { markup: narratives[controller][index] }),
-                    controllerclass);
+                    isNarratives ? React.createElement(narrationbubble_view_1.default, { markup: narratives[controller][index] }) : null,
+                    controllerclass,
+                    isFollowups ? React.createElement(followupbubble_view_1.default, { markup: followups[controller][index] }) : null);
             }
             else {
                 output = controllerclass;
