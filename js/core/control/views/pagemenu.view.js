@@ -8,10 +8,11 @@ class PageMenuController extends React.Component {
         this.state = {
             scroller: null,
         };
+        this.scroller = null;
     }
     componentDidMount() {
         this.setState({
-            scroller: this.refs.scroller
+            scroller: this.scroller
         });
     }
     render() {
@@ -30,7 +31,7 @@ class PageMenuController extends React.Component {
                         display: 'flex',
                         flexWrap: 'nowrap',
                         overflow: "scroll",
-                    }, ref: "scroller" }, this.props.children)));
+                    }, ref: el => { this.scroller = el; } }, this.props.children)));
     }
 }
 exports.default = PageMenuController;

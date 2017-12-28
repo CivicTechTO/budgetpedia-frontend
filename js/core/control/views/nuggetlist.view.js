@@ -14,10 +14,11 @@ class NuggetList extends React.Component {
         this.state = {
             scroller: null,
         };
+        this.scroller = null;
     }
     componentDidMount() {
         this.setState({
-            scroller: this.refs.scroller
+            scroller: this.scroller
         });
     }
     render() {
@@ -51,7 +52,7 @@ class NuggetList extends React.Component {
                         verticalAlign: 'top',
                     } }, React.createElement(html_view_1.default, { html: md.renderInline(title) }))),
             React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
-                React.createElement("div", { style: defaultScrollBlockstyle, ref: "scroller" },
+                React.createElement("div", { style: defaultScrollBlockstyle, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {
                             display: 'block',
                             whiteSpace: 'nowrap',

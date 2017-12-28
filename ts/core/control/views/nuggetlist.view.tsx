@@ -36,13 +36,15 @@ class NuggetList extends React.Component< Props, any > {
 
     componentDidMount() {
         this.setState({
-            scroller:this.refs.scroller
+            scroller:this.scroller
         })
     }
 
     state = {
         scroller:null,
     }
+
+    scroller = null
 
     render() {
 
@@ -101,7 +103,7 @@ class NuggetList extends React.Component< Props, any > {
                 <ScrollControlsView scroller = {this.state.scroller}>
                 <div 
                     style = {defaultScrollBlockstyle as any /*ts typing issue*/}
-                    ref = "scroller"
+                    ref = { el => {this.scroller = el}}
                 >
                     <div
                         style = {

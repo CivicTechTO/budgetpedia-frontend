@@ -152,7 +152,7 @@ Although this is a lengthy process, very little of it is public.
                 tag: 'The Challenges',
                 narrative: {
                     'sheet:opportunities': `
-There really are incredible opportunities for improvement! Changes by design,
+There really are huge opportunities for improvement! Changes by design,
 to make everyone's life better.
 `,
                     'sheet:concerns': `

@@ -35,13 +35,15 @@ class TileListController extends React.Component< Props, any > {
 
     componentDidMount() {
         this.setState({
-            scroller:this.refs.scroller
+            scroller:this.scroller
         })
     }
 
     state = {
         scroller:null,
     }
+
+    scroller = null
 
     render() {
 
@@ -96,7 +98,7 @@ class TileListController extends React.Component< Props, any > {
                 <ScrollControlsView scroller = {this.state.scroller}>
                     <div
                         style = { style }
-                        ref = "scroller"
+                        ref = {el => {this.scroller = el}}
                     >
                         <div
 

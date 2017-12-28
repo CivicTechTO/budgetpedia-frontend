@@ -82,7 +82,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
-    "browser-sync": "^2.21.0",
+    "browser-sync": "^2.22.0",
     "browserify-fs": "^1.0.0",
     "css-loader": "^0.28.7",
     "eslint-config-react-tools": "^1.0.10",

@@ -12,13 +12,15 @@ class PageMenuController extends React.Component<any,any> {
 
     componentDidMount() {
         this.setState({
-            scroller:this.refs.scroller
+            scroller:this.scroller
         })
     }
 
     state = {
         scroller:null,
     }
+
+    scroller = null
 
     render() {
         return <div style = {
@@ -41,7 +43,7 @@ class PageMenuController extends React.Component<any,any> {
                         overflow:"scroll",
                     }
                 } 
-                    ref = "scroller"
+                    ref = {el => {this.scroller = el}}
             >
                 {this.props.children}
             </div>
