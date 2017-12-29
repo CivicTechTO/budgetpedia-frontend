@@ -38,6 +38,10 @@ let pages = {
         attribution: {
             custodian: 'Henrik Bechmann',
             custodianlink: 'mailto:henrik@budgetpedia.ca',
+            creator:null,
+            creatorlink:null,
+            updater:null,
+            updaterlink:null,
             contact:'mail@budgetpedia.ca',
             contactlink:'mailto:mail@budgetpedia.ca',
             creationdate: '22-12-2017',
