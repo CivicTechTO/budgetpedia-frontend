@@ -5,6 +5,7 @@ const Paper_1 = require("material-ui/Paper");
 const FloatingActionButton_1 = require("material-ui/FloatingActionButton");
 const mode_edit_1 = require("material-ui/svg-icons/editor/mode-edit");
 const file_download_1 = require("material-ui/svg-icons/file/file-download");
+const done_1 = require("material-ui/svg-icons/action/done");
 var fileDownload = require('js-file-download');
 const renderedlink_view_1 = require("../forked-components/renderedlink.view");
 const headlinesbutton_view_1 = require("../forked-components/headlinesbutton.view");
@@ -149,8 +150,7 @@ class SheetView extends React.Component {
             }
         };
         this.actionbuttons = () => (this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
-            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.toggleEdit },
-                React.createElement(mode_edit_1.default, null)),
+            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.toggleEdit }, this.state.editorReadonly ? React.createElement(mode_edit_1.default, null) : React.createElement(done_1.default, null)),
             React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
                 React.createElement(file_download_1.default, null))) : null);
         this.editorcontrols = () => {

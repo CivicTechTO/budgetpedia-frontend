@@ -8,6 +8,7 @@ import Paper from 'material-ui/Paper'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
 import FileDownload from 'material-ui/svg-icons/file/file-download'
+import Done from 'material-ui/svg-icons/action/done'
 
 var fileDownload = require('js-file-download')
 
@@ -243,7 +244,7 @@ class SheetView extends React.Component<any,any> {
               style={{marginRight:'20px',zIndex:2}}
               onTouchTap = { this.toggleEdit }
           >
-              <ContentEdit />
+              {this.state.editorReadonly?<ContentEdit />:<Done />}
           </FloatingActionButton>
           <FloatingActionButton 
               mini={true} 
