@@ -5,8 +5,6 @@
 
 import * as React from 'react'
 
-import { Link } from 'react-router-dom'
-
 import HtmlView from './html.view'
 let mdit = require('markdown-it')
 let mda = require('markdown-it-attrs')
