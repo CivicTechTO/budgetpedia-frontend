@@ -156,6 +156,7 @@ at the time. Since then the budget process has become even more closed.
                     style:{
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',
+                        paddingBottom: '1px',
                     },
                 },
                 children: [

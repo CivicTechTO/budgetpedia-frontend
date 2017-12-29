@@ -12,8 +12,8 @@ class FollowupBubbleView extends React.Component<any,any> {
     bubbleStyle = {
         maxWidth:'600px',
         border:'3px outset silver',
-        backgroundColor:'lightcyan',
-        margin:'8px 8px 16px 8px',
+        backgroundColor:'cornsilk',
+        margin:'16px 8px 32px 8px',
         borderRadius: '8px',
         padding: '0 3px',
         position:'relative',
@@ -23,9 +23,9 @@ class FollowupBubbleView extends React.Component<any,any> {
 
         borderStyle: 'solid',
         position: 'absolute',
-        borderColor: 'slategray transparent transparent transparent',
-        borderWidth: '16px 16px 0px 16px',
-        bottom: '-16px',
+        borderColor: 'transparent transparent slategray transparent',
+        borderWidth: '0px 16px 16px 16px',
+        top: '-16px',
         left: '47px',
 
     }
@@ -34,17 +34,17 @@ class FollowupBubbleView extends React.Component<any,any> {
 
         borderStyle: 'solid',
         position: 'absolute',
-        borderColor: 'lightcyan transparent transparent transparent',
-        borderWidth: '13px 13px 0px 13px',
-        bottom: '-13px',
+        borderColor: 'transparent transparent cornsilk transparent',
+        borderWidth: '0px 13px 13px 13px',
+        top: '-13px',
         left:'50px',
 
     }
     render() {
         return <div style = {this.bubbleStyle as any} >
-            <MarkupBlockView markup = {this.props.markup} />
             <div style = {this.firstArrowStyle as any} ></div>
             <div style = {this.secondArrowStyle as any }></div>
+            <MarkupBlockView markup = {this.props.markup} />
         </div>
     }
 
