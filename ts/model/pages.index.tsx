@@ -145,9 +145,7 @@ For detailed budget information, see our budget [explorer](/explorer).
 `
 For more information on the City of Toronto Budget Process, see the City of Toronto 
 [website](https://www.toronto.ca/city-government/budget-finances/city-budget/), 
-and our [Budget Roadmap](/roadmap) page. The 2016 section of our budget roadmap has a set of about 50 
-budget decision points that were collected by a volunteer through interviews and public records 
-at the time. Since then the budget process has become even more closed.
+and our [Budget Roadmap](/roadmap) page.
 `,
                 },
                 properties: {
