@@ -302,6 +302,7 @@ class SheetView extends React.Component<any,any> {
                         {this.editorcontrols()}
 
                     </div>
+                    
                     {/* ImageAdd must be outside scope of auto-focus */}
                     {this.imagecontrol()}
 
