@@ -48,8 +48,8 @@ let pages = {
                 link: 'mailto:mail@budgetpedia.ca',
             },
             dates: {
-                creation: '22-12-2017',
-                update: '28-12-2017',
+                created: '22-12-2017',
+                updated: '28-12-2017',
             },
         },
         tags: null,
