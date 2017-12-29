@@ -38,11 +38,18 @@ let pages = {
         attribution: {
             custodian: 'Henrik Bechmann',
             custodianlink: 'mailto:henrik@budgetpedia.ca',
+            authority: null,
+            authoritylink: null,
+            creator: null,
+            creatorlink: null,
+            updater: null,
+            updaterlink: null,
             contact: 'mail@budgetpedia.ca',
             contactlink: 'mailto:mail@budgetpedia.ca',
             creationdate: '22-12-2017',
             updatedate: '28-12-2017',
         },
+        tags: null,
         properties: {
             title: 'Budgetpedia Welcome',
             description: 'supporting informed debate about the Toronto budget',
