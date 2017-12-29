@@ -44,6 +44,29 @@ class PageControllerClass extends React.Component<any,any> {
         scrollToElement('#'+index,{offset:-64}) // space for global toolbar
     }
 
+    assembleChips = children => {
+        let chips = children.map((child, index) => {
+            if (child.tag) {
+                return (
+                <Chip 
+                    key = {index} 
+                    onClick = {(
+                        () => this.onClickChip(child.anchor)
+                    )}
+                    style = {{ margin:'4px' }}
+                >
+                    {child.tag}
+                </Chip>)
+            } else {
+                return null
+            }
+        })
+        chips = chips.filter((chip) => {
+            return !!chip
+        })
+        return chips       
+    }
+
     emitLocalComponent = (component,key) => {
 
         let {
@@ -60,28 +83,9 @@ class PageControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'page': {
-                let chips = children.map((child, index) => {
-                    if (child.tag) {
-                        return (
-                        <Chip 
-                            key = {index} 
-                            onClick = {
-                                (
-                                    () => this.onClickChip(child.anchor)
-                                )
-                            }
-                            style = {
-                                {margin:'4px'}
-                            }>
-                                {child.tag}
-                        </Chip>)
-                    } else {
-                        return null
-                    }
-                })
-                chips = chips.filter((chip) => {
-                    return !!chip
-                })
+
+                let chips = this.assembleChips(children)
+
                 if (chips.length) {
                     childcomponents = [
                         <PageMenuController key = "menu">
@@ -91,7 +95,9 @@ class PageControllerClass extends React.Component<any,any> {
                         <div key = "filler" style = {{height:'38px'}}></div>
                     ]
                 }
+                
                 componentType = PageView
+
                 break
             }
 

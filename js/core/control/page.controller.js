@@ -17,23 +17,27 @@ class PageControllerClass extends React.Component {
         this.onClickChip = index => {
             scrollToElement('#' + index, { offset: -64 });
         };
+        this.assembleChips = children => {
+            let chips = children.map((child, index) => {
+                if (child.tag) {
+                    return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.anchor)), style: { margin: '4px' } }, child.tag));
+                }
+                else {
+                    return null;
+                }
+            });
+            chips = chips.filter((chip) => {
+                return !!chip;
+            });
+            return chips;
+        };
         this.emitLocalComponent = (component, key) => {
             let { controller, index, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
                 case 'page': {
-                    let chips = children.map((child, index) => {
-                        if (child.tag) {
-                            return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.anchor)), style: { margin: '4px' } }, child.tag));
-                        }
-                        else {
-                            return null;
-                        }
-                    });
-                    chips = chips.filter((chip) => {
-                        return !!chip;
-                    });
+                    let chips = this.assembleChips(children);
                     if (chips.length) {
                         childcomponents = [
                             React.createElement(pagemenu_view_1.default, { key: "menu" }, chips),

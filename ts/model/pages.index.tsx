@@ -36,18 +36,21 @@ let pages = {
         index: 'home',
         type:'page',
         attribution: {
-            custodian: 'Henrik Bechmann',
-            custodianlink: 'mailto:henrik@budgetpedia.ca',
+            custodian:{
+                name: 'Henrik Bechmann',
+                link: 'mailto:henrik@budgetpedia.ca',
+            },
             authority:null,
-            authoritylink:null,
             creator:null,
-            creatorlink:null,
             updater:null,
-            updaterlink:null,
-            contact:'mail@budgetpedia.ca',
-            contactlink:'mailto:mail@budgetpedia.ca',
-            creationdate: '22-12-2017',
-            updatedate: '28-12-2017',
+            contact:{
+                name:'mail@budgetpedia.ca',
+                link:'mailto:mail@budgetpedia.ca',
+            },
+            dates:{
+                creation: '22-12-2017',
+                update: '28-12-2017',
+            },
         },
         tags:null,
         properties: {
