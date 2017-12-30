@@ -93,7 +93,7 @@ class PageControllerClass extends React.Component<any,any> {
 
                 let { attribution } = component
 
-                let attributionview = <AttributionView attribution = {attribution} />
+                let attributionview = <AttributionView key = "attribution" attribution = {attribution} />
 
                 if (chips.length || attributionview) {
                     let chipsheader = null
@@ -119,7 +119,7 @@ class PageControllerClass extends React.Component<any,any> {
             }
 
             default: {
-                return <div key = { key }>Illegal component type { type } of { controller } controller</div>
+                return <div key = { key } >Illegal component type { type } of { controller } controller</div>
             }
         }
 

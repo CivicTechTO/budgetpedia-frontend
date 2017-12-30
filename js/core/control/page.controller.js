@@ -41,7 +41,7 @@ class PageControllerClass extends React.Component {
                 case 'page': {
                     let chips = this.assembleChips(children);
                     let { attribution } = component;
-                    let attributionview = React.createElement(attribution_view_1.default, { attribution: attribution });
+                    let attributionview = React.createElement(attribution_view_1.default, { key: "attribution", attribution: attribution });
                     if (chips.length || attributionview) {
                         let chipsheader = null;
                         let chipsfooter = null;
