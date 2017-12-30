@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-import Paper from 'material-ui/Paper'
+import PaperView from './views/paper.view'
 
 import coreControllerComposer from './core.controller.composer'
 
@@ -54,14 +54,7 @@ class PaperControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'paper': {
-                componentType = Paper
-
-                if (!properties.zDepth) properties.zDepth = 3
-                    
-                childcomponents = [ 
-                    ...childcomponents, 
-                    <div key = 'clear' style = {{clear:"both"}}></div>,
-                 ]
+                componentType = PaperView
                 break
             }
             case 'markupblock': {
@@ -88,6 +81,11 @@ class PaperControllerClass extends React.Component<any,any> {
 
         switch (controller) {
 
+            case 'paper':{
+
+                return this.emitLocalComponent(model,key)
+
+            }
             case 'list': {
 
                 return <ListController

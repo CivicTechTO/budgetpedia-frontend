@@ -53,6 +53,13 @@ let pages = {
                         paddingBottom: '1px',
                     },
                 },
+                children: [
+                    {
+                        controller: 'paper',
+                        repo: 'papers',
+                        index: 'insiderview',
+                    }
+                ],
             },
             {
                 controller: 'section',

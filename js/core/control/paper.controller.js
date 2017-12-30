@@ -1,7 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const Paper_1 = require("material-ui/Paper");
+const paper_view_1 = require("./views/paper.view");
 const core_controller_composer_1 = require("./core.controller.composer");
 const list_controller_1 = require("./list.controller");
 const markupblock_view_1 = require("./views/markupblock.view");
@@ -21,13 +21,7 @@ class PaperControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'paper': {
-                    componentType = Paper_1.default;
-                    if (!properties.zDepth)
-                        properties.zDepth = 3;
-                    childcomponents = [
-                        ...childcomponents,
-                        React.createElement("div", { key: 'clear', style: { clear: "both" } }),
-                    ];
+                    componentType = paper_view_1.default;
                     break;
                 }
                 case 'markupblock': {
@@ -51,6 +45,9 @@ class PaperControllerClass extends React.Component {
         this.emitComponent = (model, key) => {
             let { controller } = model;
             switch (controller) {
+                case 'paper': {
+                    return this.emitLocalComponent(model, key);
+                }
                 case 'list': {
                     return React.createElement(list_controller_1.default, { key: key, model: model });
                 }
