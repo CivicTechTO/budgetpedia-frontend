@@ -129,6 +129,10 @@ class PageControllerClass extends React.Component<any,any> {
 
     }
 
+    async myfunc () {
+
+    }
+
     emitComponent = (model,key) => {
 
         let { controller, description } = model
