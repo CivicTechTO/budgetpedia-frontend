@@ -15,6 +15,7 @@ import ListController from './list.controller'
 import CardController from './card.controller'
 import SheetController from './sheet.controller'
 import MediaController from './media.controller'
+import PaperController from './paper.controller'
 import CustomController from './custom.controller'
 
 import SectionView from './views/section.view'
@@ -151,6 +152,16 @@ class SectionControllerClass extends React.Component<any,any> {
             case 'media': {
 
                 controllerclass = <MediaController
+                    key = { key }
+                    model = { model }
+                />
+
+                break
+
+            }
+            case 'paper': {
+
+                controllerclass = <PaperController
                     key = { key }
                     model = { model }
                 />

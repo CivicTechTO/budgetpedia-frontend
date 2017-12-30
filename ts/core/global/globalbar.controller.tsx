@@ -61,7 +61,7 @@ let GlobalBarController = class extends React.Component<any, any> {
                 style = {{                
                     position: "absolute",
                     bottom: 0,
-                    left: 0,
+                    left: '62px',
                 }}
             />
 

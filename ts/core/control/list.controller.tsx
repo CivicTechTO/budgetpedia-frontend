@@ -10,6 +10,7 @@ import coreControllerComposer from './core.controller.composer'
 import LinkListView from './views/linklist.view'
 import NuggetListView from './views/nuggetlist.view'
 import TileListView from './views/tilelist.view'
+import MarkupListView from './views/markuplist.view'
 
 class ListControllerClass extends React.Component<any,any> {
 
@@ -57,6 +58,10 @@ class ListControllerClass extends React.Component<any,any> {
             }
             case 'tilelist': {
                 componentType = TileListView
+                break
+            }
+            case 'markuplist': {
+                componentType = MarkupListView
                 break
             }
             default: {

@@ -1,17 +1,18 @@
-// cards.controller.tsx
+// paper.controller.tsx
 // copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
 'use strict'
 
 import * as React from 'react';
 
+import Paper from 'material-ui/Paper'
+
 import coreControllerComposer from './core.controller.composer'
 
-import { Card, CardTitle, CardText, CardActions, CardHeader, CardMedia } from 'material-ui/Card'
-import HtmlView from './views/html.view'
 import ListController from './list.controller'
+import MarkupBlockView from './views/markupblock.view'
 
-class CardControllerClass extends React.Component<any,any> {
+class PaperControllerClass extends React.Component<any,any> {
 
     constructor(props) {
         super(props)
@@ -52,37 +53,19 @@ class CardControllerClass extends React.Component<any,any> {
         let componentType = null
 
         switch (type) {
-            case 'card': {
-                componentType = Card
+            case 'paper': {
+                componentType = Paper
+
+                if (!properties.zDepth) properties.zDepth = 3
+                    
                 childcomponents = [ 
                     ...childcomponents, 
                     <div key = 'clear' style = {{clear:"both"}}></div>,
                  ]
                 break
             }
-            case 'htmlview': {
-                // console.log('htmlview',component,childcomponents)
-                componentType = HtmlView
-                break
-            }
-            case 'cardtitle': {
-                componentType = CardTitle
-                break
-            }
-            case 'cardtext': {
-                componentType = CardText
-                break
-            }
-            case 'cardactions': {
-                componentType = CardActions
-                break
-            }
-            case 'cardheader': {
-                componentType = CardHeader
-                break
-            }
-            case 'cardmedia': {
-                componentType = CardMedia
+            case 'markupblock': {
+                componentType = MarkupBlockView
                 break
             }
             default: {
@@ -104,12 +87,6 @@ class CardControllerClass extends React.Component<any,any> {
         let { controller } = model
 
         switch (controller) {
-
-            case 'card':{
-
-                return this.emitLocalComponent(model,key)
-
-            }
 
             case 'list': {
 
@@ -143,6 +120,6 @@ class CardControllerClass extends React.Component<any,any> {
     }
 }
 
-let CardController = coreControllerComposer(CardControllerClass) 
+let PaperController = coreControllerComposer(PaperControllerClass) 
 
-export default CardController
+export default PaperController

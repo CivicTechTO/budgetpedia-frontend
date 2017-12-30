@@ -8,6 +8,7 @@ const list_controller_1 = require("./list.controller");
 const card_controller_1 = require("./card.controller");
 const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
+const paper_controller_1 = require("./paper.controller");
 const custom_controller_1 = require("./custom.controller");
 const section_view_1 = require("./views/section.view");
 class SectionControllerClass extends React.Component {
@@ -87,6 +88,10 @@ class SectionControllerClass extends React.Component {
                 }
                 case 'media': {
                     controllerclass = React.createElement(media_controller_1.default, { key: key, model: model });
+                    break;
+                }
+                case 'paper': {
+                    controllerclass = React.createElement(paper_controller_1.default, { key: key, model: model });
                     break;
                 }
                 case 'custom': {

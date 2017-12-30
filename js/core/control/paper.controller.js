@@ -1,12 +1,11 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const Paper_1 = require("material-ui/Paper");
 const core_controller_composer_1 = require("./core.controller.composer");
-const linklist_view_1 = require("./views/linklist.view");
-const nuggetlist_view_1 = require("./views/nuggetlist.view");
-const tilelist_view_1 = require("./views/tilelist.view");
-const markuplist_view_1 = require("./views/markuplist.view");
-class ListControllerClass extends React.Component {
+const list_controller_1 = require("./list.controller");
+const markupblock_view_1 = require("./views/markupblock.view");
+class PaperControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,22 +15,23 @@ class ListControllerClass extends React.Component {
         this.emitLocalComponent = (component, key) => {
             let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
+            if (childcomponents) {
+                childcomponents = [...childcomponents];
+            }
             let componentType = null;
             switch (type) {
-                case 'linklist': {
-                    componentType = linklist_view_1.default;
+                case 'paper': {
+                    componentType = Paper_1.default;
+                    if (!properties.zDepth)
+                        properties.zDepth = 3;
+                    childcomponents = [
+                        ...childcomponents,
+                        React.createElement("div", { key: 'clear', style: { clear: "both" } }),
+                    ];
                     break;
                 }
-                case 'nuggetlist': {
-                    componentType = nuggetlist_view_1.default;
-                    break;
-                }
-                case 'tilelist': {
-                    componentType = tilelist_view_1.default;
-                    break;
-                }
-                case 'markuplist': {
-                    componentType = markuplist_view_1.default;
+                case 'markupblock': {
+                    componentType = markupblock_view_1.default;
                     break;
                 }
                 default: {
@@ -52,11 +52,11 @@ class ListControllerClass extends React.Component {
             let { controller } = model;
             switch (controller) {
                 case 'list': {
-                    return this.emitLocalComponent(model, key);
+                    return React.createElement(list_controller_1.default, { key: key, model: model });
                 }
                 default: {
                     let { description } = model;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found in List processor`);
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
                 }
             }
         };
@@ -70,10 +70,9 @@ class ListControllerClass extends React.Component {
         let { model } = this.state;
         if (!model)
             return React.createElement("div", null);
-        let { index } = model;
-        let component = this.emitComponent(model, index);
+        let component = this.emitComponent(model, model.index);
         return component;
     }
 }
-let ListController = core_controller_composer_1.default(ListControllerClass);
-exports.default = ListController;
+let PaperController = core_controller_composer_1.default(PaperControllerClass);
+exports.default = PaperController;

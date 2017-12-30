@@ -41,7 +41,7 @@ let GlobalBarController = class extends React.Component {
         let taglineView = React.createElement(tagline_view_1.default, { text: globalbar.tagLine, style: {
                 position: "absolute",
                 bottom: 0,
-                left: 0,
+                left: '62px',
             } });
         let contactView = React.createElement(contact_view_1.default, { style: {
                 position: "absolute",

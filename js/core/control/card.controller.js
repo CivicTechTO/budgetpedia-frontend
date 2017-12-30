@@ -40,6 +40,18 @@ class CardControllerClass extends React.Component {
                     componentType = Card_1.CardText;
                     break;
                 }
+                case 'cardactions': {
+                    componentType = Card_1.CardActions;
+                    break;
+                }
+                case 'cardheader': {
+                    componentType = Card_1.CardHeader;
+                    break;
+                }
+                case 'cardmedia': {
+                    componentType = Card_1.CardMedia;
+                    break;
+                }
                 default: {
                     return React.createElement("div", { key: key },
                         "Component type ",

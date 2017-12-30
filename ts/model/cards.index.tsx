@@ -115,7 +115,6 @@ let mainpagefooter = {
     ],
 }
 
-
 let cards = {
     mainpageheader,
     mainpagefooter,

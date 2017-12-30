@@ -11,6 +11,7 @@ import media from './media.index'
 import sheets from './sheets.index'
 import html from './data/html.index'
 import draft from './data/draft.index'
+import papers from './papers.index'
 
 let repositories = {
     cards,
@@ -24,6 +25,7 @@ let repositories = {
     sheets,
     html,
     draft,
+    papers,
 }
 
 const getDocument = (repo, index) => {

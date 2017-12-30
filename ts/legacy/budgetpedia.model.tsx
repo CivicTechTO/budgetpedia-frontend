@@ -54,7 +54,7 @@ let globalbar = {
 	title: 'Budgetpedia v0.1.6',
     contactAddress:'mailto:mail@budgetpedia.ca',
     contactPrompt:'mail@budgetpedia.ca',
-//    tagLine:"We're all about government budgets",
+    tagLine:'Only about Toronto for now',
 	username: 'anonymous',
 	accountoptions: [],
 	menuoptions: [],
