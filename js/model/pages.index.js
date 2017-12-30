@@ -21,7 +21,7 @@ let pages = {
                     'sheet:cityprocess': `Here is a rough outline of how the process is currently set up.`,
                 },
                 properties: {
-                    title: "Roadmap",
+                    title: "Budget Roadmap",
                     description: "This page is about how the Toronto budget is created, and _could_ be created, every year.",
                     style: {
                         marginBottom: '12px',
@@ -46,7 +46,8 @@ let pages = {
                 tag: 'Insider Notes',
                 properties: {
                     title: "Insider Notes",
-                    description: "One of our volunteers assembled these detailed notes in 2016, from publicly avaliable information and direct interviews at City Hall.",
+                    description: `One of our volunteers assembled these detailed notes in 2016, 
+                    from publicly available information and direct interviews of City Hall staff.`,
                     style: {
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',

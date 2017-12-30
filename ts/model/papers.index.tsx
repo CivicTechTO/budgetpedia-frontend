@@ -21,7 +21,7 @@ let insiderview = {
         {
             controller:'list',
             type:'markuplist',
-            index:'insiderlist1',
+            index:'insiderlist',
             description:'first',
             properties:{
                 headermarkup:``,

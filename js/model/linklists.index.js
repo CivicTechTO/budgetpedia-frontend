@@ -15,10 +15,11 @@ let toplinklist = {
                 targetText: 'Budget Explorer',
             },
             {
-                prompt: "See information about Toronto's budget decision schedule at our",
+                prompt: "See information about Toronto's budget decision cycle at our",
                 icon: '/public/icons/ic_map_48px.svg',
                 target: '/roadmap',
                 targetText: 'Budget Roadmap',
+                suffix: 'page',
             },
             {
                 prompt: 'Find related',

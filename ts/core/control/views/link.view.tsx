@@ -15,6 +15,7 @@ interface Props {
     target:string,
     targetText:string,
     description?:string,
+    suffix?:string,
     imageStyle?:any,
 }
 
@@ -32,7 +33,8 @@ class LinkView extends React.Component<Props, any> {
                 {props.external
                     ?<a href = {props.target}
                         target = "_blank">{props.targetText}</a>                    
-                    :<Link to= {props.target} >{props.targetText}</Link>}
+                    :<Link to= {props.target} >{props.targetText}</Link>}{' '}
+                {props.suffix}
                 </span>
                 {props.description?<p style = {{fontStyle:'italic', margin:'0'}}>{props.description}</p>:null}
             </li>
