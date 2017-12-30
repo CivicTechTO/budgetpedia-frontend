@@ -21,6 +21,8 @@ let Attributions = ({ name, link }) => {
         ".\u00A0");
 };
 let AttributionView = ({ attribution }) => {
+    if (!attribution)
+        return null;
     let { custodian, authority, creator, updater, contact, dates } = attribution;
     if (!(custodian || authority || creator || updater || contact || dates))
         return null;

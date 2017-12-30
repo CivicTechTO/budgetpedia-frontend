@@ -27,6 +27,8 @@ let Attributions = ({name, link}) => {
 
 let AttributionView = ({attribution}) => {
 
+    if (!attribution) return null
+
     let { custodian, authority, creator, updater, contact, dates } = attribution
     if (!( custodian || authority || creator || updater || contact || dates )) return null
     return (

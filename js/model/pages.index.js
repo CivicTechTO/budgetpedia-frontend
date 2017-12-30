@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let pages = {
-    pathway: {
+    roadmap: {
         controller: 'page',
-        index: 'pathway',
+        index: 'roadmap',
         type: 'page',
         properties: {
             title: 'Toronto budget roadmap',
@@ -14,19 +14,29 @@ let pages = {
                 controller: 'section',
                 index: 'header',
                 anchor: 'header',
-                description: 'header for pathway page',
+                description: 'header for roadmap page',
                 type: 'section',
-                tag: 'Overview',
+                tag: 'Roadmap - current',
+                narrative: {
+                    'sheet:cityprocess': `
+Here is a rough outline of how the process is currently set up.
+`,
+                },
                 properties: {
-                    title: "Overviiew",
-                    description: "Here are details about Toronto budgets.",
+                    title: "Roadmap - current",
+                    description: "This page is about how the Toronto budget is created every year.",
+                    style: {
+                        marginBottom: '12px',
+                        backgroundColor: '#d9d9d9',
+                        paddingBottom: '1px',
+                    },
                 },
                 children: [
                     {
-                        controller: 'card',
-                        repo: 'cards',
-                        index: 'pathwayheader',
-                    }
+                        controller: 'sheet',
+                        repo: 'sheets',
+                        index: 'cityprocess',
+                    },
                 ],
             },
         ],
