@@ -99,7 +99,7 @@ class DataTable extends Component {
                         width: "36px",
                         position: "absolute",
                         zIndex: 2,
-                    }, tooltip: "close", onTouchTap: this.onRequestClose },
+                    }, tooltip: "close", onClick: this.onRequestClose },
                     React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", { style: {
                         top: 0,

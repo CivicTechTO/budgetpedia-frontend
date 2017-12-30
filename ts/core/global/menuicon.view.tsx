@@ -26,7 +26,7 @@ class MenuIconView extends React.Component<Props, any> {
         return (
             
                 <IconButton
-                    onTouchTap = {this.props.onSelect} 
+                    onClick = {this.props.onSelect} 
                     style = {this.props.style} 
                 >
 

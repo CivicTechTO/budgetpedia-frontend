@@ -998,7 +998,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ 
+                onClick={ 
                     () => {
                         this.setState({
                             viewTaxonomyDialogOpen:false,
@@ -1058,7 +1058,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ 
+                onClick={ 
                     () => {
                         this.setState({
                             analystNotesDialogOpen:false,
@@ -1325,7 +1325,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 label = "Help"
                 style={{margin:'3px 6px 0 6px'}}
                 type="button"
-                onTouchTap = { this.handleDialogOpen } 
+                onClick = { this.handleDialogOpen } 
                 labelPosition="before"
                 icon = {<FontIcon style={{color:'rgba(0,0,0,0.5'}}
                     className="material-icons">help_outline</FontIcon>
@@ -1336,14 +1336,14 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                 label = "Latest Analyst Notes"
                 style={{margin:'3px 6px 0 6px'}}
                 type="button"
-                onTouchTap = { () => {this.onCallAnalystNotes('FUNCTIONAL',[])} } 
+                onClick = { () => {this.onCallAnalystNotes('FUNCTIONAL',[])} } 
                 />
 
         let showvideos = <RaisedButton
                 label = "Videos"
                 style={{margin:'3px 6px 0 6px'}}
                 type="button"
-                onTouchTap = { () =>{
+                onClick = { () =>{
                     this.logEvent({
                         category:'Explorer',
                         action:'Show videos',
@@ -1378,7 +1378,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         position: "absolute",
                         zIndex: 2,
                     }}
-                    onTouchTap={ explorer.handleDialogClose } >
+                    onClick={ explorer.handleDialogClose } >
 
                     <FontIcon
                         className="material-icons"
@@ -1468,7 +1468,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 marginRight:"30px"
                             }}
                             disabled = {(branchIndex == (budgetBranches.length - 1))}
-                            onTouchTap = { 
+                            onClick = { 
                                 (uid => 
                                     ev => {
                                         ev.stopPropagation()
@@ -1493,7 +1493,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                                 float:"right"
                             }}
                             disabled = {(branchIndex == 0)}
-                            onTouchTap = { 
+                            onClick = { 
                                 (uid => 
                                     ev => {
                                         ev.stopPropagation()
@@ -1532,7 +1532,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                     </CardText>
                     <CardActions expandable = {false}>
                         <FloatingActionButton
-                            onTouchTap = {
+                            onClick = {
                                 (uid => () => {
                                     this.addBranch(uid)
                                 })(budgetBranch.uid)
@@ -1541,7 +1541,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                             <ContentAdd />
                         </FloatingActionButton>
                         {( budgetBranches.length > 1 )?<FloatingActionButton 
-                            onTouchTap = {
+                            onClick = {
                                 (uid => () => {
                                     this.removeBranch(uid)
                                 })(budgetBranch.uid)
@@ -1693,7 +1693,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         type="button"
                         style={{margin:'3px 6px 0 0',verticalAlign:'23px'}}
                         label="Share"
-                        onTouchTap={this.shareStoryboard} 
+                        onClick={this.shareStoryboard} 
                         labelPosition="before"
                         icon = {<FontIcon 
                             style={{color:'rgba(0,0,0,0.5)'}}
@@ -1703,7 +1703,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
                         style = {{ verticalAlign:'25px' }}
                         type="button"
                         label="Reset"
-                        onTouchTap={
+                        onClick={
                             () => {
                                 this.resetBranches()
                             }

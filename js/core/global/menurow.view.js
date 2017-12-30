@@ -11,7 +11,7 @@ class MenuRowView extends React.Component {
         };
     }
     render() {
-        return (React.createElement(MenuItem_1.default, { onTouchTap: this.pushHistory, primaryText: this.props.primaryText, leftIcon: React.createElement("img", { src: this.props.image }), disabled: this.props.disabled ? true : false }));
+        return (React.createElement(MenuItem_1.default, { onClick: this.pushHistory, primaryText: this.props.primaryText, leftIcon: React.createElement("img", { src: this.props.image }), disabled: this.props.disabled ? true : false }));
     }
 }
 exports.MenuRowView = MenuRowView;

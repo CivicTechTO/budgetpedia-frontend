@@ -1039,7 +1039,7 @@ class ExplorerBranch extends Component {
                         borderRadius: "8px",
                         padding: "3px",
                     } },
-                    React.createElement(RaisedButton_1.default, { style: { marginLeft: "3px", float: "right" }, disabled: !isvalidurl, type: "button", label: "Source", onTouchTap: () => {
+                    React.createElement(RaisedButton_1.default, { style: { marginLeft: "3px", float: "right" }, disabled: !isvalidurl, type: "button", label: "Source", onClick: () => {
                             isvalidurl ? this.openwindow(link) : void (0);
                         } }),
                     React.createElement("div", { style: { fontWeight: "bold" } }, headerkey),
@@ -1270,14 +1270,14 @@ class ExplorerBranch extends Component {
                         width: "36px",
                         position: "absolute",
                         zIndex: 2,
-                    }, onTouchTap: branch.handleSelectionsDialogClose },
+                    }, onClick: branch.handleSelectionsDialogClose },
                     React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", null,
                     governmentselection,
                     viewpointselection,
                     versionselection,
                     aspectselection),
-                React.createElement(RaisedButton_1.default, { label: "Done", style: { margin: '3px 6px 0 0', float: 'right' }, onTouchTap: branch.handleSelectionsDialogClose }),
+                React.createElement(RaisedButton_1.default, { label: "Done", style: { margin: '3px 6px 0 0', float: 'right' }, onClick: branch.handleSelectionsDialogClose }),
                 React.createElement("div", null)) : null;
         let noticesdialog = (branchDeclaration.showOptions) ?
             React.createElement(Dialog_1.default, { title: "Notices for this data", modal: false, open: branch.state.noticeDialogOpen, onRequestClose: branch.handleNoticeDialogClose, bodyStyle: { padding: '12px' }, autoScrollBodyContent: true, contentStyle: { width: '95%', maxWidth: '600px' } },
@@ -1289,7 +1289,7 @@ class ExplorerBranch extends Component {
                         width: "36px",
                         position: "absolute",
                         zIndex: 2,
-                    }, onTouchTap: branch.handleNoticeDialogClose },
+                    }, onClick: branch.handleNoticeDialogClose },
                     React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 branch.state.noticeDialogOpen ? branch.getBranchDataMessages() : null) : null;
         let technotesdialog = (branchDeclaration.showOptions) ?
@@ -1302,7 +1302,7 @@ class ExplorerBranch extends Component {
                         width: "36px",
                         position: "absolute",
                         zIndex: 2,
-                    }, onTouchTap: branch.handleTechDialogClose },
+                    }, onClick: branch.handleTechDialogClose },
                     React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", null,
                     "Please report any problems to ",
@@ -1310,18 +1310,18 @@ class ExplorerBranch extends Component {
                     " "),
                 branch.state.techDialogOpen ? branch.getTechNotesDisplay() : null,
                 React.createElement("div", null, "Note: some historical numbers have been allocated to contemporary categories for continuity -- to make the numbers more easily comparable. We plan to disclose continuity details here.")) : null;
-        let technotes = React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onTouchTap: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") });
-        let notices = React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onTouchTap: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") });
-        let makeselections = React.createElement(RaisedButton_1.default, { label: "Selections", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: branch.handleSelectionsDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "settings_applications") });
-        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: () => {
+        let technotes = React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Sources", onClick: branch.handleTechDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "cloud") });
+        let notices = React.createElement(RaisedButton_1.default, { style: { margin: '3px 6px 0 0' }, type: "button", label: "Notices", onClick: branch.handleNoticeDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "priority_high") });
+        let makeselections = React.createElement(RaisedButton_1.default, { label: "Selections", style: { margin: '3px 6px 0 0' }, type: "button", onClick: branch.handleSelectionsDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "settings_applications") });
+        let viewtaxonomy = React.createElement(RaisedButton_1.default, { label: "Workspace tree", style: { margin: '3px 6px 0 0' }, type: "button", onClick: () => {
                 let viewpointselection = {
                     viewpoint: branchDeclaration.viewpoint,
                     name: this.taxonomychoices[branchDeclaration.viewpoint]
                 };
                 this.props.onCallViewTaxonomy(this.state.viewpointData, viewpointselection, this.applytaxonomyselection);
             }, labelPosition: "before", icon: React.createElement("img", { style: { width: '24px' }, src: "./public/icons/org_chart.svg" }) });
-        let search = React.createElement(RaisedButton_1.default, { label: "Search", style: { margin: '3px 6px 0 0' }, type: "button", onTouchTap: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") });
-        let shareurl = React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onTouchTap: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") });
+        let search = React.createElement(RaisedButton_1.default, { label: "Search", style: { margin: '3px 6px 0 0' }, type: "button", onClick: this.handleSearch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "search") });
+        let shareurl = React.createElement(RaisedButton_1.default, { type: "button", style: { margin: '3px 6px 0 0' }, label: "Share", onClick: this.shareBranch, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") });
         let maxheight = (branchDeclaration.showOptions) ? '130px' : '0';
         let height = (branchDeclaration.showOptions) ? '52px' : '0';
         let maxwidth = (branchDeclaration.showOptions) ? '600px' : '0';

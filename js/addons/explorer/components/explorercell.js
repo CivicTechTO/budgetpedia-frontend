@@ -185,7 +185,7 @@ class ExplorerCell extends Component {
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
-                }, onTouchTap: e => {
+                }, onClick: e => {
                     this.onChangeTimeCode(constants_1.TimeScope[constants_1.TimeScope.OneYear]);
                 } },
                 React.createElement(SvgIcon_1.default, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
@@ -199,7 +199,7 @@ class ExplorerCell extends Component {
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
-                }, onTouchTap: e => {
+                }, onClick: e => {
                     this.onChangeTimeCode(constants_1.TimeScope[constants_1.TimeScope.TwoYears]);
                 } },
                 React.createElement(SvgIcon_1.default, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
@@ -214,7 +214,7 @@ class ExplorerCell extends Component {
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
-                }, onTouchTap: e => {
+                }, onClick: e => {
                     this.onChangeTimeCode(constants_1.TimeScope[constants_1.TimeScope.AllYears]);
                 } },
                 React.createElement(SvgIcon_1.default, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
@@ -230,7 +230,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('ColumnChart');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "insert_chart"));
@@ -243,7 +243,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('DiffColumnChart');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "insert_chart"));
@@ -256,7 +256,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('DonutChart');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "donut_small"));
@@ -269,7 +269,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('DiffPieChart');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "donut_small"));
@@ -282,7 +282,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('ContextChart');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_quilt"));
@@ -295,7 +295,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('TimeLine');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "timelines"));
@@ -308,7 +308,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('StackedArea');
             } },
             React.createElement(SvgIcon_1.default, { style: { height: "24px", width: "24px" } },
@@ -323,7 +323,7 @@ class ExplorerCell extends Component {
                 height: "36px",
                 width: "36px",
                 marginRight: "3px",
-            }, onTouchTap: e => {
+            }, onClick: e => {
                 this.onChangeChartCode('Proportional');
             } },
             React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_stream"));
@@ -378,7 +378,7 @@ class ExplorerCell extends Component {
                         height: "36px",
                         width: "36px",
                         marginRight: "3px",
-                    }, onTouchTap: (e) => {
+                    }, onClick: (e) => {
                         this.onToggleDelta();
                     } },
                     React.createElement(FontIcon_1.default, { className: "material-icons" }, "change_history"))) : null;
@@ -400,7 +400,7 @@ class ExplorerCell extends Component {
                         height: "36px",
                         width: "36px",
                         marginRight: "3px",
-                    }, onTouchTap: e => {
+                    }, onClick: e => {
                         this.onToggleNet();
                     } },
                     React.createElement(FontIcon_1.default, { className: "material-icons" }, "exposure"))) : null;
@@ -422,7 +422,7 @@ class ExplorerCell extends Component {
                         height: "36px",
                         width: "36px",
                         marginRight: "3px",
-                    }, onTouchTap: e => {
+                    }, onClick: e => {
                         this.onToggleVariance();
                     } },
                     React.createElement(FontIcon_1.default, { className: "material-icons" }, "exposure"))) : null;
@@ -453,7 +453,7 @@ class ExplorerCell extends Component {
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
-                }, onTouchTap: e => {
+                }, onClick: e => {
                     this.onDataTable(e);
                 } },
                 React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_list")));
@@ -481,7 +481,7 @@ class ExplorerCell extends Component {
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
-                }, onTouchTap: e => {
+                }, onClick: e => {
                     this.onHarmonize();
                 } },
                 React.createElement(FontIcon_1.default, { className: "material-icons" }, "swap_horiz")));
@@ -570,7 +570,7 @@ class ExplorerCell extends Component {
                         fontStyle: "italic",
                         zIndex: 10,
                     } },
-                    React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", onTouchTap: () => {
+                    React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", onClick: () => {
                             this.props.onCallAnalystNotes(viewpoint, nodepath);
                         }, style: {
                             padding: "0",

@@ -10,7 +10,7 @@ let md = new mdit({ html: true,
         switch (token.type) {
             case 'link_open': {
                 if (token.attrObj.href.substr(0, 1) == "/") {
-                    token.attrObj.onclick = 'budgetpedia_global.navigateViaRouter(event)';
+                    token.attrObj.onclick = 'storybuilder_global.navigateViaRouter(event)';
                 }
                 else {
                     token.attrObj.target = '_blank';

@@ -150,8 +150,8 @@ class SheetView extends React.Component {
             }
         };
         this.actionbuttons = () => (this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0 } },
-            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.toggleEdit }, this.state.editorReadonly ? React.createElement(mode_edit_1.default, null) : React.createElement(done_1.default, null)),
-            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onTouchTap: this.onDownload },
+            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onClick: this.toggleEdit }, this.state.editorReadonly ? React.createElement(mode_edit_1.default, null) : React.createElement(done_1.default, null)),
+            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onClick: this.onDownload },
                 React.createElement(file_download_1.default, null))) : null);
         this.editorcontrols = () => {
             let AlignmentTool = this.AlignmentTool;

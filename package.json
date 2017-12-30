@@ -72,7 +72,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.20.0",
+    "@types/material-ui": "^0.20.1",
     "@types/node": "^8.5.2",
     "@types/react": "^16.0.31",
     "@types/react-router-redux": "^5.0.11",

@@ -33,7 +33,7 @@ let RoutesController = class extends Component {
     }
     componentWillMount() {
         this.props.history.listen(this.historyListener);
-        window['budgetpedia_global'] = {
+        window['storybuilder_global'] = {
             navigateViaRouter: (event) => {
                 let target = event.currentTarget;
                 let path = target.getAttribute('href');
@@ -43,7 +43,7 @@ let RoutesController = class extends Component {
         };
     }
     componentWillUnmount() {
-        delete window['budgetpedia_global'];
+        delete window['storybuilder_global'];
     }
     render() {
         let location = this.props.router.location || {};

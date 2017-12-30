@@ -279,7 +279,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onChangeTimeCode(TimeScope[TimeScope.OneYear])
                     } }>
                     <SvgIcon style={{height:"36px",width:"36px"}} viewBox = "0 0 36 36" >
@@ -302,7 +302,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onChangeTimeCode(TimeScope[TimeScope.TwoYears])
                     } }
                     >
@@ -327,7 +327,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onChangeTimeCode(TimeScope[TimeScope.AllYears])
                     } }
                     >
@@ -358,7 +358,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('ColumnChart')
                 } }>
                 <FontIcon className="material-icons">insert_chart</FontIcon>
@@ -381,7 +381,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('DiffColumnChart')
                 } }>
                 <FontIcon className="material-icons">insert_chart</FontIcon>
@@ -404,7 +404,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('DonutChart')
                 } }>
                 <FontIcon className="material-icons">donut_small</FontIcon>
@@ -427,7 +427,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('DiffPieChart')
                 } }>
                 <FontIcon className="material-icons">donut_small</FontIcon>
@@ -451,7 +451,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('ContextChart')
                 } }>
                 <FontIcon className="material-icons">view_quilt</FontIcon>
@@ -474,7 +474,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('TimeLine')
                 } }>
                 <FontIcon className="material-icons">timelines</FontIcon>
@@ -497,7 +497,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('StackedArea')
                 } }>
                 <SvgIcon style={{height:"24px",width:"24px"}} >
@@ -523,7 +523,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                         marginRight:"3px",
                     }
                 }
-                onTouchTap={ e => {
+                onClick={ e => {
                     this.onChangeChartCode('Proportional')
                 } }>
                 <FontIcon className="material-icons">view_stream</FontIcon>
@@ -599,7 +599,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ (e) => {
+                    onClick={ (e) => {
                         this.onToggleDelta()
                     } }>
                     <FontIcon className="material-icons">change_history</FontIcon>
@@ -633,7 +633,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onToggleNet()
                     } }>
                     <FontIcon className="material-icons">exposure</FontIcon>
@@ -667,7 +667,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onToggleVariance()
                     } }>
                     <FontIcon className="material-icons">exposure</FontIcon>
@@ -712,7 +712,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onDataTable(e)
                     } }>
                     <FontIcon className="material-icons">view_list</FontIcon>
@@ -751,7 +751,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
                             marginRight:"3px",
                         }
                     }
-                    onTouchTap={ e => {
+                    onClick={ e => {
                         this.onHarmonize()
                     } }>
                     <FontIcon className="material-icons">swap_horiz</FontIcon>
@@ -902,7 +902,7 @@ class ExplorerCell extends Component<ExplorerCellProps, any> {
 
                 <IconButton tooltip="Information"
                     tooltipPosition="top-center"
-                    onTouchTap = {() => {
+                    onClick = {() => {
                         this.props.onCallAnalystNotes(viewpoint,nodepath)
                     }}
                     style = {

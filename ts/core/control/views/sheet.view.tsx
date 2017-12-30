@@ -242,14 +242,14 @@ class SheetView extends React.Component<any,any> {
           <FloatingActionButton 
               mini={true} 
               style={{marginRight:'20px',zIndex:2}}
-              onTouchTap = { this.toggleEdit }
+              onClick = { this.toggleEdit }
           >
               {this.state.editorReadonly?<ContentEdit />:<Done />}
           </FloatingActionButton>
           <FloatingActionButton 
               mini={true} 
               style={{marginRight:'20px',zIndex:2}}
-              onTouchTap = { this.onDownload }
+              onClick = { this.onDownload }
           >
               <FileDownload />
           </FloatingActionButton>

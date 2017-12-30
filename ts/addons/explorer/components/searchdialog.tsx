@@ -572,7 +572,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ this.onRequestClose } >
+                onClick={ this.onRequestClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -601,10 +601,10 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
 
             <div>
                 <RaisedButton disabled = { !this.findSelection.known }
-                    onTouchTap = {this.findApplyChart}
+                    onClick = {this.findApplyChart}
                     label="Apply" primary={ true } style={{marginRight:"50px"}} />
                 <RaisedButton disabled = { false }
-                    onTouchTap = {this.onRequestClose}
+                    onClick = {this.onRequestClose}
                     label="Cancel" secondary={true} />
             </div>
             <div style={{height:'200px'}}></div>

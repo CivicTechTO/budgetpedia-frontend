@@ -536,7 +536,7 @@ let Explorer = class extends Component {
                         width: "36px",
                         position: "absolute",
                         zIndex: 2,
-                    }, onTouchTap: () => {
+                    }, onClick: () => {
                         this.setState({
                             viewTaxonomyDialogOpen: false,
                         });
@@ -566,7 +566,7 @@ let Explorer = class extends Component {
                     width: "36px",
                     position: "absolute",
                     zIndex: 2,
-                }, onTouchTap: () => {
+                }, onClick: () => {
                     this.setState({
                         analystNotesDialogOpen: false,
                     });
@@ -850,9 +850,9 @@ let Explorer = class extends Component {
         }
     }
     render() {
-        let showhelp = React.createElement(RaisedButton_1.default, { label: "Help", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: this.handleDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "help_outline") });
-        let showanalystnotes = React.createElement(RaisedButton_1.default, { label: "Latest Analyst Notes", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: () => { this.onCallAnalystNotes('FUNCTIONAL', []); } });
-        let showvideos = React.createElement(RaisedButton_1.default, { label: "Videos", style: { margin: '3px 6px 0 6px' }, type: "button", onTouchTap: () => {
+        let showhelp = React.createElement(RaisedButton_1.default, { label: "Help", style: { margin: '3px 6px 0 6px' }, type: "button", onClick: this.handleDialogOpen, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5' }, className: "material-icons" }, "help_outline") });
+        let showanalystnotes = React.createElement(RaisedButton_1.default, { label: "Latest Analyst Notes", style: { margin: '3px 6px 0 6px' }, type: "button", onClick: () => { this.onCallAnalystNotes('FUNCTIONAL', []); } });
+        let showvideos = React.createElement(RaisedButton_1.default, { label: "Videos", style: { margin: '3px 6px 0 6px' }, type: "button", onClick: () => {
                 this.logEvent({
                     category: 'Explorer',
                     action: 'Show videos',
@@ -869,7 +869,7 @@ let Explorer = class extends Component {
                     width: "36px",
                     position: "absolute",
                     zIndex: 2,
-                }, onTouchTap: explorer.handleDialogClose },
+                }, onClick: explorer.handleDialogClose },
                 React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
             helpcontent_1.default);
         let branchSegments = () => {
@@ -913,14 +913,14 @@ let Explorer = class extends Component {
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right",
                                 marginRight: "30px"
-                            }, disabled: (branchIndex == (budgetBranches.length - 1)), onTouchTap: (uid => ev => {
+                            }, disabled: (branchIndex == (budgetBranches.length - 1)), onClick: (uid => ev => {
                                 ev.stopPropagation();
                                 this.branchMoveDown(uid);
                             })(budgetBranch.uid), tooltip: "Move down" },
                             React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "arrow_downward")),
                         React.createElement(IconButton_1.default, { style: {
                                 float: "right"
-                            }, disabled: (branchIndex == 0), onTouchTap: (uid => ev => {
+                            }, disabled: (branchIndex == 0), onClick: (uid => ev => {
                                 ev.stopPropagation();
                                 this.branchMoveUp(uid);
                             })(budgetBranch.uid), tooltip: "Move up" },
@@ -928,11 +928,11 @@ let Explorer = class extends Component {
                     React.createElement(Card_1.CardText, { expandable: false },
                         React.createElement(explorerbranch_1.default, { budgetBranch: budgetBranch, declarationData: explorer.props.declarationData, globalStateActions: actionFunctions, urlparms: urlparms, clearUrlParms: this.clearUrlParms, clearStories: this.clearStories, setToast: this.setToast, handleSearchDialogOpen: this.handleSearchDialogOpen, onCallAnalystNotes: this.onCallAnalystNotes, onCallViewTaxonomy: this.onCallViewTaxonomy })),
                     React.createElement(Card_1.CardActions, { expandable: false },
-                        React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
+                        React.createElement(FloatingActionButton_1.default, { onClick: (uid => () => {
                                 this.addBranch(uid);
                             })(budgetBranch.uid) },
                             React.createElement(add_1.default, null)),
-                        (budgetBranches.length > 1) ? React.createElement(FloatingActionButton_1.default, { onTouchTap: (uid => () => {
+                        (budgetBranches.length > 1) ? React.createElement(FloatingActionButton_1.default, { onClick: (uid => () => {
                                 this.removeBranch(uid);
                             })(budgetBranch.uid), secondary: true },
                             React.createElement(remove_1.default, null)) : null));
@@ -992,8 +992,8 @@ let Explorer = class extends Component {
                                 React.createElement(MenuItem_1.default, { value: "CORPORATE", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Corporate Accounts (Finance)") }),
                                 React.createElement(MenuItem_1.default, { disabled: true, value: 'SPECIAL', primaryText: React.createElement("div", { style: { fontWeight: 'bold' } }, "Special Analytics") }),
                                 React.createElement(MenuItem_1.default, { value: "STAFFING", primaryText: React.createElement("div", { style: { paddingLeft: "20px" } }, "Staffing costs") })),
-                            React.createElement(RaisedButton_1.default, { disabled: this.state.selectStoryboard == 'SELECT', type: "button", style: { margin: '3px 6px 0 0', verticalAlign: '23px' }, label: "Share", onTouchTap: this.shareStoryboard, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }),
-                            React.createElement(RaisedButton_1.default, { style: { verticalAlign: '25px' }, type: "button", label: "Reset", onTouchTap: () => {
+                            React.createElement(RaisedButton_1.default, { disabled: this.state.selectStoryboard == 'SELECT', type: "button", style: { margin: '3px 6px 0 0', verticalAlign: '23px' }, label: "Share", onClick: this.shareStoryboard, labelPosition: "before", icon: React.createElement(FontIcon_1.default, { style: { color: 'rgba(0,0,0,0.5)' }, className: "material-icons" }, "share") }),
+                            React.createElement(RaisedButton_1.default, { style: { verticalAlign: '25px' }, type: "button", label: "Reset", onClick: () => {
                                     this.resetBranches();
                                 } })),
                         React.createElement("div", null,

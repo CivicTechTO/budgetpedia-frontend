@@ -441,7 +441,7 @@ let SearchDialog = class extends Component {
                         width: "36px",
                         position: "absolute",
                         zIndex: 2,
-                    }, onTouchTap: this.onRequestClose },
+                    }, onClick: this.onRequestClose },
                     React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", { style: { padding: "8px" } },
                     React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
@@ -454,8 +454,8 @@ let SearchDialog = class extends Component {
                         React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),
                         React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.sourcedisplay))),
                 React.createElement("div", null,
-                    React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onTouchTap: this.findApplyChart, label: "Apply", primary: true, style: { marginRight: "50px" } }),
-                    React.createElement(RaisedButton_1.default, { disabled: false, onTouchTap: this.onRequestClose, label: "Cancel", secondary: true })),
+                    React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onClick: this.findApplyChart, label: "Apply", primary: true, style: { marginRight: "50px" } }),
+                    React.createElement(RaisedButton_1.default, { disabled: false, onClick: this.onRequestClose, label: "Cancel", secondary: true })),
                 React.createElement("div", { style: { height: '200px' } }));
         };
     }

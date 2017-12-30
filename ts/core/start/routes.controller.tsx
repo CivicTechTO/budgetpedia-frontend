@@ -58,7 +58,7 @@ let RoutesController = class extends Component<any,any> {
 
         this.props.history.listen(this.historyListener)        
         // global function to deal with markdown local links
-        window['budgetpedia_global'] = {
+        window['storybuilder_global'] = {
 
             navigateViaRouter :(event) => {
                 let target = event.currentTarget
@@ -73,7 +73,7 @@ let RoutesController = class extends Component<any,any> {
 
     componentWillUnmount() {
 
-        delete window['budgetpedia_global']
+        delete window['storybuilder_global']
 
     }
 

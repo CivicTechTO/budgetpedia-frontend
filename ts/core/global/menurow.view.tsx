@@ -30,7 +30,7 @@ export class MenuRowView extends React.Component<Props, any> {
 
             <MenuItem 
 
-                onTouchTap={ this.pushHistory }
+                onClick={ this.pushHistory }
                 primaryText = {this.props.primaryText}
                 leftIcon = {<img src={this.props.image}/>}
                 disabled = {this.props.disabled?true:false}>

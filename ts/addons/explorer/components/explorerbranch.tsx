@@ -1707,7 +1707,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     disabled = {!isvalidurl}
                     type="button"
                     label="Source"
-                    onTouchTap={
+                    onClick={
                         () => {
                             isvalidurl?this.openwindow(link):void(0)
                         }
@@ -2007,7 +2007,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ branch.handleSelectionsDialogClose } >
+                onClick={ branch.handleSelectionsDialogClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -2033,7 +2033,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         <RaisedButton label="Done" 
             style={{margin:'3px 6px 0 0',float:'right'}}
-            onTouchTap={branch.handleSelectionsDialogClose} 
+            onClick={branch.handleSelectionsDialogClose} 
         />
 
         <div></div>
@@ -2060,7 +2060,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ branch.handleNoticeDialogClose } >
+                onClick={ branch.handleNoticeDialogClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -2097,7 +2097,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                     position: "absolute",
                     zIndex: 2,
                 }}
-                onTouchTap={ branch.handleTechDialogClose } >
+                onClick={ branch.handleTechDialogClose } >
 
                 <FontIcon
                     className="material-icons"
@@ -2127,7 +2127,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             style={{margin:'3px 6px 0 0'}}
             type="button"
             label="Sources"
-            onTouchTap={branch.handleTechDialogOpen} 
+            onClick={branch.handleTechDialogOpen} 
             labelPosition="before"
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5'}}
@@ -2139,7 +2139,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             style={{margin:'3px 6px 0 0'}}
             type="button"
             label="Notices"
-            onTouchTap={branch.handleNoticeDialogOpen} 
+            onClick={branch.handleNoticeDialogOpen} 
             labelPosition="before"
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5'}}
@@ -2151,7 +2151,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             label = "Selections"
             style={{margin:'3px 6px 0 0'}}
             type="button"
-            onTouchTap={branch.handleSelectionsDialogOpen} 
+            onClick={branch.handleSelectionsDialogOpen} 
             labelPosition="before"
             icon ={<FontIcon 
                 style={{color:'rgba(0,0,0,0.5'}}
@@ -2163,7 +2163,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             label = "Workspace tree"
             style={{margin:'3px 6px 0 0'}}
             type="button"
-            onTouchTap = { () => {
+            onClick = { () => {
                 let viewpointselection = {
                     viewpoint:branchDeclaration.viewpoint,
                     name:this.taxonomychoices[branchDeclaration.viewpoint]
@@ -2184,7 +2184,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             label = "Search"
             style={{margin:'3px 6px 0 0'}}
             type="button"
-            onTouchTap = { this.handleSearch }
+            onClick = { this.handleSearch }
             labelPosition="before"
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5)'}}
@@ -2196,7 +2196,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             type="button"
             style={{margin:'3px 6px 0 0'}}
             label="Share"
-            onTouchTap={this.shareBranch} 
+            onClick={this.shareBranch} 
             labelPosition="before"
             icon = {<FontIcon 
                 style={{color:'rgba(0,0,0,0.5)'}}

@@ -148,7 +148,7 @@ class DataTable extends Component<DataTableProps, any> {
                     zIndex: 2,
                 }}
                 tooltip = "close"
-                onTouchTap={ this.onRequestClose } >
+                onClick={ this.onRequestClose } >
                 <FontIcon
                     className="material-icons"
                     style = {{ cursor: "pointer" }} >
