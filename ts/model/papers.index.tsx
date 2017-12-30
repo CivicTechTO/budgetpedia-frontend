@@ -24,8 +24,11 @@ let insiderview = {
             index:'insiderlist',
             description:'first',
             properties:{
-                headermarkup:``,
+                headermarkup:`This is an item list header`,
                 items:[
+                    {
+                        content:`first item`
+                    }
                 ]
             },
         },
