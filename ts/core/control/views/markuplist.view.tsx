@@ -1,29 +1,51 @@
 // markuplist.view.tsx
 
 // TODO allow for sublists = isSublist property in item
+// allow for horizontal presentation of fields
 
 import * as React from 'react'
 
 import MarkupBlockView from './markupblock.view'
 import MarkupLineView from './markupline.view'
+let moment = require('moment')
 
-let Fields = ({fields}) => {
+let Fields = ({fields,fieldproperties,fieldmeta}) => {
     let fieldlist = []
     for (let index in fields) {
         let field = fields[index]
-        let {name, content} = field
+        let name
+        let content 
+        if (!fieldproperties.commonstructure) {
+            name = field.name
+            content = field.content
+        } else {
+            name = fieldmeta[index].name
+            content = field
+        }
+        if (fieldmeta[index].type == 'date') {
+            content = moment(content,fieldmeta[index].layout).format(fieldmeta[index].format)
+        }
         fieldlist.push(
-            <div key = {index} >
-                <span style = {{fontStyle:'italic'}} >{name}: </span>
-                <MarkupLineView markup = {content} />
+            <div key = {index} style = {
+                {
+                    display:'inline',
+                    borderRight:'1px solid silver',
+                    paddingRight:'8px',
+                    marginRight:'8px',
+                }
+            }>
+                <div style = {{fontStyle:'italic',display:'inline'}} >{name}: </div>
+                <MarkupLineView markup = {content} style={{display:'inline'}} />
             </div>
         )
     }
     if (!fieldlist.length) return null
-    return <div>{fieldlist}</div>
+    return <div style = {{marginBottom:'8px'}}>{fieldlist}</div>
 }
 
-let MarkupListView = ({headermarkup,items}) => {
+let MarkupListView = ({fieldproperties,fieldmeta,headermarkup,items}) => {
+
+    console.log('fieldproperties,fieldmeta,headermarkup,items',fieldproperties,fieldmeta,headermarkup,items)
 
     let headercontent = () => {
 
@@ -37,7 +59,7 @@ let MarkupListView = ({headermarkup,items}) => {
         let itemlist = items.map(( item, index ) => {
             return <li key = { index } >
                 {item.content?<MarkupBlockView markup = {item.content} />:null}
-                {item.fields?<Fields fields = {item.fields} />:null}
+                {item.fields?<Fields fields = {item.fields} fieldproperties = {fieldproperties} fieldmeta = {fieldmeta} />:null}
                 {item.suffix?<MarkupBlockView markup = {item.suffix} />:null}
             </li>
         })

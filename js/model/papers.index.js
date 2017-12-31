@@ -24,35 +24,82 @@ let insiderview = {
             index: 'insiderlist',
             description: 'first',
             properties: {
-                headermarkup: `This is an item list header`,
+                fieldproperties: {
+                    horizontal: true,
+                    commonstructure: true,
+                },
+                fieldmeta: {
+                    date: {
+                        type: 'date',
+                        layout: 'YYYY-MM-DD',
+                        format: 'LL',
+                        name: 'Date',
+                    },
+                    budget_type: {
+                        name: 'Budget Type',
+                    },
+                    budget_event: {
+                        name: 'Event',
+                    },
+                    public: {
+                        name: 'Public',
+                    },
+                },
+                headermarkup: `
+### Preparation
+
+#### Analyst meetings and preliminary budget creation at the program level
+
+The first phase of budget production begins with analyst meetings, and continues with creation of preliminary budgets.
+`,
                 items: [
                     {
-                        content: `first item`,
                         fields: {
-                            first: {
-                                name: 'First Field',
-                                content: '**something**'
-                            },
-                            second: {
-                                name: 'Second Field',
-                                content: '**something else**'
-                            },
+                            date: "2015-5-19",
+                            budget_type: "Capital",
+                            budget_event: "Financial Planning Division Analyst Meetings with Programs to identify and resolve issues",
+                            public: "No",
                         },
-                        suffix: `## something`,
                     },
                     {
-                        content: `second item`,
                         fields: {
-                            first: {
-                                name: 'First Field',
-                                content: '**in second something**'
-                            },
-                            second: {
-                                name: 'Second Field',
-                                content: '**in second something else**'
-                            },
+                            date: "2015-5-19",
+                            budget_type: "Operating",
+                            budget_event: "Financial Planning Division Analyst Meetings with Programs to identify and resolve issues",
+                            public: "No",
                         },
-                        suffix: `## second something`,
+                    },
+                    {
+                        fields: {
+                            date: "2015-5-29",
+                            budget_type: "Rate",
+                            budget_event: "Financial Planning Division Analyst Meetings with Programs to identify and resolve issues",
+                            public: "No",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2015-6-5",
+                            budget_type: "Rate",
+                            budget_event: "Operating Budget (Pre-Submission Shared Stage)",
+                            public: "No",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2015-6-5",
+                            budget_type: "Operating",
+                            budget_event: "Operating Budget (Pre-Submission Shared Stage)",
+                            public: "No",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2015-6-15",
+                            budget_type: "All",
+                            budget_event: "Preliminary Budget Submission Deadline",
+                            public: "No",
+                        },
                     },
                 ],
             },
