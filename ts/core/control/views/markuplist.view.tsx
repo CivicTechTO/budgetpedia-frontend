@@ -1,5 +1,7 @@
 // markuplist.view.tsx
 
+// TODO allow for sublists = isSublist property in item
+
 import * as React from 'react'
 
 import MarkupBlockView from './markupblock.view'
