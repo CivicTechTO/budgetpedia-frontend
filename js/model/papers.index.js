@@ -46,7 +46,7 @@ let insiderview = {
                     },
                 },
                 headermarkup: `
-### Phase One: Preparation
+### Phase One: Internal Preparation
 
 #### Analyst meetings and preliminary budget creation at the program level
 
@@ -132,7 +132,7 @@ The first phase of budget production begins with analyst meetings, and continues
                     },
                 },
                 headermarkup: `
-### Phase Two: Reviews
+### Phase Two: Internal Reviews
 
 #### Internal round of reviews
 
@@ -266,7 +266,7 @@ This is also done behind closed doors. Note that standing committee reviews have
                     },
                 },
                 headermarkup: `
-### Phase Three: Assessments
+### Phase Three: Budget Committee Assessments
 
 #### Initial Assessments
 
@@ -328,7 +328,7 @@ Note that the bulk of the budget development has been completed by this time.
             controller: 'list',
             type: 'markuplist',
             index: 'insiderlist4',
-            description: 'third',
+            description: 'fourth',
             properties: {
                 fieldproperties: {
                     horizontal: true,
@@ -370,137 +370,18 @@ of listings below is the scheduling of meetings in various parts of the City.
                 items: [
                     {
                         fields: {
-                            budget_type: "Rate",
-                            budget_event: "Public Presentations (**Budget Committee**)",
                             date: "2015-11-13",
-                            location: "Committee Room 1, City Hall, 100 Queen Street West",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Operating",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-12",
-                            location: "Committee Room 1, City Hall, 100 Queen Street West",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Operating",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-13",
-                            time: "3pm and 6pm",
-                            location: "Scarborough Civic Centre, Council Chamber 150 Borough Dr",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Operating",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-14",
-                            time: "3pm and 6pm",
-                            location: "East York Civic Centre, Council Chamber, 850 Coxwell Ave",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Operating",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-12",
-                            time: "3pm and 6pm",
-                            location: "Etobicoke Civic Centre, Council Chamber, 399 The West Mall",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Operating",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-13",
-                            time: "3pm and 6pm",
-                            location: "North York Civic Centre, Council Chamber, 5100 Yonge Str",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Operating",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-14",
-                            time: "3pm and 6pm",
-                            location: "York Civic Centre, Council Chamber, 2700 Eglinton Ave W",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Capital",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-12",
-                            time: "9:30am and 6pm",
-                            location: "Committee Room 1, City Hall, 100 Queen Street West",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Capital",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-13",
-                            time: "3pm and 6pm",
-                            location: "Scarborough Civic Centre, Council Chamber, 150 Borough Dr",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Capital",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-14",
-                            time: "3pm and 6pm",
-                            location: "East York Civic Centre, Council Chamber, 850 Coxwell Ave",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Capital",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-12",
-                            time: "3pm and 6pm",
-                            location: "Etobicoke Civic Centre, Council Chamber, 399 The West Mall",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Capital",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-13",
-                            time: "3pm and 6pm",
-                            location: "North York Civic Centre, Council Chamber, 5100 Yonge Str",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
-                            budget_type: "Capital",
-                            budget_event: "Public Presentations (**Budget Committee**)",
-                            date: "2016-1-14",
-                            time: "3pm and 6pm",
-                            location: "York Civic Centre, Council Chamber, 2700 Eglinton Ave W",
-                            public: "Yes",
-                        },
-                    },
-                    {
-                        fields: {
                             budget_type: "Rate",
-                            budget_event: "User Fee Town Hall Meeting",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            location: "Committee Room 1, City Hall, 100 Queen Street West",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
                             date: "2016-1-11",
+                            budget_type: "Rate",
+                            budget_event: "User Fee **Town Hall** Meeting",
                             time: "6:00 PM",
                             location: "Committee Room 2, City Hall, 100 Queen Street West",
                             public: "Yes",
@@ -509,21 +390,176 @@ of listings below is the scheduling of meetings in various parts of the City.
                     },
                     {
                         fields: {
+                            date: "2016-1-12",
                             budget_type: "Operating",
-                            budget_event: "**Budget Committee** Wrap-up",
-                            date: "2016-1-18",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            location: "Committee Room 1, City Hall, 100 Queen Street West",
                             public: "Yes",
                         },
                     },
                     {
                         fields: {
+                            date: "2016-1-13",
+                            budget_type: "Operating",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "Scarborough Civic Centre, Council Chamber 150 Borough Dr",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-14",
+                            budget_type: "Operating",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "East York Civic Centre, Council Chamber, 850 Coxwell Ave",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-12",
+                            budget_type: "Operating",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "Etobicoke Civic Centre, Council Chamber, 399 The West Mall",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-13",
+                            budget_type: "Operating",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "North York Civic Centre, Council Chamber, 5100 Yonge Str",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-14",
+                            budget_type: "Operating",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "York Civic Centre, Council Chamber, 2700 Eglinton Ave W",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-12",
+                            budget_type: "Capital",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "9:30am and 6pm",
+                            location: "Committee Room 1, City Hall, 100 Queen Street West",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-13",
+                            budget_type: "Capital",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "Scarborough Civic Centre, Council Chamber, 150 Borough Dr",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-14",
+                            budget_type: "Capital",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "East York Civic Centre, Council Chamber, 850 Coxwell Ave",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-12",
+                            budget_type: "Capital",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "Etobicoke Civic Centre, Council Chamber, 399 The West Mall",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-13",
+                            budget_type: "Capital",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "North York Civic Centre, Council Chamber, 5100 Yonge Str",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-14",
+                            budget_type: "Capital",
+                            budget_event: "Public Presentations (**Budget Committee**)",
+                            time: "3pm and 6pm",
+                            location: "York Civic Centre, Council Chamber, 2700 Eglinton Ave W",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-18",
+                            budget_type: "Operating",
+                            budget_event: "**Budget Committee** Wrap-up",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-18",
                             budget_type: "Capital",
                             budget_event: "**Budget Committee** Wrap-up",
-                            date: "2016-1-18",
                             public: "Yes",
                         },
                     },
                 ],
+            },
+        },
+        {
+            controller: 'list',
+            type: 'markuplist',
+            index: 'insiderlist5',
+            description: 'fifth',
+            properties: {
+                fieldproperties: {
+                    horizontal: true,
+                    commonstructure: true,
+                },
+                fieldmeta: {
+                    date: {
+                        type: 'date',
+                        layout: 'YYYY-MM-DD',
+                        format: 'LL',
+                        name: 'Date',
+                    },
+                    budget_type: {
+                        name: 'Budget Type',
+                    },
+                    budget_event: {
+                        name: 'Event',
+                    },
+                    public: {
+                        name: 'Public',
+                    },
+                },
+                headermarkup: `
+### Phase Five: Council Adoption of Budgets
+
+These are the final meetings which result in adopted budgets.
+
+`,
+                items: [],
             },
         },
     ],
