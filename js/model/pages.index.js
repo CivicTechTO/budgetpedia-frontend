@@ -44,6 +44,19 @@ let pages = {
                 description: 'description of notes',
                 type: 'section',
                 tag: 'Insider Notes',
+                narrative: {
+                    "paper:insiderview": `Two things are clear. The budget is created mainly by the City of Toronto's professional elite, with senior managers.
+Secondly, the corollary is true: vast opportunities for collaboration are being ignored -- among councillors,
+with front-line staff, probably among managers, and with the public, including specific consituencies.
+
+This list of events is worth scanning, in spite of its length, to get a sense of the players involved, and the nature
+of the process.`
+                },
+                followup: {
+                    "paper:insiderview": `For the City of Toronto's information about the budget, see the City's [budget website](https://www.toronto.ca/city-government/budget-finances/city-budget/                
+).
+`
+                },
                 properties: {
                     title: "Insider Notes",
                     description: `One of our volunteers assembled these detailed notes in 2016, 

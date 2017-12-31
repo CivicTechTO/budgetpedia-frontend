@@ -15,7 +15,20 @@ let insiderview = {
             index: 'introduction',
             description: 'introduction of insider data',
             properties: {
-                markup: `## test`,
+                markup: `## Detailed listing of budget creation process events
+
+This provides rare deeper insight into the budget creation process. For ease of comprehension, 
+we've divided the process into five phases: _internal preparation_, _internal reviews_, 
+_budget committee assessments_, _public commentary_, and _council adoption_.
+
+Prior to these phases would be internal strategizing among senior staff, the mayor, and some councillors.
+
+As well as the items listed here, the Budget committee has a meeting in May of 2015 to discuss
+recommendations for the budget process.
+
+Since 2017 the Budget Committee has taken to having a public meeting giving budget direction for 
+the following year's budget.
+`,
             },
         },
         {
@@ -556,10 +569,88 @@ of listings below is the scheduling of meetings in various parts of the City.
                 headermarkup: `
 ### Phase Five: Council Adoption of Budgets
 
-These are the final meetings which result in adopted budgets.
-
+These are the final meetings which result in adopted budgets. Note that the _rate supported_ budgets
+are adopted in the previous year.
 `,
-                items: [],
+                items: [
+                    {
+                        fields: {
+                            date: "2015-12-1",
+                            budget_type: "Rate",
+                            budget_event: "Special **Executive Committee**",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2015-12-9",
+                            budget_type: "Rate",
+                            budget_event: "Special **City Council**",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-26",
+                            budget_type: "Operating",
+                            budget_event: "**Budget Committee** Final Wrap-up",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-1-26",
+                            budget_type: "Capital",
+                            budget_event: "**Budget Committee** Final Wrap-up",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-2-9",
+                            budget_type: "Operating",
+                            budget_event: "**Special Executive** Committee",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-2-9",
+                            budget_type: "Capital",
+                            budget_event: "**Special Executive** Committee",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-2-17",
+                            budget_type: "Operating",
+                            budget_event: "Special **City Council**",
+                            public: "Yes",
+                        },
+                    },
+                    {
+                        fields: {
+                            date: "2016-2-17",
+                            budget_type: "Capital",
+                            budget_event: "Special **City Council**",
+                            public: "Yes",
+                        },
+                    }
+                ],
+            },
+        },
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'finalword',
+            description: 'note about budget types',
+            properties: {
+                markup: `Note: _rate suported_ budgets include waste, water, and parking, because these programs are completely
+supported by user fees. All other programs are called _tax supported_ (or above "_operating_") budgets
+because they are supported to some degree by property taxes. Council has decided to process these
+two groups separately, taking more interest (presumably for political reasons) in the tax supported budgets.
+`,
             },
         },
     ],
