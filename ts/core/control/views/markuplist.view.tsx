@@ -15,6 +15,7 @@ let Fields = ({fields,fieldproperties,fieldmeta}) => {
         let field = fields[index]
         let name
         let content 
+        // console.log('index, fields',index, fields)
         if (!fieldproperties.commonstructure) {
             name = field.name
             content = field.content
