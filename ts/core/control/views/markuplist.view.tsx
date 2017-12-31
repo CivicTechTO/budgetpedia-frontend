@@ -25,15 +25,18 @@ let Fields = ({fields,fieldproperties,fieldmeta}) => {
         if (fieldmeta[index].type == 'date') {
             content = moment(content,fieldmeta[index].layout).format(fieldmeta[index].format)
         }
-        fieldlist.push(
-            <div key = {index} style = {
+        let rowstyle = null
+        if (fieldproperties.horizontal) {
+            rowstyle = 
                 {
                     display:'inline',
                     borderRight:'1px solid silver',
                     paddingRight:'8px',
                     marginRight:'8px',
                 }
-            }>
+        }
+        fieldlist.push(
+            <div key = {index} style = {rowstyle}>
                 <div style = {{fontStyle:'italic',display:'inline'}} >{name}: </div>
                 <MarkupLineView markup = {content} style={{display:'inline'}} />
             </div>
@@ -44,8 +47,6 @@ let Fields = ({fields,fieldproperties,fieldmeta}) => {
 }
 
 let MarkupListView = ({fieldproperties,fieldmeta,headermarkup,items}) => {
-
-    console.log('fieldproperties,fieldmeta,headermarkup,items',fieldproperties,fieldmeta,headermarkup,items)
 
     let headercontent = () => {
 

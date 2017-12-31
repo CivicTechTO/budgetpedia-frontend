@@ -59,7 +59,7 @@ The first phase of budget production begins with analyst meetings, and continues
                         fields:{
                             date: "2015-5-19",
                             budget_type: "Capital",
-                            budget_event: "Financial Planning Division Analyst Meetings with Programs to identify and resolve issues",
+                            budget_event: "**Financial Planning Division Analyst** Meetings with **Program pesonnel** to identify and resolve issues",
                             public: "No",
                         },
                     },
@@ -67,7 +67,7 @@ The first phase of budget production begins with analyst meetings, and continues
                         fields:{
                             date: "2015-5-19",
                             budget_type: "Operating",
-                            budget_event: "Financial Planning Division Analyst Meetings with Programs to identify and resolve issues",
+                            budget_event: "**Financial Planning Division Analyst** Meetings with **Program personnel** to identify and resolve issues",
                             public: "No",
                         },
                     },
@@ -75,7 +75,7 @@ The first phase of budget production begins with analyst meetings, and continues
                         fields:{
                             date: "2015-5-29",
                             budget_type: "Rate",
-                            budget_event: "Financial Planning Division Analyst Meetings with Programs to identify and resolve issues",
+                            budget_event: "**Financial Planning Division Analyst** Meetings with **Program personnel** to identify and resolve issues",
                             public: "No",
                         },
                     },

@@ -21,12 +21,17 @@ let Fields = ({ fields, fieldproperties, fieldmeta }) => {
         if (fieldmeta[index].type == 'date') {
             content = moment(content, fieldmeta[index].layout).format(fieldmeta[index].format);
         }
-        fieldlist.push(React.createElement("div", { key: index, style: {
-                display: 'inline',
-                borderRight: '1px solid silver',
-                paddingRight: '8px',
-                marginRight: '8px',
-            } },
+        let rowstyle = null;
+        if (fieldproperties.horizontal) {
+            rowstyle =
+                {
+                    display: 'inline',
+                    borderRight: '1px solid silver',
+                    paddingRight: '8px',
+                    marginRight: '8px',
+                };
+        }
+        fieldlist.push(React.createElement("div", { key: index, style: rowstyle },
             React.createElement("div", { style: { fontStyle: 'italic', display: 'inline' } },
                 name,
                 ": "),
@@ -37,7 +42,6 @@ let Fields = ({ fields, fieldproperties, fieldmeta }) => {
     return React.createElement("div", { style: { marginBottom: '8px' } }, fieldlist);
 };
 let MarkupListView = ({ fieldproperties, fieldmeta, headermarkup, items }) => {
-    console.log('fieldproperties,fieldmeta,headermarkup,items', fieldproperties, fieldmeta, headermarkup, items);
     let headercontent = () => {
         return React.createElement(markupblock_view_1.default, { markup: headermarkup });
     };
