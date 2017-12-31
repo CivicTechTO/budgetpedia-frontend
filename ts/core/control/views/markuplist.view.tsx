@@ -5,9 +5,23 @@ import * as React from 'react'
 import MarkupBlockView from './markupblock.view'
 import MarkupLineView from './markupline.view'
 
-let MarkupListView = ({headermarkup,items}) => {
+let Fields = ({fields}) => {
+    let fieldlist = []
+    for (let index in fields) {
+        let field = fields[index]
+        let {name, content} = field
+        fieldlist.push(
+            <div key = {index} >
+                <span style = {{fontStyle:'italic'}} >{name}: </span>
+                <MarkupLineView markup = {content} />
+            </div>
+        )
+    }
+    if (!fieldlist.length) return null
+    return <div>{fieldlist}</div>
+}
 
-    console.log('headermarkup, items',headermarkup, items)
+let MarkupListView = ({headermarkup,items}) => {
 
     let headercontent = () => {
 
@@ -18,9 +32,11 @@ let MarkupListView = ({headermarkup,items}) => {
     // allow sublist
     // content, fields, suffix, isSublist
     let itemcontent = items => {
-        let itemlist = items.map((item,index) => {
-            return <li>
-                <MarkupBlockView markup = {item.content} />
+        let itemlist = items.map(( item, index ) => {
+            return <li key = { index } >
+                {item.content?<MarkupBlockView markup = {item.content} />:null}
+                {item.fields?<Fields fields = {item.fields} />:null}
+                {item.suffix?<MarkupBlockView markup = {item.suffix} />:null}
             </li>
         })
         return (

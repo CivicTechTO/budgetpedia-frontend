@@ -16,7 +16,7 @@ let insiderview = {
             description: 'introduction of insider data',
             properties: {
                 markup: `## test`,
-            }
+            },
         },
         {
             controller: 'list',
@@ -27,9 +27,34 @@ let insiderview = {
                 headermarkup: `This is an item list header`,
                 items: [
                     {
-                        content: `first item`
-                    }
-                ]
+                        content: `first item`,
+                        fields: {
+                            first: {
+                                name: 'First Field',
+                                content: '**something**'
+                            },
+                            second: {
+                                name: 'Second Field',
+                                content: '**something else**'
+                            },
+                        },
+                        suffix: `## something`,
+                    },
+                    {
+                        content: `second item`,
+                        fields: {
+                            first: {
+                                name: 'First Field',
+                                content: '**in second something**'
+                            },
+                            second: {
+                                name: 'Second Field',
+                                content: '**in second something else**'
+                            },
+                        },
+                        suffix: `## second something`,
+                    },
+                ],
             },
         },
     ],
