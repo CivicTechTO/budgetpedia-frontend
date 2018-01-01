@@ -91,7 +91,6 @@ let stories = {
     },
     type:'sheet',
     properties: {
-
     },
 }
 

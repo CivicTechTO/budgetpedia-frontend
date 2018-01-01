@@ -14,7 +14,32 @@ let councilprocess = {
             description:'review of council collaborative initiatives',
             properties: {
                 markup:
-`
+`## Needed: Teamwork on Council
+
+At a recent SPPG (School of Public Policy and Governance) 
+[event about Toronto's budget process](http://publicpolicy.utoronto.ca/better-budget-process-toronto/), 
+Councillor Carroll explained that the last time Councillors participated in a facilitated discussion 
+about common budget goals was 2004 (under Mayor Miller). She said it worked quite well.
+
+We have observed, with many others, that things haven't worked particularly well since then. Debate often seems to
+degrade into one side demanding _more_ money and the other demanding _less_. More or less an uninspired stalemate 
+(or what council recently termed a "status quo" budget).
+
+SPPG also convened a [_City Hall Task Force_](http://publicpolicy.utoronto.ca/events/cityhalltaskforce-2/) recently 
+with highly qualified members. They came up with a number of recommendations,
+centered around the notion that the Mayor's office lead with an annual vision of what the budget should accomplish.
+We concur that these ideas would help.
+
+Here is a diagram from that Task Force report 
+(_[A Practical Blueprint for Change](http://individual.utoronto.ca/eidelman/docs/City%20Hall%20Task%20Force%20Final%20Report.pdf)_), 
+which identifies some general goals that all councillors could consider embracing, as a group.
+
+<div style='text-align:center;font-size:smaller;font-style:italic'>
+
+![SPPG Task Force recommendations](/public/images/SPPG_TaskForce_Recommendations.png){style=max-width:75%}
+
+</div>
+
 `,
             }
         }
