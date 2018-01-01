@@ -29,6 +29,15 @@ recommendations for the budget process.
 
 Since 2017 the Budget Committee has taken to having a public meeting giving budget direction for 
 the following year's budget.
+
+<div style='background-color:#d3f8d3;border:1px solid silver;border-radius:8px;padding:0 8px'>
+
+**Financial Planning Division** [has informed us](https://drive.google.com/open?id=1y2l7HVCYWcVgl11umu60cAx9RlQtZTXa)
+via a Freedom of Information request that
+budget entries are made at the cost center level. There are 13,000 or so cost centres in the City of Toronto.
+We haven't seen any other details of this process, so we can't say how involved the front-line managers are.
+
+</div>
 `,
             },
         },
@@ -72,7 +81,7 @@ The first phase of budget production begins with analyst meetings, and continues
                         fields:{
                             date: "2015-5-19",
                             budget_type: "Capital",
-                            budget_event: "**Financial Planning Division Analyst** Meetings with **Program pesonnel** to identify and resolve issues",
+                            budget_event: "**Financial Planning Division Analyst** Meetings with **Program personnel** to identify and resolve issues",
                             public: "No",
                         },
                     },

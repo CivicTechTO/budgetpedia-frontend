@@ -47,12 +47,13 @@ let pages = {
                 tag:'Insider Notes',
                 narrative: {
                     "paper:insiderview":
-`Two things are clear. The budget is created mainly by the City of Toronto's professional elite, with senior managers.
-Secondly, the corollary is true: vast opportunities for collaboration are being ignored -- among councillors,
-with front-line staff, probably among managers, and with the public, including specific consituencies.
+`This list of events is worth scanning, in spite of its length, to get a sense of the players involved, and the nature
+of the process.
 
-This list of events is worth scanning, in spite of its length, to get a sense of the players involved, and the nature
-of the process.`
+We see very little collaboration in this process, beyond the professional elite and senior managers listed here.
+However we are told that budget entries are made for the 13,000 or so City cost centers. Hopefully this means at 
+least some collaboration with front-line staff, or at least front-line managers.
+`
                 },
                 followup: {
                     "paper:insiderview":

@@ -9,6 +9,7 @@ import HtmlView from './html.view'
 let mdit = require('markdown-it')
 let mda = require('markdown-it-attrs')
 let mdt = require('markdown-it-modify-token')
+let mdf = require('markdown-it-implicit-figures')
 let md = new mdit({html:true,
   modifyToken: function (token, env) {
     // see API https://markdown-it.github.io/markdown-it/#Token
@@ -30,7 +31,7 @@ let md = new mdit({html:true,
     }
   }
 })
-md.use(mda).use(mdt)
+md.use(mda).use(mdt).use(mdf,{figcaption:true})
 
 const MarkupBlock = ({markup,style}:{markup:string,style?:object}) => (
     <HtmlView style = {{...style}} html={md.render(markup)} />

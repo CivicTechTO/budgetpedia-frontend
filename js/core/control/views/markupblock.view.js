@@ -5,6 +5,7 @@ const html_view_1 = require("./html.view");
 let mdit = require('markdown-it');
 let mda = require('markdown-it-attrs');
 let mdt = require('markdown-it-modify-token');
+let mdf = require('markdown-it-implicit-figures');
 let md = new mdit({ html: true,
     modifyToken: function (token, env) {
         switch (token.type) {
@@ -20,6 +21,6 @@ let md = new mdit({ html: true,
         }
     }
 });
-md.use(mda).use(mdt);
+md.use(mda).use(mdt).use(mdf, { figcaption: true });
 const MarkupBlock = ({ markup, style }) => (React.createElement(html_view_1.default, { style: Object.assign({}, style), html: md.render(markup) }));
 exports.default = MarkupBlock;
