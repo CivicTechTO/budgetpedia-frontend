@@ -5,6 +5,24 @@ let pages = {
         controller: 'page',
         index: 'roadmap',
         type:'page',
+        attribution: {
+            custodian:{
+                name: 'Henrik Bechmann',
+                link: 'mailto:henrik@budgetpedia.ca',
+            },
+            authority:null,
+            creator:null,
+            updater:null,
+            contact:{
+                name:'mail@budgetpedia.ca',
+                link:'mailto:mail@budgetpedia.ca',
+            },
+            dates:{
+                created: '31-12-2017',
+                updated: '2-1-2018',
+            },
+        },
+        tags:null,
         properties: {
             title:'Toronto budget roadmap',
             description: 'Summary of Toronto budget processes over the years',
@@ -51,7 +69,7 @@ let pages = {
 of the process.
 
 We see very little collaboration in this process, beyond the professional elite and senior managers listed here.
-However we are told that budget entries are made for the 13,000 or so City cost centers. Hopefully this means at 
+However we are told that budget entries are made for the 13,000 or so City cost centers. We hope this means at 
 least some collaboration with front-line staff, or at least front-line managers.
 `
                 },
@@ -95,6 +113,18 @@ least some collaboration with front-line staff, or at least front-line managers.
                         paddingBottom: '1px',
                     },
                 },
+                children: [
+                    {
+                        controller:'paper',
+                        repo:'papers',
+                        index:'councilprocess',
+                    },
+                    {
+                        controller:'sheet',
+                        repo:'sheets',
+                        index:'councilservices',
+                    },
+                ],
             },
             {
                 controller:'section',
@@ -105,7 +135,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 tag:'Civil Society',
                 properties:{
                     title:"Civil Society",
-                    description: "Civil society tries to do its part, and fill the vacuum.",
+                    description: "Civil society tries to do its part, to fill the vacuum.",
                     style:{
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',
@@ -146,6 +176,13 @@ least some collaboration with front-line staff, or at least front-line managers.
                         paddingBottom: '1px',
                     },
                 },
+                children: [
+                    {
+                        controller: 'sheet',
+                        repo:'sheets',
+                        index:'opportunities',
+                    },
+                ],
             },
         ],
     },

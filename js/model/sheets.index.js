@@ -1,5 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let councilservices = {
+    controller: 'sheet',
+    index: 'councilservices',
+    description: 'describe council approach to budget process',
+    lookups: {
+        draftdata: {
+            repo: 'draft',
+            index: 'councilservices',
+        },
+    },
+    type: 'sheet',
+    properties: {},
+};
 let citybasics = {
     controller: 'sheet',
     index: 'citybasics',
@@ -66,6 +79,7 @@ let stories = {
     properties: {},
 };
 let sheets = {
+    councilservices,
     citybasics,
     cityprocess,
     concerns,

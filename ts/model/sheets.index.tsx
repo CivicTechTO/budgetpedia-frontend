@@ -1,5 +1,21 @@
 // sheets.index.tsx
 
+
+let councilservices = {
+    controller:'sheet',
+    index:'councilservices',
+    description: 'describe council approach to budget process',
+    lookups: {
+        draftdata: {
+            repo:'draft',
+            index:'councilservices',
+        },
+    },
+    type:'sheet',
+    properties:{
+    },
+}
+
 let citybasics = {
     controller:'sheet',
     index:'citybasics',
@@ -81,6 +97,7 @@ let stories = {
 
 
 let sheets = {
+    councilservices,
     citybasics,
     cityprocess,
     concerns,

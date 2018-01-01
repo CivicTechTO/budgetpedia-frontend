@@ -1,13 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let councilprocess = {
+    controller: 'paper',
+    index: 'insiderview',
+    description: 'describe insider details of budget process',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'collabortion',
+            description: 'review of council collaborative initiatives',
+            properties: {
+                markup: `
+`,
+            }
+        }
+    ],
+};
 let insiderview = {
     controller: 'paper',
     index: 'insiderview',
     description: 'describe insider details of budget process',
     type: 'paper',
-    properties: {
-        zDepth: 3,
-    },
     children: [
         {
             controller: 'paper',
@@ -21,7 +36,7 @@ This provides rare deeper insight into the budget creation process. For ease of 
 we've divided the process into five phases: _internal preparation_, _internal reviews_, 
 _budget committee assessments_, _public commentary_, and _council adoption_.
 
-Prior to these phases would be internal strategizing among senior staff, the mayor, and some councillors.
+Prior to these phases would be _internal strategizing_ among senior staff, the mayor, and some councillors.
 
 As well as the items listed here, the Budget committee has a meeting in May of 2015 to discuss
 recommendations for the budget process.
@@ -34,7 +49,7 @@ the following year's budget.
 **Financial Planning Division** [has informed us](https://drive.google.com/open?id=1y2l7HVCYWcVgl11umu60cAx9RlQtZTXa)
 via a Freedom of Information request that
 budget entries are made at the cost center level. There are 13,000 or so cost centres in the City of Toronto.
-We haven't seen any other details of this process, so we can't say how involved the front-line managers are.
+We haven't seen any other details of this process, so we can't say how this happens, or how involved the front-line managers are.
 
 </div>
 `,
@@ -666,5 +681,6 @@ two groups separately, taking more interest (presumably for political reasons) i
 };
 let papers = {
     insiderview,
+    councilprocess,
 };
 exports.default = papers;
