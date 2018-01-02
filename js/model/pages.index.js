@@ -40,7 +40,11 @@ let pages = {
                 },
                 properties: {
                     title: "Budget Roadmap",
-                    description: "This page is about how the Toronto budget is created, and _could_ be created, every year.",
+                    description: `This page is about how the Toronto budget is created, and _could_ be created, every year.
+
+The short story is that we think that more open-ness and collaborarion at all levels around
+the budget process would very likely lead to better outcomes for all.
+`,
                     style: {
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',
@@ -103,7 +107,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 tag: 'Council',
                 properties: {
                     title: "Council",
-                    description: "Councillors seemed to be going in a different direction at one time.",
+                    description: "Councillors seemed to be going in a different, better, direction at one time.",
                     style: {
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',
