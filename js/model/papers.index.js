@@ -14,6 +14,11 @@ let councilprocess = {
             properties: {
                 markup: `## Needed: Teamwork on Council
 
+<figure style = 'float:right;font-size:x-small;font-style:italic;margin:0 0 8px 8px'>
+<img src='/public/images/90c4-scarroll.jpg' style = 'width:80px' />
+<figcaption>Councillor Carroll</figcaption>
+</figure>
+
 At a recent SPPG (School of Public Policy and Governance) 
 [event about Toronto's budget process](http://publicpolicy.utoronto.ca/better-budget-process-toronto/), 
 Councillor Carroll explained that the last time Councillors participated in a facilitated discussion 
@@ -26,7 +31,7 @@ degrade into one side demanding _more_ money and the other demanding _less_. Mor
 SPPG also convened a [_City Hall Task Force_](http://publicpolicy.utoronto.ca/events/cityhalltaskforce-2/) recently 
 with highly qualified members. They came up with a number of recommendations,
 centered around the notion that the Mayor's office lead with an annual vision of what the budget should accomplish.
-We concur that these ideas would help.
+We concur that these ideas could help.
 
 Here is a diagram from that Task Force report 
 (_[A Practical Blueprint for Change](http://individual.utoronto.ca/eidelman/docs/City%20Hall%20Task%20Force%20Final%20Report.pdf)_), 
