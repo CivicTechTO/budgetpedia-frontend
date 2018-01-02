@@ -1,5 +1,31 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let elsewhere = {
+    controller: 'sheet',
+    index: 'elsewhere',
+    description: 'describe budget process elsewhere',
+    lookups: {
+        draftdata: {
+            repo: 'draft',
+            index: 'elsewhere',
+        },
+    },
+    type: 'sheet',
+    properties: {},
+};
+let civilsociety = {
+    controller: 'sheet',
+    index: 'civilsociety',
+    description: 'describe civil society involvement in the budget process',
+    lookups: {
+        draftdata: {
+            repo: 'draft',
+            index: 'civilsociety',
+        },
+    },
+    type: 'sheet',
+    properties: {},
+};
 let councilservices = {
     controller: 'sheet',
     index: 'councilservices',
@@ -79,6 +105,8 @@ let stories = {
     properties: {},
 };
 let sheets = {
+    civilsociety,
+    elsewhere,
     councilservices,
     citybasics,
     cityprocess,

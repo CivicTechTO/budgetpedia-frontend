@@ -1,5 +1,33 @@
 // sheets.index.tsx
 
+let elsewhere = {
+    controller:'sheet',
+    index:'elsewhere',
+    description: 'describe budget process elsewhere',
+    lookups: {
+        draftdata: {
+            repo:'draft',
+            index:'elsewhere',
+        },
+    },
+    type:'sheet',
+    properties:{
+    },
+}
+let civilsociety = {
+    controller:'sheet',
+    index:'civilsociety',
+    description: 'describe civil society involvement in the budget process',
+    lookups: {
+        draftdata: {
+            repo:'draft',
+            index:'civilsociety',
+        },
+    },
+    type:'sheet',
+    properties:{
+    },
+}
 
 let councilservices = {
     controller:'sheet',
@@ -96,6 +124,8 @@ let stories = {
 
 
 let sheets = {
+    civilsociety,
+    elsewhere,
     councilservices,
     citybasics,
     cityprocess,

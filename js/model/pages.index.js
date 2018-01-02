@@ -144,6 +144,13 @@ least some collaboration with front-line staff, or at least front-line managers.
                         paddingBottom: '1px',
                     },
                 },
+                children: [
+                    {
+                        controller: 'sheet',
+                        repo: 'sheets',
+                        index: 'civilsociety',
+                    },
+                ]
             },
             {
                 controller: 'section',
@@ -161,6 +168,13 @@ least some collaboration with front-line staff, or at least front-line managers.
                         paddingBottom: '1px',
                     },
                 },
+                children: [
+                    {
+                        controller: 'sheet',
+                        repo: 'sheets',
+                        index: 'elsewhere',
+                    },
+                ]
             },
             {
                 controller: 'section',
