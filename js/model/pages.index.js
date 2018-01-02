@@ -38,6 +38,10 @@ let pages = {
                 narrative: {
                     'sheet:cityprocess': `Here is a rough outline of how the process is currently set up.`,
                 },
+                followup: {
+                    "sheet:cityprocess": `For information on specific City budgets, see our [Budgets](/budgets) page.
+`
+                },
                 properties: {
                     title: "Budget Roadmap",
                     description: `This page is about how the Toronto budget is created, and _could_ be created, every year.

@@ -39,6 +39,11 @@ let pages = {
                     'sheet:cityprocess':
 `Here is a rough outline of how the process is currently set up.`,
                 },
+                followup: {
+                    "sheet:cityprocess":
+`For information on specific City budgets, see our [Budgets](/budgets) page.
+`
+                },
                 properties:{
                     title:"Budget Roadmap",
                     description: 
