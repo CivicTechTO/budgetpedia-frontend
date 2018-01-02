@@ -33,7 +33,7 @@ interface State {
     roadmap:any // Roadmap
 }
 
-class Roadmap extends Component<any, State> {
+class Budgets extends Component<any, State> {
 
     state = {
         roadmap:null
@@ -67,8 +67,8 @@ class Roadmap extends Component<any, State> {
     roadmapintro = <div>
         <Card> 
             <CardTitle 
-                title = {"Budget Roadmap"}
-                subtitle = {"Annual cycle of decision points"}
+                title = {"Budgets"}
+                subtitle = {"Budget details"}
             /> 
             <CardTitle 
                 title = "2018"
@@ -445,4 +445,4 @@ class Roadmap extends Component<any, State> {
     }
 }
 
-export default Roadmap
+export default Budgets

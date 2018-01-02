@@ -7,8 +7,10 @@ import * as React from 'react'
 
 import { Route } from 'react-router-dom'
 
+import PageController from '../core/control/page.controller'
+
 import About from './pages/about'
-import Roadmap from './pages/roadmap'
+import Roadmap from './pages/budgets'
 import Deputations from './pages/deputations'
 import Explorer from './explorer/explorer'
 import Communities from './pages/communities'
@@ -23,7 +25,8 @@ import Pathways from './pages/pathways'
 
 let routedata = [
     { path: "/about", component: About },
-    { path: "/roadmap", component: Roadmap },
+    { path: "/budgets", component: Roadmap },
+    { path: "/roadmap", component: PageController },
     { path: "/deputations", component: Deputations },
     { path: "/explorer", component: Explorer },
     { path: "/communities", component: Communities },

@@ -116,6 +116,20 @@ let pagetargets: Object[] = [
         parent:'home',
     },
     {
+        id: 8,
+        content: {
+            title: `Budgets`,
+            subtitle: `About specific budgets`,
+            image: '../../public/icons/ic_attach_money_48px.svg',
+            category: 'tools',
+        },
+        index: 1,
+        tier:'primary',
+        route: '/budgets',
+        tag:'budgets',
+        parent:'home',
+    },
+    {
         id: 15,
         content: {
             title: `Resources`,

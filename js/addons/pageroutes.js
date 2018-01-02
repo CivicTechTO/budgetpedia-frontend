@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_router_dom_1 = require("react-router-dom");
+const page_controller_1 = require("../core/control/page.controller");
 const about_1 = require("./pages/about");
-const roadmap_1 = require("./pages/roadmap");
+const budgets_1 = require("./pages/budgets");
 const deputations_1 = require("./pages/deputations");
 const explorer_1 = require("./explorer/explorer");
 const communities_1 = require("./pages/communities");
@@ -17,7 +18,8 @@ const announcements_1 = require("./pages/announcements");
 const pathways_1 = require("./pages/pathways");
 let routedata = [
     { path: "/about", component: about_1.default },
-    { path: "/roadmap", component: roadmap_1.default },
+    { path: "/budgets", component: budgets_1.default },
+    { path: "/roadmap", component: page_controller_1.default },
     { path: "/deputations", component: deputations_1.default },
     { path: "/explorer", component: explorer_1.default },
     { path: "/communities", component: communities_1.default },

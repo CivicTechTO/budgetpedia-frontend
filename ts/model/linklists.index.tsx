@@ -21,6 +21,13 @@ let toplinklist = {
                 suffix: 'page',
             },
             {
+                prompt:'See budget details on our',
+                icon:'/public/icons/ic_attach_money_48px.svg',
+                target:'/budgets',
+                targetText:'Budgets',
+                suffix: 'page',
+            },
+            {
                 prompt:'Find related',
                 icon:'/public/icons/ic_library_books_48px.svg',
                 target:'/resources',
