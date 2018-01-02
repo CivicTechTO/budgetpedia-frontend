@@ -42,8 +42,9 @@ let pages = {
                     title: "Budget Roadmap",
                     description: `This page is about how the Toronto budget is created, and _could_ be created, every year.
 
-The short story is that we think that more open-ness and collaborarion at all levels around
-the budget process would very likely lead to better outcomes for all.
+The short story is that we think that more openness and collaborarion at all levels around
+the budget process would very likely lead to better outcomes for all. Instead, Council is 
+unfortunately moving in the opposite direction.
 `,
                     style: {
                         marginBottom: '12px',
@@ -170,7 +171,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 tag: 'Possibilities',
                 properties: {
                     title: "Possibilities",
-                    description: "There are many possible ways to conduct budget cycles.",
+                    description: "There are many possible ways to conduct budget cycles. Here are some ways we think would make improvements.",
                     style: {
                         marginBottom: '12px',
                         backgroundColor: '#d9d9d9',
