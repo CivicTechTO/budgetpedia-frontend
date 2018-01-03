@@ -26,20 +26,6 @@ let homepage = {
 };
 let pagetargets = [
     {
-        id: 9,
-        content: {
-            title: `Budget Explorer`,
-            subtitle: `Interactive tools`,
-            image: '../../public/icons/ic_explore_48px.svg',
-            category: 'tools',
-        },
-        index: 0,
-        tier: 'primary',
-        route: '/explorer',
-        tag: 'explorer',
-        parent: 'home',
-    },
-    {
         id: 7,
         content: {
             title: `Budget Roadmap`,
@@ -65,6 +51,20 @@ let pagetargets = [
         tier: 'primary',
         route: '/budgets',
         tag: 'budgets',
+        parent: 'home',
+    },
+    {
+        id: 9,
+        content: {
+            title: `Budget Explorer`,
+            subtitle: `Interactive tools`,
+            image: '../../public/icons/ic_explore_48px.svg',
+            category: 'tools',
+        },
+        index: 0,
+        tier: 'primary',
+        route: '/explorer',
+        tag: 'explorer',
         parent: 'home',
     },
     {

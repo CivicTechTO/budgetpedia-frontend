@@ -75,7 +75,7 @@
   "devDependencies": {
     "@types/material-ui": "^0.20.1",
     "@types/node": "^8.5.2",
-    "@types/react": "^16.0.31",
+    "@types/react": "^16.0.32",
     "@types/react-router-redux": "^5.0.11",
     "@types/react-tap-event-plugin": "0.0.30",
     "babel-core": "^6.26.0",
@@ -92,7 +92,7 @@
     "format-number": "^3.0.0",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
-    "gulp-sourcemaps": "^2.6.2",
+    "gulp-sourcemaps": "^2.6.3",
     "gulp-util": "^3.0.8",
     "html-loader": "^0.5.1",
     "joi": "^13.0.2",

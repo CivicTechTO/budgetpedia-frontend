@@ -8,12 +8,6 @@ let toplinklist = {
         header:'Browse our site:',
         items: [
             {
-                prompt:'Explore the Toronto budget with our',
-                icon:'/public/icons/ic_explore_48px.svg',
-                target:'/explorer',
-                targetText:'Budget Explorer',
-            },
-            {
                 prompt:"See information about Toronto's budget decision cycle at our",
                 icon:'/public/icons/ic_map_48px.svg',
                 target:'/roadmap',
@@ -26,6 +20,12 @@ let toplinklist = {
                 target:'/budgets',
                 targetText:'Budgets',
                 suffix: 'page',
+            },
+            {
+                prompt:'Explore the Toronto budget with our',
+                icon:'/public/icons/ic_explore_48px.svg',
+                target:'/explorer',
+                targetText:'Budget Explorer',
             },
             {
                 prompt:'Find related',
