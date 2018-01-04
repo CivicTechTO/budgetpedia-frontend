@@ -6,7 +6,11 @@ const markupblock_view_1 = require("./markupblock.view");
 class SectionView extends React.Component {
     render() {
         let { title, description, children, style, id } = this.props;
-        return React.createElement("div", { id: id, style: style },
+        let defaultstyle = {
+            maxWidth: '800px',
+            margin: '0 auto',
+        };
+        return React.createElement("div", { id: id, style: Object.assign({}, defaultstyle, style) },
             title ?
                 React.createElement("div", { style: { backgroundColor: "#d9d9d9", padding: "8px", borderTop: "4px solid silver" } },
                     React.createElement("h1", null,

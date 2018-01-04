@@ -17,8 +17,12 @@ class SectionView extends React.Component<any,any>{
     render() {
 
         let { title, description, children, style, id } = this.props
+        let defaultstyle = {
+            maxWidth:'800px',
+            margin:'0 auto',
+        }
 
-        return <div id = {id} style = {style}>
+        return <div id = {id} style = {{...defaultstyle,...style}}>
 
             {
                 title?

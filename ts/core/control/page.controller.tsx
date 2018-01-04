@@ -43,6 +43,10 @@ class PageControllerClass extends React.Component<any,any> {
         let model = master.getPageModel(index)
 
         this.toolkit.setStateModel(this, model)
+
+        // setTimeout(() => {
+        //     console.log('model',this.state.model)
+        // })
     }
 
     onClickChip = index => {
