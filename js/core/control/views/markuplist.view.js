@@ -47,7 +47,7 @@ class MarkupListView extends React.Component {
         super(...arguments);
         this.state = {
             compacted: this.props.compacted,
-            expanded: !this.props.collapsed,
+            expanded: !!this.props.expanded,
         };
         this.itemcontent = (items, fieldproperties, fieldmeta) => {
             let itemlist = items.map((item, index) => {
@@ -64,8 +64,14 @@ class MarkupListView extends React.Component {
     }
     render() {
         let { fieldproperties, fieldmeta, headermarkup, items } = this.props;
-        let maxHeight = this.state.compacted ? '250px' : 'none';
-        return React.createElement("div", { style: { position: 'relative', maxHeight: maxHeight, overflow: 'hidden' } },
+        let maxHeight = (this.state.compacted && !this.state.expanded) ? '250px' : 'none';
+        console.log('maxHeight', maxHeight, this.state.compacted, this.state.expanded);
+        return React.createElement("div", { style: {
+                position: 'relative',
+                maxHeight: maxHeight,
+                overflow: 'hidden',
+                transition: 'max-height .5s'
+            } },
             React.createElement("div", null,
                 this.headercontent(headermarkup),
                 this.itemcontent(items, fieldproperties, fieldmeta)),
@@ -74,16 +80,19 @@ class MarkupListView extends React.Component {
                     bottom: 0,
                     height: '4.5em',
                     backgroundColor: 'red',
-                    pointerEvents: 'none',
                     width: '100%',
                     background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
                 } },
-                React.createElement(Chip_1.default, { style: {
+                React.createElement(Chip_1.default, { onClick: () => {
+                        console.log('clicked show more');
+                        this.setState({ expanded: true });
+                    }, style: {
                         position: 'absolute',
                         right: 0,
                         bottom: 0,
                         margin: '0 3px 3px 0',
                         backgroundColor: 'rgba(192,192,192,.4)',
+                        pointerEvents: 'auto',
                     } },
                     React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_down"),
                     " Show more")) : null);

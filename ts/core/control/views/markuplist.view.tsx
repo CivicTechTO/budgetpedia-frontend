@@ -52,7 +52,7 @@ class MarkupListView extends React.Component<any,any> {
 
     state = {
         compacted:this.props.compacted,
-        expanded:!this.props.collapsed,
+        expanded:!!this.props.expanded,
     }
 
     // allow sublist
@@ -83,9 +83,19 @@ class MarkupListView extends React.Component<any,any> {
 
         let {fieldproperties,fieldmeta,headermarkup,items} = this.props
 
-        let maxHeight = this.state.compacted?'250px':'none'
+        let maxHeight = (this.state.compacted && !this.state.expanded)?'250px':'none'
 
-        return <div style = {{position:'relative',maxHeight:maxHeight,overflow:'hidden'}} >
+        console.log('maxHeight',maxHeight, this.state.compacted, this.state.expanded)
+
+        return <div style = 
+            {
+                {
+                    position:'relative',
+                    maxHeight:maxHeight,
+                    overflow:'hidden',
+                    transition:'max-height .5s'
+                }
+            } >
             <div>
                 {this.headercontent(headermarkup)}
                 {this.itemcontent(items, fieldproperties, fieldmeta)}
@@ -96,11 +106,15 @@ class MarkupListView extends React.Component<any,any> {
                     bottom:0,
                     height:'4.5em',
                     backgroundColor:'red',
-                    pointerEvents:'none',
                     width:'100%',
                     background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
                 } >
-                <Chip style = 
+                <Chip 
+                    onClick = {() => {
+                        console.log('clicked show more')
+                        this.setState({ expanded:true })
+                    }}
+                    style = 
                     {
                         {
                             position:'absolute',
@@ -108,6 +122,7 @@ class MarkupListView extends React.Component<any,any> {
                             bottom:0,
                             margin:'0 3px 3px 0',
                             backgroundColor:'rgba(192,192,192,.4)',
+                            pointerEvents:'auto',
                         }
                     } ><span className="material-icons"
                         style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
