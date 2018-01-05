@@ -95,6 +95,7 @@ We haven't seen any other details of this process, so we can't say how this happ
                     horizontal: true,
                     commonstructure: true,
                 },
+                compacted: true,
                 fieldmeta: {
                     date: {
                         type: 'date',
@@ -181,6 +182,7 @@ The first phase of budget production begins with analyst meetings, and continues
                     horizontal: true,
                     commonstructure: true,
                 },
+                compacted: true,
                 fieldmeta: {
                     date: {
                         type: 'date',
@@ -315,6 +317,7 @@ This is also done behind closed doors. Note that standing committee reviews have
                     horizontal: true,
                     commonstructure: true,
                 },
+                compacted: true,
                 fieldmeta: {
                     date: {
                         type: 'date',
@@ -401,6 +404,7 @@ Note that the bulk of the budget development has been completed by this time.
                     horizontal: true,
                     commonstructure: true,
                 },
+                compacted: true,
                 fieldmeta: {
                     date: {
                         type: 'date',
@@ -603,6 +607,7 @@ of listings below is the scheduling of meetings in various parts of the City.
                     horizontal: true,
                     commonstructure: true,
                 },
+                compacted: true,
                 fieldmeta: {
                     date: {
                         type: 'date',

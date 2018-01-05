@@ -48,17 +48,16 @@ let Fields = ({fields,fieldproperties,fieldmeta}) => {
     return <div style = {{marginBottom:'8px'}}>{fieldlist}</div>
 }
 
-let MarkupListView = ({fieldproperties,fieldmeta,headermarkup,items}) => {
+class MarkupListView extends React.Component<any,any> {
 
-    let headercontent = () => {
-
-        return <MarkupBlockView markup = {headermarkup} />
-
+    state = {
+        compacted:this.props.compacted,
+        expanded:!this.props.collapsed,
     }
 
     // allow sublist
     // content, fields, suffix, isSublist
-    let itemcontent = items => {
+    itemcontent = (items, fieldproperties, fieldmeta) => {
         let itemlist = items.map(( item, index ) => {
             return <li key = { index } >
                 {item.content?<MarkupBlockView markup = {item.content} />:null}
@@ -73,32 +72,48 @@ let MarkupListView = ({fieldproperties,fieldmeta,headermarkup,items}) => {
         )
     }
 
-    return <div style = {{position:'relative'}} >
-        {headercontent()}
-        {itemcontent(items)}
-        <div style = {
-            {
-                position:'absolute',
-                bottom:0,
-                height:'4.5em',
-                backgroundColor:'red',
-                pointerEvents:'none',
-                width:'100%',
-                background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
-            } >
-            <Chip style = 
+    headercontent = (headermarkup) => {
+
+        return <MarkupBlockView markup = {headermarkup} />
+
+    }
+
+
+    render() {
+
+        let {fieldproperties,fieldmeta,headermarkup,items} = this.props
+
+        let maxHeight = this.state.compacted?'250px':'none'
+
+        return <div style = {{position:'relative',maxHeight:maxHeight,overflow:'hidden'}} >
+            <div>
+                {this.headercontent(headermarkup)}
+                {this.itemcontent(items, fieldproperties, fieldmeta)}
+            </div>
+            {this.state.compacted?<div style = {
                 {
+                    position:'absolute',
+                    bottom:0,
+                    height:'4.5em',
+                    backgroundColor:'red',
+                    pointerEvents:'none',
+                    width:'100%',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
+                } >
+                <Chip style = 
                     {
-                        position:'absolute',
-                        right:0,
-                        bottom:0,
-                        margin:'0 3px 3px 0',
-                        backgroundColor:'rgba(192,192,192,.4)',
-                    }
-                } ><span className="material-icons"
-                    style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
+                        {
+                            position:'absolute',
+                            right:0,
+                            bottom:0,
+                            margin:'0 3px 3px 0',
+                            backgroundColor:'rgba(192,192,192,.4)',
+                        }
+                    } ><span className="material-icons"
+                        style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
+            </div>:null}
         </div>
-    </div>
+    }
 }
 
 export default MarkupListView
