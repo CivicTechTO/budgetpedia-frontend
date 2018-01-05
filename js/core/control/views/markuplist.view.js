@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const markupblock_view_1 = require("./markupblock.view");
 const markupline_view_1 = require("./markupline.view");
+const Chip_1 = require("material-ui/Chip");
 let moment = require('moment');
 let Fields = ({ fields, fieldproperties, fieldmeta }) => {
     let fieldlist = [];
@@ -54,8 +55,26 @@ let MarkupListView = ({ fieldproperties, fieldmeta, headermarkup, items }) => {
         });
         return (React.createElement("ul", null, itemlist));
     };
-    return React.createElement("div", null,
+    return React.createElement("div", { style: { position: 'relative' } },
         headercontent(),
-        itemcontent(items));
+        itemcontent(items),
+        React.createElement("div", { style: {
+                position: 'absolute',
+                bottom: 0,
+                height: '4.5em',
+                backgroundColor: 'red',
+                pointerEvents: 'none',
+                width: '100%',
+                background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
+            } },
+            React.createElement(Chip_1.default, { style: {
+                    position: 'absolute',
+                    right: 0,
+                    bottom: 0,
+                    margin: '0 3px 3px 0',
+                    backgroundColor: 'rgba(192,192,192,.4)',
+                } },
+                React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_down"),
+                " Show more")));
 };
 exports.default = MarkupListView;

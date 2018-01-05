@@ -7,6 +7,7 @@ import * as React from 'react'
 
 import MarkupBlockView from './markupblock.view'
 import MarkupLineView from './markupline.view'
+import Chip from 'material-ui/Chip'
 let moment = require('moment')
 
 let Fields = ({fields,fieldproperties,fieldmeta}) => {
@@ -72,9 +73,31 @@ let MarkupListView = ({fieldproperties,fieldmeta,headermarkup,items}) => {
         )
     }
 
-    return <div>
+    return <div style = {{position:'relative'}} >
         {headercontent()}
         {itemcontent(items)}
+        <div style = {
+            {
+                position:'absolute',
+                bottom:0,
+                height:'4.5em',
+                backgroundColor:'red',
+                pointerEvents:'none',
+                width:'100%',
+                background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
+            } >
+            <Chip style = 
+                {
+                    {
+                        position:'absolute',
+                        right:0,
+                        bottom:0,
+                        margin:'0 3px 3px 0',
+                        backgroundColor:'rgba(192,192,192,.4)',
+                    }
+                } ><span className="material-icons"
+                    style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
+        </div>
     </div>
 }
 
