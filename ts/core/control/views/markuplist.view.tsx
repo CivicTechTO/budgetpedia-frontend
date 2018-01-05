@@ -85,6 +85,19 @@ class MarkupListView extends React.Component<any,any> {
 
         let maxHeight = (this.state.compacted && !this.state.expanded)?'250px':'none'
 
+        let chipstyle =                         
+        {
+            position:'absolute',
+            right:0,
+            bottom:0,
+            margin:'0 3px 3px 0',
+            backgroundColor:'rgba(192,192,192,.4)',
+            pointerEvents:'auto',
+        }
+
+        let fillerheight = (this.state.compacted && this.state.expanded)?'32px':'none'
+
+
         console.log('maxHeight',maxHeight, this.state.compacted, this.state.expanded)
 
         return <div style = 
@@ -100,6 +113,8 @@ class MarkupListView extends React.Component<any,any> {
                 {this.headercontent(headermarkup)}
                 {this.itemcontent(items, fieldproperties, fieldmeta)}
             </div>
+            <div style = {{height:fillerheight,transition:'height .5s'}}>
+            </div>
             {this.state.compacted?<div style = {
                 {
                     position:'absolute',
@@ -109,23 +124,21 @@ class MarkupListView extends React.Component<any,any> {
                     width:'100%',
                     background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
                 } >
-                <Chip 
+                {!this.state.expanded?<Chip 
                     onClick = {() => {
                         console.log('clicked show more')
                         this.setState({ expanded:true })
                     }}
-                    style = 
-                    {
-                        {
-                            position:'absolute',
-                            right:0,
-                            bottom:0,
-                            margin:'0 3px 3px 0',
-                            backgroundColor:'rgba(192,192,192,.4)',
-                            pointerEvents:'auto',
-                        }
-                    } ><span className="material-icons"
+                    style = {chipstyle as any}><span className="material-icons"
                         style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
+                :<Chip 
+                    onClick = {() => {
+                        console.log('clicked show less')
+                        this.setState({ expanded:false })
+                    }}
+                    style = { chipstyle as any } >
+                        <span className="material-icons"
+                        style = {{verticalAlign:'middle'}} >keyboard_arrow_up</span> Show less</Chip>}
             </div>:null}
         </div>
     }

@@ -65,6 +65,15 @@ class MarkupListView extends React.Component {
     render() {
         let { fieldproperties, fieldmeta, headermarkup, items } = this.props;
         let maxHeight = (this.state.compacted && !this.state.expanded) ? '250px' : 'none';
+        let chipstyle = {
+            position: 'absolute',
+            right: 0,
+            bottom: 0,
+            margin: '0 3px 3px 0',
+            backgroundColor: 'rgba(192,192,192,.4)',
+            pointerEvents: 'auto',
+        };
+        let fillerheight = (this.state.compacted && this.state.expanded) ? '32px' : 'none';
         console.log('maxHeight', maxHeight, this.state.compacted, this.state.expanded);
         return React.createElement("div", { style: {
                 position: 'relative',
@@ -75,6 +84,7 @@ class MarkupListView extends React.Component {
             React.createElement("div", null,
                 this.headercontent(headermarkup),
                 this.itemcontent(items, fieldproperties, fieldmeta)),
+            React.createElement("div", { style: { height: fillerheight, transition: 'height .5s' } }),
             this.state.compacted ? React.createElement("div", { style: {
                     position: 'absolute',
                     bottom: 0,
@@ -82,20 +92,18 @@ class MarkupListView extends React.Component {
                     backgroundColor: 'red',
                     width: '100%',
                     background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
-                } },
-                React.createElement(Chip_1.default, { onClick: () => {
-                        console.log('clicked show more');
-                        this.setState({ expanded: true });
-                    }, style: {
-                        position: 'absolute',
-                        right: 0,
-                        bottom: 0,
-                        margin: '0 3px 3px 0',
-                        backgroundColor: 'rgba(192,192,192,.4)',
-                        pointerEvents: 'auto',
-                    } },
-                    React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_down"),
-                    " Show more")) : null);
+                } }, !this.state.expanded ? React.createElement(Chip_1.default, { onClick: () => {
+                    console.log('clicked show more');
+                    this.setState({ expanded: true });
+                }, style: chipstyle },
+                React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_down"),
+                " Show more")
+                : React.createElement(Chip_1.default, { onClick: () => {
+                        console.log('clicked show less');
+                        this.setState({ expanded: false });
+                    }, style: chipstyle },
+                    React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_up"),
+                    " Show less")) : null);
     }
 }
 exports.default = MarkupListView;
