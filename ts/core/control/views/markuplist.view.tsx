@@ -1,8 +1,11 @@
 // markuplist.view.tsx
 
-// TODO allow for sublists = isSublist property in item
-// allow for horizontal presentation of fields
-
+/*
+    TODO 
+        - allow for sublists = isSublist property in item
+        - allow for horizontal presentation of fields
+        - offset close list with window scroll
+*/
 import * as React from 'react'
 
 import MarkupBlockView from './markupblock.view'
@@ -53,6 +56,8 @@ class MarkupListView extends React.Component<any,any> {
     state = {
         compacted:this.props.compacted,
         expanded:!!this.props.expanded,
+        outerheight:'auto',
+        opaque:(this.props.compacted && !this.props.expanded)
     }
 
     // allow sublist
@@ -78,6 +83,54 @@ class MarkupListView extends React.Component<any,any> {
 
     }
 
+    outernode = null
+    innernode = null
+
+    onExpand = () => {
+        this.setState(
+            { 
+                outerheight:this.outernode.clientHeight + 'px',
+                expanded:true,
+                opaque:false,
+            },() => {
+                this.setState(
+                    {
+                        outerheight:this.innernode.offsetHeight + 'px',
+                    },() => {
+                        setTimeout(()=>{
+                            this.setState({
+                                outerheight:'auto',
+                            })
+                        },600)
+                    }
+                )
+            }
+        )
+    }
+
+    onContract = () => {
+        this.setState(
+            { 
+                outerheight:this.outernode.offsetHeight + 'px',
+                opaque:true,
+            },() => {
+                setTimeout(()=>{
+                    this.setState({
+                        outerheight:'250px',
+                    },() => {
+                        setTimeout( ()=>{
+                            this.setState(
+                                {
+                                    expanded:false,
+                                    outerheight:'auto',
+                                }
+                            )
+                        },600)
+                    })
+                })
+            }
+        )
+    }
 
     render() {
 
@@ -87,60 +140,64 @@ class MarkupListView extends React.Component<any,any> {
 
         let chipstyle =                         
         {
-            position:'absolute',
-            right:0,
-            bottom:0,
-            margin:'0 3px 3px 0',
-            backgroundColor:'rgba(192,192,192,.4)',
-            pointerEvents:'auto',
+            float:'right',
+            margin:'-24px 3px 3px 3px',
+            backgroundColor:'rgba(192,192,192,.2)',
+            fontSize:'x-small',
+            fontStyle:'italic',
         }
 
-        let fillerheight = (this.state.compacted && this.state.expanded)?'32px':'none'
+        let opacity = (this.state.compacted && !this.state.opaque)?0:1
 
-
-        console.log('maxHeight',maxHeight, this.state.compacted, this.state.expanded)
-
-        return <div style = 
+        let outerstyle = 
             {
-                {
-                    position:'relative',
-                    maxHeight:maxHeight,
-                    overflow:'hidden',
-                    transition:'max-height .5s'
-                }
-            } >
-            <div>
+                position:'relative',
+                height:this.state.outerheight,
+                maxHeight:maxHeight,
+                overflow:'hidden',
+                transition:'height .5s'
+            }
+
+        return (
+
+        <div 
+            ref = {node => {this.outernode = node}}
+            style = { outerstyle as any }
+        >
+            {/* the div has a hidden border to protect from outside height influences per expand animation */}
+            <div
+                style = {{border:'1px solid white'}}
+                ref = {node => {this.innernode = node}}
+            >
                 {this.headercontent(headermarkup)}
+
+                {this.state.compacted?
+                    !this.state.expanded?<Chip 
+                        onClick = {this.onExpand}
+                        style = {chipstyle as any}><span className="material-icons"
+                            style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
+                    :<Chip 
+                        onClick = {this.onContract}
+                        style = { chipstyle as any } >
+                            <span className="material-icons"
+                            style = {{verticalAlign:'middle'}} >keyboard_arrow_up</span> Show less</Chip>
+                :null
+                }
                 {this.itemcontent(items, fieldproperties, fieldmeta)}
-            </div>
-            <div style = {{height:fillerheight,transition:'height .5s'}}>
             </div>
             {this.state.compacted?<div style = {
                 {
+                    opacity:opacity,
+                    transition:'opacity .5s',
                     position:'absolute',
                     bottom:0,
                     height:'4.5em',
-                    backgroundColor:'red',
                     width:'100%',
                     background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
                 } >
-                {!this.state.expanded?<Chip 
-                    onClick = {() => {
-                        console.log('clicked show more')
-                        this.setState({ expanded:true })
-                    }}
-                    style = {chipstyle as any}><span className="material-icons"
-                        style = {{verticalAlign:'middle'}} >keyboard_arrow_down</span> Show more</Chip>
-                :<Chip 
-                    onClick = {() => {
-                        console.log('clicked show less')
-                        this.setState({ expanded:false })
-                    }}
-                    style = { chipstyle as any } >
-                        <span className="material-icons"
-                        style = {{verticalAlign:'middle'}} >keyboard_arrow_up</span> Show less</Chip>}
             </div>:null}
         </div>
+        )
     }
 }
 
