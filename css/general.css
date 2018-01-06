@@ -18,6 +18,18 @@ h1::before,h2::before,h3::before,h4::before {
   pointer-events: none;
 }
 
+a.header-anchor {
+    display: none;
+    font-size: x-small;
+}
+
+h1:hover>a.header-anchor, 
+h2:hover>a.header-anchor, 
+h3:hover>a.header-anchor, 
+h4:hover>a.header-anchor {
+    display:inline;
+}
+
 .fade-appear,
 .fade-enter {
     opacity:0;
