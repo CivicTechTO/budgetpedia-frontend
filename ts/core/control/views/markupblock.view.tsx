@@ -32,11 +32,17 @@ let md = new mdit({html:true,
     }
   }
 })
+
+let anchorcallback = (token, data) => {
+  console.log('token, data', token, data)
+}
+
 md.use(mda).use(mdt).use(mdf,{figcaption:true}).use(mdislugs,
   {
     level:1,
     permalink:true, 
     permalinkSymbol:'&#128279;',
+    // callback:anchorcallback,
   })
 
 const MarkupBlock = ({markup,style}:{markup:string,style?:object}) => (
