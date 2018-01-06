@@ -22,7 +22,7 @@ class SectionView extends React.Component<any,any>{
             margin:'0 auto',
         }
 
-        return <div id = {id} style = {{...defaultstyle,...style}}>
+        return <section id = {id} style = {{...defaultstyle,...style}}>
 
             {
                 title?
@@ -38,7 +38,7 @@ class SectionView extends React.Component<any,any>{
 
             { children }
 
-        </div>
+        </section>
     }
 
 }

@@ -10,7 +10,7 @@ class SectionView extends React.Component {
             maxWidth: '800px',
             margin: '0 auto',
         };
-        return React.createElement("div", { id: id, style: Object.assign({}, defaultstyle, style) },
+        return React.createElement("section", { id: id, style: Object.assign({}, defaultstyle, style) },
             title ?
                 React.createElement("div", { style: { backgroundColor: "#d9d9d9", padding: "8px", borderTop: "4px solid silver" } },
                     React.createElement("h1", null,
