@@ -9,6 +9,14 @@ blockquote {
 }
 /* ReactSlider */
 
+h1::before,h2::before,h3::before,h4::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -64px; 
+  height: 64px; 
+  visibility: hidden; 
+  pointer-events: none;
+}
 
 .fade-appear,
 .fade-enter {

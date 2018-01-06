@@ -6,6 +6,7 @@ let mdit = require('markdown-it');
 let mda = require('markdown-it-attrs');
 let mdt = require('markdown-it-modify-token');
 let mdf = require('markdown-it-implicit-figures');
+let mdislugs = require('markdown-it-anchor');
 let md = new mdit({ html: true,
     modifyToken: function (token, env) {
         switch (token.type) {
@@ -21,6 +22,10 @@ let md = new mdit({ html: true,
         }
     }
 });
-md.use(mda).use(mdt).use(mdf, { figcaption: true });
+md.use(mda).use(mdt).use(mdf, { figcaption: true }).use(mdislugs, {
+    level: 1,
+    permalink: true,
+    permalinkSymbol: '&#128279;',
+});
 const MarkupBlock = ({ markup, style }) => (React.createElement(html_view_1.default, { style: Object.assign({}, style), html: md.render(markup) }));
 exports.default = MarkupBlock;
