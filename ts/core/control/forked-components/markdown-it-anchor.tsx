@@ -98,7 +98,8 @@ let defaults = {
   permalinkClass: 'header-anchor',
   permalinkSymbol: '¶',
   permalinkBefore: false,
-  permalinkHref
+  permalinkHref,
+  targetlinkoffset:0,
 }
 
 module.exports = anchor
