@@ -7,6 +7,8 @@ const mode_edit_1 = require("material-ui/svg-icons/editor/mode-edit");
 const file_download_1 = require("material-ui/svg-icons/file/file-download");
 const done_1 = require("material-ui/svg-icons/action/done");
 var fileDownload = require('js-file-download');
+var stringUtils = require('string');
+console.log('stringUtils', stringUtils);
 const renderedlink_view_1 = require("../forked-components/renderedlink.view");
 const headlinesbutton_view_1 = require("../forked-components/headlinesbutton.view");
 const draft_js_1 = require("draft-js");
@@ -18,6 +20,7 @@ const imageadd_view_1 = require("../forked-components/imageadd.view");
 const draft_js_alignment_plugin_1 = require("draft-js-alignment-plugin");
 const draft_js_focus_plugin_1 = require("draft-js-focus-plugin");
 const draft_js_resizeable_plugin_1 = require("draft-js-resizeable-plugin");
+const Immutable = require("immutable");
 require("../forked-components/sheet.styles.css");
 require("draft-js/dist/Draft.css");
 require("draft-js-static-toolbar-plugin/lib/plugin.css");
@@ -26,6 +29,36 @@ require("draft-js-image-plugin/lib/plugin.css");
 require("draft-js-alignment-plugin/lib/plugin.css");
 require("draft-js-focus-plugin/lib/plugin.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
+let HeaderWrapper = props => {
+    let text = props.children[0].props.children.props.block.text;
+    let type = props.children[0].props.children.props.block.type;
+    let slug = stringUtils(text).slugify().s;
+    let tag = null;
+    let hprops = {
+        id: slug,
+        style: { position: 'relative' },
+    };
+    switch (type) {
+        case 'header-one': {
+            tag = 'h1';
+            break;
+        }
+        case 'header-two': {
+            tag = 'h2';
+            break;
+        }
+        case 'header-three': {
+            tag = 'h3';
+            break;
+        }
+        case 'header-four': {
+            tag = 'h4';
+            break;
+        }
+    }
+    return React.createElement(tag, hprops, [props.children,
+        React.createElement("a", { key: "permalink", className: "header-anchor draft-anchor", href: "#" + slug, "aria-hidden": "true" }, "\uD83D\uDD17")]);
+};
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
@@ -184,6 +217,24 @@ class SheetView extends React.Component {
         this.assemblePlugins();
     }
     render() {
+        const blockRenderMap = draft_js_1.DefaultDraftBlockRenderMap.merge(Immutable.Map({
+            'header-one': {
+                element: 'div',
+                wrapper: React.createElement(HeaderWrapper, null),
+            },
+            'header-two': {
+                element: 'div',
+                wrapper: React.createElement(HeaderWrapper, null),
+            },
+            'header-three': {
+                element: 'div',
+                wrapper: React.createElement(HeaderWrapper, null),
+            },
+            'header-four': {
+                element: 'div',
+                wrapper: React.createElement(HeaderWrapper, null),
+            },
+        }));
         let styles = {
             outderdiv: { backgroundColor: '#d9d9d9', padding: '16px' },
             innerdiv: { padding: '16px', position: "relative" },
@@ -192,7 +243,7 @@ class SheetView extends React.Component {
             React.createElement(Paper_1.default, { zDepth: 3 },
                 React.createElement("div", { style: styles.innerdiv, onClick: this.focus },
                     this.actionbuttons(),
-                    this.state.renderEditor ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, ref: (element) => { this.editor = element; } }) : null,
+                    this.state.renderEditor ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, blockRenderMap: blockRenderMap, ref: (element) => { this.editor = element; } }) : null,
                     this.editorcontrols()),
                 this.imagecontrol())));
     }

@@ -11,11 +11,14 @@ import FileDownload from 'material-ui/svg-icons/file/file-download'
 import Done from 'material-ui/svg-icons/action/done'
 
 var fileDownload = require('js-file-download')
+var stringUtils = require('string')
+
+console.log('stringUtils', stringUtils)
 
 import RenderedLink from '../forked-components/renderedlink.view'
 import HeadlinesButton from '../forked-components/headlinesbutton.view'
 
-import { EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
+import { EditorState, RichUtils, convertToRaw, convertFromRaw, DefaultDraftBlockRenderMap } from 'draft-js'
 import  Editor, { composeDecorators } from 'draft-js-plugins-editor'
 import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin'
 import createLinkPlugin from 'draft-js-anchor-plugin'
@@ -24,6 +27,8 @@ import ImageAdd from '../forked-components/imageadd.view'
 import createAlignmentPlugin from 'draft-js-alignment-plugin'
 import createFocusPlugin from 'draft-js-focus-plugin'
 import createResizeablePlugin from 'draft-js-resizeable-plugin'
+
+import * as Immutable from 'immutable'
 // -----------------------------[ plugin compliance ]-------------------------------
 // from draft-js-plugins.com
 import '../forked-components/sheet.styles.css'
@@ -47,6 +52,44 @@ import {
 
 
 // --------------------------------[ end of plugins compliance ]---------------------------------
+
+let HeaderWrapper = props => {
+  let text = props.children[0].props.children.props.block.text
+  let type = props.children[0].props.children.props.block.type
+  let slug = stringUtils(text).slugify().s
+  let tag = null
+  let hprops = {
+    id:slug,
+    style:{position:'relative'},
+  }
+  switch (type) {
+    case 'header-one': {
+      tag = 'h1'
+      break;
+    }
+    case 'header-two': {
+      tag = 'h2'
+      break;
+    }
+    case 'header-three': {
+      tag = 'h3'
+      break;
+    }
+    case 'header-four': {
+      tag = 'h4'
+      break;
+    }
+  }
+
+  return React.createElement(tag,hprops,[props.children,
+    <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>])
+
+  // return <h2 id = {slug}  style = {{position:'relative'}}>
+  //   {props.children}
+  //   <a className="header-anchor" style = {{position:'absolute',bottom:'3px', left:'-10px'}} href={"#" + slug} aria-hidden="true">🔗</a>
+  // </h2>
+}
+
 
 class SheetView extends React.Component<any,any> {
 
@@ -73,11 +116,7 @@ class SheetView extends React.Component<any,any> {
       this.assemblePlugins()
 
     }
-
-    // componentDidMount() {
-    //   let something = 1
-    // }
-
+   
     // declarations
     state = null
     pluginOptions
@@ -282,6 +321,27 @@ class SheetView extends React.Component<any,any> {
 
     render() {
 
+        const blockRenderMap = DefaultDraftBlockRenderMap.merge(
+          Immutable.Map({
+            'header-one': { 
+              element: 'div',
+              wrapper: <HeaderWrapper />,
+            },
+            'header-two': { 
+              element: 'div',
+              wrapper: <HeaderWrapper />,
+            },
+            'header-three': { 
+              element: 'div',
+              wrapper: <HeaderWrapper />,
+            },
+            'header-four': { 
+              element: 'div',
+              wrapper: <HeaderWrapper />,
+            },
+          })
+        );
+
         let styles = {
             outderdiv:{backgroundColor:'#d9d9d9',padding: '16px'},
             innerdiv:{padding:'16px',position:"relative"},
@@ -301,6 +361,7 @@ class SheetView extends React.Component<any,any> {
                             plugins = {this.plugins}
                             readOnly = {this.state.editorReadonly}
                             handleKeyCommand={this.handleKeyCommand}
+                            blockRenderMap = { blockRenderMap }
                             ref={(element) => { this.editor = element }}
                         />:null}
 

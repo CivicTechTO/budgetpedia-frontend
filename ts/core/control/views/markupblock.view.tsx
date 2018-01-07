@@ -39,7 +39,7 @@ let anchorcallback = (token, data) => {
 
 md.use(mda).use(mdt).use(mdf,{figcaption:true}).use(mdislugs,
   {
-    level:1,
+    level:[1,2,3,4],
     permalink:true, 
     permalinkSymbol:'&#128279;',
     // callback:anchorcallback,

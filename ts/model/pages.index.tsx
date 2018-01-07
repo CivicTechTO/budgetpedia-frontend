@@ -34,7 +34,7 @@ let pages = {
                 anchor:'header',
                 description:'header for roadmap page',
                 type:'section',
-                tag:'Roadmap',
+                tag:'Top',
                 narrative: {
                     'sheet:cityprocess':
 `Here is a rough outline of how the process is currently set up.`,
@@ -244,7 +244,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 anchor:'header',
                 description:'header for main page of website',
                 type:'section',
-                tag:'Welcome',
+                tag:'Top',
                 properties:{
                     title:"Welcome",
                     description: "We're an independent, non-profit, volunteer organization based in Toronto, Canada.",
