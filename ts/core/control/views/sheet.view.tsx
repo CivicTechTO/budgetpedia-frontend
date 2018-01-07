@@ -51,36 +51,33 @@ import {
 
 // --------------------------------[ end of plugins compliance ]---------------------------------
 
+let map = {
+  'header-one':'h1',
+  'header-two':'h2',
+  'header-three':'h3',
+  'header-four':'h4',
+}
+
 let HeaderWrapper = props => {
+
   let text = props.children[0].props.children.props.block.text
   let type = props.children[0].props.children.props.block.type
   let slug = stringUtils(text).slugify().s
   let tag = null
   let hprops = {
-    id:slug,
-    style:{position:'relative'},
-  }
-  switch (type) {
-    case 'header-one': {
-      tag = 'h1'
-      break;
-    }
-    case 'header-two': {
-      tag = 'h2'
-      break;
-    }
-    case 'header-three': {
-      tag = 'h3'
-      break;
-    }
-    case 'header-four': {
-      tag = 'h4'
-      break;
-    }
+    style:{
+      paddingLeft:'16px',
+      marginLeft:'-16px',
+      position:'relative',
+    },
   }
 
+  tag = map[type]
+
   return React.createElement(tag,hprops,[props.children,
-    <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>])
+    <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>,
+    <a key = "targetlink" className="target-anchor" id={slug} aria-hidden="true"></a>,
+    ])
 
  }
 

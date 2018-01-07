@@ -28,35 +28,30 @@ require("draft-js-image-plugin/lib/plugin.css");
 require("draft-js-alignment-plugin/lib/plugin.css");
 require("draft-js-focus-plugin/lib/plugin.css");
 const draft_js_buttons_1 = require("draft-js-buttons");
+let map = {
+    'header-one': 'h1',
+    'header-two': 'h2',
+    'header-three': 'h3',
+    'header-four': 'h4',
+};
 let HeaderWrapper = props => {
+    console.log('HeadWrapper props', props);
     let text = props.children[0].props.children.props.block.text;
     let type = props.children[0].props.children.props.block.type;
     let slug = stringUtils(text).slugify().s;
     let tag = null;
     let hprops = {
-        id: slug,
-        style: { position: 'relative' },
+        style: {
+            paddingLeft: '16px',
+            marginLeft: '-16px',
+            position: 'relative',
+        },
     };
-    switch (type) {
-        case 'header-one': {
-            tag = 'h1';
-            break;
-        }
-        case 'header-two': {
-            tag = 'h2';
-            break;
-        }
-        case 'header-three': {
-            tag = 'h3';
-            break;
-        }
-        case 'header-four': {
-            tag = 'h4';
-            break;
-        }
-    }
+    tag = map[type];
     return React.createElement(tag, hprops, [props.children,
-        React.createElement("a", { key: "permalink", className: "header-anchor draft-anchor", href: "#" + slug, "aria-hidden": "true" }, "\uD83D\uDD17")]);
+        React.createElement("a", { key: "permalink", className: "header-anchor draft-anchor", href: "#" + slug, "aria-hidden": "true" }, "\uD83D\uDD17"),
+        React.createElement("a", { key: "targetlink", className: "target-anchor", id: slug, "aria-hidden": "true" }),
+    ]);
 };
 class SheetView extends React.Component {
     constructor(props) {

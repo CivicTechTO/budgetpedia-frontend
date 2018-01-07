@@ -3,6 +3,11 @@
 
 // assemble and manage routes
 
+/*
+    TODO: transition fails with redirect for forcing trailing slash
+    the goal is to force initial url to end in /# to avoid reload of page on first permalink
+*/
+
 'use strict'
 
 import * as React from 'react'

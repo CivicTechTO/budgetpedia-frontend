@@ -9,24 +9,20 @@ blockquote {
 }
 /* ReactSlider */
 
-h1::before,h2::before,h3::before,h4::before { 
-  display: block; 
-  content: " "; 
-  margin-top: -64px; 
-  height: 64px; 
-  visibility: hidden; 
-  pointer-events: none;
-}
-
 a.draft-anchor {
     position:absolute;
-    bottom:3px;
-    left:-10px;
+    top:0;
+    left:2px;
 }
 
 a.header-anchor {
     display: none;
-    font-size: x-small;
+    font-size: small;
+}
+
+a.target-anchor {
+    position:absolute;
+    top:-64px;
 }
 
 h1:hover>a.header-anchor, 
