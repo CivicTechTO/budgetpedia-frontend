@@ -116,7 +116,7 @@ class MarkupListView extends React.Component<any,any> {
             },() => {
                 setTimeout(()=>{
                     this.setState({
-                        outerheight:'250px',
+                        outerheight:'150px',
                     },() => {
                         setTimeout( ()=>{
                             this.setState(
@@ -136,12 +136,12 @@ class MarkupListView extends React.Component<any,any> {
 
         let {fieldproperties,fieldmeta,headermarkup,items} = this.props
 
-        let maxHeight = (this.state.compacted && !this.state.expanded)?'250px':'none'
+        let maxHeight = (this.state.compacted && !this.state.expanded)?'150px':'none'
 
         let chipstyle =                         
         {
             float:'right',
-            margin:'-24px 3px 3px 3px',
+            margin:'3px',
             backgroundColor:'rgba(192,192,192,.2)',
             fontSize:'x-small',
             fontStyle:'italic',
@@ -160,6 +160,10 @@ class MarkupListView extends React.Component<any,any> {
 
         return (
 
+        <div>
+    
+            {this.headercontent(headermarkup)}
+
         <div 
             ref = {node => {this.outernode = node}}
             style = { outerstyle as any }
@@ -169,8 +173,6 @@ class MarkupListView extends React.Component<any,any> {
                 style = {{border:'1px solid white'}}
                 ref = {node => {this.innernode = node}}
             >
-                {this.headercontent(headermarkup)}
-
                 {this.state.compacted?
                     !this.state.expanded?<Chip 
                         onClick = {this.onExpand}
@@ -196,6 +198,7 @@ class MarkupListView extends React.Component<any,any> {
                     background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',          }
                 } >
             </div>:null}
+        </div>
         </div>
         )
     }
