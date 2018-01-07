@@ -9,7 +9,7 @@ import * as React from 'react'
 let { Component } = React
 
 import { ConnectedRouter } from 'react-router-redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -42,7 +42,7 @@ let coreroutes = routedata.map((item, index) => (
 ))
 
 let home = <Route key = 'home' exact path="/" component={ PageController } /> // HomeController } />
-
+// let redirect = <Route key = "redirect" exact strict path="/:url*" render={props => <Redirect to={`${props.location.pathname}/`}/>} />
 let routes = [home, ...pageroutes, ...coreroutes]
 
 logPageView(window.location) // first hit

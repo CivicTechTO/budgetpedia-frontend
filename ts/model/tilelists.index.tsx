@@ -26,7 +26,7 @@ let mainpages = {
                 },
                 index: 1,
                 tier:'primary',
-                route: '/roadmap',
+                route: '/roadmap/',
                 tag:'roadmap',
                 parent:'home',
             },

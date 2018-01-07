@@ -10,7 +10,7 @@ let toplinklist = {
             {
                 prompt:"See information about Toronto's budget decision cycle at our",
                 icon:'/public/icons/ic_map_48px.svg',
-                target:'/roadmap',
+                target:'/roadmap/',
                 targetText:'Budget Roadmap',
                 suffix: 'page',
             },
