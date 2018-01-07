@@ -46,7 +46,8 @@ class NuggetList extends React.Component {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'top',
-                    } }, React.createElement(markupline_view_1.default, { markup: title }))),
+                    } },
+                    React.createElement(markupline_view_1.default, { markup: title }))),
             React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
                 React.createElement("div", { style: defaultScrollBlockstyle, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {

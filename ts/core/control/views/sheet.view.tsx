@@ -13,8 +13,6 @@ import Done from 'material-ui/svg-icons/action/done'
 var fileDownload = require('js-file-download')
 var stringUtils = require('string')
 
-console.log('stringUtils', stringUtils)
-
 import RenderedLink from '../forked-components/renderedlink.view'
 import HeadlinesButton from '../forked-components/headlinesbutton.view'
 
@@ -84,11 +82,7 @@ let HeaderWrapper = props => {
   return React.createElement(tag,hprops,[props.children,
     <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>])
 
-  // return <h2 id = {slug}  style = {{position:'relative'}}>
-  //   {props.children}
-  //   <a className="header-anchor" style = {{position:'absolute',bottom:'3px', left:'-10px'}} href={"#" + slug} aria-hidden="true">🔗</a>
-  // </h2>
-}
+ }
 
 
 class SheetView extends React.Component<any,any> {

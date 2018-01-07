@@ -8,7 +8,6 @@ const file_download_1 = require("material-ui/svg-icons/file/file-download");
 const done_1 = require("material-ui/svg-icons/action/done");
 var fileDownload = require('js-file-download');
 var stringUtils = require('string');
-console.log('stringUtils', stringUtils);
 const renderedlink_view_1 = require("../forked-components/renderedlink.view");
 const headlinesbutton_view_1 = require("../forked-components/headlinesbutton.view");
 const draft_js_1 = require("draft-js");

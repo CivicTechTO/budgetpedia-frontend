@@ -91,7 +91,8 @@ class NuggetList extends React.Component< Props, any > {
                             color:'white',
                             verticalAlign:'top',
                         }
-                    }>{ <MarkupLine markup = {title} /> }
+                    }> 
+                        <MarkupLine markup = {title} /> 
                     </div>
 
                 </div>

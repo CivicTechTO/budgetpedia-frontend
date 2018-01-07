@@ -9,7 +9,7 @@ blockquote {
 }
 /* ReactSlider */
 
-/*h1::before,h2::before,h3::before,h4::before { 
+h1::before,h2::before,h3::before,h4::before { 
   display: block; 
   content: " "; 
   margin-top: -64px; 
@@ -17,7 +17,7 @@ blockquote {
   visibility: hidden; 
   pointer-events: none;
 }
-*/
+
 a.draft-anchor {
     position:absolute;
     bottom:3px;

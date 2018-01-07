@@ -31,7 +31,7 @@
     "lodash.assign": "^4.2.0",
     "markdown-it": "^8.4.0",
     "markdown-it-anchor": "^4.0.0",
-    "markdown-it-attrs": "^1.2.0",
+    "markdown-it-attrs": "^1.2.1",
     "markdown-it-implicit-figures": "^0.6.0",
     "markdown-it-modify-token": "^1.0.2",
     "material-ui": "^0.20.0",

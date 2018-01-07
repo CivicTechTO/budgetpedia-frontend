@@ -6,7 +6,7 @@ let mdit = require('markdown-it');
 let mda = require('markdown-it-attrs');
 let mdt = require('markdown-it-modify-token');
 let mdf = require('markdown-it-implicit-figures');
-let mdislugs = require('markdown-it-anchor');
+let mdislugs = require('../forked-components/markdown-it-anchor');
 let md = new mdit({ html: true,
     modifyToken: function (token, env) {
         switch (token.type) {
