@@ -74,6 +74,10 @@ class SheetView extends React.Component<any,any> {
 
     }
 
+    // componentDidMount() {
+    //   let something = 1
+    // }
+
     // declarations
     state = null
     pluginOptions
@@ -238,7 +242,7 @@ class SheetView extends React.Component<any,any> {
     }
 
     actionbuttons = () => (
-      this.state.editable?<div style = {{position:'absolute',top:'-20px',right:0}} >
+      this.state.editable?<div style = {{position:'absolute',top:'-20px',right:0, zIndex:5}} >
           <FloatingActionButton 
               mini={true} 
               style={{marginRight:'20px',zIndex:2}}
