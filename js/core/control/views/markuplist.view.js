@@ -118,7 +118,7 @@ class MarkupListView extends React.Component {
             height: this.state.outerheight,
             maxHeight: maxHeight,
             overflow: 'hidden',
-            transition: 'height .5s'
+            transition: 'height .5s',
         };
         return (React.createElement("div", { ref: node => { this.outernode = node; }, style: outerstyle },
             React.createElement("div", { style: { border: '1px solid white' }, ref: node => { this.innernode = node; } },

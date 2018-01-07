@@ -155,7 +155,7 @@ class MarkupListView extends React.Component<any,any> {
                 height:this.state.outerheight,
                 maxHeight:maxHeight,
                 overflow:'hidden',
-                transition:'height .5s'
+                transition:'height .5s',
             }
 
         return (
