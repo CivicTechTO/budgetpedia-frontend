@@ -15,6 +15,12 @@ a.draft-anchor {
     left:2px;
 }
 
+a.markup-anchor {
+    position:absolute;
+    top:0;
+    left:2px;
+}
+
 a.header-anchor {
     display: none;
     font-size: small;

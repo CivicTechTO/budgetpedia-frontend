@@ -29,6 +29,8 @@ md.use(mda).use(mdt).use(mdf, { figcaption: true }).use(mdislugs, {
     level: [1, 2, 3, 4],
     permalink: true,
     permalinkSymbol: '&#128279;',
+    useTargetlink: true,
+    permalinkBefore: true,
 });
 const MarkupBlock = ({ markup, style }) => (React.createElement(html_view_1.default, { style: Object.assign({}, style), html: md.render(markup) }));
 exports.default = MarkupBlock;

@@ -44,10 +44,10 @@ class PageControllerClass extends React.Component<any,any> {
 
         this.toolkit.setStateModel(this, model)
 
-        setTimeout(()=>{
-            let anchors = document.querySelectorAll('a.target-anchor')
-            console.log('anchors',anchors)
-        })
+        // setTimeout(()=>{
+        //     let anchors = document.querySelectorAll('a.target-anchor')
+        //     console.log('anchors',anchors)
+        // })
 
         // setTimeout(() => {
         //     console.log('model',this.state.model)

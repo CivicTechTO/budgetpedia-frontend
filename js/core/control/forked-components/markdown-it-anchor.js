@@ -22,6 +22,24 @@ const renderPermalink = (slug, opts, state, idx) => {
     linkTokens[position[(!opts.permalinkBefore).toString()]](space());
     state.tokens[idx + 1].children[position[opts.permalinkBefore]](...linkTokens);
 };
+const renderTargetlink = (slug, opts, state, idx, text, tag) => {
+    const space = () => Object.assign(new state.Token('text', '', 0), { content: ' ' });
+    const linkTokens = [
+        Object.assign(new state.Token('link_open', 'a', 1), {
+            attrs: [
+                ['class', opts.targetlinkClass],
+                ['id', slug],
+                ['data-text', text],
+                ['data-level', tag],
+                ['aria-hidden', 'true']
+            ]
+        }),
+        Object.assign(new state.Token('html_block', '', 0), { content: '' }),
+        new state.Token('link_close', 'a', -1)
+    ];
+    linkTokens[position[(!opts.permalinkBefore).toString()]](space());
+    state.tokens[idx + 1].children[position[opts.permalinkBefore]](...linkTokens);
+};
 const uniqueSlug = (slug, slugs) => {
     slugs[slug] = (hasProp.call(slugs, slug) ? slugs[slug] : 0) + 1;
     if (slugs[slug] === 1) {
@@ -49,7 +67,14 @@ const anchor = (md, opts) => {
             let slug = token.attrGet('id');
             if (slug == null) {
                 slug = uniqueSlug(opts.slugify(title), slugs);
-                token.attrPush(['id', slug]);
+                token.attrPush(['class', opts.headerClassName]);
+                token.attrPush(['style', 'position:relative;padding-left:16px;margin-left:-16px;']);
+                if (opts.useTargetlink) {
+                    opts.renderTargetlink(slug, opts, state, tokens.indexOf(token), title, token.tag);
+                }
+                else {
+                    token.attrPush(['id', slug]);
+                }
             }
             if (opts.permalink) {
                 opts.renderPermalink(slug, opts, state, tokens.indexOf(token));
@@ -65,10 +90,14 @@ let defaults = {
     slugify,
     permalink: false,
     renderPermalink,
-    permalinkClass: 'header-anchor',
+    renderTargetlink,
+    headerClassName: 'content-header',
+    permalinkClass: 'header-anchor markup-anchor',
+    targetlinkClass: 'target-anchor',
     permalinkSymbol: '¶',
     permalinkBefore: false,
     permalinkHref,
     targetlinkoffset: 0,
+    useTargetlink: false,
 };
 module.exports = anchor;

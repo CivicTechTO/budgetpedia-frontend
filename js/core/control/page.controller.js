@@ -103,10 +103,6 @@ class PageControllerClass extends React.Component {
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
         this.toolkit.setStateModel(this, model);
-        setTimeout(() => {
-            let anchors = document.querySelectorAll('a.target-anchor');
-            console.log('anchors', anchors);
-        });
     }
     myfunc() {
         return __awaiter(this, void 0, void 0, function* () {
