@@ -35,22 +35,21 @@ let map = {
     'header-four': 'h4',
 };
 let HeaderWrapper = props => {
-    console.log('HeadWrapper props', props);
     let text = props.children[0].props.children.props.block.text;
     let type = props.children[0].props.children.props.block.type;
     let slug = stringUtils(text).slugify().s;
-    let tag = null;
     let hprops = {
+        className: 'content-header',
         style: {
             paddingLeft: '16px',
             marginLeft: '-16px',
             position: 'relative',
         },
     };
-    tag = map[type];
+    let tag = map[type];
     return React.createElement(tag, hprops, [props.children,
         React.createElement("a", { key: "permalink", className: "header-anchor draft-anchor", href: "#" + slug, "aria-hidden": "true" }, "\uD83D\uDD17"),
-        React.createElement("a", { key: "targetlink", className: "target-anchor", id: slug, "aria-hidden": "true" }),
+        React.createElement("a", { key: "targetlink", className: "target-anchor", id: slug, "data-text": text, "data-level": tag, "aria-hidden": "true" }),
     ]);
 };
 class SheetView extends React.Component {

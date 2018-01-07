@@ -25,10 +25,10 @@ a.target-anchor {
     top:-64px;
 }
 
-h1:hover>a.header-anchor, 
-h2:hover>a.header-anchor, 
-h3:hover>a.header-anchor, 
-h4:hover>a.header-anchor {
+h1.content-header:hover>a.header-anchor, 
+h2.content-header:hover>a.header-anchor, 
+h3.content-header:hover>a.header-anchor, 
+h4.content-header:hover>a.header-anchor {
     display:inline;
 }
 
