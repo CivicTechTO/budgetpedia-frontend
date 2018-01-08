@@ -318,7 +318,7 @@ and our [Budget Roadmap](/roadmap) page.`,
                 anchor:'challenges',
                 description:'links to issues',
                 type:'section',
-                tag:'The Challenges',
+                tag:'Challenges',
                 narrative: {
                     'paper:opportunities':
 `There really are huge opportunities for improvement! Changes by design,
@@ -329,7 +329,7 @@ think these are issues that need to be discussed. They've been going on for deca
 and it's time to resolve them. Any feedback on how best to go about this is very welcome.`,
                 },
                 properties: {
-                    title:'The Challenges',
+                    title:'Challenges',
                     description:'Some basic opportunites and issues we think should be addressed.',
                     style:{
                         marginBottom: '12px',
@@ -416,20 +416,11 @@ If you have suggestions for stories, or if you want to help, let us know.`,
                         index:'mainpages',
                         repo:'tilelists',
                     },
-                ],
-            },
-            {
-                controller:'section',
-                index:'footer',
-                anchor:'footer',
-                description:'footer for the main page',
-                type:'section',
-                children:[
                     {
                         controller: 'card',
                         repo:'cards',
                         index:'mainpagefooter',
-                    }
+                    },
                 ],
             },
         ],
