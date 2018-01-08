@@ -1,5 +1,6 @@
 // markdown-it-anchor.tsx
 // forked from https://github.com/valeriangalliat/markdown-it-anchor/blob/master/index.js
+// changed by Henrik Bechmann (HB)
 const string = require('string')
 
 const slugify = s =>
@@ -36,6 +37,7 @@ const renderPermalink = (slug, opts, state, idx) => {
   state.tokens[idx + 1].children[position[opts.permalinkBefore]](...linkTokens)
 }
 
+// added by HB, copied and modified renderPermalink
 const renderTargetlink = (slug, opts, state, idx, text, tag) => {
   const space = () =>
     Object.assign(new state.Token('text', '', 0), { content: ' ' })
@@ -99,11 +101,11 @@ const anchor = (md, opts) => {
         let slug = token.attrGet('id')
 
         if (slug == null) {
+          // this section re-organized by HB; mostly added conditional of useTargetLink
           slug = uniqueSlug(opts.slugify(title), slugs)
           token.attrPush(['class',opts.headerClassName])
           token.attrPush(['style','position:relative;padding-left:16px;margin-left:-16px;'])
           if (opts.useTargetlink) {
-            // console.log('generating targetlink for token',token)
             opts.renderTargetlink(slug, opts, state, tokens.indexOf(token),title,token.tag)
           } else {
             token.attrPush(['id', slug])
@@ -115,7 +117,8 @@ const anchor = (md, opts) => {
         }
 
         if (opts.callback) {
-          opts.callback(token, { slug, title })
+          // HB added tag prop
+          opts.callback(token, { slug, title, tag:token.tag })
         }
       })
   })
@@ -126,14 +129,15 @@ let defaults = {
   slugify,
   permalink: false,
   renderPermalink,
-  renderTargetlink,
-  headerClassName:'content-header',
   permalinkClass: 'header-anchor markup-anchor',
-  targetlinkClass: 'target-anchor',
   permalinkSymbol: '¶',
   permalinkBefore: false,
   permalinkHref,
+  // added by HB
   useTargetlink:false,
+  renderTargetlink,
+  targetlinkClass: 'target-anchor',
+  headerClassName:'content-header',
 }
 
 module.exports = anchor
