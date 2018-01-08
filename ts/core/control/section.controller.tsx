@@ -13,7 +13,6 @@ import FollowupBubbleView from './views/followupbubble.view'
 // legal components
 import ListController from './list.controller'
 import CardController from './card.controller'
-import SheetController from './sheet.controller'
 import MediaController from './media.controller'
 import PaperController from './paper.controller'
 import CustomController from './custom.controller'
@@ -132,16 +131,6 @@ class SectionControllerClass extends React.Component<any,any> {
             case 'list': {
 
                 controllerclass = <ListController
-                    key = { key }
-                    model = { model }
-                />
-
-                break
-
-            }
-            case 'sheet': {
-
-                controllerclass = <SheetController
                     key = { key }
                     model = { model }
                 />

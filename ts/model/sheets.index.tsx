@@ -1,7 +1,7 @@
 // sheets.index.tsx
 
 let elsewhere = {
-    controller:'sheet',
+    controller:'paper',
     index:'elsewhere',
     description: 'describe budget process elsewhere',
     lookups: {
@@ -15,7 +15,7 @@ let elsewhere = {
     },
 }
 let civilsociety = {
-    controller:'sheet',
+    controller:'paper',
     index:'civilsociety',
     description: 'describe civil society involvement in the budget process',
     lookups: {
@@ -30,7 +30,7 @@ let civilsociety = {
 }
 
 let councilservices = {
-    controller:'sheet',
+    controller:'paper',
     index:'councilservices',
     description: 'describe council approach to budget process',
     lookups: {
@@ -45,7 +45,7 @@ let councilservices = {
 }
 
 let citybasics = {
-    controller:'sheet',
+    controller:'paper',
     index:'citybasics',
     description: 'describe the basics of what the city does',
     lookups: {
@@ -60,7 +60,7 @@ let citybasics = {
 }
 
 let cityprocess = {
-    controller:'sheet',
+    controller:'paper',
     index:'cityprocess',
     description:'describe the process of basic budgeting',
     lookups:{
@@ -76,7 +76,7 @@ let cityprocess = {
 }
 
 let concerns = {
-    controller: 'sheet',
+    controller: 'paper',
     index:'concerns',
     description: 'the concerns of budgetpedia relating to the City of Toronto budget',
     lookups: {
@@ -92,7 +92,7 @@ let concerns = {
 }
 
 let opportunities = {
-    controller: 'sheet',
+    controller: 'paper',
     index:'opportunities',
     description: 'the opportunities for improvements in the budget process',
     lookups: {
@@ -108,7 +108,7 @@ let opportunities = {
 }
 
 let stories = {
-    controller: 'sheet',
+    controller: 'paper',
     index:'stories',
     description: 'the focus of the budgetpedia website',
     lookups: {

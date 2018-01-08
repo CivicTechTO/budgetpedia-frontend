@@ -11,6 +11,7 @@ import coreControllerComposer from './core.controller.composer'
 
 import ListController from './list.controller'
 import MarkupBlockView from './views/markupblock.view'
+import SheetView from './views/sheet.view'
 
 class PaperControllerClass extends React.Component<any,any> {
 
@@ -61,6 +62,14 @@ class PaperControllerClass extends React.Component<any,any> {
                 componentType = MarkupBlockView
                 break
             }
+            case 'sheet': {
+                let { lookups } = component
+                if (lookups && lookups.draftdata) {
+                    properties.draftsource = lookups.draftdata
+                }
+                componentType = SheetView
+                break
+            }
             default: {
                 return <div key = {key}>Component type { type } not found in { controller } controller</div>
             }
@@ -82,6 +91,11 @@ class PaperControllerClass extends React.Component<any,any> {
         switch (controller) {
 
             case 'paper':{
+
+                return this.emitLocalComponent(model,key)
+
+            }
+            case 'sheet': {
 
                 return this.emitLocalComponent(model,key)
 

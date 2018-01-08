@@ -6,7 +6,6 @@ const narrationbubble_view_1 = require("./views/narrationbubble.view");
 const followupbubble_view_1 = require("./views/followupbubble.view");
 const list_controller_1 = require("./list.controller");
 const card_controller_1 = require("./card.controller");
-const sheet_controller_1 = require("./sheet.controller");
 const media_controller_1 = require("./media.controller");
 const paper_controller_1 = require("./paper.controller");
 const custom_controller_1 = require("./custom.controller");
@@ -80,10 +79,6 @@ class SectionControllerClass extends React.Component {
                 }
                 case 'list': {
                     controllerclass = React.createElement(list_controller_1.default, { key: key, model: model });
-                    break;
-                }
-                case 'sheet': {
-                    controllerclass = React.createElement(sheet_controller_1.default, { key: key, model: model });
                     break;
                 }
                 case 'media': {

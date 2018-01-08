@@ -36,11 +36,11 @@ let pages = {
                 type:'section',
                 tag:'Top:Roadmap',
                 narrative: {
-                    'sheet:cityprocess':
+                    'paper:cityprocess':
 `Here is a rough outline of how the process is currently set up.`,
                 },
                 followup: {
-                    "sheet:cityprocess":
+                    "paper:cityprocess":
 `For information on specific City budgets, see our [Budgets](/budgets) page.
 `
                 },
@@ -61,7 +61,7 @@ unfortunately moving in the opposite direction.
                 },
                 children:[
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'cityprocess',
                     },
@@ -131,7 +131,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                         index:'councilprocess',
                     },
                     {
-                        controller:'sheet',
+                        controller:'paper',
                         repo:'sheets',
                         index:'councilservices',
                     },
@@ -155,7 +155,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 },
                 children: [
                     {
-                        controller:'sheet',
+                        controller:'paper',
                         repo:'sheets',
                         index:'civilsociety',
                     },
@@ -179,7 +179,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 },
                 children: [
                     {
-                        controller:'sheet',
+                        controller:'paper',
                         repo:'sheets',
                         index:'elsewhere',
                     },
@@ -203,7 +203,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 },
                 children: [
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'opportunities',
                     },
@@ -310,17 +310,17 @@ money is flowing into tangible asset improvements and purchases.`,
                 type:'section',
                 tag:'The Basics',
                 narrative: {
-                    'sheet:citybasics':
+                    'paper:citybasics':
 `At a general level it's not that complicated. Outside City Hall, front line staff
 take care of city-wide daily services (general services), and help many of us 
 directly (resident support services).`,
-                    'sheet:cityprocess':
+                    'paper:cityprocess':
 `Although budgeting is a lengthy process, very little of it is public.`,
                 },
                 followup: {
-                    'sheet:citybasics':
+                    'paper:citybasics':
 `For detailed budget information, see our budget [explorer](/explorer).`,
-                    'sheet:cityprocess':
+                    'paper:cityprocess':
 `For more information on the City of Toronto Budget Process, see the City of Toronto 
 [website](https://www.toronto.ca/city-government/budget-finances/city-budget/), 
 and our [Budget Roadmap](/roadmap) page.`,
@@ -336,12 +336,12 @@ and our [Budget Roadmap](/roadmap) page.`,
                 },
                 children: [
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'citybasics',
                     },
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'cityprocess',
                     },
@@ -355,10 +355,10 @@ and our [Budget Roadmap](/roadmap) page.`,
                 type:'section',
                 tag:'The Challenges',
                 narrative: {
-                    'sheet:opportunities':
+                    'paper:opportunities':
 `There really are huge opportunities for improvement! Changes by design,
 to make everyone's life better.`,
-                    'sheet:concerns':
+                    'paper:concerns':
 `We know many City staff don't like to hear this, and we're sorry. But we
 think these are issues that need to be discussed. They've been going on for decades,
 and it's time to resolve them. Any feedback on how best to go about this is very welcome.`,
@@ -373,12 +373,12 @@ and it's time to resolve them. Any feedback on how best to go about this is very
                 },
                 children: [
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'opportunities',
                     },
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'concerns',
                     },
@@ -392,7 +392,7 @@ and it's time to resolve them. Any feedback on how best to go about this is very
                 type:'section',
                 tag:'Stories',
                 narrative: {
-                    'sheet:stories':
+                    'paper:stories':
 `The challenge is to tell all these stories, and be useful about it!
 If you have suggestions for stories, or if you want to help, let us know.`,
                 },
@@ -406,7 +406,7 @@ If you have suggestions for stories, or if you want to help, let us know.`,
                 },
                 children: [
                     {
-                        controller: 'sheet',
+                        controller: 'paper',
                         repo:'sheets',
                         index:'stories',
                     },

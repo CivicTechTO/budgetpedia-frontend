@@ -1,12 +1,9 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const paper_view_1 = require("./views/paper.view");
 const core_controller_composer_1 = require("./core.controller.composer");
-const list_controller_1 = require("./list.controller");
-const markupblock_view_1 = require("./views/markupblock.view");
 const sheet_view_1 = require("./views/sheet.view");
-class PaperControllerClass extends React.Component {
+class SheetControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,19 +13,8 @@ class PaperControllerClass extends React.Component {
         this.emitLocalComponent = (component, key) => {
             let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
-            if (childcomponents) {
-                childcomponents = [...childcomponents];
-            }
             let componentType = null;
             switch (type) {
-                case 'paper': {
-                    componentType = paper_view_1.default;
-                    break;
-                }
-                case 'markupblock': {
-                    componentType = markupblock_view_1.default;
-                    break;
-                }
                 case 'sheet': {
                     let { lookups } = component;
                     if (lookups && lookups.draftdata) {
@@ -54,18 +40,12 @@ class PaperControllerClass extends React.Component {
         this.emitComponent = (model, key) => {
             let { controller } = model;
             switch (controller) {
-                case 'paper': {
-                    return this.emitLocalComponent(model, key);
-                }
                 case 'sheet': {
                     return this.emitLocalComponent(model, key);
                 }
-                case 'list': {
-                    return React.createElement(list_controller_1.default, { key: key, model: model });
-                }
                 default: {
                     let { description } = model;
-                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found`);
+                    return React.createElement("div", { key: 'default' + key }, `${controller} (${description}) not found in List processor`);
                 }
             }
         };
@@ -79,9 +59,10 @@ class PaperControllerClass extends React.Component {
         let { model } = this.state;
         if (!model)
             return React.createElement("div", null);
-        let component = this.emitComponent(model, model.index);
+        let { index } = model;
+        let component = this.emitComponent(model, index);
         return component;
     }
 }
-let PaperController = core_controller_composer_1.default(PaperControllerClass);
-exports.default = PaperController;
+let SheetController = core_controller_composer_1.default(SheetControllerClass);
+exports.default = SheetController;
