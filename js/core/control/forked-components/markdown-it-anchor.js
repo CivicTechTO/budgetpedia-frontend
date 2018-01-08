@@ -80,7 +80,7 @@ const anchor = (md, opts) => {
                 opts.renderPermalink(slug, opts, state, tokens.indexOf(token));
             }
             if (opts.callback) {
-                opts.callback(token, { slug, title });
+                opts.callback(token, { slug, title, tag: token.tag });
             }
         });
     });
@@ -90,13 +90,13 @@ let defaults = {
     slugify,
     permalink: false,
     renderPermalink,
-    renderTargetlink,
-    headerClassName: 'content-header',
     permalinkClass: 'header-anchor markup-anchor',
-    targetlinkClass: 'target-anchor',
     permalinkSymbol: '¶',
     permalinkBefore: false,
     permalinkHref,
     useTargetlink: false,
+    renderTargetlink,
+    targetlinkClass: 'target-anchor',
+    headerClassName: 'content-header',
 };
 module.exports = anchor;
