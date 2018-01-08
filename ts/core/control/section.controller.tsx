@@ -11,10 +11,10 @@ import NarrationBubbleView from './views/narrationbubble.view'
 import FollowupBubbleView from './views/followupbubble.view'
 
 // legal components
-import ListController from './list.controller'
 import CardController from './card.controller'
-import MediaController from './media.controller'
+import ListController from './list.controller'
 import PaperController from './paper.controller'
+import MediaController from './media.controller'
 import CustomController from './custom.controller'
 
 import SectionView from './views/section.view'
