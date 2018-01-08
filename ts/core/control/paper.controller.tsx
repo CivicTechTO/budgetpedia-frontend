@@ -95,11 +95,6 @@ class PaperControllerClass extends React.Component<any,any> {
                 return this.emitLocalComponent(model,key)
 
             }
-            case 'sheet': {
-
-                return this.emitLocalComponent(model,key)
-
-            }
             case 'list': {
 
                 return <ListController

@@ -57,9 +57,6 @@ class PaperControllerClass extends React.Component {
                 case 'paper': {
                     return this.emitLocalComponent(model, key);
                 }
-                case 'sheet': {
-                    return this.emitLocalComponent(model, key);
-                }
                 case 'list': {
                     return React.createElement(list_controller_1.default, { key: key, model: model });
                 }
