@@ -74,7 +74,14 @@ class TileListController extends React.Component< Props, any > {
         })
 // 152    102    103   #986667 
         return (
-            <div style = {{position:'relative'}} >
+            <div style = {
+                {
+                    position:'relative', 
+                    margin:'0 8px',
+                    borderRadius:'8px',
+                    backgroundColor: "#749261",               
+                }
+            } >
                 <div style = {
                     {
                         position:'absolute',

@@ -20,7 +20,6 @@ let tileliststyle =
     {
         padding:"36px 16px 16px",
         display: "block",
-        backgroundColor: "#749261",               
         overflowX: "scroll",
     }
 

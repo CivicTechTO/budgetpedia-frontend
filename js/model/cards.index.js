@@ -14,7 +14,6 @@ let mainpageheader = {
         type: 'div',
         properties: {
             style: {
-                backgroundColor: "#404244",
                 padding: "8px",
             },
         },
@@ -89,7 +88,6 @@ let mainpagefooter = {
         type: 'div',
         properties: {
             style: {
-                backgroundColor: "#404244",
                 padding: "8px",
             },
         },

@@ -33,7 +33,12 @@ class TileListController extends React.Component {
         let tiles = tiledata.map(function (data) {
             return (React.createElement(tile_view_1.default, { key: data.id, content: data.content, route: data.route, imageStyle: data.imageStyle, onSelect: onSelect }));
         });
-        return (React.createElement("div", { style: { position: 'relative' } },
+        return (React.createElement("div", { style: {
+                position: 'relative',
+                margin: '0 8px',
+                borderRadius: '8px',
+                backgroundColor: "#749261",
+            } },
             React.createElement("div", { style: {
                     position: 'absolute',
                     left: '0',

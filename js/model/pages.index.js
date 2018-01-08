@@ -50,11 +50,6 @@ The short story is that we think that more openness and collaborarion at all lev
 the budget process would very likely lead to better outcomes for all. Instead, Council is 
 unfortunately moving in the opposite direction.
 `,
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -89,11 +84,6 @@ least some collaboration with front-line staff, or at least front-line managers.
                     title: "Insider Notes",
                     description: `One of our volunteers assembled these detailed notes in 2016, 
                     from publicly available information and direct interviews of City Hall staff.`,
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -113,11 +103,6 @@ least some collaboration with front-line staff, or at least front-line managers.
                 properties: {
                     title: "Council",
                     description: "Councillors seemed to be going in a different, better, direction at one time.",
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -142,11 +127,6 @@ least some collaboration with front-line staff, or at least front-line managers.
                 properties: {
                     title: "Civil Society",
                     description: "Civil society tries to do its part, to fill the vacuum.",
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -166,11 +146,6 @@ least some collaboration with front-line staff, or at least front-line managers.
                 properties: {
                     title: "Elsewhere",
                     description: "New York as an example does things differently, with spiralling consultations taking almost a year.",
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -190,11 +165,6 @@ least some collaboration with front-line staff, or at least front-line managers.
                 properties: {
                     title: "Possibilities",
                     description: "There are many possible ways to conduct budget cycles. Here are some ways we think would make improvements.",
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -315,11 +285,6 @@ and our [Budget Roadmap](/roadmap) page.`,
                 properties: {
                     title: 'The Basics',
                     description: 'What the City of Toronto does, and how the budget process works.',
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                        paddingBottom: '1px',
-                    },
                 },
                 children: [
                     {
@@ -383,10 +348,6 @@ If you have suggestions for stories, or if you want to help, let us know.`,
                 properties: {
                     title: 'Stories',
                     description: "We're organizing around data stories.",
-                    style: {
-                        marginBottom: '12px',
-                        backgroundColor: '#d9d9d9',
-                    },
                 },
                 children: [
                     {
