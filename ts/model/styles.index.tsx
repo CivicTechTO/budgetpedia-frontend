@@ -5,6 +5,7 @@ let headercardstyle =
         margin:"8px",
         border:"2px solid silver",
         borderRadius:"8px",
+        boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
     }
 
 let footercardstyle =
@@ -14,6 +15,7 @@ let footercardstyle =
         margin:"8px",
         border:"2px solid silver",
         borderRadius:"8px",
+        boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
     }
 
 let tileliststyle =

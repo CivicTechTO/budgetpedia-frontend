@@ -79,7 +79,8 @@ class TileListController extends React.Component< Props, any > {
                     position:'relative', 
                     margin:'0 8px',
                     borderRadius:'8px',
-                    backgroundColor: "#749261",               
+                    backgroundColor: "#749261",
+                    boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
                 }
             } >
                 <div style = {

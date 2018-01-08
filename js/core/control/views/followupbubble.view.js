@@ -13,6 +13,7 @@ class FollowupBubbleView extends React.Component {
             borderRadius: '8px',
             padding: '0 3px',
             position: 'relative',
+            boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
         };
         this.firstArrowStyle = {
             borderStyle: 'solid',

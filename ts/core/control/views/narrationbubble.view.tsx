@@ -17,6 +17,7 @@ class NarrationBubbleView extends React.Component<any,any> {
         borderRadius: '8px',
         padding: '0 3px',
         position:'relative',
+        boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
     }
 
     firstArrowStyle = {
@@ -27,7 +28,6 @@ class NarrationBubbleView extends React.Component<any,any> {
         borderWidth: '16px 16px 0px 16px',
         bottom: '-16px',
         left: '47px',
-
     }
 
     secondArrowStyle = {
