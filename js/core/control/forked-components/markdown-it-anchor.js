@@ -97,7 +97,6 @@ let defaults = {
     permalinkSymbol: '¶',
     permalinkBefore: false,
     permalinkHref,
-    targetlinkoffset: 0,
     useTargetlink: false,
 };
 module.exports = anchor;

@@ -60,8 +60,9 @@ let map = {
 
 let HeaderWrapper = props => {
 
-  let text = props.children[0].props.children.props.block.text
-  let type = props.children[0].props.children.props.block.type
+  let block = props.children[0].props.children.props.block
+  let text = block.text
+  let type = block.type
   let slug = stringUtils(text).slugify().s
   let hprops = {
     className:'content-header',

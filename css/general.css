@@ -21,6 +21,14 @@ a.markup-anchor {
     left:2px;
 }
 
+a.header-anchor:link,
+a.header-anchor:visited,
+a.header-anchor:hover,
+a.header-anchor:active {
+    text-decoration: none;
+}
+
+
 a.header-anchor {
     display: none;
     font-size: small;
