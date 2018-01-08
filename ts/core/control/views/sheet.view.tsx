@@ -60,9 +60,7 @@ let map = {
 
 let HeaderWrapper = props => {
 
-  let block = props.children[0].props.children.props.block
-  let text = block.text
-  let type = block.type
+  let { text, type } = props.children[0].props.children.props.block
   let slug = stringUtils(text).slugify().s
   let hprops = {
     className:'content-header',
@@ -75,9 +73,10 @@ let HeaderWrapper = props => {
 
   let tag = map[type]
 
-  return React.createElement(tag,hprops,[props.children,
-    <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>,
-    <a key = "targetlink" className="target-anchor" id={slug} data-text={text} data-level = {tag} aria-hidden="true"></a>,
+  return React.createElement(tag,hprops,[
+      props.children,
+      <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>,
+      <a key = "targetlink" className="target-anchor" id={slug} data-text={text} data-level = {tag} aria-hidden="true"></a>,
     ])
 
  }
