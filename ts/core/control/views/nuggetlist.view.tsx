@@ -10,6 +10,7 @@ import NuggetView from './nugget.view'
 import ScrollControlsView from './scrollcontrols.view'
 
 import MarkupLine from './markupline.view'
+import HashAnchorWrapper from './hashanchorwrapper.view'
 
 interface Props {
     nuggets: {
@@ -87,17 +88,14 @@ class NuggetList extends React.Component< Props, any > {
                         zIndex:2,
                     }
                 }>
-
-                    <div style = {
+                    <HashAnchorWrapper tag = 'h2' title = {title} style = {
                         {
                             display:'inline-block',
                             color:'white',
                             verticalAlign:'bottom',
                             marginRight:'8px'
                         }
-                    }> 
-                        <MarkupLine markup = {title} /> 
-                    </div>
+                    } /> 
                     <div style = {
                         {
                             display:'inline-block',

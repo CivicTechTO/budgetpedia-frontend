@@ -4,6 +4,7 @@ const React = require("react");
 const nugget_view_1 = require("./nugget.view");
 const scrollcontrols_view_1 = require("./scrollcontrols.view");
 const markupline_view_1 = require("./markupline.view");
+const hashanchorwrapper_view_1 = require("./hashanchorwrapper.view");
 class NuggetList extends React.Component {
     constructor() {
         super(...arguments);
@@ -44,13 +45,12 @@ class NuggetList extends React.Component {
                     padding: '8px 16px',
                     zIndex: 2,
                 } },
-                React.createElement("div", { style: {
+                React.createElement(hashanchorwrapper_view_1.default, { tag: 'h2', title: title, style: {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'bottom',
                         marginRight: '8px'
-                    } },
-                    React.createElement(markupline_view_1.default, { markup: title })),
+                    } }),
                 React.createElement("div", { style: {
                         display: 'inline-block',
                         color: 'white',
