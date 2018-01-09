@@ -35,7 +35,7 @@ class TileListController extends React.Component {
         });
         return (React.createElement("div", { style: {
                 position: 'relative',
-                margin: '0 8px',
+                margin: '0 16px',
                 borderRadius: '8px',
                 backgroundColor: "#749261",
                 boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',

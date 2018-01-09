@@ -9,7 +9,7 @@ class NarrationBubbleView extends React.Component {
             maxWidth: '600px',
             border: '3px outset silver',
             backgroundColor: 'lightcyan',
-            margin: '8px 8px 16px 8px',
+            margin: '8px 16px 16px 16px',
             borderRadius: '8px',
             padding: '0 3px',
             position: 'relative',

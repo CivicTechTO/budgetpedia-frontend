@@ -29,7 +29,7 @@ class SectionView extends React.Component<any,any>{
 
             {
                 title?
-                <div style = {{backgroundColor:"#d9d9d9",padding:"8px",borderTop:"4px solid silver"}}>
+                <div style = {{backgroundColor:"#d9d9d9",padding:"8px 16px",borderTop:"4px solid silver"}}>
                     <h1><MarkupLine markup = {title} /></h1>
 
 

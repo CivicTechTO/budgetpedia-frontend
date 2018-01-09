@@ -9,7 +9,7 @@ class FollowupBubbleView extends React.Component {
             maxWidth: '600px',
             border: '3px outset silver',
             backgroundColor: 'cornsilk',
-            margin: '16px 8px 32px 8px',
+            margin: '16px 16px 32px 16px',
             borderRadius: '8px',
             padding: '0 3px',
             position: 'relative',

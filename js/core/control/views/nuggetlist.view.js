@@ -24,7 +24,7 @@ class NuggetList extends React.Component {
             backgroundColor: image ? 'none' : 'green',
             backgroundImage: image ? `url(${image})` : 'none',
             backgroundSize: image ? 'cover' : 'auto',
-            margin: '0 8px 24px 8px',
+            margin: '0 16px 24px 16px',
             borderRadius: '8px',
             boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
         };

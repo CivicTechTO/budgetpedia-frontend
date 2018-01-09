@@ -39,10 +39,11 @@ a.target-anchor {
     top:-64px;
 }
 
-h1.content-header:hover>a.header-anchor, 
-h2.content-header:hover>a.header-anchor, 
-h3.content-header:hover>a.header-anchor, 
-h4.content-header:hover>a.header-anchor {
+/* ususlly h1, h2, h3, h4; but with CardTitle, something else */
+.content-header:hover>a.header-anchor, 
+.content-header:hover>a.header-anchor, 
+.content-header:hover>a.header-anchor, 
+.content-header:hover>a.header-anchor {
     display:inline;
 }
 
