@@ -116,7 +116,7 @@ We haven't seen any other details of this process, so we can't say how this happ
                 headermarkup: `
 ### Phase One: Internal Preparation
 
-#### Analyst meetings and preliminary budget creation at the program level
+**Analyst meetings and preliminary budget creation at the program level**
 
 The first phase of budget production begins with analyst meetings, and continues with creation of preliminary budgets.
 `,
@@ -203,7 +203,7 @@ The first phase of budget production begins with analyst meetings, and continues
                 headermarkup: `
 ### Phase Two: Internal Reviews
 
-#### Internal round of reviews
+**Internal round of reviews**
 
 This is also done behind closed doors. Note that standing committee reviews have not occured since then.
 `,
@@ -338,7 +338,7 @@ This is also done behind closed doors. Note that standing committee reviews have
                 headermarkup: `
 ### Phase Three: Budget Committee Assessments
 
-#### Initial Assessments
+**Initial Assessments**
 
 Note that the bulk of the budget development has been completed by this time.
 `,

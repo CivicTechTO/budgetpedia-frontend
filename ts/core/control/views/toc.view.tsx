@@ -7,6 +7,13 @@ import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
 
+let paddingMap = {
+    h1:0,
+    h2:16,
+    h3:32,
+    h4:48,
+}
+
 let ToCView = ({tocdata}) => {
 
     let styles = {
@@ -18,7 +25,8 @@ let ToCView = ({tocdata}) => {
 
     if (tocdata) {
         toc = tocdata.map((item,index) => {
-            return <div key = {index} ><a href={'#' + item.slug}>{item.text}</a></div>
+            let paddingLeft = paddingMap[item.tag] + 'px'
+            return <div key = {index} style = {{paddingLeft,}} ><a href={'#' + item.slug}>{item.text}</a></div>
         })
     }
 

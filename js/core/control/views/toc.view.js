@@ -2,6 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const Paper_1 = require("material-ui/Paper");
+let paddingMap = {
+    h1: 0,
+    h2: 16,
+    h3: 32,
+    h4: 48,
+};
 let ToCView = ({ tocdata }) => {
     let styles = {
         outderdiv: { backgroundColor: '#d9d9d9', padding: '0 16px 16px 16px' },
@@ -10,7 +16,8 @@ let ToCView = ({ tocdata }) => {
     let toc = [];
     if (tocdata) {
         toc = tocdata.map((item, index) => {
-            return React.createElement("div", { key: index },
+            let paddingLeft = paddingMap[item.tag] + 'px';
+            return React.createElement("div", { key: index, style: { paddingLeft, } },
                 React.createElement("a", { href: '#' + item.slug }, item.text));
         });
     }
