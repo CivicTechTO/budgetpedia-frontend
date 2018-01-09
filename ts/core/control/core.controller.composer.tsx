@@ -14,7 +14,7 @@ import { push } from 'react-router-redux'
 
 import master from '../../gateway/master.model'
 
-let setStateModel = (self, model) => {
+let setStateModel = (self, model, callback) => {
 
     if (master.isPromise(model)) {
         model.then((model) => {
@@ -29,7 +29,7 @@ let setStateModel = (self, model) => {
         model.children = updateChildren(self,model.children)
         self.setState({
             model,
-        })
+        },callback)
     }
 }
 
@@ -70,7 +70,6 @@ let updateProperties = (self,model) => {
         for (let key in propReferences) {
             properties[key] = self.props[propReferences[key]]
         }
-        // properties.propReferences = null
     }
     if (lookups) {
         // console.log('lookups',lookups)
@@ -78,7 +77,6 @@ let updateProperties = (self,model) => {
             let {repo, index} = lookups[key]
             properties[key] = master.getDocument(repo, index)
         } 
-        // properties.lookups = null
     }
     return properties
 }

@@ -22,6 +22,7 @@ import SectionController from './section.controller'
 import PageView from './views/page.view'
 import PageMenuView from './views/pagemenu.view'
 import AttributionView from './views/attribution.view'
+import ToCView from './views/toc.view'
 
 class PageControllerClass extends React.Component<any,any> {
 
@@ -31,10 +32,30 @@ class PageControllerClass extends React.Component<any,any> {
     }
 
     state = {
-        model:null
+        model:null,
+        tocdata:null,
     }
 
     toolkit = null
+
+    anchorCallback = () => {
+        let tocdata = []
+        let self = this
+        setTimeout(()=>{
+            let anchors = document.querySelectorAll('a.target-anchor')
+            anchors.forEach(element => {
+                let item = {
+                    tag:element.getAttribute('data-level'),
+                    slug:element.getAttribute('id'),
+                    text:element.getAttribute('data-text'),
+                }
+                tocdata.push(item)
+            })
+            self.setState({
+                tocdata,
+            })
+        })
+    }
 
     componentDidMount() {
         let { match :{ path } } = this.props
@@ -42,12 +63,7 @@ class PageControllerClass extends React.Component<any,any> {
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
 
-        this.toolkit.setStateModel(this, model)
-
-        // setTimeout(()=>{
-        //     let anchors = document.querySelectorAll('a.target-anchor')
-        //     console.log('anchors',anchors)
-        // })
+        this.toolkit.setStateModel(this, model, this.anchorCallback)
 
         // setTimeout(() => {
         //     console.log('model',this.state.model)
@@ -138,8 +154,8 @@ class PageControllerClass extends React.Component<any,any> {
 
     }
 
-    async myfunc () {
-
+    getToC = () => {
+        return this.state.tocdata
     }
 
     emitComponent = (model,key) => {
@@ -152,9 +168,12 @@ class PageControllerClass extends React.Component<any,any> {
             }
             case 'section': {
 
+                // isToC triggers render on change
                 return <SectionController
                     key = { key }
                     model = { model }
+                    getToC = { this.getToC }
+                    isToC = {!!this.state.tocdata}
                 />
 
             }

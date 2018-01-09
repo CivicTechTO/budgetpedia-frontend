@@ -53,6 +53,12 @@ unfortunately moving in the opposite direction.
                 },
                 children: [
                     {
+                        controller: 'section',
+                        type: 'toc',
+                        index: 'tableofconents',
+                        description: 'page table of contents',
+                    },
+                    {
                         controller: 'paper',
                         repo: 'sheets',
                         index: 'cityprocess',
@@ -219,7 +225,13 @@ least some collaboration with front-line staff, or at least front-line managers.
                         controller: 'card',
                         repo: 'cards',
                         index: 'mainpageheader',
-                    }
+                    },
+                    {
+                        controller: 'section',
+                        type: 'toc',
+                        index: 'tableofconents',
+                        description: 'page table of contents',
+                    },
                 ],
             },
             {

@@ -7,15 +7,25 @@ import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
 
-let PaperView = ({children}) => {
+let ToCView = ({tocdata}) => {
 
     let styles = {
         outderdiv:{backgroundColor:'#d9d9d9',padding: '0 16px 16px 16px'},
         innerdiv:{padding:'16px',position:"relative"},
     }
 
+    let toc = []
+
+    if (tocdata) {
+        toc = tocdata.map((item,index) => {
+            return <div key = {index} ><a href={'#' + item.slug}>{item.text}</a></div>
+        })
+    }
+
+    console.log('tocdata, toc in ToCView',tocdata, toc)
+
     return (
-        <article style = {styles.outderdiv}>
+        <nav style = {styles.outderdiv}>
             <Paper zDepth = {3}
                 style = {
                     {
@@ -25,14 +35,14 @@ let PaperView = ({children}) => {
                 }
             >
                 <div style = {styles.innerdiv as any}>
-
-                    {children}
+                    <h1>Page Contents</h1>
+                    { toc }
 
                 <div style = {{clear:'both'}}></div>
                 </div>
             </Paper>
-        </article>
+        </nav>
     )
 }
 
-export default PaperView
+export default ToCView

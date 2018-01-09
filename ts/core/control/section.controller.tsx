@@ -16,6 +16,8 @@ import ListController from './list.controller'
 import PaperController from './paper.controller'
 import MediaController from './media.controller'
 import CustomController from './custom.controller'
+import PageController from './page.controller'
+import ToCView from './views/toc.view'
 
 import SectionView from './views/section.view'
 
@@ -55,6 +57,9 @@ class SectionControllerClass extends React.Component<any,any> {
         let componentType = null
 
         switch (type) {
+            case 'toc': {
+                return <ToCView key = {index} tocdata = { this.props.getToC() } />
+            }
             case 'section': {
                 properties.id = anchor
                 componentType = SectionView
@@ -180,8 +185,8 @@ class SectionControllerClass extends React.Component<any,any> {
         let narratives = this.narratives
         let followups = this.followups
 
-        let isNarratives = narratives[controller] && narratives[controller][index]
-        let isFollowups = followups[controller] && followups[controller][index]
+        let isNarratives = narratives && narratives[controller] && narratives[controller][index]
+        let isFollowups = followups && followups[controller] && followups[controller][index]
 
         if (isNarratives || isFollowups) {
             output = <div key = {key}>

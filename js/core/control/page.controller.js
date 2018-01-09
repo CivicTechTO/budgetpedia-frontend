@@ -1,12 +1,4 @@
 'use strict';
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const Chip_1 = require("material-ui/Chip");
@@ -21,9 +13,28 @@ class PageControllerClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            model: null
+            model: null,
+            tocdata: null,
         };
         this.toolkit = null;
+        this.anchorCallback = () => {
+            let tocdata = [];
+            let self = this;
+            setTimeout(() => {
+                let anchors = document.querySelectorAll('a.target-anchor');
+                anchors.forEach(element => {
+                    let item = {
+                        tag: element.getAttribute('data-level'),
+                        slug: element.getAttribute('id'),
+                        text: element.getAttribute('data-text'),
+                    };
+                    tocdata.push(item);
+                });
+                self.setState({
+                    tocdata,
+                });
+            });
+        };
         this.onClickChip = index => {
             scrollToElement('#' + index, { offset: -64 });
         };
@@ -80,6 +91,9 @@ class PageControllerClass extends React.Component {
             let output = React.createElement(componentType, properties, childcomponents);
             return output;
         };
+        this.getToC = () => {
+            return this.state.tocdata;
+        };
         this.emitComponent = (model, key) => {
             let { controller, description } = model;
             switch (controller) {
@@ -87,7 +101,7 @@ class PageControllerClass extends React.Component {
                     return this.emitLocalComponent(model, key);
                 }
                 case 'section': {
-                    return React.createElement(section_controller_1.default, { key: key, model: model });
+                    return React.createElement(section_controller_1.default, { key: key, model: model, getToC: this.getToC, isToC: !!this.state.tocdata });
                 }
                 default: {
                     let { index, description } = model;
@@ -102,11 +116,7 @@ class PageControllerClass extends React.Component {
         let { master } = this.toolkit;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
-        this.toolkit.setStateModel(this, model);
-    }
-    myfunc() {
-        return __awaiter(this, void 0, void 0, function* () {
-        });
+        this.toolkit.setStateModel(this, model, this.anchorCallback);
     }
     render() {
         let { model } = this.state;

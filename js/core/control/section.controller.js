@@ -9,6 +9,7 @@ const list_controller_1 = require("./list.controller");
 const paper_controller_1 = require("./paper.controller");
 const media_controller_1 = require("./media.controller");
 const custom_controller_1 = require("./custom.controller");
+const toc_view_1 = require("./views/toc.view");
 const section_view_1 = require("./views/section.view");
 class SectionControllerClass extends React.Component {
     constructor(props) {
@@ -22,6 +23,9 @@ class SectionControllerClass extends React.Component {
             let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
             switch (type) {
+                case 'toc': {
+                    return React.createElement(toc_view_1.default, { key: index, tocdata: this.props.getToC() });
+                }
                 case 'section': {
                     properties.id = anchor;
                     componentType = section_view_1.default;
@@ -101,8 +105,8 @@ class SectionControllerClass extends React.Component {
             let output = null;
             let narratives = this.narratives;
             let followups = this.followups;
-            let isNarratives = narratives[controller] && narratives[controller][index];
-            let isFollowups = followups[controller] && followups[controller][index];
+            let isNarratives = narratives && narratives[controller] && narratives[controller][index];
+            let isFollowups = followups && followups[controller] && followups[controller][index];
             if (isNarratives || isFollowups) {
                 output = React.createElement("div", { key: key },
                     isNarratives ? React.createElement(narrationbubble_view_1.default, { markup: narratives[controller][index] }) : null,

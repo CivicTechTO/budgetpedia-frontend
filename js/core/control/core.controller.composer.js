@@ -4,7 +4,7 @@ const React = require("react");
 const react_redux_1 = require("react-redux");
 const react_router_redux_1 = require("react-router-redux");
 const master_model_1 = require("../../gateway/master.model");
-let setStateModel = (self, model) => {
+let setStateModel = (self, model, callback) => {
     if (master_model_1.default.isPromise(model)) {
         model.then((model) => {
             model = updateModel(self, model);
@@ -19,7 +19,7 @@ let setStateModel = (self, model) => {
         model.children = updateChildren(self, model.children);
         self.setState({
             model,
-        });
+        }, callback);
     }
 };
 let updateChildren = (self, children) => {
