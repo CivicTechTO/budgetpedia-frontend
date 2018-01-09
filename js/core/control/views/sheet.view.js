@@ -233,7 +233,10 @@ class SheetView extends React.Component {
             innerdiv: { padding: '16px', position: "relative" },
         };
         return (React.createElement("div", { style: styles.outderdiv },
-            React.createElement(Paper_1.default, { zDepth: 3 },
+            React.createElement(Paper_1.default, { zDepth: 3, style: {
+                    boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
+                    borderRadius: '8px',
+                } },
                 React.createElement("div", { style: styles.innerdiv, onClick: this.focus },
                     this.actionbuttons(),
                     this.state.renderEditor ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, blockRenderMap: blockRenderMap, ref: (element) => { this.editor = element; } }) : null,

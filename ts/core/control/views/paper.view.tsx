@@ -13,7 +13,14 @@ let PaperView = ({children}) => {
 
     return (
         <div style = {styles.outderdiv}>
-            <Paper zDepth = {3} >
+            <Paper zDepth = {3}
+                style = {
+                    {
+                        boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
+                        borderRadius:'8px',
+                    }
+                }
+            >
                 <div style = {styles.innerdiv as any}>
 
                     {children}
