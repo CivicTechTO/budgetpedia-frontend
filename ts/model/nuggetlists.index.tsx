@@ -6,7 +6,8 @@ let abouttoronto = {
     description:'basic stats about toronto',
     type:'nuggetlist',
     properties: {
-        title:'About Toronto <span style="font-size:smaller">(source: [StatsCan Census](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){style="color:white"})</span>',
+        title:'**About Toronto**',
+        subtitle:'(source: [StatsCan Census](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){style="color:white"})',
         image:'/public/images/city-people-faded2.jpg',
         nuggets: [
             {
@@ -88,7 +89,8 @@ let torontofinances = {
     description:'basic stats about toronto audited statements',
     type:'nuggetlist',
     properties: {
-        title:'About Toronto Finances <span style="font-size:smaller">(source: [audited statements](https://drive.google.com/open?id=0B208oCU9D8OuZW9OVU5sUVZtVDg){style="color:white"})</span>',
+        title:'**About Toronto Finances**',
+        subtitle:'(source: [audited statements](https://drive.google.com/open?id=0B208oCU9D8OuZW9OVU5sUVZtVDg){style="color:white"})',
         image:'/public/images/cityscape-night.jpg',
         nuggets: [
             {
@@ -183,7 +185,8 @@ let torontotrends = {
     description:'basic stats about toronto audited statement changes',
     type:'nuggetlist',
     properties: {
-        title:'Toronto Finance Trends <span style=font-size:smaller>(source: audited statements on [Budgetpedia](/explorer){style=color:white})</span> <span style=font-size:x-small;white-space:nowrap>*adjusted for inflation to 2017$*</span>',
+        title:'**Toronto Finance Trends**',
+        subtitle:'(source: audited statements on [Budgetpedia](/explorer){style=color:white}) <span style=font-size:smaller;white-space:nowrap>*adjusted for inflation to 2017$*</span>',
         image:'/public/images/ttc-faded.jpg',
         nuggets: [
             {

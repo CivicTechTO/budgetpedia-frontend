@@ -17,8 +17,7 @@ class SectionView extends React.Component {
             title ?
                 React.createElement("header", { style: { backgroundColor: "#d9d9d9", padding: "8px 16px", borderTop: "4px solid silver" } },
                     React.createElement(hashanchorheader_view_1.default, { tag: 'h1', title: title }),
-                    description ?
-                        React.createElement(markupblock_view_1.default, { markup: description }) : null) : null,
+                    description ? React.createElement(markupblock_view_1.default, { markup: description }) : null) : null,
             React.createElement("main", null, children));
     }
 }

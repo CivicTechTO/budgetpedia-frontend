@@ -23,6 +23,7 @@ interface Props {
     }[],
     image?: string,
     title?: string,
+    subtitle?:string,
     style?: object,
     contrast?: boolean,
 }
@@ -43,7 +44,7 @@ class NuggetList extends React.Component< Props, any > {
 
     render() {
 
-        let { nuggets:nuggetdata, image, title, style, contrast } = this.props
+        let { nuggets:nuggetdata, image, title, subtitle, style, contrast } = this.props
 
         let defaultstyle = {
             position:'relative',
@@ -91,10 +92,21 @@ class NuggetList extends React.Component< Props, any > {
                         {
                             display:'inline-block',
                             color:'white',
-                            verticalAlign:'top',
+                            verticalAlign:'bottom',
+                            marginRight:'8px'
                         }
                     }> 
                         <MarkupLine markup = {title} /> 
+                    </div>
+                    <div style = {
+                        {
+                            display:'inline-block',
+                            color:'white',
+                            verticalAlign:'bottom',
+                            fontSize:'smaller',
+                        }
+                    }> 
+                        <MarkupLine markup = {subtitle} /> 
                     </div>
 
                 </div>

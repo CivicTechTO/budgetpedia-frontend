@@ -18,7 +18,7 @@ class NuggetList extends React.Component {
         });
     }
     render() {
-        let { nuggets: nuggetdata, image, title, style, contrast } = this.props;
+        let { nuggets: nuggetdata, image, title, subtitle, style, contrast } = this.props;
         let defaultstyle = {
             position: 'relative',
             backgroundColor: image ? 'none' : 'green',
@@ -47,9 +47,17 @@ class NuggetList extends React.Component {
                 React.createElement("div", { style: {
                         display: 'inline-block',
                         color: 'white',
-                        verticalAlign: 'top',
+                        verticalAlign: 'bottom',
+                        marginRight: '8px'
                     } },
-                    React.createElement(markupline_view_1.default, { markup: title }))),
+                    React.createElement(markupline_view_1.default, { markup: title })),
+                React.createElement("div", { style: {
+                        display: 'inline-block',
+                        color: 'white',
+                        verticalAlign: 'bottom',
+                        fontSize: 'smaller',
+                    } },
+                    React.createElement(markupline_view_1.default, { markup: subtitle }))),
             React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
                 React.createElement("div", { style: defaultScrollBlockstyle, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {

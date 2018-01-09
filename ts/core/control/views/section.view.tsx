@@ -30,10 +30,10 @@ class SectionView extends React.Component<any,any>{
             {
                 title?
                 <header style = {{backgroundColor:"#d9d9d9",padding:"8px 16px",borderTop:"4px solid silver"}}>
+
                     <HashAnchorHeader tag = 'h1' title = {title} />
 
-                    {description?
-                        <MarkupBlock markup = {description} />:null}
+                    { description?<MarkupBlock markup = {description} />:null }
 
                 </header>:null
             }
