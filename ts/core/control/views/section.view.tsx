@@ -29,17 +29,18 @@ class SectionView extends React.Component<any,any>{
 
             {
                 title?
-                <div style = {{backgroundColor:"#d9d9d9",padding:"8px 16px",borderTop:"4px solid silver"}}>
+                <header style = {{backgroundColor:"#d9d9d9",padding:"8px 16px",borderTop:"4px solid silver"}}>
                     <h1><MarkupLine markup = {title} /></h1>
 
 
                     {description?
                         <MarkupBlock markup = {description} />:null}
 
-                </div>:null
+                </header>:null
             }
-
-            { children }
+            <main>
+                { children }
+            </main>
 
         </section>
     }

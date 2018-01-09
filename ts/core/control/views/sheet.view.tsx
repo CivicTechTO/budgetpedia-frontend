@@ -339,7 +339,7 @@ class SheetView extends React.Component<any,any> {
         }
 
         return (
-            <div style = {styles.outderdiv}>
+            <article style = {styles.outderdiv}>
                 <Paper zDepth = {3} style = {
                   {
                     boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
@@ -369,7 +369,7 @@ class SheetView extends React.Component<any,any> {
                     {this.imagecontrol()}
 
                 </Paper>
-            </div>
+            </article>
         )
     }
 }

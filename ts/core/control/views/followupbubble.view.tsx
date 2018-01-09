@@ -15,7 +15,7 @@ class FollowupBubbleView extends React.Component<any,any> {
         backgroundColor:'cornsilk',
         margin:'16px 16px 32px 16px',
         borderRadius: '8px',
-        padding: '0 3px',
+        padding: '0 16px',
         position:'relative',
         boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
     }

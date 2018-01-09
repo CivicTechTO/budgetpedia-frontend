@@ -15,12 +15,12 @@ class SectionView extends React.Component {
         };
         return React.createElement("section", { id: id, style: Object.assign({}, defaultstyle, style) },
             title ?
-                React.createElement("div", { style: { backgroundColor: "#d9d9d9", padding: "8px 16px", borderTop: "4px solid silver" } },
+                React.createElement("header", { style: { backgroundColor: "#d9d9d9", padding: "8px 16px", borderTop: "4px solid silver" } },
                     React.createElement("h1", null,
                         React.createElement(markupline_view_1.default, { markup: title })),
                     description ?
                         React.createElement(markupblock_view_1.default, { markup: description }) : null) : null,
-            children);
+            React.createElement("main", null, children));
     }
 }
 exports.default = SectionView;

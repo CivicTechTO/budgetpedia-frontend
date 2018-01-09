@@ -41,7 +41,7 @@ class NuggetList extends React.Component {
                     position: 'absolute',
                     left: '0',
                     top: '0',
-                    padding: '8px 3px',
+                    padding: '8px 16px',
                     zIndex: 2,
                 } },
                 React.createElement("div", { style: {

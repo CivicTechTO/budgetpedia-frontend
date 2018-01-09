@@ -7,7 +7,7 @@ let PaperView = ({ children }) => {
         outderdiv: { backgroundColor: '#d9d9d9', padding: '0 16px 16px 16px' },
         innerdiv: { padding: '16px', position: "relative" },
     };
-    return (React.createElement("div", { style: styles.outderdiv },
+    return (React.createElement("article", { style: styles.outderdiv },
         React.createElement(Paper_1.default, { zDepth: 3, style: {
                 boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
                 borderRadius: '8px',

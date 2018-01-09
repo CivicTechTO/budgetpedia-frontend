@@ -12,7 +12,7 @@ let PaperView = ({children}) => {
     }
 
     return (
-        <div style = {styles.outderdiv}>
+        <article style = {styles.outderdiv}>
             <Paper zDepth = {3}
                 style = {
                     {
@@ -28,7 +28,7 @@ let PaperView = ({children}) => {
                 <div style = {{clear:'both'}}></div>
                 </div>
             </Paper>
-        </div>
+        </article>
     )
 }
 
