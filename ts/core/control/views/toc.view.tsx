@@ -14,6 +14,13 @@ let paddingMap = {
     h4:48,
 }
 
+let levelMap = {
+    h1:1,
+    h2:2,
+    h3:3,
+    h4:4,
+}
+
 let ToCView = ({tocdata}) => {
 
     let styles = {
@@ -23,14 +30,29 @@ let ToCView = ({tocdata}) => {
 
     let toc = []
 
+    let numbering = [0]
+
     if (tocdata) {
         toc = tocdata.map((item,index) => {
-            let paddingLeft = paddingMap[item.tag] + 'px'
-            return <div key = {index} style = {{paddingLeft,}} ><a href={'#' + item.slug}>{item.text}</a></div>
+            let { tag } = item
+            let level = levelMap[tag]
+            numbering.splice(level)
+            numbering[level - 1] = numbering[level - 1]?numbering[level - 1]+1:1
+            let indexnumber = ''
+            for (let i = 0;i<level;i++) {
+                indexnumber += (numbering[i] || 1)
+                indexnumber += '.'
+            }
+            let paddingLeft = paddingMap[tag] + 'px'
+            let marginTop
+            if (level == 1 && index > 0) {
+                marginTop = '8px'
+            } else {
+                marginTop = '0px'
+            }
+            return <div key = {index} style = {{paddingLeft,marginTop,}} ><a href={'#' + item.slug}>{indexnumber + ' ' + item.text}</a></div>
         })
     }
-
-    console.log('tocdata, toc in ToCView',tocdata, toc)
 
     return (
         <nav style = {styles.outderdiv}>
@@ -44,7 +66,9 @@ let ToCView = ({tocdata}) => {
             >
                 <div style = {styles.innerdiv as any}>
                     <h1>Page Contents</h1>
-                    { toc }
+                    <div style = {{columns:'2 300px'}} >
+                        { toc }
+                    </div>
 
                 <div style = {{clear:'both'}}></div>
                 </div>
