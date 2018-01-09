@@ -63,13 +63,14 @@ let RoutesController = class extends Component<any,any> {
         this.props.history.listen(this.historyListener)        
         // global function to deal with markdown local links
         window['storybuilder_global'] = {
-
             navigateViaRouter :(event) => {
+                // console.log('navigating from storybuilder_global')
                 let target = event.currentTarget
                 let path = target.getAttribute('href') // limited to original '/somepath'
                 event.preventDefault()
-                // history.push(event.currentTarget.href) // includes protocol prefix - 'http://'
+                // this.props.history.push(event.currentTarget.href) // includes protocol prefix - 'http://'
                 this.props.history.push(path)
+                // push(path)
             }
         } 
 
