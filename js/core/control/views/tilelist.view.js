@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const scrollcontrols_view_1 = require("./scrollcontrols.view");
 const tile_view_1 = require("./tile.view");
-const markupline_view_1 = require("./markupline.view");
+const hashanchorwrapper_view_1 = require("./hashanchorwrapper.view");
 class TileListController extends React.Component {
     constructor() {
         super(...arguments);
@@ -47,11 +47,12 @@ class TileListController extends React.Component {
                     padding: '8px 16px',
                     zIndex: 2,
                 } },
-                React.createElement("div", { style: {
+                React.createElement(hashanchorwrapper_view_1.default, { tag: 'h2', title: title, style: {
                         display: 'inline-block',
                         color: 'white',
-                        verticalAlign: 'top',
-                    } }, React.createElement(markupline_view_1.default, { markup: title }))),
+                        verticalAlign: 'bottom',
+                        marginRight: '8px'
+                    } })),
             React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
                 React.createElement("div", { style: style, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {

@@ -10,6 +10,7 @@ import ScrollControlsView from './scrollcontrols.view'
 import TileView from "./tile.view"
 
 import MarkupLine from './markupline.view'
+import HashAnchorWrapper from './hashanchorwrapper.view'
 
 interface TileData {
 
@@ -93,14 +94,14 @@ class TileListController extends React.Component< Props, any > {
                     }
                 }>
 
-                    <div style = {
+                    <HashAnchorWrapper tag = 'h2' title = {title} style = {
                         {
                             display:'inline-block',
                             color:'white',
-                            verticalAlign:'top',
+                            verticalAlign:'bottom',
+                            marginRight:'8px'
                         }
-                    }>{ <MarkupLine markup = {title} /> }
-                    </div>
+                    } /> 
 
                 </div>
                 <ScrollControlsView scroller = {this.state.scroller}>
