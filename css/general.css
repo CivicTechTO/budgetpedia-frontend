@@ -21,6 +21,12 @@ a.markup-anchor {
     left:2px;
 }
 
+a.cardtitle-anchor {
+    position:absolute;
+    top:24px;
+    left:2px;
+}
+
 a.header-anchor:link,
 a.header-anchor:visited,
 a.header-anchor:hover,
@@ -37,6 +43,11 @@ a.header-anchor {
 a.target-anchor {
     position:absolute;
     top:-64px;
+}
+
+a.cardtitle-target-anchor {
+    position:absolute;
+    top:-40px;
 }
 
 /* ususlly h1, h2, h3, h4; but with CardTitle, something else */

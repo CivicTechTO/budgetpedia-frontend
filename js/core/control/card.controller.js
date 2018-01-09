@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const core_controller_composer_1 = require("./core.controller.composer");
 const Card_1 = require("material-ui/Card");
+const cardtitle_view_1 = require("./views/cardtitle.view");
 const html_view_1 = require("./views/html.view");
 const list_controller_1 = require("./list.controller");
 class CardControllerClass extends React.Component {
@@ -33,7 +34,7 @@ class CardControllerClass extends React.Component {
                     break;
                 }
                 case 'cardtitle': {
-                    componentType = Card_1.CardTitle;
+                    componentType = cardtitle_view_1.default;
                     break;
                 }
                 case 'cardtext': {

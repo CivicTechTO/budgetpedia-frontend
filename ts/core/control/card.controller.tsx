@@ -7,7 +7,8 @@ import * as React from 'react';
 
 import coreControllerComposer from './core.controller.composer'
 
-import { Card, CardTitle, CardText, CardActions, CardHeader, CardMedia } from 'material-ui/Card'
+import { Card, CardText, CardActions, CardHeader, CardMedia } from 'material-ui/Card'
+import CardTitleView from './views/cardtitle.view'
 import HtmlView from './views/html.view'
 import ListController from './list.controller'
 
@@ -66,7 +67,7 @@ class CardControllerClass extends React.Component<any,any> {
                 break
             }
             case 'cardtitle': {
-                componentType = CardTitle
+                componentType = CardTitleView
                 break
             }
             case 'cardtext': {

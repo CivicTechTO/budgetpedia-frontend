@@ -39,7 +39,7 @@ let mainpageheader = {
             index: 'cardtitle',
             type: 'cardtitle',
             properties: {
-                title: "This is Budgetpedia",
+                title: "This is _Budgetpedia_",
                 subtitle: "Supporting informed debate about the Toronto budget",
                 style: {
                     padding: "16px 16px 0 16px",
