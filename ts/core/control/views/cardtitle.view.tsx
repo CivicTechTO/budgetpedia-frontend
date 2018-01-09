@@ -21,7 +21,7 @@ let CardTitleView = (props) => {
     let { title, subtitle } = localprops
     let titletext = null
     let slug = null
-    let tag = 'h2'
+    let tag = 'h2' // notional
 
     if (title) {
         titletext = removeMd(title)
@@ -38,9 +38,11 @@ let CardTitleView = (props) => {
     let cardtitle = React.createElement(CardTitle,localprops)
 
     return <div className = 'content-header' style = {{position:'relative'}} >
+
         { cardtitle }
         <a className="header-anchor cardtitle-anchor" href={"#" + slug} aria-hidden="true">🔗</a>
         <a className="cardtitle-target-anchor" id={slug} data-text={titletext} data-level = {tag} aria-hidden="true"></a>
+        
     </div>
 
 }

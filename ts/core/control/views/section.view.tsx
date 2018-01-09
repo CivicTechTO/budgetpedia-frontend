@@ -9,8 +9,8 @@
 
 import * as React from 'react';
 
-import MarkupLine from './markupline.view'
 import MarkupBlock from './markupblock.view'
+import HashAnchorHeader from './hashanchorheader.view'
 
 class SectionView extends React.Component<any,any>{
 
@@ -30,8 +30,7 @@ class SectionView extends React.Component<any,any>{
             {
                 title?
                 <header style = {{backgroundColor:"#d9d9d9",padding:"8px 16px",borderTop:"4px solid silver"}}>
-                    <h1><MarkupLine markup = {title} /></h1>
-
+                    <HashAnchorHeader tag = 'h1' title = {title} />
 
                     {description?
                         <MarkupBlock markup = {description} />:null}

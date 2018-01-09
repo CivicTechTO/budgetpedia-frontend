@@ -1,8 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const markupline_view_1 = require("./markupline.view");
 const markupblock_view_1 = require("./markupblock.view");
+const hashanchorheader_view_1 = require("./hashanchorheader.view");
 class SectionView extends React.Component {
     render() {
         let { title, description, children, style, id } = this.props;
@@ -16,8 +16,7 @@ class SectionView extends React.Component {
         return React.createElement("section", { id: id, style: Object.assign({}, defaultstyle, style) },
             title ?
                 React.createElement("header", { style: { backgroundColor: "#d9d9d9", padding: "8px 16px", borderTop: "4px solid silver" } },
-                    React.createElement("h1", null,
-                        React.createElement(markupline_view_1.default, { markup: title })),
+                    React.createElement(hashanchorheader_view_1.default, { tag: 'h1', title: title }),
                     description ?
                         React.createElement(markupblock_view_1.default, { markup: description }) : null) : null,
             React.createElement("main", null, children));
