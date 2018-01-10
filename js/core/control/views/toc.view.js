@@ -47,8 +47,12 @@ let ToCView = ({ tocdata }) => {
             else {
                 marginTop = '0px';
             }
-            return React.createElement("div", { key: index, style: { paddingLeft, marginTop, backgroundColor } },
-                React.createElement("a", { href: '#' + item.slug }, indexnumber + ' ' + item.text));
+            return (React.createElement("div", { key: index, style: {
+                    paddingLeft,
+                    marginTop,
+                    backgroundColor
+                } },
+                React.createElement("a", { href: '#' + item.slug }, indexnumber + ' ' + item.text)));
         });
     }
     return (React.createElement("nav", { style: styles.outderdiv },

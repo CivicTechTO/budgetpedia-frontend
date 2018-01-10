@@ -56,7 +56,27 @@ let ToCView = ({tocdata}) => {
             } else {
                 marginTop = '0px'
             }
-            return <div key = {index} style = {{paddingLeft,marginTop,backgroundColor}} ><a href={'#' + item.slug}>{indexnumber + ' ' + item.text}</a></div>
+            return (
+
+                <div 
+                    key = {index} 
+                    style = {
+                        {
+                            paddingLeft,
+                            marginTop,
+                            backgroundColor
+                        }
+                    } 
+                >
+
+                    <a href={'#' + item.slug}>
+
+                        {indexnumber + ' ' + item.text}
+
+                    </a>
+
+                </div>
+            )
         })
     }
 
@@ -76,7 +96,8 @@ let ToCView = ({tocdata}) => {
                         { toc }
                     </div>
 
-                <div style = {{clear:'both'}}></div>
+                    <div style = {{clear:'both'}}></div>
+                    
                 </div>
             </Paper>
         </nav>
