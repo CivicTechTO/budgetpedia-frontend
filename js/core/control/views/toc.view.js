@@ -34,13 +34,20 @@ let ToCView = ({ tocdata }) => {
             }
             let paddingLeft = paddingMap[tag] + 'px';
             let marginTop;
+            let backgroundColor;
+            if (level == 1) {
+                backgroundColor = 'moccasin';
+            }
+            else {
+                backgroundColor = 'transparent';
+            }
             if (level == 1 && index > 0) {
                 marginTop = '8px';
             }
             else {
                 marginTop = '0px';
             }
-            return React.createElement("div", { key: index, style: { paddingLeft, marginTop, } },
+            return React.createElement("div", { key: index, style: { paddingLeft, marginTop, backgroundColor } },
                 React.createElement("a", { href: '#' + item.slug }, indexnumber + ' ' + item.text));
         });
     }

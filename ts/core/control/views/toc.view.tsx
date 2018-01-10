@@ -45,12 +45,18 @@ let ToCView = ({tocdata}) => {
             }
             let paddingLeft = paddingMap[tag] + 'px'
             let marginTop
+            let backgroundColor
+            if (level == 1) {
+                backgroundColor = 'moccasin'
+            } else {
+                backgroundColor = 'transparent'
+            }
             if (level == 1 && index > 0) {
                 marginTop = '8px'
             } else {
                 marginTop = '0px'
             }
-            return <div key = {index} style = {{paddingLeft,marginTop,}} ><a href={'#' + item.slug}>{indexnumber + ' ' + item.text}</a></div>
+            return <div key = {index} style = {{paddingLeft,marginTop,backgroundColor}} ><a href={'#' + item.slug}>{indexnumber + ' ' + item.text}</a></div>
         })
     }
 

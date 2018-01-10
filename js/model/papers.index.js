@@ -12,7 +12,7 @@ let councilprocess = {
             index: 'collabortion',
             description: 'review of council collaborative initiatives',
             properties: {
-                markup: `## Needed: Teamwork on Council
+                markup: `## Wanted: Teamwork on Council
 
 <figure style = 'float:right;font-size:x-small;font-style:italic;margin:0 0 8px 8px'>
 <img src='/public/images/90c4-scarroll.jpg' style = 'width:80px' />

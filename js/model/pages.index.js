@@ -107,7 +107,7 @@ least some collaboration with front-line staff, or at least front-line managers.
                 type: 'section',
                 tag: 'Council',
                 properties: {
-                    title: "Council",
+                    title: "Council's Role",
                     description: "Councillors seemed to be going in a different, better, direction at one time.",
                 },
                 children: [
@@ -326,7 +326,7 @@ think these are issues that need to be discussed. They've been going on for deca
 and it's time to resolve them. Any feedback on how best to go about this is very welcome.`,
                 },
                 properties: {
-                    title: 'Challenges',
+                    title: 'Challenges to Work On',
                     description: 'Some basic opportunites and issues we think should be addressed.',
                     style: {
                         marginBottom: '12px',
@@ -358,7 +358,7 @@ and it's time to resolve them. Any feedback on how best to go about this is very
 If you have suggestions for stories, or if you want to help, let us know.`,
                 },
                 properties: {
-                    title: 'Stories',
+                    title: 'Stories to Create',
                     description: "We're organizing around data stories.",
                 },
                 children: [
