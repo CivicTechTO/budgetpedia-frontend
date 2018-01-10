@@ -59,7 +59,7 @@ class PageControllerClass extends React.Component<any,any> {
 
     componentDidMount() {
 
-        // console.log('page props',this.props)
+        // console.log('page did mount props',this.props)
 
         let { match :{ path } } = this.props
         let { master } = this.toolkit

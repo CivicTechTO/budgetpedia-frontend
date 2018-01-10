@@ -89,14 +89,16 @@ let RoutesController = class extends Component<any,any> {
         let location = this.props.router.location || {}
         return (
             <ConnectedRouter history = {this.props.history}>
-                    <Switch location = {location}>
-                        { routes }
-                    </Switch>
+                <Switch location = {location}>
+                    { routes }
+                </Switch>
             </ConnectedRouter>
         )
     }
 }
 
+// transitions were causing trouble, particularly with table of contents. 
+// router causes page reload for first toc selection on roadmap
             // <TransitionGroup>
             //     <CSSTransition
             //         key = {location.key}
@@ -108,6 +110,7 @@ let RoutesController = class extends Component<any,any> {
             //             window.scrollTo(0, 0) // adapt to single page app results in arbitray page location after nav
             //         }}
             //     >
+            //  ** switch controller goes here
             //     </CSSTransition>
             // </TransitionGroup>
 
