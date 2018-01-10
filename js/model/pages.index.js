@@ -47,8 +47,7 @@ let pages = {
                     description: `This page is about how the Toronto budget is created, and _could_ be created, every year.
 
 The short story is that we think that more openness and collaborarion at all levels around
-the budget process would very likely lead to better outcomes for all. Instead, Council is 
-unfortunately moving in the opposite direction.
+the budget process would very likely lead to better outcomes for all.
 `,
                 },
                 children: [
