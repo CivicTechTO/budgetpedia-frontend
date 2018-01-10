@@ -5,6 +5,8 @@
 
 import * as React from 'react'
 
+import { HashLink as Link } from 'react-router-hash-link'
+
 import Paper from 'material-ui/Paper'
 
 let paddingMap = {
@@ -20,6 +22,12 @@ let levelMap = {
     h3:3,
     h4:4,
 }
+
+                   // <a href={window.location.pathname + '#' + item.slug}>
+
+                   //      {indexnumber + ' ' + item.text}
+
+                   //  </a>
 
 let ToCView = ({tocdata}) => {
 
@@ -64,12 +72,11 @@ let ToCView = ({tocdata}) => {
                         {
                             paddingLeft,
                             marginTop,
-                            backgroundColor
+                            backgroundColor,
                         }
                     } 
                 >
-
-                    <a href={'#' + item.slug}>
+                   <a href={'#' + item.slug}>
 
                         {indexnumber + ' ' + item.text}
 
@@ -97,7 +104,7 @@ let ToCView = ({tocdata}) => {
                     </div>
 
                     <div style = {{clear:'both'}}></div>
-                    
+
                 </div>
             </Paper>
         </nav>

@@ -50,7 +50,7 @@ let ToCView = ({ tocdata }) => {
             return (React.createElement("div", { key: index, style: {
                     paddingLeft,
                     marginTop,
-                    backgroundColor
+                    backgroundColor,
                 } },
                 React.createElement("a", { href: '#' + item.slug }, indexnumber + ' ' + item.text)));
         });

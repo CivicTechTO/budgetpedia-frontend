@@ -19,7 +19,7 @@ let pages = {
             },
             dates:{
                 created: '31-12-2017',
-                updated: '2-1-2018',
+                updated: '9-1-2018',
             },
         },
         tags:null,
@@ -205,7 +205,7 @@ least some collaboration with front-line staff, or at least front-line managers.
             },
             dates:{
                 created: '22-12-2017',
-                updated: '28-12-2017',
+                updated: '9-1-2018',
             },
         },
         tags:null,

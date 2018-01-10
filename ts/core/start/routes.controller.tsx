@@ -14,7 +14,7 @@ import * as React from 'react'
 let { Component } = React
 
 import { ConnectedRouter } from 'react-router-redux'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, Router } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -55,6 +55,7 @@ logPageView(window.location) // first hit
 let RoutesController = class extends Component<any,any> { 
 
     historyListener = (location,action) => {
+        // console.log('history',location,action)
         logPageView(location)
     }
 
@@ -82,10 +83,12 @@ let RoutesController = class extends Component<any,any> {
 
     }
 
+        // <ConnectedRouter history = {this.props.history}>
+        // </ConnectedRouter>
     render() {
         let location = this.props.router.location || {}
         return (
-        <ConnectedRouter history = {this.props.history}>
+            <ConnectedRouter history = {this.props.history}>
             <TransitionGroup>
                 <CSSTransition
                     key = {location.key}
@@ -102,7 +105,7 @@ let RoutesController = class extends Component<any,any> {
                     </Switch>
                 </CSSTransition>
             </TransitionGroup>
-        </ConnectedRouter>
+            </ConnectedRouter>
         )
     }
 }
