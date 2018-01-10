@@ -66,12 +66,12 @@ a.cardtitle-target-anchor {
 .fade-appear-active,
 .fade-enter-active {
     opacity:1;
-    transition: opacity 1.5s;
+    transition: opacity .8s;
 }
 
 .fade-exit {
     opacity:1;
-    transition: opacity 1.5s;
+    transition: opacity .8s;
 }
 .fade-exit-active {
     opacity:0;

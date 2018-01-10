@@ -5,7 +5,6 @@ let { Component } = React;
 const react_router_redux_1 = require("react-router-redux");
 const react_router_dom_1 = require("react-router-dom");
 const react_redux_1 = require("react-redux");
-const react_transition_group_1 = require("react-transition-group");
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
 const page_controller_1 = require("../control/page.controller");
@@ -47,11 +46,7 @@ let RoutesController = class extends Component {
     render() {
         let location = this.props.router.location || {};
         return (React.createElement(react_router_redux_1.ConnectedRouter, { history: this.props.history },
-            React.createElement(react_transition_group_1.TransitionGroup, null,
-                React.createElement(react_transition_group_1.CSSTransition, { key: location.key, classNames: "fade", timeout: 2000, appear: true, exit: false, onEnter: () => {
-                        window.scrollTo(0, 0);
-                    } },
-                    React.createElement(react_router_dom_1.Switch, { location: location }, routes)))));
+            React.createElement(react_router_dom_1.Switch, { location: location }, routes)));
     }
 };
 exports.RoutesController = RoutesController;

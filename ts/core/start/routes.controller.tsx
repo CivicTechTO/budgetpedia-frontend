@@ -89,26 +89,27 @@ let RoutesController = class extends Component<any,any> {
         let location = this.props.router.location || {}
         return (
             <ConnectedRouter history = {this.props.history}>
-            <TransitionGroup>
-                <CSSTransition
-                    key = {location.key}
-                    classNames = "fade"
-                    timeout = {2000}
-                    appear
-                    exit = {false}
-                    onEnter = {() => {
-                        window.scrollTo(0, 0) // adapt to single page app results in arbitray page location after nav
-                    }}
-                >
                     <Switch location = {location}>
                         { routes }
                     </Switch>
-                </CSSTransition>
-            </TransitionGroup>
             </ConnectedRouter>
         )
     }
 }
+
+            // <TransitionGroup>
+            //     <CSSTransition
+            //         key = {location.key}
+            //         classNames = "fade"
+            //         timeout = {1000}
+            //         appear
+            //         exit = {false}
+            //         onEnter = {() => {
+            //             window.scrollTo(0, 0) // adapt to single page app results in arbitray page location after nav
+            //         }}
+            //     >
+            //     </CSSTransition>
+            // </TransitionGroup>
 
 let mapStateToProps = state => {
     let { router } = state
