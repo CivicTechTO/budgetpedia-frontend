@@ -14,7 +14,6 @@ let home = {
         },
         children: [
             {
-                controller: 'card',
                 repo: 'cards',
                 index: 'mainpageheader',
             },
@@ -51,17 +50,14 @@ money is flowing into tangible asset improvements and purchases.`,
         },
         children: [
             {
-                controller: 'list',
                 repo: 'nuggetlists',
                 index: 'abouttoronto',
             },
             {
-                controller: 'list',
                 repo: 'nuggetlists',
                 index: 'torontofinances',
             },
             {
-                controller: 'list',
                 repo: 'nuggetlists',
                 index: 'torontotrends',
             },
@@ -92,12 +88,10 @@ and our [Budget Roadmap](/roadmap) page.`,
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'citybasics',
             },
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'cityprocess',
             },
@@ -127,12 +121,10 @@ and it's time to resolve them. Any feedback on how best to go about this is very
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'opportunities',
             },
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'concerns',
             },
@@ -155,7 +147,6 @@ If you have suggestions for stories, or if you want to help, let us know.`,
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'stories',
             },
@@ -177,7 +168,6 @@ If you have suggestions for stories, or if you want to help, let us know.`,
         },
         children: [
             {
-                controller: 'media',
                 repo: 'media',
                 index: 'budgetpediatwitter',
             },
@@ -199,12 +189,10 @@ If you have suggestions for stories, or if you want to help, let us know.`,
         },
         children: [
             {
-                controller: 'list',
                 index: 'mainpages',
                 repo: 'tilelists',
             },
             {
-                controller: 'card',
                 repo: 'cards',
                 index: 'mainpagefooter',
             },
@@ -236,7 +224,6 @@ the budget process would very likely lead to better outcomes for all.
         },
         children: [
             {
-                controller: 'cards',
                 repo: 'cards',
                 index: 'roadmapsummary',
             },
@@ -247,7 +234,6 @@ the budget process would very likely lead to better outcomes for all.
                 description: 'page table of contents',
             },
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'cityprocess',
             },
@@ -281,7 +267,6 @@ least some collaboration with front-line staff, or at least front-line managers.
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'papers',
                 index: 'insiderview',
             }
@@ -300,12 +285,10 @@ least some collaboration with front-line staff, or at least front-line managers.
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'papers',
                 index: 'councilprocess',
             },
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'councilservices',
             },
@@ -324,7 +307,6 @@ least some collaboration with front-line staff, or at least front-line managers.
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'civilsociety',
             },
@@ -343,7 +325,6 @@ least some collaboration with front-line staff, or at least front-line managers.
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'elsewhere',
             },
@@ -362,7 +343,6 @@ least some collaboration with front-line staff, or at least front-line managers.
         },
         children: [
             {
-                controller: 'paper',
                 repo: 'sheets',
                 index: 'opportunities',
             },

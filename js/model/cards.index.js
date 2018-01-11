@@ -108,12 +108,10 @@ let mainpageheader = {
             },
             children: [
                 {
-                    controller: 'list',
                     index: 'toplinklist',
                     repo: 'linklists',
                 },
                 {
-                    controller: 'list',
                     index: 'secondlinklist',
                     repo: 'linklists',
                 },
@@ -149,7 +147,6 @@ let mainpagefooter = {
             properties: {},
             children: [
                 {
-                    controller: 'list',
                     index: 'thirdlinklist',
                     repo: 'linklists',
                 },

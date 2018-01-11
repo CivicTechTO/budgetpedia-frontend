@@ -44,7 +44,6 @@ class CardControllerClass extends React.Component<any,any> {
             children, 
         } = component
 
-
         let childcomponents = this.toolkit.getChildren(this, children)
 
         if (childcomponents) {

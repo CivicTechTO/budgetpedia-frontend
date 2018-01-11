@@ -52,6 +52,7 @@ let updateChildren = (self,children) => {
 
 let updateModel = (self,model) => {
     if (model.updated) return model
+    // only needed for pages that require repo loading; chilren are loaded in getChildren
     if (model.repo) {
         model = master.getDocument(model.repo,model.index)
     }
@@ -85,9 +86,12 @@ let getChildren = (self, children) => {
 
     if (!children || children.length == 0) return children
 
-    let output = children.map((child, key) => {
+    let output = children.map((model, key) => {
 
-        return self.emitComponent(child,key)
+        if (model.repo) {
+            model = master.getDocument(model.repo,model.index)
+        }
+        return self.emitComponent(model,key)
 
     })
 

@@ -64,8 +64,11 @@ let updateProperties = (self, model) => {
 let getChildren = (self, children) => {
     if (!children || children.length == 0)
         return children;
-    let output = children.map((child, key) => {
-        return self.emitComponent(child, key);
+    let output = children.map((model, key) => {
+        if (model.repo) {
+            model = master_model_1.default.getDocument(model.repo, model.index);
+        }
+        return self.emitComponent(model, key);
     });
     return output;
 };

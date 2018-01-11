@@ -111,12 +111,10 @@ let mainpageheader = {
             },
             children:[
                 {
-                    controller:'list',
                     index:'toplinklist',
                     repo:'linklists',
                 },
                 {
-                    controller:'list',
                     index:'secondlinklist',
                     repo:'linklists',
                 },
@@ -154,7 +152,6 @@ let mainpagefooter = {
             },
             children:[
                 {
-                    controller:'list',
                     index:'thirdlinklist',
                     repo:'linklists',
                 },
