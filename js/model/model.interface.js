@@ -12,6 +12,7 @@ const sheets_index_1 = require("./sheets.index");
 const html_index_1 = require("./data/html.index");
 const draft_index_1 = require("./data/draft.index");
 const papers_index_1 = require("./papers.index");
+const sections_index_1 = require("./sections.index");
 let repositories = {
     cards: cards_index_1.default,
     pages: pages_index_1.default,
@@ -25,16 +26,20 @@ let repositories = {
     html: html_index_1.default,
     draft: draft_index_1.default,
     papers: papers_index_1.default,
+    sections: sections_index_1.default,
 };
 const getDocument = (repo, index) => {
-    let output;
-    if (!repositories[repo] || !repositories[repo][index]) {
-        output = {};
+    let indexes = index.split('.');
+    console.log('requested document(repo, index)', repo, index, indexes);
+    let node = repositories[repo];
+    if (!node)
+        return {};
+    for (let n = 0; n < indexes.length; n++) {
+        node = node[indexes[n]];
+        if (!node)
+            return {};
     }
-    else {
-        output = repositories[repo][index];
-    }
-    return output;
+    return node;
 };
 let model = {
     getDocument,

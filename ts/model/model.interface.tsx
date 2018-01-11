@@ -12,6 +12,7 @@ import sheets from './sheets.index'
 import html from './data/html.index'
 import draft from './data/draft.index'
 import papers from './papers.index'
+import sections from './sections.index'
 
 let repositories = {
     cards,
@@ -26,17 +27,23 @@ let repositories = {
     html,
     draft,
     papers,
+    sections,
 }
 
 const getDocument = (repo, index) => {
-    let output
-    if (!repositories[repo] || !repositories[repo][index]) {
-        output =  {}
-    } else {
-        output = repositories[repo][index]
+    let indexes = index.split('.')
+
+    console.log('requested document(repo, index)',repo, index, indexes)
+
+    let node = repositories[repo]
+
+    if (!node) return {}
+
+    for (let n = 0; n <indexes.length; n++) {
+        node = node[indexes[n]]
+        if (!node) return {}
     }
-    // console.log('requested document(repo, index)',repo, index) //, output)
-    return output
+    return node
 }
 
 let model = {
