@@ -6,6 +6,7 @@ const Card_1 = require("material-ui/Card");
 const cardtitle_view_1 = require("./views/cardtitle.view");
 const html_view_1 = require("./views/html.view");
 const list_controller_1 = require("./list.controller");
+const markupblock_view_1 = require("./views/markupblock.view");
 class CardControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -39,6 +40,10 @@ class CardControllerClass extends React.Component {
                 }
                 case 'cardtext': {
                     componentType = Card_1.CardText;
+                    break;
+                }
+                case 'markupblock': {
+                    componentType = markupblock_view_1.default;
                     break;
                 }
                 case 'cardactions': {

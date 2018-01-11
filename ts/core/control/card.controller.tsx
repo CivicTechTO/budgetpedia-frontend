@@ -11,6 +11,7 @@ import { Card, CardText, CardActions, CardHeader, CardMedia } from 'material-ui/
 import CardTitleView from './views/cardtitle.view'
 import HtmlView from './views/html.view'
 import ListController from './list.controller'
+import MarkupBlockView from './views/markupblock.view'
 
 class CardControllerClass extends React.Component<any,any> {
 
@@ -72,6 +73,10 @@ class CardControllerClass extends React.Component<any,any> {
             }
             case 'cardtext': {
                 componentType = CardText
+                break
+            }
+            case 'markupblock': {
+                componentType = MarkupBlockView
                 break
             }
             case 'cardactions': {

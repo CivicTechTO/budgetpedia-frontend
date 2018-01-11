@@ -32,7 +32,7 @@ let levelMap = {
 let ToCView = ({tocdata}) => {
 
     let styles = {
-        outderdiv:{backgroundColor:'#d9d9d9',padding: '0 16px 16px 16px'},
+        outderdiv:{backgroundColor:'#d9d9d9',padding: '0 16px 16px 16px', marginBottom:'32px'},
         innerdiv:{padding:'16px',position:"relative"},
     }
 
