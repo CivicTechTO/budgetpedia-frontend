@@ -26,6 +26,7 @@ let home = {
             },
         ],
     },
+
     nuggets: {
         controller:'section',
         index:'home.nuggets',
@@ -72,6 +73,7 @@ money is flowing into tangible asset improvements and purchases.`,
         ],
 
     },
+
     basics: {
         controller:'section',
         index:'home.basics',
@@ -114,6 +116,7 @@ and our [Budget Roadmap](/roadmap) page.`,
             },
         ],
     },
+
     concerns: {
         controller:'section',
         index:'home.concerns',
@@ -152,6 +155,7 @@ and it's time to resolve them. Any feedback on how best to go about this is very
             },
         ],
     },
+
     stories: {
         controller:'section',
         index:'home.stories',
@@ -177,6 +181,7 @@ If you have suggestions for stories, or if you want to help, let us know.`,
             },
         ],
     },
+
     twitterfeed: {
         controller:'section',
         index:'home.twitterfeed',
@@ -198,6 +203,7 @@ If you have suggestions for stories, or if you want to help, let us know.`,
             },
         ],
     },
+
     tiles: {
         controller:'section',
         index:'home.tiles',
@@ -268,6 +274,7 @@ let roadmap = {
             },
         ],
     },
+
     notes: {
         controller:'section',
         index:'roadmap.notes',
@@ -305,6 +312,7 @@ least some collaboration with front-line staff, or at least front-line managers.
             }
         ],
     },
+
     council: {
         controller:'section',
         index:'roadmap.council',
@@ -327,6 +335,7 @@ least some collaboration with front-line staff, or at least front-line managers.
             },
         ],
     },
+
     civilsociety: {
         controller:'section',
         index:'roadmap.civilsociety',
@@ -345,6 +354,7 @@ least some collaboration with front-line staff, or at least front-line managers.
             },
         ]
     },
+
     elsewhere: {
         controller:'section',
         index:'roadmap.elsewhere',
@@ -363,6 +373,7 @@ least some collaboration with front-line staff, or at least front-line managers.
             },
         ]
     },
+    
     possibilities: {
         controller:'section',
         index:'roadmap.possibilities',

@@ -10,7 +10,7 @@ import Paper from 'material-ui/Paper'
 let PaperView = ({children}) => {
 
     let styles = {
-        outderdiv:{backgroundColor:'#d9d9d9',padding: '0 16px 16px 16px'},
+        outderdiv:{backgroundColor:'#d9d9d9',margin: '16px'},
         innerdiv:{padding:'16px',position:"relative"},
     }
 

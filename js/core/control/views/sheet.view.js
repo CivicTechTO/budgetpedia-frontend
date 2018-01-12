@@ -229,7 +229,7 @@ class SheetView extends React.Component {
             },
         }));
         let styles = {
-            outderdiv: { backgroundColor: '#d9d9d9', padding: '16px' },
+            outderdiv: { backgroundColor: '#d9d9d9', margin: '16px' },
             innerdiv: { padding: '16px', position: "relative" },
         };
         return (React.createElement("article", { style: styles.outderdiv },

@@ -29,28 +29,28 @@ let pages = {
         },
         children: [
             {
+                repo:'sections',
                 index:'roadmap.header',
-                repo:'sections',
             },
             {
+                repo:'sections',
                 index:'roadmap.notes',
-                repo:'sections',
             },
             {
+                repo:'sections',
                 index:'roadmap.council',
-                repo:'sections',
             },
             {
+                repo:'sections',
                 index:'roadmap.civilsociety',
-                repo:'sections',
             },
             {
+                repo:'sections',
                 index:'roadmap.elsewhere',
-                repo:'sections',
             },
             {
-                index:'roadmap.possibilities',
                 repo:'sections',
+                index:'roadmap.possibilities',
             },
         ],
     },

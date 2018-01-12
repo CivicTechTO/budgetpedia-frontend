@@ -14,6 +14,7 @@ let councilprocess = {
             description:'review of council collaborative initiatives',
             properties: {
                 markup:
+                
 `## Wanted: Teamwork on Council
 
 <figure style = 'float:right;font-size:x-small;font-style:italic;margin:0 0 8px 8px'>
@@ -64,6 +65,7 @@ let insiderview = {
             description:'introduction of insider data',
             properties:{
                 markup:
+
 `## Detailed listing of budget creation process events
 
 This provides rare deeper insight into the budget creation process. For ease of comprehension, 
