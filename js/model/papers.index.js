@@ -71,7 +71,7 @@ _budget committee assessments_, _public commentary_, and _council adoption_.
 
 Prior to these phases would be _internal strategizing_ among senior staff, the mayor, and some councillors.
 
-As well as the items listed here, the Budget committee had a meeting in May of 2015 to discuss
+As well as the items listed here, the Budget committee had a [meeting in May of 2015](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2015.BU7.3) to discuss
 recommendations for the budget process.
 
 Since 2017 the Budget Committee has taken to having a public meeting giving budget direction for 
