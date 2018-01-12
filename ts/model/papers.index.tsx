@@ -66,7 +66,7 @@ let insiderview = {
             properties:{
                 markup:
 
-`## Detailed listing of budget creation process events
+`## Detailed listing of budget creation events
 
 For this detailed listing, one of our volunteers assembled detailed notes in 2016, 
 from publicly available information and direct interviews of City Hall staff.
