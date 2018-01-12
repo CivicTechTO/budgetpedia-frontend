@@ -29,7 +29,7 @@ class SectionView extends React.Component<any,any>{
 
             {
                 title?
-                <header style = {{backgroundColor:"#d9d9d9",padding:"8px 16px",borderTop:"4px solid silver"}}>
+                <header style = {{backgroundColor:"#d9d9d9",padding:"0px 16px 1px",borderTop:"4px solid silver"}}>
 
                     <HashAnchorHeader tag = 'h1' title = {title} />
 
