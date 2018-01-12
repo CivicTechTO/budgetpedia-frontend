@@ -49,13 +49,13 @@ let roadmapsummary = {
                     description:'page table of contents',
                     properties:{
                         markup:
-`### Scope
+`### Budget scope
 
 The City of Toronto has about 60 divisions (directly managed by the City Manager) and agencies 
 (managed at arms length). Collectively called _programs_, these organizations are staffed by
 about 55,000 people. The operating budget for all this activity is around $12B.
 
-### Creation process 
+### Budget creation process 
 
 We are informed through Freedom of Information requests that budgeting is begun at the _cost-centre_ level 
 (there are about 13,000 of these),
