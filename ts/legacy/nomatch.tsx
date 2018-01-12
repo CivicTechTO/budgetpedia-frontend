@@ -5,7 +5,7 @@ var { Component } = React
 
 class NoMatch extends Component<any, any> {
     render() {
-        return <div>NoMatch Page</div>
+        return <div style ={{color:'cornsilk'}} >Sorry... we don't have a page that matches that url</div>
     }
 }
 
