@@ -7,9 +7,9 @@ import * as React from 'react'
 
 import MarkupBlockView from './markupblock.view'
 
-class NarrationBubbleView extends React.Component<any,any> {
+let NarrationBubbleView = ({markup}) => {
 
-    bubbleStyle = {
+    let bubbleStyle = {
         maxWidth:'600px',
         border:'3px outset silver',
         backgroundColor:'lightcyan',
@@ -20,7 +20,7 @@ class NarrationBubbleView extends React.Component<any,any> {
         boxShadow:'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
     }
 
-    firstArrowStyle = {
+    let firstArrowStyle = {
 
         borderStyle: 'solid',
         position: 'absolute',
@@ -30,7 +30,7 @@ class NarrationBubbleView extends React.Component<any,any> {
         left: '47px',
     }
 
-    secondArrowStyle = {
+    let secondArrowStyle = {
 
         borderStyle: 'solid',
         position: 'absolute',
@@ -40,13 +40,11 @@ class NarrationBubbleView extends React.Component<any,any> {
         left:'50px',
 
     }
-    render() {
-        return <aside style = {this.bubbleStyle as any} >
-            <MarkupBlockView markup = {this.props.markup} />
-            <div style = {this.firstArrowStyle as any} ></div>
-            <div style = {this.secondArrowStyle as any }></div>
-        </aside>
-    }
+    return <aside style = {bubbleStyle as any} >
+        <MarkupBlockView markup = {markup} />
+        <div style = {firstArrowStyle as any} ></div>
+        <div style = {secondArrowStyle as any }></div>
+    </aside>
 
 }
 

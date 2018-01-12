@@ -13,41 +13,40 @@ interface Props {
     lowerDivider?: boolean,
 }
 
-class LinkListView extends React.Component<Props, any> {
+let LinkListView = ({header, items, upperDivider, lowerDivider}:Props) => {
 
-    render() {
-        let { props } = this
+    let localitems = items.map((item, index) => {
+        return <LinkView 
+            external = { item.external }
+            key = { index }
+            prompt = { item.prompt }
+            icon = { item.icon }
+            target = { item.target }
+            targetText = { item.targetText }
+            description = {item.description?item.description:null}
+            suffix = {item.suffix?item.suffix:null}
+            imageStyle = {item.imageStyle}
+        />
+    })
 
-        let items = props.items.map((item, index) => {
-            return <LinkView 
-                external = { item.external }
-                key = { index }
-                prompt = { item.prompt }
-                icon = { item.icon }
-                target = { item.target }
-                targetText = { item.targetText }
-                description = {item.description?item.description:null}
-                suffix = {item.suffix?item.suffix:null}
-                imageStyle = {item.imageStyle}
-            />
-        })
+    let upperelements = []
+    let lowerelements = []
 
-        let upperelements = []
-        let lowerelements = []
+    if (upperDivider) upperelements.push(<hr key = "upper"/>)
 
-        if (props.upperDivider) upperelements.push(<hr key = "upper"/>)
+    if (lowerDivider) lowerelements.push(<hr key = "lower"/>)
 
-        if (props.lowerDivider) lowerelements.push(<hr key = "lower"/>)
-
-        return ([...upperelements,
-            <p key = "header" style={{margin:0,padding:0}}>{props.header}</p>,
+    return (
+        <div>
+            {[...upperelements,
+            <p key = "header" style={{margin:0,padding:0}}>{header}</p>,
             <ul key = "list">
-                { items }
+                { localitems }
             </ul>,
             ...lowerelements,
-            ]
-        )
-    }
+            ]}
+        </div>
+    )
 
 }
 

@@ -16,7 +16,7 @@ class PageMenuController extends React.Component {
         });
     }
     render() {
-        return React.createElement("div", { style: {
+        return React.createElement("nav", { style: {
                 position: "fixed",
                 height: "38px",
                 borderTop: '3px ridge silver',

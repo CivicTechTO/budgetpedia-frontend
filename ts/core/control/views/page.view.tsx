@@ -7,19 +7,17 @@ import * as React from 'react';
 
 import Helmet from 'react-helmet'
 
-class PageView extends React.Component<any,any> {
+let PageView = props => {
 
-    render() {
-        return (
-            <div>
-                {this.props.title?<Helmet>
-                    <title>{this.props.title}</title>
-                    {this.props.description?<meta name="description" content = {this.props.description} />:null}
-                </Helmet>:null}
-                {this.props.children}
-            </div>
-        )
-    }
+    return (
+        <div>
+            {props.title?<Helmet>
+                <title>{props.title}</title>
+                {props.description?<meta name="description" content = {props.description} />:null}
+            </Helmet>:null}
+            {props.children}
+        </div>
+    )
 }
 
 export default PageView

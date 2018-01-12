@@ -19,27 +19,24 @@ interface Props {
     imageStyle?:any,
 }
 
-class LinkView extends React.Component<Props, any> {
+let LinkView = (props:Props) => {
 
-    render() {
-        let { props } = this
-        let defaultImageStyle = {height:'18px',verticalAlign:'middle'}
-        return (
-            <li>{ props.prompt }&nbsp;<span
-                style = {{whiteSpace:'pre'}} ><img 
-                style = {{...defaultImageStyle,...props.imageStyle}}
-                src={ props.icon }
-                />&nbsp;
-                {props.external
-                    ?<a href = {props.target}
-                        target = "_blank">{props.targetText}</a>                    
-                    :<Link to= {props.target} >{props.targetText}</Link>}{' '}
-                {props.suffix}
-                </span>
-                {props.description?<p style = {{fontStyle:'italic', margin:'0'}}>{props.description}</p>:null}
-            </li>
-        )
-    }
+    let defaultImageStyle = {height:'18px',verticalAlign:'middle'}
+    return (
+        <li>{ props.prompt }&nbsp;<span
+            style = {{whiteSpace:'pre'}} ><img 
+            style = {{...defaultImageStyle,...props.imageStyle}}
+            src={ props.icon }
+            />&nbsp;
+            {props.external
+                ?<a href = {props.target}
+                    target = "_blank">{props.targetText}</a>                    
+                :<Link to= {props.target} >{props.targetText}</Link>}{' '}
+            {props.suffix}
+            </span>
+            {props.description?<p style = {{fontStyle:'italic', margin:'0'}}>{props.description}</p>:null}
+        </li>
+    )
 }
 
 export default LinkView

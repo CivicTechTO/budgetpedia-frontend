@@ -16,11 +16,9 @@ interface Props {
     contrast?: boolean,
 }
 
-class Nugget extends React.Component< Props, any > {
+let Nugget = (props:Props) => {
 
-    render() {
-
-        let { image, style, contrast, prefix, infix, suffix } = this.props
+        let { image, style, contrast, prefix, infix, suffix } = props
 
         let defaultstyle = {
             display:'inline-block',
@@ -57,7 +55,6 @@ class Nugget extends React.Component< Props, any > {
                 { <MarkupLine markup={suffix} /> }
             </div>
         </div>
-    }
 }
 
 export default Nugget
