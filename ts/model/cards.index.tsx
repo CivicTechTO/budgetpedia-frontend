@@ -106,7 +106,7 @@ let mainpageheader = {
         type:'div',
         properties: {
             style:{ 
-                padding:"8px", 
+                margin:"8px", 
             },
         },
     },
