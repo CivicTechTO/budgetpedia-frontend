@@ -59,7 +59,7 @@ about 55,000 people. The operating budget for all this activity is around $12B.
 
 We are informed through Freedom of Information requests that budgeting is begun at the _cost-centre_ level 
 (there are about 13,000 of these),
-and rolled up from there both for an organizational view (roughly through units, sections, and programs). 
+and rolled up from there both for an organizational view (roughly through units, sections, and programs), 
 and a services view (roughly sub-activities, activiites, services and programs).
 
 The results are assembled by Financial Planning Division (FPD) Analysts, and reviewed and negotiated with the 
