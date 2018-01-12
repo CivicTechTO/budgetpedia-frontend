@@ -33,7 +33,7 @@ let md = new mdit({html:true,
 md.use(mda).use(mdt)
 
 const MarkupLine = ({markup,style}:{markup:string,style?:object}) => (
-    <HtmlView style = {{display:'inline-block',...style}} html={md.renderInline(markup)} />
+    <HtmlView style = {{display:'inline',...style}} html={md.renderInline(markup)} />
 )
 
 export default MarkupLine

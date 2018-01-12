@@ -21,5 +21,5 @@ let md = new mdit({ html: true,
     }
 });
 md.use(mda).use(mdt);
-const MarkupLine = ({ markup, style }) => (React.createElement(html_view_1.default, { style: Object.assign({ display: 'inline-block' }, style), html: md.renderInline(markup) }));
+const MarkupLine = ({ markup, style }) => (React.createElement(html_view_1.default, { style: Object.assign({ display: 'inline' }, style), html: md.renderInline(markup) }));
 exports.default = MarkupLine;
