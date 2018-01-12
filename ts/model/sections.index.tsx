@@ -268,10 +268,6 @@ let roadmap = {
                 index:'tableofconents',
                 description:'page table of contents',
             },
-            {
-                repo:'sheets',
-                index:'cityprocess',
-            },
         ],
     },
 
@@ -281,7 +277,7 @@ let roadmap = {
         anchor:'notes',
         description:'description of notes',
         type:'section',
-        tag:'Insider Notes',
+        tag:'The Process',
         narrative: {
 
             "paper:insiderview":
@@ -301,15 +297,19 @@ least some collaboration with front-line staff, or at least front-line managers.
 `
         },
         properties:{
-            title:"Insider Notes",
-            description: `One of our volunteers assembled these detailed notes in 2016, 
-            from publicly available information and direct interviews of City Hall staff.`,
+            title:"The Process",
+            description: `The entire process, from strategizing to getting audited results, covers about 27 months. 
+            The budget creation process itself is about 8 months`,
         },
         children: [
             {
+                repo:'sheets',
+                index:'cityprocess',
+            },
+            {
                 repo:'papers',
                 index:'insiderview',
-            }
+            },
         ],
     },
 
