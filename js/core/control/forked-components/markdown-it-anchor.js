@@ -96,7 +96,7 @@ let defaults = {
     permalinkHref,
     useTargetlink: false,
     renderTargetlink,
-    targetlinkClass: 'target-anchor',
+    targetlinkClass: 'target-anchor hash-anchor',
     headerClassName: 'content-header',
 };
 module.exports = anchor;

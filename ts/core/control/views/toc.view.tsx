@@ -9,6 +9,8 @@ import * as React from 'react'
 
 import Paper from 'material-ui/Paper'
 
+import HashAnchorHeader from './hashanchorheader.view'
+
 let paddingMap = {
     h1:0,
     h2:16,
@@ -98,7 +100,7 @@ let ToCView = ({tocdata}) => {
                 }
             >
                 <div style = {styles.innerdiv as any}>
-                    <h1>Page Contents</h1>
+                    <HashAnchorHeader title = 'Page Contents' tag = 'h2' />
                     <div style = {{columns:'2 300px'}} >
                         { toc }
                     </div>

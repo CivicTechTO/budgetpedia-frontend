@@ -9,6 +9,12 @@ blockquote {
 }
 /* ReactSlider */
 
+/* anchor and content system*/
+
+a.hash-anchor {
+    /* for identification */
+}
+
 a.draft-anchor {
     position:absolute;
     top:0;

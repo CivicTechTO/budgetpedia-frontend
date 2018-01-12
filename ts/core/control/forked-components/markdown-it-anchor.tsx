@@ -136,7 +136,7 @@ let defaults = {
   // added by HB
   useTargetlink:false,
   renderTargetlink,
-  targetlinkClass: 'target-anchor',
+  targetlinkClass: 'target-anchor hash-anchor',
   headerClassName:'content-header',
 }
 

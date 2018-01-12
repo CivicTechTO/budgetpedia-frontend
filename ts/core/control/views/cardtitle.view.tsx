@@ -41,7 +41,7 @@ let CardTitleView = (props) => {
 
         { cardtitle }
         <a className="header-anchor cardtitle-anchor" href={"#" + slug} aria-hidden="true">🔗</a>
-        <a className="cardtitle-target-anchor" id={slug} data-text={titletext} data-level = {tag} aria-hidden="true"></a>
+        <a className="cardtitle-target-anchor hash-anchor" id={slug} data-text={titletext} data-level = {tag} aria-hidden="true"></a>
         
     </div>
 

@@ -34,19 +34,23 @@ let home = {
         type:'section',
         tag:'Quick Statistics',
         narrative: {
+
             "list:abouttoronto":
 `Check out the third item from the right, "Visible minorities" (you have to scroll to the right). 
 If you think about it, this means that for most of Toronto,
 these so-called minorities are actually collectively in the majority. 
 We're cosmopolitan.`,
+
             "list:torontofinances":
 `We've found that audited financial statements are more reliable than budgets as the
 basis for a narrative about Toronto. Scroll to the right and you'll see that cash is 
 flowing into capital.`,
+
             "list:torontotrends":
 `For a highlight, scroll right to the "Changes in net worth". Toronto has had a large increase in 
 net worth (assets less liabilities) over the past few years. The short story: 
 money is flowing into tangible asset improvements and purchases.`,
+
         },
         properties: {
             title:'Quick Statistics',
@@ -76,16 +80,20 @@ money is flowing into tangible asset improvements and purchases.`,
         type:'section',
         tag:'The Basics',
         narrative: {
+
             'paper:citybasics':
 `At a general level it's not that complicated. Outside City Hall, front line staff
 take care of city-wide daily services (general services), and help many of us 
 directly (resident support services).`,
+
             'paper:cityprocess':
 `Although budgeting is a lengthy process, very little of it is public.`,
         },
         followup: {
+
             'paper:citybasics':
 `For detailed budget information, see our budget [explorer](/explorer).`,
+
             'paper:cityprocess':
 `For more information on the City of Toronto Budget Process, see the City of Toronto 
 [website](https://www.toronto.ca/city-government/budget-finances/city-budget/), 
@@ -114,13 +122,16 @@ and our [Budget Roadmap](/roadmap) page.`,
         type:'section',
         tag:'Challenges',
         narrative: {
+
             'paper:opportunities':
 `There really are huge opportunities for improvement! Changes by design,
 to make everyone's life better.`,
+
             'paper:concerns':
 `We know many City staff don't like to hear this, and we're sorry. But we
 think these are issues that need to be discussed. They've been going on for decades,
 and it's time to resolve them. Any feedback on how best to go about this is very welcome.`,
+
         },
         properties: {
             title:'Challenges to Work On',
@@ -149,9 +160,11 @@ and it's time to resolve them. Any feedback on how best to go about this is very
         type:'section',
         tag:'Stories',
         narrative: {
+
             'paper:stories':
 `The challenge is to tell all these stories, and be useful about it!
 If you have suggestions for stories, or if you want to help, let us know.`,
+
         },
         properties: {
             title:'Stories to Create',
@@ -221,10 +234,13 @@ let roadmap = {
         type:'section',
         tag:'Top:Roadmap',
         narrative: {
+
             'paper:cityprocess':
 `Here is a rough outline of how the process is currently set up.`,
+
         },
         followup: {
+
             "paper:cityprocess":
 `For information on specific City budgets, see our [Budgets](/budgets) page.
 `
@@ -233,9 +249,6 @@ let roadmap = {
             title:"Budget Roadmap",
             description: 
 `This page is about how the Toronto budget is created, and _could_ be created, every year.
-
-The short story is that we think that more openness and collaborarion at all levels around
-the budget process would very likely lead to better outcomes for all.
 `,
         },
         children:[
@@ -263,6 +276,7 @@ the budget process would very likely lead to better outcomes for all.
         type:'section',
         tag:'Insider Notes',
         narrative: {
+
             "paper:insiderview":
 `This list of events is worth scanning, in spite of its length, to get a sense of the players involved, and the nature
 of the process.
@@ -273,6 +287,7 @@ least some collaboration with front-line staff, or at least front-line managers.
 `
         },
         followup: {
+            
             "paper:insiderview":
 `For the City of Toronto's information about the budget, see the City's [budget website](https://www.toronto.ca/city-government/budget-finances/city-budget/                
 ).

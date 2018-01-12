@@ -30,7 +30,6 @@ let repositories = {
 };
 const getDocument = (repo, index) => {
     let indexes = index.split('.');
-    console.log('requested document(repo, index)', repo, index, indexes);
     let node = repositories[repo];
     if (!node)
         return {};

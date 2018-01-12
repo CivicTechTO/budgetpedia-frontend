@@ -21,7 +21,7 @@ class PageControllerClass extends React.Component {
             let tocdata = [];
             let self = this;
             setTimeout(() => {
-                let anchors = document.querySelectorAll('a.target-anchor');
+                let anchors = document.querySelectorAll('a.hash-anchor');
                 anchors.forEach(element => {
                     let item = {
                         tag: element.getAttribute('data-level'),

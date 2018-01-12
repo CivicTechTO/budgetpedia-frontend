@@ -76,7 +76,7 @@ let HeaderWrapper = props => {
   return React.createElement(tag,hprops,[
       props.children,
       <a key = "permalink" className="header-anchor draft-anchor" href={"#" + slug} aria-hidden="true">🔗</a>,
-      <a key = "targetlink" className="target-anchor" id={slug} data-text={text} data-level = {tag} aria-hidden="true"></a>,
+      <a key = "targetlink" className="target-anchor hash-anchor" id={slug} data-text={text} data-level = {tag} aria-hidden="true"></a>,
     ])
 
  }

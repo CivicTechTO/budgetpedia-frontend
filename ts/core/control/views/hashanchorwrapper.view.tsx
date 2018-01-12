@@ -23,7 +23,7 @@ let HashAnchorWrapper = ({tag,title,style}) => {
     let titlenode = <MarkupLine key="title" markup = {title} />
 
     let permalink = <a key = "permalink" className="header-anchor markup-anchor" href={"#" + slug} aria-hidden="true">🔗</a>
-    let hashtarget = <a key = "hashtarget" className="target-anchor" id={slug} data-text={titletext} data-level = {tag} aria-hidden="true"></a>
+    let hashtarget = <a key = "hashtarget" className="target-anchor hash-anchor" id={slug} data-text={titletext} data-level = {tag} aria-hidden="true"></a>
 
     return <div className = 'content-header' style = {{...wrapperstyle,...style}}>
 

@@ -17,7 +17,7 @@ let HashAnchorHeader = ({ tag, title }) => {
     let slug = stringUtils(titletext).slugify().s;
     let titlenode = React.createElement(markupline_view_1.default, { key: "title", markup: title });
     let permalink = React.createElement("a", { key: "permalink", className: "header-anchor markup-anchor", href: "#" + slug, "aria-hidden": "true" }, "\uD83D\uDD17");
-    let hashtarget = React.createElement("a", { key: "hashtarget", className: "target-anchor", id: slug, "data-text": titletext, "data-level": tag, "aria-hidden": "true" });
+    let hashtarget = React.createElement("a", { key: "hashtarget", className: "target-anchor hash-anchor", id: slug, "data-text": titletext, "data-level": tag, "aria-hidden": "true" });
     let children = [titlenode, permalink, hashtarget];
     return React.createElement(tag, props, children);
 };

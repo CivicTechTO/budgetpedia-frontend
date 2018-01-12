@@ -25,6 +25,6 @@ let CardTitleView = (props) => {
     return React.createElement("div", { className: 'content-header', style: { position: 'relative' } },
         cardtitle,
         React.createElement("a", { className: "header-anchor cardtitle-anchor", href: "#" + slug, "aria-hidden": "true" }, "\uD83D\uDD17"),
-        React.createElement("a", { className: "cardtitle-target-anchor", id: slug, "data-text": titletext, "data-level": tag, "aria-hidden": "true" }));
+        React.createElement("a", { className: "cardtitle-target-anchor hash-anchor", id: slug, "data-text": titletext, "data-level": tag, "aria-hidden": "true" }));
 };
 exports.default = CardTitleView;

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const Paper_1 = require("material-ui/Paper");
+const hashanchorheader_view_1 = require("./hashanchorheader.view");
 let paddingMap = {
     h1: 0,
     h2: 16,
@@ -61,7 +62,7 @@ let ToCView = ({ tocdata }) => {
                 borderRadius: '8px',
             } },
             React.createElement("div", { style: styles.innerdiv },
-                React.createElement("h1", null, "Page Contents"),
+                React.createElement(hashanchorheader_view_1.default, { title: 'Page Contents', tag: 'h2' }),
                 React.createElement("div", { style: { columns: '2 300px' } }, toc),
                 React.createElement("div", { style: { clear: 'both' } })))));
 };
