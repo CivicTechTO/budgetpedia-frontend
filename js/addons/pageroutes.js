@@ -13,7 +13,6 @@ const newsletter_1 = require("./pages/newsletter");
 const resources_1 = require("./pages/resources");
 const teams_1 = require("./pages/teams");
 const stories_1 = require("./pages/stories");
-const demos_1 = require("./pages/demos");
 const announcements_1 = require("./pages/announcements");
 const pathways_1 = require("./pages/pathways");
 let routedata = [
@@ -28,7 +27,6 @@ let routedata = [
     { path: "/resources", component: resources_1.default },
     { path: "/teams", component: teams_1.default },
     { path: "/stories", component: stories_1.default },
-    { path: "/demos", component: demos_1.default },
     { path: "/announcements", component: announcements_1.default },
     { path: "/pathways", component: pathways_1.default },
 ];

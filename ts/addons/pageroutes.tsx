@@ -19,7 +19,6 @@ import Newsletter from './pages/newsletter'
 import Resources from './pages/resources'
 import Teams from './pages/teams'
 import Stories from './pages/stories'
-import Demos from './pages/demos'
 import Announcements from './pages/announcements'
 import Pathways from './pages/pathways'
 
@@ -35,7 +34,6 @@ let routedata = [
     { path: "/resources", component: Resources },
     { path: "/teams", component: Teams },
     { path: "/stories", component: Stories },
-    { path: "/demos", component: Demos },
     { path: "/announcements", component: Announcements },
     { path: "/pathways", component: Pathways },
 ]

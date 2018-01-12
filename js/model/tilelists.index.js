@@ -116,20 +116,6 @@ let mainpages = {
                 parent: 'home',
             },
             {
-                id: 13,
-                content: {
-                    title: `Get a Demo`,
-                    subtitle: `Resources & training`,
-                    image: '../../public/icons/ic_record_voice_over_48px.svg',
-                    category: 'get involved',
-                },
-                index: 6,
-                tier: 'secondary',
-                route: '/demos',
-                tag: 'demos',
-                parent: 'home',
-            },
-            {
                 id: 10,
                 content: {
                     title: `Our Teams`,
