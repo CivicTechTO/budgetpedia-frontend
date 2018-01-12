@@ -37,7 +37,7 @@ class NuggetList extends React.Component {
         let nuggets = nuggetdata.map(function (data, index) {
             return (React.createElement(nugget_view_1.default, { key: index, image: data.image, style: data.style, prefix: data.prefix, infix: data.infix, suffix: data.suffix, contrast: data.contrast }));
         });
-        return (React.createElement("div", { style: Object.assign({}, defaultstyle, style) },
+        return (React.createElement("article", { style: Object.assign({}, defaultstyle, style) },
             React.createElement("div", { style: {
                     position: 'absolute',
                     left: '0',

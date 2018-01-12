@@ -75,7 +75,7 @@ class TileListController extends React.Component< Props, any > {
         })
 // 152    102    103   #986667 
         return (
-            <div style = {
+            <article style = {
                 {
                     position:'relative', 
                     margin:'0 16px',
@@ -122,7 +122,7 @@ class TileListController extends React.Component< Props, any > {
                         </div>
                     </div>
                 </ScrollControlsView>
-            </div>
+            </article>
         )
     }
 }

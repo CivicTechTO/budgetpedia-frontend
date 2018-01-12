@@ -33,7 +33,7 @@ class NarrationBubbleView extends React.Component {
         };
     }
     render() {
-        return React.createElement("div", { style: this.bubbleStyle },
+        return React.createElement("aside", { style: this.bubbleStyle },
             React.createElement(markupblock_view_1.default, { markup: this.props.markup }),
             React.createElement("div", { style: this.firstArrowStyle }),
             React.createElement("div", { style: this.secondArrowStyle }));

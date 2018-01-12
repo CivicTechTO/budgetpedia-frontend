@@ -41,11 +41,11 @@ class NarrationBubbleView extends React.Component<any,any> {
 
     }
     render() {
-        return <div style = {this.bubbleStyle as any} >
+        return <aside style = {this.bubbleStyle as any} >
             <MarkupBlockView markup = {this.props.markup} />
             <div style = {this.firstArrowStyle as any} ></div>
             <div style = {this.secondArrowStyle as any }></div>
-        </div>
+        </aside>
     }
 
 }

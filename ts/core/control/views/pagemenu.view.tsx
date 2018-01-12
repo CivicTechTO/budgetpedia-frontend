@@ -23,7 +23,7 @@ class PageMenuController extends React.Component<any,any> {
     scroller = null
 
     render() {
-        return <div style = {
+        return <nav style = {
             {
                 position:"fixed",
                 height:"38px",
@@ -48,7 +48,7 @@ class PageMenuController extends React.Component<any,any> {
                 {this.props.children}
             </div>
         </ScrollControlsView>
-        </div>
+        </nav>
     }
 
 }

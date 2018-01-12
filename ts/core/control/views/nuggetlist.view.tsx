@@ -78,7 +78,7 @@ class NuggetList extends React.Component< Props, any > {
             )
         })
         return (
-            <div style = {{...defaultstyle,...style}} >
+            <article style = {{...defaultstyle,...style}} >
                 <div style = {
                     {
                         position:'absolute',
@@ -126,7 +126,7 @@ class NuggetList extends React.Component< Props, any > {
                     </div>
                 </div>
                 </ScrollControlsView>
-            </div>
+            </article>
         )
     }
 }
