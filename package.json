@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ace-builds": "^1.2.9",
-    "ajv": "^6.0.0",
+    "ajv": "^6.0.1",
     "csv": "^2.0.0",
     "draft-js": "^0.10.4",
     "draft-js-alignment-plugin": "^2.0.1",
@@ -44,7 +44,7 @@
     "react-animations": "^1.0.0",
     "react-csv": "^1.0.10",
     "react-dnd": "^2.5.4",
-    "react-dnd-touch-backend": "^0.3.19",
+    "react-dnd-touch-backend": "^0.3.20",
     "react-dom": "^16.2.0",
     "react-ga": "^2.4.1",
     "react-google-charts": "^1.5.5",
@@ -76,7 +76,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.20.1",
+    "@types/material-ui": "^0.20.3",
     "@types/node": "^9.3.0",
     "@types/react": "^16.0.34",
     "@types/react-router-redux": "^5.0.11",

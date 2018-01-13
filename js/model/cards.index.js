@@ -50,6 +50,39 @@ let budgetssummary = {
                     properties: {
                         markup: `### Budget structure
 
+Like most budgets, the City or Toronto budget consists of an _operating budget_ and a _capital budget_.
+
+At its core, an operating budget is an estimation of future (annual) operating staffing costs, and consumable
+goods and services purchased for the purpose of supporting those staff in performing their day to day 
+tasks. 
+
+A capital budget consists of money to purchase or improve capital assets, which are the assets that
+are used on an ongoing basis to provide (operating) services. These include tangible assets (like 
+buildings and vehicles) and other investments. 
+
+_State of good repair_ budgets are a gray area, and their treatment varies. If they _improve_ the assets 
+to which they are applied, they are considered capital costs. If they simply prevent excessive deterioration 
+of an asset, they are considered operating costs. Toronto budgets treat state of good repair as capital costs.
+
+### Budget purpose
+
+The clear purpose of budgets is to provide measurable criteria for evaluating performance, and therefore
+provide a basis for creating improvements in management. In addition, municipal budgets are intended to inform
+the public. For both reasons, they must be clear and unambiguous.
+
+### Interpreting the Toronto Budget
+
+It is important to understand that Toronto uses unconventional methods with its budgeting, together with 
+conflations and even errors, to the point of being idiosyncratic. In addition there are signs that the 
+underlying accounting systems continue to have serious deficiencies (a full generation after amalgamation), and 
+therefore questions about accuracy. Finally, although a substantial amount of information is released, 
+granular information is not, leaving much of the data to be untestable. All of this, taken together, makes 
+it difficult if not impossible to rely on budgetary information for detailed analytics. In other words 
+Toronto budgets are neither clear nor unambiguous. Moreover they do not easily compare to audited statements, 
+for evaluating outcomes.
+
+Instead, we urge readers to use budget information for general information, with caution, and rely more on 
+audited statements for meaningful trends.
 `,
                     },
                 },
@@ -127,7 +160,7 @@ a couple of months before the budget is approved by City Council.
 ### Strategy and evaluation
 
 Prior to this process senior City staff and politicians develop a general strategy and priorities. Subsequent to this
-process the Budget Committee receives variance reports from the Financial Planning Division on a quarterly
+process the Budget Committee receives high level (divisoin and agency level) variance reports from the Financial Planning Division on a quarterly
 basis, to review actual expenditures against the budgets.
 
 Finally an audited statement for the budget year is issued about half a year after the budget year is over, and
