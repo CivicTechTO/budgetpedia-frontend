@@ -3,6 +3,7 @@
 let routes = {
     '/roadmap':'roadmap',
     '/':'home',
+    '/dev':'budgets',
 }
 
 export default routes

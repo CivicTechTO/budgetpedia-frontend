@@ -1,5 +1,62 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let budgetssummary = {
+    type: 'card',
+    controller: 'card',
+    index: 'summary',
+    description: 'summary of budgets',
+    properties: {
+        style: {
+            margin: "16px",
+            border: "2px solid silver",
+            borderRadius: "8px",
+            boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
+        }
+    },
+    children: [
+        {
+            type: 'cardtitle',
+            controller: 'card',
+            index: 'tableofcontents',
+            description: 'summary title',
+            properties: {
+                title: 'Summary',
+                titleStyle: {
+                    fontSize: '20px',
+                    fontWeight: 'bold',
+                },
+                style: {
+                    padding: "16px 16px 0 16px",
+                },
+            },
+        },
+        {
+            type: 'cardtext',
+            controller: 'card',
+            index: 'summary',
+            description: 'summary of budgets',
+            properties: {
+                style: {
+                    padding: '0 16px',
+                    fontSize: '16px',
+                },
+            },
+            children: [
+                {
+                    type: 'markupblock',
+                    controller: 'card',
+                    index: 'tableofcontents',
+                    description: 'page table of contents',
+                    properties: {
+                        markup: `### Budget structure
+
+`,
+                    },
+                },
+            ],
+        },
+    ],
+};
 let roadmapsummary = {
     type: 'card',
     controller: 'card',
@@ -196,6 +253,7 @@ let mainpagefooter = {
     ],
 };
 let cards = {
+    budgetssummary,
     roadmapsummary,
     mainpageheader,
     mainpagefooter,

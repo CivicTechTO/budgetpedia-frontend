@@ -1,6 +1,39 @@
 // pages.index.tsx
 
 let pages = {
+    budgets:{
+        controller: 'page',
+        index: 'budgets',
+        type:'page',
+        attribution: {
+            custodian:{
+                name: 'Henrik Bechmann',
+                link: 'mailto:henrik@budgetpedia.ca',
+            },
+            authority:null,
+            creator:null,
+            updater:null,
+            contact:{
+                name:'mail@budgetpedia.ca',
+                link:'mailto:mail@budgetpedia.ca',
+            },
+            dates:{
+                created: '12-01-2018',
+                updated: '12-01-2018',
+            },
+        },
+        tags:null,
+        properties: {
+            title:'Toronto budgets',
+            description: 'Summary of Toronto budgets',
+        },
+        children: [
+            {
+                repo:'sections',
+                index:'budgets.header',
+            },
+        ],
+    },
     roadmap: {
         controller: 'page',
         index: 'roadmap',

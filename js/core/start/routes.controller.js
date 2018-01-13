@@ -16,6 +16,7 @@ let logPageView = (location) => {
     }
 };
 let routedata = [
+    { path: "/dev", component: page_controller_1.default },
     { path: "*", component: nomatch_1.default },
 ];
 let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));

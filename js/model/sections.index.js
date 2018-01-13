@@ -1,5 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let budgets = {
+    header: {
+        controller: 'section',
+        index: 'budgets.header',
+        anchor: 'header',
+        description: 'header for budgets page',
+        type: 'section',
+        tag: 'Top:Budgets',
+        properties: {
+            title: "Information About Budgets",
+            description: `This page is about how the Toronto budget is structured, and _could_ be structured, every year.
+`,
+        },
+        children: [
+            {
+                repo: 'cards',
+                index: 'budgetssummary',
+            },
+            {
+                controller: 'section',
+                type: 'toc',
+                index: 'tableofcontents',
+                description: 'page table of contents',
+            },
+        ],
+    },
+};
 let home = {
     header: {
         controller: 'section',
@@ -20,7 +47,7 @@ let home = {
             {
                 controller: 'section',
                 type: 'toc',
-                index: 'tableofconents',
+                index: 'tableofcontents',
                 description: 'page table of contents',
             },
         ],
@@ -227,7 +254,7 @@ let roadmap = {
             {
                 controller: 'section',
                 type: 'toc',
-                index: 'tableofconents',
+                index: 'tableofcontents',
                 description: 'page table of contents',
             },
         ],
@@ -347,6 +374,7 @@ least some collaboration with front-line staff, or at least front-line managers.
     },
 };
 let sections = {
+    budgets,
     roadmap,
     home,
 };
