@@ -3,7 +3,7 @@
 let budgetssummary = {
     type:'card',
     controller: 'card',
-    index:'summary',
+    index:'budgetssummary',
     description:'summary of budgets',
     properties: {
         style: {
@@ -62,16 +62,16 @@ are used on an ongoing basis to provide (operating) services. These include tang
 buildings and vehicles) and other investments. 
 
 _State of good repair_ budgets are a gray area, and their treatment varies. If they _improve_ the assets 
-to which they are applied, they are considered capital costs. If they simply prevent excessive deterioration 
+to which they are applied, they are considered capital costs. If they simply _prevent excessive deterioration_ 
 of an asset, they are considered operating costs. Toronto budgets treat state of good repair as capital costs.
 
 ### Budget purpose
 
-The clear purpose of budgets is to provide measurable criteria for evaluating performance, and therefore
-provide a basis for creating improvements in management. In addition, municipal budgets are intended to inform
-the public. For both reasons, they must be clear and unambiguous.
+The clear purpose of budgets is to plan, and provide measurable criteria for evaluating performance.
+This provides a basis for supporting and creating improvements in management. In addition, municipal 
+budgets are intended to inform the public. For both reasons, they must be clear and unambiguous.
 
-### Interpreting the Toronto Budget
+### Interpreting the Toronto budget
 
 It is important to understand that Toronto uses unconventional methods with its budgeting, together with 
 conflations and even errors, to the point of being idiosyncratic. In addition there are signs that the 

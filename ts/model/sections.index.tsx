@@ -14,6 +14,11 @@ let budgets = {
 `This page is about how the Toronto budget is structured, and _could_ be structured, every year.
 `,
         },
+        followup: {
+            'card:budgetssummary':
+`This page is about the structure of Toronto budgets. For information about the budget process,
+see our [roadmap](/roadmap) page.`,
+        },
         children:[
             {
                 repo:'cards',
