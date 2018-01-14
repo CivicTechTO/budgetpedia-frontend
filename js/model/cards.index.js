@@ -83,6 +83,28 @@ for evaluating outcomes.
 
 Instead, we urge readers to use budget information for general information, with caution, and rely more on 
 audited statements for meaningful trends.
+
+- budget source documents
+   - budget presentations
+   - analyst notes
+   - briefing notes and reports
+   - wrapup notes
+   - corporate reports
+   - open data portal
+- terminlogy
+- standard analyst notes
+- open data portal budget details
+- participatory budgeting
+- budgets as theatre
+- Specific budget notes and links
+   - 2018
+   - 2017
+- financial controls
+   - Toronto's [vision](https://docs.google.com/presentation/d/1jmDAeN2rsG2XQwlAmycqxTmhunfONc1z9zlLZHmEctk)
+   - FPARS ([SPIRIT](https://drive.google.com/file/d/0B208oCU9D8OuMG4yaVJpaW16VGc/view))
+   - Variance reports
+   - Audited statement
+
 `,
                     },
                 },
