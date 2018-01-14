@@ -9,7 +9,7 @@ let budgets = {
         type: 'section',
         tag: 'Top:Budgets',
         properties: {
-            title: "Information About Budgets",
+            title: "Toronto Budgets",
             description: `This page is about how the Toronto budget is structured, and _could_ be structured, every year.
 `,
         },
@@ -30,6 +30,38 @@ see our [roadmap](/roadmap) page.`,
             },
         ],
     },
+    instances: {
+        controller: 'section',
+        index: 'budgets.instances',
+        anchor: 'instances',
+        description: 'instances for budgets page',
+        type: 'section',
+        tag: 'Instances',
+        properties: {
+            title: "Budget Instances",
+            description: `Read about specific budgets and variants here.
+
+`,
+        },
+        children: [
+            {
+                repo: 'papers',
+                index: 'budget2018',
+            },
+            {
+                repo: 'papers',
+                index: 'budget2017',
+            },
+            {
+                repo: 'papers',
+                index: 'participatory',
+            },
+            {
+                repo: 'papers',
+                index: 'investinginto',
+            },
+        ],
+    },
     resources: {
         controller: 'section',
         index: 'budgets.resources',
@@ -40,61 +72,26 @@ see our [roadmap](/roadmap) page.`,
         properties: {
             title: "Resources",
             description: `This section lists the main documents made available by Toronto about the annual budgets.
-
-budget resources
-- budget source documents
-   - budget presentations
-   - analyst notes
-   - briefing notes and reports
-   - wrapup notes
-   - corporate reports
-   - open data portal
-- terminology
-- standard analyst notes format
-- open data portal budget details
-
 `,
         },
-    },
-    instances: {
-        controller: 'section',
-        index: 'budgets.instances',
-        anchor: 'instances',
-        description: 'instances for budgets page',
-        type: 'section',
-        tag: 'Instances',
-        properties: {
-            title: "Budget Instances",
-            description: `Read about specific budgets here.
-
-budget instances
-- specific budget notes and links
-   - 2018
-   - 2017
-- participatory budgeting
-
-`,
-        },
-    },
-    perspectives: {
-        controller: 'section',
-        index: 'budgets.perspectives',
-        anchor: 'perspectives',
-        description: 'perspectives for budgets page',
-        type: 'section',
-        tag: 'Perspectives',
-        properties: {
-            title: "Perspectives",
-            description: `Here are some perspectives taken from our experience with the budget systems.
-
-budget perspectives
-- budgets as theatre
-- getting from budgets to variance reports to audited statements
-- some unconventional practices
-- two hierarchies
-
-`,
-        },
+        children: [
+            {
+                repo: 'papers',
+                index: 'sourcedocuments',
+            },
+            {
+                repo: 'papers',
+                index: 'terminology',
+            },
+            {
+                repo: 'papers',
+                index: 'analystnotes',
+            },
+            {
+                repo: 'papers',
+                index: 'dataportal',
+            },
+        ],
     },
     systems: {
         controller: 'section',
@@ -106,14 +103,61 @@ budget perspectives
         properties: {
             title: "Systems",
             description: `This is a look at some of the systems related to the budget system.
-
-financial systems
-- Toronto's [vision](https://docs.google.com/presentation/d/1jmDAeN2rsG2XQwlAmycqxTmhunfONc1z9zlLZHmEctk)
-- FPARS ([SPIRIT](https://drive.google.com/file/d/0B208oCU9D8OuMG4yaVJpaW16VGc/view))
-- Variance reports
-- Audited statements
 `,
         },
+        children: [
+            {
+                repo: 'papers',
+                index: 'cityvision',
+            },
+            {
+                repo: 'papers',
+                index: 'fpars',
+            },
+            {
+                repo: 'papers',
+                index: 'variancereports',
+            },
+            {
+                repo: 'papers',
+                index: 'auditedstatements',
+            },
+        ],
+    },
+    perspectives: {
+        controller: 'section',
+        index: 'budgets.perspectives',
+        anchor: 'perspectives',
+        description: 'perspectives for budgets page',
+        type: 'section',
+        tag: 'Perspectives',
+        properties: {
+            title: "Perspectives",
+            description: `Here are some perspectives taken from our experience with the budget systems.
+`,
+        },
+        children: [
+            {
+                repo: 'papers',
+                index: 'currentconventions',
+            },
+            {
+                repo: 'papers',
+                index: 'betterconventions',
+            },
+            {
+                repo: 'papers',
+                index: 'budgetvsaudit',
+            },
+            {
+                repo: 'papers',
+                index: 'hierarchies',
+            },
+            {
+                repo: 'papers',
+                index: 'budgetsastheatre',
+            },
+        ],
     },
 };
 let home = {

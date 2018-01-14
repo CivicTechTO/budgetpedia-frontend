@@ -1,5 +1,311 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let currentconventions = {
+    controller: 'paper',
+    index: 'currentconventions',
+    description: 'current conventions',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'currentconventions',
+            description: 'current conventions',
+            properties: {
+                markup: `## Current Unconventional Practices
+`,
+            }
+        }
+    ],
+};
+let betterconventions = {
+    controller: 'paper',
+    index: 'betterconventions',
+    description: 'better conventions',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'betterconventions',
+            description: 'better conventions',
+            properties: {
+                markup: `## Better Conventions
+`,
+            }
+        }
+    ],
+};
+let budgetvsaudit = {
+    controller: 'paper',
+    index: 'budgetvsaudit',
+    description: 'budget vs audit',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'budgetvsaudit',
+            description: 'budget vs audit',
+            properties: {
+                markup: `## From _Budgets_ to _Variance Reports_ to _Audited Statements_
+`,
+            }
+        }
+    ],
+};
+let hierarchies = {
+    controller: 'paper',
+    index: 'hierarchies',
+    description: 'hierarchies',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'hierarchies',
+            description: 'hierarchies',
+            properties: {
+                markup: `## Classification Hierarchies
+`,
+            }
+        }
+    ],
+};
+let budgetsastheatre = {
+    controller: 'paper',
+    index: 'budgetsastheatre',
+    description: 'budgets as theatre',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'budgetsastheatre',
+            description: 'budgets as theatre',
+            properties: {
+                markup: `## Budgets as Theatre
+`,
+            }
+        }
+    ],
+};
+let cityvision = {
+    controller: 'paper',
+    index: 'cityvision',
+    description: 'city vision',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'cityvision',
+            description: 'city vision',
+            properties: {
+                markup: `## Financial Planning Division's Vision
+`,
+            }
+        }
+    ],
+};
+let fpars = {
+    controller: 'paper',
+    index: 'fpars',
+    description: 'fpars',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'fpars',
+            description: 'fpars',
+            properties: {
+                markup: `## Budget Source Documents
+`,
+            }
+        }
+    ],
+};
+let variancereports = {
+    controller: 'paper',
+    index: 'variancereports',
+    description: 'variance reports',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'variance reports',
+            description: 'variance reports',
+            properties: {
+                markup: `## Variance Reports
+`,
+            }
+        }
+    ],
+};
+let auditedstatements = {
+    controller: 'paper',
+    index: 'auditedstatements',
+    description: 'audited statements',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'auditedstatments',
+            description: 'audited statements',
+            properties: {
+                markup: `## Audited Statements
+`,
+            }
+        }
+    ],
+};
+let sourcedocuments = {
+    controller: 'paper',
+    index: 'sourcedocuments',
+    description: 'budget source documents',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'sourcedocuments',
+            description: 'budget source documents',
+            properties: {
+                markup: `## Budget Source Documents
+`,
+            }
+        }
+    ],
+};
+let terminology = {
+    controller: 'paper',
+    index: 'terminology',
+    description: 'terminology',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'terminology',
+            description: 'terminology',
+            properties: {
+                markup: `## Terminology
+`,
+            }
+        }
+    ],
+};
+let analystnotes = {
+    controller: 'paper',
+    index: 'analystnotes',
+    description: 'Analyst Notes',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'analyst notes',
+            description: 'Analyst Notes',
+            properties: {
+                markup: `## Analyst Notes
+`,
+            }
+        }
+    ],
+};
+let dataportal = {
+    controller: 'paper',
+    index: 'dataportal',
+    description: 'data portal',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'dataportal',
+            description: 'data portal',
+            properties: {
+                markup: `## Toronto Open Data Portal files
+`,
+            }
+        }
+    ],
+};
+let budget2018 = {
+    controller: 'paper',
+    index: 'budget2018',
+    description: '2018 budget details',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'budget2018',
+            description: '2018 budget details',
+            properties: {
+                markup: `## 2018 Budget
+`,
+            }
+        }
+    ],
+};
+let budget2017 = {
+    controller: 'paper',
+    index: 'budget2017',
+    description: '2017 budget details',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'budget2017',
+            description: '2017 budget details',
+            properties: {
+                markup: `## 2017 Budget
+`,
+            }
+        }
+    ],
+};
+let participatory = {
+    controller: 'paper',
+    index: 'participatory',
+    description: 'participatory budget details',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'participatory',
+            description: 'participatory budget details',
+            properties: {
+                markup: `## Participatory Budgeting
+`,
+            }
+        }
+    ],
+};
+let investinginto = {
+    controller: 'paper',
+    index: 'investinginto',
+    description: 'investingin budget details',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'investinginto',
+            description: 'investingin budget details',
+            properties: {
+                markup: `## Investing in Toronto
+`,
+            }
+        }
+    ],
+};
 let councilprocess = {
     controller: 'paper',
     index: 'insiderview',
@@ -718,6 +1024,23 @@ two groups separately, taking more interest (presumably for political reasons) i
     ],
 };
 let papers = {
+    currentconventions,
+    betterconventions,
+    budgetvsaudit,
+    hierarchies,
+    budgetsastheatre,
+    cityvision,
+    fpars,
+    variancereports,
+    auditedstatements,
+    sourcedocuments,
+    terminology,
+    analystnotes,
+    dataportal,
+    budget2018,
+    budget2017,
+    participatory,
+    investinginto,
     insiderview,
     councilprocess,
 };

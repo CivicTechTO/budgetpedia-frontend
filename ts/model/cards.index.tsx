@@ -55,7 +55,8 @@ Like most budgets, the City or Toronto budget consists of an _operating budget_ 
 
 At its core, an operating budget is an estimation of future (annual) operating staffing costs, and consumable
 goods and services purchased for the purpose of supporting those staff in performing their daily 
-tasks. 
+tasks. If a full accrual basis of budgeting is used, then depreciation of capital assets is also included
+in the budget.
 
 A capital budget consists of money to purchase or improve capital assets, which are the assets that
 are used to stage and support operating services. These include tangible assets (like 
@@ -88,7 +89,7 @@ audited statements for meaningful trends.
 
 ### Our proposal
 
-Having come to the conclusion that Toronto budgets are overly complex and obtuse, we have developed a 
+Having come to the conclusion that Toronto budgets are overly complex and obtuse, we have a 
 proposal to help with this. Our proposal is twofold:
 - work toward simple and conventional approaches to budgeting, to achieve accurate, understandable reporting
 - publish granular data (to the cost-centre level) to achieve grounded, practical decision-making

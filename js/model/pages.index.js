@@ -34,19 +34,19 @@ let pages = {
             },
             {
                 repo: 'sections',
-                index: 'budgets.resources',
-            },
-            {
-                repo: 'sections',
                 index: 'budgets.instances',
             },
             {
                 repo: 'sections',
-                index: 'budgets.perspectives',
+                index: 'budgets.resources',
             },
             {
                 repo: 'sections',
                 index: 'budgets.systems',
+            },
+            {
+                repo: 'sections',
+                index: 'budgets.perspectives',
             },
         ],
     },
