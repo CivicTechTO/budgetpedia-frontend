@@ -54,30 +54,31 @@ let budgetssummary = {
 Like most budgets, the City or Toronto budget consists of an _operating budget_ and a _capital budget_.
 
 At its core, an operating budget is an estimation of future (annual) operating staffing costs, and consumable
-goods and services purchased for the purpose of supporting those staff in performing their day to day 
+goods and services purchased for the purpose of supporting those staff in performing their daily 
 tasks. 
 
 A capital budget consists of money to purchase or improve capital assets, which are the assets that
-are used on an ongoing basis to provide (operating) services. These include tangible assets (like 
-buildings and vehicles) and other investments. 
+are used to stage and support operating services. These include tangible assets (like 
+buildings, vehicles, or comptuter equipment) and other investments. 
 
-_State of good repair_ budgets are a gray area, and their treatment varies. If they _improve_ the assets 
+_State of good repair_ budgets are a gray area, and their treatment can vary. If they _improve_ the assets 
 to which they are applied, they are considered capital costs. If they simply _prevent excessive deterioration_ 
 of an asset, they are considered operating costs. Toronto budgets treat state of good repair as capital costs.
 
 ### Budget purpose
 
-The clear purpose of budgets is to plan, and provide measurable criteria for evaluating performance.
-This provides a basis for supporting and creating improvements in management. In addition, municipal 
-budgets are intended to inform the public. For both reasons, they must be clear and unambiguous.
+The purpose of budgets is to plan activities, and provide measurable criteria for evaluating performance.
+The budget cycle supports management, and evaluation helps with improvements in management. In addition, 
+municipal budgets are intended to inform the public. For all these reasons, budgets must be clear and 
+unambiguous.
 
 ### Interpreting the Toronto budget
 
 It is important to understand that Toronto uses unconventional methods with its budgeting, together with 
 conflations and even errors, to the point of being idiosyncratic. In addition there are signs that the 
-underlying accounting systems continue to have serious deficiencies (a full generation after amalgamation), and 
+underlying accounting systems continue to have deficiencies (a full generation after amalgamation), and 
 therefore questions about accuracy. Finally, although a substantial amount of information is released, 
-granular information is not, leaving much of the data to be untestable. All of this, taken together, makes 
+granular information is not, making much of the data untestable. All of this, taken together, makes 
 it difficult if not impossible to rely on budgetary information for detailed analytics. In other words 
 Toronto budgets are neither clear nor unambiguous. Moreover they do not easily compare to audited statements, 
 for evaluating outcomes.
@@ -85,27 +86,14 @@ for evaluating outcomes.
 Instead, we urge readers to use budget information for general information, with caution, and rely more on 
 audited statements for meaningful trends.
 
-- budget source documents
-   - budget presentations
-   - analyst notes
-   - briefing notes and reports
-   - wrapup notes
-   - corporate reports
-   - open data portal
-- terminlogy
-- standard analyst notes
-- open data portal budget details
-- participatory budgeting
-- budgets as theatre
-- Specific budget notes and links
-   - 2018
-   - 2017
-- financial controls
-   - Toronto's [vision](https://docs.google.com/presentation/d/1jmDAeN2rsG2XQwlAmycqxTmhunfONc1z9zlLZHmEctk)
-   - FPARS ([SPIRIT](https://drive.google.com/file/d/0B208oCU9D8OuMG4yaVJpaW16VGc/view))
-   - Variance reports
-   - Audited statement
+### Our proposal
 
+Having come to the conclusion that Toronto budgets are overly complex and obtuse, we have developed a 
+proposal to help with this. Our proposal is twofold:
+- work toward simple and conventional approaches to budgeting, to achieve accurate, understandable reporting
+- publish granular data (to the cost-centre level) to achieve grounded, practical decision-making
+
+We think both of these are achievable.
 `,
                     },
                 },

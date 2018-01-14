@@ -32,6 +32,22 @@ let pages = {
                 repo: 'sections',
                 index: 'budgets.header',
             },
+            {
+                repo: 'sections',
+                index: 'budgets.resources',
+            },
+            {
+                repo: 'sections',
+                index: 'budgets.instances',
+            },
+            {
+                repo: 'sections',
+                index: 'budgets.perspectives',
+            },
+            {
+                repo: 'sections',
+                index: 'budgets.systems',
+            },
         ],
     },
     roadmap: {
