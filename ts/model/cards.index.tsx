@@ -17,7 +17,7 @@ let budgetssummary = {
         {
             type:'cardtitle',
             controller: 'card',
-            index:'tableofcontents',
+            index:'summary',
             description:'summary title',
             properties:{
                 title: 'Summary',
@@ -45,11 +45,17 @@ let budgetssummary = {
                 {
                     type:'markupblock',
                     controller: 'card',
-                    index:'tableofcontents',
-                    description:'page table of contents',
+                    index:'summary',
+                    description:'summary of budgets',
                     properties:{
                         markup:
-`### Budget structure
+`
+<figure style='float:right;width:30%;max-width:300px'>
+<img src = '/public/images/CommunityBudgetForum.jpg' style='width:100%'/>
+<figcaption style='font-size:x-small;text-align:center'>Community budget forum</figcaption>
+</figure>
+
+### Budget structure
 
 Like most budgets, the City or Toronto budget consists of an _operating budget_ and a _capital budget_.
 
@@ -107,7 +113,7 @@ We think both of these are achievable.
 let roadmapsummary = {
     type:'card',
     controller: 'card',
-    index:'summary',
+    index:'roadmapsummary',
     description:'summary of roadmap',
     properties: {
         style: {
@@ -158,6 +164,11 @@ let roadmapsummary = {
 The City of Toronto has about 60 divisions (directly managed by the City Manager) and agencies 
 (managed at arms length). Collectively called _programs_, these organizations are staffed by
 about 55,000 people. The operating budget for all this activity is around $12B.
+
+<figure style='float:right;width:30%;max-width:300px'>
+<img src = '/public/images/RileyPetersonDeputant.png' style='width:100%'/>
+<figcaption style='font-size:x-small;text-align:center'>Riley Peterson deputant</figcaption>
+</figure>
 
 ### Budget creation process 
 

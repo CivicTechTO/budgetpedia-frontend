@@ -416,9 +416,12 @@ let roadmap = {
 
             "paper:cityprocess":
 `For information on specific City budgets, see our [Budgets](/budgets) page.
-`
+`,
+            'card:roadmapsummary':
+`This page is about the creation process of Toronto budgets. For information about the budget structure,
+see our [budgets](/budgets) page.`,
         },
-        properties:{
+       properties:{
             title:"Budget Roadmap",
             description: 
 `This page is about how the Toronto budget is created, and _could_ be created, every year.
