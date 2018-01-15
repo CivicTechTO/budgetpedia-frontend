@@ -283,6 +283,53 @@ let budget2018 = {
             description: '2018 budget details',
             properties: {
                 markup: `## 2018 Budget
+
+The 2018 budget cycle began May 11, 2017.
+
+The [budget committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12190) 
+considered the [2018 budget directions and schedule](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU32.7) 
+on May 11, 2017. ([video](https://youtu.be/mnUMDeQOUwA?t=5473))
+
+Highlights:
+
+- Toronto City Manager lays out rationale for 2018 budget direction -- "Status Quo": 
+  [video](https://youtu.be/mnUMDeQOUwA?t=15992)
+- Toronto City Manager explains to Councillor DiCiano how 'Value for money' can happen - contracting 
+  out, investment in digital and management, reduce 'core businesses', take discretion away from staff: 
+  [video](https://youtu.be/mnUMDeQOUwA?t=18281)
+- Toronto City Manager says value for money means reduction of 'core businesses' and reduction of 
+  staff discretion: [video](https://youtu.be/mnUMDeQOUwA?t=18470)
+- Toronto City Manager reveals bias to shrink Municipal Government and Services; proud of reduction of 
+  social services: [video](https://youtu.be/mnUMDeQOUwA?t=18742)
+- Toronto City Manager stonewalls Councillor Davis on public Service Plan Review and 
+   Priority-Setting process: [video](https://youtu.be/mnUMDeQOUwA?t=19360)
+- Toronto City Manager blames Councillors for failure of maintaining state of good repair: 
+  [video](https://youtu.be/mnUMDeQOUwA?t=19845)
+
+The [executive committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11825) 
+considered the [2018 budget directions and schedule](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18) on May 16, 2017.
+
+Highlights:
+
+- 2018 budget direction: [video](https://www.youtube.com/watch?v=hR3gYykKJOw&feature=youtu.be&t=28381)
+- New Real Estate Division: [video](https://www.youtube.com/watch?v=hR3gYykKJOw&feature=youtu.be&t=22628)
+
+The [City Council](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11859) 
+considered the [2018 budget directions and schedule](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18) 
+on May 24, 2017. [video May 25, 2017, Part 1](https://www.youtube.com/watch?v=qxzMIKnH4OE), 
+[video May 25, 2017, Part 2, after closed session](https://youtu.be/nv--55vbcb0?t=3341), 
+[video May 26, 2017](https://www.youtube.com/watch?v=-xbjpFsPRNI)
+
+Highlights:
+
+- 2018 budget direction: [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.18), 
+  [video](https://youtu.be/qxzMIKnH4OE?t=1235)
+- New Real Estate Division: [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.9)
+
+No further public consultations took place on the 2018 budget (as directed by Council) before 
+October 2017. Therefore most decisions were be made by staff behind closed doors.
+
+
 `,
             }
         }

@@ -167,7 +167,7 @@ about 55,000 people. The operating budget for all this activity is around $12B.
 
 <figure style='float:right;width:30%;max-width:300px'>
 <img src = '/public/images/RileyPetersonDeputant.png' style='width:100%'/>
-<figcaption style='font-size:x-small;text-align:center'>Riley Peterson deputant</figcaption>
+<figcaption style='font-size:x-small;text-align:center'>Riley Peterson, TYC, deputing</figcaption>
 </figure>
 
 ### Budget creation process 
