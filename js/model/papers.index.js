@@ -301,6 +301,56 @@ let budget2017 = {
             description: '2017 budget details',
             properties: {
                 markup: `## 2017 Budget
+
+Toronto's 2017 public budget process schedule is published [here](http://bit.ly/2eKcrfK).
+
+Follow events in these committees using the City's [TMMIS](http://app.toronto.ca/tmmis/index.do) 
+(Toronto Meeting Management Information System). 
+Live streams can be seen [here](https://www.youtube.com/channel/UCfe2rzOnQzgEDvNzRRPUJsA). Each committee's agendas, minutes, background documents, and meeting 
+videos can be found through these links:
+
+Rate supported budgets (waste, water, parking)
+- [Budget Committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=1022): 
+  [November 4](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11968) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11968)) , 
+  [November 18](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11065) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11065))
+- [Executive Committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=966): 
+  [December 1](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10995) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=10995))
+- [City Council](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961): 
+  [December 13, 14, 15](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=10878) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=10878))
+
+Tax supported budgets (eveything else)
+- [Budget Committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=1022): 
+  [December 6](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11948) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11948)) , 
+  [December 16, 19 & 20](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11969) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11969)) , 
+  [January 5, 9 & 10](http://bit.ly/2eKcrfK) 
+  (deputation videos: Etobicoke Civic Center [afternoon](http://app.toronto.ca/tmmis/video.do?id=12330), 
+  [evening](http://app.toronto.ca/tmmis/video.do?id=12344); 
+  Scarborough Civic Center [afternoon](http://app.toronto.ca/tmmis/video.do?id=12324), 
+  [evening](http://app.toronto.ca/tmmis/video.do?id=12333); 
+  North York Civic Center [afternoon](http://app.toronto.ca/tmmis/video.do?id=12331), 
+  [evening](http://app.toronto.ca/tmmis/video.do?id=12345); 
+  East York Civic Center [afternoon](http://app.toronto.ca/tmmis/video.do?id=12326), 
+  [evening](http://app.toronto.ca/tmmis/video.do?id=12327); 
+  York Civic Center [afternoon](http://app.toronto.ca/tmmis/video.do?id=12332), 
+  [evening](http://app.toronto.ca/tmmis/video.do?id=12346); 
+  City Hall [morning](http://app.toronto.ca/tmmis/video.do?id=12328), [evening](http://app.toronto.ca/tmmis/video.do?id=12329)) , 
+  [January 12](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11816) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11816)) , 
+  [January 24](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11817) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11817))
+- [Executive Committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=966): 
+  [February 7](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11819) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11819))
+- [City Council](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&decisionBodyId=961): 
+  [February 15](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11852) 
+  ([video](http://app.toronto.ca/tmmis/video.do?id=11852))
+
 `,
             }
         }
