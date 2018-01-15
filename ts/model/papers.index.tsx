@@ -376,6 +376,41 @@ let investinginto = {
                 markup:
                 
 `## Investing in Toronto
+
+Toronto undertook a planning process to find additional sources of funding from November 2016 to
+May of 2017. The website for this initiative is here: [www.investinginto.ca](http://www.investinginto.ca/).
+
+See the first phase report [here](https://drive.google.com/open?id=0B208oCU9D8OuV0ZNcUpqYWpzdUE).
+
+See the second phase consultation videos for Governance and Financial Oversight here (April 22, 2017):
+
+- [Financial and Other Decision-Making Information with Public Discussion](https://www.youtube.com/watch?v=xlvL_1GGCjI). 
+  Josie La Vita's plans for Financial Data Manaagement: scraped [slide deck](https://drive.google.com/open?id=1jmDAeN2rsG2XQwlAmycqxTmhunfONc1z9zlLZHmEctk); 
+  [video portion](https://youtu.be/xlvL_1GGCjI?t=1812).
+- [Balancing City Priorities and the Books: Public Debates](https://www.youtube.com/watch?v=3JuxEPlT4AM)
+- [Public Engagement for Long-Term Goals, Issues and Multi-Year Decision-Making](https://www.youtube.com/watch?v=WRPEKSRtdjc)
+
+See the web page summarizing the consultations [here](https://www.toronto.ca/city-government/budget-finances/city-finance/long-term-financial-plan/long-term-financial-plan-consultations/).
+
+See the final report [here](https://drive.google.com/open?id=18DQIMs7LHWiQLQuuknx9cwlUNrL8Z2l_).
+
+Among the findings, from page 5:
+
+>To be able to provide better input, most participants want more information, and for that information
+to be presented in a way they can more easily understand. Participants acknowledge a tension between
+providing all the data available, which is inherently complex, and providing more accessible data, which
+often requires reducing the level of detail. Participants suggested potential solutions to this challenge
+include:
+>-  Providing more detail of spending at the community level
+>-  Presenting alternative spending options, and cost and benefit analysis
+>-  Expanding the open data program to include more topics and sources
+>-  Using narrative or storytelling to present information
+>-  Developing charts and visualizations which can be easily shared through social media
+>-  Tracking the progress of programs and strategies
+>-  Creating more dialogue and opportunities for the public to ask questions
+
+That's what we at Budgetpedia are trying to do!
+
 `,
             }
         }
