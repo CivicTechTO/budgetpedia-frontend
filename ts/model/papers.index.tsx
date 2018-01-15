@@ -32,7 +32,7 @@ let betterconventions = {
             description:'better conventions',
             properties: {
                 markup:               
-`## Better Conventions
+`## Suggested Conventions
 `,
             }
         }
@@ -128,7 +128,7 @@ let fpars = {
             description:'fpars',
             properties: {
                 markup:               
-`## Budget Source Documents
+`## FPARS
 `,
             }
         }

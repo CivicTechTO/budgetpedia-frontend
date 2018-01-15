@@ -108,10 +108,6 @@ see our [roadmap](/roadmap) page.`,
         children: [
             {
                 repo: 'papers',
-                index: 'cityvision',
-            },
-            {
-                repo: 'papers',
                 index: 'fpars',
             },
             {
@@ -121,6 +117,10 @@ see our [roadmap](/roadmap) page.`,
             {
                 repo: 'papers',
                 index: 'auditedstatements',
+            },
+            {
+                repo: 'papers',
+                index: 'cityvision',
             },
         ],
     },

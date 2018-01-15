@@ -30,7 +30,7 @@ let betterconventions = {
             index: 'betterconventions',
             description: 'better conventions',
             properties: {
-                markup: `## Better Conventions
+                markup: `## Suggested Conventions
 `,
             }
         }
@@ -120,7 +120,7 @@ let fpars = {
             index: 'fpars',
             description: 'fpars',
             properties: {
-                markup: `## Budget Source Documents
+                markup: `## FPARS
 `,
             }
         }
