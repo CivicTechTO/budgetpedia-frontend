@@ -1,4 +1,43 @@
 // papers.index.tsx
+let budgetbook = {
+    controller:'paper',
+    index:'budgetbook',
+    description: 'budget book and summaries',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'budgetbook',
+            description:'budget book and summaries',
+            properties: {
+                markup:               
+`## Budget Book and Summaries
+`,
+            }
+        }
+    ],
+}
+
+let staffing = {
+    controller:'paper',
+    index:'staffing',
+    description: 'staffing',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'staffing',
+            description:'staffing',
+            properties: {
+                markup:               
+`## Staffing
+`,
+            }
+        }
+    ],
+}
 
 let currentconventions = {
     controller:'paper',
@@ -19,6 +58,7 @@ let currentconventions = {
         }
     ],
 }
+
 let betterconventions = {
     controller:'paper',
     index:'betterconventions',
@@ -38,6 +78,7 @@ let betterconventions = {
         }
     ],
 }
+
 let budgetvsaudit = {
     controller:'paper',
     index:'budgetvsaudit',
@@ -57,6 +98,7 @@ let budgetvsaudit = {
         }
     ],
 }
+
 let hierarchies = {
     controller:'paper',
     index:'hierarchies',
@@ -76,6 +118,7 @@ let hierarchies = {
         }
     ],
 }
+
 let budgetsastheatre = {
     controller:'paper',
     index:'budgetsastheatre',
@@ -95,6 +138,7 @@ let budgetsastheatre = {
         }
     ],
 }
+
 let cityvision = {
     controller:'paper',
     index:'cityvision',
@@ -1068,6 +1112,8 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    staffing,
+    budgetbook,
     currentconventions,
     betterconventions,
     budgetvsaudit,

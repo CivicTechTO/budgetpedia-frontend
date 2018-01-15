@@ -95,6 +95,10 @@ see our [roadmap](/roadmap) page.`,
                 repo:'papers',
                 index:'dataportal',
             },
+            {
+                repo:'papers',
+                index:'budgetbook',
+            },
         ],
     },
     systems: {
@@ -143,6 +147,10 @@ see our [roadmap](/roadmap) page.`,
 `,
         },
         children: [
+            {
+                repo:'papers',
+                index:'staffing',
+            },
             {
                 repo:'papers',
                 index:'currentconventions',
