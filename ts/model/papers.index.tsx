@@ -364,8 +364,8 @@ November 2017. Therefore most decisions were be made by staff behind closed door
 ### Fall and Winter Public Deliberations
 
 Rate supported budgets (waste, water, and parking) entirely supported by user fees (some, but not
-all, of the videos have links to specific agenda items under "SHOW MORE" in the comments -- sorry 
-we haven't had time to isolate all the segments):
+all, of the videos have links to specific agenda items under "SHOW MORE" in the comments under the 
+videos -- sorry we haven't had time to isolate the segments):
 
 - Budget Committee
     - launch [November 3, 2017](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12849): 
