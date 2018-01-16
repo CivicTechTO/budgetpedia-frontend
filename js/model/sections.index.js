@@ -10,7 +10,12 @@ let budgets = {
         tag: 'Top:Budgets',
         properties: {
             title: "Toronto Budgets",
-            description: `This page is about how the Toronto budget is structured, and _could_ be structured, every year.
+            description: `
+<div style = "padding:16px;background-color:orange;text-align:center;border:1px solid silver">
+This page is under active construction.
+</div>
+
+This page is about how the Toronto budget is structured, and _could_ be structured, every year.
 `,
         },
         followup: {

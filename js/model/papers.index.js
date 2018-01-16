@@ -284,6 +284,8 @@ let budget2018 = {
             properties: {
                 markup: `## 2018 Budget
 
+### Spring Launch
+
 The 2018 budget cycle began May 11, 2017.
 
 The [budget committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12190) 
@@ -326,9 +328,83 @@ Highlights:
   [video](https://youtu.be/qxzMIKnH4OE?t=1235)
 - New Real Estate Division: [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX25.9)
 
-No further public consultations took place on the 2018 budget (as directed by Council) before 
-October 2017. Therefore most decisions were be made by staff behind closed doors.
+_No further public consultations took place on the 2018 budget (as directed by Council) before 
+November 2017. Therefore most decisions were be made by staff behind closed doors._
 
+### Fall and Winter Public Deliberations
+
+Rate supported budgets (waste, water, and parking) entirely supported by user fees (some, but not
+all, of the videos have links to specific agenda items under "SHOW MORE" in the comments -- sorry 
+we haven't had time to isolate all the segments):
+
+- Budget Committee
+    - launch [November 3, 2017](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12849): 
+        [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU35.1), 
+        [video](https://www.youtube.com/watch?v=kHQ-wY8fZDE&t=30s)
+    - [budget briefings](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12194) 
+        and public presentations November 10, 2017: 
+        agenda [water](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU36.1),
+        [waste](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU36.2),
+        [parking](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU36.3); 
+        [video](https://www.youtube.com/watch?v=1NwAJLyrUQI)
+    - [final wrap-up meeting](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12850) as scheduled November 27, 2017: 
+        agenda shceduled, but no directly related items on agenda 
+- [Executive Committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11834) 
+    presentations November 28, 2017: 
+    agenda [water](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX29.18),
+    [waste](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX29.19),
+    [parking](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX29.20);
+    [video part 1](https://www.youtube.com/watch?v=p3Wv6MTNLm0),
+    [video part 2](https://www.youtube.com/watch?v=5SkfsAzdKec)
+- [City Council](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11868) presentation December 6, 7 & 8, 2017: 
+    agenda: [water](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX29.18),
+     [waste](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX29.19), 
+     [parking](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.EX29.20),
+     [video Dec 6 part 1](https://www.youtube.com/watch?v=rCyd1uMV58c),
+     [video Dec 6 part 2](https://www.youtube.com/watch?v=shTV_c4R8Aw),
+     [video Dec 7 part 1](https://www.youtube.com/watch?v=s9bRsZql7hM),
+     [video Dec 7 part 2](https://www.youtube.com/watch?v=DuBEh0b-kPA),
+     [video Dec 8 part 1](https://www.youtube.com/watch?v=ioOutUYhz7A),
+     [video Dec 8 part 2](https://www.youtube.com/watch?v=OUSO-HfRngc)
+
+Tax supported budgets (all the rest) supported to some extent by property taxes:
+
+- Budget Committee
+    - [launch](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12851) November 30, 2017: 
+        [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU38.1), 
+        [video](https://www.youtube.com/watch?v=-Ij9VQK9UCU)
+    - [program reviews](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=12852),
+        [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.BU39.1) 
+        - December 12, 2017: [video](https://www.youtube.com/watch?v=skCtecX6Udk)
+        - December 14, 2017: [video part 1](https://www.youtube.com/watch?v=fqC7dHGobIY&t=2s),
+            [video part 2](https://www.youtube.com/watch?v=ysWn7H7pDVA)
+        - December 15, 2017: [video](https://www.youtube.com/watch?v=LOoZbNxG2SE)
+        - December 18, 2017: [video part 1](https://www.youtube.com/watch?v=yXE-STh3o2A),
+            [video part 2](https://www.youtube.com/watch?v=GtLnQyZ5T38)
+- Budget Sub-Committee public presentations
+    - Etobicoke Civic Center January 8, 2018: [video afternoon](https://www.youtube.com/watch?v=47ZSp7MaF4s),
+        [video evening](https://www.youtube.com/watch?v=ZSUnkyKxkIw)
+    - Scarborough Civic Center January 8, 2018: [video afternoon](https://www.youtube.com/watch?v=68eZHc3CaBY),
+        [video evening](https://www.youtube.com/watch?v=4G_celYbT-U)
+    - North York Civic Center January 9, 2018: [video afternoon](https://www.youtube.com/watch?v=2hA5zQMCjco),
+        [video evening](https://www.youtube.com/watch?v=X8ogyZ8tZ5Q)
+    - York Civic Center January 9, 2018: [video afternoon](https://www.youtube.com/watch?v=6roz5ub9zNw),
+        [video evening](https://www.youtube.com/watch?v=_O_EEWTc8pw)
+    - East York Civic Center January 10, 2018: [video evening](https://www.youtube.com/watch?v=9C07Fr_pDYw),
+        [video afternoon](https://www.youtube.com/watch?v=lA7e0aQYLIs)
+    - City Hall January 10, 2018: [video day, part 1](https://www.youtube.com/watch?v=lKejPuuw8Sg),
+        [video day, part 2](https://www.youtube.com/watch?v=MNLgu27jptg),
+        [video evening](https://www.youtube.com/watch?v=ihM1enTJkBo&t=1681s)
+- Budget Committee
+    - [wrap-up](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=13026) January 12, 2018: 
+        [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU40.1), 
+        [video part 1](https://www.youtube.com/watch?v=uSvpzzgTFhU),
+        [video part 2](https://www.youtube.com/watch?v=iGq3R_XlS8s)
+    - Final wrap-up, January 23, 2018: _[pending]_ agenda, video
+- Executive Committee presentation February 6, 2018: _[pending]_ agenda, video
+- City Council presentation February 12 & 13, 2018: _[pending]_ agenda, video
+
+**see the City of Toronto's videos of committee meetings [here](https://www.youtube.com/channel/UCfe2rzOnQzgEDvNzRRPUJsA/videos)**
 
 `,
             }
@@ -452,7 +528,7 @@ See the web page summarizing the consultations [here](https://www.toronto.ca/cit
 
 See the final report [here](https://drive.google.com/open?id=18DQIMs7LHWiQLQuuknx9cwlUNrL8Z2l_).
 
-Among the findings, from page 5:
+Among the findings in the final report, from page 5:
 
 >To be able to provide better input, most participants want more information, and for that information
 to be presented in a way they can more easily understand. Participants acknowledge a tension between
