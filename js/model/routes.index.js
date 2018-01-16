@@ -3,6 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 let routes = {
     '/roadmap': 'roadmap',
     '/': 'home',
-    '/dev': 'budgets',
+    '/budgets': 'budgets',
 };
 exports.default = routes;

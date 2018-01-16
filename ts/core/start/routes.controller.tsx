@@ -38,7 +38,7 @@ let logPageView = (location) => {
 }
 
 let routedata = [
-    { path: "/dev", component: PageController }, // must be LAST, or else will pre-empt other paths
+    // { path: "/dev", component: PageController }, // must be LAST, or else will pre-empt other paths
     { path: "*", component: NoMatch }, // must be LAST, or else will pre-empt other paths
 ]
 

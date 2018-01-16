@@ -24,7 +24,7 @@ import Pathways from './pages/pathways'
 
 let routedata = [
     { path: "/about", component: About },
-    { path: "/budgets", component: Roadmap },
+    { path: "/budgets", component: PageController },
     { path: "/roadmap", component: PageController },
     { path: "/deputations", component: Deputations },
     { path: "/explorer", component: Explorer },
