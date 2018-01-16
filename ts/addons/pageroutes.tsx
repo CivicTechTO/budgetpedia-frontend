@@ -10,7 +10,6 @@ import { Route } from 'react-router-dom'
 import PageController from '../core/control/page.controller'
 
 import About from './pages/about'
-import Roadmap from './pages/budgets'
 import Deputations from './pages/deputations'
 import Explorer from './explorer/explorer'
 import Communities from './pages/communities'
