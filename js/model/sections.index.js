@@ -147,6 +147,10 @@ see our [roadmap](/roadmap) page.`,
         },
         children: [
             {
+                repo: 'sheets',
+                index: 'citybasics',
+            },
+            {
                 repo: 'papers',
                 index: 'staffing',
             },

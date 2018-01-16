@@ -194,7 +194,7 @@ let auditedstatements = {
             properties: {
                 markup: `## Audited Statements
 
-... including year-end report submitted to [audit committee](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.AU9.1)
+... including outside auditor's [year-end report](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.AU9.1) submitted to audit committee.
 `,
             }
         }
