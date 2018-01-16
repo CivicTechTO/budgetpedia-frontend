@@ -193,6 +193,8 @@ let auditedstatements = {
             description: 'audited statements',
             properties: {
                 markup: `## Audited Statements
+
+... including year-end report submitted to [audit committee](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2017.AU9.1)
 `,
             }
         }
@@ -284,6 +286,17 @@ let budget2018 = {
             properties: {
                 markup: `## 2018 Budget
 
+<figure style = 'float:right;width:50%;max-width:300px'>
+<div style = 'float:right;width:100%'>
+    <iframe style = 'float:right;width:100%;border:none' 
+        src="https://www.youtube.com/embed/mnUMDeQOUwA?start=18281" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+    </iframe>
+</div>
+<figcaption style='text-align:center;padding:3px;clear:both;font-size:x-small'>City Manager Peter Wallace: value for money</figcaption>
+</figure>
+
 ### Spring Launch
 
 The 2018 budget cycle began May 11, 2017.
@@ -301,11 +314,10 @@ Highlights:
   [video](https://youtu.be/mnUMDeQOUwA?t=18281)
 - Toronto City Manager says value for money means reduction of 'core businesses' and reduction of 
   staff discretion: [video](https://youtu.be/mnUMDeQOUwA?t=18470)
-- Toronto City Manager reveals bias to shrink Municipal Government and Services; proud of reduction of 
-  social services: [video](https://youtu.be/mnUMDeQOUwA?t=18742)
-- Toronto City Manager stonewalls Councillor Davis on public Service Plan Review and 
+- Toronto City Manager talks about shrinking Municipal Government and Services: [video](https://youtu.be/mnUMDeQOUwA?t=18742)
+- Toronto City Manager answers Councillor Davis on public Service Plan Review and 
    Priority-Setting process: [video](https://youtu.be/mnUMDeQOUwA?t=19360)
-- Toronto City Manager blames Councillors for failure of maintaining state of good repair: 
+- Toronto City Manager offers explanation to Councillors for failure of maintaining state of good repair: 
   [video](https://youtu.be/mnUMDeQOUwA?t=19845)
 
 The [executive committee](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=11825) 
@@ -491,7 +503,33 @@ let participatory = {
             index: 'participatory',
             description: 'participatory budget details',
             properties: {
-                markup: `## Participatory Budgeting
+                markup: `
+<figure style = 'float:right;width:50%;max-width:300px'>
+<div style = 'float:right;width:100%'>
+    <iframe style = 'float:right;width:100%;border:none' 
+        src="https://www.youtube.com/embed/hKQmx1KQrDs" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+    </iframe>
+</div>
+<figcaption style='text-align:center;padding:3px;clear:both;font-size:x-small'>Participatory Budgeting in Canada</figcaption>
+</figure>
+
+## Participatory Budgeting
+
+The City of Toronto has had a Participatory Budget pilot projects for a few years. 
+Using mostly facilitated workshopping techniques, local citizens collaborate, consult,
+and finally vote on local projects they would like to implement using the budget they
+have been allocated. [Most recently](https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=ac53968ac42bc510VgnVCM10000071d60f89RCRD)
+several locales in Toronto have selected 11 projects to implement in 3 Toronto neighbourhoods.
+
+
+For more information, see the following:
+- Toronto Community Housing Corporation has had a [participatory budgeting process](https://www.torontohousing.ca/pb) for some 15 years.
+- Torontoist: [How the Participatory Budgeting Process Works](https://torontoist.com/2016/10/participatory-budgeting-explainer/)
+- An article in Spacing magazine from 2015 for background: 
+    [Toronto flirts with participatory budgeting](http://spacing.ca/toronto/2015/09/28/toronto-flirts-participatory-budgeting/)
+
 `,
             }
         }
@@ -509,7 +547,19 @@ let investinginto = {
             index: 'investinginto',
             description: 'investingin budget details',
             properties: {
-                markup: `## Investing in Toronto
+                markup: `
+<figure style = 'float:right;width:50%;max-width:300px'>
+<div style = 'float:right;width:100%'>
+    <iframe style = 'float:right;width:100%;border:none' 
+        src="https://www.youtube.com/embed/xlvL_1GGCjI?start=1812" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+    </iframe>
+</div>
+<figcaption style='text-align:center;padding:3px;clear:both;font-size:x-small'>Financial Planning ED Josie LaVita: system vision</figcaption>
+</figure>
+
+## Investing in Toronto
 
 Toronto undertook a planning process to find additional sources of funding from November 2016 to
 May of 2017. The website for this initiative is here: [www.investinginto.ca](http://www.investinginto.ca/).
