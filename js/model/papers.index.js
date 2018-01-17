@@ -213,6 +213,19 @@ let sourcedocuments = {
             description: 'budget source documents',
             properties: {
                 markup: `## Budget Source Documents
+
+- analyst notes
+- briefing notes and reports
+- corporate reports
+- budget presentations
+- public book
+- summaries
+- wrap-up notes
+- website
+- open data portal
+- toolkit for councillors
+
+
 `,
             }
         }
