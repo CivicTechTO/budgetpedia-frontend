@@ -57,7 +57,7 @@ let ToCView = ({tocdata}) => {
             let marginTop
             let backgroundColor
             if (level == 1) {
-                backgroundColor = 'moccasin'
+                backgroundColor = '#d9d9d9'
             } else {
                 backgroundColor = 'transparent'
             }
