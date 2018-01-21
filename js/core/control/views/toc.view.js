@@ -4,7 +4,7 @@ const React = require("react");
 const Paper_1 = require("material-ui/Paper");
 const hashanchorheader_view_1 = require("./hashanchorheader.view");
 let paddingMap = {
-    h1: 0,
+    h1: 3,
     h2: 16,
     h3: 32,
     h4: 48,

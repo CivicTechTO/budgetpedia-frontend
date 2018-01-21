@@ -12,7 +12,7 @@ import Paper from 'material-ui/Paper'
 import HashAnchorHeader from './hashanchorheader.view'
 
 let paddingMap = {
-    h1:0,
+    h1:3,
     h2:16,
     h3:32,
     h4:48,
