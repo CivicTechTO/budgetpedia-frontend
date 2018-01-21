@@ -49,6 +49,7 @@ let ToCView = ({ tocdata }) => {
                 marginTop = '0px';
             }
             return (React.createElement("div", { key: index, style: {
+                    borderRadius: '6px',
                     paddingLeft,
                     marginTop,
                     backgroundColor,

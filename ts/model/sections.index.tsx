@@ -12,7 +12,7 @@ let budgets = {
             title:"Toronto Budgets",
             description: 
 `
-<div style = "padding:16px;background-color:orange;text-align:center;border:1px solid silver">
+<div style = "padding:16px;background-color:orange;text-align:center;border:3px ridge silver;border-radius:8px">
 This page is under active construction.
 </div>
 

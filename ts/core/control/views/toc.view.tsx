@@ -72,6 +72,7 @@ let ToCView = ({tocdata}) => {
                     key = {index} 
                     style = {
                         {
+                            borderRadius:'6px',
                             paddingLeft,
                             marginTop,
                             backgroundColor,
