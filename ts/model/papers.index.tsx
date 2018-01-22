@@ -238,6 +238,9 @@ let sourcedocuments = {
 
 These are the main types of documents made available by the City of Toronto about the budget
 
+- _organizational chart_
+- _budget presentations_
+- _corporate reports_
 - _analyst notes_ are the main vehicle the City uses to describe its programs. The exact number can
     vary, but for the 2018 budget there were 49 operating budget analyst notes and 27 capital budget analyst notes.
     The City divisions and agencies listed in the annual budget summaries get their own operating 
@@ -247,15 +250,14 @@ These are the main types of documents made available by the City of Toronto abou
     [committee agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.1) for 
     the 2017 budget and search for "operating budget notes".
 - _briefing notes and reports_
-- _corporate reports_
-- _budget presentations_
+- _wrap-up notes_
+- _estimate of accrual budget_ (Additional City of Toronto Act Reporting Requirements as a Result of 
+   Recording of Tangible Capital Assets)
 - _public book_
 - _summaries_
-- _wrap-up notes_
 - _website_
 - _open data portal_
 - _toolkit for councillors_
-- _estimate of accrual budget_ (Additional City of Toronto Act Reporting Requirements as a Result of Recording of Tangible Capital Assets)
 
 
 `,
