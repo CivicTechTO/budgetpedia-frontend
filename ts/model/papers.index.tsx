@@ -236,7 +236,17 @@ let sourcedocuments = {
                 markup:               
 `## Budget Source Documents
 
-- analyst notes
+These are the main types of documents made available by the City of Toronto about the budget
+
+- analyst notes are the main vehicle the City uses to describe its programs. The exact number can
+    vary, but in 2017 there were 49 operating budget analyst notes and 27 capital budget analyst notes.
+    The City divisions and agencies listed in the annual budget summaries get their own operating 
+    budget analyst notes (not all programs have capital budgets). Some analyst notes, such as the 
+    notes for the City Manager or Chief Financial officer, are used to combine some of the smaller
+    programs. For examples see the budget 
+    [committee agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.1) for 
+    the 2017 budget and search for "operating budget notes".
+
 - briefing notes and reports
 - corporate reports
 - budget presentations
@@ -455,11 +465,12 @@ Tax supported budgets (all the rest) supported to some extent by property taxes:
         [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU40.1), 
         [video part 1](https://www.youtube.com/watch?v=uSvpzzgTFhU),
         [video part 2](https://www.youtube.com/watch?v=iGq3R_XlS8s)
-    - Final wrap-up, January 23, 2018: _[pending]_ agenda, video
+    - [Final wrap-up](http://app.toronto.ca/tmmis/decisionBodyProfile.do?function=doPrepare&meetingId=13027), January 23, 2018: [agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.1), video _[pending]_ 
+        - here's the [report that discloses the $1.37B surplus](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111547.pdf) (see table p. 6) of the 2018 budget "for accounting purposes"
 - Executive Committee presentation February 6, 2018: _[pending]_ agenda, video
 - City Council presentation February 12 & 13, 2018: _[pending]_ agenda, video
 
-**see the City of Toronto's videos of committee meetings [here](https://www.youtube.com/channel/UCfe2rzOnQzgEDvNzRRPUJsA/videos)**
+_See the City of Toronto's videos of committee meetings [here](https://www.youtube.com/channel/UCfe2rzOnQzgEDvNzRRPUJsA/videos)._
 
 `,
             }
