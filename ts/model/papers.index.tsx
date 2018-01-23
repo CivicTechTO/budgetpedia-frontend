@@ -278,7 +278,7 @@ The following sources provide additional supporting documentation, or alternate 
    - Budget - Capital Budget & Plan By Ward ([10 yr Approved](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#40640a85-9b8a-6075-ca00-7824907d8856))
    - Budget - [Operating Budget Program Summary](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#ddb0c9b9-2ea8-c633-8c2e-c15d6f1289aa) by Expenditure Category (which has some recommended, and approved)
    There are multiple issues of format and timeliness with these datasets.
-- _toolkit for councillors_: The most recent example of this we would find is for [2017](https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=a4acd9dc1151a510VgnVCM10000071d60f89RCRD&vgnextchannel=bf2cf02ab1208510VgnVCM10000071d60f89RCRD).
+- __toolkit for councillors__: The most recent example of this we would find is for [2017](https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=a4acd9dc1151a510VgnVCM10000071d60f89RCRD&vgnextchannel=bf2cf02ab1208510VgnVCM10000071d60f89RCRD).
 
 For general reference:
 
