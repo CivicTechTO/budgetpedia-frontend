@@ -92,18 +92,6 @@ see our [roadmap](/roadmap) page.`,
                 repo:'papers',
                 index:'terminology',
             },
-            {
-                repo:'papers',
-                index:'analystnotes',
-            },
-            {
-                repo:'papers',
-                index:'dataportal',
-            },
-            {
-                repo:'papers',
-                index:'budgetbook',
-            },
         ],
     },
     systems: {

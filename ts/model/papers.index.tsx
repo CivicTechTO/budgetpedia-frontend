@@ -1,23 +1,4 @@
 // papers.index.tsx
-let budgetbook = {
-    controller:'paper',
-    index:'budgetbook',
-    description: 'budget book and summaries',
-    type:'paper',
-    children: [
-        {
-            controller:'paper',
-            type:'markupblock',
-            index:'budgetbook',
-            description:'budget book and summaries',
-            properties: {
-                markup:               
-`## Budget Book and Summaries
-`,
-            }
-        }
-    ],
-}
 
 let staffing = {
     controller:'paper',
@@ -338,46 +319,6 @@ let terminology = {
             properties: {
                 markup:               
 `## Terminology
-`,
-            }
-        }
-    ],
-}
-
-let analystnotes = {
-    controller:'paper',
-    index:'analystnotes',
-    description: 'Analyst Notes',
-    type:'paper',
-    children: [
-        {
-            controller:'paper',
-            type:'markupblock',
-            index:'analyst notes',
-            description:'Analyst Notes',
-            properties: {
-                markup:               
-`## Analyst Notes
-`,
-            }
-        }
-    ],
-}
-
-let dataportal = {
-    controller:'paper',
-    index:'dataportal',
-    description: 'data portal',
-    type:'paper',
-    children: [
-        {
-            controller:'paper',
-            type:'markupblock',
-            index:'dataportal',
-            description:'data portal',
-            properties: {
-                markup:               
-`## Toronto Open Data Portal files
 `,
             }
         }
@@ -1455,7 +1396,6 @@ two groups separately, taking more interest (presumably for political reasons) i
 
 let papers = {
     staffing,
-    budgetbook,
     currentconventions,
     betterconventions,
     budgetvsaudit,
@@ -1467,8 +1407,6 @@ let papers = {
     auditedstatements,
     sourcedocuments,
     terminology,
-    analystnotes,
-    dataportal,
     budget2018,
     budget2017,
     participatory,
