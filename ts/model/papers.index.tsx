@@ -234,33 +234,89 @@ let sourcedocuments = {
             description:'budget source documents',
             properties: {
                 markup:               
-`## Budget Source Documents
+`## Budget Source Document Types
 
 These are the main types of documents made available by the City of Toronto about the budget
 
-- _organizational chart_:
+For general reference:
 
-- _budget presentations_:
-- _corporate reports_:
+- _organizational chart_: the [org chart](https://www1.toronto.ca/divisions/pdf/org_chart.pdf) 
+   helps to understand the relationship of divisions, and occasionally
+   helps locate division data in division analyst notes. It doesn't cover agencies though. 
+   For lists of agencies and corporations see 
+   [here](https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/).
+- _corporate reports_: Find a list of corporations owned or partially ownded by Toronto 
+  [here](https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/)
+  under "Corporations". 
+  Individual corporation budgets and 
+  financial statements have to be tracked down. See for example the 2016 TCHC 
+  [audited statements](https://www.torontohousing.ca/about/annual-reports/Documents/2016_Consolidated_Financial_Statement.pdf). 
+  Shareholder's results are included in Toronto
+  financial statements.
+
+The following items are available as attachments to Committee or council agendas. They tend to be
+clustered in the order listed here. For example see the 
+[agenda for the 2018 final wrapup](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.1) at the 
+budget committee for 2018 here.
+
+- _budget presentations_: Budget presentations are prepared overviews typically prepared for the 
+   budget committee. See for example the City Manager's 
+   [overview of the 2018 budget](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111266.pdf).
 - _analyst notes_: the main vehicle the City uses to describe its programs. The exact number can
     vary, but for the 2018 budget there were 49 operating budget analyst notes and 27 capital budget analyst notes.
     The City divisions and agencies listed in the annual budget summaries get their own operating 
     budget analyst notes (not all programs have capital budgets). Some analyst notes, such as the 
     notes for the City Manager or Chief Financial officer, are used to combine some of the smaller
-    programs. 
+    programs. See for example the 
+    [Parks, Forestry and Recreation Operating Budget Notes](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111146.pdf).
 
-    For examples see the budget 
+    For an example of an entire set see the budget 
     [committee agenda](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.1) for 
-    the 2017 budget and search for "operating budget notes".
-- _briefing notes and reports_:
-- _wrap-up notes_:
-- _estimate of accrual budget_ ("Additional City of Toronto Act Reporting Requirements as a Result of 
-   Recording of Tangible Capital Assets"):
-- _public book_:
-- _summaries_:
-- _website_:
-- _open data portal_:
-- _toolkit for councillors_:
+    the 2018 budget and search for "operating budget notes".
+- _briefing notes and reports_: These are topical reports that are typically requested by councillors.
+  They are numbered sequentially. See for example Briefing Note #4 "Changes  to Existing User Fees and New User Fees in the
+2018 Preliminary Operating Budget" [here](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111270.pdf).
+- _wrap-up notes_: These appear to be checklists of final items to be resolved before finalizing the years
+   budgets. One each for Capital and Operating budgets. For example 
+   [here](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111307.pdf) (operating) and 
+   [here](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111283.pdf) (capital).
+
+The following item is a summarized alternate (accrual based) view of the currently presented budget:
+
+- _estimate of accrual budget ("Additional City of Toronto Act Reporting Requirements as a Result of 
+   Recording of Tangible Capital Assets")_: These are [mandated by the province](https://www.ontario.ca/laws/regulation/090286) and are typically presented
+   to the Budget Committee each year at the final budget wrap-up meeting. They are required to restate the current
+   budget on a full accrual (summary) basis. They may form the basis for clearer budget formats in the future.
+   See for example the agenda item [here](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.2), 
+   and the report [here](https://www.toronto.ca/legdocs/mmis/2018/bu/bgrd/backgroundfile-111547.pdf) (see table page 6).
+
+The following items are post-budget summaries
+
+- _public book_: A public book is a compendium of analyst notes with some introductions, for a budget year.
+  See for example the [public book for 2017](https://www1.toronto.ca/City%20Of%20Toronto/Strategic%20Communications/City%20Budget/2017/PDFs/2017%20Public%20Book.pdf).
+  This follows guidelines from the [gfoa.org](http://gfoa.org) (Government Finance Officers Association)
+- _summaries_: operating, capital, staffing. These summary listings contain the highest level one-line summary
+   for every program grouping that is presented at the hightest level. See an example 
+   [here](https://www1.toronto.ca/City%20Of%20Toronto/Strategic%20Communications/City%20Budget/2017/PDFs/2017%20CN%20Approved%20Budget%20(Op%20%20Cap)%20%20Position%20Summary%20(%20final%20June%2013).pdf).
+
+   A note about staffing reports. Staffing reports, particularly historical records are hard to find. Moreover finding
+   listings that break out capital and operating staffing complement is hard or impossible. In recent years
+   Toronto has stopped providing capital and operating breakouts in the summary reports altogether. This makes it 
+   impossible to assess the relative staffing requirements for these basic areas of the budget.
+
+The following sources provide additional supporting documentation, or alternate sources for some of the above documentation.
+
+- _website_: The main budget portal of the City of Toronto website is [here](https://www.toronto.ca/city-government/budget-finances/city-budget/).
+   It is updated annually, and leads to some historical budget summaries.
+- _open data portal_: As of this writing there are 3 budget datasets on the Toronto Open Data portal:
+   - Budget - Capital Budget & Plan By Ward ([10 Year Recommended](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#463113ed-6ad1-c05f-9ed5-f8965f40f7d3))
+   - Budget - Capital Budget & Plan By Ward ([10 yr Approved](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#40640a85-9b8a-6075-ca00-7824907d8856))
+   - Budget - [Operating Budget Program Summary](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#ddb0c9b9-2ea8-c633-8c2e-c15d6f1289aa) by Expenditure Category (which has some recommended, and approved)
+   There are multiple issues of format and timeliness with these datasets.
+- _toolkit for councillors_: The most recent example of this we would find is for [2017](https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=a4acd9dc1151a510VgnVCM10000071d60f89RCRD&vgnextchannel=bf2cf02ab1208510VgnVCM10000071d60f89RCRD).
+
+Note that there is no City central well-organized repository for all of this documentation. At budgetpedia
+we have some of this on our Google Drive, and we hope to surface what we can to an open data portal one day.
 
 `,
             }
