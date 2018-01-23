@@ -219,22 +219,6 @@ let sourcedocuments = {
 
 These are the main types of documents made available by the City of Toronto about the budget
 
-For general reference:
-
-- _organizational chart_: the [org chart](https://www1.toronto.ca/divisions/pdf/org_chart.pdf) 
-   helps to understand the relationship of divisions, and occasionally
-   helps locate division data in division analyst notes. It doesn't cover agencies though. 
-   For lists of agencies and corporations see 
-   [here](https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/).
-- _corporate reports_: Find a list of corporations owned or partially ownded by Toronto 
-  [here](https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/)
-  under "Corporations". 
-  Individual corporation budgets and 
-  financial statements have to be tracked down. See for example the 2016 TCHC 
-  [audited statements](https://www.torontohousing.ca/about/annual-reports/Documents/2016_Consolidated_Financial_Statement.pdf). 
-  Shareholder's results are included in Toronto
-  financial statements.
-
 The following items are available as attachments to Committee or council agendas. They tend to be
 clustered in the order listed here. For example see the 
 [agenda for the 2018 final wrapup](http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2018.BU41.1) at the 
@@ -295,6 +279,22 @@ The following sources provide additional supporting documentation, or alternate 
    - Budget - [Operating Budget Program Summary](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#ddb0c9b9-2ea8-c633-8c2e-c15d6f1289aa) by Expenditure Category (which has some recommended, and approved)
    There are multiple issues of format and timeliness with these datasets.
 - _toolkit for councillors_: The most recent example of this we would find is for [2017](https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=a4acd9dc1151a510VgnVCM10000071d60f89RCRD&vgnextchannel=bf2cf02ab1208510VgnVCM10000071d60f89RCRD).
+
+For general reference:
+
+- _organizational chart_: the [org chart](https://www1.toronto.ca/divisions/pdf/org_chart.pdf) 
+   helps to understand the relationship of divisions, and occasionally
+   helps locate division data in division analyst notes. It doesn't cover agencies though. 
+   For lists of agencies and corporations see 
+   [here](https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/).
+- _corporate reports_: Find a list of corporations owned or partially ownded by Toronto 
+  [here](https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/)
+  under "Corporations". 
+  Individual corporation budgets and 
+  financial statements have to be tracked down. See for example the 2016 TCHC 
+  [audited statements](https://www.torontohousing.ca/about/annual-reports/Documents/2016_Consolidated_Financial_Statement.pdf). 
+  Shareholder's results are included in Toronto
+  financial statements.
 
 Note that there is no City central well-organized repository for all of this documentation. At budgetpedia
 we have some of this on our Google Drive, and we hope to surface what we can to an open data portal one day.
