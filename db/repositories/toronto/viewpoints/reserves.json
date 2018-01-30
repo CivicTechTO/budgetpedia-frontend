@@ -6,61 +6,72 @@
             "Index": 0,
             "NamingConfigRef": "CATEGORY",
             "Components": {
-                "DEVCHARGES": {
-                    "Index": 0,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
+                "LEGISLATION":{
+                    "Index":0,
+                    "NamingConfigRef":"SUBCAT",
+                    "Components":{
+                        "DEVCHARGES": {
+                            "Index": 0,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "RECLAND": {
+                            "Index": 1,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "SUBDIVIDERS": {
+                            "Index": 2,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "BUILDINGCODE": {
+                            "Index": 3,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "GASTAX": {
+                            "Index": 4,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        }
+                    }
                 },
-                "RECLAND": {
-                    "Index": 1,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "SUBDIVIDERS": {
-                    "Index": 2,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "BUILDINGCODE": {
-                    "Index": 7,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "GASTAX": {
-                    "Index": 0,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-
-                "TRANSITFUNDS": {
-                    "Index": 1,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "WATER": {
-                    "Index": 2,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "COMMSERVICES": {
-                    "Index": 7,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "THIRDPARTY": {
-                    "Index": 1,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "SOGR": {
-                    "Index": 2,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "PARKING": {
-                    "Index": 7,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
+                "AGREEMENT":{
+                    "Index":0,
+                    "NamingConfigRef":"SUBCAT",
+                    "Components":{
+                        "TRANSITFUNDS": {
+                            "Index": 0,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "WATEROBLIG": {
+                            "Index": 1,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "COMMSERVICES": {
+                            "Index": 2,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "THIRDPARTY": {
+                            "Index": 3,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "SOGROBLIG": {
+                            "Index": 4,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "PARKING": {
+                            "Index": 5,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        }
+                    }
                 }
             }
         },
@@ -68,36 +79,56 @@
             "Index": 0,
             "NamingConfigRef": "CATEGORY",
             "Components": {
-                "CORPORATE": {
-                    "Index": 5,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
+                "RESERVES":{
+                    "Index":0,
+                    "NamingConfigRef":"SUBCAT",
+                    "Components":{
+                    "CORPORATERESERVE": {
+                        "Index": 0,
+                        "NamingConfigRef": "RESERVE",
+                        "Baseline": true
+                    },
+                    "STABILIZATION": {
+                        "Index": 1,
+                        "NamingConfigRef": "RESERVE",
+                        "Baseline": true
+                    },
+                    "WATER": {
+                        "Index": 2,
+                        "NamingConfigRef": "RESERVE",
+                        "Baseline": true
+                    },
+                    "DONATIONS": {
+                        "Index": 3,
+                        "NamingConfigRef": "RESERVE",
+                        "Baseline": true
+                    }
                 },
-                "STABILIZATION": {
-                    "Index": 3,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "DONATIONS": {
-                    "Index": 6,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "COMMINITIATIVES": {
-                    "Index": 4,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                
-                "BENEFITS": {
-                    "Index": 6,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
-                },
-                "SOGR-OBLIG": {
-                    "Index": 4,
-                    "NamingConfigRef": "RESERVE",
-                    "Baseline": true
+                "FUNDS":{
+                    "Index":0,
+                    "NamingConfigRef":"SUBCAT",
+                    "Components":{
+                        "BENEFITS": {
+                            "Index": 0,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "CORPORATEFUND": {
+                            "Index": 1,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "COMMINITIATIVES": {
+                            "Index": 2,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "SOGR": {
+                            "Index": 3,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        }
+                    }
                 }
             }
         }
@@ -106,7 +137,11 @@
         "Lookups": {
             "Taxonomy": {
                 "OBLIGATORY":"Obligatory reserves (deferred revenue)",
-                "NONOBLIGATORY":"Non-obligatory reserves (accumulated surplus)"
+                "AGREEMENT":"Restricted by other agreements",
+                "LEGISLATION":"Restricted by Provincial legislation",
+                "NONOBLIGATORY":"Non-obligatory reserves (accumulated surplus)",
+                "RESERVES":"Reserves",
+                "FUNDS":"Reserve Funds"
             }
         },
         "NamingConfigurations": {
@@ -131,6 +166,16 @@
                 }
             },
             "CATEGORY": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Grouping",
+                    "Alias": "Reserve Groupings"
+                }
+            },
+            "SUBCAT": {
                 "Instance": {
                     "Name": "Type",
                     "Alias": "Audited"
