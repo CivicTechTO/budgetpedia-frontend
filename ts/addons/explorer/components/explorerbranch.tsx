@@ -1744,6 +1744,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         FINANCIALASSETS:"Financial assets",
         TANGIBLEASSETS:"Tangible assets",
         LIABILITIES:"Liabilities",
+        RESERVES:"Reserves",
     }
 
 
@@ -1787,6 +1788,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             <MenuItem value={'FINANCIALASSETS'} primaryText={this.taxonomychoices.FINANCIALASSETS}/>
             <MenuItem value={'LIABILITIES'} primaryText={this.taxonomychoices.LIABILITIES}/>
             <MenuItem value={'NONFINANCIALASSETS'} primaryText={this.taxonomychoices.TANGIBLEASSETS}/>
+            <MenuItem value={'RESERVES'} primaryText={this.taxonomychoices.RESERVES}/>
 
         </DropDownMenu>
         </div>
@@ -1834,6 +1836,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 return [<MenuItem key = {4} value={'NONFINANCIALASSETS'} primaryText="Audited statements 2010 - 2016"/>]
             case 'LIABILITIES':
                 return [<MenuItem key = {4} value={'LIABILITIES'} primaryText="Audited statements 2010 - 2016"/>]
+            case 'RESERVES':
+                return [<MenuItem key = {4} value={'RESERVES'} primaryText="Audited statements 2010 - 2016"/>]
         }
     }
 
@@ -1880,6 +1884,8 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 }
             case 'LIABILITIES':
                 return [<MenuItem key = {4} value={'Liabilities'} primaryText="Liabilities"/>]
+            case 'RESERVES':
+                return [<MenuItem key = {4} value={'Reserves'} primaryText="Reserves"/>]
         }
     }
 

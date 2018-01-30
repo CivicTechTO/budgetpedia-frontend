@@ -153,6 +153,7 @@ let branchDefaults = {
         'FINANCIALASSETS': 'FINANCIALASSETS',
         'NONFINANCIALASSETS': 'NONFINANCIALASSETS',
         'LIABILITIES': 'LIABILITIES',
+        'RESERVES': 'RESERVES',
     },
     defaultAspects: {
         'SUMMARY': 'Expenses',
@@ -163,6 +164,7 @@ let branchDefaults = {
         'FINANCIALASSETS': 'Assets',
         'NONFINANCIALASSETS': 'TangibleAssets',
         'LIABILITIES': 'Liabilities',
+        'RESERVES': 'Reserves',
     },
     inflationAdjusted: true,
     nodeList: [],

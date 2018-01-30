@@ -46,7 +46,8 @@ let AspectNameToDatasetName = {
     'Expenditure': 'Expenditure',
     'Assets': 'FinancialAssets',
     'TangibleAssets': 'NonFinancialAssets',
-    'Liabilities': 'Liabilities'
+    'Liabilities': 'Liabilities',
+    'Reserves': 'Reserves',
 };
 exports.AspectNameToDatasetName = AspectNameToDatasetName;
 exports.DatasetNameToAspectName = {};

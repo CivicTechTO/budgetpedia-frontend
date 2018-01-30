@@ -285,6 +285,7 @@ let branchDefaults:BranchSettings = {
         'FINANCIALASSETS':'FINANCIALASSETS',
         'NONFINANCIALASSETS':'NONFINANCIALASSETS',
         'LIABILITIES':'LIABILITIES',
+        'RESERVES':'RESERVES',
     },
     defaultAspects:{ // version (viewpoint) aspects
         'SUMMARY':'Expenses',
@@ -295,6 +296,7 @@ let branchDefaults:BranchSettings = {
         'FINANCIALASSETS':'Assets',
         'NONFINANCIALASSETS':'TangibleAssets',
         'LIABILITIES':'Liabilities',
+        'RESERVES':'Reserves',
     },
     // chartType: "ColumnChart",
     inflationAdjusted: true,

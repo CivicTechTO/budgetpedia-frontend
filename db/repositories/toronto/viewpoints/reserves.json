@@ -83,25 +83,26 @@
                     "Index":0,
                     "NamingConfigRef":"SUBCAT",
                     "Components":{
-                    "CORPORATERESERVE": {
-                        "Index": 0,
-                        "NamingConfigRef": "RESERVE",
-                        "Baseline": true
-                    },
-                    "STABILIZATION": {
-                        "Index": 1,
-                        "NamingConfigRef": "RESERVE",
-                        "Baseline": true
-                    },
-                    "WATER": {
-                        "Index": 2,
-                        "NamingConfigRef": "RESERVE",
-                        "Baseline": true
-                    },
-                    "DONATIONS": {
-                        "Index": 3,
-                        "NamingConfigRef": "RESERVE",
-                        "Baseline": true
+                        "CORPRESERVE": {
+                            "Index": 0,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "STABILIZATION": {
+                            "Index": 1,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "WATER": {
+                            "Index": 2,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        },
+                        "DONATIONS": {
+                            "Index": 3,
+                            "NamingConfigRef": "RESERVE",
+                            "Baseline": true
+                        }
                     }
                 },
                 "FUNDS":{
@@ -113,7 +114,7 @@
                             "NamingConfigRef": "RESERVE",
                             "Baseline": true
                         },
-                        "CORPORATEFUND": {
+                        "CORPFUND": {
                             "Index": 1,
                             "NamingConfigRef": "RESERVE",
                             "Baseline": true

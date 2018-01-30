@@ -1071,6 +1071,7 @@ class ExplorerBranch extends Component {
             FINANCIALASSETS: "Financial assets",
             TANGIBLEASSETS: "Tangible assets",
             LIABILITIES: "Liabilities",
+            RESERVES: "Reserves",
         };
     }
     componentWillMount() {
@@ -1161,7 +1162,8 @@ class ExplorerBranch extends Component {
                     React.createElement(MenuItem_1.default, { value: 'EXPENDITURES', primaryText: this.taxonomychoices.EXPENDITURES }),
                     React.createElement(MenuItem_1.default, { value: 'FINANCIALASSETS', primaryText: this.taxonomychoices.FINANCIALASSETS }),
                     React.createElement(MenuItem_1.default, { value: 'LIABILITIES', primaryText: this.taxonomychoices.LIABILITIES }),
-                    React.createElement(MenuItem_1.default, { value: 'NONFINANCIALASSETS', primaryText: this.taxonomychoices.TANGIBLEASSETS }))));
+                    React.createElement(MenuItem_1.default, { value: 'NONFINANCIALASSETS', primaryText: this.taxonomychoices.TANGIBLEASSETS }),
+                    React.createElement(MenuItem_1.default, { value: 'RESERVES', primaryText: this.taxonomychoices.RESERVES }))));
         let governmentselection = React.createElement("div", { style: { display: 'inline-block' } },
             React.createElement("div", { style: { fontStyle: "italic", display: 'inline-block', height: '48px', verticalAlign: 'top', paddingTop: '5px' } },
                 React.createElement("span", { style: { lineHeight: '44px' } }, "Select city:")),
@@ -1188,6 +1190,8 @@ class ExplorerBranch extends Component {
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'NONFINANCIALASSETS', primaryText: "Audited statements 2010 - 2016" })];
                 case 'LIABILITIES':
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'LIABILITIES', primaryText: "Audited statements 2010 - 2016" })];
+                case 'RESERVES':
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'RESERVES', primaryText: "Audited statements 2010 - 2016" })];
             }
         };
         let versionselection = React.createElement("div", { style: { display: 'inline-block' } },
@@ -1216,6 +1220,8 @@ class ExplorerBranch extends Component {
                 }
                 case 'LIABILITIES':
                     return [React.createElement(MenuItem_1.default, { key: 4, value: 'Liabilities', primaryText: "Liabilities" })];
+                case 'RESERVES':
+                    return [React.createElement(MenuItem_1.default, { key: 4, value: 'Reserves', primaryText: "Reserves" })];
             }
         };
         let aspectselection = React.createElement("div", { style: { display: 'inline-block' } },
