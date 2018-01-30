@@ -521,7 +521,7 @@ let Explorer = class extends Component {
                 return null;
             let taxonomyselection = this.viewtaxonomydata.viewpointselection.viewpoint;
             return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } },
-                    "Chart view of selected workspace tree (",
+                    "Chart view of selected dataset tree (",
                     React.createElement("span", { style: { fontStyle: 'italic' } }, this.viewtaxonomydata.viewpointselection.name),
                     ")"), modal: false, onRequestClose: () => {
                     this.setState({

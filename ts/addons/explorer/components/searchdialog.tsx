@@ -273,13 +273,13 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                                     <span style={{fontWeight:"bold"}}>{name}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                    <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[sourceviewpoints[datasetname]]}</span>
+                                    <span style={{fontStyle:"italic",color:"gray"}}>dataset: {dictionary[sourceviewpoints[datasetname]]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                     <span style={{fontStyle:"italic",color:"gray"}}>scope: {dictionary[dimensionlookupname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                    <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
+                                    <span style={{fontStyle:"italic",color:"gray"}} >data source: {dictionary[datasetname]}</span>
                                 </div>
                             </MenuItem>
                             )
@@ -305,13 +305,13 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                                         <span style={{fontWeight:"bold"}}>{name}</span> 
                                     </div>
                                     <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                        <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[alternatesourceviewpoints[datasetname]]}</span>
+                                        <span style={{fontStyle:"italic",color:"gray"}}>dataset: {dictionary[alternatesourceviewpoints[datasetname]]}</span>
                                     </div>
                                     <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                         <span style={{fontStyle:"italic",color:"gray"}}>scope: {dictionary[dimensionname]} </span>
                                     </div>
                                     <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                        <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[datasetname]}</span>
+                                        <span style={{fontStyle:"italic",color:"gray"}} >data source: {dictionary[datasetname]}</span>
                                     </div>
                                 </MenuItem>
                                 )
@@ -360,13 +360,13 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                                 <span style={{fontWeight:"bold"}}>{name}</span> 
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}}>workspace: {dictionary[viewpointname]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}}>dataset: {dictionary[viewpointname]}</span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
                                 <span style={{fontStyle:"italic",color:"gray"}}>scope: {dictionary[dimensionname]} </span>
                                 </div>
                                 <div style={{display:'inline-block',whiteSpace:'nowrap',paddingRight:'20px'}} >
-                                <span style={{fontStyle:"italic",color:"gray"}} >dataset: {dictionary[viewpointsources[viewpointname]]}</span>
+                                <span style={{fontStyle:"italic",color:"gray"}} >data source: {dictionary[viewpointsources[viewpointname]]}</span>
                                 </div>
                             </MenuItem>
                             )
@@ -586,7 +586,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
 
             <div style={{padding:"8px"}} >
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>workspace: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>dataset: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.viewpointdisplay }</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
@@ -594,7 +594,7 @@ let SearchDialog = class extends Component<SearchDialogProps,any>
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.leveldisplay}</span>
                 </div>
                 <div style={{whiteSpace:'nowrap',display:'inline-block'}}>
-                    <span style={{color:'silver',fontStyle:'italic'}}>dataset: </span> 
+                    <span style={{color:'silver',fontStyle:'italic'}}>data source: </span> 
                     <span style={{color:this.findSelection.known?'black':'silver',marginRight:'50px',fontStyle:'italic'}}>{this.findSelection.sourcedisplay}</span>
                 </div> 
             </div>

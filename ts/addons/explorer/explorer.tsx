@@ -364,7 +364,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
 
     /*
         harmonizeBranches creates branches to match branch declarations
-        called from componentWillMount for initialization of imported workspaces
+        called from componentWillMount for initialization of imported datasets
         and from componentWillReceiveProps to modify branch list
     */
     harmonizeBranchesToState = (budgetBranches, branchList, branchesById) => {
@@ -853,7 +853,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
     }
 
     // =============================================================================
-    // ---------------------------[ View Taxonomy/workspace ]-----------------------
+    // ---------------------------[ View Taxonomy/dataset ]-----------------------
 
     viewtaxonomydata:any = {
         options:{
@@ -977,7 +977,7 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         if (!this.viewtaxonomydata.viewpointdata) return null
         let taxonomyselection = this.viewtaxonomydata.viewpointselection.viewpoint
          return <Dialog
-            title = {<div style = {{padding:'12px 0 0 12px'}} >Chart view of selected workspace tree (<span style={{fontStyle:'italic'}}>{this.viewtaxonomydata.viewpointselection.name}</span>)
+            title = {<div style = {{padding:'12px 0 0 12px'}} >Chart view of selected dataset tree (<span style={{fontStyle:'italic'}}>{this.viewtaxonomydata.viewpointselection.name}</span>)
             </div>}
             modal = {false}
             onRequestClose = { () => {  

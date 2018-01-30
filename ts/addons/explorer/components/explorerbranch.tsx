@@ -1767,7 +1767,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     <div style={{display:'inline-block'}}>
         <div style = {{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'23px' }}>
-            <span style={{lineHeight:'44px'}} >Select workspace:</span>
+            <span style={{lineHeight:'44px'}} >Select dataset:</span>
         </div>
         <DropDownMenu
             value={branchDeclaration.viewpoint}
@@ -1799,7 +1799,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let governmentselection = 
     <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Select city:</span>
+            <span style={{lineHeight:'44px'}} >City:</span>
         </div>
         <DropDownMenu
                 value={"Toronto"}
@@ -1845,7 +1845,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     let versionselection = 
     <div style={{display:'inline-block'}}>
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Select dataset:</span>
+            <span style={{lineHeight:'44px'}} >Data source:</span>
         </div>
         <DropDownMenu
             disabled = {versionchoices().length < 2}
@@ -1894,7 +1894,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
     <div style={{display:'inline-block'}}>
 
         <div style={{ fontStyle: "italic",display:'inline-block',height:'48px',verticalAlign:'top',paddingTop:'5px' }}>
-            <span style={{lineHeight:'44px'}} >Select category:</span>
+            <span style={{lineHeight:'44px'}} >Category:</span>
         </div>
 
         <DropDownMenu
@@ -1995,7 +1995,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         let selectionsdialog = (branchDeclaration.showOptions)?
         <Dialog
-            title = "Make selections for this row of charts"
+            title = "Select dataset for this row of charts"
             modal = { false }
             open = { branch.state.selectionsDialogOpen }
             onRequestClose = { branch.handleSelectionsDialogClose }
@@ -2027,13 +2027,13 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
         <div>
 
-            { governmentselection }
+            <div>{ governmentselection }</div>
 
-            { viewpointselection }
+            <div>{ viewpointselection }</div>
 
-            { versionselection }
+            <div>{ versionselection }</div>
 
-            { aspectselection }
+            <div>{ aspectselection }</div>
 
         </div>
 
@@ -2154,7 +2154,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let makeselections = 
         <RaisedButton
-            label = "Selections"
+            label = "Select dataset"
             style={{margin:'3px 6px 0 0'}}
             type="button"
             onClick={branch.handleSelectionsDialogOpen} 
@@ -2166,7 +2166,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
 
     let viewtaxonomy = 
         <RaisedButton
-            label = "Workspace tree"
+            label = "Dataset tree"
             style={{margin:'3px 6px 0 0'}}
             type="button"
             onClick = { () => {
