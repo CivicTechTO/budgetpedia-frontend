@@ -1,0 +1,41 @@
+_META_START_,
+SOURCE_DOCUMENT_LINK_ORIGINAL,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=1FkAfOljKzj145D1D0ezMRa31mhxAVQ_7
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T
+SOURCE_DOCUMENT_TITLE,2016 Consolidated Financial Statements
+SOURCE_DOCUMENT_TABLE_LOCATION,Note: deferred liabilities; Note: Accumulated Surplus
+SOURCE_DOCUMENT_TABLE_TITLE,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=19NS-H7MRzoLIiGZ9V9TCED7SPkWptdXy
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik
+YEAR,2016
+VERSION,Actual
+ASPECT,"Liabilities, Surplus"
+NOTES_CONTENT,Dollar
+NOTES_SEVERITY,
+UNITS_NAME,Dollar
+UNITS_CODE,DOLLAR
+UNITS_MULTIPLIER,1000
+TOTAL_AMOUNT,
+INTAKE_DATETIME,
+INTAKE_OPERATOR_ID,Henrik
+COLUMNS_CATEGORIES,Reserve:NAME
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE"
+_META_END_,
+Development Charges,685906
+Recreational Land (Planning Act),603944
+Building Code Act Service Improvement,65321
+Provincial Gas Tax,3582
+Public Transit Funds,96232
+Water and Wastewater,536003
+Community Services,82898
+Third Party Agreements,12479
+State of Good Repair – Obligatory,2516
+Parking Authority,3362
+Corporate,535705
+Stabilization,185667
+Water and Wastewater,168155
+Donations,1462
+Employee Benefits (Note 13),257266
+Corporate,446777
+Community Initiatives,106331
+State of Good Repair,281524
