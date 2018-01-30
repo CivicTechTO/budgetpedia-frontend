@@ -1928,7 +1928,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         >
 
             <MenuItem value={'OFF'} primaryText="Off"/>
-            <MenuItem value={'PERPERSON'} primaryText="Per person"/>
+            <MenuItem value={'PERPERSON'} primaryText="Per resident"/>
             <MenuItem value={'PER100000PERSONS'} primaryText="Per 100,000 people"/>
             <MenuItem value={'PERHOUSEHOLD'} primaryText="Per household"/>
             <MenuItem value={'PER40000HOUSEHOLDS'} primaryText="Per 40,000 households"/>

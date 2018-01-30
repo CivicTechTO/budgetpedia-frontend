@@ -72,7 +72,7 @@ class BudgetCell {
                 let thestring;
                 switch (prorata) {
                     case "PERPERSON":
-                        thestring = 'per person';
+                        thestring = 'per resident';
                         break;
                     case "PER100000PERSONS":
                         thestring = 'per 100,000 people';

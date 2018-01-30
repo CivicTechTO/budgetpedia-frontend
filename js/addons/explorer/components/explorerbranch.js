@@ -1237,7 +1237,7 @@ class ExplorerBranch extends Component {
                     this.switchComparator(value);
                 } },
                 React.createElement(MenuItem_1.default, { value: 'OFF', primaryText: "Off" }),
-                React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per person" }),
+                React.createElement(MenuItem_1.default, { value: 'PERPERSON', primaryText: "Per resident" }),
                 React.createElement(MenuItem_1.default, { value: 'PER100000PERSONS', primaryText: "Per 100,000 people" }),
                 React.createElement(MenuItem_1.default, { value: 'PERHOUSEHOLD', primaryText: "Per household" }),
                 React.createElement(MenuItem_1.default, { value: 'PER40000HOUSEHOLDS', primaryText: "Per 40,000 households" }),

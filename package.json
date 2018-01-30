@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ace-builds": "^1.2.9",
-    "ajv": "^6.1.0",
+    "ajv": "^6.1.1",
     "csv": "^2.0.0",
     "draft-js": "^0.10.5",
     "draft-js-alignment-plugin": "^2.0.1",
@@ -104,7 +104,7 @@
     "raw-loader": "^0.5.1",
     "redux-devtools": "^3.4.1",
     "style-loader": "^0.20.1",
-    "ts-loader": "^3.3.1",
+    "ts-loader": "^3.4.0",
     "typescript": "^2.6.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",

@@ -92,31 +92,31 @@ let financenuggetlist = [
     {
         prefix: 'Financial Assets',
         infix: '$9.3B',
-        suffix: 'for 2016, <span style="color:gold">~$3,400</span> per person',
+        suffix: 'for 2016, <span style="color:gold">~$3,400</span> per resident',
         contrast: true,
     },
     {
         prefix: 'Liabilities',
         infix: '$15.8B',
-        suffix: 'for 2016, <span style="color:gold">~$5,850</span> per person',
+        suffix: 'for 2016, <span style="color:gold">~$5,850</span> per resident',
         contrast: true,
     },
     {
         prefix: 'Net debt',
         infix: '<span style=color:red>$6.5B</span>',
-        suffix: 'for 2016, (financial assets less liabilities)<span style="color:gold">~$2,380</span> per person',
+        suffix: 'for 2016, (financial assets less liabilities)<span style="color:gold">~$2,380</span> per resident',
         contrast: true,
     },
     {
         prefix: 'Tangible assets',
         infix: '$29B',
-        suffix: '(including inventories and prepaids) for 2016, <span style="color:gold">~$10,600</span> per person',
+        suffix: '(including inventories and prepaids) for 2016, <span style="color:gold">~$10,600</span> per resident',
         contrast: true,
     },
     {
         prefix: 'Net worth',
         infix: '<span style=color:lightgreen>$22.5B</span>',
-        suffix: 'Accumulated Surplus for 2016, <span style="color:gold">~$8,220</span> per<br>person',
+        suffix: 'Accumulated Surplus for 2016, <span style="color:gold">~$8,220</span> per<br>resident',
         contrast: true,
     },
     {

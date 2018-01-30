@@ -161,7 +161,7 @@ let content =
     <dl>
         <dd>
             <dl>
-                <dt><strong>Population: per person</strong></dt>
+                <dt><strong>Population: per resident</strong></dt>
                 <dt><strong>Population: per 100,000 people</strong></dt>
                 <dt><strong>Per household</strong></dt>
                 <dt><strong>Per 40,000 households</strong></dt>
