@@ -1,0 +1,145 @@
+{
+    "Index": 0,
+    "NamingConfigRef": "AUDITED",
+    "Components": {
+        "OBLIGATORY":{
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "DEVCHARGES": {
+                    "Index": 0,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "RECLAND": {
+                    "Index": 1,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "SUBDIVIDERS": {
+                    "Index": 2,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "BUILDINGCODE": {
+                    "Index": 7,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "GASTAX": {
+                    "Index": 0,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+
+                "TRANSITFUNDS": {
+                    "Index": 1,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "WATER": {
+                    "Index": 2,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "COMMSERVICES": {
+                    "Index": 7,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "THIRDPARTY": {
+                    "Index": 1,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "SOGR": {
+                    "Index": 2,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "PARKING": {
+                    "Index": 7,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                }
+            }
+        },
+        "NONOBLIGATORY":{
+            "Index": 0,
+            "NamingConfigRef": "CATEGORY",
+            "Components": {
+                "CORPORATE": {
+                    "Index": 5,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "STABILIZATION": {
+                    "Index": 3,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "DONATIONS": {
+                    "Index": 6,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "COMMINITIATIVES": {
+                    "Index": 4,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                
+                "BENEFITS": {
+                    "Index": 6,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                },
+                "SOGR-OBLIG": {
+                    "Index": 4,
+                    "NamingConfigRef": "RESERVE",
+                    "Baseline": true
+                }
+            }
+        }
+    },
+    "Meta":{
+        "Lookups": {
+            "Taxonomy": {
+                "OBLIGATORY":"Obligatory reserves (deferred revenue)",
+                "NONOBLIGATORY":"Non-obligatory reserves (accumulated surplus)"
+            }
+        },
+        "NamingConfigurations": {
+            "AUDITED": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Reserves",
+                    "Alias": "Audited Statement"
+                }
+            },
+            "RESERVE": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Reserve"
+                },
+                "Contents": {
+                    "Name": "Reserve",
+                    "Alias": "Audited Reserves"
+                }
+            },
+            "CATEGORY": {
+                "Instance": {
+                    "Name": "Type",
+                    "Alias": "Audited"
+                },
+                "Contents": {
+                    "Name": "Grouping",
+                    "Alias": "Reserve Groupings"
+                }
+            }
+        }
+    }
+}

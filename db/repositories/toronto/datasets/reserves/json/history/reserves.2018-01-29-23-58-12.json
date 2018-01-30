@@ -1,0 +1,617 @@
+{
+    "MetaData": {
+        "InflationAdjustable": true,
+        "DatasetName": "Reserves",
+        "DatasetTitle": "Audited Reserves",
+        "Dataseries": [
+            {
+                "Type": "Components"
+            }
+        ],
+        "Dimensions": [
+            "Reserve"
+        ],
+        "DimensionNames": {
+            "Program": {
+                "Instance": "Reserve",
+                "Collection": "Actual Reserves"
+            }
+        },
+        "CellTitles": {
+            "Components": "Reserves"
+        },
+        "Units": "DOLLAR",
+        "UnitsAlias": "$000's",
+        "UnitRatio": 1000,
+        "CommonDimension": false,
+        "ReferenceYear": 2016,
+        "InflationReferenceYear": 2017,
+        "YearsRange": {
+            "start": 2009,
+            "end": 2016
+        }
+    },
+    "Data": {
+        "Adjusted": {
+            "DEVCHARGES": {
+                "years": {
+                    "2009": 292990,
+                    "2010": 314387,
+                    "2011": 353601,
+                    "2012": 411716,
+                    "2013": 416174,
+                    "2014": 560383,
+                    "2015": 661465,
+                    "2016": 700043
+                }
+            },
+            "RECLAND": {
+                "years": {
+                    "2009": 211165,
+                    "2010": 234348,
+                    "2011": 290859,
+                    "2012": 381479,
+                    "2013": 468427,
+                    "2014": 552891,
+                    "2015": 605093,
+                    "2016": 616392
+                }
+            },
+            "SUBDIVIDERS": {
+                "years": {
+                    "2009": 16096,
+                    "2010": 15750,
+                    "2011": 15310,
+                    "2012": 11864
+                }
+            },
+            "BUILDINGCODE": {
+                "years": {
+                    "2009": 12564,
+                    "2010": 12817,
+                    "2011": 17125,
+                    "2012": 22855,
+                    "2013": 30070,
+                    "2014": 44746,
+                    "2015": 54640,
+                    "2016": 66667
+                }
+            },
+            "GASTAX": {
+                "years": {
+                    "2009": 837,
+                    "2011": 5581,
+                    "2013": 442,
+                    "2016": 3656
+                }
+            },
+            "TRANSITFUNDS": {
+                "years": {
+                    "2009": 648470,
+                    "2010": 556761,
+                    "2011": 427305,
+                    "2012": 298798,
+                    "2013": 211850,
+                    "2014": 145014,
+                    "2015": 106643,
+                    "2016": 98215
+                }
+            },
+            "WATER": {
+                "years": {
+                    "2009": 166790,
+                    "2010": 67984,
+                    "2011": 69542,
+                    "2012": 259972,
+                    "2013": 403530,
+                    "2014": 471305,
+                    "2015": 565555,
+                    "2016": 718671
+                }
+            },
+            "COMMSERVICES": {
+                "years": {
+                    "2009": 72609,
+                    "2010": 77040,
+                    "2011": 78814,
+                    "2012": 89954,
+                    "2013": 91214,
+                    "2014": 87564,
+                    "2015": 84819,
+                    "2016": 84607
+                }
+            },
+            "THIRDPARTY": {
+                "years": {
+                    "2009": 25370,
+                    "2010": 29178,
+                    "2011": 23928,
+                    "2012": 28495,
+                    "2013": 14003,
+                    "2014": 10474,
+                    "2015": 11583,
+                    "2016": 12736
+                }
+            },
+            "SOGR": {
+                "years": {
+                    "2009": 193345,
+                    "2010": 168156,
+                    "2011": 153997,
+                    "2012": 185088,
+                    "2013": 207661,
+                    "2014": 213775,
+                    "2015": 232642,
+                    "2016": 287326
+                }
+            },
+            "PARKING": {
+                "years": {
+                    "2009": 1985,
+                    "2010": 2781,
+                    "2011": 3184,
+                    "2012": 3496,
+                    "2013": 3576,
+                    "2014": 3519,
+                    "2015": 3486,
+                    "2016": 3431
+                }
+            },
+            "CORPORATE": {
+                "years": {
+                    "2009": 1006519,
+                    "2010": 842512,
+                    "2011": 811376,
+                    "2012": 1170501,
+                    "2013": 1398657,
+                    "2014": 1118986,
+                    "2015": 1013554,
+                    "2016": 1002732
+                }
+            },
+            "STABILIZATION": {
+                "years": {
+                    "2009": 81153,
+                    "2010": 174343,
+                    "2011": 180767,
+                    "2012": 140083,
+                    "2013": 211382,
+                    "2014": 244807,
+                    "2015": 218108,
+                    "2016": 189494
+                }
+            },
+            "DONATIONS": {
+                "years": {
+                    "2009": 2118,
+                    "2010": 2347,
+                    "2011": 2244,
+                    "2012": 1184,
+                    "2013": 1381,
+                    "2014": 1359,
+                    "2015": 1236,
+                    "2016": 1492
+                }
+            },
+            "COMMINITIATIVES": {
+                "years": {
+                    "2009": 122223,
+                    "2010": 104779,
+                    "2011": 87963,
+                    "2012": 106540,
+                    "2013": 100378,
+                    "2014": 99543,
+                    "2015": 107142,
+                    "2016": 108523
+                }
+            },
+            "BENEFITS": {
+                "years": {
+                    "2009": 257774,
+                    "2010": 209543,
+                    "2011": 183422,
+                    "2012": 190591,
+                    "2013": 229995,
+                    "2014": 247784,
+                    "2015": 249274,
+                    "2016": 262568
+                }
+            },
+            "SOGR-OBLIG": {
+                "years": {
+                    "2011": 11994,
+                    "2012": 15142,
+                    "2013": 2433,
+                    "2014": 2383,
+                    "2015": 2503,
+                    "2016": 2568
+                }
+            }
+        },
+        "Nominal": {
+            "DEVCHARGES": {
+                "years": {
+                    "2009": 248943,
+                    "2010": 273942,
+                    "2011": 317368,
+                    "2012": 375071,
+                    "2013": 383801,
+                    "2014": 529786,
+                    "2015": 634749,
+                    "2016": 685906
+                }
+            },
+            "RECLAND": {
+                "years": {
+                    "2009": 179419,
+                    "2010": 204200,
+                    "2011": 261055,
+                    "2012": 347525,
+                    "2013": 431990,
+                    "2014": 522703,
+                    "2015": 580654,
+                    "2016": 603944
+                }
+            },
+            "SUBDIVIDERS": {
+                "years": {
+                    "2009": 13676,
+                    "2010": 13724,
+                    "2011": 13741,
+                    "2012": 10808
+                }
+            },
+            "BUILDINGCODE": {
+                "years": {
+                    "2009": 10675,
+                    "2010": 11168,
+                    "2011": 15370,
+                    "2012": 20821,
+                    "2013": 27731,
+                    "2014": 42303,
+                    "2015": 52433,
+                    "2016": 65321
+                }
+            },
+            "GASTAX": {
+                "years": {
+                    "2009": 711,
+                    "2011": 5009,
+                    "2013": 408,
+                    "2016": 3582
+                }
+            },
+            "TRANSITFUNDS": {
+                "years": {
+                    "2009": 550981,
+                    "2010": 485136,
+                    "2011": 383520,
+                    "2012": 272203,
+                    "2013": 195371,
+                    "2014": 137096,
+                    "2015": 102336,
+                    "2016": 96232
+                }
+            },
+            "WATER": {
+                "years": {
+                    "2009": 141715,
+                    "2010": 59238,
+                    "2011": 62416,
+                    "2012": 236833,
+                    "2013": 372141,
+                    "2014": 445572,
+                    "2015": 542713,
+                    "2016": 704158
+                }
+            },
+            "COMMSERVICES": {
+                "years": {
+                    "2009": 61693,
+                    "2010": 67129,
+                    "2011": 70738,
+                    "2012": 81948,
+                    "2013": 84119,
+                    "2014": 82783,
+                    "2015": 81393,
+                    "2016": 82898
+                }
+            },
+            "THIRDPARTY": {
+                "years": {
+                    "2009": 21556,
+                    "2010": 25424,
+                    "2011": 21476,
+                    "2012": 25959,
+                    "2013": 12914,
+                    "2014": 9902,
+                    "2015": 11115,
+                    "2016": 12479
+                }
+            },
+            "SOGR": {
+                "years": {
+                    "2009": 164278,
+                    "2010": 146523,
+                    "2011": 138217,
+                    "2012": 168614,
+                    "2013": 191508,
+                    "2014": 202103,
+                    "2015": 223246,
+                    "2016": 281524
+                }
+            },
+            "PARKING": {
+                "years": {
+                    "2009": 1687,
+                    "2010": 2423,
+                    "2011": 2858,
+                    "2012": 3185,
+                    "2013": 3298,
+                    "2014": 3327,
+                    "2015": 3345,
+                    "2016": 3362
+                }
+            },
+            "CORPORATE": {
+                "years": {
+                    "2009": 855202,
+                    "2010": 734126,
+                    "2011": 728236,
+                    "2012": 1066320,
+                    "2013": 1289861,
+                    "2014": 1057890,
+                    "2015": 972618,
+                    "2016": 982482
+                }
+            },
+            "STABILIZATION": {
+                "years": {
+                    "2009": 68953,
+                    "2010": 151914,
+                    "2011": 162244,
+                    "2012": 127615,
+                    "2013": 194939,
+                    "2014": 231441,
+                    "2015": 209299,
+                    "2016": 185667
+                }
+            },
+            "DONATIONS": {
+                "years": {
+                    "2009": 1800,
+                    "2010": 2045,
+                    "2011": 2014,
+                    "2012": 1079,
+                    "2013": 1274,
+                    "2014": 1285,
+                    "2015": 1186,
+                    "2016": 1462
+                }
+            },
+            "COMMINITIATIVES": {
+                "years": {
+                    "2009": 103848,
+                    "2010": 91300,
+                    "2011": 78950,
+                    "2012": 97057,
+                    "2013": 92570,
+                    "2014": 94108,
+                    "2015": 102815,
+                    "2016": 106331
+                }
+            },
+            "BENEFITS": {
+                "years": {
+                    "2009": 219021,
+                    "2010": 182586,
+                    "2011": 164627,
+                    "2012": 173627,
+                    "2013": 212105,
+                    "2014": 234255,
+                    "2015": 239206,
+                    "2016": 257266
+                }
+            },
+            "SOGR-OBLIG": {
+                "years": {
+                    "2011": 10765,
+                    "2012": 13794,
+                    "2013": 2244,
+                    "2014": 2253,
+                    "2015": 2402,
+                    "2016": 2516
+                }
+            }
+        }
+    },
+    "Notes": {},
+    "Allocations": {},
+    "Headers": {
+        "2009": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1AJ3kl4GghwwokQ8AbFlNT6q7ZG4EPIfv",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2009 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1vU_haMD4dhfg-RHl0u1weB5TqFSOerE5",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2009,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 2644158,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2010": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1AJ3kl4GghwwokQ8AbFlNT6q7ZG4EPIfv",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2010 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1dsd8BInT0r_1qJ8QWcdv1hHB9X-vHpJy",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2010,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 2450878,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2011": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1qJ57BYNxeOh_3KyT_UlveDzrE7meJRXb",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2011 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1w417DnaHrQmbWBch9TunDrk1uOqngqu8",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2011,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 2438604,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2012": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1jyZdNf68wdg7lW1HLxWsoo0r9m_s6iss",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2012 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1wJDxXMKo9pQbrGXWtn7OdSLyEyzfvJB2",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2012,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 3022459,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2013": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1zAXJokKoxsKS9AFLZ7qViY4BZ-CkI0ey",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2013 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1js2Zk1HICu3g7al182HcndP-sZdgfMFe",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2013,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 3496274,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2014": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1G8SO2qavpqg4njr5q2d_a-bFEaP07nF_",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2014 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=13WaU-yeKNZs0Lg3G6MuudR2hIEf9jjGl",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2014,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 3596807,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2015": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1gRHm9WBmraFZX_JMXgavTTv2i9Wr_GZA",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2015 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=1HA_OvZYUUctW-Kh-2RkW2qMC9BWP2ccG",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2015,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 3759510,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        },
+        "2016": {
+            "SOURCE_DOCUMENT_LINK_ORIGINAL": "",
+            "SOURCE_DOCUMENT_LINK_COPY": "https://drive.google.com/open?id=1FkAfOljKzj145D1D0ezMRa31mhxAVQ_7",
+            "SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY": "https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T",
+            "SOURCE_DOCUMENT_TITLE": "2016 Consolidated Financial Statements",
+            "SOURCE_DOCUMENT_TABLE_LOCATION": "Note: deferred liabilities; Note: Accumulated Surplus",
+            "SOURCE_DOCUMENT_TABLE_TITLE": "",
+            "SOURCE_CSV_PRECURSOR_LINK": "https://drive.google.com/open?id=19NS-H7MRzoLIiGZ9V9TCED7SPkWptdXy",
+            "SOURCE_CSV_PRECURSOR_AUTHOR_ID": "Henrik",
+            "YEAR": 2016,
+            "VERSION": "Actual",
+            "ASPECT": "Liabilities, Surplus",
+            "NOTES_CONTENT": "Dollar",
+            "NOTES_SEVERITY": "",
+            "UNITS_NAME": "Dollar",
+            "UNITS_CODE": "DOLLAR",
+            "UNITS_MULTIPLIER": 1000,
+            "TOTAL_AMOUNT": 4075130,
+            "INTAKE_DATETIME": "2018-01-29-22-23-49",
+            "INTAKE_OPERATOR_ID": "Henrik",
+            "COLUMNS_CATEGORIES": "Reserve:CODE,Reserve:NAME",
+            "COLUMNS_ATTRIBUTES": "Amount:VALUE, Notes:DESCRIPTION, Severity: CODE,Allocations:DESCRIPTION"
+        }
+    },
+    "Messages": null
+}

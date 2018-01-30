@@ -1,0 +1,24 @@
+{
+    "reserve": {
+        "": "State of Good Repair – Obligatory",
+        "BENEFITS": "Employee Benefits",
+        "BUILDINGCODE": "Building Code Act Service Improvement",
+        "COMMINITIATIVES": "Community Initiatives",
+        "COMMSERVICES": "Community Services",
+        "CORPFUND": "Corporate – Fund",
+        "CORPRESERVE": "Corporate – Reserve",
+        "DEVCHARGES": "Development Charges",
+        "DONATIONS": "Donations",
+        "GASTAX": "Provincial Gas Tax",
+        "PARKING": "Parking Authority",
+        "RECLAND": "Recreational Land (Planning Act)",
+        "SOGR": "State of Good Repair",
+        "SOGROBLIG": "State of Good Repair – Obligatory",
+        "STABILIZATION": "Stabilization",
+        "SUBDIVIDERS": "Subdividers’ Deposits",
+        "THIRDPARTY": "Third Party Agreements",
+        "TRANSITFUNDS": "Public Transit Funds",
+        "WATER": "Water and Wastewater",
+        "WATEROBLIG": "Water and Wastewater – Obligatory"
+    }
+}

@@ -1,0 +1,40 @@
+_META_START_,,
+SOURCE_DOCUMENT_LINK_ORIGINAL,,
+SOURCE_DOCUMENT_LINK_COPY,https://drive.google.com/open?id=1G8SO2qavpqg4njr5q2d_a-bFEaP07nF_,
+SOURCE_DOCUMENT_LINK_WORKING_DIRECTORY,https://drive.google.com/open?id=1vI0cN2OCkZZ7V6x0FxXhiKYWTdOJyr7T,
+SOURCE_DOCUMENT_TITLE,2014 Consolidated Financial Statements,
+SOURCE_DOCUMENT_TABLE_LOCATION,Note: deferred liabilities; Note: Accumulated Surplus,
+SOURCE_DOCUMENT_TABLE_TITLE,,
+SOURCE_CSV_PRECURSOR_LINK,https://drive.google.com/open?id=13WaU-yeKNZs0Lg3G6MuudR2hIEf9jjGl,
+SOURCE_CSV_PRECURSOR_AUTHOR_ID,Henrik,
+YEAR,2014,
+VERSION,Actual,
+ASPECT,"Liabilities, Surplus",
+NOTES_CONTENT,Dollar,
+NOTES_SEVERITY,,
+UNITS_NAME,Dollar,
+UNITS_CODE,DOLLAR,
+UNITS_MULTIPLIER,1000,
+TOTAL_AMOUNT,3596807,
+INTAKE_DATETIME,2018-01-29-23-29-25,
+INTAKE_OPERATOR_ID,Henrik,
+COLUMNS_CATEGORIES,"Reserve:CODE,Reserve:NAME",
+COLUMNS_ATTRIBUTES,"Amount:VALUE, Notes:DESCRIPTION, Severity: CODE",
+_META_END_,,
+DEVCHARGES,Development Charges,529786
+RECLAND,Recreational Land (Planning Act),522703
+BUILDINGCODE,Building Code Act Service Improvement,42303
+TRANSITFUNDS,Public Transit Funds,137096
+WATEROBLIG,Water and Wastewater – obligatory,302983
+COMMSERVICES,Community Services,82783
+THIRDPARTY,Third Party Agreements,9902
+SOGR-OBLIG,State of Good Repair – obligatory,2253
+PARKING,Parking Authority,3327
+CORPRESERVE,Corporate – reserve,574422
+STABILIZATION,Stabilization,231441
+WATER,Water and Wastewater,142589
+DONATIONS,Donations,1285
+BENEFITS,Employee Benefits (Note 13),234255
+CORPFUND,Corporate – fund,483468
+COMMINITIATIVES,Community Initiatives,94108
+SOGR,State of Good Repair,202103
