@@ -49,6 +49,10 @@ let pages = {
                 repo:'sections',
             },
             {
+                index:'aboutbudgetpedia',
+                repo:'sections',
+            },
+            {
                 index:'home.tiles',
                 repo:'sections',
             },            

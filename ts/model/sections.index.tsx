@@ -11,13 +11,35 @@ let torontobudget = {
         title:"The Toronto Budget",
         description: 
 `
-We've created what we think is an accessbile view of the Toronto budget.
+Here is what we think is an accessbile view of the Toronto budget.
 `,
     },
     children:[
         {
             repo:'papers',
             index:'torontobudget',
+        },
+    ]
+}
+
+let aboutbudgetpedia = {
+    controller:'section',
+    index:'aboutbudgetpedia',
+    anchor:'aboutbudgetpedia',
+    description:'about budgetpedia',
+    type:'section',
+    tag:'About Budgetpedia',
+    properties:{
+        title:"About Budgetpedia",
+        description: 
+`
+We want to help make the budget, and budget debate, better.
+`,
+    },
+    children:[
+        {
+            repo:'papers',
+            index:'aboutbudgetpedia',
         },
     ]
 }
@@ -616,6 +638,7 @@ least some collaboration with front-line staff, or at least front-line managers.
 }
 
 let sections = {
+    aboutbudgetpedia,
     torontobudget,
     overview,
     budgets,

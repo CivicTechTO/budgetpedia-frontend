@@ -20,6 +20,26 @@ let torontobudget = {
     ],    
 }
 
+let aboutbudgetpedia = {
+    controller:'paper',
+    index:'aboutbudgetpedia',
+    description: 'about budgetpedia',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'aboutbudgetpedia',
+            description:'about budgetpedia',
+            properties: {
+                markup:               
+`## Our Mission
+`,
+            }
+        }
+    ],    
+}
+
 let staffing = {
     controller:'paper',
     index:'staffing',
@@ -1415,6 +1435,7 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    aboutbudgetpedia,
     torontobudget,
     staffing,
     currentconventions,
