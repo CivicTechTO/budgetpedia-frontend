@@ -82,6 +82,20 @@ let pagetargets = [
         parent: 'home',
     },
     {
+        id: 15,
+        content: {
+            title: `Overview`,
+            subtitle: `Toronto Overview`,
+            image: '../../public/icons/ic_wb_sunny_black_48px.svg',
+            category: 'support',
+        },
+        index: 2,
+        tier: 'primary',
+        route: '/overview',
+        tag: 'overview',
+        parent: 'home',
+    },
+    {
         id: 14,
         content: {
             title: `Activist Pathways`,
