@@ -1,27 +1,49 @@
 // sections.index.tsx
 
+let torontobudget = {
+    controller:'section',
+    index:'torontobudget',
+    anchor:'torontobudget',
+    description:'header for overview page',
+    type:'section',
+    tag:'Toronto Budget',
+    properties:{
+        title:"The Toronto Budget",
+        description: 
+`
+We've created what we think is an accessbile view of the Toronto budget.
+`,
+    },
+    children:[
+        {
+            repo:'papers',
+            index:'torontobudget',
+        },
+    ]
+}
+
 let overview = {
-        controller:'section',
-        index:'overview',
-        anchor:'overview',
-        description:'header for overview page',
-        type:'section',
-        tag:'Top:Overview',
-        properties:{
-            title:"Our Toronto Budgeting Overview",
-            description: 
+    controller:'section',
+    index:'overview',
+    anchor:'overview',
+    description:'header for overview page',
+    type:'section',
+    tag:'Top:Overview',
+    properties:{
+        title:"Our Toronto Budgeting Overview",
+        description: 
 `
 This page gives a general overview of Toronto, and its budget design and process.
 `,
+    },
+    children:[
+        {
+            controller: 'section',
+            type:'toc',
+            index:'tableofcontents',
+            description:'page table of contents',
         },
-        children:[
-            {
-                controller: 'section',
-                type:'toc',
-                index:'tableofcontents',
-                description:'page table of contents',
-            },
-        ],
+    ],
 }
 
 let budgets = {
@@ -594,6 +616,7 @@ least some collaboration with front-line staff, or at least front-line managers.
 }
 
 let sections = {
+    torontobudget,
     overview,
     budgets,
     roadmap,

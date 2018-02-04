@@ -1,5 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let torontobudget = {
+    controller: 'section',
+    index: 'torontobudget',
+    anchor: 'torontobudget',
+    description: 'header for overview page',
+    type: 'section',
+    tag: 'Toronto Budget',
+    properties: {
+        title: "The Toronto Budget",
+        description: `
+We've created what we think is an accessbile view of the Toronto budget.
+`,
+    },
+    children: [
+        {
+            repo: 'papers',
+            index: 'torontobudget',
+        },
+    ]
+};
 let overview = {
     controller: 'section',
     index: 'overview',
@@ -536,6 +556,7 @@ least some collaboration with front-line staff, or at least front-line managers.
     },
 };
 let sections = {
+    torontobudget,
     overview,
     budgets,
     roadmap,

@@ -77,7 +77,7 @@ let mainpages = {
                 id: 17,
                 content: {
                     title: `Overview`,
-                    subtitle: `A quick context`,
+                    subtitle: `Some quick context`,
                     image: '../../public/icons/ic_wb_sunny_black_48px.svg',
                     category: 'support',
                 },

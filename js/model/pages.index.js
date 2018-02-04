@@ -20,7 +20,7 @@ let pages = {
             },
             dates: {
                 created: '12-01-2018',
-                updated: '12-01-2018',
+                updated: '4-02-2018',
             },
         },
         tags: null,
@@ -31,6 +31,10 @@ let pages = {
         children: [
             {
                 index: 'home.header',
+                repo: 'sections',
+            },
+            {
+                index: 'torontobudget',
                 repo: 'sections',
             },
             {

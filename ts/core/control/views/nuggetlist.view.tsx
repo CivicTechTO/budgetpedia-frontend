@@ -78,7 +78,7 @@ class NuggetList extends React.Component< Props, any > {
             )
         })
         return (
-            <article style = {{...defaultstyle,...style}} >
+            <article style = {{...defaultstyle as any,...style as any}} >
                 <div style = {
                     {
                         position:'absolute',

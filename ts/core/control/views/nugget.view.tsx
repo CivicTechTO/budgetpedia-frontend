@@ -44,7 +44,7 @@ let Nugget = (props:Props) => {
         }
 
 
-        return <div style = {{...defaultstyle,...style}}>
+        return <div style = {{...defaultstyle as any,...style as any}}>
             <div style = {{marginTop:'30px',minWidth:'20px'}}>
                 { <MarkupLine markup={prefix} /> }
             </div>

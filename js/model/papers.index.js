@@ -1,5 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let torontobudget = {
+    controller: 'paper',
+    index: 'torontobudget',
+    description: 'toronto budget restatement',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'torontobudget',
+            description: 'toronto budget restatement',
+            properties: {
+                markup: `## The 2018 Toronto Budget, Restated
+`,
+            }
+        }
+    ],
+};
 let staffing = {
     controller: 'paper',
     index: 'staffing',
@@ -1348,6 +1366,7 @@ two groups separately, taking more interest (presumably for political reasons) i
     ],
 };
 let papers = {
+    torontobudget,
     staffing,
     currentconventions,
     betterconventions,
