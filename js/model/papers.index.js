@@ -28,7 +28,7 @@ The _financial assistance to persons_ in the above chart is isolated because it'
 money that is simply passed through to the recipients of the subsidies. It includes housing, income, and child subsidies.
 
 Notice that the budgeted revenue below is higher than the expenses above. The City's budget
-deliberately includes an operating surplus to provide money for captial investments and other requirements.
+deliberately includes an operating surplus to provide money for capital investments and other requirements.
 
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018revenuebudget.png" />
@@ -86,7 +86,7 @@ Our mission is in two parts:
  - improvements in the design of budget reports
  - accurate, timely, automated, on-demand reports
  - on-demand cost-centre reports, including financial data (budgets and actuals), plus staffing
-   and performnace data.
+   and performance data.
  - a well-organized repository on Toronto's [open data portal](http://toronto.ca/open), to provide ready access to the data
    listed above, plus source documents of related City reports.
 
