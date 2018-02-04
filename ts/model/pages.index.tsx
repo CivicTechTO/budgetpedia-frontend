@@ -14,8 +14,9 @@
 let pages = {
     home:{
         controller: 'page',
-        index: 'budgets',
+        index: 'home',
         type:'page',
+        notToc:true,
         attribution: {
             custodian:{
                 name: 'Henrik Bechmann',
@@ -35,8 +36,8 @@ let pages = {
         },
         tags:null,
         properties: {
-            title:'Toronto budgets',
-            description: 'Summary of Toronto budgets',
+            title:'budgetpedia home',
+            description: 'Toronto budgetpedia home',
         },
         children: [
             {
@@ -178,6 +179,10 @@ let pages = {
             description: 'supporting informed debate about the Toronto budget',
         },
         children: [
+            {
+                index:'overview',
+                repo:'sections',
+            },
             {
                 index:'home.nuggets',
                 repo:'sections',

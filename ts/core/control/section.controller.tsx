@@ -58,6 +58,8 @@ class SectionControllerClass extends React.Component<any,any> {
 
         switch (type) {
             case 'toc': {
+                if (this.props.notToc) return null //<div key = {index}></div>
+
                 return <ToCView key = {index} tocdata = { this.props.getToC() } />
             }
             case 'section': {

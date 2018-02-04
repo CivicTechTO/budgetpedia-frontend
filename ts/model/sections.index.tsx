@@ -1,5 +1,29 @@
 // sections.index.tsx
 
+let overview = {
+        controller:'section',
+        index:'overview',
+        anchor:'overview',
+        description:'header for overview page',
+        type:'section',
+        tag:'Top:Overview',
+        properties:{
+            title:"Toronto Budgets Overview",
+            description: 
+`
+This page gives a general overview of Toronto, and its budget design and process.
+`,
+        },
+        children:[
+            {
+                controller: 'section',
+                type:'toc',
+                index:'tableofcontents',
+                description:'page table of contents',
+            },
+        ],
+}
+
 let budgets = {
     header: {
         controller:'section',
@@ -570,6 +594,7 @@ least some collaboration with front-line staff, or at least front-line managers.
 }
 
 let sections = {
+    overview,
     budgets,
     roadmap,
     home,

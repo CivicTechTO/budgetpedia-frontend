@@ -37,10 +37,12 @@ class PageControllerClass extends React.Component<any,any> {
     }
 
     toolkit = null
+    notToc = null
 
     anchorCallback = () => {
-        let tocdata = []
         let self = this
+        if (self.notToc) return
+        let tocdata = []
         setTimeout(()=>{
             let anchors = document.querySelectorAll('a.hash-anchor')
             anchors.forEach(element => {
@@ -65,6 +67,8 @@ class PageControllerClass extends React.Component<any,any> {
         let { master } = this.toolkit
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
+
+        this.notToc = model.notToc
 
         this.toolkit.setStateModel(this, model, this.anchorCallback)
 
@@ -115,6 +119,7 @@ class PageControllerClass extends React.Component<any,any> {
         let componentType = null
 
         switch (type) {
+
             case 'page': {
 
                 let chips = this.assembleChips(children)
@@ -171,12 +176,12 @@ class PageControllerClass extends React.Component<any,any> {
             }
             case 'section': {
 
-                // isToC triggers render on change
                 return <SectionController
                     key = { key }
                     model = { model }
+                    notToc = { !!this.notToc }
                     getToC = { this.getToC }
-                    isToC = {!!this.state.tocdata}
+                    isToC = { !!this.state.tocdata }
                 />
 
             }
