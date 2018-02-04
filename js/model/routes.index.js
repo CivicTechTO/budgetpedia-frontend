@@ -4,5 +4,6 @@ let routes = {
     '/roadmap': 'roadmap',
     '/': 'home',
     '/budgets': 'budgets',
+    '/overview': 'overview',
 };
 exports.default = routes;

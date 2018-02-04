@@ -344,7 +344,7 @@ If you have suggestions for stories, or if you want to help, let us know.`,
         anchor: 'website',
         description: 'navigation tiles to the site main pages',
         type: 'section',
-        tag: 'More...',
+        tag: 'Our Website',
         properties: {
             title: 'Our Website',
             description: 'The main pages of our website. The tiles scroll left and right.',

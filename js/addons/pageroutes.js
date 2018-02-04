@@ -16,6 +16,7 @@ const announcements_1 = require("./pages/announcements");
 const pathways_1 = require("./pages/pathways");
 let routedata = [
     { path: "/about", component: about_1.default },
+    { path: "/overview", component: page_controller_1.default },
     { path: "/budgets", component: page_controller_1.default },
     { path: "/roadmap", component: page_controller_1.default },
     { path: "/deputations", component: deputations_1.default },

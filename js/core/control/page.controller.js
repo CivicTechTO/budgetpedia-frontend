@@ -117,9 +117,6 @@ class PageControllerClass extends React.Component {
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
         this.toolkit.setStateModel(this, model, this.anchorCallback);
-        setTimeout(() => {
-            console.log('model', this.state.model);
-        });
     }
     render() {
         let { model } = this.state;

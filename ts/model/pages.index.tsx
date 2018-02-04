@@ -1,6 +1,54 @@
 // pages.index.tsx
 
+
+// ======================= [INVENTORY]========================
+// # a child
+// {
+//     disabled:true,
+//     index:'home.twitterfeed',
+//     repo:'sections',
+// },
+// ===========================================================
+
+
 let pages = {
+    home:{
+        controller: 'page',
+        index: 'budgets',
+        type:'page',
+        attribution: {
+            custodian:{
+                name: 'Henrik Bechmann',
+                link: 'mailto:henrik@budgetpedia.ca',
+            },
+            authority:null,
+            creator:null,
+            updater:null,
+            contact:{
+                name:'mail@budgetpedia.ca',
+                link:'mailto:mail@budgetpedia.ca',
+            },
+            dates:{
+                created: '12-01-2018',
+                updated: '12-01-2018',
+            },
+        },
+        tags:null,
+        properties: {
+            title:'Toronto budgets',
+            description: 'Summary of Toronto budgets',
+        },
+        children: [
+            {
+                index:'home.header',
+                repo:'sections',
+            },
+            {
+                index:'home.tiles',
+                repo:'sections',
+            },            
+        ],
+    },
     budgets:{
         controller: 'page',
         index: 'budgets',
@@ -103,9 +151,9 @@ let pages = {
             },
         ],
     },
-    home:{
+    overview:{
         controller: 'page',
-        index: 'home',
+        index: 'overview',
         type:'page',
         attribution: {
             custodian:{
@@ -126,14 +174,10 @@ let pages = {
         },
         tags:null,
         properties: {
-            title:'Budgetpedia Welcome',
+            title:'Budgetpedia Overview',
             description: 'supporting informed debate about the Toronto budget',
         },
         children: [
-            {
-                index:'home.header',
-                repo:'sections',
-            },
             {
                 index:'home.nuggets',
                 repo:'sections',
@@ -148,15 +192,6 @@ let pages = {
             },
             {
                 index:'home.stories',
-                repo:'sections',
-            },
-            {
-                disabled:true,
-                index:'home.twitterfeed',
-                repo:'sections',
-            },
-            {
-                index:'home.tiles',
                 repo:'sections',
             },
         ],
