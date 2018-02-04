@@ -13,6 +13,27 @@ let torontobudget = {
             description: 'toronto budget restatement',
             properties: {
                 markup: `## The 2018 Toronto Budget, Restated
+
+<figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/2018expensebudget.png" />
+    <figcaption style="font-size:x-small;color:#999;text-align:center">
+Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
+    </figcaption>
+</figure>
+
+<figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/2018revenuebudget.png" />
+    <figcaption style="font-size:x-small;color:#999;text-align:center">
+Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
+    </figcaption>
+</figure>
+
+<figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/2018distributionbudget.png" />
+    <figcaption style="font-size:x-small;color:#999;text-align:center">
+Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
+    </figcaption>
+</figure>
 `,
             }
         }
@@ -31,6 +52,8 @@ let aboutbudgetpedia = {
             description: 'about budgetpedia',
             properties: {
                 markup: `## Our Mission
+
+
 `,
             }
         }
