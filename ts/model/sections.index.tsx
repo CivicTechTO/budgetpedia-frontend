@@ -33,7 +33,7 @@ let aboutbudgetpedia = {
         title:"About Budgetpedia",
         description: 
 `
-We want to help make the budget, and budget debate, better.
+We want to help make the Toronto budget, and budget debate, better.
 `,
     },
     children:[
