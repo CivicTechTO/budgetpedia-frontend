@@ -259,6 +259,12 @@ let toplinklistitems = [
         target:'/resources',
         targetText:'Resources',
     },
+    {
+        prompt:'Toronto overview',
+        icon:'/public/icons/ic_wb_sunny_black_48px.svg',
+        target:'/overview',
+        targetText:'Overview',
+    },
 ]
 
 let secondlinklistheader = 'Follow us:'

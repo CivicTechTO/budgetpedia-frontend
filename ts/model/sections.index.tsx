@@ -8,7 +8,7 @@ let overview = {
         type:'section',
         tag:'Top:Overview',
         properties:{
-            title:"Toronto Budgets Overview",
+            title:"Our Toronto Budgeting Overview",
             description: 
 `
 This page gives a general overview of Toronto, and its budget design and process.
