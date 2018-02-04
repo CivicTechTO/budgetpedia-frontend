@@ -14,12 +14,21 @@ let torontobudget = {
             properties: {
                 markup: `## The 2018 Toronto Budget, Restated
 
+Here is the expense budget. Its main feature is the _core operating budget_ -- about $8.5B --
+which is the cost of staff, plus the rent, services, materials, supplies, etc required to support their work.
+
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018expensebudget.png" />
     <figcaption style="font-size:x-small;color:#999;text-align:center">
 Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
     </figcaption>
 </figure>
+
+The _financial assistance to persons_ in the above chart is isolated because it's not a normal expense -- it represents
+money that is simply passed through to the recipients of the subsidies. It includes housing, income, and child subsidies.
+
+Notice that the budgeted revenue below is higher than the expenses above. The City's budget
+deliberately includes an operating surplus to provide money for captial investments and other requirements.
 
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018revenuebudget.png" />
@@ -28,12 +37,25 @@ Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4
     </figcaption>
 </figure>
 
+The _Property tax_ above is set by Toronto Council to bring the revenues up to an amount equal to the expenses plus the 
+amounts required for additional capital investments and requirements. That property tax amount is then used
+to determine the property tax rate for payers.
+
+Finally, below is a chart showing how the budgeted revenue is distributed. The _cash for investment and reserves_ is what
+most of the fighting is about -- where to get it; how to spend it.
+
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018distributionbudget.png" />
     <figcaption style="font-size:x-small;color:#999;text-align:center">
 Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
     </figcaption>
 </figure>
+
+Note that we are striving for conceptual accuracy here. Many of the numbers are rough estimates, because
+we don't (yet!) have the exact data from the City that we would need for greater numerical accuracy.
+
+For the initial write-up about this restatement see _[A restatement of Toronto’s 2018 budget using natural categories](https://medium.com/budgetpedia/a-restatement-of-torontos-2018-budget-using-natural-categories-68fe4d8796fc)_ 
+in our Medium publication.
 `,
             }
         }
