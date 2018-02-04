@@ -75,6 +75,22 @@ let aboutbudgetpedia = {
             properties: {
                 markup: `## Our Mission
 
+Our mission is in two parts:
+- help make the budget more accessible to Torontonians, to support informed debate about the budget
+- advocate to the City for better access to budget data (and related results, staffing, and performance data)
+ and improvements in the budget reports, timeliness, and accuracy.
+
+ We need the second to achieve the first.
+
+ Here is a list of the initiatives that we think would provide benefits to everyone involved:
+ - improvements in the design of budget reports
+ - accurate, timely, automated, on-demand reports
+ - on-demand cost-centre reports, including financial data (budgets and actuals), plus staffing
+   and performnace data.
+ - a well-organized repository on Toronto's [open data portal](http://toronto.ca/open), to provide ready access to the data
+   listed above, plus source documents of related City reports.
+
+Toronto has about 13,000 cost centres (like community centres, parks, libraries, etc.).
 
 `,
             }
