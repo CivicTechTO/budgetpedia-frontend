@@ -17,10 +17,10 @@ class PageControllerClass extends React.Component {
             tocdata: null,
         };
         this.toolkit = null;
-        this.notToc = null;
+        this.noToc = null;
         this.anchorCallback = () => {
             let self = this;
-            if (self.notToc)
+            if (self.noToc)
                 return;
             let tocdata = [];
             setTimeout(() => {
@@ -104,7 +104,7 @@ class PageControllerClass extends React.Component {
                     return this.emitLocalComponent(model, key);
                 }
                 case 'section': {
-                    return React.createElement(section_controller_1.default, { key: key, model: model, notToc: !!this.notToc, getToC: this.getToC, isToC: !!this.state.tocdata });
+                    return React.createElement(section_controller_1.default, { key: key, model: model, noToc: !!this.noToc, getToC: this.getToC, isToC: !!this.state.tocdata });
                 }
                 default: {
                     let { index, description } = model;
@@ -119,7 +119,7 @@ class PageControllerClass extends React.Component {
         let { master } = this.toolkit;
         let index = master.getPageIndex(path);
         let model = master.getPageModel(index);
-        this.notToc = model.notToc;
+        this.noToc = model.noToc;
         this.toolkit.setStateModel(this, model, this.anchorCallback);
     }
     render() {

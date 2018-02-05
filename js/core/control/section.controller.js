@@ -24,7 +24,7 @@ class SectionControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'toc': {
-                    if (this.props.notToc)
+                    if (this.props.noToc)
                         return null;
                     return React.createElement(toc_view_1.default, { key: index, tocdata: this.props.getToC() });
                 }

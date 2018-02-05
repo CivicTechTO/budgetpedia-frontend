@@ -16,7 +16,7 @@ let pages = {
         controller: 'page',
         index: 'home',
         type:'page',
-        notToc:true,
+        noToc:true,
         attribution: {
             custodian:{
                 name: 'Henrik Bechmann',

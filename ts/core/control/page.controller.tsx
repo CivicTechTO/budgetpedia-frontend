@@ -1,10 +1,6 @@
 // page.controller.tsx
 // copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 
-/*
-    TODO: add handling and animation for anchors -- in-page and url anchors, around titles
-*/
-
 'use strict'
 
 import * as React from 'react';
@@ -37,11 +33,11 @@ class PageControllerClass extends React.Component<any,any> {
     }
 
     toolkit = null
-    notToc = null
+    noToc = null
 
     anchorCallback = () => {
         let self = this
-        if (self.notToc) return
+        if (self.noToc) return
         let tocdata = []
         setTimeout(()=>{
             let anchors = document.querySelectorAll('a.hash-anchor')
@@ -68,7 +64,7 @@ class PageControllerClass extends React.Component<any,any> {
         let index = master.getPageIndex(path)
         let model = master.getPageModel(index)
 
-        this.notToc = model.notToc
+        this.noToc = model.noToc
 
         this.toolkit.setStateModel(this, model, this.anchorCallback)
 
@@ -179,7 +175,7 @@ class PageControllerClass extends React.Component<any,any> {
                 return <SectionController
                     key = { key }
                     model = { model }
-                    notToc = { !!this.notToc }
+                    noToc = { !!this.noToc }
                     getToC = { this.getToC }
                     isToC = { !!this.state.tocdata }
                 />
