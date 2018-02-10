@@ -21,6 +21,7 @@
     "draft-js-plugins-editor": "^2.0.4",
     "draft-js-resizeable-plugin": "^2.0.1",
     "draft-js-static-toolbar-plugin": "^2.0.1",
+    "firebase": "^4.9.1",
     "history": "^4.7.2",
     "hoist-non-react-statics": "^2.3.1",
     "isomorphic-fetch": "^2.2.1",

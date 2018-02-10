@@ -3,6 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_redux_1 = require("react-redux");
 const react_router_redux_1 = require("react-router-redux");
+const firebase = require("firebase");
+const fireapp = firebase.initializeApp({
+    apiKey: "AIzaSyB3-RFiL63BlUtZ56CmL9TpDUJRAd0LLlw",
+    authDomain: "budgetpedia-89c3d.firebaseapp.com",
+    databaseURL: "https://budgetpedia-89c3d.firebaseio.com",
+    projectId: "budgetpedia-89c3d",
+    storageBucket: "budgetpedia-89c3d.appspot.com",
+    messagingSenderId: "66994833687",
+});
 const master_model_1 = require("../../gateway/master.model");
 let setStateModel = (self, model, callback) => {
     if (master_model_1.default.isPromise(model)) {
@@ -93,6 +102,7 @@ let toolkit = {
     updateProperties,
     getChildren,
     wrapComponent,
+    fireapp,
 };
 let coreControllerComposer = Controller => {
     let ConnectedController = react_redux_1.connect(state => ({ state }), {
