@@ -1,7 +1,12 @@
 // master.model.tsx
 
 import firebaseapi from './firebase.api'
+
 import model from '../model/model.interface'
+
+const firestore = firebaseapi.firestore()
+
+// console.log('firestore',firestore)
 
 const getPageIndex = path => {
     return model.getDocument('routes',path)
