@@ -8,7 +8,12 @@ import * as React from 'react'
 
 import {store, history} from './globaldataconfig.utility'
 
+import fireapi from '../../gateway/firebase.api'
+
 let state:any = store.getState() // get font-family for non material-ui components
+let fontFamily = state.resources.theme.fontFamily
+
+// set default user auth
 
 import { Provider } from 'react-redux'
 
@@ -24,7 +29,7 @@ const Main = ({globalmessage, version}) => (
     <Provider store={ store }>
         <MuiThemeProvider muiTheme = {muiTheme}>
             <MainView history = {history} globalmessage={globalmessage} 
-            style = {{fontFamily:state.resources.theme.fontFamily}}/>
+            style = {{fontFamily}}/>
         </MuiThemeProvider>
     </Provider>
 )

@@ -1,5 +1,6 @@
 // master.model.tsx
 
+import fireapi from './firebase.api'
 import model from '../model/model.interface'
 
 const getPageIndex = path => {
