@@ -8,7 +8,7 @@ import * as React from 'react'
 
 import {store, history} from './globaldataconfig.utility'
 
-import fireapi from '../../gateway/firebase.api'
+import firebaseapi from '../../gateway/firebase.api'
 
 let state:any = store.getState() // get font-family for non material-ui components
 let fontFamily = state.resources.theme.fontFamily
