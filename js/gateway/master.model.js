@@ -4,7 +4,21 @@ const firebase_api_1 = require("./firebase.api");
 const model_interface_1 = require("../model/model.interface");
 const firestore = firebase_api_1.default.firestore();
 const getPageIndex = path => {
-    return model_interface_1.default.getDocument('routes', path);
+    return new Promise((resolve, reject) => {
+        firestore.collection('routes').where('route', '==', path).get().then(querySnapshot => {
+            let index = null;
+            if (querySnapshot.empty) {
+                resolve(null);
+            }
+            else {
+                index = querySnapshot.docs[0].data()['index'];
+                resolve(index);
+            }
+        }).catch(error => {
+            console.log('error getting routes', error);
+            reject('error getting routes ' + error);
+        });
+    });
 };
 const getPageModel = index => {
     return model_interface_1.default.getDocument('pages', index);

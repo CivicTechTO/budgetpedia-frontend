@@ -9,7 +9,38 @@ const firestore = firebaseapi.firestore()
 // console.log('firestore',firestore)
 
 const getPageIndex = path => {
-    return model.getDocument('routes',path)
+
+    return new Promise( (resolve, reject)=> {
+
+        firestore.collection('routes').where('route','==',path).get().then(querySnapshot => {
+            let index = null
+            if (querySnapshot.empty) {
+
+                resolve(null)
+
+                // reject('Route not found for ' + path)
+
+            } else {
+
+                index = querySnapshot.docs[0].data()['index']
+
+                // console.log('getPageIndex',querySnapshot.docs,index)
+
+                resolve(index)
+
+            }
+
+        }).catch(error => {
+
+            console.log('error getting routes',error)
+
+            reject('error getting routes ' + error)
+
+        })
+
+    } )
+
+    // return model.getDocument('routes',path)
 }
 
 const getPageModel = index => {

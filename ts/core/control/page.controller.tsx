@@ -55,13 +55,13 @@ class PageControllerClass extends React.Component<any,any> {
         })
     }
 
-    componentDidMount() {
+    async componentDidMount() {
 
         // console.log('page did mount props',this.props)
 
         let { match :{ path } } = this.props
         let { master } = this.toolkit
-        let index = master.getPageIndex(path)
+        let index = await master.getPageIndex(path)
         let model = master.getPageModel(index)
 
         this.noToc = model.noToc
