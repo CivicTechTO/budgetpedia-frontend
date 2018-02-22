@@ -6,12 +6,11 @@ const firestore = firebase_api_1.default.firestore();
 const getPageIndex = path => {
     return new Promise((resolve, reject) => {
         firestore.collection('routes').where('route', '==', path).get().then(querySnapshot => {
-            let index = null;
             if (querySnapshot.empty) {
                 resolve(null);
             }
             else {
-                index = querySnapshot.docs[0].data()['index'];
+                let index = querySnapshot.docs[0].data()['index'];
                 resolve(index);
             }
         }).catch(error => {

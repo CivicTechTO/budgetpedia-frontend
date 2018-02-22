@@ -13,7 +13,7 @@ const getPageIndex = path => {
     return new Promise( (resolve, reject)=> {
 
         firestore.collection('routes').where('route','==',path).get().then(querySnapshot => {
-            let index = null
+
             if (querySnapshot.empty) {
 
                 resolve(null)
@@ -22,7 +22,7 @@ const getPageIndex = path => {
 
             } else {
 
-                index = querySnapshot.docs[0].data()['index']
+                let index = querySnapshot.docs[0].data()['index']
 
                 // console.log('getPageIndex',querySnapshot.docs,index)
 
