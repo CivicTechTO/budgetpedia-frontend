@@ -1,6 +1,6 @@
 .vscode
 node_modules/
 **/.DS_Store
-ts/gateway/firebase.api.tsx
-js/gateway/firebase.api.js
-dist/bundle.js
+# ts/gateway/firebase.api.tsx
+# js/gateway/firebase.api.js
+# dist/bundle.js
