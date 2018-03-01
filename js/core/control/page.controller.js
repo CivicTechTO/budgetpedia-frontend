@@ -124,12 +124,17 @@ class PageControllerClass extends React.Component {
     }
     componentDidMount() {
         return __awaiter(this, void 0, void 0, function* () {
-            let { match: { path } } = this.props;
-            let { master } = this.toolkit;
-            let index = yield master.getPageIndex(path);
-            let model = master.getPageModel(index);
-            this.noToc = model.noToc;
-            this.toolkit.setStateModel(this, model, this.anchorCallback);
+            try {
+                let { match: { path } } = this.props;
+                let { master } = this.toolkit;
+                let index = yield master.getPageIndex(path);
+                let model = master.getPageModel(index);
+                this.noToc = model.noToc;
+                this.toolkit.setStateModel(this, model, this.anchorCallback);
+            }
+            catch (e) {
+                console.log('error getting model', e);
+            }
         });
     }
     render() {

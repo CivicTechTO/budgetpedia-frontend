@@ -30,7 +30,7 @@ class PageMenuController extends React.Component {
                 React.createElement("div", { style: {
                         display: 'flex',
                         flexWrap: 'nowrap',
-                        overflow: "scroll",
+                        overflowX: "scroll",
                     }, ref: el => { this.scroller = el; } }, this.props.children)));
     }
 }

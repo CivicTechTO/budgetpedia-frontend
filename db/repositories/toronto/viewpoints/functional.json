@@ -364,32 +364,32 @@
                             "Baseline": true
                         }
                     }
+                }
+            }
+        },
+        "CORPORATEACCOUNTS": {
+            "Index": 5,
+            "NamingConfigRef": "CLUSTER",
+            "Components": {
+                "CORPFINANCING": {
+                    "Index": 0,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
                 },
-                "CORPORATEACCOUNTS": {
-                    "Index": 5,
-                    "NamingConfigRef": "CLUSTER",
-                    "Components": {
-                        "CORPFINANCING": {
-                            "Index": 0,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "CORPEXPENDITURES": {
-                            "Index": 1,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "CORPREVENUES": {
-                            "Index": 2,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        },
-                        "PARKINGTAGS": {
-                            "Index": 3,
-                            "NamingConfigRef": "PROGRAM",
-                            "Baseline": true
-                        }
-                    }
+                "CORPEXPENDITURES": {
+                    "Index": 1,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "CORPREVENUES": {
+                    "Index": 2,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
+                },
+                "PARKINGTAGS": {
+                    "Index": 3,
+                    "NamingConfigRef": "PROGRAM",
+                    "Baseline": true
                 }
             }
         }

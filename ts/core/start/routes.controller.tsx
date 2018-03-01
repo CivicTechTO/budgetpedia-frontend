@@ -16,7 +16,7 @@ let { Component } = React
 import { ConnectedRouter } from 'react-router-redux'
 import { Switch, Route, Redirect, Router } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+// import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 let ReactGA = require('react-ga')
 ReactGA.initialize('UA-4105209-11')

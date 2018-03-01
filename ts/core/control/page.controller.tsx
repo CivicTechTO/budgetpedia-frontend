@@ -59,18 +59,24 @@ class PageControllerClass extends React.Component<any,any> {
 
         // console.log('page did mount props',this.props)
 
-        let { match :{ path } } = this.props
-        let { master } = this.toolkit
-        let index = await master.getPageIndex(path)
-        let model = master.getPageModel(index)
+        try {
 
-        this.noToc = model.noToc
+            let { match :{ path } } = this.props
+            let { master } = this.toolkit
+            let index = await master.getPageIndex(path)
+            let model = master.getPageModel(index)
 
-        this.toolkit.setStateModel(this, model, this.anchorCallback)
+            this.noToc = model.noToc
 
-        // setTimeout(() => {
-        //     console.log('model',this.state.model)
-        // })
+            this.toolkit.setStateModel(this, model, this.anchorCallback)
+
+            // setTimeout(() => {
+            //     console.log('model',this.state.model)
+            // })
+
+        } catch (e) {
+            console.log('error getting model',e)
+        }
     }
 
     onClickChip = index => {
