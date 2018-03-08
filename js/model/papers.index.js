@@ -12,7 +12,7 @@ let torontobudget = {
             index: 'torontobudget',
             description: 'toronto budget restatement',
             properties: {
-                markup: `## The 2018 Toronto Budget, the Modernized Way
+                markup: `## The 2018 Toronto Budget: Our Modernized Prototype
 
 We restate the 2018 budget, using what we think is a more conventional, clearer, presentation than
 the City's way. This is our prototype.
