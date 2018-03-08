@@ -12,10 +12,10 @@ let torontobudget = {
             index: 'torontobudget',
             description: 'toronto budget restatement',
             properties: {
-                markup: `## The 2018 Toronto Budget, a More Conventional Way
+                markup: `## The 2018 Toronto Budget, the Modernized Way
 
-We restate the 2018 budget, using what we consider to be more conventional, clearer, organization, than
-the City's way.
+We restate the 2018 budget, using what we think is a more conventional, clearer, presentation than
+the City's way. This is our prototype.
 
 Here is the expense budget. Its main feature is the _core operating budget_ -- about $8.5B --
 which is the cost of staff, plus the rent, services, materials, supplies, etc required to support their work.
