@@ -55,7 +55,7 @@ Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4
     </figcaption>
 </figure>
 
-Note that we are striving for conceptual accuracy here. Many of the numbers are rough estimates, because
+Note that we are striving for conceptual clarity here. Many of the numbers are rough estimates, because
 we don't (yet!) have the exact data from the City that we would need for greater numerical accuracy.
 
 For the initial write-up about this restatement see _[A restatement of Toronto’s 2018 budget using natural categories](https://medium.com/budgetpedia/a-restatement-of-torontos-2018-budget-using-natural-categories-68fe4d8796fc)_ 
