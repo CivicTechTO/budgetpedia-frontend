@@ -40,6 +40,13 @@ let toplinklist = {
                 target: '/overview',
                 targetText: 'Overview',
             },
+            {
+                prompt: 'See our publications on our subsite',
+                icon: '/public/icons/ic_wb_sunny_black_48px.svg',
+                target: 'http://pubs.budgetpedia.ca',
+                targetText: 'pubs.budgetpedia.ca',
+                external: true,
+            },
         ],
     }
 };
