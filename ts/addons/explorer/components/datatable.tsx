@@ -179,7 +179,7 @@ class DataTable extends Component<DataTableProps, any> {
 
                     </FontIcon>
                     <span>Download</span>
-                </CSVLink>
+                </CSVLink> (right click "Save link as..." with ad blocker)
             </div>
             <div style = {{fontWeight:'bold'}} >{this.specifications.title}</div>
             <ReactTable 
