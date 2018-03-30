@@ -52,7 +52,7 @@
     "react-ga": "^2.4.1",
     "react-google-charts": "^1.5.7",
     "react-helmet": "^5.2.0",
-    "react-images-upload": "^1.0.6",
+    "react-images-upload": "^1.1.1",
     "react-redux": "^5.0.7",
     "react-redux-toastr": "^7.2.3",
     "react-router": "^4.2.0",
