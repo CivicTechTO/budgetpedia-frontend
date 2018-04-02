@@ -24,8 +24,8 @@ Here are some issues that I think could be raised for the upcoming election.
 staff-driven budget development, followed by fully formed budget review in the fall. 
 Too late for meaningful public input.
 
-2. __Narrative from the City is one of financial desperate straights, which is not true__. 
-This narrative is given space by inscrutable budget. But City balance sheet in great 
+2. __Narrative from the City is one of financial distress, which is not really true__. 
+This narrative is given space by inscrutable budget. But City balance sheet is in great 
 shape. Reserves, financial assets, tangible assets, net worth are all way up. See 
 [my article](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I) for a summary.
 
