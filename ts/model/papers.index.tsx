@@ -63,6 +63,8 @@ let torontobudget = {
                 markup:               
 `## The 2018 Toronto Budget: Our Modernized Prototype
 
+For our latest thinking on this see the [discussion paper](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa/view).
+
 We restate the 2018 budget, using what we think is a more conventional, clearer, presentation than
 the City's way. This is our prototype.
 
