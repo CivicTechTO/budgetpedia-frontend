@@ -241,6 +241,10 @@ let home = {
         },
         children: [
             {
+                repo: 'papers',
+                index: 'electionopinion',
+            },
+            {
                 repo: 'cards',
                 index: 'mainpageheader',
             },

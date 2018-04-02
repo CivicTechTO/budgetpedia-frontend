@@ -1,5 +1,53 @@
 // papers.index.tsx
 
+let electionopinion = {
+
+    controller:'paper',
+    index:'torontobudget',
+    description: 'toronto budget restatement',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'torontobudget',
+            description:'toronto budget restatement',
+            properties: {
+                markup: `
+## Opinion: Possible Issues for the Toronto November Election 
+_by Henrik Bechmann April 1, 2018_ {style="color:gray;margin-top:-16px"}
+
+Here are some issues that I think could be raised for the upcoming election.
+
+1. __City staff are trying to codify the closed budget development process__. 
+[see agenda item](https://www.toronto.ca/legdocs/mmis/2018/ex/bgrd/backgroundfile-113004.pdf) 
+(section 3b, page 9). Single public budget guidance meeting in May, then only 
+staff-driven budget development, followed by fully formed budget review in the fall. 
+Too late for meaningful public input.
+
+2. __Narrative from the City is one of financial desperate straights, which is not true__. 
+This narrative is given space by inscrutable budget. But City balance sheet in great 
+shape. Reserves, financial assets, tangible assets, net worth are all way up. See 
+[my article](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I) for a summary.
+
+3. Speaking of inscrutable budget, __a better (clearer, more transparent) budget is 
+achievable__. Main idea - switch to accrual based budgeting. 
+See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa) for details.
+
+4. __A great deal of money has been left on the table in recent years__. Behind the scenes 
+consensus seems to be that if City raised property taxes, Province would contribute more. 
+If Property taxes went up by 10% (about parity with area), that could be $400M x 2 = $800M/yr more.
+
+5. __Cultural and digital transformation of the City civil service is still not being 
+taken seriously__. These could lead to better planning, better community buy-in. City has 
+Chief Transformation Officer, but I'm not seeing progressive agenda here; likely 
+outsourcing focus.
+`,
+            }
+        }
+    ]
+}
+
 let torontobudget = {
     controller:'paper',
     index:'torontobudget',
@@ -1499,6 +1547,7 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    electionopinion,
     aboutbudgetpedia,
     torontobudget,
     staffing,
