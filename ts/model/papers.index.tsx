@@ -39,7 +39,7 @@ consensus seems to be that if City raised property taxes, Province would contrib
 If Property taxes went up by 10% (about parity with area), that could be $400M x 2 = $800M/yr more.
 
 5. __Cultural and digital transformation of the City civil service is still not being 
-taken seriously__. These could lead to better planning, better community buy-in. City has 
+taken seriously enough__. These could lead to better planning, better community buy-in. City has 
 Chief Transformation Officer, but I'm not seeing progressive agenda here; likely 
 outsourcing focus.
 `,
