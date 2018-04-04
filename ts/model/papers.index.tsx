@@ -17,7 +17,7 @@ let electionopinion = {
 ## Opinion: Possible Issues for the Toronto November Election 
 _by Henrik Bechmann April 1, 2018_ {style="color:gray;margin-top:-16px"}
 
-Here are some issues that I think could be raised for the upcoming election.
+Here are some budget related issues that I think could be raised for the upcoming election.
 
 1. __City staff are trying to codify the closed budget development process__. 
 [see agenda item](https://www.toronto.ca/legdocs/mmis/2018/ex/bgrd/backgroundfile-113004.pdf) 
