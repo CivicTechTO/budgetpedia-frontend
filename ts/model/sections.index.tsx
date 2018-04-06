@@ -255,9 +255,9 @@ let home = {
 We're an independent, non-profit, volunteer organization based in Toronto, Canada.
 
 Our aims are:
-- to make the Toronto budget more accessible to the people of Toronto, in order to 
+1. to make the Toronto budget more accessible to the people of Toronto, in order to 
 support informed debate about the budget
-- to advocate for improvements to the Toronto budget, and the budget process
+2. to advocate for improvements to the Toronto budget, and the budget process
 
 On the first point, we've
 - created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the Services Toronto provides
