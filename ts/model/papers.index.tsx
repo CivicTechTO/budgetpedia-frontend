@@ -1,5 +1,50 @@
 // papers.index.tsx
 
+let budgetpediaoverview = {
+    controller:'paper',
+    index:'torontobudget',
+    description: 'toronto budget restatement',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'torontobudget',
+            description:'toronto budget restatement',
+            properties: {
+                markup:`
+
+## Budgetpedia - Where we're at, April 2018
+
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
+Our aims are:
+
+1. to make the Toronto budget more **accessible** to the people of Toronto, in order to 
+support informed debate about the budget
+2. to advocate for **improvements** to the Toronto budget, and the budget process
+
+On the first point, we've
+- created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
+- created a prototype of a better [Toronto budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
+- started to understand Toronto's [capital investment strategy](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I)
+
+On the second point we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4)
+
+Also, we're working on making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
+there's quite a bit here already. See the <a href="#this-is-budgetpedia">contents</a> below.
+</div>
+
+<div style = "display:flex;justify-content:center;margin-top:24px">
+
+<img style = "max-width:600px; width:90%;align-self:flex-start;" src = "/public/images/bpworkshop.jpg" />
+
+</div>
+`,
+            }
+        }
+    ],    
+}
+
 let electionopinion = {
 
     controller:'paper',
@@ -1564,6 +1609,7 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    budgetpediaoverview,
     electionopinion,
     aboutbudgetpedia,
     torontobudget,
