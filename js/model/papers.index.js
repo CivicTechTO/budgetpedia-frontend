@@ -130,9 +130,11 @@ let aboutbudgetpedia = {
             properties: {
                 markup: `## Our Mission
 
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
+
 Our mission is in two parts:
-- help make the budget more accessible to Torontonians, to support informed debate about the budget
-- advocate to the City for better access to budget data (and related results, staffing, and performance data)
+1. help make the budget more accessible to Torontonians, to support informed debate about the budget
+2. advocate to the City for better access to budget data (and related results, staffing, and performance data)
  and improvements in the budget reports, timeliness, and accuracy.
 
  We need the second to achieve the first.
@@ -147,6 +149,15 @@ Our mission is in two parts:
 
 Toronto has about 13,000 cost centres (like community centres, parks, libraries, etc.).
 
+</div>
+
+<div style = "display:flex;justify-content:center;margin-top:24px">
+
+<img style = "max-width:600px; width:90%;align-self:flex-start;" src = "/public/images/dufferinwadingpool_a.jpg" />
+
+</div>
+
+<p style = "text-align:center; font-size:smaller; font-style:italic">Dufferin Grove Park wading pool, a few years ago</p>
 `,
             }
         }
