@@ -60,14 +60,28 @@ let electionopinion = {
 ## Opinion: Possible Issues for the Toronto November Election 
 _by Henrik Bechmann April 1, 2018_ {style="color:gray;margin-top:-16px"}
 
-<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
-Here are some budget related issues that I think could be raised for the upcoming election.
+Here are some budget-related issues that I think could be raised for the upcoming election.
+
+<div style = "display:flex;flex-flow:row wrap;justify-content:flex-start;align-items:flex-start">
+
+<div style = "display:flex;min-width:260px;flex:300px;">
 
 1. __City staff are trying to codify the closed budget development process__. 
 [see agenda item](https://www.toronto.ca/legdocs/mmis/2018/ex/bgrd/backgroundfile-113004.pdf) 
 (section 3b, page 9). Single public budget guidance meeting in May, then only 
 staff-driven budget development, followed by fully formed budget review in the fall. 
 Too late for meaningful public input.
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+<img style="width:90%" src="/public/images/budgetdefault.jpg" /><br />
+<span style = "font-size:x-small;font-style:italic">Toronto Budget Committee</span>
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;">
 
 2. __Narrative from the City is one of financial distress, which is not really true__. 
 This narrative is given space by inscrutable budget. But City balance sheet is in great 
@@ -76,18 +90,49 @@ it seems that the City has prioritized capital over services. So capital assets 
 services not so much. See 
 [my article](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I) for a summary.
 
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;">
+
 3. Speaking of inscrutable budget, __a better (clearer, more transparent) budget is 
 achievable__. Main idea - switch to accrual based budgeting. 
 See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa) for details.
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;">
 
 4. __A great deal of money has been left on the table in recent years__. Behind the scenes 
 consensus seems to be that if City raised property taxes, Province would contribute more. 
 If Property taxes went up by 10% (about parity with area), that could be $400M x 2 = $800M/yr more.
 
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;">
+
 5. __Cultural and digital transformation of the City civil service is still not being 
 taken seriously enough__. These could lead to better planning, better community buy-in. City has 
 Chief Transformation Officer, but I'm not seeing progressive agenda here; likely 
 outsourcing focus.
+
+</div>
+
+<div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+</div>
+
 </div>
 `,
             }
@@ -201,7 +246,7 @@ Toronto has about 13,000 cost centres (like community centres, parks, libraries,
 
 </div>
 
-<p style = "text-align:center; font-size:smaller; font-style:italic">Dufferin Grove Park wading pool, a few years ago</p>
+<p style = "text-align:center; font-size:smaller; font-style:italic">Dufferin Grove Park wading pool</p>
 `,
             }
         }

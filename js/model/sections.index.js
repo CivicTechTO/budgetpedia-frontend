@@ -8,7 +8,7 @@ let torontobudget = {
     type: 'section',
     tag: 'Toronto Budget',
     properties: {
-        title: "The Toronto Budget",
+        title: "A Better Toronto Budget",
         description: `
 Here is what we think is an accessbile view of the Toronto budget.
 `,
@@ -238,9 +238,9 @@ let home = {
         properties: {
             title: "Welcome",
             description: `
-<div style = "float:right;width:200px;text-align:center;margin-top:-60px;max-width:40%">
+<div style = "float:right;width:200px;padding:3px;line-height:1;text-align:center;margin-top:-60px;max-width:40%">
 <img style="width:100%" src="/public/images/Makerspace-4.jpg" />
-<span style="font-size:x-small;font-style:italic">Toronto Library Makerspace</span>
+<span style="font-size:x-small;font-style:italic;">Public service: a Toronto Library Makerspace program</span>
 </div>
 We're an independent, non-profit, volunteer organization based in Toronto, Canada.`,
         },
