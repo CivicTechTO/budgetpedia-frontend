@@ -34,9 +34,10 @@ Also, we're working on making this website more useful (give us another year on 
 there's quite a bit here already. See the <a href="#this-is-budgetpedia">contents</a> below.
 </div>
 
-<div style = "display:flex;justify-content:center;margin-top:24px">
+<div style = "display:flex;justify-content:center;margin-top:24px;text-align:center">
 
-<img style = "max-width:600px; width:90%;align-self:flex-start;" src = "/public/images/bpworkshop.jpg" />
+<img style = "max-width:600px; width:90%;align-self:flex-start;" src = "/public/images/bpworkshop.jpg" /><br />
+<span style = "font-size:x-small;font-style:italic">A Budgetpedia workshop</span>
 
 </div>
 `,
@@ -94,6 +95,9 @@ services not so much. See
 
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
+<img style="width:90%" src="/public/images/berczy.jpg" /><br />
+<span style = "font-size:x-small;font-style:italic">Berczy Park, $7.2M</span>
+
 </div>
 
 <div style = "display:flex;min-width:260px;flex:300px;">
@@ -105,6 +109,9 @@ See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6
 </div>
 
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+<img style="width:90%" src="/public/images/accrualbudget.png" /><br />
+<span style = "font-size:x-small;font-style:italic">Accrual-based budgeting</span>
 
 </div>
 
@@ -118,6 +125,9 @@ If Property taxes went up by 10% (about parity with area), that could be $400M x
 
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
+<img style="width:90%" src="/public/images/queenspark.jpg" /><br />
+<span style = "font-size:x-small;font-style:italic">Queen's Park (Ontario government)</span>
+
 </div>
 
 <div style = "display:flex;min-width:260px;flex:300px;">
@@ -130,6 +140,9 @@ outsourcing focus.
 </div>
 
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
+
+<img style="width:90%" src="/public/images/seeclickfix.png" /><br />
+<span style = "font-size:x-small;font-style:italic">[SeeClickFix](https://en.seeclickfix.com/) practical civic engagement</span>
 
 </div>
 
@@ -246,7 +259,7 @@ Toronto has about 13,000 cost centres (like community centres, parks, libraries,
 
 </div>
 
-<p style = "text-align:center; font-size:smaller; font-style:italic">Dufferin Grove Park wading pool</p>
+<p style = "text-align:center; font-size:x-small; font-style:italic">Public service: Dufferin Grove Park wading pool</p>
 `,
             }
         }
