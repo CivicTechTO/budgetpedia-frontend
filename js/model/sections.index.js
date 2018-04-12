@@ -237,7 +237,12 @@ let home = {
         tag: 'Top:Home',
         properties: {
             title: "Welcome",
-            description: `We're an independent, non-profit, volunteer organization based in Toronto, Canada.`,
+            description: `
+<div style = "float:right;width:200px;text-align:center;margin-top:-60px;max-width:40%">
+<img style="width:100%" src="/public/images/Makerspace-4.jpg" />
+<span style="font-size:x-small;font-style:italic">Toronto Library Makerspace</span>
+</div>
+We're an independent, non-profit, volunteer organization based in Toronto, Canada.`,
         },
         children: [
             {
@@ -245,12 +250,12 @@ let home = {
                 index: 'budgetpediaoverview',
             },
             {
-                repo: 'papers',
-                index: 'electionopinion',
-            },
-            {
                 repo: 'cards',
                 index: 'mainpageheader',
+            },
+            {
+                repo: 'papers',
+                index: 'electionopinion',
             },
             {
                 controller: 'section',
