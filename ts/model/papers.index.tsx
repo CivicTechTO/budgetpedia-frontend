@@ -17,6 +17,7 @@ let electionopinion = {
 ## Opinion: Possible Issues for the Toronto November Election 
 _by Henrik Bechmann April 1, 2018_ {style="color:gray;margin-top:-16px"}
 
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 Here are some budget related issues that I think could be raised for the upcoming election.
 
 1. __City staff are trying to codify the closed budget development process__. 
@@ -44,6 +45,7 @@ If Property taxes went up by 10% (about parity with area), that could be $400M x
 taken seriously enough__. These could lead to better planning, better community buy-in. City has 
 Chief Transformation Officer, but I'm not seeing progressive agenda here; likely 
 outsourcing focus.
+</div>
 `,
             }
         }

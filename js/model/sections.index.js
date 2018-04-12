@@ -238,12 +238,13 @@ let home = {
         properties: {
             title: "Welcome",
             description: `
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 We're an independent, non-profit, volunteer organization based in Toronto, Canada.
 
 Our aims are:
-1. to make the Toronto budget more accessible to the people of Toronto, in order to 
+1. to make the Toronto budget more **accessible** to the people of Toronto, in order to 
 support informed debate about the budget
-2. to advocate for improvements to the Toronto budget, and the budget process
+2. to advocate for **improvements** to the Toronto budget, and the budget process
 
 On the first point, we've
 - created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
@@ -254,6 +255,13 @@ On the second point we've created an [advocacy platform](https://docs.google.com
 
 Also, we're working on making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
 there's quite a bit here already. See the <a href="#this-is-budgetpedia">contents</a> below.
+</div>
+
+<div style = "display:flex;justify-content:center;margin-top:24px">
+
+<img style = "max-width:600px; width:90%;align-self:flex-start;" src = "/public/images/bpworkshop.jpg" />
+
+</div>
 `,
         },
         children: [
