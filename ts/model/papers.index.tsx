@@ -80,7 +80,7 @@ Too late for meaningful public input.
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/budgetdefault.jpg" /><br />
-<span style = "font-size:x-small;font-style:italic">Toronto Budget Committee</span>
+<span style = "font-size:x-small;font-style:italic">Toronto Budget Committee allows 5 minute deputations</span>
 
 </div>
 
@@ -98,7 +98,7 @@ services not so much. See
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/berczy.jpg" /><br />
-<span style = "font-size:x-small;font-style:italic">Berczy Park, $7.2M</span>
+<span style = "font-size:x-small;font-style:italic">Berczy Park, $7.2M, high end investment</span>
 
 </div>
 
@@ -113,7 +113,7 @@ See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/accrualbudget.png" /><br />
-<span style = "font-size:x-small;font-style:italic">Accrual-based budgeting</span>
+<span style = "font-size:x-small;font-style:italic">Accrual-based budgeting - better</span>
 
 </div>
 
@@ -128,7 +128,7 @@ If Property taxes went up by 10% (about parity with area), that could be $400M x
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/queenspark.jpg" /><br />
-<span style = "font-size:x-small;font-style:italic">Queen's Park (Ontario government)</span>
+<span style = "font-size:x-small;font-style:italic">Queen's Park (Ontario government) said to be willing to spend more</span>
 
 </div>
 
@@ -144,7 +144,7 @@ outsourcing focus.
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/seeclickfix.png" /><br />
-<span style = "font-size:x-small;font-style:italic">[SeeClickFix](https://en.seeclickfix.com/) practical civic engagement</span>
+<span style = "font-size:x-small;font-style:italic">[SeeClickFix](https://en.seeclickfix.com/) - an example of practical civic engagement</span>
 
 </div>
 
