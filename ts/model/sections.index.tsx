@@ -255,7 +255,7 @@ let home = {
 `
 <div style = "float:right;width:200px;padding:3px;line-height:1;text-align:center;margin-top:-60px;max-width:40%">
 <img style="width:100%" src="/public/images/Makerspace-4.jpg" />
-<span style="font-size:x-small;font-style:italic;">Public service: a Toronto Library Makerspace program</span>
+<span style="font-size:x-small;font-style:italic;">Innovative public service: a Toronto Library Makerspace program</span>
 </div>
 We're an independent, non-profit, volunteer organization based in Toronto, Canada.`,
         },
