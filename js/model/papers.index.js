@@ -250,7 +250,7 @@ let aboutbudgetpedia = {
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
-Our mission is in two parts:
+Our mission is in two parts: {style=margin-top:0}
 1. help make the budget more accessible to Torontonians, to support informed debate about the budget
 2. advocate to the City for better access to budget data (and related results, staffing, and performance data)
  and improvements in the budget reports, timeliness, and accuracy.
