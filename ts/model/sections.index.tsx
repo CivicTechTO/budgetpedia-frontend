@@ -6,7 +6,7 @@ let torontobudget = {
     anchor:'torontobudget',
     description:'header for overview page',
     type:'section',
-    tag:'Toronto Budget',
+    tag:'A Better Budget',
     properties:{
         title:"A Better Toronto Budget",
         description: 
