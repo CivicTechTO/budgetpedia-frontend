@@ -24,14 +24,26 @@ support informed debate about the budget
 2. to advocate for **improvements** to the Toronto budget, and the budget process
 
 On the first point, we've
-- created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
-- created a prototype of a better [Toronto budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
-- started to understand Toronto's [capital investment strategy](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I)
 
-On the second point we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4)
+1. created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
+2. created a prototype of a better [Toronto budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
+3. started to understand Toronto's [capital investment strategy](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I)
 
-Also, we're working on making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
+On the second point 
+
+4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4)
+
+For both 
+
+5. we have an ongoing [research program](https://drive.google.com/open?id=1j4ylfNXSd3Ewqjt6eDSFVVNkBETE-AtN8TJDfGz-G-o).
+
+Also, we're working on 
+
+6. making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
 there's quite a bit here already. See the <a href="#this-is-budgetpedia">contents</a> below.
+
+
+
 </div>
 
 <div style = "display:flex;justify-content:center;margin-top:24px;text-align:center">
@@ -229,8 +241,8 @@ Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4
 Note that we are striving for conceptual clarity here. Many of the numbers are rough estimates, because
 we don't (yet!) have the exact data from the City that we would need for greater numerical accuracy. {style=margin-top:0}
 
-For the initial write-up about this restatement see _[A restatement of Toronto’s 2018 budget using natural categories](https://medium.com/budgetpedia/a-restatement-of-torontos-2018-budget-using-natural-categories-68fe4d8796fc)_ 
-in our Medium publication.
+For a systematic discussion paper about imporved budget design see 
+[Modernized Toronto Budget Prototype V. 1](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
 
 </div>
 `,
