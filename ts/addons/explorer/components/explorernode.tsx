@@ -459,7 +459,7 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
                     borderRight:"1px solid silver",
                 },
                 this.state.animation
-                ]
+                ] as any
             }>
             <div style={
                 { 

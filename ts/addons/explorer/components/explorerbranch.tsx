@@ -2226,7 +2226,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
         <div style = {
             {maxHeight:maxheight,transition:'max-height .5s',overflow:'hidden'}
             }>
-        <div style = {[this.state.animations.buttons,{marginBottom:'12px'}]}>
+        <div style = {[this.state.animations.buttons,{marginBottom:'12px'}] as any}>
 
         { makeselections }
 
@@ -2256,7 +2256,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
                 overflow:'hidden',
                 display:"inline-block",
                 transition:'height .3s,max-width .3s',
-            }]}>
+            }] as any}>
             <div 
                 style = {
                     {   height:'48px',

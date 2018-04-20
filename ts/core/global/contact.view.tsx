@@ -30,7 +30,7 @@ class ContactView extends React.Component<Props, any> {
         return (
 
             <StyleRoot>
-                <div style={[defaultStyle,this.props.style]}>
+                <div style={[defaultStyle,this.props.style] as any}>
                     contact: <a 
                         style = {[{
                             color:'white',
@@ -39,7 +39,7 @@ class ContactView extends React.Component<Props, any> {
                                 background: 'black',
                             },
                             ':visited':{color:'gold'},
-                        },this.props.contactStyle]}
+                        },this.props.contactStyle] as any}
                         target="_blank" href={this.props.contactAddress}
                         >
                             {this.props.contactPrompt}
