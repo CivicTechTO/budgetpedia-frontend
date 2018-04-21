@@ -5,7 +5,8 @@ import firebaseapi from './firebase.api'
 import model from '../model/model.interface'
 
 const firestore = firebaseapi.firestore()
-
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+firestore.settings(settings)
 // console.log('firestore',firestore)
 
 const getPageIndex = path => {
