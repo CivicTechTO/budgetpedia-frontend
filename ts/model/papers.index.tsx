@@ -32,7 +32,8 @@ On the first point, we've
 On the second point 
 
 4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4), and a 
-[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for a better budget design for the Toronto budget committee
+[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for a better budget design for the Toronto budget committee.
+We're also starting to collect notes on concern (red flags showing up) about [Toronto's Financial Controls](https://drive.google.com/open?id=16V1SkA8VEZ4i76kfhy6ijeAGrxbUzZ--xzJrtSZhhJ0).
 
 For both 
 
