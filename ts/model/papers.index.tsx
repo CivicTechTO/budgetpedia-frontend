@@ -26,13 +26,13 @@ support informed debate about the budget
 On the first point, we've
 
 1. created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
-2. created a prototype of a better [Toronto budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
+2. created a prototype of ancillary an [Toronto operating _activities_ budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
 3. started to understand Toronto's [capital investment strategy](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I)
 
 On the second point 
 
 4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4), and a 
-[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for a better budget design 
+[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _activities_ budget design 
 ([slide deck](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR))for the Toronto budget committee.
 We're also starting to collect notes on concern (red flags showing up) about [Toronto's Financial Controls](https://drive.google.com/open?id=16V1SkA8VEZ4i76kfhy6ijeAGrxbUzZ--xzJrtSZhhJ0).
 
@@ -102,8 +102,8 @@ Too late for meaningful public input.
 <div style = "display:flex;min-width:260px;flex:300px;">
 
 2. __Narrative from the City is one of financial distress, which is not really true__. 
-This narrative is given space by inscrutable budget. But City balance sheet is in great 
-shape. Reserves, financial assets, tangible assets, net worth are all way up. In fact 
+This narrative is given space by a cash-based operating budget. But City balance sheet is in great 
+shape. Reserves, financial assets, tangible assets, net worth are all way up. Indeed 
 it seems that the City has prioritized capital over services. So capital assets are improving;
 services not so much. See 
 [my article](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I) for a summary.
@@ -119,7 +119,7 @@ services not so much. See
 
 <div style = "display:flex;min-width:260px;flex:300px;">
 
-3. Speaking of inscrutable budget, __a better (clearer, more transparent) budget is 
+3. __An ancillary, activities-based (clearer, more transparent) budget is 
 achievable__. Main idea - switch to accrual based budgeting. 
 See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa) for details.
 
@@ -128,7 +128,7 @@ See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/accrualbudget.png" /><br />
-<span style = "font-size:x-small;font-style:italic">Accrual-based budgeting - better</span>
+<span style = "font-size:x-small;font-style:italic">Activities-based budgeting - alternative</span>
 
 </div>
 

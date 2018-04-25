@@ -1153,7 +1153,7 @@ class ExplorerBranch extends Component {
                 React.createElement(DropDownMenu_1.default, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                         branch.selectViewpoint(value);
                     } },
-                    React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Internal Budget"),
+                    React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Operating Cash Budget"),
                     React.createElement(MenuItem_1.default, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
                     React.createElement(MenuItem_1.default, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
                     React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Audited Actual"),
