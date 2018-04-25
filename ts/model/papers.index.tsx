@@ -183,14 +183,18 @@ let torontobudget = {
             description:'toronto budget restatement',
             properties: {
                 markup:               
-`## The 2018 Toronto Budget: Our Modernized Prototype
+`## The 2018 Toronto Budget: Our _Activities_ Based Prototype
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
+The current Toronto budget is cash based, which can be confusing in certain contexts,
+so we create an ancillary _activities_ based budget.
+
 For our latest thinking on this see the [discussion paper](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa/view). {style=margin-top:0}
 
-We restate the 2018 budget, using what we think is a more conventional, clearer, presentation than
-the City's way. This is our prototype.
+We restate the 2018 budget, using an _activities_ based model, commonly called an accrual based model. 
+We think this can be a more conventional, clearer, presentation than
+the cash based model in certain contexts. This is our prototype.
 
 Below is the expense budget. Its main feature is the _core operating budget_ -- about $8.5B --
 which is the cost of staff, plus the rent, services, materials, supplies, etc required to support their work.
