@@ -1,7 +1,8 @@
+// followupbubble.view.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const markupblock_view_1 = require("./markupblock.view");
+import * as React from 'react';
+import MarkupBlockView from './markupblock.view';
 class FollowupBubbleView extends React.Component {
     constructor() {
         super(...arguments);
@@ -36,7 +37,7 @@ class FollowupBubbleView extends React.Component {
         return React.createElement("aside", { style: this.bubbleStyle },
             React.createElement("div", { style: this.firstArrowStyle }),
             React.createElement("div", { style: this.secondArrowStyle }),
-            React.createElement(markupblock_view_1.default, { markup: this.props.markup }));
+            React.createElement(MarkupBlockView, { markup: this.props.markup }));
     }
 }
-exports.default = FollowupBubbleView;
+export default FollowupBubbleView;

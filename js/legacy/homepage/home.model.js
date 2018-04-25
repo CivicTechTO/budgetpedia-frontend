@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// home.model.tsx
 let torontonuggettitle = 'About Toronto <span style="font-size:smaller">(source: [StatsCan Census](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=01&Data=Count&SearchText=Toronto&SearchType=Begins&SearchPR=01&TABID=1&B1=All){target="_blank" style="color:white"})</span>';
 let torontonuggetlist = [
     {
@@ -333,4 +332,4 @@ let model = {
     thirdlinklistheader,
     thirdlinklistitems,
 };
-exports.default = model;
+export default model;

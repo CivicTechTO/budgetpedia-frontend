@@ -1,12 +1,13 @@
+// cards.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const core_controller_composer_1 = require("./core.controller.composer");
-const Card_1 = require("material-ui/Card");
-const cardtitle_view_1 = require("./views/cardtitle.view");
-const html_view_1 = require("./views/html.view");
-const list_controller_1 = require("./list.controller");
-const markupblock_view_1 = require("./views/markupblock.view");
+import * as React from 'react';
+import coreControllerComposer from './core.controller.composer';
+import { Card, CardText, CardActions, CardHeader, CardMedia } from 'material-ui/Card';
+import CardTitleView from './views/cardtitle.view';
+import HtmlView from './views/html.view';
+import ListController from './list.controller';
+import MarkupBlockView from './views/markupblock.view';
 class CardControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -18,12 +19,12 @@ class CardControllerClass extends React.Component {
             let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
             if (childcomponents) {
-                childcomponents = [...childcomponents];
+                childcomponents = [...childcomponents]; // work with copy; anticipate change below
             }
             let componentType = null;
             switch (type) {
                 case 'card': {
-                    componentType = Card_1.Card;
+                    componentType = Card;
                     childcomponents = [
                         ...childcomponents,
                         React.createElement("div", { key: 'clear', style: { clear: "both" } }),
@@ -31,31 +32,32 @@ class CardControllerClass extends React.Component {
                     break;
                 }
                 case 'htmlview': {
-                    componentType = html_view_1.default;
+                    // console.log('htmlview',component,childcomponents)
+                    componentType = HtmlView;
                     break;
                 }
                 case 'cardtitle': {
-                    componentType = cardtitle_view_1.default;
+                    componentType = CardTitleView;
                     break;
                 }
                 case 'cardtext': {
-                    componentType = Card_1.CardText;
+                    componentType = CardText;
                     break;
                 }
                 case 'markupblock': {
-                    componentType = markupblock_view_1.default;
+                    componentType = MarkupBlockView;
                     break;
                 }
                 case 'cardactions': {
-                    componentType = Card_1.CardActions;
+                    componentType = CardActions;
                     break;
                 }
                 case 'cardheader': {
-                    componentType = Card_1.CardHeader;
+                    componentType = CardHeader;
                     break;
                 }
                 case 'cardmedia': {
-                    componentType = Card_1.CardMedia;
+                    componentType = CardMedia;
                     break;
                 }
                 default: {
@@ -79,7 +81,7 @@ class CardControllerClass extends React.Component {
                     return this.emitLocalComponent(model, key);
                 }
                 case 'list': {
-                    return React.createElement(list_controller_1.default, { key: key, model: model });
+                    return React.createElement(ListController, { key: key, model: model });
                 }
                 default: {
                     let { description } = model;
@@ -101,5 +103,5 @@ class CardControllerClass extends React.Component {
         return component;
     }
 }
-let CardController = core_controller_composer_1.default(CardControllerClass);
-exports.default = CardController;
+let CardController = coreControllerComposer(CardControllerClass);
+export default CardController;

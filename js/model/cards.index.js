@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// cards.index.tsx
 let budgetssummary = {
     type: 'card',
     controller: 'card',
@@ -313,4 +312,4 @@ let cards = {
     mainpageheader,
     mainpagefooter,
 };
-exports.default = cards;
+export default cards;

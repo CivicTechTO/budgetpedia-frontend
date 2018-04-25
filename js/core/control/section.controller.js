@@ -1,16 +1,18 @@
+// section.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const core_controller_composer_1 = require("./core.controller.composer");
-const narrationbubble_view_1 = require("./views/narrationbubble.view");
-const followupbubble_view_1 = require("./views/followupbubble.view");
-const card_controller_1 = require("./card.controller");
-const list_controller_1 = require("./list.controller");
-const paper_controller_1 = require("./paper.controller");
-const media_controller_1 = require("./media.controller");
-const custom_controller_1 = require("./custom.controller");
-const toc_view_1 = require("./views/toc.view");
-const section_view_1 = require("./views/section.view");
+import * as React from 'react';
+import coreControllerComposer from './core.controller.composer';
+import NarrationBubbleView from './views/narrationbubble.view';
+import FollowupBubbleView from './views/followupbubble.view';
+// legal components
+import CardController from './card.controller';
+import ListController from './list.controller';
+import PaperController from './paper.controller';
+import MediaController from './media.controller';
+import CustomController from './custom.controller';
+import ToCView from './views/toc.view';
+import SectionView from './views/section.view';
 class SectionControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -25,12 +27,12 @@ class SectionControllerClass extends React.Component {
             switch (type) {
                 case 'toc': {
                     if (this.props.noToc)
-                        return null;
-                    return React.createElement(toc_view_1.default, { key: index, tocdata: this.props.getToC() });
+                        return null; //<div key = {index}></div>
+                    return React.createElement(ToCView, { key: index, tocdata: this.props.getToC() });
                 }
                 case 'section': {
                     properties.id = anchor;
-                    componentType = section_view_1.default;
+                    componentType = SectionView;
                     break;
                 }
                 default: {
@@ -80,23 +82,23 @@ class SectionControllerClass extends React.Component {
                     return output;
                 }
                 case 'card': {
-                    controllerclass = React.createElement(card_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(CardController, { key: key, model: model });
                     break;
                 }
                 case 'list': {
-                    controllerclass = React.createElement(list_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(ListController, { key: key, model: model });
                     break;
                 }
                 case 'media': {
-                    controllerclass = React.createElement(media_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(MediaController, { key: key, model: model });
                     break;
                 }
                 case 'paper': {
-                    controllerclass = React.createElement(paper_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(PaperController, { key: key, model: model });
                     break;
                 }
                 case 'custom': {
-                    controllerclass = React.createElement(custom_controller_1.default, { key: key, model: model });
+                    controllerclass = React.createElement(CustomController, { key: key, model: model });
                     break;
                 }
                 default: {
@@ -111,9 +113,9 @@ class SectionControllerClass extends React.Component {
             let isFollowups = followups && followups[controller] && followups[controller][index];
             if (isNarratives || isFollowups) {
                 output = React.createElement("div", { key: key },
-                    isNarratives ? React.createElement(narrationbubble_view_1.default, { markup: narratives[controller][index] }) : null,
+                    isNarratives ? React.createElement(NarrationBubbleView, { markup: narratives[controller][index] }) : null,
                     controllerclass,
-                    isFollowups ? React.createElement(followupbubble_view_1.default, { markup: followups[controller][index] }) : null);
+                    isFollowups ? React.createElement(FollowupBubbleView, { markup: followups[controller][index] }) : null);
             }
             else {
                 output = controllerclass;
@@ -129,10 +131,10 @@ class SectionControllerClass extends React.Component {
     render() {
         let { model } = this.state;
         if (!model)
-            return React.createElement(section_view_1.default, null);
+            return React.createElement(SectionView, null);
         let component = this.emitComponent(model, model.index);
         return component;
     }
 }
-let SectionController = core_controller_composer_1.default(SectionControllerClass);
-exports.default = SectionController;
+let SectionController = coreControllerComposer(SectionControllerClass);
+export default SectionController;

@@ -1,11 +1,17 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const databaseapi_1 = require("./databaseapi");
-const getbudgetnode_1 = require("../modules/getbudgetnode");
-const node_class_1 = require("./node.class");
-const constants_1 = require("../constants");
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// budgetbranch.tsx
+/*
+
+TODO: fix addnode to pass along cell settings for new child
+
+*/
+import databaseapi from './databaseapi';
+import getBudgetNode from '../modules/getbudgetnode';
+import BudgetNode from './node.class';
+import { AspectNameToDatasetName, } from '../constants';
 class BudgetBranch {
     constructor(parms) {
+        // this generates a trigger to create a budget node object
         this.getInitialBranchNodeParms = () => {
             let defaults = this.getProps().declarationData.defaults.node;
             let branchSettings = this.branchDeclaration;
@@ -28,6 +34,7 @@ class BudgetBranch {
             budgetNodeParms = Object.assign(defaults, budgetNodeParms);
             return budgetNodeParms;
         };
+        // this is a response to the addNode action
         this.addNode = (budgetNodeUid, nodeIndex, budgetNodeParms) => {
             let budgetBranch = this;
             let { dataPath } = budgetNodeParms;
@@ -36,13 +43,14 @@ class BudgetBranch {
             let viewpointData = budgetBranch.state.viewpointData;
             if (!viewpointData)
                 return;
-            let treeNodeData = getbudgetnode_1.default(viewpointData, dataPath);
+            let treeNodeData = getBudgetNode(viewpointData, dataPath);
             if (!treeNodeData) {
                 console.error('failure to find treenode data', dataPath, viewpointData);
             }
             let branchNodes = budgetBranch.nodes;
             let parentNode = (nodeIndex === 0) ? null : branchNodes[branchNodes.length - 1];
-            let budgetNode = new node_class_1.default(budgetNodeParms, budgetNodeUid, treeNodeData, parentNode);
+            // TODO: obtain and pass cell configurations - yearScope and chartConfigs
+            let budgetNode = new BudgetNode(budgetNodeParms, budgetNodeUid, treeNodeData, parentNode);
             branchNodes[nodeIndex] = budgetNode;
             budgetBranch.setState({
                 branchNodes,
@@ -53,6 +61,7 @@ class BudgetBranch {
             let nodes = budgetBranch.nodes;
             let node;
             for (node of nodes) {
+                // console.log('node in saveNodeStates',node)
                 node.oldNodeState.hasChildren = !!node.treeNodeData.Components;
             }
         };
@@ -65,7 +74,7 @@ class BudgetBranch {
             let branchNodes = budgetBranch.nodes;
             for (nodeIndex in branchNodes) {
                 let budgetNode = branchNodes[nodeIndex];
-                let dataNode = getbudgetnode_1.default(viewpointData, budgetNode.dataPath);
+                let dataNode = getBudgetNode(viewpointData, budgetNode.dataPath);
                 budgetNode.updateDataNode(dataNode);
                 budgetNode.resetCells();
             }
@@ -87,6 +96,7 @@ class BudgetBranch {
                 branchNodes,
             });
         };
+        // this resets the branch in response to the change aspect user request
         this.switchAspect = () => {
             let budgetBranch = this;
             let { actions, nodeCallbacks: callbacks } = budgetBranch;
@@ -108,10 +118,15 @@ class BudgetBranch {
             for (nodeIndex in branchNodes) {
                 parentBudgetNode = budgetNode;
                 budgetNode = branchNodes[nodeIndex];
-                let dataNode = getbudgetnode_1.default(viewpointData, budgetNode.dataPath);
+                let dataNode = getBudgetNode(viewpointData, budgetNode.dataPath);
                 if (dataNode) {
+                    // check previous cell configuration against previous node
+                    // TODO: THIS IS A PROXY THAT NEEDS TO BE REPLACED
+                    // there is only one chart where there should be 2
                     let deeperdata = ((!!dataNode.Components) && (!budgetNode.oldNodeState.hasChildren));
+                    // there are two charts where there should be 1
                     let shallowerdata = ((!dataNode.Components) && (budgetNode.oldNodeState.hasChildren));
+                    // now set budgetNode with new data node
                     let parentDataNode = null;
                     if (nodeIndex > 0) {
                         parentDataNode = branchNodes[nodeIndex - 1].treeNodeData;
@@ -119,6 +134,7 @@ class BudgetBranch {
                     if (deeperdata || shallowerdata) {
                         switchResults.deeperdata = deeperdata;
                         switchResults.shallowerdata = shallowerdata;
+                        // replace budgetNode
                         isError = true;
                         let prevBudgetNode = branchNodes[nodeIndex - 1];
                         let removed = branchNodes.splice(nodeIndex);
@@ -128,6 +144,7 @@ class BudgetBranch {
                         actions.removeNodeDeclarations(removedids);
                         setTimeout(() => {
                             let prevBudgetCell = prevBudgetNode.cells[0];
+                            // TODO: pass prior cell and node settings
                             let childprops = {
                                 selectionrow: prevBudgetCell.chartSelection,
                                 nodeIndex: prevBudgetNode.nodeIndex,
@@ -135,13 +152,18 @@ class BudgetBranch {
                                 priorCellSettings: null,
                                 priorNodeSettings: null,
                             };
+                            // let fcurrent = fn(nodeIndex)(0)
+                            // let budgetBranch = this
                             budgetBranch.createChildNodeDeclaration(childprops);
                         });
-                        budgetNode = null;
+                        budgetNode = null; // branchNodes[nodeIndex] // created by createChildNodeDeclaration as side effect
                     }
                     else {
-                        budgetNode.updateAspect(branchSettings.aspect, dataNode);
+                        budgetNode.updateAspect(branchSettings.aspect, dataNode
+                        // parentDataNode
+                        );
                         budgetNode.resetCells();
+                        // budgetNode.newCells = newCells
                     }
                 }
                 else {
@@ -211,11 +233,12 @@ class BudgetBranch {
                         resolve(true);
                     }
                     else {
-                        let _promise = databaseapi_1.default.getProrataData({
+                        let _promise = databaseapi.getProrataData({
                             repository,
                             prorataseries,
                         });
                         _promise.then((proratadata) => {
+                            // console.log('returned proratadata',proratadata)
                             let budgetBranch = this;
                             budgetBranch._doProRataCalc(viewpointdata, proratadata);
                             resolve(true);
@@ -229,6 +252,7 @@ class BudgetBranch {
             return promise;
         };
         this._doProRataCalc = (viewpointdata, proratadata) => {
+            // console.log('viewpointdata,proratadata',viewpointdata,proratadata)
             let proratayearlist = Object.assign({}, proratadata.years);
             let { branchDeclaration } = this;
             let { prorata: prorataindex } = branchDeclaration;
@@ -287,6 +311,7 @@ class BudgetBranch {
                 }
             }
             this._doCalcYears(viewpointdata, proratayearlist, threshhold, precision);
+            // console.log('_doProRataCalc', viewpointdata, proratayearlist, threshhold, precision)
         };
         this._doCalcYears = (node, proratayearlist, threshhold, precision) => {
             let calcyears = {};
@@ -328,7 +353,7 @@ class BudgetBranch {
             let branchNodes = budgetBranch.nodes;
             for (nodeIndex in branchNodes) {
                 let budgetNode = branchNodes[nodeIndex];
-                let dataNode = getbudgetnode_1.default(viewpointData, budgetNode.dataPath);
+                let dataNode = getBudgetNode(viewpointData, budgetNode.dataPath);
                 budgetNode.updateDataNode(dataNode);
                 budgetNode.resetCells();
             }
@@ -336,11 +361,13 @@ class BudgetBranch {
                 branchNodes,
             });
         };
+        // TODO: generate action to show progress
         this.getViewpointData = () => {
             let branchSettings = this.branchDeclaration;
             let { viewpoint: viewpointName, aspect: aspectName, inflationAdjusted, version: versionName, repository, } = branchSettings;
-            let datasetName = constants_1.AspectNameToDatasetName[aspectName];
-            let _promise = databaseapi_1.default.getViewpointData({
+            // console.log('aspectName, AspectNameToDatasetName',aspectName, AspectNameToDatasetName)
+            let datasetName = AspectNameToDatasetName[aspectName];
+            let _promise = databaseapi.getViewpointData({
                 repository,
                 viewpointName,
                 versionName,
@@ -366,17 +393,23 @@ class BudgetBranch {
             });
             return promise;
         };
+        // called only by user chart row selection
+        // therefore metadata is always component
         this.createChildNodeDeclaration = (props) => {
             let budgetBranch = this;
             let { selectionrow, nodeIndex, cellIndex, priorCellSettings, priorNodeSettings, } = props;
             let { nodes: branchNodes, nodeCallbacks: callbacks, actions, branchDeclaration: branchSettings, } = budgetBranch;
             let viewpointData = budgetBranch.state.viewpointData;
             let budgetNode = branchNodes[nodeIndex];
+            // a hack to pass prior settings to child
             if (priorCellSettings) {
                 budgetNode.priorCellSettings = priorCellSettings;
             }
             let { aspectName, viewpointName } = budgetNode;
             let { onPortalCreation, } = callbacks;
+            // ----------------------------------------------------
+            // ----------------[ create child ]--------------------
+            // copy path
             let childdatapath = budgetNode.dataPath.slice();
             let treeNodeData = budgetNode.treeNodeData;
             if (!treeNodeData.Components) {
@@ -407,7 +440,7 @@ class BudgetBranch {
             else {
                 newselections = Object.assign({}, budgetNode.yearSelections);
             }
-            let newdatanode = getbudgetnode_1.default(viewpointData, childdatapath);
+            let newdatanode = getBudgetNode(viewpointData, childdatapath);
             let newnodeconfigparms = {
                 viewpointName,
                 aspectName,
@@ -426,7 +459,7 @@ class BudgetBranch {
     }
     get nodes() {
         let copy = [...this.state.branchNodes];
-        return copy;
+        return copy; // new copy
     }
     get state() {
         return this.getState();
@@ -438,4 +471,4 @@ class BudgetBranch {
         return this.props.declarationData.branchesById[this.uid];
     }
 }
-exports.default = BudgetBranch;
+export default BudgetBranch;

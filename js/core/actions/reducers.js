@@ -1,42 +1,58 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// reducers.tsx
+// TODO: co-locate selectors here: get...(...)
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const redux_1 = require("redux");
-const react_router_redux_1 = require("react-router-redux");
-const react_redux_toastr_1 = require("react-redux-toastr");
-const budgetpedia_model_1 = require("../../legacy/budgetpedia.model");
-const reducers_1 = require("../../addons/explorer/reducers");
-let theme = (state = budgetpedia_model_1.default.theme) => {
+import { combineReducers } from 'redux';
+import { routerReducer as router } from 'react-router-redux';
+import { reducer as toastr } from 'react-redux-toastr';
+// -------------[ app resources ]---------------
+// import * as Actions from './actions'
+import masterModel from "../../legacy/budgetpedia.model";
+// ----------[ app settings ]----------------------
+import explorer from '../../addons/explorer/reducers';
+// -----------[ system resource reducers ]------------
+let theme = (state = masterModel.theme) => {
     return state;
 };
-let colors = (state = budgetpedia_model_1.default.colors) => {
+// let system = (state:any = masterModel.system) => {
+//     return state
+// }
+let colors = (state = masterModel.colors) => {
     return state;
 };
-let resources = redux_1.combineReducers({
+let resources = combineReducers({
     theme,
     colors,
 });
-let globalbar = (state = budgetpedia_model_1.default.globalbar, action) => {
+// ---------------------[ ui core services reducers ]------------------------
+let globalbar = (state = masterModel.globalbar, action) => {
     return state;
 };
-let global = redux_1.combineReducers({
+let global = combineReducers({
     globalbar,
 });
-let homepage = (state = budgetpedia_model_1.default.homepage, action) => {
+// ---------------------[ home grid reducers ]------------------------
+let homepage = (state = masterModel.homepage, action) => {
     return state;
 };
-let pagetargets = (state = budgetpedia_model_1.default.pagetargets, action) => {
+let pagetargets = (state = masterModel.pagetargets, action) => {
     return state;
 };
-let pages = redux_1.combineReducers({
+let pages = combineReducers({
     homepage,
     pagetargets,
 });
+// ---------------------------[ main reducer ]--------------------------------
 let mainReducerCore = {
-    explorer: reducers_1.default,
+    // app data
+    explorer,
+    // system data
     resources,
-    router: react_router_redux_1.routerReducer,
+    router,
+    // page model
     pages,
-    toastr: react_redux_toastr_1.reducer,
+    toastr,
+    // global ui management
     global,
 };
-exports.default = mainReducerCore;
+export default mainReducerCore;

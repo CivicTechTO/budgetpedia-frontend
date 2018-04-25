@@ -1,8 +1,9 @@
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+// menurow.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const MenuItem_1 = require("material-ui/MenuItem");
-class MenuRowView extends React.Component {
+import * as React from 'react';
+import MenuItem from 'material-ui/MenuItem';
+export class MenuRowView extends React.Component {
     constructor() {
         super(...arguments);
         this.pushHistory = (e) => {
@@ -11,7 +12,6 @@ class MenuRowView extends React.Component {
         };
     }
     render() {
-        return (React.createElement(MenuItem_1.default, { onClick: this.pushHistory, primaryText: this.props.primaryText, leftIcon: React.createElement("img", { src: this.props.image }), disabled: this.props.disabled ? true : false }));
+        return (React.createElement(MenuItem, { onClick: this.pushHistory, primaryText: this.props.primaryText, leftIcon: React.createElement("img", { src: this.props.image }), disabled: this.props.disabled ? true : false }));
     }
 }
-exports.MenuRowView = MenuRowView;

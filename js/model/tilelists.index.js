@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// tilelists.index.tsx
 let mainpages = {
     controller: 'list',
     index: 'mainpages',
@@ -149,4 +148,4 @@ let mainpages = {
 let tilelists = {
     mainpages,
 };
-exports.default = tilelists;
+export default tilelists;

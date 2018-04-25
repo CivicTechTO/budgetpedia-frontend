@@ -1,14 +1,15 @@
+// paper.view.tsx
+// copyright (c) 2018 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Paper_1 = require("material-ui/Paper");
+import * as React from 'react';
+import Paper from 'material-ui/Paper';
 let PaperView = ({ children }) => {
     let styles = {
         outderdiv: { backgroundColor: '#d9d9d9', margin: '16px' },
         innerdiv: { padding: '16px', position: "relative" },
     };
     return (React.createElement("article", { style: styles.outderdiv },
-        React.createElement(Paper_1.default, { zDepth: 3, style: {
+        React.createElement(Paper, { zDepth: 3, style: {
                 boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
                 borderRadius: '8px',
             } },
@@ -16,4 +17,4 @@ let PaperView = ({ children }) => {
                 children,
                 React.createElement("div", { style: { clear: 'both' } })))));
 };
-exports.default = PaperView;
+export default PaperView;

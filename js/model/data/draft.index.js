@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// draft.index.tsx
 let citybasics = require('./draft/citybasics.json');
 let cityprocess = require('./draft/cityprocess.json');
 let concerns = require('./draft/concerns.json');
@@ -18,4 +17,4 @@ let draft = {
     elsewhere,
     civilsociety,
 };
-exports.default = draft;
+export default draft;

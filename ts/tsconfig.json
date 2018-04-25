@@ -1,14 +1,16 @@
 {
     "compilerOptions": {
         "outDir":"../js",
-        "module": "commonjs",
+        "module": "esnext",
+        "moduleResolution":"node",
         "target":"es6",
         "jsx": "react",
         "declaration": false,
         "noImplicitAny": false,
-        "removeComments": true,
+        "removeComments": false,
         "noLib": false,
         "preserveConstEnums": true,
+        "importHelpers":true,
         "suppressImplicitAnyIndexErrors": true
     }
 }

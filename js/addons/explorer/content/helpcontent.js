@@ -1,22 +1,23 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Card_1 = require("material-ui/Card");
-const SvgIcon_1 = require("material-ui/SvgIcon");
-const FontIcon_1 = require("material-ui/FontIcon");
+// helpcontent.tsx
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// explorerbranch.tsx
+import * as React from 'react';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
+import SvgIcon from 'material-ui/SvgIcon';
+import FontIcon from 'material-ui/FontIcon';
 let content = React.createElement("div", null,
-    React.createElement(Card_1.Card, null,
-        React.createElement(Card_1.CardText, null,
+    React.createElement(Card, null,
+        React.createElement(CardText, null,
             "The best way to become familiar with the explorer is to ",
             React.createElement("span", { style: { fontStyle: 'italic' } }, "play with it"),
             " (experiment). Once in a while, review the lists below. Click on any title below for details."),
-        React.createElement(Card_1.CardText, null,
+        React.createElement(CardText, null,
             "For some explanatory screencasts, see our ",
             React.createElement("a", { target: "_blank", href: "https://www.youtube.com/channel/UCatXKvLCA5qGkzj3jw8AQig" }, "YouTube channel"),
             ".")),
-    React.createElement(Card_1.Card, null,
-        React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Dataset Options"),
-        React.createElement(Card_1.CardText, { expandable: true, style: { paddingTop: "0px" } },
+    React.createElement(Card, null,
+        React.createElement(CardTitle, { actAsExpander: true, showExpandableButton: true }, "Dataset Options"),
+        React.createElement(CardText, { expandable: true, style: { paddingTop: "0px" } },
             React.createElement("p", null, "There are several dataset options available for charts:"),
             React.createElement("dl", null,
                 React.createElement("dt", null,
@@ -155,13 +156,13 @@ let content = React.createElement("div", null,
                 " is on by default, but can be turned off."),
             React.createElement("dl", null,
                 React.createElement("dd", null, "This uses the Statistics Canada's estimated CPI for Toronto, to adjust historical figures in terms of recent currency valuations, for more meaningful trend analysis.")))),
-    React.createElement(Card_1.Card, null,
-        React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Chart Options"),
-        React.createElement(Card_1.CardText, { expandable: true, style: { paddingTop: "0px" } },
+    React.createElement(Card, null,
+        React.createElement(CardTitle, { actAsExpander: true, showExpandableButton: true }, "Chart Options"),
+        React.createElement(CardText, { expandable: true, style: { paddingTop: "0px" } },
             React.createElement("p", null, " Chart options vary according to the time options selected. The time options available are:"),
             React.createElement("dl", null,
                 React.createElement("dt", null,
-                    React.createElement(SvgIcon_1.default, { style: {
+                    React.createElement(SvgIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -173,7 +174,7 @@ let content = React.createElement("div", null,
                     " One year (default)"),
                 React.createElement("dd", null, " Select a specific year to investigate."),
                 React.createElement("dt", null,
-                    React.createElement(SvgIcon_1.default, { style: {
+                    React.createElement(SvgIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -186,7 +187,7 @@ let content = React.createElement("div", null,
                     " Two years"),
                 React.createElement("dd", null, " Allows data for two years to be presented side by side for comparison."),
                 React.createElement("dt", null,
-                    React.createElement(SvgIcon_1.default, { style: {
+                    React.createElement(SvgIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -203,7 +204,7 @@ let content = React.createElement("div", null,
             React.createElement("hr", null),
             React.createElement("dl", null,
                 React.createElement("dt", null,
-                    React.createElement(SvgIcon_1.default, { style: {
+                    React.createElement(SvgIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -216,7 +217,7 @@ let content = React.createElement("div", null,
                 React.createElement("dd", null,
                     React.createElement("dl", null,
                         React.createElement("dt", null,
-                            React.createElement(FontIcon_1.default, { style: {
+                            React.createElement(FontIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -228,7 +229,7 @@ let content = React.createElement("div", null,
                             " Column Chart"),
                         React.createElement("dd", null, " This shows the basics of the components of the chart. Float the mouse over the column to see the number, or click on a column to drill down."),
                         React.createElement("dt", null,
-                            React.createElement(FontIcon_1.default, { style: {
+                            React.createElement(FontIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -242,7 +243,7 @@ let content = React.createElement("div", null,
             React.createElement("hr", null),
             React.createElement("dl", null,
                 React.createElement("dt", null,
-                    React.createElement(SvgIcon_1.default, { style: {
+                    React.createElement(SvgIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -256,7 +257,7 @@ let content = React.createElement("div", null,
                 React.createElement("dd", null,
                     React.createElement("dl", null,
                         React.createElement("dt", null,
-                            React.createElement(FontIcon_1.default, { style: {
+                            React.createElement(FontIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -268,7 +269,7 @@ let content = React.createElement("div", null,
                             " Column Chart"),
                         React.createElement("dd", null, " This offers a difference chart. The light colored bars are background bars."),
                         React.createElement("dt", null,
-                            React.createElement(FontIcon_1.default, { style: {
+                            React.createElement(FontIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -282,7 +283,7 @@ let content = React.createElement("div", null,
             React.createElement("hr", null),
             React.createElement("dl", null,
                 React.createElement("dt", null,
-                    React.createElement(SvgIcon_1.default, { style: {
+                    React.createElement(SvgIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -297,7 +298,7 @@ let content = React.createElement("div", null,
                 React.createElement("dd", null,
                     React.createElement("dl", null,
                         React.createElement("dt", null,
-                            React.createElement(FontIcon_1.default, { style: {
+                            React.createElement(FontIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -309,7 +310,7 @@ let content = React.createElement("div", null,
                             " Line Chart"),
                         React.createElement("dd", null, " Basic time lines"),
                         React.createElement("dt", null,
-                            React.createElement(SvgIcon_1.default, { style: {
+                            React.createElement(SvgIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -322,7 +323,7 @@ let content = React.createElement("div", null,
                             " Area Chart"),
                         React.createElement("dd", null, " Same data as timelines, but stacked."),
                         React.createElement("dt", null,
-                            React.createElement(FontIcon_1.default, { style: {
+                            React.createElement(FontIcon, { style: {
                                     height: "18px",
                                     width: "18px",
                                     padding: "0 3px",
@@ -333,13 +334,13 @@ let content = React.createElement("div", null,
                                 }, className: "material-icons" }, "view_stream"),
                             " Proportional Chart "),
                         React.createElement("dd", null, " All lines add to 100%; individual amounts are shown in proportion to the whole.")))))),
-    React.createElement(Card_1.Card, null,
-        React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Context Options"),
-        React.createElement(Card_1.CardText, { expandable: true, style: { paddingTop: "0px" } },
+    React.createElement(Card, null,
+        React.createElement(CardTitle, { actAsExpander: true, showExpandableButton: true }, "Context Options"),
+        React.createElement(CardText, { expandable: true, style: { paddingTop: "0px" } },
             React.createElement("p", null, " Context options are offered to provide contextual information for the data being viewed, and to afford the reader the opportunity to contribute to the process surrounding the budget. These are the options offered, found under each chart:"),
             React.createElement("dl", null,
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -355,7 +356,7 @@ let content = React.createElement("div", null,
                     React.createElement("em", null, "[deferred]"),
                     " invokes a dialog containing information related to the current data. This could be brief explanations, links to related information, or links to websites which specialize in the subject matter. The idea is to allow the reader to discover more context and detail about the subject matter at hand."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -371,7 +372,7 @@ let content = React.createElement("div", null,
                     React.createElement("em", null, "[deferred]"),
                     " invokes detailed technical information about the data presented, including source documents, exceptions, errors, and any relevant notes about the way the data was processed. If there are errors or exceptions in place, the note icon changes colour to red or orange, depending on severity."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -387,7 +388,7 @@ let content = React.createElement("div", null,
                     React.createElement("em", null, "[deferred]"),
                     " provides access to relevant social media sites, to allow readers to read or contribute to discussion about the subject at hand."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -403,7 +404,7 @@ let content = React.createElement("div", null,
                     React.createElement("em", null, "[deferred]"),
                     " provides the user with lists of calls to actions or meetings related to the subject matter, or to contribute their own call to action or meetings."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -419,7 +420,7 @@ let content = React.createElement("div", null,
                     React.createElement("em", null, "[deferred]"),
                     " brings up the data underlying the currently viewed chart, with an option to download same."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -435,16 +436,16 @@ let content = React.createElement("div", null,
                     " allows the user to impose the settings made in the current chart onto the other charts in the row (",
                     React.createElement("em", null, "Exhibit"),
                     ").")))),
-    React.createElement(Card_1.Card, null,
-        React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Cloning Features"),
-        React.createElement(Card_1.CardText, { expandable: true, style: { paddingTop: "0px" } },
+    React.createElement(Card, null,
+        React.createElement(CardTitle, { actAsExpander: true, showExpandableButton: true }, "Cloning Features"),
+        React.createElement(CardText, { expandable: true, style: { paddingTop: "0px" } },
             React.createElement("p", null,
                 "The Budget Explorer organizes charts into horizontal drill-down sequences which we call ",
                 React.createElement("em", null, "Exhibits"),
                 ". We allow for cloning and re-ordering these exhibits to allow for comparison, exploration, and publication. This clone contains all the option controls of the original. The clone is independent of the original."),
             React.createElement("dl", null,
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -458,7 +459,7 @@ let content = React.createElement("div", null,
                     "This icon when invoked adds a clone of the current row of charts below the current row. ",
                     React.createElement("em", null, "The clone reproduces all of the components and selections of the current row.")),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -470,7 +471,7 @@ let content = React.createElement("div", null,
                     " Remove the current Exhibit"),
                 React.createElement("dd", null, "This icon when invoked removes the current row of charts (cannot currently be undone)."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -485,7 +486,7 @@ let content = React.createElement("div", null,
                     React.createElement("em", null, "Exhibits"),
                     ") exist, they can be re-ordered. The up arrow icon (to the upper right of the row title) moves the row up one position."),
                 React.createElement("dt", null,
-                    React.createElement(FontIcon_1.default, { style: {
+                    React.createElement(FontIcon, { style: {
                             height: "18px",
                             width: "18px",
                             padding: "0 3px",
@@ -499,9 +500,9 @@ let content = React.createElement("div", null,
                     "When mulitple rows (",
                     React.createElement("em", null, "Exhibits"),
                     ") exist, they can be re-ordered. The down arrow icon (to the upper right of the row title) moves the row down one position.")))),
-    React.createElement(Card_1.Card, null,
-        React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true }, "Actionable Features"),
-        React.createElement(Card_1.CardText, { expandable: true, style: { paddingTop: "0px" } },
+    React.createElement(Card, null,
+        React.createElement(CardTitle, { actAsExpander: true, showExpandableButton: true }, "Actionable Features"),
+        React.createElement(CardText, { expandable: true, style: { paddingTop: "0px" } },
             React.createElement("p", null, "We've provided a few actionable features to help you find and share charts with friends and associates."),
             React.createElement("dl", null,
                 React.createElement("dt", null, "Find"),
@@ -512,4 +513,4 @@ let content = React.createElement("div", null,
                 React.createElement("dd", null, "This provides a list of the source reports used to collect the data for the current viewpoint."),
                 React.createElement("dt", null, "Printing charts"),
                 React.createElement("dd", null, "To print charts, turn off options on each row of charts to remove clutter, and then use a browser utility like Fireshot for Chrome to print the entire visible page.")))));
-exports.default = content;
+export default content;

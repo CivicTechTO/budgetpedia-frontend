@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// linklists.index.tsx
 let toplinklist = {
     controller: 'list',
     index: 'toplinklist',
@@ -64,6 +63,7 @@ let secondlinklist = {
                 icon: '/public/icons/twitter.png',
                 target: 'http://twitter.com/budgetpedia',
                 targetText: 'Twitter account',
+                // description:'... or see the twitter feed below',
                 imageStyle: {
                     height: '14px'
                 }
@@ -78,6 +78,8 @@ let secondlinklist = {
         ],
     },
 };
+// let thirdlinklistheader = 'More media (experimental):'
+// let thirdlinklistitems = [
 let thirdlinklist = {
     controller: 'list',
     index: 'thirdlinklist',
@@ -126,4 +128,4 @@ let linklists = {
     secondlinklist,
     thirdlinklist,
 };
-exports.default = linklists;
+export default linklists;

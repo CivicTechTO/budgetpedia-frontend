@@ -1,9 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// routes.repo.tsx
 let routes = {
     '/roadmap': 'roadmap',
     '/': 'home',
     '/budgets': 'budgets',
     '/overview': 'overview',
 };
-exports.default = routes;
+export default routes;

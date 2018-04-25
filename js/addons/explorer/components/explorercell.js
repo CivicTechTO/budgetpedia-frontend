@@ -1,17 +1,24 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// explorerchart.tsx
+/*
+    BUG: The rightmost piechart does not have its selected component reselected
+        after migrate away from, and return to explorer page.
+    TODO: two way arrow icon to signify impose current chart settings on entire branch
+*/
+// <reference path="../../../typings-custom/chart.d.ts" />
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 var { Component } = React;
 var { Chart } = require('../../../../forked_modules/react-google-charts/Chart.js');
-const IconButton_1 = require("material-ui/IconButton");
-const FontIcon_1 = require("material-ui/FontIcon");
-const SvgIcon_1 = require("material-ui/SvgIcon");
-const DropDownMenu_1 = require("material-ui/DropDownMenu");
-const MenuItem_1 = require("material-ui/MenuItem");
-const constants_1 = require("../constants");
-const actions_1 = require("../actions");
-const Utilities = require("../modules/utilities");
-const datatable_1 = require("./datatable");
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
+import SvgIcon from 'material-ui/SvgIcon';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import { TimeScope } from '../constants';
+import { cellTypes as cellActionTypes } from '../actions';
+import * as Utilities from '../modules/utilities';
+import DataTable from './datatable';
 class ExplorerCell extends Component {
     constructor() {
         super(...arguments);
@@ -22,30 +29,33 @@ class ExplorerCell extends Component {
             chartParms: null,
             datatableopen: false,
         };
+        // for use by BudgetCell instance...
         this.getState = () => this.state;
         this.getProps = () => this.props;
         this.urlparms = null;
         this.lastactiongeneration = 0;
         this.waitafteraction = 0;
+        // state change manager
         this._respondToGlobalStateChange = () => {
             let previousControlData = this._previousControlData;
             let currentControlData = this.props.declarationData;
             let { lastAction } = currentControlData;
             let returnvalue = true;
-            if (!actions_1.cellTypes[lastAction.type]) {
+            if (!cellActionTypes[lastAction.type]) {
                 return false;
             }
+            // only process once
             if (previousControlData && (currentControlData.generation == previousControlData.generation)) {
                 return false;
             }
             let { budgetCell } = this.props;
             let cellDeclaration = this.cellDeclaration;
             switch (lastAction.type) {
-                case actions_1.cellTypes.UPDATE_CELL_CHART_CODE: {
+                case cellActionTypes.UPDATE_CELL_CHART_CODE: {
                     budgetCell.switchChartCode();
                     break;
                 }
-                case actions_1.cellTypes.UPDATE_CELL_TIMECODE: {
+                case cellActionTypes.UPDATE_CELL_TIMECODE: {
                     budgetCell.switchYearScope();
                 }
             }
@@ -84,6 +94,7 @@ class ExplorerCell extends Component {
         this.onDataTable = (e) => {
             let budgetCell = this.props.budgetCell;
             let tableparms = budgetCell.getDataTable();
+            // console.log('onDataTable tableparms',tableparms)
             this.datatableparms.tableparms = tableparms;
             this.setState({
                 datatableopen: true
@@ -111,11 +122,12 @@ class ExplorerCell extends Component {
         }
     }
     componentDidMount() {
-        this._previousControlData = this.props.declarationData;
+        this._previousControlData = this.props.declarationData; // initialize
         let { budgetCell } = this.props;
         setTimeout(() => {
-            budgetCell.refreshSelection();
+            budgetCell.refreshSelection(); // for re-creation; last pie chart is missed
         });
+        // console.log('budgetCell',this.props.budgetCell)
     }
     shouldComponentUpdate(nextProps, nextState) {
         let cellComponent = this;
@@ -126,6 +138,7 @@ class ExplorerCell extends Component {
         explorerCell._respondToGlobalStateChange();
         explorerCell.props.budgetCell.refreshSelection();
     }
+    // conveniences... get x 2
     get cellDeclaration() {
         return this.props.declarationData.cellsById[this.props.budgetCell.uid];
     }
@@ -143,6 +156,7 @@ class ExplorerCell extends Component {
         let yearSpan = endYear - startYear;
         let leftYear = budgetCell.nodeDataPack.yearSelections.leftYear;
         let rightYear = budgetCell.nodeDataPack.yearSelections.rightYear;
+        // get drilldown message
         let datanode = budgetCell.nodeDataPack.treeNodeData;
         let datasetiestype = budgetCell.nodeDataseriesName;
         let drillDownProperty = datasetiestype + 'Drilldown';
@@ -176,8 +190,8 @@ class ExplorerCell extends Component {
                 display: "inline-block"
             } },
             React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "number of years to include"),
-            React.createElement(IconButton_1.default, { tooltip: "One year", tooltipPosition: "top-center", style: {
-                    backgroundColor: (this.cellDeclaration.yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear])
+            React.createElement(IconButton, { tooltip: "One year", tooltipPosition: "top-center", style: {
+                    backgroundColor: (this.cellDeclaration.yearScope == TimeScope[TimeScope.OneYear])
                         ? "rgba(144,238,144,0.5)"
                         : "rgba(255,255,255,0.5)",
                     borderRadius: "15%",
@@ -186,12 +200,12 @@ class ExplorerCell extends Component {
                     width: "36px",
                     marginRight: "3px",
                 }, onClick: e => {
-                    this.onChangeTimeCode(constants_1.TimeScope[constants_1.TimeScope.OneYear]);
+                    this.onChangeTimeCode(TimeScope[TimeScope.OneYear]);
                 } },
-                React.createElement(SvgIcon_1.default, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
+                React.createElement(SvgIcon, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
                     React.createElement("rect", { x: "13", y: "13", width: "10", height: "10" }))),
-            React.createElement(IconButton_1.default, { tooltip: "Two years", disabled: yearSpan === 0, tooltipPosition: "top-center", style: {
-                    backgroundColor: (this.cellDeclaration.yearScope == constants_1.TimeScope[constants_1.TimeScope.TwoYears])
+            React.createElement(IconButton, { tooltip: "Two years", disabled: yearSpan === 0, tooltipPosition: "top-center", style: {
+                    backgroundColor: (this.cellDeclaration.yearScope == TimeScope[TimeScope.TwoYears])
                         ? "rgba(144,238,144,0.5)"
                         : "rgba(255,255,255,0.5)",
                     borderRadius: "15%",
@@ -200,13 +214,13 @@ class ExplorerCell extends Component {
                     width: "36px",
                     marginRight: "3px",
                 }, onClick: e => {
-                    this.onChangeTimeCode(constants_1.TimeScope[constants_1.TimeScope.TwoYears]);
+                    this.onChangeTimeCode(TimeScope[TimeScope.TwoYears]);
                 } },
-                React.createElement(SvgIcon_1.default, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
+                React.createElement(SvgIcon, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
                     React.createElement("rect", { x: "4", y: "13", width: "10", height: "10" }),
                     React.createElement("rect", { x: "22", y: "13", width: "10", height: "10" }))),
-            React.createElement(IconButton_1.default, { tooltip: "All years", tooltipPosition: "top-center", disabled: yearSpan === 0, style: {
-                    backgroundColor: (this.cellDeclaration.yearScope == constants_1.TimeScope[constants_1.TimeScope.AllYears])
+            React.createElement(IconButton, { tooltip: "All years", tooltipPosition: "top-center", disabled: yearSpan === 0, style: {
+                    backgroundColor: (this.cellDeclaration.yearScope == TimeScope[TimeScope.AllYears])
                         ? "rgba(144,238,144,0.5)"
                         : "rgba(255,255,255,0.5)",
                     borderRadius: "15%",
@@ -215,13 +229,14 @@ class ExplorerCell extends Component {
                     width: "36px",
                     marginRight: "3px",
                 }, onClick: e => {
-                    this.onChangeTimeCode(constants_1.TimeScope[constants_1.TimeScope.AllYears]);
+                    this.onChangeTimeCode(TimeScope[TimeScope.AllYears]);
                 } },
-                React.createElement(SvgIcon_1.default, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
+                React.createElement(SvgIcon, { style: { height: "36px", width: "36px" }, viewBox: "0 0 36 36" },
                     React.createElement("ellipse", { cx: "6", cy: "18", rx: "4", ry: "4" }),
                     React.createElement("ellipse", { cx: "18", cy: "18", rx: "4", ry: "4" }),
                     React.createElement("ellipse", { cx: "30", cy: "18", rx: "4", ry: "4" }))));
-        let columnchart = React.createElement(IconButton_1.default, { key: 'columnchart', tooltip: "Column Chart", tooltipPosition: "top-center", style: {
+        // =====================[ options for getchartoptions() ]=======================
+        let columnchart = React.createElement(IconButton, { key: 'columnchart', tooltip: "Column Chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "ColumnChart")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -233,8 +248,8 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('ColumnChart');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "insert_chart"));
-        let diffcolumnchart = React.createElement(IconButton_1.default, { key: 'diffchart', tooltip: "Diff Column Chart", tooltipPosition: "top-center", style: {
+            React.createElement(FontIcon, { className: "material-icons" }, "insert_chart"));
+        let diffcolumnchart = React.createElement(IconButton, { key: 'diffchart', tooltip: "Diff Column Chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "DiffColumnChart")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -246,8 +261,8 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('DiffColumnChart');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "insert_chart"));
-        let donutchart = React.createElement(IconButton_1.default, { key: 'donutchart', tooltip: "Donut Pie Chart", tooltipPosition: "top-center", style: {
+            React.createElement(FontIcon, { className: "material-icons" }, "insert_chart"));
+        let donutchart = React.createElement(IconButton, { key: 'donutchart', tooltip: "Donut Pie Chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "DonutChart")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -259,8 +274,8 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('DonutChart');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "donut_small"));
-        let diffpiechart = React.createElement(IconButton_1.default, { key: 'donutchart', tooltip: "Diff Pie Chart", tooltipPosition: "top-center", style: {
+            React.createElement(FontIcon, { className: "material-icons" }, "donut_small"));
+        let diffpiechart = React.createElement(IconButton, { key: 'donutchart', tooltip: "Diff Pie Chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "DiffPieChart")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -272,8 +287,8 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('DiffPieChart');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "donut_small"));
-        let contextchart = React.createElement(IconButton_1.default, { disabled: true, key: 'contextchart', tooltip: "Context Chart", tooltipPosition: "top-center", style: {
+            React.createElement(FontIcon, { className: "material-icons" }, "donut_small"));
+        let contextchart = React.createElement(IconButton, { disabled: true, key: 'contextchart', tooltip: "Context Chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "ContextChart")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -285,8 +300,8 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('ContextChart');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_quilt"));
-        let timelines = React.createElement(IconButton_1.default, { key: 'timelines', tooltip: "Timeline", tooltipPosition: "top-center", style: {
+            React.createElement(FontIcon, { className: "material-icons" }, "view_quilt"));
+        let timelines = React.createElement(IconButton, { key: 'timelines', tooltip: "Timeline", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "TimeLine")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -298,8 +313,8 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('TimeLine');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "timelines"));
-        let stackedchart = React.createElement(IconButton_1.default, { key: 'stackedchart', tooltip: "Stacked chart", tooltipPosition: "top-center", style: {
+            React.createElement(FontIcon, { className: "material-icons" }, "timelines"));
+        let stackedchart = React.createElement(IconButton, { key: 'stackedchart', tooltip: "Stacked chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "StackedArea")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -311,10 +326,10 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('StackedArea');
             } },
-            React.createElement(SvgIcon_1.default, { style: { height: "24px", width: "24px" } },
+            React.createElement(SvgIcon, { style: { height: "24px", width: "24px" } },
                 React.createElement("path", { d: "M20,6c0-0.587-0.257-1.167-0.75-1.562c-0.863-0.69-2.121-0.551-2.812,0.312l-2.789,3.486L11.2,6.4  c-0.864-0.648-2.087-0.493-2.762,0.351l-4,5C4.144,12.119,4,12.562,4,13v3h16V6z" }),
                 React.createElement("path", { d: "M20,19H4c-0.552,0-1,0.447-1,1s0.448,1,1,1h16c0.552,0,1-0.447,1-1S20.552,19,20,19z" })));
-        let proportionalchart = React.createElement(IconButton_1.default, { key: 'propchart', tooltip: "Proportional chart", tooltipPosition: "top-center", style: {
+        let proportionalchart = React.createElement(IconButton, { key: 'propchart', tooltip: "Proportional chart", tooltipPosition: "top-center", style: {
                 backgroundColor: (explorerChartCode == "Proportional")
                     ? "rgba(144,238,144,0.5)"
                     : "transparent",
@@ -326,17 +341,17 @@ class ExplorerCell extends Component {
             }, onClick: e => {
                 this.onChangeChartCode('Proportional');
             } },
-            React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_stream"));
+            React.createElement(FontIcon, { className: "material-icons" }, "view_stream"));
         let getchartoptions = () => {
             let chartoptions;
             switch (this.cellDeclaration.yearScope) {
-                case constants_1.TimeScope[constants_1.TimeScope.OneYear]:
-                    chartoptions = [columnchart, donutchart];
+                case TimeScope[TimeScope.OneYear]:
+                    chartoptions = [columnchart, donutchart]; //, contextchart ]
                     break;
-                case constants_1.TimeScope[constants_1.TimeScope.TwoYears]:
+                case TimeScope[TimeScope.TwoYears]:
                     chartoptions = [diffcolumnchart, diffpiechart];
                     break;
-                case constants_1.TimeScope[constants_1.TimeScope.AllYears]:
+                case TimeScope[TimeScope.AllYears]:
                     chartoptions = [timelines, stackedchart, proportionalchart];
                     break;
             }
@@ -351,7 +366,7 @@ class ExplorerCell extends Component {
                 chartoptions);
         };
         let chartoptions = getchartoptions();
-        let deltatoggle = (this.cellDeclaration.yearScope != constants_1.TimeScope[constants_1.TimeScope.OneYear]) ?
+        let deltatoggle = (this.cellDeclaration.yearScope != TimeScope[TimeScope.OneYear]) ?
             React.createElement("div", { style: {
                     paddingTop: "10px",
                     borderRight: "1px solid silver",
@@ -369,7 +384,7 @@ class ExplorerCell extends Component {
                     "year-over-",
                     React.createElement("br", null),
                     " year"),
-                React.createElement(IconButton_1.default, { disabled: false, tooltip: "Year-over-year change", tooltipPosition: "top-center", style: {
+                React.createElement(IconButton, { disabled: false, tooltip: "Year-over-year change", tooltipPosition: "top-center", style: {
                         backgroundColor: (this.state.deltastate)
                             ? "rgba(144,238,144,0.5)"
                             : "rgba(255,255,255,0.5)",
@@ -381,8 +396,8 @@ class ExplorerCell extends Component {
                     }, onClick: (e) => {
                         this.onToggleDelta();
                     } },
-                    React.createElement(FontIcon_1.default, { className: "material-icons" }, "change_history"))) : null;
-        let nettoggle = (this.cellDeclaration.yearScope != constants_1.TimeScope[constants_1.TimeScope.OneYear]) ?
+                    React.createElement(FontIcon, { className: "material-icons" }, "change_history"))) : null;
+        let nettoggle = (this.cellDeclaration.yearScope != TimeScope[TimeScope.OneYear]) ?
             React.createElement("div", { style: {
                     paddingTop: "10px",
                     borderRight: "1px solid silver",
@@ -391,7 +406,7 @@ class ExplorerCell extends Component {
                     display: "inline-block"
                 } },
                 React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "net"),
-                React.createElement(IconButton_1.default, { disabled: true, tooltip: "Net (revenue - expenses)", tooltipPosition: "top-center", style: {
+                React.createElement(IconButton, { disabled: true, tooltip: "Net (revenue - expenses)", tooltipPosition: "top-center", style: {
                         backgroundColor: (this.state.netstate)
                             ? "rgba(144,238,144,0.5)"
                             : "rgba(255,255,255,0.5)",
@@ -403,8 +418,8 @@ class ExplorerCell extends Component {
                     }, onClick: e => {
                         this.onToggleNet();
                     } },
-                    React.createElement(FontIcon_1.default, { className: "material-icons" }, "exposure"))) : null;
-        let variancetoggle = (this.cellDeclaration.yearScope != constants_1.TimeScope[constants_1.TimeScope.OneYear]) ?
+                    React.createElement(FontIcon, { className: "material-icons" }, "exposure"))) : null;
+        let variancetoggle = (this.cellDeclaration.yearScope != TimeScope[TimeScope.OneYear]) ?
             React.createElement("div", { style: {
                     paddingTop: "10px",
                     borderRight: "1px solid silver",
@@ -413,7 +428,7 @@ class ExplorerCell extends Component {
                     display: "inline-block"
                 } },
                 React.createElement("div", { style: { position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "variance"),
-                React.createElement(IconButton_1.default, { disabled: true, tooltip: "Variance (actual - budget)", tooltipPosition: "top-center", style: {
+                React.createElement(IconButton, { disabled: true, tooltip: "Variance (actual - budget)", tooltipPosition: "top-center", style: {
                         backgroundColor: (this.state.variancestate)
                             ? "rgba(144,238,144,0.5)"
                             : "rgba(255,255,255,0.5)",
@@ -425,7 +440,8 @@ class ExplorerCell extends Component {
                     }, onClick: e => {
                         this.onToggleVariance();
                     } },
-                    React.createElement(FontIcon_1.default, { className: "material-icons" }, "exposure"))) : null;
+                    React.createElement(FontIcon, { className: "material-icons" }, "exposure"))) : null;
+        // ----------------------[ options for below the chart ]---------------------------
         let datatable = React.createElement("div", { style: {
                 paddingTop: "10px",
                 borderLeft: "1px solid silver",
@@ -444,7 +460,7 @@ class ExplorerCell extends Component {
                 "see data",
                 React.createElement("br", null),
                 "table"),
-            React.createElement(IconButton_1.default, { disabled: false, tooltip: "Data Table", tooltipPosition: "top-center", style: {
+            React.createElement(IconButton, { disabled: false, tooltip: "Data Table", tooltipPosition: "top-center", style: {
                     backgroundColor: (explorerChartCode == "DataTable")
                         ? "rgba(144,238,144,0.5)"
                         : "transparent",
@@ -456,7 +472,7 @@ class ExplorerCell extends Component {
                 }, onClick: e => {
                     this.onDataTable(e);
                 } },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "view_list")));
+                React.createElement(FontIcon, { className: "material-icons" }, "view_list")));
         let harmonizeoptions = React.createElement("div", { style: {
                 paddingTop: "10px",
                 borderLeft: "1px solid silver",
@@ -475,7 +491,7 @@ class ExplorerCell extends Component {
                 "harmonize ",
                 React.createElement("br", null),
                 "settings"),
-            React.createElement(IconButton_1.default, { tooltip: "Harmonize settings for row", tooltipPosition: "top-center", style: {
+            React.createElement(IconButton, { tooltip: "Harmonize settings for row", tooltipPosition: "top-center", style: {
                     borderRadius: "50%",
                     padding: "0",
                     height: "36px",
@@ -484,28 +500,28 @@ class ExplorerCell extends Component {
                 }, onClick: e => {
                     this.onHarmonize();
                 } },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "swap_horiz")));
+                React.createElement(FontIcon, { className: "material-icons" }, "swap_horiz")));
         let socialoptions = React.createElement("div", { style: {
                 paddingTop: "10px",
                 display: "inline-block",
                 position: "relative",
             } },
             React.createElement("div", { style: { paddingLeft: "3px", position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "social [deferred]"),
-            React.createElement(IconButton_1.default, { tooltip: "Shared stories", tooltipPosition: "top-center", style: {
+            React.createElement(IconButton, { tooltip: "Shared stories", tooltipPosition: "top-center", style: {
                     padding: "0",
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
                 }, disabled: true },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "share")),
-            React.createElement(IconButton_1.default, { tooltip: "Calls to action", tooltipPosition: "top-center", style: {
+                React.createElement(FontIcon, { className: "material-icons" }, "share")),
+            React.createElement(IconButton, { tooltip: "Calls to action", tooltipPosition: "top-center", style: {
                     padding: "0",
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
                     marginLeft: "3px",
                 }, disabled: true },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "announcement")));
+                React.createElement(FontIcon, { className: "material-icons" }, "announcement")));
         let informationoptions = React.createElement("div", { style: {
                 display: "inline-block",
                 paddingTop: "10px",
@@ -514,25 +530,29 @@ class ExplorerCell extends Component {
                 position: "relative",
             } },
             React.createElement("div", { style: { paddingLeft: "3px", position: "absolute", top: "0", left: "0", fontSize: "8px" } }, "information [deferred]"),
-            React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", style: {
+            React.createElement(IconButton, { tooltip: "Information", tooltipPosition: "top-center", style: {
                     padding: "0",
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
                 }, disabled: true },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "info_outline")),
-            React.createElement(IconButton_1.default, { tooltip: "Technical notes", tooltipPosition: "top-center", style: {
+                React.createElement(FontIcon, { className: "material-icons" }, "info_outline")),
+            React.createElement(IconButton, { tooltip: "Technical notes", tooltipPosition: "top-center", style: {
                     padding: "0",
                     height: "36px",
                     width: "36px",
                     marginRight: "3px",
                     marginLeft: "3px",
                 }, disabled: true },
-                React.createElement(FontIcon_1.default, { className: "material-icons" }, "note")));
+                React.createElement(FontIcon, { className: "material-icons" }, "note")));
+        // ------------------------------[ the chart itself ]-----------------------------
+        // console.log(chartParms)
         let chart = (chartParms) ?
             (isDataAvailable ? React.createElement(Chart, { ref: node => {
                     budgetCell.chartComponent = node;
-                }, chartType: chartParms.chartType, options: chartParms.options, chartEvents: chartParms.events, rows: chartParms.rows, columns: chartParms.columns, diffdata: chartParms.diffdata, graph_id: graph_id }) : React.createElement("div", { style: {
+                }, chartType: chartParms.chartType, options: chartParms.options, chartEvents: chartParms.events, rows: chartParms.rows, columns: chartParms.columns, diffdata: chartParms.diffdata, 
+                // used to create and cache html element id attribute
+                graph_id: graph_id }) : React.createElement("div", { style: {
                     width: '360px',
                     height: '220px',
                     backgroundColor: 'whitesmoke',
@@ -566,11 +586,14 @@ class ExplorerCell extends Component {
             return (viewpoint == 'FUNCTIONAL' || viewpoint == 'STRUCTURAL') ?
                 React.createElement("div", { style: {
                         display: 'inline-block',
+                        // position:"absolute",
+                        // top:"8px",
+                        // right:"3px",
                         fontSize: "9px",
                         fontStyle: "italic",
                         zIndex: 10,
                     } },
-                    React.createElement(IconButton_1.default, { tooltip: "Information", tooltipPosition: "top-center", onClick: () => {
+                    React.createElement(IconButton, { tooltip: "Information", tooltipPosition: "top-center", onClick: () => {
                             this.props.onCallAnalystNotes(viewpoint, nodepath);
                         }, style: {
                             padding: "0",
@@ -578,12 +601,13 @@ class ExplorerCell extends Component {
                             width: "36px",
                             marginRight: "3px",
                         } },
-                        React.createElement(FontIcon_1.default, { className: "material-icons" }, "info_outline"))) : null;
+                        React.createElement(FontIcon, { className: "material-icons" }, "info_outline"))) : null;
         };
+        // ----------------------[ year selections ]---------------------------------
         let yearsoptions = () => {
             let years = [];
             for (let year = startYear; year <= endYear; year++) {
-                let yearitem = React.createElement(MenuItem_1.default, { key: year, value: year, primaryText: year.toString() });
+                let yearitem = React.createElement(MenuItem, { key: year, value: year, primaryText: year.toString() });
                 years.push(yearitem);
             }
             return years;
@@ -596,15 +620,15 @@ class ExplorerCell extends Component {
                 } }, this.props.showControls ? React.createElement("div", { style: { paddingBottom: "3px" } },
                 React.createElement("span", { style: { fontStyle: "italic", verticalAlign: '25px', lineHeight: '48px' } },
                     "Select ",
-                    (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? 'year' : 'years',
+                    (yearScope == TimeScope[TimeScope.OneYear]) ? 'year' : 'years',
                     ": "),
-                (yearScope != constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? (React.createElement(DropDownMenu_1.default, { value: leftYear, style: {}, onChange: (e, key, payload) => {
+                (yearScope != TimeScope[TimeScope.OneYear]) ? (React.createElement(DropDownMenu, { value: leftYear, style: {}, onChange: (e, key, payload) => {
                         this.onChangeChartYears(payload, rightYear);
                     } }, yearsoptions())) : null,
-                (yearScope == constants_1.TimeScope[constants_1.TimeScope.OneYear]) ? null
-                    : ((yearScope == constants_1.TimeScope[constants_1.TimeScope.TwoYears]) ? React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, ":")
+                (yearScope == TimeScope[TimeScope.OneYear]) ? null
+                    : ((yearScope == TimeScope[TimeScope.TwoYears]) ? React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, ":")
                         : React.createElement("span", { style: { verticalAlign: '25px', lineHeight: '48px' } }, "-")),
-                React.createElement(DropDownMenu_1.default, { value: rightYear, style: {}, onChange: (e, key, payload) => {
+                React.createElement(DropDownMenu, { value: rightYear, style: {}, onChange: (e, key, payload) => {
                         this.onChangeChartYears(leftYear, payload);
                     } }, yearsoptions())) : React.createElement("div", { style: { height: "12px" } })));
         };
@@ -622,7 +646,7 @@ class ExplorerCell extends Component {
                 chart,
                 drilldownprompt),
             React.createElement("div", { style: { padding: "3px", textAlign: "center" } }, yearselection()),
-            this.state.datatableopen ? React.createElement(datatable_1.default, { specifications: this.datatableparms.tableparms, onRequestClose: this.onReqestCloseDataTable }) : null);
+            this.state.datatableopen ? React.createElement(DataTable, { specifications: this.datatableparms.tableparms, onRequestClose: this.onReqestCloseDataTable }) : null);
     }
 }
-exports.default = ExplorerCell;
+export default ExplorerCell;

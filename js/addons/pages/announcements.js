@@ -1,14 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Card_1 = require("material-ui/Card");
+// announements.tsx
+// required by bundler
+import * as React from 'react';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 var { Component } = React;
 class Announcements extends Component {
     render() {
         return React.createElement("div", null,
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "Budgetpedia Project Announcements" }),
-                React.createElement(Card_1.CardText, null,
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "Budgetpedia Project Announcements" }),
+                React.createElement(CardText, null,
                     React.createElement("h3", null, "Key Upcoming Events"),
                     React.createElement("ul", { style: { marginBottom: "16px" } },
                         React.createElement("li", null,
@@ -25,7 +25,7 @@ class Announcements extends Component {
                                 " page of this website, or the ",
                                 React.createElement("a", { target: "_blank", href: "http://www.civictech.ca" }, "Civic Tech website home Page"),
                                 ".")))),
-                React.createElement(Card_1.CardText, null,
+                React.createElement(CardText, null,
                     React.createElement("h3", null, "Key Past Events"),
                     React.createElement("ul", { style: { marginBottom: "16px" } },
                         React.createElement("li", null,
@@ -103,4 +103,4 @@ class Announcements extends Component {
                                 " for the meetup."))))));
     }
 }
-exports.default = Announcements;
+export default Announcements;

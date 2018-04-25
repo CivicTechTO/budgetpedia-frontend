@@ -1,59 +1,93 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// routes.tsx
+// assemble and manage routes
+/*
+    TODO: transition fails with redirect for forcing trailing slash
+    the goal is to force initial url to end in /# to avoid reload of page on first permalink
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 let { Component } = React;
-const react_router_redux_1 = require("react-router-redux");
-const react_router_dom_1 = require("react-router-dom");
-const react_redux_1 = require("react-redux");
+import { ConnectedRouter } from 'react-router-redux';
+import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+// import { TransitionGroup, CSSTransition } from 'react-transition-group';
 let ReactGA = require('react-ga');
 ReactGA.initialize('UA-4105209-11');
-const page_controller_1 = require("../control/page.controller");
-const nomatch_1 = require("../../legacy/nomatch");
-const pageroutes_1 = require("../../addons/pageroutes");
+import PageController from '../control/page.controller';
+import NoMatch from '../../legacy/nomatch';
+import pageroutes from '../../addons/pageroutes';
 let logPageView = (location) => {
+    // console.log('hostname',window.location)
     if (window.location.hostname == 'budgetpedia.ca') {
+        // console.log('logging',location.pathname + location.search)
         ReactGA.pageview(location.pathname + location.search);
     }
 };
 let routedata = [
-    { path: "*", component: nomatch_1.default },
+    // { path: "/dev", component: PageController }, // must be LAST, or else will pre-empt other paths
+    { path: "*", component: NoMatch },
 ];
-let coreroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
-let home = React.createElement(react_router_dom_1.Route, { key: 'home', exact: true, path: "/", component: page_controller_1.default });
-let routes = [home, ...pageroutes_1.default, ...coreroutes];
-logPageView(window.location);
+let coreroutes = routedata.map((item, index) => (React.createElement(Route, { key: 'coreroute' + index, path: item.path, component: item.component })));
+let home = React.createElement(Route, { key: 'home', exact: true, path: "/", component: PageController }); // HomeController } />
+// let redirect = <Route key = "redirect" exact strict path="/:url*" render={props => <Redirect to={`${props.location.pathname}/`}/>} />
+let routes = [home, ...pageroutes, ...coreroutes];
+logPageView(window.location); // first hit
 let RoutesController = class extends Component {
     constructor() {
         super(...arguments);
         this.historyListener = (location, action) => {
+            // console.log('history',location,action)
             logPageView(location);
         };
     }
     componentWillMount() {
         this.props.history.listen(this.historyListener);
+        // global function to deal with markdown local links
         window['storybuilder_global'] = {
             navigateViaRouter: (event) => {
+                // console.log('navigating from storybuilder_global')
                 let target = event.currentTarget;
-                let path = target.getAttribute('href');
+                let path = target.getAttribute('href'); // limited to original '/somepath'
                 event.preventDefault();
+                // this.props.history.push(event.currentTarget.href) // includes protocol prefix - 'http://'
                 this.props.history.push(path);
+                // push(path)
             }
         };
     }
     componentWillUnmount() {
         delete window['storybuilder_global'];
     }
+    // <ConnectedRouter history = {this.props.history}>
+    // </ConnectedRouter>
     render() {
         let location = this.props.router.location || {};
-        return (React.createElement(react_router_redux_1.ConnectedRouter, { history: this.props.history },
-            React.createElement(react_router_dom_1.Switch, { location: location }, routes)));
+        return (React.createElement(ConnectedRouter, { history: this.props.history },
+            React.createElement(Switch, { location: location }, routes)));
     }
 };
-exports.RoutesController = RoutesController;
+// transitions were causing trouble, particularly with table of contents. 
+// router causes page reload for first toc selection on roadmap
+// <TransitionGroup>
+//     <CSSTransition
+//         key = {location.key}
+//         classNames = "fade"
+//         timeout = {1000}
+//         appear
+//         exit = {false}
+//         onEnter = {() => {
+//             window.scrollTo(0, 0) // adapt to single page app results in arbitray page location after nav
+//         }}
+//     >
+//  ** switch controller goes here
+//     </CSSTransition>
+// </TransitionGroup>
 let mapStateToProps = state => {
     let { router } = state;
     return {
         router,
     };
 };
-exports.RoutesController = RoutesController = react_redux_1.connect(mapStateToProps)(RoutesController);
+RoutesController = connect(mapStateToProps)(RoutesController);
+export { RoutesController };

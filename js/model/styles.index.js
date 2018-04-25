@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let headercardstyle = {
     backgroundImage: "url(/public/icons/WebsiteBanner.png)",
     backgroundSize: "cover",
@@ -26,4 +24,4 @@ let styles = {
     footercardstyle,
     tileliststyle,
 };
-exports.default = styles;
+export default styles;

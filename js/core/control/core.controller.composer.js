@@ -1,11 +1,16 @@
+// core.controller.composer.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+/*
+    TODO: update all code to async requirements
+    puzzle: route /, page home, and linklists x 3 are only data loaded on go back to page
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const react_redux_1 = require("react-redux");
-const react_router_redux_1 = require("react-router-redux");
-const master_model_1 = require("../../gateway/master.model");
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import master from '../../gateway/master.model';
 let setStateModel = (self, model, callback) => {
-    if (master_model_1.default.isPromise(model)) {
+    if (master.isPromise(model)) {
         model.then((model) => {
             model = updateModel(self, model);
             model.children = updateChildren(self, model.children);
@@ -30,22 +35,25 @@ let updateChildren = (self, children) => {
             return null;
         return updateModel(self, child);
     });
-    let result = output.filter(item => (!!item));
+    let result = output.filter(item => (!!item)); // filter screened items
     return result;
 };
 let updateModel = (self, model) => {
     if (model.updated)
         return model;
+    // only needed for pages that require repo loading; chilren are loaded in getChildren
     if (model.repo) {
-        model = master_model_1.default.getDocument(model.repo, model.index);
+        model = master.getDocument(model.repo, model.index);
     }
     let props = updateProperties(self, model);
     model.properties = props;
     model.updated = true;
     return model;
 };
+// TODO: implement import of propComponents
 let updateProperties = (self, model) => {
     let { properties, lookups, propComponents, propReferences } = model;
+    // let props = Object.assign({},properties) // work with copy
     if (!properties)
         properties = {};
     if (propReferences) {
@@ -54,9 +62,10 @@ let updateProperties = (self, model) => {
         }
     }
     if (lookups) {
+        // console.log('lookups',lookups)
         for (let key in lookups) {
             let { repo, index } = lookups[key];
-            properties[key] = master_model_1.default.getDocument(repo, index);
+            properties[key] = master.getDocument(repo, index);
         }
     }
     return properties;
@@ -66,7 +75,7 @@ let getChildren = (self, children) => {
         return children;
     let output = children.map((model, key) => {
         if (model.repo) {
-            model = master_model_1.default.getDocument(model.repo, model.index);
+            model = master.getDocument(model.repo, model.index);
         }
         return self.emitComponent(model, key);
     });
@@ -86,7 +95,7 @@ let wrapComponent = (component, wrapper, key) => {
     return output;
 };
 let toolkit = {
-    master: master_model_1.default,
+    master,
     setStateModel,
     updateChildren,
     updateModel,
@@ -95,8 +104,8 @@ let toolkit = {
     wrapComponent,
 };
 let coreControllerComposer = Controller => {
-    let ConnectedController = react_redux_1.connect(state => ({ state }), {
-        push: react_router_redux_1.push,
+    let ConnectedController = connect(state => ({ state }), {
+        push,
     })(Controller);
     class BaseController extends React.Component {
         render() {
@@ -105,4 +114,4 @@ let coreControllerComposer = Controller => {
     }
     return BaseController;
 };
-exports.default = coreControllerComposer;
+export default coreControllerComposer;

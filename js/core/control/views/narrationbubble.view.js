@@ -1,7 +1,8 @@
+// narrationbubble.view.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const markupblock_view_1 = require("./markupblock.view");
+import * as React from 'react';
+import MarkupBlockView from './markupblock.view';
 let NarrationBubbleView = ({ markup }) => {
     let bubbleStyle = {
         maxWidth: '600px',
@@ -30,8 +31,8 @@ let NarrationBubbleView = ({ markup }) => {
         left: '50px',
     };
     return React.createElement("aside", { style: bubbleStyle },
-        React.createElement(markupblock_view_1.default, { markup: markup }),
+        React.createElement(MarkupBlockView, { markup: markup }),
         React.createElement("div", { style: firstArrowStyle }),
         React.createElement("div", { style: secondArrowStyle }));
 };
-exports.default = NarrationBubbleView;
+export default NarrationBubbleView;

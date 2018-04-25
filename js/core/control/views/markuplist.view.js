@@ -1,9 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const markupblock_view_1 = require("./markupblock.view");
-const markupline_view_1 = require("./markupline.view");
-const Chip_1 = require("material-ui/Chip");
+// markuplist.view.tsx
+/*
+    TODO
+        - allow for sublists = isSublist property in item
+        - allow for horizontal presentation of fields
+        - offset close list with window scroll
+*/
+import * as React from 'react';
+import MarkupBlockView from './markupblock.view';
+import MarkupLineView from './markupline.view';
+import Chip from 'material-ui/Chip';
 let moment = require('moment');
 let Fields = ({ fields, fieldproperties, fieldmeta }) => {
     let fieldlist = [];
@@ -11,6 +16,7 @@ let Fields = ({ fields, fieldproperties, fieldmeta }) => {
         let field = fields[index];
         let name;
         let content;
+        // console.log('index, fields',index, fields)
         if (!fieldproperties.commonstructure) {
             name = field.name;
             content = field.content;
@@ -36,7 +42,7 @@ let Fields = ({ fields, fieldproperties, fieldmeta }) => {
             React.createElement("div", { style: { fontStyle: 'italic', display: 'inline' } },
                 name,
                 ": "),
-            React.createElement(markupline_view_1.default, { markup: content, style: { display: 'inline' } })));
+            React.createElement(MarkupLineView, { markup: content, style: { display: 'inline' } })));
     }
     if (!fieldlist.length)
         return null;
@@ -51,17 +57,19 @@ class MarkupListView extends React.Component {
             outerheight: 'auto',
             opaque: (this.props.compacted && !this.props.expanded)
         };
+        // allow sublist
+        // content, fields, suffix, isSublist
         this.itemcontent = (items, fieldproperties, fieldmeta) => {
             let itemlist = items.map((item, index) => {
                 return React.createElement("li", { key: index },
-                    item.content ? React.createElement(markupblock_view_1.default, { markup: item.content }) : null,
+                    item.content ? React.createElement(MarkupBlockView, { markup: item.content }) : null,
                     item.fields ? React.createElement(Fields, { fields: item.fields, fieldproperties: fieldproperties, fieldmeta: fieldmeta }) : null,
-                    item.suffix ? React.createElement(markupblock_view_1.default, { markup: item.suffix }) : null);
+                    item.suffix ? React.createElement(MarkupBlockView, { markup: item.suffix }) : null);
             });
             return (React.createElement("ul", null, itemlist));
         };
         this.headercontent = (headermarkup) => {
-            return React.createElement(markupblock_view_1.default, { markup: headermarkup });
+            return React.createElement(MarkupBlockView, { markup: headermarkup });
         };
         this.outernode = null;
         this.innernode = null;
@@ -125,10 +133,10 @@ class MarkupListView extends React.Component {
             React.createElement("div", { ref: node => { this.outernode = node; }, style: outerstyle },
                 React.createElement("div", { style: { border: '1px solid white' }, ref: node => { this.innernode = node; } },
                     this.state.compacted ?
-                        !this.state.expanded ? React.createElement(Chip_1.default, { onClick: this.onExpand, style: chipstyle },
+                        !this.state.expanded ? React.createElement(Chip, { onClick: this.onExpand, style: chipstyle },
                             React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_down"),
                             " Show more")
-                            : React.createElement(Chip_1.default, { onClick: this.onContract, style: chipstyle },
+                            : React.createElement(Chip, { onClick: this.onContract, style: chipstyle },
                                 React.createElement("span", { className: "material-icons", style: { verticalAlign: 'middle' } }, "keyboard_arrow_up"),
                                 " Show less")
                         : null,
@@ -144,4 +152,4 @@ class MarkupListView extends React.Component {
                     } }) : null)));
     }
 }
-exports.default = MarkupListView;
+export default MarkupListView;

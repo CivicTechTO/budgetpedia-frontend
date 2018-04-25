@@ -1,10 +1,11 @@
+// nuggetlist.view.tsx
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const nugget_view_1 = require("./nugget.view");
-const scrollcontrols_view_1 = require("./scrollcontrols.view");
-const markupline_view_1 = require("./markupline.view");
-const hashanchorwrapper_view_1 = require("./hashanchorwrapper.view");
+import * as React from 'react';
+import NuggetView from './nugget.view';
+import ScrollControlsView from './scrollcontrols.view';
+import MarkupLine from './markupline.view';
+import HashAnchorWrapper from './hashanchorwrapper.view';
 class NuggetList extends React.Component {
     constructor() {
         super(...arguments);
@@ -35,7 +36,7 @@ class NuggetList extends React.Component {
             overflowX: 'scroll',
         };
         let nuggets = nuggetdata.map(function (data, index) {
-            return (React.createElement(nugget_view_1.default, { key: index, image: data.image, style: data.style, prefix: data.prefix, infix: data.infix, suffix: data.suffix, contrast: data.contrast }));
+            return (React.createElement(NuggetView, { key: index, image: data.image, style: data.style, prefix: data.prefix, infix: data.infix, suffix: data.suffix, contrast: data.contrast }));
         });
         return (React.createElement("article", { style: Object.assign({}, defaultstyle, style) },
             React.createElement("div", { style: {
@@ -45,7 +46,7 @@ class NuggetList extends React.Component {
                     padding: '8px 16px',
                     zIndex: 2,
                 } },
-                React.createElement(hashanchorwrapper_view_1.default, { tag: 'h2', title: title, style: {
+                React.createElement(HashAnchorWrapper, { tag: 'h2', title: title, style: {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'bottom',
@@ -57,9 +58,9 @@ class NuggetList extends React.Component {
                         verticalAlign: 'bottom',
                         fontSize: 'smaller',
                     } },
-                    React.createElement(markupline_view_1.default, { markup: subtitle }))),
-            React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
-                React.createElement("div", { style: defaultScrollBlockstyle, ref: el => { this.scroller = el; } },
+                    React.createElement(MarkupLine, { markup: subtitle }))),
+            React.createElement(ScrollControlsView, { scroller: this.state.scroller },
+                React.createElement("div", { style: defaultScrollBlockstyle /*ts typing issue*/, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {
                             display: 'block',
                             whiteSpace: 'nowrap',
@@ -68,4 +69,4 @@ class NuggetList extends React.Component {
                         } }, nuggets)))));
     }
 }
-exports.default = NuggetList;
+export default NuggetList;

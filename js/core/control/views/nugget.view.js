@@ -1,7 +1,8 @@
+// nugget.view.tsx
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const markupline_view_1 = require("./markupline.view");
+import * as React from 'react';
+import MarkupLine from './markupline.view';
 let Nugget = (props) => {
     let { image, style, contrast, prefix, infix, suffix } = props;
     let defaultstyle = {
@@ -26,8 +27,8 @@ let Nugget = (props) => {
         color: '#f1c40f'
     };
     return React.createElement("div", { style: Object.assign({}, defaultstyle, style) },
-        React.createElement("div", { style: { marginTop: '30px', minWidth: '20px' } }, React.createElement(markupline_view_1.default, { markup: prefix })),
-        React.createElement("div", { style: defaultinfixstyle }, React.createElement(markupline_view_1.default, { markup: infix })),
-        React.createElement("div", null, React.createElement(markupline_view_1.default, { markup: suffix })));
+        React.createElement("div", { style: { marginTop: '30px', minWidth: '20px' } }, React.createElement(MarkupLine, { markup: prefix })),
+        React.createElement("div", { style: defaultinfixstyle }, React.createElement(MarkupLine, { markup: infix })),
+        React.createElement("div", null, React.createElement(MarkupLine, { markup: suffix })));
 };
-exports.default = Nugget;
+export default Nugget;

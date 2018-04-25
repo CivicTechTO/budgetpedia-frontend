@@ -1,13 +1,14 @@
+// attribution.view.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const react_router_dom_1 = require("react-router-dom");
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 let moment = require('moment');
 let Attributions = ({ name, link }) => {
     let content = null;
     if (link) {
         if (link.substr(0, 1) == '/') {
-            content = React.createElement(react_router_dom_1.Link, { to: link }, name);
+            content = React.createElement(Link, { to: link }, name);
         }
         else {
             content = React.createElement("a", { href: link, target: '_blank' }, name);
@@ -72,4 +73,4 @@ let AttributionView = ({ attribution }) => {
         ]
             : null));
 };
-exports.default = AttributionView;
+export default AttributionView;

@@ -1,12 +1,17 @@
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+// menuicon.view.tsx
+/*
+    Note: FontIcon style seems to be ignored when nested in IconButton
+
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const IconButton_1 = require("material-ui/IconButton");
-const FontIcon_1 = require("material-ui/FontIcon");
+import * as React from 'react'; // required by bundler
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
 class MenuIconView extends React.Component {
     render() {
-        return (React.createElement(IconButton_1.default, { onClick: this.props.onSelect, style: this.props.style },
-            React.createElement(FontIcon_1.default, { className: "material-icons", color: this.props.color }, "menu")));
+        return (React.createElement(IconButton, { onClick: this.props.onSelect, style: this.props.style },
+            React.createElement(FontIcon, { className: "material-icons", color: this.props.color }, "menu")));
     }
 }
-exports.default = MenuIconView;
+export default MenuIconView;

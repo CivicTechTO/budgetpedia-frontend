@@ -1,14 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-require("./imageadd.styles.css");
-class ImageAdd extends React.Component {
+import * as React from 'react';
+import './imageadd.styles.css';
+export default class ImageAdd extends React.Component {
     constructor() {
         super(...arguments);
+        // Start the popover closed
         this.state = {
             url: '',
             open: false,
         };
+        // Note: make sure whenever a click happens within the popover it is not closed
         this.onPopoverClick = () => {
             this.preventNextClose = true;
         };
@@ -36,6 +36,8 @@ class ImageAdd extends React.Component {
             this.setState({ url: evt.target.value });
         };
     }
+    // When the popover is open and users click anywhere on the page,
+    // the popover should close
     componentDidMount() {
         document.addEventListener('click', this.closePopover);
     }
@@ -56,4 +58,3 @@ class ImageAdd extends React.Component {
                 React.createElement("button", { className: "addImageConfirmButton", type: "button", onClick: this.addImage }, "Add"))));
     }
 }
-exports.default = ImageAdd;

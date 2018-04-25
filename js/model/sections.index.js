@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// sections.index.tsx
 let torontobudget = {
     controller: 'section',
     index: 'torontobudget',
@@ -596,4 +595,4 @@ let sections = {
     roadmap,
     home,
 };
-exports.default = sections;
+export default sections;

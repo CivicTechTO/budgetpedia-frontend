@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// sheets.index.tsx
 let elsewhere = {
     controller: 'paper',
     index: 'elsewhere',
@@ -114,4 +113,4 @@ let sheets = {
     opportunities,
     stories,
 };
-exports.default = sheets;
+export default sheets;

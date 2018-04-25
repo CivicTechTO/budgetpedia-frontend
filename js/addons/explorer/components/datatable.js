@@ -1,12 +1,12 @@
+// datatable.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 var { Component } = React;
-const Dialog_1 = require("material-ui/Dialog");
-const FontIcon_1 = require("material-ui/FontIcon");
-const IconButton_1 = require("material-ui/IconButton");
-const react_table_1 = require("react-table");
-const react_csv_1 = require("react-csv");
+import Dialog from 'material-ui/Dialog';
+import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
+import ReactTable from 'react-table';
+import { CSVLink } from 'react-csv';
 let stringify = require('csv-stringify/lib/sync');
 var format = require('format-number');
 var numberformat = format({ round: 0 });
@@ -29,11 +29,18 @@ class DataTable extends Component {
             let { columns, title, data, footer } = tableparms;
             let headercells = [];
             let titlecells = [title];
+            // let footercells = []
+            // let datacells = []
             for (let n = 0; n < columns.length; n++) {
                 headercells.push(columns[n].Header);
             }
+            // titlecells[0] = title
+            // for (let n = 0; n < footer.length; n++) {
+            //     footercells.push(footer[n])
+            // }
             let csv = [titlecells, headercells, ...data, footer];
             csv = stringify(csv);
+            // console.log('csv',csv)
             this.csv = csv;
             return this.csv;
         };
@@ -90,8 +97,9 @@ class DataTable extends Component {
             return value;
         };
         this.tableDialog = () => {
-            return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px', textAlign: 'center' } }, "Data Table"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: true, autoDetectWindowHeight: true },
-                React.createElement(IconButton_1.default, { style: {
+            // console.log('returning dialog',this.findAspectChartLookups)
+            return React.createElement(Dialog, { title: React.createElement("div", { style: { padding: '12px 0 0 12px', textAlign: 'center' } }, "Data Table"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: true, autoDetectWindowHeight: true },
+                React.createElement(IconButton, { style: {
                         top: 0,
                         right: 0,
                         padding: 0,
@@ -100,7 +108,7 @@ class DataTable extends Component {
                         position: "absolute",
                         zIndex: 2,
                     }, tooltip: "close", onClick: this.onRequestClose },
-                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                    React.createElement(FontIcon, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", { style: {
                         top: 0,
                         left: 0,
@@ -109,20 +117,21 @@ class DataTable extends Component {
                         position: "absolute",
                         zIndex: 2,
                     } },
-                    React.createElement(react_csv_1.CSVLink, { data: this.assembleCSVdata(), filename: 'budgetpedia.chart.data.csv' },
-                        React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer", verticalAlign: 'middle' } }, "file_download"),
+                    React.createElement(CSVLink, { data: this.assembleCSVdata(), filename: 'budgetpedia.chart.data.csv' },
+                        React.createElement(FontIcon, { className: "material-icons", style: { cursor: "pointer", verticalAlign: 'middle' } }, "file_download"),
                         React.createElement("span", null, "Download")),
                     " (right click \"Save link as...\" with ad blocker)"),
                 React.createElement("div", { style: { fontWeight: 'bold' } }, this.specifications.title),
-                React.createElement(react_table_1.default, { style: { height: '300px' }, data: this.assembleTableData(), columns: this.assembleTableColumns(), showPagination: false }));
+                React.createElement(ReactTable, { style: { height: '300px' }, data: this.assembleTableData(), columns: this.assembleTableColumns(), showPagination: false }));
         };
     }
     componentWillMount() {
         this.specifications = this.props.specifications;
+        // console.log('DataTable specs',this.specifications)
     }
     render() {
         let dialog = this.tableDialog();
         return dialog;
     }
 }
-exports.default = DataTable;
+export default DataTable;

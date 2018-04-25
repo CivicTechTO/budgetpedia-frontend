@@ -1,19 +1,27 @@
+// markupline.view.tsx
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const html_view_1 = require("./html.view");
+import * as React from 'react';
+import HtmlView from './html.view';
 let mdit = require('markdown-it');
 let mda = require('markdown-it-attrs');
 let mdt = require('markdown-it-modify-token');
 let md = new mdit({ html: true,
     modifyToken: function (token, env) {
+        // see API https://markdown-it.github.io/markdown-it/#Token
+        // token will also have an attrObj property added for convenience
+        // which allows easy get and set of attribute values.
+        // It is prepopulated with the current attr values.
+        // Values returned in token.attrObj will override existing attr values.
+        // env will contain any properties passed to markdown-it's render
+        // Token can be modified in place, no return is necessary
         switch (token.type) {
             case 'link_open': {
                 if (token.attrObj.href.substr(0, 1) == "/") {
                     token.attrObj.onclick = 'storybuilder_global.navigateViaRouter(event)';
                 }
                 else {
-                    token.attrObj.target = '_blank';
+                    token.attrObj.target = '_blank'; // set all links to open in new window
                 }
                 break;
             }
@@ -21,5 +29,5 @@ let md = new mdit({ html: true,
     }
 });
 md.use(mda).use(mdt);
-const MarkupLine = ({ markup, style }) => (React.createElement(html_view_1.default, { style: Object.assign({ display: 'inline' }, style), html: md.renderInline(markup) }));
-exports.default = MarkupLine;
+const MarkupLine = ({ markup, style }) => (React.createElement(HtmlView, { style: Object.assign({ display: 'inline' }, style), html: md.renderInline(markup) }));
+export default MarkupLine;

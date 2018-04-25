@@ -1,15 +1,22 @@
+// headlinesbutton.view.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const headlinespicker_view_1 = require("./headlinespicker.view");
+import * as React from 'react';
+import HeadlinesPicker from './headlinespicker.view';
+// from draft-js-plugins
+// copy-paste below
+// copy-paste below (more or less)
 class HeadlinesButton extends React.Component {
     constructor() {
         super(...arguments);
-        this.onClick = () => this.props.onOverrideContent(headlinespicker_view_1.default);
+        this.onClick = () => 
+        // A button can call `onOverrideContent` to replace the content
+        // of the toolbar. This can be useful for displaying sub
+        // menus or requesting additional information from the user.
+        this.props.onOverrideContent(HeadlinesPicker);
     }
     render() {
         return (React.createElement("div", { className: "headlineButtonWrapper" },
             React.createElement("button", { onClick: this.onClick, className: "headlineButton" }, "H")));
     }
 }
-exports.default = HeadlinesButton;
+export default HeadlinesButton;

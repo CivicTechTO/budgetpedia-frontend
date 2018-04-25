@@ -1,14 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Card_1 = require("material-ui/Card");
+// pathways.tsx
+// required by bundler
+import * as React from 'react';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 var { Component } = React;
 class Pathways extends Component {
     render() {
         return React.createElement("div", null,
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "Activist Pathways", subtitle: "How to make change" }),
-                React.createElement(Card_1.CardText, null,
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "Activist Pathways", subtitle: "How to make change" }),
+                React.createElement(CardText, null,
                     React.createElement("p", null, "Making change is hard. Making change in government is harder. Here we want to collect stories of what's worked."),
                     React.createElement("p", null, "The purpose of this section of the Budgetpedia website is to direct you, dear social activist, to places where you can learn what others before you, or around you, did to make positive changes in their communities, and within their governments. If you've succeeded in making some changes, perhaps you could see your way to letting us link to your story so that others can learn from it. Because we love a celebration story, particularly when Toronto is the grounds for this celebration."),
                     React.createElement("p", null, "We are inspired by those who want to see change, and by those who make the moves to see that through. No matter how big, or how small, dedication to a cause is motivating - and who can't use a push every now and then?"),
@@ -18,9 +18,9 @@ class Pathways extends Component {
                         ". You can publish your story there, and we can link it here. The only editorial criteria we have is that it be accurate, respectful, and constructive. Or if you know of a story that you think is worth sharing, then please let us know at ",
                         React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca")),
                     React.createElement("p", null, "For example (click to expand):"))),
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "Neighbourhood parks", actAsExpander: true, showExpandableButton: true }),
-                React.createElement(Card_1.CardText, { expandable: true },
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "Neighbourhood parks", actAsExpander: true, showExpandableButton: true }),
+                React.createElement(CardText, { expandable: true },
                     React.createElement("h3", null, "Jutta Mason - Community Activist at Dufferin Park"),
                     React.createElement("p", null,
                         "Who comes to mind when you think of parks and recreation? Perhap it's ",
@@ -56,9 +56,9 @@ class Pathways extends Component {
                             React.createElement("a", { target: "_blank", href: "http://www.ideasthatmatter.com/people/2001jutta" }, "http://www.ideasthatmatter.com/people/2001jutta")),
                         React.createElement("li", null,
                             React.createElement("a", { target: "_blank", href: "http://metcalffoundation.com/stories/publications/the-power-of-civic-action/" }, "Women's Committee of Thorncliffe Park"))))),
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "Citywide causes", actAsExpander: true, showExpandableButton: true }),
-                React.createElement(Card_1.CardText, { expandable: true },
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "Citywide causes", actAsExpander: true, showExpandableButton: true }),
+                React.createElement(CardText, { expandable: true },
                     React.createElement("p", null, "Here are some causes that have budget components to them. Hopefully we can collectively help to support projects like this over time."),
                     React.createElement("ul", null,
                         React.createElement("li", null,
@@ -75,4 +75,4 @@ class Pathways extends Component {
                             " as well")))));
     }
 }
-exports.default = Pathways;
+export default Pathways;

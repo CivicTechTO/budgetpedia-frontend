@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// papers.index.tsx
 let budgetpediaoverview = {
     controller: 'paper',
     index: 'torontobudget',
@@ -1667,4 +1666,4 @@ let papers = {
     insiderview,
     councilprocess,
 };
-exports.default = papers;
+export default papers;

@@ -1,14 +1,16 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const redux_1 = require("redux");
-const createBrowserHistory_1 = require("history/createBrowserHistory");
-const react_router_redux_1 = require("react-router-redux");
-const redux_thunk_1 = require("redux-thunk");
-const reducers_1 = require("../actions/reducers");
-const reducers = redux_1.combineReducers(Object.assign({}, reducers_1.default, { router: react_router_redux_1.routerReducer }));
-const history = createBrowserHistory_1.default();
-exports.history = history;
-const reduxRouterMiddleware = react_router_redux_1.routerMiddleware(history);
-const middleware = redux_1.applyMiddleware(reduxRouterMiddleware, redux_thunk_1.default);
-const store = redux_1.createStore(reducers, middleware);
-exports.store = store;
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// configurestore.tsx
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import createHistory from 'history/createBrowserHistory';
+import { routerReducer, routerMiddleware } from 'react-router-redux';
+import thunkMiddleware from 'redux-thunk';
+import mainReducers from "../actions/reducers";
+// assemble reducers
+const reducers = combineReducers(Object.assign({}, mainReducers, { router: routerReducer }));
+// assemble middleware
+const history = createHistory();
+const reduxRouterMiddleware = routerMiddleware(history);
+const middleware = applyMiddleware(reduxRouterMiddleware, thunkMiddleware);
+// create store
+const store = createStore(reducers, middleware);
+export { store, history };

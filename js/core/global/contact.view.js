@@ -1,7 +1,9 @@
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+// contact.view.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Radium = require("radium");
+import * as React from 'react'; // required by bundler
+// TODO: replace radium with css classes
+import * as Radium from 'radium';
 let { StyleRoot } = Radium;
 class ContactView extends React.Component {
     render() {
@@ -23,4 +25,4 @@ class ContactView extends React.Component {
                         }, this.props.contactStyle], target: "_blank", href: this.props.contactAddress }, this.props.contactPrompt))));
     }
 }
-exports.default = ContactView;
+export default ContactView;

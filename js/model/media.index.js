@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// media.index.tsx
 let budgetpediatwitter = {
     controller: 'media',
     index: 'budgetpediatwitter',
@@ -37,4 +36,4 @@ let budgetpediatwitter = {
 let media = {
     budgetpediatwitter,
 };
-exports.default = media;
+export default media;

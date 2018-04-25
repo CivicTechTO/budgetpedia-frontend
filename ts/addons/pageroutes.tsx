@@ -11,7 +11,7 @@ import PageController from '../core/control/page.controller'
 
 import About from './pages/about'
 import Deputations from './pages/deputations'
-import Explorer from './explorer/explorer'
+import Explorer from './explorer/explore'
 import Communities from './pages/communities'
 import SocialMedia from './pages/socialmedia'
 import Newsletter from './pages/newsletter'
@@ -20,6 +20,8 @@ import Teams from './pages/teams'
 import Stories from './pages/stories'
 import Announcements from './pages/announcements'
 import Pathways from './pages/pathways'
+
+import Loadable from 'react-loadable';
 
 let routedata = [
     { path: "/about", component: About },

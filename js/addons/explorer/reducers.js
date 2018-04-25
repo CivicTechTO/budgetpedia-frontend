@@ -1,18 +1,21 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const redux_1 = require("redux");
-const budgetpedia_model_1 = require("../../legacy/budgetpedia.model");
-const actions_1 = require("./actions");
-const constants_1 = require("./constants");
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// explorer reducers.tsx
+/*
+    TODO: change chartSelection from yearScope to root cell
+*/
+import { combineReducers } from 'redux';
+import masterModel from "../../legacy/budgetpedia.model";
+import { types as actiontypes } from './actions';
+import { TimeScope } from './constants';
 let generationcounter = 0;
-let defaults = (state = budgetpedia_model_1.default.explorer.defaults, action) => {
+let defaults = (state = masterModel.explorer.defaults, action) => {
     return state;
 };
 let branchList = (state = [], action) => {
     let { type } = action;
     let newstate;
     switch (type) {
-        case actions_1.types.ADD_BRANCH: {
+        case actiontypes.ADD_BRANCH: {
             let { refbranchuid, branchuid } = action.payload;
             if (!refbranchuid) {
                 newstate = [...state, action.payload.branchuid];
@@ -30,7 +33,7 @@ let branchList = (state = [], action) => {
             }
             return newstate;
         }
-        case actions_1.types.CLONE_BRANCH: {
+        case actiontypes.CLONE_BRANCH: {
             let { refbranchuid, settings } = action.payload;
             let newbranchuid = settings.newbranchid;
             if (!refbranchuid) {
@@ -49,15 +52,15 @@ let branchList = (state = [], action) => {
             }
             return newstate;
         }
-        case actions_1.types.REMOVE_BRANCH: {
+        case actiontypes.REMOVE_BRANCH: {
             newstate = state.filter(item => item != action.payload.branchuid);
             return newstate;
         }
-        case actions_1.types.REMOVE_BRANCHES: {
+        case actiontypes.REMOVE_BRANCHES: {
             newstate = [];
             return newstate;
         }
-        case actions_1.types.BRANCH_MOVE_UP: {
+        case actiontypes.BRANCH_MOVE_UP: {
             newstate = [...state];
             let { branchuid } = action.payload;
             let pos = newstate.indexOf(branchuid);
@@ -74,7 +77,7 @@ let branchList = (state = [], action) => {
             newstate[pos] = oldbranchuid;
             return newstate;
         }
-        case actions_1.types.BRANCH_MOVE_DOWN: {
+        case actiontypes.BRANCH_MOVE_DOWN: {
             newstate = [...state];
             let { branchuid } = action.payload;
             let pos = newstate.indexOf(branchuid);
@@ -99,11 +102,11 @@ let branchesById = (state = {}, action) => {
     let { type } = action;
     let newstate;
     switch (type) {
-        case actions_1.types.ADD_BRANCH: {
+        case actiontypes.ADD_BRANCH: {
             newstate = Object.assign({}, state, { [action.payload.branchuid]: action.payload.settings });
             return newstate;
         }
-        case actions_1.types.UPDATE_BRANCH: {
+        case actiontypes.UPDATE_BRANCH: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             let newbranchstate = Object.assign({}, newstate[branchuid]);
@@ -111,21 +114,21 @@ let branchesById = (state = {}, action) => {
             newstate[branchuid] = newbranchstate;
             return newstate;
         }
-        case actions_1.types.CLONE_BRANCH: {
+        case actiontypes.CLONE_BRANCH: {
             let newbranchid = action.payload.settings.newbranchid;
             newstate = Object.assign({}, state, { [newbranchid]: action.payload.settings.branch[newbranchid] });
             return newstate;
         }
-        case actions_1.types.REMOVE_BRANCH: {
+        case actiontypes.REMOVE_BRANCH: {
             newstate = Object.assign({}, state);
             delete newstate[action.payload.branchuid];
             return newstate;
         }
-        case actions_1.types.REMOVE_BRANCHES: {
+        case actiontypes.REMOVE_BRANCHES: {
             newstate = {};
             return newstate;
         }
-        case actions_1.types.ADD_NODE: {
+        case actiontypes.ADD_NODE: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
@@ -133,7 +136,7 @@ let branchesById = (state = {}, action) => {
                 [...state[branchuid].nodeList, action.payload.nodeuid];
             return newstate;
         }
-        case actions_1.types.ADD_NODES: {
+        case actiontypes.ADD_NODES: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
@@ -144,9 +147,10 @@ let branchesById = (state = {}, action) => {
             }
             newstate[branchuid].nodeList =
                 [...state[branchuid].nodeList, ...newnodelist];
+            // console.log('add nodes',newstate, newnodelist)
             return newstate;
         }
-        case actions_1.types.REMOVE_NODES: {
+        case actiontypes.REMOVE_NODES: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             let removelist = action.payload.items;
@@ -159,7 +163,7 @@ let branchesById = (state = {}, action) => {
             newstate[branchuid].nodeList = newList;
             return newstate;
         }
-        case actions_1.types.CHANGE_VIEWPOINT: {
+        case actiontypes.CHANGE_VIEWPOINT: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             let newbranchstate = Object.assign({}, newstate[branchuid]);
@@ -169,7 +173,7 @@ let branchesById = (state = {}, action) => {
             newstate[branchuid] = newbranchstate;
             return newstate;
         }
-        case actions_1.types.CHANGE_VERSION: {
+        case actiontypes.CHANGE_VERSION: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             let newbranchstate = Object.assign({}, newstate[branchuid]);
@@ -178,42 +182,43 @@ let branchesById = (state = {}, action) => {
             newstate[branchuid] = newbranchstate;
             return newstate;
         }
-        case actions_1.types.CHANGE_ASPECT: {
+        case actiontypes.CHANGE_ASPECT: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
             newstate[branchuid].aspect = action.payload.aspectname;
             return newstate;
         }
-        case actions_1.types.TOGGLE_INFLATION_ADJUSTED: {
+        case actiontypes.TOGGLE_INFLATION_ADJUSTED: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
             newstate[branchuid].inflationAdjusted = action.payload.value;
             return newstate;
         }
-        case actions_1.types.UPDATE_PRORATA: {
+        case actiontypes.UPDATE_PRORATA: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
             newstate[branchuid].prorata = action.payload.value;
             return newstate;
         }
-        case actions_1.types.TOGGLE_SHOW_OPTIONS: {
+        case actiontypes.TOGGLE_SHOW_OPTIONS: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
             newstate[branchuid].showOptions = action.payload.value;
             return newstate;
         }
-        case actions_1.types.CHANGE_BRANCH_DATA: {
+        // increment branch data version
+        case actiontypes.CHANGE_BRANCH_DATA: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
             newstate[branchuid].branchDataGeneration++;
             return newstate;
         }
-        case actions_1.types.CLEAR_BRANCH_STORY: {
+        case actiontypes.CLEAR_BRANCH_STORY: {
             let { branchuid } = action.payload;
             newstate = Object.assign({}, state);
             newstate[branchuid] = Object.assign({}, newstate[branchuid]);
@@ -228,23 +233,25 @@ let nodesById = (state = {}, action) => {
     let { type } = action;
     let newstate;
     switch (type) {
-        case actions_1.types.ADD_NODE: {
+        case actiontypes.ADD_NODE: {
             let node = state[action.payload.nodeuid] || {};
             node = Object.assign(node, action.payload.settings);
             newstate = Object.assign({}, state, { [action.payload.nodeuid]: node });
             return newstate;
         }
-        case actions_1.types.ADD_NODES: {
+        case actiontypes.ADD_NODES: {
             let { settingslist } = action.payload;
+            // console.log('settingslist in reducers ADD_NODES',settingslist)
             let newstate = Object.assign({}, state);
             for (let settingsdata of settingslist) {
                 let node = newstate[settingsdata.nodeuid] || {};
                 node = Object.assign(node, settingsdata.settings);
                 newstate[settingsdata.nodeuid] = node;
             }
+            // console.log('ADD_NODES in nodesById',newstate)
             return newstate;
         }
-        case actions_1.types.CLONE_BRANCH: {
+        case actiontypes.CLONE_BRANCH: {
             let newnodes = action.payload.settings.nodes;
             newstate = Object.assign({}, state);
             for (let nodeid in newnodes) {
@@ -252,7 +259,7 @@ let nodesById = (state = {}, action) => {
             }
             return newstate;
         }
-        case actions_1.types.REMOVE_NODES: {
+        case actiontypes.REMOVE_NODES: {
             newstate = Object.assign({}, state);
             let removelist = action.payload.items;
             for (let removeitem of removelist) {
@@ -260,7 +267,7 @@ let nodesById = (state = {}, action) => {
             }
             return newstate;
         }
-        case actions_1.types.ADD_CELLS: {
+        case actiontypes.ADD_CELLS: {
             let newstate = Object.assign({}, state);
             let nodeuid = action.payload.nodeuid;
             let newnode = Object.assign({}, newstate[nodeuid]);
@@ -270,7 +277,7 @@ let nodesById = (state = {}, action) => {
             newstate[nodeuid] = newnode;
             return newstate;
         }
-        case actions_1.types.CHANGE_TAB: {
+        case actiontypes.CHANGE_TAB: {
             let newstate = Object.assign({}, state);
             let { nodeuid } = action.payload;
             let newnode = Object.assign({}, newstate[action.payload.nodeuid]);
@@ -278,7 +285,7 @@ let nodesById = (state = {}, action) => {
             newstate[nodeuid] = newnode;
             return newstate;
         }
-        case actions_1.types.UPDATE_NODE_YEAR_SELECTIONS: {
+        case actiontypes.UPDATE_NODE_YEAR_SELECTIONS: {
             newstate = Object.assign({}, state);
             let { nodeuid, leftyear, rightyear } = action.payload;
             let newnode = Object.assign({}, newstate[nodeuid]);
@@ -292,7 +299,7 @@ let nodesById = (state = {}, action) => {
             newstate[nodeuid] = newnode;
             return newstate;
         }
-        case actions_1.types.NORMALIZE_CELL_YEAR_DEPENDENCIES: {
+        case actiontypes.NORMALIZE_CELL_YEAR_DEPENDENCIES: {
             newstate = Object.assign({}, state);
             let { nodeuid, yearsRange } = action.payload;
             let { start: startYear, end: endYear } = yearsRange;
@@ -309,7 +316,7 @@ let nodesById = (state = {}, action) => {
             newstate[nodeuid] = newnode;
             return newstate;
         }
-        case actions_1.types.HARMONIZE_CELLS: {
+        case actiontypes.HARMONIZE_CELLS: {
             newstate = Object.assign({}, state);
             let { nodeProperties, nodeList } = action.payload;
             for (let nodeuid of nodeList) {
@@ -331,13 +338,16 @@ let cellsById = (state = {}, action) => {
     let { type } = action;
     let newstate = Object.assign({}, state);
     switch (type) {
-        case actions_1.types.ADD_CELLS: {
+        case actiontypes.ADD_CELLS: {
             for (let setting of action.payload.settings) {
+                // TODO: cell declaration should not include celluid property
+                // but the property crept into usage in node.class setCells
+                // leaving for now for sake of stability
                 newstate[setting.celluid] = setting;
             }
             return newstate;
         }
-        case actions_1.types.CLONE_BRANCH: {
+        case actiontypes.CLONE_BRANCH: {
             let newcells = action.payload.settings.cells;
             newstate = Object.assign({}, state);
             for (let cellid in newcells) {
@@ -345,29 +355,39 @@ let cellsById = (state = {}, action) => {
             }
             return newstate;
         }
-        case actions_1.types.REMOVE_NODES: {
+        case actiontypes.REMOVE_NODES: {
             for (let removeitem of action.payload.items) {
                 for (let celluid of removeitem.cellList)
                     delete newstate[celluid];
             }
             return newstate;
         }
-        case actions_1.types.UPDATE_CELL_SELECTION: {
+        // TODO empty chartSlection - empty array rather than null
+        case actiontypes.UPDATE_CELL_SELECTION: {
             let { celluid } = action.payload;
             let newcell = Object.assign({}, newstate[celluid]);
             let chartSelection = action.payload.selection;
+            // console.log('setting newcell chart selection', chartSelection)
+            // if (Array.isArray(chartSelection) && chartSelection.length == 0) {
+            //     chartSelection = null
+            // }
             newcell.chartSelection = chartSelection;
+            // let newChartConfigs = Object.assign({},newcell.chartConfigs)
+            // let scopeSettings = Object.assign({},newChartConfigs[newcell.yearScope])
+            // scopeSettings.chartSelection = chartSelection
+            // newChartConfigs[newcell.yearScope] = scopeSettings
+            // newcell.chartConfigs = newChartConfigs
             newstate[celluid] = newcell;
             return newstate;
         }
-        case actions_1.types.UPDATE_CELL_TIMECODE: {
+        case actiontypes.UPDATE_CELL_TIMECODE: {
             let { celluid, explorerTimeCode } = action.payload;
             let newcell = Object.assign({}, newstate[celluid]);
             newcell.yearScope = explorerTimeCode;
             newstate[celluid] = newcell;
             return newstate;
         }
-        case actions_1.types.UPDATE_CELL_CHART_CODE: {
+        case actiontypes.UPDATE_CELL_CHART_CODE: {
             let { celluid, explorerChartCode } = action.payload;
             let newcell = Object.assign({}, newstate[celluid]);
             let newChartConfigs = Object.assign({}, newcell.chartConfigs);
@@ -378,20 +398,20 @@ let cellsById = (state = {}, action) => {
             newstate[celluid] = newcell;
             return newstate;
         }
-        case actions_1.types.NORMALIZE_CELL_YEAR_DEPENDENCIES: {
+        case actiontypes.NORMALIZE_CELL_YEAR_DEPENDENCIES: {
             let { cellList, yearsRange } = action.payload;
             let { start: startYear, end: endYear } = yearsRange;
             let yearSpan = endYear - startYear;
             for (let celluid of cellList) {
                 let newcell = Object.assign({}, newstate[celluid]);
                 if (yearSpan == 0) {
-                    newcell.yearScope = constants_1.TimeScope[constants_1.TimeScope.OneYear];
+                    newcell.yearScope = TimeScope[TimeScope.OneYear];
                 }
                 newstate[celluid] = newcell;
             }
             return newstate;
         }
-        case actions_1.types.HARMONIZE_CELLS: {
+        case actiontypes.HARMONIZE_CELLS: {
             newstate = Object.assign({}, state);
             let { cellProperties, cellList } = action.payload;
             for (let celluid of cellList) {
@@ -414,14 +434,14 @@ let lastActionDefaultState = {
 };
 let lastAction = (state = lastActionDefaultState, action) => {
     let newstate = Object.assign({}, state);
-    if (!action.payload && !(action.type == actions_1.types.RESET_LAST_ACTION)) {
+    if (!action.payload && !(action.type == actiontypes.RESET_LAST_ACTION)) {
         let newstate = Object.assign({}, lastActionDefaultState);
         newstate.type = action.type;
         return newstate;
     }
     let { type } = action;
     switch (type) {
-        case actions_1.types.RESET_LAST_ACTION: {
+        case actiontypes.RESET_LAST_ACTION: {
             let newstate = Object.assign({}, lastActionDefaultState);
             newstate.type = action.type;
             newstate.explorer = action.meta.explorer;
@@ -442,6 +462,10 @@ let lastAction = (state = lastActionDefaultState, action) => {
         }
     }
 };
+/*
+    There's a race condition which overwrites lastAction before being distributed.
+    This compensates by saveing types by uid rather than type
+*/
 let lastTargetedAction = (state = { counter: null }, action) => {
     if (!action.payload || !action.meta) {
         return state;
@@ -452,13 +476,14 @@ let lastTargetedAction = (state = { counter: null }, action) => {
     }
     let newstate = Object.assign({}, state);
     switch (action.type) {
-        case actions_1.types.REMOVE_BRANCH:
+        case actiontypes.REMOVE_BRANCH:
             delete newstate[payload.branchuid];
             return newstate;
-        case actions_1.types.REMOVE_BRANCHES:
+        case actiontypes.REMOVE_BRANCHES:
             newstate = { counter: null };
             return newstate;
-        case actions_1.types.REMOVE_NODES:
+        case actiontypes.REMOVE_NODES:
+            // delete newstate[payload.branchuid]
             for (let removeitem of payload.items) {
                 delete newstate[removeitem.nodeuid];
                 for (let celluid of removeitem.cellList)
@@ -494,14 +519,14 @@ let generation = (state = null, action) => {
     return generationcounter++;
 };
 let onetimenotification = (state = false, action) => {
-    if (action.type == actions_1.types.ONETIME_NOTIFICATION) {
+    if (action.type == actiontypes.ONETIME_NOTIFICATION) {
         return true;
     }
     else {
         return state;
     }
 };
-let explorer = redux_1.combineReducers({
+let explorer = combineReducers({
     defaults,
     branchList,
     branchesById,
@@ -512,5 +537,5 @@ let explorer = redux_1.combineReducers({
     generation,
     onetimenotification,
 });
-exports.default = explorer;
-exports.getExplorerDeclarationData = state => state.explorer;
+export default explorer;
+export const getExplorerDeclarationData = state => state.explorer;

@@ -1,16 +1,27 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// onchartcomponentselection.tsx
+// ------------------------[ UPDATE CHART BY SELECTION ]-----------------
+// response to user selection of a chart component (such as a column )
+// called by chart callback
+// on selection, makes a child with the same datasetSpecs offset
 let applyChartComponentSelection = (budgetBranch, nodeIndex, cellIndex, chartSelectionData) => {
+    // console.log('chartSelection data',chartSelectionData)
     let { nodes: branchNodes, uid: branchuid } = budgetBranch;
     let budgetNode = branchNodes[nodeIndex];
+    // budgetnode is undefined on final expendigure chart
     let budgetCell = budgetNode.cells[cellIndex];
     if (!budgetCell) {
         console.error('System Error: budgetNode, faulty cellIndex in applyChartComponentSelection', budgetNode, cellIndex);
         throw Error('faulty cellIndex in applyChartComponentSelection');
     }
+    // unpack chartSelectionData
     let selection = chartSelectionData.selection[0];
+    // console.log('budgetCell googlecharttype',budgetCell.googleChartType, cellIndex)
     let logicalselectionrow = null;
     if (selection) {
+        // TODO: understand this: setting column to null avoids bugs
+        // when chart animation is present
+        // selection.column = null
         switch (budgetCell.googleChartType) {
             case "ColumnChart": {
                 if (budgetCell.explorerChartCode == "DiffColumnChart") {
@@ -27,23 +38,37 @@ let applyChartComponentSelection = (budgetBranch, nodeIndex, cellIndex, chartSel
                 if (budgetCell.chartSelection == logicalselectionrow) {
                     logicalselectionrow = null;
                 }
+                // TODO: save row and column separately and allow
+                // mapping among chart types
+                // chartSelectionData.selection[0].row = null
                 break;
+            // TODO: find out why the piechart column null causes fail
+            // case "PieChart": 
+            //     chartSelectionData.selection[0].column = null
             default:
                 logicalselectionrow = selection.row;
                 break;
         }
+        // } else {
+        //     logicalselectionrow = null
+        //     // return
     }
+    // 1. stop if chart is not not drillable
     if (budgetCell.nodeDataseriesName == 'CommonDimension') {
         return;
     }
-    budgetCell.chartSelection = logicalselectionrow;
-    let removed = branchNodes.splice(nodeIndex + 1);
+    budgetCell.chartSelection = logicalselectionrow; // selection? chartSelectionData.selection: null
+    // console.log('setting chartSelection', budgetCell.chartSelection, logicalselectionrow, selection)
+    // 2. remove any nodes to be replaced or abandoned
+    let removed = branchNodes.splice(nodeIndex + 1); // remove subsequent charts
     let removeditems = removed.map((item, index) => {
         return { nodeuid: item.uid, cellList: item.cellDeclarationList, index };
     });
     let priorCellSettings = null;
     let priorNodeSettings = null;
     if (removeditems.length > 0) {
+        // console.log('removed,removeditems',removed,removeditems)
+        // TODO: review this for directness and efficiency
         let removednode = removed[removeditems[0].index];
         let priorCell = removednode.cells[removednode.nodeDeclaration.cellIndex];
         if (priorCell) {
@@ -65,12 +90,14 @@ let applyChartComponentSelection = (budgetBranch, nodeIndex, cellIndex, chartSel
         removeNodeDeclarations(removeditems);
     }
     let { updateCellChartSelection } = budgetNode.actions;
-    updateCellChartSelection(budgetCell.uid, logicalselectionrow);
-    if (logicalselectionrow === null) {
+    // console.log('logicalselectionrow', logicalselectionrow)
+    updateCellChartSelection(budgetCell.uid, logicalselectionrow); // chartSelectionData.selection)
+    if (logicalselectionrow === null) { // deselected
         budgetCell.chartSelection = null;
         return;
     }
-    budgetCell.chartSelection = logicalselectionrow;
+    // 3. otherwise create new child node
+    budgetCell.chartSelection = logicalselectionrow; // chartSelectionData.selection
     let childprops = {
         selectionrow: logicalselectionrow,
         nodeIndex,
@@ -80,6 +107,7 @@ let applyChartComponentSelection = (budgetBranch, nodeIndex, cellIndex, chartSel
     };
     budgetBranch.createChildNodeDeclaration(childprops);
 };
-exports.onChartComponentSelection = budgetBranch => nodeIndex => cellIndex => chartSelectionData => {
+export const onChartComponentSelection = budgetBranch => nodeIndex => cellIndex => chartSelectionData => {
+    // console.log('chart selection data',chartSelectionData)
     applyChartComponentSelection(budgetBranch, nodeIndex, cellIndex, chartSelectionData);
 };

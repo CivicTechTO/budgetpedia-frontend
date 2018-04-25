@@ -1,24 +1,24 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Card_1 = require("material-ui/Card");
+// tribes.tsx
+// required by bundler
+import * as React from 'react';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 var { Component } = React;
-const FontIcon_1 = require("material-ui/FontIcon");
+import FontIcon from 'material-ui/FontIcon';
 class Teams extends Component {
     render() {
         return React.createElement("div", null,
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "Our Teams. Join Us! Help us Make Budgetpedia Better." }),
-                React.createElement(Card_1.CardText, null, "Budgetpedia is a volunteer-driven project.  We've gotten where we are thanks to people with a wide variety of backgrounds and expertise.  If you're interested in democratizing information on municipal budgets in Ontario, we'd love to have you join us."),
-                React.createElement(Card_1.CardTitle, { title: "Getting Involved" }),
-                React.createElement(Card_1.CardText, null,
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "Our Teams. Join Us! Help us Make Budgetpedia Better." }),
+                React.createElement(CardText, null, "Budgetpedia is a volunteer-driven project.  We've gotten where we are thanks to people with a wide variety of backgrounds and expertise.  If you're interested in democratizing information on municipal budgets in Ontario, we'd love to have you join us."),
+                React.createElement(CardTitle, { title: "Getting Involved" }),
+                React.createElement(CardText, null,
                     React.createElement("h3", null, "Where and when"),
                     "We have regular meetings at Civic Tech Toronto Hacknights. We'll be there the first Tuesday of the month (and possibly other Tuesdays as well). Never hurts to check at ",
                     React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
                     " though just to make sure. Check with Civic Tech TO ",
                     React.createElement("a", { target: "_blank", href: "http://www.meetup.com/Civic-Tech-Toronto/" }, "meetup"),
                     " for locations. Or just email us your interests and we'll take it from there."),
-                React.createElement(Card_1.CardText, null,
+                React.createElement(CardText, null,
                     React.createElement("h3", null, "Our Teams"),
                     React.createElement("p", null, "These are the main working groups we've set up. Feel free to get involved with one of them.  Or suggest something else you'd like to do.  We're pretty flexible."),
                     React.createElement("ul", null,
@@ -96,7 +96,7 @@ class Teams extends Component {
                             React.createElement("strong", null, "Advisory Group"),
                             React.createElement("br", null),
                             React.createElement("p", null, "We're working on organizing an advisory group to help guide the project, and develop connections among user groups.")))),
-                React.createElement(Card_1.CardText, null,
+                React.createElement(CardText, null,
                     React.createElement("h3", null, "People"),
                     React.createElement("p", null,
                         "These are just a few of the people involved in Budgetpedia (alphabetical).  If you've got questions, or want to know more, please reach out to one of us at ",
@@ -131,7 +131,7 @@ class Teams extends Component {
                         React.createElement("p", null, "Christopher Graham is our product champion, co-lead of our UX team, and is involved with research and project development."),
                         React.createElement("div", { style: { clear: "left" } })),
                     React.createElement("div", { style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" } },
-                        React.createElement(FontIcon_1.default, { className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', margin: "6px", color: 'rgba(0,0,0,0.4)' } }, "person"),
+                        React.createElement(FontIcon, { className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', margin: "6px", color: 'rgba(0,0,0,0.4)' } }, "person"),
                         React.createElement("p", null, "Arthur Gron is a writer, our blogger-in-chief and co-lead of our communications team."),
                         React.createElement("div", { style: { clear: "left" } })),
                     React.createElement("div", { style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" } },
@@ -151,7 +151,7 @@ class Teams extends Component {
                         React.createElement("p", null, "Kira McCutcheon is involved with content development, communications, and project development, and is co-lead of our management team."),
                         React.createElement("div", { style: { clear: "left" } })),
                     React.createElement("div", { style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" } },
-                        React.createElement(FontIcon_1.default, { className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', margin: "6px", color: 'rgba(0,0,0,0.4)' } }, "person"),
+                        React.createElement(FontIcon, { className: "material-icons", style: { borderRadius: "50%", float: "left", height: "40px", fontSize: '40px', margin: "6px", color: 'rgba(0,0,0,0.4)' } }, "person"),
                         React.createElement("p", null, "Jim Rootham is a computer scientist, has taken on the challenge of reviewing the current codebase to prepare for the next development phase, and is co-lead of our software team."),
                         React.createElement("div", { style: { clear: "left" } })),
                     React.createElement("div", { style: { border: "1px solid silver", margin: "6px 3px", padding: "3px", borderRadius: "8px" } },
@@ -165,4 +165,4 @@ class Teams extends Component {
                         React.createElement("div", { style: { clear: "left" } })))));
     }
 }
-exports.default = Teams;
+export default Teams;

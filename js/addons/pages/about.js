@@ -1,26 +1,25 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Card_1 = require("material-ui/Card");
+// about.tsx
+import * as React from 'react';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 var { Component } = React;
 class About extends Component {
     render() {
         return React.createElement("div", null,
-            React.createElement(Card_1.Card, { initiallyExpanded: true },
-                React.createElement(Card_1.CardTitle, { title: "About Us", actAsExpander: true, showExpandableButton: true }),
-                React.createElement(Card_1.CardText, { expandable: true },
+            React.createElement(Card, { initiallyExpanded: true },
+                React.createElement(CardTitle, { title: "About Us", actAsExpander: true, showExpandableButton: true }),
+                React.createElement(CardText, { expandable: true },
                     "For a list of our teams and some of the people involved, see ",
                     React.createElement("a", { href: "./teams" }, "Our Teams"),
                     "."),
-                React.createElement(Card_1.CardText, null,
+                React.createElement(CardText, null,
                     "For some more background, see the ",
                     React.createElement("a", { target: "_blank", href: "https://docs.google.com/presentation/d/1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY" }, "slide deck"),
                     " that was used for out launch Nov 29, 2016, or the ",
                     React.createElement("a", { target: "_blank", href: "https://www.youtube.com/watch?v=Wd7-g9ox-90" }, "video"),
                     " of that presentation.")),
-            React.createElement(Card_1.Card, { initiallyExpanded: true },
-                React.createElement(Card_1.CardTitle, { title: "1. The Start", actAsExpander: true, showExpandableButton: true }),
-                React.createElement(Card_1.CardText, { expandable: true },
+            React.createElement(Card, { initiallyExpanded: true },
+                React.createElement(CardTitle, { title: "1. The Start", actAsExpander: true, showExpandableButton: true }),
+                React.createElement(CardText, { expandable: true },
                     React.createElement("p", null, "The founding mission of the budgetpedia.ca project is to make the Toronto budget more accessible to the people of Toronto, by supporting informed debate about the budget."),
                     React.createElement("p", null,
                         "The project was fostered by ",
@@ -37,9 +36,9 @@ class About extends Component {
                         React.createElement("li", null, "availability of full context"),
                         React.createElement("li", null, "support for collaboration"),
                         React.createElement("li", null, "ability to influence budget process")))),
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "2. Development", actAsExpander: true, showExpandableButton: true }),
-                React.createElement(Card_1.CardText, { expandable: true },
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "2. Development", actAsExpander: true, showExpandableButton: true }),
+                React.createElement(CardText, { expandable: true },
                     React.createElement("p", null, "Based on this, some plans were laid, and in December 2015 budgetpedia.ca became an open source software project. Henrik ended up doing almost all of the coding so far, but many people, over 60, contributed content, design, guidance, data assembly, research, and all kinds of support."),
                     React.createElement("p", null, "Now Budgetpedia.ca as a project has a lot of assets, including"),
                     React.createElement("ul", null,
@@ -95,9 +94,9 @@ class About extends Component {
                                 React.createElement("em", null, "Better outcomes"))),
                         React.createElement("li", null, "Open government"),
                         React.createElement("li", null, "Open data")))),
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "3. Community", actAsExpander: true, showExpandableButton: true }),
-                React.createElement(Card_1.CardText, { expandable: true },
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "3. Community", actAsExpander: true, showExpandableButton: true }),
+                React.createElement(CardText, { expandable: true },
                     React.createElement("p", null, "The first version of the website (v 0.1) was released November 29, 2016. This represents a new phase."),
                     React.createElement("p", null,
                         "Now, in a sense the project belongs to everyone who uses it, or who gets involved. It's still a classic ",
@@ -154,4 +153,4 @@ class About extends Component {
                         React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca")))));
     }
 }
-exports.default = About;
+export default About;

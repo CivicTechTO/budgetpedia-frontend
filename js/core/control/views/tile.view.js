@@ -1,7 +1,9 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// navtile.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const GridList_1 = require("material-ui/GridList");
+// required by bundler
+import * as React from 'react';
+import { GridTile } from 'material-ui/GridList';
 let TileView = props => {
     let pushHistory = (e) => {
         if (props.content.disabled) {
@@ -29,7 +31,7 @@ let TileView = props => {
     }
     return (React.createElement("div", { style: wrapperstyle, onClick: pushHistory },
         React.createElement("div", { style: { position: "absolute", top: 3, left: 3, color: "silver", fontStyle: "italic", fontSize: "smaller", zIndex: 5 } }, props.content.category),
-        React.createElement(GridList_1.GridTile, { style: {
+        React.createElement(GridTile, { style: {
                 display: 'inline-block',
                 textAlign: "center",
                 backgroundColor: 'white',
@@ -42,4 +44,4 @@ let TileView = props => {
             }, title: props.content.title, subtitle: props.content.subtitle, cols: props.content.cols || 1 },
             React.createElement("img", { src: props.content.image }))));
 };
-exports.default = TileView;
+export default TileView;

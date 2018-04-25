@@ -1,8 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+// resources.tsx
+// required by bundler
+import * as React from 'react';
 var { Component } = React;
-const Card_1 = require("material-ui/Card");
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 let moment = require('moment');
 let validurl = require('valid-url');
 class Resources extends Component {
@@ -12,9 +12,9 @@ class Resources extends Component {
             resources: null
         };
         this.resourcesintro = React.createElement("div", null,
-            React.createElement(Card_1.Card, null,
-                React.createElement(Card_1.CardTitle, { title: "Budget Resources", subtitle: "A starter kit of external links" }),
-                React.createElement(Card_1.CardText, null,
+            React.createElement(Card, null,
+                React.createElement(CardTitle, { title: "Budget Resources", subtitle: "A starter kit of external links" }),
+                React.createElement(CardText, null,
                     "We've assembled some web links to get you started. Click on a class of links below, to see details. If you find something that should be added to this list, let us know at ",
                     React.createElement("a", { target: "_blank", href: "mailto:mail@budgetpedia.ca" }, "mail@budgetpedia.ca"),
                     ".")));
@@ -95,15 +95,15 @@ class Resources extends Component {
                     if (section.note) {
                         note = section.note + '. ';
                     }
-                    intro = React.createElement(Card_1.CardText, { expandable: true },
+                    intro = React.createElement(CardText, { expandable: true },
                         React.createElement("p", null,
                             note,
                             link));
                 }
-                return React.createElement(Card_1.Card, { key: index },
-                    React.createElement(Card_1.CardTitle, { actAsExpander: true, showExpandableButton: true, title: section.title, subtitle: section.description || null }),
+                return React.createElement(Card, { key: index },
+                    React.createElement(CardTitle, { actAsExpander: true, showExpandableButton: true, title: section.title, subtitle: section.description || null }),
                     intro,
-                    React.createElement(Card_1.CardText, { expandable: true }, content));
+                    React.createElement(CardText, { expandable: true }, content));
             });
             return sections;
         };
@@ -139,4 +139,4 @@ class Resources extends Component {
             resources);
     }
 }
-exports.default = Resources;
+export default Resources;

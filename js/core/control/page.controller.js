@@ -1,22 +1,16 @@
+// page.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Chip_1 = require("material-ui/Chip");
+import * as tslib_1 from "tslib";
+import * as React from 'react';
+import Chip from 'material-ui/Chip';
 let moment = require('moment');
 var scrollToElement = require('scroll-to-element');
-const core_controller_composer_1 = require("./core.controller.composer");
-const section_controller_1 = require("./section.controller");
-const page_view_1 = require("./views/page.view");
-const pagemenu_view_1 = require("./views/pagemenu.view");
-const attribution_view_1 = require("./views/attribution.view");
+import coreControllerComposer from './core.controller.composer';
+import SectionController from './section.controller';
+import PageView from './views/page.view';
+import PageMenuView from './views/pagemenu.view';
+import AttributionView from './views/attribution.view';
 class PageControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -47,12 +41,12 @@ class PageControllerClass extends React.Component {
             });
         };
         this.onClickChip = index => {
-            scrollToElement('#' + index, { offset: -64 });
+            scrollToElement('#' + index, { offset: -64 }); // space for global toolbar
         };
         this.assembleChips = children => {
             let chips = children.map((child, index) => {
                 if (child.tag) {
-                    return (React.createElement(Chip_1.default, { key: index, onClick: (() => this.onClickChip(child.anchor)), style: { margin: '4px' } }, child.tag));
+                    return (React.createElement(Chip, { key: index, onClick: (() => this.onClickChip(child.anchor)), style: { margin: '4px' } }, child.tag));
                 }
                 else {
                     return null;
@@ -71,13 +65,13 @@ class PageControllerClass extends React.Component {
                 case 'page': {
                     let chips = this.assembleChips(children);
                     let { attribution } = component;
-                    let attributionview = React.createElement(attribution_view_1.default, { key: "attribution", attribution: attribution });
+                    let attributionview = React.createElement(AttributionView, { key: "attribution", attribution: attribution });
                     if (chips.length || attributionview) {
                         let chipsheader = null;
                         let chipsfooter = null;
                         if (chips.length) {
                             chipsheader =
-                                React.createElement(pagemenu_view_1.default, { key: "menu" }, chips);
+                                React.createElement(PageMenuView, { key: "menu" }, chips);
                             chipsfooter = React.createElement("div", { key: "filler", style: { height: '38px' } });
                         }
                         childcomponents = [
@@ -87,7 +81,7 @@ class PageControllerClass extends React.Component {
                             chipsfooter,
                         ];
                     }
-                    componentType = page_view_1.default;
+                    componentType = PageView;
                     break;
                 }
                 default: {
@@ -112,7 +106,7 @@ class PageControllerClass extends React.Component {
                     return this.emitLocalComponent(model, key);
                 }
                 case 'section': {
-                    return React.createElement(section_controller_1.default, { key: key, model: model, noToc: !!this.noToc, getToC: this.getToC, isToC: !!this.state.tocdata });
+                    return React.createElement(SectionController, { key: key, model: model, noToc: !!this.noToc, getToC: this.getToC, isToC: !!this.state.tocdata });
                 }
                 default: {
                     let { index, description } = model;
@@ -123,7 +117,8 @@ class PageControllerClass extends React.Component {
         this.toolkit = props.toolkit;
     }
     componentDidMount() {
-        return __awaiter(this, void 0, void 0, function* () {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            // console.log('page did mount props',this.props)
             try {
                 let { match: { path } } = this.props;
                 let { master } = this.toolkit;
@@ -131,6 +126,9 @@ class PageControllerClass extends React.Component {
                 let model = master.getPageModel(index);
                 this.noToc = model.noToc;
                 this.toolkit.setStateModel(this, model, this.anchorCallback);
+                // setTimeout(() => {
+                //     console.log('model',this.state.model)
+                // })
             }
             catch (e) {
                 console.log('error getting model', e);
@@ -140,10 +138,10 @@ class PageControllerClass extends React.Component {
     render() {
         let { model } = this.state;
         if (!model)
-            return React.createElement(page_view_1.default, null);
+            return React.createElement(PageView, null);
         let component = this.emitComponent(model, model.index);
         return component;
     }
 }
-let PageController = core_controller_composer_1.default(PageControllerClass);
-exports.default = PageController;
+let PageController = coreControllerComposer(PageControllerClass);
+export default PageController;

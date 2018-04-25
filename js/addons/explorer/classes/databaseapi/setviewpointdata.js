@@ -1,9 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// setviewpointamounts.tsx
+// starts with hash of components, 
+// recursively descends to BASELINE baselineItems, then leaves 
+// summaries by year, and CommonDimension by year on ascent
 const setViewpointData = (parms) => {
+    // let viewpointname = parms.viewpointname,
     let { datasetName, viewpointDataTemplate, datasetData, lookups, inflationAdjusted } = parms;
     let datasetMeta = datasetData.MetaData;
-    let baselineLookupIndex = datasetMeta.Dimensions[0].toLowerCase();
+    let baselineLookupIndex = datasetMeta.Dimensions[0].toLowerCase(); // use for system lookups
     let commonDimensionLookupIndex = datasetMeta.CommonDimension;
     if (commonDimensionLookupIndex) {
         commonDimensionLookupIndex = commonDimensionLookupIndex.toLowerCase();
@@ -29,10 +33,12 @@ const setViewpointData = (parms) => {
         }
     }
     baselineItems = JSON.parse(JSON.stringify(baselineItems));
+    // set years, and CommonDimension by years
     try {
         let node = viewpointDataTemplate;
         let sorted = getIndexSortedComponentItems(node.Components, lookupset);
         node.SortedComponents = sorted;
+        // initiates recursion
         let nodeSummaries = getNodeSummaries(node, baselineItems, lookupset);
         node.ComponentsDrilldown = nodeSummaries.Drilldown;
         setNodeSummaries(node, nodeSummaries, lookupset);
@@ -40,19 +46,30 @@ const setViewpointData = (parms) => {
     catch (e) {
         console.log('error in setComponentAggregates', e);
     }
+    // record state
     viewpointDataTemplate.Meta.currentDataset = datasetName;
     viewpointDataTemplate.Meta.isInflationAdjusted = inflationAdjusted;
 };
+// this is recursive, with absence of Components property at leaf
+// special treatment for 'BASELINE' baselineItems -- fetches data from data series baselineItems
+// sets years and CommonDimension for each node
 const getNodeSummaries = (node, baselineItems, lookups) => {
     let components = node.Components;
-    let aggregator = {};
+    // cumulate summaries for this level
+    let aggregator = {
+    // years: {},
+    // CommonDimension: {},
+    };
     let count = 0;
     let subcomponentscount = 0;
     let commondimensioncount = 0;
+    // for every component at this level
     for (let componentname in components) {
         count++;
+        // isolate the node...
         let node = components[componentname];
         let nodeSummaries = null;
+        // remove any previous aggregations...
         if (node.years) {
             delete node.years;
         }
@@ -60,11 +77,14 @@ const getNodeSummaries = (node, baselineItems, lookups) => {
             delete node.CommonDimension;
             delete node.SortedCommonDimension;
         }
+        // for non-baseline baselineItems, recurse to collect aggregations
         if (!node.Baseline) {
+            // if no components found, loop
             if (node.Components) {
                 subcomponentscount++;
                 let sorted = getIndexSortedComponentItems(node.Components, lookups);
                 node.SortedComponents = sorted;
+                // get child node summaries recursively
                 nodeSummaries = getNodeSummaries(node, baselineItems, lookups);
                 if (nodeSummaries.CommonDimension) {
                     commondimensioncount++;
@@ -72,8 +92,10 @@ const getNodeSummaries = (node, baselineItems, lookups) => {
                 node.ComponentsDrilldown = nodeSummaries.Drilldown;
                 setNodeSummaries(node, nodeSummaries, lookups);
             }
+            // for baseline baselineItems, fetch the baseline amounts from the dataseries itemlist
         }
         else {
+            // fetch the data from the dataseries itemlist
             let importitem = baselineItems[componentname];
             if (!importitem) {
                 console.log('failed to find dataset item to match viewpoint baseline:', componentname);
@@ -85,11 +107,12 @@ const getNodeSummaries = (node, baselineItems, lookups) => {
                     CommonDimension: importitem.CommonDimension,
                 };
             }
+            // capture data for chart-making
             if (node.Components) {
                 delete node.SortedComponents;
                 delete node.Components;
             }
-            if (importitem) {
+            if (importitem) { // there is data; transfer it to the viewpoint node
                 if (importitem.years) {
                     node.years = importitem.years;
                 }
@@ -123,6 +146,7 @@ const getNodeSummaries = (node, baselineItems, lookups) => {
                 node.SortedCommonDimension = sorted;
             }
         }
+        // aggregate the collected summaries for the caller
         if (nodeSummaries) {
             incrementAggregator(aggregator, nodeSummaries);
         }
@@ -141,6 +165,7 @@ const getNodeSummaries = (node, baselineItems, lookups) => {
     return aggregator;
 };
 const setNodeSummaries = (node, nodeSummaries, lookups) => {
+    // capture data for chart-making
     if (nodeSummaries.years) {
         node.years = nodeSummaries.years;
     }
@@ -152,21 +177,22 @@ const setNodeSummaries = (node, nodeSummaries, lookups) => {
         }
     }
 };
+// -----------------------[ RETURN SORTED COMPONENT LIST ]------------------------
 const getIndexSortedComponentItems = (components, lookups) => {
     let sorted = [];
     let taxonomylookups = lookups.taxonomylookups;
     for (let componentcode in components) {
         let component = components[componentcode];
-        let baseline = !!component.Baseline;
-        let name = baseline
+        let baseline = !!component.Baseline; // config = component.NamingConfigRef
+        let name = baseline // (config == 'BASELINE')
             ? lookups.baselinelookups[componentcode]
             : taxonomylookups[componentcode];
         let item = {
             Code: componentcode,
             Index: component.Index,
-            Name: name || componentcode
+            Name: name || componentcode // 'unknown name'
         };
-        component.Name = name || componentcode;
+        component.Name = name || componentcode; // 'unknown name'
         sorted.push(item);
     }
     sorted.sort((a, b) => {
@@ -186,6 +212,7 @@ const getNameSortedComponentItems = (components, lookups) => {
     let complookups = lookups.commonDimensionLookups;
     for (let componentname in components) {
         let component = components[componentname];
+        // let config = component.NamingConfigRef
         let name = complookups[componentname];
         let item = {
             Code: componentname,
@@ -206,30 +233,40 @@ const getNameSortedComponentItems = (components, lookups) => {
     });
     return sorted;
 };
+// -----------------------[ SUMMARIZE COMPONENT DATA ]-----------------------
+// summarize the componentSummaries into the (parent) aggregator
 const incrementAggregator = (aggregator, componentSummaries) => {
+    // if years have been collected, add them to the total
     if (componentSummaries.years) {
         let years = componentSummaries.years;
+        // for each year...
         for (let yearname in years) {
             let yearvalue = years[yearname];
             if (!aggregator.years) {
                 aggregator.years = {};
             }
+            // accumulate the value...
             if (aggregator.years[yearname])
                 aggregator.years[yearname] += yearvalue;
             else
                 aggregator.years[yearname] = yearvalue;
         }
     }
+    // if CommonDimension have been collected, add them to the totals
     if (componentSummaries.CommonDimension) {
         let CommonDimension = componentSummaries.CommonDimension;
         if (!aggregator.CommonDimension) {
             aggregator.CommonDimension = {};
         }
+        // for each aggreate...
         for (let commonDimensionName in CommonDimension) {
             let commonDimension = CommonDimension[commonDimensionName];
+            // for each category year...
+            // collect year values for the CommonDimension if they exist
             if (commonDimension.years) {
                 let years = commonDimension.years;
                 for (let yearname in years) {
+                    // accumulate the year value...
                     let yearvalue = years[yearname];
                     let cumulatingCommonDimension = aggregator.CommonDimension[commonDimensionName] || { years: {} };
                     if (cumulatingCommonDimension.years[yearname]) {
@@ -238,10 +275,11 @@ const incrementAggregator = (aggregator, componentSummaries) => {
                     else {
                         cumulatingCommonDimension.years[yearname] = yearvalue;
                     }
+                    // re-assemble
                     aggregator.CommonDimension[commonDimensionName] = cumulatingCommonDimension;
                 }
             }
         }
     }
 };
-exports.default = setViewpointData;
+export default setViewpointData;

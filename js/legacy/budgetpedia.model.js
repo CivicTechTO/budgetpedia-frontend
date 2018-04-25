@@ -1,7 +1,43 @@
+// master.model.tsx
+/*
+    TODO: purge system of navitiles - old wordy tiles = maintiles
+    TODO: break file into backend config bundle and frontend package bundle components; merge in index.tsx?
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const lightBaseTheme_1 = require("material-ui/styles/baseThemes/lightBaseTheme");
-const colors = require("material-ui/styles/colors");
+// https://design.google.com/icons/
+/* ================= theme details: ==================== */
+// let budgetdata = {} // require('../../explorerprototypedata/2015budgetA.json')
+import theme from 'material-ui/styles/baseThemes/lightBaseTheme';
+// import database, {CurrencyDataset,ItemDataset} from '../addins/classes/databaseapi'
+// fontFamily: "Roboto, sans-serif"
+// palette: Object
+// 	accent1Color: "#ff4081"
+// 	accent2Color: "#f5f5f5"
+// 	accent3Color: "#9e9e9e"
+// 	alternateTextColor: "#ffffff"
+// 	borderColor: "#e0e0e0"
+// 	canvasColor: "#ffffff"
+// 	clockCircleColor: "rgba(0,0,0,0.07)"
+// 	disabledColor: "rgba(0,0,0,0.3)"
+// 	pickerHeaderColor: "#00bcd4"
+// 	primary1Color: "#00bcd4"
+// 	primary2Color: "#0097a7"
+// 	primary3Color: "#bdbdbd"
+// 	textColor: "rgba(0, 0, 0, 0.87)"
+// spacing: Object
+// 	desktopDropDownMenuFontSize: 15
+// 	desktopDropDownMenuItemHeight: 32
+// 	desktopGutter: 24
+// 	desktopGutterLess: 16
+// 	desktopGutterMini: 8
+// 	desktopGutterMore: 32
+// 	desktopKeylineIncrement: 64
+// 	desktopLeftNavMenuItemHeight: 48
+// 	desktopSubheaderHeight: 48
+// 	desktopToolbarHeight: 56
+// 	iconSize: 24
+/* ======================================== */
+import * as colors from 'material-ui/styles/colors';
 let globalbar = {
     title: 'Budgetpedia v0.1.6',
     contactAddress: 'mailto:mail@budgetpedia.ca',
@@ -11,10 +47,18 @@ let globalbar = {
     accountoptions: [],
     menuoptions: [],
 };
+// let toolsnavbar = {
+// }
+// TODO: no longer needed with switch away from flipcards
+// for more detail: https://www.npmjs.com/package/snifferjs
+// let system = {
+// 	ischrome: /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
+// }
 let homepage = {
     id: 0,
     content: {
         title: "Budgetpedia Home",
+        // subtitle:"we're all about government budgets",
         image: '../../public/icons/budgetpedia-logo.png',
         category: 'master',
     },
@@ -24,6 +68,7 @@ let homepage = {
     tag: 'home',
     parent: null,
 };
+// review apporpriateness of the following typescript type notation
 let pagetargets = [
     {
         id: 7,
@@ -137,6 +182,20 @@ let pagetargets = [
         tag: 'announcements',
         parent: 'home',
     },
+    // {
+    //     id: 13,
+    //     content: {
+    //         title: `Get a Demo`,
+    //         subtitle: `Resources & training`,
+    //         image: '../../public/icons/ic_record_voice_over_48px.svg',
+    //         category: 'get involved',
+    //     },
+    //     index: 6,
+    //     tier:'secondary',
+    //     route: '/demos',
+    //     tag:'demos',
+    //     parent:'home',
+    // },
     {
         id: 10,
         content: {
@@ -180,6 +239,7 @@ let branchDefaults = {
         'LIABILITIES': 'Liabilities',
         'RESERVES': 'Reserves',
     },
+    // chartType: "ColumnChart",
     inflationAdjusted: true,
     nodeList: [],
     showOptions: true,
@@ -214,8 +274,9 @@ var masterModel = {
     homepage,
     pagetargets,
     globalbar,
-    theme: lightBaseTheme_1.default,
+    // toolsnavbar,
+    theme,
     colors,
     explorer,
 };
-exports.default = masterModel;
+export default masterModel;

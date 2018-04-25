@@ -1,15 +1,18 @@
+// searchdialog.tsx
+/*
+    TODO: should cache lookup list in parent
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 var { Component } = React;
-const MenuItem_1 = require("material-ui/MenuItem");
-const Dialog_1 = require("material-ui/Dialog");
-const AutoComplete_1 = require("material-ui/AutoComplete");
-const RadioButton_1 = require("material-ui/RadioButton");
-const FontIcon_1 = require("material-ui/FontIcon");
-const IconButton_1 = require("material-ui/IconButton");
-const RaisedButton_1 = require("material-ui/RaisedButton");
-const react_redux_toastr_1 = require("react-redux-toastr");
+import MenuItem from 'material-ui/MenuItem';
+import Dialog from 'material-ui/Dialog';
+import AutoComplete from 'material-ui/AutoComplete';
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import { toastr } from 'react-redux-toastr';
 let ReactGA = require('react-ga');
 let SearchDialog = class extends Component {
     constructor() {
@@ -30,6 +33,7 @@ let SearchDialog = class extends Component {
             let promise = new Promise((resolve, reject) => {
                 fetch(filespec).then(response => {
                     if (response.ok) {
+                        // console.log('response for ' + path,response)
                         try {
                             let json = response.json().then(json => {
                                 resolve(json);
@@ -77,6 +81,7 @@ let SearchDialog = class extends Component {
                     actualRevenuesViewpointPromise,
                     expendituresViewpointPromise,
                 ]).then(values => {
+                    // pick out viewpint lookups from viewpoint structures
                     for (let i = 5; i < 10; i++) {
                         values[i] = values[i]['Meta'].Lookups;
                     }
@@ -104,17 +109,31 @@ let SearchDialog = class extends Component {
             });
             return promise;
         };
+        // coerce raw lookup data into form suitable for autofill field
+        /*
+            viewpoint
+            dataset
+            aspects:{}
+            dimension
+            code
+            name
+            value
+        */
+        // TODO: the values here should be taken from source; automatic update
         this.findDictionary = {
+            // viewpoints
             structuralbudget: 'Structural Budget',
             functionalbudget: 'Functional Budget',
             actualexpenses: 'Actual Expenses',
             actualrevenues: 'Actual Revenues',
             expenditures: 'Expenses by Object',
+            // sources
             auditedrevenues: 'Audited Statements',
             auditedexpenses: 'Audited Statements',
             auditedexpenditures: 'Audited Statements',
             detailedbudgets: 'Detailed Budgets',
             summarybudgets: 'Summary Budgets',
+            // levels (collation)
             Taxonomy: '01-Taxonomy',
             auditedexpense: "07-Expenses",
             auditedrevenue: "08-Revenues",
@@ -141,6 +160,7 @@ let SearchDialog = class extends Component {
             };
             let lookups = [];
             let { viewpoints, datasets } = data;
+            // default viewpoints
             let sourceviewpoints = {
                 auditedexpenses: 'actualexpenses',
                 auditedrevenues: 'actualrevenues',
@@ -165,6 +185,7 @@ let SearchDialog = class extends Component {
                 for (let dimensionname in dataset) {
                     let dimension = dataset[dimensionname];
                     if (datasetname == 'detailedbudgets') {
+                        // console.log('processing detailed budgets for dimension',dimensionname)
                         switch (dimensionname) {
                             case 'activity':
                                 sourceaspects.detailedbudgets = { expenses: true, revenues: true, staffing: false };
@@ -207,7 +228,7 @@ let SearchDialog = class extends Component {
                             code,
                             name,
                             sortname,
-                            value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
+                            value: (React.createElement(MenuItem, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
                                 React.createElement("div", null,
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -225,6 +246,8 @@ let SearchDialog = class extends Component {
                                         dictionary[datasetname]))))
                         };
                         lookups.push(selection);
+                        // including structuralviewpoint for all relevant choices is annoying (duplicates)
+                        //  suppress for now
                         if (datasetname == 'detailedbudgets' || datasetname == 'summarybudgets') {
                             let sortname = '(' + collation[dimensionname] + ') ' + name;
                             let selection = {
@@ -235,7 +258,7 @@ let SearchDialog = class extends Component {
                                 code,
                                 name,
                                 sortname,
-                                value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
+                                value: (React.createElement(MenuItem, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
                                     React.createElement("div", null,
                                         React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                     React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -257,6 +280,7 @@ let SearchDialog = class extends Component {
                     }
                 }
             }
+            // default viewpoint sources
             let viewpointsources = {
                 actualexpenses: 'auditedexpenses',
                 actualrevenues: 'auditedrevenues',
@@ -286,7 +310,7 @@ let SearchDialog = class extends Component {
                             code,
                             name,
                             sortname,
-                            value: (React.createElement(MenuItem_1.default, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
+                            value: (React.createElement(MenuItem, { style: { whiteSpace: 'normal', lineHeight: '150%' } },
                                 React.createElement("div", null,
                                     React.createElement("span", { style: { fontWeight: "bold" } }, name)),
                                 React.createElement("div", { style: { display: 'inline-block', whiteSpace: 'nowrap', paddingRight: '20px' } },
@@ -310,12 +334,14 @@ let SearchDialog = class extends Component {
             return lookups;
         };
         this.findOnNewRequest = (chosenRequest, index) => {
+            // console.log('findOnNewRequest',this.findAspectChartLookups)
             if (index == -1) {
                 this.resetSelectionParameters();
             }
             else {
                 let item = this.findAspectChartLookups[index];
                 let dictionary = this.findDictionary;
+                // console.log('selected item',item)
                 this.findSelection = {
                     known: true,
                     level: item.dimension,
@@ -333,6 +359,7 @@ let SearchDialog = class extends Component {
         this.findClearSearchText = () => {
             let instance = this.refs['autocomplete'];
             instance.setState({ searchText: '' });
+            // instance.focus();
         };
         this.findSelection = {
             known: false,
@@ -346,6 +373,7 @@ let SearchDialog = class extends Component {
             name: null,
         };
         this.findOnUpdateInput = () => {
+            // console.log('findOnUpdateInput',this.findAspectChartLookups,this.findSelection)
             if (this.findSelection.known) {
                 this.resetSelectionParameters();
                 this.forceUpdate();
@@ -374,11 +402,13 @@ let SearchDialog = class extends Component {
         };
         this.getFindAspectLookups = () => {
             let self = this;
+            // console.log('in getFindAspectLookups',self.state, self.findChartLookups)
             if (!self.findChartLookups) {
                 self.findAspectChartLookups = null;
                 return;
             }
             let sourcelist = self.findChartLookups;
+            // console.log('sourcelist',sourcelist)
             let targetlist = [];
             let aspect = self.state.searchDialogAspect;
             for (let item of sourcelist) {
@@ -426,14 +456,15 @@ let SearchDialog = class extends Component {
             this.props.onRequestClose();
         };
         this.searchDialog = () => {
-            return React.createElement(Dialog_1.default, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
+            // console.log('returning dialog',this.findAspectChartLookups)
+            return React.createElement(Dialog, { title: React.createElement("div", { style: { padding: '12px 0 0 12px' } }, "Find a Chart"), modal: false, open: this.state.dialogOpen, onRequestClose: this.onRequestClose, autoScrollBodyContent: false, contentStyle: { maxWidth: '600px' }, autoDetectWindowHeight: false },
                 React.createElement("div", null,
-                    React.createElement(AutoComplete_1.default, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item (sorted by scope)", filter: AutoComplete_1.default.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 80, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput, autoFocus: true }),
-                    React.createElement(RadioButton_1.RadioButtonGroup, { valueSelected: this.state.searchDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
-                        React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
-                        React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
-                        React.createElement(RadioButton_1.RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
-                React.createElement(IconButton_1.default, { style: {
+                    React.createElement(AutoComplete, { ref: 'autocomplete', floatingLabelText: "type in a key word, then select a list item (sorted by scope)", filter: AutoComplete.caseInsensitiveFilter, dataSource: this.findAspectChartLookups || [], dataSourceConfig: { text: 'name', value: 'value' }, fullWidth: true, openOnFocus: false, style: { width: '100%' }, menuStyle: { maxHeight: "300px", overflowY: 'auto' }, maxSearchResults: 80, onNewRequest: this.findOnNewRequest, onUpdateInput: this.findOnUpdateInput, autoFocus: true }),
+                    React.createElement(RadioButtonGroup, { valueSelected: this.state.searchDialogAspect, name: "findchart", onChange: this.onChangeFindAspect },
+                        React.createElement(RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "expenses", label: "expenditures/expenses" }),
+                        React.createElement(RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "revenues", label: "receipts/revenues" }),
+                        React.createElement(RadioButton, { style: { display: 'inline-block', width: 'auto', marginRight: '50px' }, value: "staffing", label: "staffing" }))),
+                React.createElement(IconButton, { style: {
                         top: 0,
                         right: 0,
                         padding: 0,
@@ -442,7 +473,7 @@ let SearchDialog = class extends Component {
                         position: "absolute",
                         zIndex: 2,
                     }, onClick: this.onRequestClose },
-                    React.createElement(FontIcon_1.default, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
+                    React.createElement(FontIcon, { className: "material-icons", style: { cursor: "pointer" } }, "close")),
                 React.createElement("div", { style: { padding: "8px" } },
                     React.createElement("div", { style: { whiteSpace: 'nowrap', display: 'inline-block' } },
                         React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "dataset: "),
@@ -454,20 +485,22 @@ let SearchDialog = class extends Component {
                         React.createElement("span", { style: { color: 'silver', fontStyle: 'italic' } }, "data source: "),
                         React.createElement("span", { style: { color: this.findSelection.known ? 'black' : 'silver', marginRight: '50px', fontStyle: 'italic' } }, this.findSelection.sourcedisplay))),
                 React.createElement("div", null,
-                    React.createElement(RaisedButton_1.default, { disabled: !this.findSelection.known, onClick: this.findApplyChart, label: "Apply", primary: true, style: { marginRight: "50px" } }),
-                    React.createElement(RaisedButton_1.default, { disabled: false, onClick: this.onRequestClose, label: "Cancel", secondary: true })),
+                    React.createElement(RaisedButton, { disabled: !this.findSelection.known, onClick: this.findApplyChart, label: "Apply", primary: true, style: { marginRight: "50px" } }),
+                    React.createElement(RaisedButton, { disabled: false, onClick: this.onRequestClose, label: "Cancel", secondary: true })),
                 React.createElement("div", { style: { height: '200px' } }));
         };
     }
     componentWillMount() {
         this.getAllFindLookups().then(data => {
+            // console.log('sourcedata', data)
             this.findChartLookups = this.processFindChartLookups(data);
-            this.forceUpdate();
+            this.forceUpdate(); // inject data into autocomplete
         }).catch(reason => {
-            react_redux_toastr_1.toastr.error('Error loading finder lookups: ' + reason);
+            toastr.error('Error loading finder lookups: ' + reason);
         });
     }
     componentDidMount() {
+        // console.log('did mount')
         this.resetSelectionParameters();
     }
     render() {
@@ -478,4 +511,4 @@ let SearchDialog = class extends Component {
         return dialog;
     }
 };
-exports.default = SearchDialog;
+export default SearchDialog;

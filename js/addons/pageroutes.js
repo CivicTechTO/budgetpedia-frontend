@@ -1,34 +1,35 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// pageroutes.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const react_router_dom_1 = require("react-router-dom");
-const page_controller_1 = require("../core/control/page.controller");
-const about_1 = require("./pages/about");
-const deputations_1 = require("./pages/deputations");
-const explorer_1 = require("./explorer/explorer");
-const communities_1 = require("./pages/communities");
-const socialmedia_1 = require("./pages/socialmedia");
-const newsletter_1 = require("./pages/newsletter");
-const resources_1 = require("./pages/resources");
-const teams_1 = require("./pages/teams");
-const stories_1 = require("./pages/stories");
-const announcements_1 = require("./pages/announcements");
-const pathways_1 = require("./pages/pathways");
+import * as React from 'react';
+import { Route } from 'react-router-dom';
+import PageController from '../core/control/page.controller';
+import About from './pages/about';
+import Deputations from './pages/deputations';
+import Explorer from './explorer/explore';
+import Communities from './pages/communities';
+import SocialMedia from './pages/socialmedia';
+import Newsletter from './pages/newsletter';
+import Resources from './pages/resources';
+import Teams from './pages/teams';
+import Stories from './pages/stories';
+import Announcements from './pages/announcements';
+import Pathways from './pages/pathways';
 let routedata = [
-    { path: "/about", component: about_1.default },
-    { path: "/overview", component: page_controller_1.default },
-    { path: "/budgets", component: page_controller_1.default },
-    { path: "/roadmap", component: page_controller_1.default },
-    { path: "/deputations", component: deputations_1.default },
-    { path: "/explorer", component: explorer_1.default },
-    { path: "/communities", component: communities_1.default },
-    { path: "/socialmedia", component: socialmedia_1.default },
-    { path: "/newsletter", component: newsletter_1.default },
-    { path: "/resources", component: resources_1.default },
-    { path: "/teams", component: teams_1.default },
-    { path: "/stories", component: stories_1.default },
-    { path: "/announcements", component: announcements_1.default },
-    { path: "/pathways", component: pathways_1.default },
+    { path: "/about", component: About },
+    { path: "/overview", component: PageController },
+    { path: "/budgets", component: PageController },
+    { path: "/roadmap", component: PageController },
+    { path: "/deputations", component: Deputations },
+    { path: "/explorer", component: Explorer },
+    { path: "/communities", component: Communities },
+    { path: "/socialmedia", component: SocialMedia },
+    { path: "/newsletter", component: Newsletter },
+    { path: "/resources", component: Resources },
+    { path: "/teams", component: Teams },
+    { path: "/stories", component: Stories },
+    { path: "/announcements", component: Announcements },
+    { path: "/pathways", component: Pathways },
 ];
-const pageroutes = routedata.map((item, index) => (React.createElement(react_router_dom_1.Route, { key: 'pageroute' + index, path: item.path, component: item.component })));
-exports.default = pageroutes;
+const pageroutes = routedata.map((item, index) => (React.createElement(Route, { key: 'pageroute' + index, path: item.path, component: item.component })));
+export default pageroutes;

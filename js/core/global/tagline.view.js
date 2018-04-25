@@ -1,6 +1,7 @@
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+// tagline.view.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 class TaglineView extends React.Component {
     render() {
         let defaultstyle = {
@@ -11,4 +12,4 @@ class TaglineView extends React.Component {
         return (React.createElement("div", { style: Object.assign({}, defaultstyle, this.props.style) }, this.props.text));
     }
 }
-exports.default = TaglineView;
+export default TaglineView;

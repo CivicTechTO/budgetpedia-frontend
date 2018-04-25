@@ -1,24 +1,26 @@
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+// menusidebar.view.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Drawer_1 = require("material-ui/Drawer");
-const Divider_1 = require("material-ui/Divider");
-const menurow_view_1 = require("./menurow.view");
+import * as React from 'react'; // required by bundler
+import Drawer from 'material-ui/Drawer';
+import Divider from 'material-ui/Divider';
+import { MenuRowView } from './menurow.view';
 class MenuSidebarView extends React.Component {
     render() {
         let tailtargets = this.props.tailData;
+        // console.log('pagetargets',pagetargets)
         let menuitems = tailtargets.map(menurow => {
-            return React.createElement(menurow_view_1.MenuRowView, { onSelect: this.props.onSelect, key: menurow.id, primaryText: menurow.content.title, image: menurow.content.image, route: menurow.route, disabled: menurow.content.disabled });
+            return React.createElement(MenuRowView, { onSelect: this.props.onSelect, key: menurow.id, primaryText: menurow.content.title, image: menurow.content.image, route: menurow.route, disabled: menurow.content.disabled });
         });
         let { headData } = this.props;
         let { primaryText, image, route, disabled } = headData;
         let menuhead = [
-            React.createElement(menurow_view_1.MenuRowView, { onSelect: this.props.onSelect, key: 'home', primaryText: primaryText, image: image, route: route, disabled: disabled }),
-            React.createElement(Divider_1.default, { key: "divider" }),
+            React.createElement(MenuRowView, { onSelect: this.props.onSelect, key: 'home', primaryText: primaryText, image: image, route: route, disabled: disabled }),
+            React.createElement(Divider, { key: "divider" }),
         ];
-        return (React.createElement(Drawer_1.default, { width: this.props.width, docked: this.props.docked, disableSwipeToOpen: this.props.disableSwipeToOpen, onRequestChange: this.props.onRequestChange, open: this.props.open },
+        return (React.createElement(Drawer, { width: this.props.width, docked: this.props.docked, disableSwipeToOpen: this.props.disableSwipeToOpen, onRequestChange: this.props.onRequestChange, open: this.props.open },
             menuhead,
             menuitems));
     }
 }
-exports.default = MenuSidebarView;
+export default MenuSidebarView;

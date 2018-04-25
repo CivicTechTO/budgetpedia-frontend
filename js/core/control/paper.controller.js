@@ -1,11 +1,12 @@
+// paper.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const paper_view_1 = require("./views/paper.view");
-const core_controller_composer_1 = require("./core.controller.composer");
-const list_controller_1 = require("./list.controller");
-const markupblock_view_1 = require("./views/markupblock.view");
-const sheet_view_1 = require("./views/sheet.view");
+import * as React from 'react';
+import PaperView from './views/paper.view';
+import coreControllerComposer from './core.controller.composer';
+import ListController from './list.controller';
+import MarkupBlockView from './views/markupblock.view';
+import SheetView from './views/sheet.view';
 class PaperControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -17,16 +18,16 @@ class PaperControllerClass extends React.Component {
             let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
             if (childcomponents) {
-                childcomponents = [...childcomponents];
+                childcomponents = [...childcomponents]; // work with copy; anticipate change below
             }
             let componentType = null;
             switch (type) {
                 case 'paper': {
-                    componentType = paper_view_1.default;
+                    componentType = PaperView;
                     break;
                 }
                 case 'markupblock': {
-                    componentType = markupblock_view_1.default;
+                    componentType = MarkupBlockView;
                     break;
                 }
                 case 'sheet': {
@@ -34,7 +35,7 @@ class PaperControllerClass extends React.Component {
                     if (lookups && lookups.draftdata) {
                         properties.draftsource = lookups.draftdata;
                     }
-                    componentType = sheet_view_1.default;
+                    componentType = SheetView;
                     break;
                 }
                 default: {
@@ -58,7 +59,7 @@ class PaperControllerClass extends React.Component {
                     return this.emitLocalComponent(model, key);
                 }
                 case 'list': {
-                    return React.createElement(list_controller_1.default, { key: key, model: model });
+                    return React.createElement(ListController, { key: key, model: model });
                 }
                 default: {
                     let { description } = model;
@@ -80,5 +81,5 @@ class PaperControllerClass extends React.Component {
         return component;
     }
 }
-let PaperController = core_controller_composer_1.default(PaperControllerClass);
-exports.default = PaperController;
+let PaperController = coreControllerComposer(PaperControllerClass);
+export default PaperController;

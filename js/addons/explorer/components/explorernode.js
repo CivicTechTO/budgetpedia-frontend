@@ -1,20 +1,26 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// explorerportal.tsx
+/*
+    TODO: include output checkbox per node for printing prep
+    - with clean start, switching to second tab causes 'jump' to top of page
+       ... but not clicking first tab after selecting second
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 var { Component } = React;
-const Tabs_1 = require("material-ui/Tabs");
-const react_animations_1 = require("react-animations");
-const Radium = require("radium");
+import { Tabs, Tab } from 'material-ui/Tabs';
+import { fadeIn } from 'react-animations';
+import * as Radium from 'radium';
 let { StyleRoot } = Radium;
 const animations = {
     fadeIn: {
         animation: 'x .7s',
-        animationName: Radium.keyframes(react_animations_1.fadeIn, 'fadeIn')
+        animationName: Radium.keyframes(fadeIn, 'fadeIn')
     },
 };
-const explorercell_1 = require("./explorercell");
-const actions_1 = require("../actions");
-const Utilities = require("../modules/utilities");
+import ExplorerCell from './explorercell';
+import { nodeTypes as nodeActionTypes } from '../actions';
+import * as Utilities from '../modules/utilities';
 class ExplorerNode extends Component {
     constructor() {
         super(...arguments);
@@ -23,27 +29,35 @@ class ExplorerNode extends Component {
             animation: animations.fadeIn,
         };
         this.waitafteraction = 0;
+        // for BudgetNode instance...
         this.getState = () => this.state;
         this.getProps = () => this.props;
         this.urlparms = null;
         this.story = null;
         this.oldDataGenerationCounter = null;
+        /*
+            return false for redundant updates
+            this reduces updates by about half, therefore
+            reducing update delay caused by cascading events
+        */
         this.lastactiongeneration = 0;
+        // state change manager
         this._respondToGlobalStateChange = () => {
             let previousControlData = this._previousControlData;
             let currentControlData = this.props.declarationData;
             let { lastAction } = currentControlData;
             let returnvalue = true;
-            if (!actions_1.nodeTypes[lastAction.type]) {
+            if (!nodeActionTypes[lastAction.type]) {
                 return false;
             }
+            // only process once
             if (previousControlData && (currentControlData.generation == previousControlData.generation)) {
                 return false;
             }
             let { budgetNode } = this.props;
             let nodeDeclaration = this.props.declarationData.nodesById[budgetNode.uid];
             switch (lastAction.type) {
-                case actions_1.nodeTypes.NORMALIZE_CELL_YEAR_DEPENDENCIES: {
+                case nodeActionTypes.NORMALIZE_CELL_YEAR_DEPENDENCIES: {
                     let currentYearSelections = currentControlData.nodesById[budgetNode.uid].yearSelections;
                     let previousYearSelections = previousControlData.nodesById[budgetNode.uid].yearSelections;
                     if (currentYearSelections.leftYear !== previousYearSelections.leftYear ||
@@ -53,7 +67,7 @@ class ExplorerNode extends Component {
                     }
                     break;
                 }
-                case actions_1.nodeTypes.UPDATE_NODE_YEAR_SELECTIONS: {
+                case nodeActionTypes.UPDATE_NODE_YEAR_SELECTIONS: {
                     budgetNode.switchYearSelections(currentControlData.nodesById[budgetNode.uid].yearSelections);
                     break;
                 }
@@ -61,7 +75,7 @@ class ExplorerNode extends Component {
             this._previousControlData = currentControlData;
         };
         this.updateCellsFromDeclarations = (props) => {
-            let { budgetNode } = props;
+            let { budgetNode } = props; // this.props
             if (budgetNode.updated) {
                 this.setState({
                     nodeCells: [...budgetNode.newCells]
@@ -71,11 +85,13 @@ class ExplorerNode extends Component {
             }
         };
         this.harmonizecount = null;
+        // harmonize branch nodes; add pending node objects, and process state changes
         this._harmonizeCellsToState = (props) => {
             let returnvalue = false;
             let { budgetNode, declarationData } = props;
             let cells = budgetNode.cells;
             let { cellList } = declarationData.nodesById[budgetNode.uid];
+            // remove any deleted cells
             let { cellsById } = declarationData;
             let newCells = cells.filter(cell => {
                 return !!cellsById[cell.uid];
@@ -86,7 +102,9 @@ class ExplorerNode extends Component {
                 });
                 cells = budgetNode.cells;
             }
+            // harmonization required if there is a mismatch between cells and cellList
             if ((cells.length != cellList.length) && (this.harmonizecount == null)) {
+                // console.log('harmonizing cells for',budgetNode.uid)
                 this.harmonizecount = cellList.length - cells.length;
                 let cellParms = [];
                 let { cellsById } = declarationData;
@@ -116,15 +134,17 @@ class ExplorerNode extends Component {
         };
         this._chartrefs = [];
         this.getChartTabs = () => {
+            // generate array of chart tabs
             let { callbackid, budgetNode } = this.props;
             let budgetCells = budgetNode.cells;
             let portalSettings = budgetNode.portalConfig;
+            // let { chartConfigs } = portalSettings 
             let cellTabs = budgetCells.map((budgetCell, cellIndex) => {
                 let { cellTitle } = budgetCell;
-                return React.createElement(Tabs_1.Tab, { style: {
+                return React.createElement(Tab, { style: {
                         fontSize: "12px",
                     }, label: cellTitle, value: cellIndex, key: cellIndex },
-                    React.createElement(explorercell_1.default, { declarationData: this.props.declarationData, callbackid: cellIndex, budgetCell: budgetCell, globalStateActions: {
+                    React.createElement(ExplorerCell, { declarationData: this.props.declarationData, callbackid: cellIndex, budgetCell: budgetCell, globalStateActions: {
                             updateCellTimeScope: this.props.globalStateActions.updateCellTimeScope,
                             updateCellChartCode: this.props.globalStateActions.updateCellChartCode,
                             updateCellYearSelections: this.props.globalStateActions.updateCellYearSelections,
@@ -133,6 +153,8 @@ class ExplorerNode extends Component {
             return cellTabs;
         };
         this.getTabObject = chartTabs => {
+            // this deals with the edge case where switching aspects causes current tail
+            // chart to change from 2 charts to one by adding a value attr to tabs component
             let nodeDeclaration = this.props.declarationData.nodesById[this.props.budgetNode.uid];
             let tabSelection = nodeDeclaration.cellIndex;
             if (chartTabs.length == 0) {
@@ -143,13 +165,15 @@ class ExplorerNode extends Component {
                         lineHeight: "400px"
                     } }, "Waiting for data...");
             }
-            return (React.createElement(Tabs_1.Tabs, { value: tabSelection, onChange: (tabref) => {
+            return (React.createElement(Tabs, { value: tabSelection, onChange: (tabref) => {
                     this.onChangeTab(tabref);
                 } }, chartTabs));
         };
     }
     componentWillMount() {
         let { budgetNode, declarationData, urlparms, story } = this.props;
+        // console.log('componentWillMount for',budgetNode)
+        // console.log('componentWillMount story',story)
         if (story) {
             this.story = story;
         }
@@ -163,8 +187,11 @@ class ExplorerNode extends Component {
         budgetNode.actions = this._stateActions;
         let nodeDeclaration = declarationData.nodesById[budgetNode.uid];
         if (nodeDeclaration.cellList == null) {
+            // get controlData for cellList
+            // TODO: cloning with JSON is required here to avoid cross linking chartType - shoud be traced
             let cellDeclarationParms = JSON.parse(JSON.stringify(budgetNode.getCellDeclarationParms()));
             if (story) {
+                // console.log('node cellDeclarationParms for story',cellDeclarationParms,budgetNode.nodeIndex,story)
                 if ((story.charts === true) || ((budgetNode.nodeIndex == (story.path.length)) && story.leafchart)) {
                     let cellparms = cellDeclarationParms[story.tab];
                     if (!cellparms) {
@@ -174,8 +201,10 @@ class ExplorerNode extends Component {
                     cellparms.yearScope = chartspecs[0];
                     cellparms.chartConfigs[cellparms.yearScope].explorerChartCode = chartspecs[1];
                 }
+                // set chartSelection value for drilldown cell if required
                 let { nodeIndex } = budgetNode;
                 let { path } = story;
+                // console.log('cellparms',nodeIndex,cellIndex,cellparms)
                 if (nodeIndex < path.length) {
                     let code = path[nodeIndex];
                     let { datasetConfig } = budgetNode.viewpointConfigPack;
@@ -207,13 +236,15 @@ class ExplorerNode extends Component {
                 this.story = null;
                 this.props.clearStory(budgetNode.nodeIndex);
             }
-            if (urlparms) {
+            if (urlparms) { // apply imported parms
                 let cellurlparms = urlparms.settingsdata[budgetNode.nodeIndex];
                 let cellIndex = cellurlparms.ci;
                 let cellparms = cellDeclarationParms[cellIndex];
                 cellparms.yearScope = cellurlparms.c.ys;
                 cellparms.chartConfigs[cellparms.yearScope].explorerChartCode = cellurlparms.c.ct;
+                // set chartSelection value for drilldown cell if required
                 let { nodeIndex } = budgetNode;
+                // console.log('cellparms',nodeIndex,cellIndex,cellparms)
                 if (nodeIndex < urlparms.branchdata.pa.length) {
                     let code = urlparms.branchdata.pa[nodeIndex];
                     let { datasetConfig } = budgetNode.viewpointConfigPack;
@@ -248,15 +279,17 @@ class ExplorerNode extends Component {
             this._stateActions.addCellDeclarations(budgetNode.uid, cellDeclarationParms);
         }
         else {
-            this._stateActions.updateNode(budgetNode.uid);
+            this._stateActions.updateNode(budgetNode.uid); // trigger update -> render
         }
     }
+    // remove obsolete cell objects; update cell list if needed
     componentWillReceiveProps(nextProps) {
         let { dataGenerationCounter, budgetNode } = nextProps;
         let { oldDataGenerationCounter } = this;
         let lastAction = nextProps.declarationData.lastAction;
         if (oldDataGenerationCounter === null || (dataGenerationCounter > oldDataGenerationCounter)) {
             this.oldDataGenerationCounter = dataGenerationCounter;
+            // normalize cell settings to year dependency constraints
             this._normalizeCellDeclarations(nextProps);
         }
         else {
@@ -277,6 +310,7 @@ class ExplorerNode extends Component {
     }
     render() {
         let nodeDeclaration = this.props.declarationData.nodesById[this.props.budgetNode.uid];
+        // console.log('nodeDeclaration', nodeDeclaration)
         let chartTabs = this.getChartTabs();
         let tabobject = this.getTabObject(chartTabs);
         let { portalConfig: portalSettings } = this.props.budgetNode;
@@ -309,4 +343,4 @@ class ExplorerNode extends Component {
                 tabobject));
     }
 }
-exports.ExplorerNode = ExplorerNode;
+export { ExplorerNode };

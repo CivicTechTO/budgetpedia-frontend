@@ -1,8 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const redux_actions_1 = require("redux-actions");
-let uuid = require('node-uuid');
-var types;
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// actions.tsx
+/*
+
+    URLPARMSTODO: create addNodeDeclarations (plural) ADD_NODES
+
+*/
+import { createAction } from 'redux-actions';
+let uuid = require('node-uuid'); // use uuid.v4() for unique id
+export var types;
 (function (types) {
     types.ONETIME_NOTIFICATION = 'ONETIME_NOTIFICATION';
     types.ADD_BRANCH = 'ADD_BRANCH';
@@ -32,10 +37,12 @@ var types;
     types.UPDATE_CELL_TIMECODE = 'UPDATE_CELL_TIMECODE';
     types.UPDATE_CELL_CHART_CODE = 'UPDATE_CELL_CHART_CODE';
     types.TOGGLE_DELTA = 'TOGGLE_DELTA';
+    // export const TOGGLE_NET = 'TOGGLE_NET'
+    // export const TOGGLE_VARIANCE = 'TOGGLE_VARIANCE'
     types.UPDATE_NODE_YEAR_SELECTIONS = 'UPDATE_NODE_YEAR_SELECTIONS';
     types.UPDATE_NODE = 'UPDATE_NODE';
-})(types = exports.types || (exports.types = {}));
-var branchTypes;
+})(types || (types = {}));
+export var branchTypes;
 (function (branchTypes) {
     branchTypes.ADD_NODE = types.ADD_NODE;
     branchTypes.ADD_NODES = types.ADD_NODES;
@@ -50,82 +57,87 @@ var branchTypes;
     branchTypes.CHANGE_BRANCH_DATA = types.CHANGE_BRANCH_DATA;
     branchTypes.CLEAR_BRANCH_STORY = types.CLEAR_BRANCH_STORY;
     branchTypes.HARMONIZE_CELLS = types.HARMONIZE_CELLS;
-})(branchTypes = exports.branchTypes || (exports.branchTypes = {}));
-var nodeTypes;
+})(branchTypes || (branchTypes = {}));
+export var nodeTypes;
 (function (nodeTypes) {
     nodeTypes.ADD_CELLS = types.ADD_CELLS;
     nodeTypes.CHANGE_TAB = types.CHANGE_TAB;
     nodeTypes.NORMALIZE_CELL_YEAR_DEPENDENCIES = types.NORMALIZE_CELL_YEAR_DEPENDENCIES;
     nodeTypes.UPDATE_NODE = types.UPDATE_NODE;
     nodeTypes.UPDATE_NODE_YEAR_SELECTIONS = types.UPDATE_NODE_YEAR_SELECTIONS;
-})(nodeTypes = exports.nodeTypes || (exports.nodeTypes = {}));
-var cellTypes;
+    // export import UPDATE_CELLS_DATASERIESNAME = types.UPDATE_CELLS_DATASERIESNAME
+})(nodeTypes || (nodeTypes = {}));
+export var cellTypes;
 (function (cellTypes) {
     cellTypes.UPDATE_CELL_SELECTION = types.UPDATE_CELL_SELECTION;
     cellTypes.UPDATE_CELL_TIMECODE = types.UPDATE_CELL_TIMECODE;
     cellTypes.UPDATE_CELL_CHART_CODE = types.UPDATE_CELL_CHART_CODE;
     cellTypes.TOGGLE_DELTA = types.TOGGLE_DELTA;
-})(cellTypes = exports.cellTypes || (exports.cellTypes = {}));
-exports.onetimeNotification = redux_actions_1.createAction(types.ONETIME_NOTIFICATION);
-exports.addBranchDeclaration = redux_actions_1.createAction(types.ADD_BRANCH, (refbranchuid, settings) => ({
+    // export import TOGGLE_NET = types.TOGGLE_NET
+    // export import TOGGLE_VARIANCE = types.TOGGLE_VARIANCE
+})(cellTypes || (cellTypes = {}));
+// --------------------[ Explorer ]---------------------
+export const onetimeNotification = createAction(types.ONETIME_NOTIFICATION);
+// --------------------[ Branch ]---------------------
+export const addBranchDeclaration = createAction(types.ADD_BRANCH, (refbranchuid, settings) => ({
     settings,
     branchuid: uuid.v4(),
     refbranchuid,
 }), () => ({
     explorer: true
 }));
-exports.cloneBranchDeclaration = redux_actions_1.createAction(types.CLONE_BRANCH, (refbranchuid, settings) => ({
+export const cloneBranchDeclaration = createAction(types.CLONE_BRANCH, (refbranchuid, settings) => ({
     branchuid: refbranchuid,
     settings,
     refbranchuid,
 }), () => ({
     explorer: true
 }));
-exports.removeBranchDeclaration = redux_actions_1.createAction(types.REMOVE_BRANCH, branchuid => ({
+export const removeBranchDeclaration = createAction(types.REMOVE_BRANCH, branchuid => ({
     branchuid,
 }), () => ({
     explorer: false
 }));
-exports.removeBranches = redux_actions_1.createAction(types.REMOVE_BRANCHES, () => ({}), () => ({
+export const removeBranches = createAction(types.REMOVE_BRANCHES, () => ({}), () => ({
     explorer: false
 }));
-exports.changeViewpoint = redux_actions_1.createAction(types.CHANGE_VIEWPOINT, (branchuid, viewpointname) => ({
+export const changeViewpoint = createAction(types.CHANGE_VIEWPOINT, (branchuid, viewpointname) => ({
     branchuid,
     viewpointname,
 }), () => ({
     explorer: true
 }));
-exports.updateBranch = redux_actions_1.createAction(types.UPDATE_BRANCH, (branchuid, settings) => ({
+export const updateBranch = createAction(types.UPDATE_BRANCH, (branchuid, settings) => ({
     branchuid,
     settings,
 }), () => ({
     explorer: true
 }));
-exports.changeVersion = redux_actions_1.createAction(types.CHANGE_VERSION, (branchuid, versionname) => ({
+export const changeVersion = createAction(types.CHANGE_VERSION, (branchuid, versionname) => ({
     branchuid,
     versionname,
 }), () => ({
     explorer: true
 }));
-exports.changeAspect = redux_actions_1.createAction(types.CHANGE_ASPECT, (branchuid, aspectname) => ({
+export const changeAspect = createAction(types.CHANGE_ASPECT, (branchuid, aspectname) => ({
     branchuid,
     aspectname,
 }), () => ({
     explorer: true
 }));
-exports.toggleInflationAdjusted = redux_actions_1.createAction(types.TOGGLE_INFLATION_ADJUSTED, (branchuid, value) => ({
+export const toggleInflationAdjusted = createAction(types.TOGGLE_INFLATION_ADJUSTED, (branchuid, value) => ({
     branchuid,
     value,
 }), () => ({
     explorer: true
 }));
-exports.updateProrata = redux_actions_1.createAction(types.UPDATE_PRORATA, (branchuid, value) => ({
+export const updateProrata = createAction(types.UPDATE_PRORATA, (branchuid, value) => ({
     branchuid,
     value,
 }), () => ({
     explorer: true
 }));
-exports.harmonizeCells = redux_actions_1.createAction(types.HARMONIZE_CELLS, (branchuid, nodeProperties, cellProperties, nodeList, cellList) => ({
+export const harmonizeCells = createAction(types.HARMONIZE_CELLS, (branchuid, nodeProperties, cellProperties, nodeList, cellList) => ({
     branchuid,
     nodeProperties,
     cellProperties,
@@ -134,63 +146,65 @@ exports.harmonizeCells = redux_actions_1.createAction(types.HARMONIZE_CELLS, (br
 }), () => ({
     explorer: true
 }));
-exports.toggleShowOptions = redux_actions_1.createAction(types.TOGGLE_SHOW_OPTIONS, (branchuid, value) => ({
+export const toggleShowOptions = createAction(types.TOGGLE_SHOW_OPTIONS, (branchuid, value) => ({
     branchuid,
     value,
 }), () => ({
     explorer: true
 }));
-exports.incrementBranchDataVersion = redux_actions_1.createAction(types.CHANGE_BRANCH_DATA, (branchuid) => ({
+export const incrementBranchDataVersion = createAction(types.CHANGE_BRANCH_DATA, (branchuid) => ({
     branchuid,
 }), () => ({
     explorer: false
 }));
-exports.clearBranchStory = redux_actions_1.createAction(types.CLEAR_BRANCH_STORY, (branchuid) => ({
+export const clearBranchStory = createAction(types.CLEAR_BRANCH_STORY, (branchuid) => ({
     branchuid,
 }), () => ({
     explorer: false
 }));
-exports.changeTab = redux_actions_1.createAction(types.CHANGE_TAB, (branchuid, nodeuid, tabvalue) => ({
+// ----------------------[ Node ]-----------------------------
+export const changeTab = createAction(types.CHANGE_TAB, (branchuid, nodeuid, tabvalue) => ({
     nodeuid,
     tabvalue,
     branchuid,
 }), () => ({
     explorer: true
 }));
-exports.updateNode = redux_actions_1.createAction(types.UPDATE_NODE, (branchuid, nodeuid) => ({
+// TODO: validate this -- may not do anything
+export const updateNode = createAction(types.UPDATE_NODE, (branchuid, nodeuid) => ({
     nodeuid,
     branchuid,
 }), () => ({
     explorer: true
 }));
-exports.addNodeDeclaration = redux_actions_1.createAction(types.ADD_NODE, (branchuid, settings) => ({
+export const addNodeDeclaration = createAction(types.ADD_NODE, (branchuid, settings) => ({
     settings,
     nodeuid: uuid.v4(),
     branchuid,
 }), () => ({
     explorer: true
 }));
-exports.addNodeDeclarations = (branchuid, settingslist) => {
+export const addNodeDeclarations = (branchuid, settingslist) => {
     return dispatch => {
         for (let settingsdata of settingslist) {
             settingsdata.nodeuid = uuid.v4();
         }
-        dispatch(exports._addNodeDeclarations(branchuid, settingslist));
+        dispatch(_addNodeDeclarations(branchuid, settingslist));
     };
 };
-exports._addNodeDeclarations = redux_actions_1.createAction(types.ADD_NODES, (branchuid, settingslist) => ({
+export const _addNodeDeclarations = createAction(types.ADD_NODES, (branchuid, settingslist) => ({
     settingslist,
     branchuid,
 }), () => ({
     explorer: true
 }));
-exports.removeNodeDeclarations = redux_actions_1.createAction(types.REMOVE_NODES, (branchuid, items) => ({
+export const removeNodeDeclarations = createAction(types.REMOVE_NODES, (branchuid, items) => ({
     items,
     branchuid,
 }), () => ({
     explorer: true
 }));
-exports.normalizeCellYearDependencies = redux_actions_1.createAction(types.NORMALIZE_CELL_YEAR_DEPENDENCIES, (branchuid, nodeuid, cellList, yearsRange) => ({
+export const normalizeCellYearDependencies = createAction(types.NORMALIZE_CELL_YEAR_DEPENDENCIES, (branchuid, nodeuid, cellList, yearsRange) => ({
     branchuid,
     nodeuid,
     cellList,
@@ -198,14 +212,15 @@ exports.normalizeCellYearDependencies = redux_actions_1.createAction(types.NORMA
 }), () => ({
     explorer: true
 }));
-const _addCellDeclaration = redux_actions_1.createAction(types.ADD_CELLS, (branchuid, nodeuid, settings) => ({
+// ---------------------[ Cell ]---------------------
+const _addCellDeclaration = createAction(types.ADD_CELLS, (branchuid, nodeuid, settings) => ({
     branchuid,
     settings,
     nodeuid,
 }), () => ({
     explorer: true
 }));
-exports.addCellDeclarations = (branchuid, nodeuid, settingslist) => {
+export const addCellDeclarations = (branchuid, nodeuid, settingslist) => {
     return dispatch => {
         for (let settings of settingslist) {
             settings.celluid = uuid.v4();
@@ -213,7 +228,7 @@ exports.addCellDeclarations = (branchuid, nodeuid, settingslist) => {
         dispatch(_addCellDeclaration(branchuid, nodeuid, settingslist));
     };
 };
-exports.updateCellChartSelection = redux_actions_1.createAction(types.UPDATE_CELL_SELECTION, (branchuid, nodeuid, celluid, selection) => ({
+export const updateCellChartSelection = createAction(types.UPDATE_CELL_SELECTION, (branchuid, nodeuid, celluid, selection) => ({
     celluid,
     selection,
     nodeuid,
@@ -221,7 +236,7 @@ exports.updateCellChartSelection = redux_actions_1.createAction(types.UPDATE_CEL
 }), () => ({
     explorer: true
 }));
-exports.updateCellTimeScope = redux_actions_1.createAction(types.UPDATE_CELL_TIMECODE, (branchuid, nodeuid, celluid, explorerTimeCode) => ({
+export const updateCellTimeScope = createAction(types.UPDATE_CELL_TIMECODE, (branchuid, nodeuid, celluid, explorerTimeCode) => ({
     branchuid,
     nodeuid,
     celluid,
@@ -229,7 +244,7 @@ exports.updateCellTimeScope = redux_actions_1.createAction(types.UPDATE_CELL_TIM
 }), () => ({
     explorer: true
 }));
-exports.updateCellChartCode = redux_actions_1.createAction(types.UPDATE_CELL_CHART_CODE, (branchuid, nodeuid, celluid, explorerChartCode) => ({
+export const updateCellChartCode = createAction(types.UPDATE_CELL_CHART_CODE, (branchuid, nodeuid, celluid, explorerChartCode) => ({
     branchuid,
     nodeuid,
     celluid,
@@ -237,23 +252,24 @@ exports.updateCellChartCode = redux_actions_1.createAction(types.UPDATE_CELL_CHA
 }), () => ({
     explorer: true
 }));
-exports.updateCellYearSelections = redux_actions_1.createAction(types.UPDATE_NODE_YEAR_SELECTIONS, (branchuid, nodeuid, leftyear, rightyear) => ({
+export const updateCellYearSelections = createAction(types.UPDATE_NODE_YEAR_SELECTIONS, (branchuid, nodeuid, leftyear, rightyear) => ({
     branchuid,
     nodeuid,
+    // celluid,
     leftyear,
     rightyear,
 }), () => ({
     explorer: true
 }));
-exports.resetLastAction = redux_actions_1.createAction(types.RESET_LAST_ACTION, () => ({}), () => ({
+export const resetLastAction = createAction(types.RESET_LAST_ACTION, () => ({}), () => ({
     explorer: true
 }));
-exports.branchMoveUp = redux_actions_1.createAction(types.BRANCH_MOVE_UP, (branchuid) => ({
+export const branchMoveUp = createAction(types.BRANCH_MOVE_UP, (branchuid) => ({
     branchuid,
 }), () => ({
     explorer: false
 }));
-exports.branchMoveDown = redux_actions_1.createAction(types.BRANCH_MOVE_DOWN, (branchuid) => ({
+export const branchMoveDown = createAction(types.BRANCH_MOVE_DOWN, (branchuid) => ({
     branchuid,
 }), () => ({
     explorer: false

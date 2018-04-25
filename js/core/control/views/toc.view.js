@@ -1,8 +1,10 @@
+// paper.view.tsx
+// copyright (c) 2018 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Paper_1 = require("material-ui/Paper");
-const hashanchorheader_view_1 = require("./hashanchorheader.view");
+import * as React from 'react';
+// import { HashLink as Link } from 'react-router-hash-link'
+import Paper from 'material-ui/Paper';
+import HashAnchorHeader from './hashanchorheader.view';
 let paddingMap = {
     h1: 3,
     h2: 16,
@@ -15,6 +17,9 @@ let levelMap = {
     h3: 3,
     h4: 4,
 };
+// <a href={window.location.pathname + '#' + item.slug}>
+//      {indexnumber + ' ' + item.text}
+//  </a>
 let ToCView = ({ tocdata }) => {
     let styles = {
         outderdiv: { backgroundColor: '#d9d9d9', margin: '16px', },
@@ -58,13 +63,13 @@ let ToCView = ({ tocdata }) => {
         });
     }
     return (React.createElement("nav", { style: styles.outderdiv },
-        React.createElement(Paper_1.default, { zDepth: 3, style: {
+        React.createElement(Paper, { zDepth: 3, style: {
                 boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
                 borderRadius: '8px',
             } },
             React.createElement("div", { style: styles.innerdiv },
-                React.createElement(hashanchorheader_view_1.default, { title: 'Page Contents', tag: 'h2' }),
+                React.createElement(HashAnchorHeader, { title: 'Page Contents', tag: 'h2' }),
                 React.createElement("div", { style: { columns: '2 300px' } }, toc),
                 React.createElement("div", { style: { clear: 'both' } })))));
 };
-exports.default = ToCView;
+export default ToCView;

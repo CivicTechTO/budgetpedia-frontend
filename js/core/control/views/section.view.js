@@ -1,8 +1,12 @@
+// section.view.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
+/*
+    TODO: upgrade to component; use markdown for title/description
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const markupblock_view_1 = require("./markupblock.view");
-const hashanchorheader_view_1 = require("./hashanchorheader.view");
+import * as React from 'react';
+import MarkupBlock from './markupblock.view';
+import HashAnchorHeader from './hashanchorheader.view';
 let SectionView = props => {
     let { title, description, children, style, id } = props;
     let defaultstyle = {
@@ -15,8 +19,8 @@ let SectionView = props => {
     return React.createElement("section", { id: id, style: Object.assign({}, defaultstyle, style) },
         title ?
             React.createElement("header", { style: { backgroundColor: "#d9d9d9", padding: "0px 16px 1px", borderTop: "4px solid silver" } },
-                React.createElement(hashanchorheader_view_1.default, { tag: 'h1', title: title }),
-                description ? React.createElement(markupblock_view_1.default, { markup: description }) : null) : null,
+                React.createElement(HashAnchorHeader, { tag: 'h1', title: title }),
+                description ? React.createElement(MarkupBlock, { markup: description }) : null) : null,
         React.createElement("main", null, children));
 };
-exports.default = SectionView;
+export default SectionView;

@@ -1,33 +1,37 @@
+// sheet.view.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const Paper_1 = require("material-ui/Paper");
-const FloatingActionButton_1 = require("material-ui/FloatingActionButton");
-const mode_edit_1 = require("material-ui/svg-icons/editor/mode-edit");
-const file_download_1 = require("material-ui/svg-icons/file/file-download");
-const done_1 = require("material-ui/svg-icons/action/done");
+import * as React from 'react';
+import Paper from 'material-ui/Paper';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentEdit from 'material-ui/svg-icons/editor/mode-edit';
+import FileDownload from 'material-ui/svg-icons/file/file-download';
+import Done from 'material-ui/svg-icons/action/done';
 var fileDownload = require('js-file-download');
 var stringUtils = require('string');
-const renderedlink_view_1 = require("../forked-components/renderedlink.view");
-const headlinesbutton_view_1 = require("../forked-components/headlinesbutton.view");
-const draft_js_1 = require("draft-js");
-const draft_js_plugins_editor_1 = require("draft-js-plugins-editor");
-const draft_js_static_toolbar_plugin_1 = require("draft-js-static-toolbar-plugin");
-const draft_js_anchor_plugin_1 = require("draft-js-anchor-plugin");
-const draft_js_image_plugin_1 = require("draft-js-image-plugin");
-const imageadd_view_1 = require("../forked-components/imageadd.view");
-const draft_js_alignment_plugin_1 = require("draft-js-alignment-plugin");
-const draft_js_focus_plugin_1 = require("draft-js-focus-plugin");
-const draft_js_resizeable_plugin_1 = require("draft-js-resizeable-plugin");
-const Immutable = require("immutable");
-require("../forked-components/sheet.styles.css");
-require("draft-js/dist/Draft.css");
-require("draft-js-static-toolbar-plugin/lib/plugin.css");
-require("draft-js-anchor-plugin/lib/plugin.css");
-require("draft-js-image-plugin/lib/plugin.css");
-require("draft-js-alignment-plugin/lib/plugin.css");
-require("draft-js-focus-plugin/lib/plugin.css");
-const draft_js_buttons_1 = require("draft-js-buttons");
+import RenderedLink from '../forked-components/renderedlink.view';
+import HeadlinesButton from '../forked-components/headlinesbutton.view';
+import { EditorState, RichUtils, convertToRaw, convertFromRaw, DefaultDraftBlockRenderMap } from 'draft-js';
+import Editor, { composeDecorators } from 'draft-js-plugins-editor';
+import createToolbarPlugin, { Separator } from 'draft-js-static-toolbar-plugin';
+import createLinkPlugin from 'draft-js-anchor-plugin';
+import createImagePlugin from 'draft-js-image-plugin';
+import ImageAdd from '../forked-components/imageadd.view';
+import createAlignmentPlugin from 'draft-js-alignment-plugin';
+import createFocusPlugin from 'draft-js-focus-plugin';
+import createResizeablePlugin from 'draft-js-resizeable-plugin';
+import * as Immutable from 'immutable';
+// -----------------------------[ plugin compliance ]-------------------------------
+// from draft-js-plugins.com
+import '../forked-components/sheet.styles.css';
+import 'draft-js/dist/Draft.css';
+import 'draft-js-static-toolbar-plugin/lib/plugin.css';
+import 'draft-js-anchor-plugin/lib/plugin.css';
+import 'draft-js-image-plugin/lib/plugin.css';
+import 'draft-js-alignment-plugin/lib/plugin.css';
+import 'draft-js-focus-plugin/lib/plugin.css';
+import { ItalicButton, BoldButton, UnderlineButton, CodeButton, UnorderedListButton, OrderedListButton, BlockquoteButton, CodeBlockButton, } from 'draft-js-buttons';
+// --------------------------------[ end of plugins compliance ]---------------------------------
 let map = {
     'header-one': 'h1',
     'header-two': 'h2',
@@ -55,35 +59,37 @@ let HeaderWrapper = props => {
 class SheetView extends React.Component {
     constructor(props) {
         super(props);
+        // declarations
         this.state = null;
-        this.editor = null;
+        this.editor = null; // element ref
         this.assemblePlugins = () => {
-            let linkPlugin = draft_js_anchor_plugin_1.default({
-                Link: renderedlink_view_1.default,
+            // core initialization
+            let linkPlugin = createLinkPlugin({
+                Link: RenderedLink,
                 placeholder: 'local.link/path, or external url',
             });
-            let toolbarPlugin = draft_js_static_toolbar_plugin_1.default({
+            let toolbarPlugin = createToolbarPlugin({
                 structure: [
-                    draft_js_buttons_1.BoldButton,
-                    draft_js_buttons_1.ItalicButton,
-                    draft_js_buttons_1.UnderlineButton,
-                    draft_js_buttons_1.CodeButton,
+                    BoldButton,
+                    ItalicButton,
+                    UnderlineButton,
+                    CodeButton,
                     linkPlugin.LinkButton,
-                    draft_js_static_toolbar_plugin_1.Separator,
-                    headlinesbutton_view_1.default,
-                    draft_js_buttons_1.UnorderedListButton,
-                    draft_js_buttons_1.OrderedListButton,
-                    draft_js_buttons_1.BlockquoteButton,
-                    draft_js_buttons_1.CodeBlockButton
+                    Separator,
+                    HeadlinesButton,
+                    UnorderedListButton,
+                    OrderedListButton,
+                    BlockquoteButton,
+                    CodeBlockButton
                 ]
             });
             let { Toolbar } = toolbarPlugin;
             this.Toolbar = Toolbar;
-            let focusPlugin = draft_js_focus_plugin_1.default();
-            let alignmentPlugin = draft_js_alignment_plugin_1.default();
+            let focusPlugin = createFocusPlugin();
+            let alignmentPlugin = createAlignmentPlugin();
             let { AlignmentTool } = alignmentPlugin;
             this.AlignmentTool = AlignmentTool;
-            let resizeablePlugin = draft_js_resizeable_plugin_1.default();
+            let resizeablePlugin = createResizeablePlugin();
             let pluginOptions = {
                 toolbarPlugin,
                 linkPlugin,
@@ -106,8 +112,8 @@ class SheetView extends React.Component {
         };
         this.assembleImagePlugin = (options) => {
             let decorator;
-            decorator = draft_js_plugins_editor_1.composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator, options.focusPlugin.decorator);
-            let imagePlugin = draft_js_image_plugin_1.default({
+            decorator = composeDecorators(options.resizeablePlugin.decorator, options.alignmentPlugin.decorator, options.focusPlugin.decorator);
+            let imagePlugin = createImagePlugin({
                 decorator,
             });
             return imagePlugin;
@@ -116,6 +122,8 @@ class SheetView extends React.Component {
             this.editor.focus();
         };
         this.onEditorChange = (editorState) => this.setState({ editorState });
+        // workaround until back end is set up. 
+        // Downloads rawContent, which dev than has to save to model/data/draft/, and recompile :-(
         this.onDownload = () => {
             let { draftsource } = this.props;
             if (!draftsource)
@@ -124,12 +132,12 @@ class SheetView extends React.Component {
             if (!index)
                 return;
             let content = this.state.editorState.getCurrentContent();
-            let rawcontent = draft_js_1.convertToRaw(content);
+            let rawcontent = convertToRaw(content);
             let json = JSON.stringify(rawcontent);
             fileDownload(json, index + '.json');
         };
         this.handleKeyCommand = (command, editorState) => {
-            const newState = draft_js_1.RichUtils.handleKeyCommand(editorState, command);
+            const newState = RichUtils.handleKeyCommand(editorState, command);
             if (newState) {
                 this.onEditorChange(newState);
                 return 'handled';
@@ -137,7 +145,7 @@ class SheetView extends React.Component {
             return 'not-handled';
         };
         this.toggleEdit = () => {
-            if (!this.state.editorReadonly) {
+            if (!this.state.editorReadonly) { // switch to READONLY
                 this.setState({
                     editorReadonly: true
                 }, () => {
@@ -153,12 +161,12 @@ class SheetView extends React.Component {
                                         renderEditor: true,
                                     });
                                 });
-                            });
+                            }); // setTimeout
                         });
-                    });
+                    }); // setTimeout
                 });
             }
-            else {
+            else { // switch to EDIT
                 this.setState({
                     editorReadonly: false,
                 }, () => {
@@ -172,13 +180,13 @@ class SheetView extends React.Component {
                             });
                         });
                     });
-                });
+                }); // setTimeout
             }
         };
         this.actionbuttons = () => (this.state.editable ? React.createElement("div", { style: { position: 'absolute', top: '-20px', right: 0, zIndex: 5 } },
-            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onClick: this.toggleEdit }, this.state.editorReadonly ? React.createElement(mode_edit_1.default, null) : React.createElement(done_1.default, null)),
-            React.createElement(FloatingActionButton_1.default, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onClick: this.onDownload },
-                React.createElement(file_download_1.default, null))) : null);
+            React.createElement(FloatingActionButton, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onClick: this.toggleEdit }, this.state.editorReadonly ? React.createElement(ContentEdit, null) : React.createElement(Done, null)),
+            React.createElement(FloatingActionButton, { mini: true, style: { marginRight: '20px', zIndex: 2 }, onClick: this.onDownload },
+                React.createElement(FileDownload, null))) : null);
         this.editorcontrols = () => {
             let AlignmentTool = this.AlignmentTool;
             let Toolbar = this.Toolbar;
@@ -191,14 +199,14 @@ class SheetView extends React.Component {
             ];
         };
         this.imagecontrol = () => ((this.state.renderPluginTools) ?
-            React.createElement(imageadd_view_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.pluginOptions.imagePlugin.addImage }) : null);
+            React.createElement(ImageAdd, { editorState: this.state.editorState, onChange: this.onEditorChange, modifier: this.pluginOptions.imagePlugin.addImage }) : null);
         let { draftdata } = this.props;
         let startstate;
         if (!draftdata || !Object.keys(draftdata).length) {
-            startstate = draft_js_1.EditorState.createEmpty();
+            startstate = EditorState.createEmpty();
         }
         else {
-            startstate = draft_js_1.EditorState.createWithContent(draft_js_1.convertFromRaw(draftdata));
+            startstate = EditorState.createWithContent(convertFromRaw(draftdata));
         }
         this.state = {
             editable: (window.location.hostname == 'budgetpedia'),
@@ -210,7 +218,7 @@ class SheetView extends React.Component {
         this.assemblePlugins();
     }
     render() {
-        const blockRenderMap = draft_js_1.DefaultDraftBlockRenderMap.merge(Immutable.Map({
+        const blockRenderMap = DefaultDraftBlockRenderMap.merge(Immutable.Map({
             'header-one': {
                 element: 'div',
                 wrapper: React.createElement(HeaderWrapper, null),
@@ -233,15 +241,15 @@ class SheetView extends React.Component {
             innerdiv: { padding: '16px', position: "relative" },
         };
         return (React.createElement("article", { style: styles.outderdiv },
-            React.createElement(Paper_1.default, { zDepth: 3, style: {
+            React.createElement(Paper, { zDepth: 3, style: {
                     boxShadow: 'rgba(0, 0, 0, 0.4) 0px 10px 30px, rgba(0, 0, 0, 0.4) 0px 6px 10px',
                     borderRadius: '8px',
                 } },
                 React.createElement("div", { style: styles.innerdiv, onClick: this.focus },
                     this.actionbuttons(),
-                    this.state.renderEditor ? React.createElement(draft_js_plugins_editor_1.default, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, blockRenderMap: blockRenderMap, ref: (element) => { this.editor = element; } }) : null,
+                    this.state.renderEditor ? React.createElement(Editor, { editorState: this.state.editorState, onChange: this.onEditorChange, plugins: this.plugins, readOnly: this.state.editorReadonly, handleKeyCommand: this.handleKeyCommand, blockRenderMap: blockRenderMap, ref: (element) => { this.editor = element; } }) : null,
                     this.editorcontrols()),
                 this.imagecontrol())));
     }
 }
-exports.default = SheetView;
+export default SheetView;

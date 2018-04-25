@@ -1,8 +1,9 @@
+// media.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const core_controller_composer_1 = require("./core.controller.composer");
-const react_twitter_widgets_1 = require("react-twitter-widgets");
+import * as React from 'react';
+import coreControllerComposer from './core.controller.composer';
+import { Timeline } from 'react-twitter-widgets';
 class MediaControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ class MediaControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'timeline': {
-                    componentType = react_twitter_widgets_1.Timeline;
+                    componentType = Timeline;
                     break;
                 }
                 default: {
@@ -59,5 +60,5 @@ class MediaControllerClass extends React.Component {
         return component;
     }
 }
-let MediaController = core_controller_composer_1.default(MediaControllerClass);
-exports.default = MediaController;
+let MediaController = coreControllerComposer(MediaControllerClass);
+export default MediaController;

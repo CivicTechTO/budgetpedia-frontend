@@ -1,6 +1,7 @@
+// scrollcontrols.view.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from 'react';
 class ScrollControlsView extends React.Component {
     constructor() {
         super(...arguments);
@@ -60,6 +61,7 @@ class ScrollControlsView extends React.Component {
             let scrollright = original + clientWidth;
             this.smoothScroll(scrollright);
         };
+        // TODO apply some kind of easing; simplify, use requestAnimationFrame
         this.smoothScroll = incomingtarget => {
             let scroller = this.scroller;
             let original = scroller.scrollLeft;
@@ -74,7 +76,7 @@ class ScrollControlsView extends React.Component {
                 target = rightmax;
             try {
                 let poschange = target - original;
-                let msperinterval = ms / frames;
+                let msperinterval = ms / frames; // desired time; frames per half second
                 let tickslimit = ms / msperinterval;
                 let pospertick = poschange / tickslimit;
                 let ticks = 0;
@@ -90,6 +92,7 @@ class ScrollControlsView extends React.Component {
                 }, msperinterval);
             }
             catch (e) {
+                // abandon
             }
         };
         this.arrowStyle = {
@@ -110,6 +113,7 @@ class ScrollControlsView extends React.Component {
         this.rightArrowStyle = Object.assign({}, this.arrowStyle, { right: 0, borderBottomLeftRadius: '20px', borderTopLeftRadius: '20px', borderRight: 0 });
     }
     componentWillReceiveProps(next) {
+        // received on second render
         if (!this.scroller && next.scroller) {
             let scroller = this.scroller = next.scroller;
             let { scrollerData } = this;
@@ -152,4 +156,4 @@ class ScrollControlsView extends React.Component {
             this.props.children));
     }
 }
-exports.default = ScrollControlsView;
+export default ScrollControlsView;

@@ -1,11 +1,12 @@
+// list.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const core_controller_composer_1 = require("./core.controller.composer");
-const linklist_view_1 = require("./views/linklist.view");
-const nuggetlist_view_1 = require("./views/nuggetlist.view");
-const tilelist_view_1 = require("./views/tilelist.view");
-const markuplist_view_1 = require("./views/markuplist.view");
+import * as React from 'react';
+import coreControllerComposer from './core.controller.composer';
+import LinkListView from './views/linklist.view';
+import NuggetListView from './views/nuggetlist.view';
+import TileListView from './views/tilelist.view';
+import MarkupListView from './views/markuplist.view';
 class ListControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -19,19 +20,19 @@ class ListControllerClass extends React.Component {
             let componentType = null;
             switch (type) {
                 case 'linklist': {
-                    componentType = linklist_view_1.default;
+                    componentType = LinkListView;
                     break;
                 }
                 case 'nuggetlist': {
-                    componentType = nuggetlist_view_1.default;
+                    componentType = NuggetListView;
                     break;
                 }
                 case 'tilelist': {
-                    componentType = tilelist_view_1.default;
+                    componentType = TileListView;
                     break;
                 }
                 case 'markuplist': {
-                    componentType = markuplist_view_1.default;
+                    componentType = MarkupListView;
                     break;
                 }
                 default: {
@@ -75,5 +76,5 @@ class ListControllerClass extends React.Component {
         return component;
     }
 }
-let ListController = core_controller_composer_1.default(ListControllerClass);
-exports.default = ListController;
+let ListController = coreControllerComposer(ListControllerClass);
+export default ListController;

@@ -1,18 +1,41 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const constants_1 = require("../constants");
-const constants_2 = require("../constants");
-const utilities_1 = require("../modules/utilities");
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// budgetcell.tsx
+/*
+
+Title components:
+- Node meta category
+- Node cagegory
+- YearsRange
+- Total (for one year charts)
+- Inflation adjustment
+
+Vertical axis:
+- Metric (qualifier)
+
+Horizontal access:
+- Dimension
+
+*/
+import { ChartCodeToGoogleChartType, AspectNameToDatasetName, } from '../constants';
+import { TimeScope, GoogleChartColors } from '../constants';
+import { ColorBrightness } from '../modules/utilities';
 var format = require('format-number');
 class BudgetCell {
     constructor(specs) {
-        this.chartSelection = null;
+        this.chartSelection = null; // interpreted by explorer; the logical row of the selection (per Sorted... lists)
+        // ========================[ METHODS ]==========================
+        // reset the visible element selection (if any) on the current chart
+        // google charts clear the selection on blur, must be re-instated after each
+        // operation
+        // called after animation, on mount, and after update
         this.refreshSelection = () => {
             let budgetCell = this;
+            // console.log('budgetCell.chartSelection',budgetCell.chartSelection, budgetCell)
             if (budgetCell.chartSelection !== null) {
                 if (budgetCell.chart && budgetCell.chart.getSelection().length == 0) {
                     let selectionObj = { row: null, column: null };
                     let chartSelection = [selectionObj];
+                    // console.log('chartSelection',chartSelection)
                     switch (budgetCell.googleChartType) {
                         case "PieChart":
                             selectionObj.row = budgetCell.chartSelection;
@@ -21,10 +44,11 @@ class BudgetCell {
                             if (budgetCell.explorerChartCode == "DiffColumnChart") {
                                 selectionObj.row = Math.round((budgetCell.chartSelection * 2) + 1);
                                 selectionObj.column = 2;
+                                // console.log('set diffcolumnchart selection',selectionObj)
                             }
                             else {
                                 selectionObj.row = budgetCell.chartSelection;
-                                selectionObj.column = 1;
+                                selectionObj.column = 1; // ?
                             }
                             break;
                         case "LineChart":
@@ -45,16 +69,23 @@ class BudgetCell {
         this.switchYearScope = () => {
             this.setChartParms();
         };
+        // ----------------------[ setChartParms ]-------------------------
         this.prorataControls = {
             prorataindex: null,
             yearsselector: null,
             isprorata: null,
             proratastring: null,
         };
+        // creates formal input parameters for google charts, through Chart Component
+        // dataset is a data tree fetched from database
+        // dataseries is a list of data rows attached to a node
         this.setChartParms = () => {
             let budgetCell = this;
+            // --------------[ Unpack data bundles ]-------------
             let { viewpointNamingConfigs, datasetConfig, isInflationAdjusted, prorata, } = budgetCell.viewpointConfigPack;
             let { treeNodeData, yearsRange, } = budgetCell.nodeDataPack;
+            // ---------------------[ get data node components ]------------------
+            // collect chart node and its components as data sources for the graph
             if (!treeNodeData) {
                 console.error('System Error: node not found in setChartParms', budgetCell);
                 throw Error('node not found');
@@ -95,10 +126,26 @@ class BudgetCell {
                 }
                 prorataControls.proratastring = thestring;
             }
+            // ====================[ COLLECT CHART PARMS ]======================
+            // ------------------
+            // 1. chart type:
+            // ------------------
             let chartType = budgetCell.googleChartType;
+            // ------------------
+            // 2. chart options:
+            // ------------------
             let options = budgetCell._chartParmsOptions(treeNodeData, viewpointNamingConfigs, datasetConfig, yearsRange);
+            // ------------------
+            // 3. chart events:
+            // ------------------
             let events = budgetCell._chartParmsEvents();
-            let columns = null;
+            // ------------------
+            // 4. chart columns:
+            // ------------------
+            let columns = null; // = budgetCell._chartParmsColumns(yearsRange, treeNodeData)
+            // ------------------
+            // 5. chart rows:
+            // ------------------
             let { nodeDataseriesName } = budgetCell;
             let sortedlistName = 'Sorted' + nodeDataseriesName;
             let sortedDataseries = treeNodeData[sortedlistName];
@@ -106,8 +153,12 @@ class BudgetCell {
             let rows = null;
             let diffdata = null;
             switch (explorerChartCode) {
+                // ------------------
+                // 5. diff data:
+                // ------------------
                 case "DiffColumnChart":
                 case "DiffPieChart": {
+                    // console.log('processing chart code',explorerChartCode)
                     let { rightYear, leftYear } = this.nodeDataPack.yearSelections;
                     let leftcolumns = budgetCell._columns_diffChart(yearsRange, leftYear);
                     let rightcolumns = budgetCell._columns_diffChart(yearsRange, rightYear);
@@ -121,19 +172,23 @@ class BudgetCell {
                         options.pieSliceText = 'percentage';
                         options.pieHole = null;
                     }
+                    // console.log( 'diffdata', diffdata, options)
                     break;
                 }
                 default: {
                     columns = budgetCell._chartParmsColumns(yearsRange, treeNodeData);
+                    // code...
                     if (sortedDataseries) {
                         rows = budgetCell._chartParmsRows(treeNodeData, yearsRange);
                     }
                     else {
+                        // fires on last chart
                         console.error('System Error: no sortedDataSeries', sortedlistName, sortedDataseries, treeNodeData);
                         return;
                     }
                 }
             }
+            // --------------------[ ASSEMBLE PARMS PACK ]----------------
             let chartParms = {
                 chartType,
                 options,
@@ -143,21 +198,29 @@ class BudgetCell {
                 diffdata,
             };
             this.chartParmsObject = chartParms;
+            // console.log('chartParms',chartParms)
+            // save it
             this.setState({
                 chartParms,
             });
         };
+        // ===========================================================================
+        // 2. chart options:
+        // ===========================================================================
         this._chartParmsOptions = (treeNodeData, viewpointNamingConfigs, datasetConfig, yearsRange) => {
+            // ----------------------[ assemble support variables ]-------------------
             let budgetCell = this;
             let { aspectName, nodeDataseriesName } = budgetCell;
-            let datasetName = constants_1.AspectNameToDatasetName[aspectName];
+            let datasetName = AspectNameToDatasetName[aspectName];
             let units = datasetConfig.Units;
+            // --------------------[ assemble vertical label value ]--------------------
             let calcAlias;
             if (budgetCell.prorataControls.isprorata) {
                 calcAlias = datasetConfig.CalcUnitsAlias;
             }
             let verticalLabel = (calcAlias || datasetConfig.UnitsAlias) || datasetConfig.Units;
             verticalLabel = datasetConfig.DatasetName + ' (' + verticalLabel + ')';
+            // -------------------[ assemble horizontal label value ]--------------------
             let horizontalLabel = null;
             if ((treeNodeData.NamingConfigRef) && (nodeDataseriesName != 'CommonDimension')) {
                 let titleref = viewpointNamingConfigs[treeNodeData.NamingConfigRef];
@@ -175,6 +238,9 @@ class BudgetCell {
                     horizontalLabel = names[contentdimensionname].Collection;
                 }
             }
+            // ----------------------[ assemble chart title ]----------------------
+            // TODO: report reason for 'unknown category'
+            // set basic title
             let nodename = null;
             if (treeNodeData.Name) {
                 nodename = treeNodeData.Name;
@@ -182,19 +248,21 @@ class BudgetCell {
             else {
                 nodename = datasetConfig.DatasetTitle;
             }
+            // add category name
             let configindex = treeNodeData.NamingConfigRef;
             let catname = null;
-            if (configindex) {
+            if (configindex) { // viewpoint node
                 let names = viewpointNamingConfigs[configindex];
                 let instancenames = names.Instance;
                 catname = instancenames.Alias || instancenames.Name;
             }
-            else {
+            else { // sub-baseline dataset node
                 let { nodeDataPack } = this;
                 if (nodeDataPack.parentBudgetNode &&
                     nodeDataPack.parentBudgetNode.treeNodeData) {
                     let { parentBudgetNode } = nodeDataPack;
                     let parentconfigindex = parentBudgetNode.treeNodeData.NamingConfigRef;
+                    // first level below depends in parentconfigindex
                     if (parentconfigindex) {
                         let names = viewpointNamingConfigs[parentconfigindex];
                         if (names && names.Contents && names.Contents.DefaultInstance) {
@@ -203,6 +271,7 @@ class BudgetCell {
                                 console.log('category name not found in names.Contents.DefaultInstance.Name', parentconfigindex, viewpointNamingConfigs);
                             }
                         }
+                        // lower levels depend on dimension category names.
                     }
                     else {
                         let nameindex = nodeDataseriesName;
@@ -227,27 +296,30 @@ class BudgetCell {
                 }
             }
             let title = catname + ': ' + nodename;
+            // add yearspan to title
             let cellDeclaration = this.cellDeclaration;
             let { rightYear, leftYear } = this.nodeDataPack.yearSelections;
             let { yearScope } = cellDeclaration;
             let timeSuffix = null;
-            if (yearScope == constants_2.TimeScope[constants_2.TimeScope.OneYear]) {
+            if (yearScope == TimeScope[TimeScope.OneYear]) {
                 timeSuffix = rightYear.toString();
             }
             else {
                 let separator;
-                if (yearScope == constants_2.TimeScope[constants_2.TimeScope.TwoYears]) {
+                if (yearScope == TimeScope[TimeScope.TwoYears]) {
                     separator = ':';
                 }
-                else {
+                else { // must be AllYears
                     separator = ' - ';
                 }
                 timeSuffix = leftYear + separator + rightYear;
             }
             timeSuffix = ', ' + timeSuffix;
             title += timeSuffix;
-            if (yearScope == constants_2.TimeScope[constants_2.TimeScope.OneYear]) {
+            // add title amount
+            if (yearScope == TimeScope[TimeScope.OneYear]) {
                 let titleamount = null;
+                // utility functions for number formatting
                 let dollarformat = format({ prefix: "$" });
                 let rounded = format({ round: 0, integerSeparator: '' });
                 let simpleroundedone = format({ round: 1, integerSeparator: ',' });
@@ -265,8 +337,9 @@ class BudgetCell {
                     title += ' (Total: ' + titleamount + ')';
                 }
             }
+            // add inflation adjustment indicator if appropriate
             if (datasetConfig.InflationAdjustable) {
-                if (!(yearScope == constants_2.TimeScope[constants_2.TimeScope.OneYear] &&
+                if (!(yearScope == TimeScope[TimeScope.OneYear] &&
                     datasetConfig.InflationReferenceYear <= rightYear)) {
                     let isInflationAdjusted = this.viewpointConfigPack.isInflationAdjusted;
                     let fragment;
@@ -282,6 +355,7 @@ class BudgetCell {
             if (budgetCell.prorataControls.isprorata) {
                 title += '; ' + budgetCell.prorataControls.proratastring;
             }
+            // ------------------------------[ assemble options ]--------------------------------
             let options = {
                 animation: {
                     startup: true,
@@ -305,6 +379,7 @@ class BudgetCell {
                 bar: {
                     groupWidth: "95%"
                 },
+                // width: children.length * 120,// 120 per column
                 height: "400px",
                 width: "400px",
                 diff: null,
@@ -367,6 +442,7 @@ class BudgetCell {
         };
         this._pieChartOptions = (treeNodeData) => {
             let budgetCell = this;
+            // let cellDeclaration = this.cellDeclaration
             let { rightYear, leftYear } = this.nodeDataPack.yearSelections;
             let { nodeDataseriesName } = budgetCell;
             let nodeDataseries = treeNodeData[nodeDataseriesName];
@@ -391,13 +467,14 @@ class BudgetCell {
             for (let index in sliceslist) {
                 slices[index] = { offset: sliceslist[index] };
                 if ((slices[index].offset) != 0) {
-                    slices[index].color = utilities_1.ColorBrightness(constants_2.GoogleChartColors[index], 120);
-                    slices[index].offset = 0;
+                    slices[index].color = ColorBrightness(GoogleChartColors[index], 120);
+                    slices[index].offset = 0; // I changed my mind about having an offset; now just a proxy for no drilldown
                 }
             }
             let options = {
                 slices,
                 pieHole: 0.4,
+                // is3D: true,
                 legend: {
                     position: "top",
                     textStyle: {
@@ -414,6 +491,9 @@ class BudgetCell {
             };
             return options;
         };
+        // ===========================================================================
+        // 3. chart events:
+        // ===========================================================================
         this._chartParmsEvents = () => {
             let budgetCell = this;
             return [
@@ -442,6 +522,9 @@ class BudgetCell {
                 }
             ];
         };
+        // ===========================================================================
+        // 4. chart columns:
+        // ===========================================================================
         this._chartParmsColumns = (yearsRange, treeNodeData) => {
             let budgetCell = this;
             let { googleChartType } = budgetCell;
@@ -462,6 +545,7 @@ class BudgetCell {
             let { rightYear, leftYear } = this.nodeDataPack.yearSelections;
             let budgetCell = this;
             let columns = [
+                // type is required, else throws silent error
                 { type: 'string', label: 'Year' },
             ];
             let chartDimensionType = this.nodeDataseriesName;
@@ -476,8 +560,9 @@ class BudgetCell {
             let cellDeclaration = this.cellDeclaration;
             let { rightYear, leftYear } = this.nodeDataPack.yearSelections;
             let budgetCell = this;
-            let categorylabel = 'Component';
+            let categorylabel = 'Component'; // placeholder
             let columns = [
+                // type is required, else throws silent error
                 { type: 'string', label: categorylabel },
                 { type: 'number', label: rightYear.toString() },
                 { type: 'string', role: 'style' }
@@ -486,9 +571,11 @@ class BudgetCell {
         };
         this._columns_diffChart = (yearsRange, year) => {
             let cellDeclaration = this.cellDeclaration;
+            // let { rightYear, leftYear} = this.nodeDataPack.yearSelections
             let budgetCell = this;
-            let categorylabel = 'Component';
+            let categorylabel = 'Component'; // placeholder
             let columns = [
+                // type is required, else throws silent error
                 { type: 'string', label: categorylabel },
                 { type: 'number', label: year.toString() },
             ];
@@ -498,13 +585,17 @@ class BudgetCell {
             let cellDeclaration = this.cellDeclaration;
             let { rightYear, leftYear } = this.nodeDataPack.yearSelections;
             let budgetCell = this;
-            let categorylabel = 'Component';
+            let categorylabel = 'Component'; // placeholder
             let columns = [
+                // type is required, else throws silent error
                 { type: 'string', label: categorylabel },
                 { type: 'number', label: rightYear.toString() },
             ];
             return columns;
         };
+        // ===========================================================================
+        // 5. chart rows:
+        // ===========================================================================
         this._chartParmsRows = (treeNodeData, yearsRange) => {
             let budgetCell = this;
             let cellDeclaration = this.cellDeclaration;
@@ -565,6 +656,7 @@ class BudgetCell {
                 }
                 let yearsselector = budgetCell.prorataControls.yearsselector;
                 let amount;
+                // amount cannot be null or undefined; causes diff charts to fail
                 if (componentItem[yearsselector]) {
                     amount = componentItem[yearsselector][year];
                     if (amount === undefined)
@@ -574,6 +666,7 @@ class BudgetCell {
                     amount = 0;
                 }
                 let row = [sortedItem.Name, amount];
+                // enhance row
                 switch (chartType) {
                     case "ColumnChart":
                         row = budgetCell._rows_ColumnCharts_row(row, componentItem);
@@ -614,6 +707,7 @@ class BudgetCell {
             return row;
         };
         this.getDataTable = () => {
+            // console.log('chartParms',this.chartParmsObject)
             let { chartType, columns, rows, diffdata, options } = this.chartParmsObject;
             let { hAxis, vAxis, title } = options;
             let chartCode = this.explorerChartCode;
@@ -630,6 +724,7 @@ class BudgetCell {
                 title,
             };
             let outputparms = this._preProcessTableData(tableparms);
+            // console.log('outputparms',outputparms)
             return outputparms;
         };
         this._preProcessTableData = tableparms => {
@@ -642,6 +737,13 @@ class BudgetCell {
                 title: null,
                 footer: null,
             };
+            // 'DonutChart':'PieChart',
+            // 'ColumnChart':'ColumnChart',
+            // 'DiffPieChart':'PieChart',
+            // 'DiffColumnChart':'ColumnChart',
+            // 'TimeLine':'LineChart',
+            // 'StackedArea':'AreaChart', // isStacked:'absolute'
+            // 'Proportional':'AreaChart', // isStacked:'percent'
             switch (chartCode) {
                 case "ColumnChart":
                     outputparms = this.prepareColumnChartData(tableparms, outputparms);
@@ -669,6 +771,7 @@ class BudgetCell {
             }
             return outputparms;
         };
+        // ----------- one year --------------
         this.prepareColumnChartData = (tableparms, outputparms) => {
             let rows = this._getOutputRows(tableparms.chartdata.rows, 2);
             let footer = this._getOutputFooter(rows, 2);
@@ -676,6 +779,7 @@ class BudgetCell {
             for (let n = 0; n < 2; n++) {
                 columns.push({ Header: tableparms.chartdata.columns[n].label, type: 'number' });
             }
+            // replace placeholder...
             columns[0].Header = tableparms.chartdata.hAxis.title;
             columns[0].type = 'label';
             let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title;
@@ -707,7 +811,7 @@ class BudgetCell {
             return footer;
         };
         this.prepareDonutChartData = (tableparms, outputparms) => {
-            outputparms = this.prepareColumnChartData(tableparms, outputparms);
+            outputparms = this.prepareColumnChartData(tableparms, outputparms); // same input
             outputparms.columns.push({ Header: 'Ratio', type: 'ratio' });
             let total = outputparms.footer[1];
             if (total)
@@ -725,6 +829,7 @@ class BudgetCell {
             }
             return outputparms;
         };
+        // ----------- two yeara --------------
         this.prepareDiffColumnChartData = (tableparms, outputparms) => {
             let { old: olddata, new: newdata } = tableparms.chartdata.diffdata;
             let oldrows = olddata.slice(1);
@@ -735,6 +840,7 @@ class BudgetCell {
             let newcolumns = newdata.slice(0, 1)[0];
             newrows = this._getOutputRows(newrows, 2);
             let newfooter = this._getOutputFooter(newrows, 2);
+            // console.log('oldrows, oldcolumns, newrows, newcolumns',oldrows,oldcolumns,newrows,newcolumns)
             let outputrows = oldrows;
             for (let n = 0; n < newrows.length; n++) {
                 outputrows[n].push(newrows[n][1]);
@@ -750,13 +856,14 @@ class BudgetCell {
             }
             let footer = oldfooter;
             footer.push(newfooter[1]);
-            let current = footer[2];
+            let current = footer[2]; // any required to overcome ts evaluation as string type
             let previous = footer[1];
             let change = null;
             if (!isNaN(current) && !isNaN(previous)) {
                 change = current - previous;
             }
             footer.push(change);
+            // console.log('outputrows',outputrows)
             let columns = [
                 { Header: tableparms.chartdata.hAxis.title, type: 'label' },
                 { Header: oldcolumns[1].label, type: 'number' },
@@ -771,7 +878,7 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareDiffPieChartData = (tableparms, outputparms) => {
-            outputparms = this.prepareDiffColumnChartData(tableparms, outputparms);
+            outputparms = this.prepareDiffColumnChartData(tableparms, outputparms); // same input
             let columns = outputparms.columns;
             columns.splice(2, 0, { Header: columns[1].Header + ' Ratio', type: 'ratio' });
             columns.splice(4, 0, { Header: columns[3].Header + ' Ratio', type: 'ratio' });
@@ -823,12 +930,14 @@ class BudgetCell {
             }
             return outputparms;
         };
+        // ----------- all years --------------
         this.prepareTimelineData = (tableparms, outputparms) => {
             let title = tableparms.title + '. Data: ' + tableparms.chartdata.vAxis.title;
             let data = [];
             for (let n = 0; n < tableparms.chartdata.columns.length - 1; n++) {
                 data.push([]);
             }
+            // console.log('data',data)
             let rows = tableparms.chartdata.rows;
             let newrows = [];
             let columns = [];
@@ -853,11 +962,11 @@ class BudgetCell {
             return outputparms;
         };
         this.prepareStackedAreaData = (tableparms, outputparms) => {
-            outputparms = this.prepareTimelineData(tableparms, outputparms);
+            outputparms = this.prepareTimelineData(tableparms, outputparms); // same data
             return outputparms;
         };
         this.prepareProportionalData = (tableparms, outputparms) => {
-            outputparms = this.prepareTimelineData(tableparms, outputparms);
+            outputparms = this.prepareTimelineData(tableparms, outputparms); // same input
             let columns = outputparms.columns;
             for (let n = columns.length; n > 1; n--) {
                 columns.splice(n, 0, { Header: columns[n - 1].Header + ' Ratio', type: 'ratio' });
@@ -886,25 +995,33 @@ class BudgetCell {
     get state() {
         return this.getState();
     }
+    // =======================[ PROPERTIES ]============================
+    // -------------[ primary control properties, set on creation ]---------------
     get explorerChartCode() {
         let cellDeclaration = this.getProps().declarationData.cellsById[this.uid];
         let settings = cellDeclaration.chartConfigs[cellDeclaration.yearScope];
         return settings.explorerChartCode;
     }
+    // ------------[ derivative control properties ]-------------------
+    // map from internal code to googleChartType
     get googleChartType() {
-        return constants_1.ChartCodeToGoogleChartType[this.explorerChartCode];
+        return ChartCodeToGoogleChartType[this.explorerChartCode];
     }
     get cellDeclaration() {
         return this.getProps().declarationData.cellsById[this.uid];
     }
+    // current chart (can change) taken from chartComponent...
     get chart() {
         if (this.chartComponent)
-            return this.chartComponent.chart;
+            return this.chartComponent.chart; // up to date version
         else
             return null;
     }
+    // readonly; set by setChartParms()
+    // the formal parameters required by Chart Component for google chart creation
+    // private _chartParms: ChartParms
     get chartParms() {
         return this.getState().chartParms;
     }
 }
-exports.default = BudgetCell;
+export default BudgetCell;

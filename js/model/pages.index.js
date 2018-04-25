@@ -1,5 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// pages.index.tsx
+// ======================= [INVENTORY]========================
+// # a child
+// {
+//     disabled:true,
+//     index:'home.twitterfeed',
+//     repo:'sections',
+// },
+// ===========================================================
 let pages = {
     home: {
         controller: 'page',
@@ -199,4 +206,4 @@ let pages = {
         ],
     }
 };
-exports.default = pages;
+export default pages;

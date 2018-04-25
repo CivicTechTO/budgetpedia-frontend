@@ -1,9 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const constants_1 = require("../constants");
-const cell_class_1 = require("./cell.class");
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// budgetnode.tsx
+import { AspectNameToDatasetName, } from '../constants';
+import BudgetCell from './cell.class';
 class BudgetNode {
     constructor(parms, uid, node, parentBudgetNode = null) {
+        // let portalcharts = parms.datasetSpecs
         this.new = true;
         this.updated = false;
         this.newCells = null;
@@ -19,10 +20,12 @@ class BudgetNode {
         this.oldNodeState = {
             hasChildren: null
         };
+        // ====================================================================
+        // ---------------------[ PRIVATE ]------------------------------------
         this.getCellDeclarationParms = () => {
             let budgetNode = this;
             let parmsList = [];
-            let datasetName = constants_1.AspectNameToDatasetName[budgetNode.aspectName];
+            let datasetName = AspectNameToDatasetName[budgetNode.aspectName];
             let chartSpecs = budgetNode.viewpointConfigPack.datasetConfig.Dataseries;
             let node = budgetNode.treeNodeData;
             let cellDeclarationData;
@@ -36,7 +39,8 @@ class BudgetNode {
                     let parentNodeDeclaration = budgetNode.props.declarationData.nodesById[parent.uid];
                     let cellIndex = parentNodeDeclaration.cellIndex;
                     let parentCell = parent.cells[cellIndex];
-                    if (parentCell) {
+                    if (parentCell) { // could fail with race condition of multiple concurrent node declarations from urlparms
+                        // console.log('getCellDeclarationParms budgetNode',budgetNode)
                         let callingCellDeclaration = budgetNode.props.declarationData.cellsById[parentCell.uid];
                         let chartConfigs = Object.assign({}, callingCellDeclaration.chartConfigs);
                         cellDeclarationData = {
@@ -54,6 +58,7 @@ class BudgetNode {
             }
             for (let chartSpec of chartSpecs) {
                 let cellDeclaration = Object.assign({}, cellDeclarationData);
+                // not only must the dataseries be mandated, but also present...
                 if (node[chartSpec.Type]) {
                     cellDeclaration.nodeDataseriesName = chartSpec.Type;
                     parmsList.push(cellDeclaration);
@@ -115,6 +120,8 @@ class BudgetNode {
     get props() {
         return this.getProps();
     }
+    // treeNodeMetaDataFromParentSortedList: any = null // includes parentNode for now
+    // parentNode: any = null
     get nodeDeclaration() {
         return this.props.declarationData.nodesById[this.uid];
     }
@@ -123,12 +130,15 @@ class BudgetNode {
     }
     setCells(cellDeclarations) {
         let cells = [];
+        // // TODO: should be default for each chart...
+        // build cells array
         for (let cellIndex in cellDeclarations) {
             let cellDeclaration = cellDeclarations[cellIndex];
+            // TODO: this should use cellIndex not celluid of cellDeclaration!!
             let { nodeDataseriesName, celluid, chartSelection } = cellDeclaration;
             if (chartSelection === undefined)
                 chartSelection = null;
-            let cell = new cell_class_1.default({
+            let cell = new BudgetCell({
                 nodeDataseriesName,
                 chartSelection,
                 uid: celluid,
@@ -169,4 +179,4 @@ class BudgetNode {
             return [...list];
     }
 }
-exports.default = BudgetNode;
+export default BudgetNode;

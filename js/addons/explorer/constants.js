@@ -1,12 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var TimeScope;
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// explorerchart.tsx
+// constants.tsx
+export var TimeScope;
 (function (TimeScope) {
     TimeScope[TimeScope["OneYear"] = 0] = "OneYear";
     TimeScope[TimeScope["TwoYears"] = 1] = "TwoYears";
     TimeScope[TimeScope["AllYears"] = 2] = "AllYears";
-})(TimeScope = exports.TimeScope || (exports.TimeScope = {}));
-exports.GoogleChartColors = [
+})(TimeScope || (TimeScope = {}));
+// from http://there4.io/2012/05/02/google-chart-color-list/
+export let GoogleChartColors = [
     "#3366CC",
     "#DC3912",
     "#FF9900",
@@ -38,7 +40,8 @@ let ChartCodeToGoogleChartType = {
     'StackedArea': 'AreaChart',
     'Proportional': 'AreaChart',
 };
-exports.ChartCodeToGoogleChartType = ChartCodeToGoogleChartType;
+export { ChartCodeToGoogleChartType };
+// DatasetName means source file name here.
 let AspectNameToDatasetName = {
     'Expenses': 'Expenses',
     'Revenues': 'Revenues',
@@ -49,8 +52,8 @@ let AspectNameToDatasetName = {
     'Liabilities': 'Liabilities',
     'Reserves': 'Reserves',
 };
-exports.AspectNameToDatasetName = AspectNameToDatasetName;
-exports.DatasetNameToAspectName = {};
+export var DatasetNameToAspectName = {};
 for (let AspectName in AspectNameToDatasetName) {
-    exports.DatasetNameToAspectName[AspectNameToDatasetName[AspectName]] = AspectName;
+    DatasetNameToAspectName[AspectNameToDatasetName[AspectName]] = AspectName;
 }
+export { AspectNameToDatasetName };

@@ -7,7 +7,7 @@ import * as React from 'react'
 import { render } from 'react-dom'
 // TODO move inject.. and isomorphic.. to index.tsx
 // required by material-ui
-import injectTapEventPlugin = require( 'react-tap-event-plugin' )
+var injectTapEventPlugin = require( 'react-tap-event-plugin' )
 injectTapEventPlugin()
 require('isomorphic-fetch')
 

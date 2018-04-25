@@ -1,13 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const react_redux_toastr_1 = require("react-redux-toastr");
-const globalbar_controller_1 = require("../global/globalbar.controller");
-const routes_controller_1 = require("./routes.controller");
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// app.tsx
+// display the app
+import * as React from 'react';
+import ReduxToastr from 'react-redux-toastr';
+import GlobalBarController from '../global/globalbar.controller';
+import { RoutesController } from './routes.controller';
 const MainView = ({ globalmessage, history, style }) => (React.createElement("div", { style: style },
-    React.createElement(globalbar_controller_1.default, null),
+    React.createElement(GlobalBarController, null),
     React.createElement("div", { style: { height: "64px" } }, " "),
     globalmessage,
-    React.createElement(routes_controller_1.RoutesController, { history: history }),
-    React.createElement(react_redux_toastr_1.default, { timeOut: 4000, newestOnTop: false, position: "top-left" })));
-exports.default = MainView;
+    React.createElement(RoutesController, { history: history }),
+    React.createElement(ReduxToastr, { timeOut: 4000, newestOnTop: false, position: "top-left" })));
+export default MainView;

@@ -1,7 +1,8 @@
+// pagemenu.controller.tsx
+// copyright (c) 2017 Henrik Bechmann, Toronto, MIT Licence
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const scrollcontrols_view_1 = require("./scrollcontrols.view");
+import * as React from 'react';
+import ScrollControlsView from './scrollcontrols.view';
 class PageMenuController extends React.Component {
     constructor() {
         super(...arguments);
@@ -26,7 +27,7 @@ class PageMenuController extends React.Component {
                 right: 0,
                 zIndex: 30
             } },
-            React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
+            React.createElement(ScrollControlsView, { scroller: this.state.scroller },
                 React.createElement("div", { style: {
                         display: 'flex',
                         flexWrap: 'nowrap',
@@ -34,4 +35,4 @@ class PageMenuController extends React.Component {
                     }, ref: el => { this.scroller = el; } }, this.props.children)));
     }
 }
-exports.default = PageMenuController;
+export default PageMenuController;

@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// nuggetlists.index.tsx
 let abouttoronto = {
     controller: 'list',
     index: 'abouttoronto',
@@ -176,6 +175,7 @@ let torontofinances = {
         ],
     },
 };
+// let financechangeslist = [
 let torontotrends = {
     controller: 'list',
     index: 'torontotrends',
@@ -275,4 +275,4 @@ let nuggetlists = {
     torontofinances,
     torontotrends,
 };
-exports.default = nuggetlists;
+export default nuggetlists;

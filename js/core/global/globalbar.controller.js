@@ -1,14 +1,19 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// globalbar.controller.tsx
+/*
+    TODO:
+    - animate and abstract a ui message board
+*/
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const redux_1 = require("redux");
-const react_redux_1 = require("react-redux");
-const react_router_redux_1 = require("react-router-redux");
-const globalbar_view_1 = require("./globalbar.view");
-const menuicon_view_1 = require("./menuicon.view");
-const menusidebar_view_1 = require("./menusidebar.view");
-const tagline_view_1 = require("./tagline.view");
-const contact_view_1 = require("./contact.view");
+import * as React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import GlobalBarView from './globalbar.view';
+import MenuIconView from './menuicon.view';
+import MenuSidebarView from './menusidebar.view';
+import TaglineView from './tagline.view';
+import ContactView from './contact.view';
 let GlobalBarController = class extends React.Component {
     constructor() {
         super(...arguments);
@@ -26,7 +31,7 @@ let GlobalBarController = class extends React.Component {
             });
             return fn;
         };
-        this.doMenuTransition = redux_1.compose(this.menutransition, this.props.push);
+        this.doMenuTransition = compose(this.menutransition, this.props.push);
     }
     render() {
         let { globalbar, theme } = this.props;
@@ -38,19 +43,19 @@ let GlobalBarController = class extends React.Component {
             image,
             route,
         };
-        let taglineView = React.createElement(tagline_view_1.default, { text: globalbar.tagLine, style: {
+        let taglineView = React.createElement(TaglineView, { text: globalbar.tagLine, style: {
                 position: "absolute",
                 bottom: 0,
                 left: '62px',
             } });
-        let contactView = React.createElement(contact_view_1.default, { style: {
+        let contactView = React.createElement(ContactView, { style: {
                 position: "absolute",
                 top: 0,
                 right: 0,
             }, contactAddress: globalbar.contactAddress, contactPrompt: globalbar.contactPrompt });
-        let menuiconView = React.createElement(menuicon_view_1.default, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
-        let menuSidebarView = React.createElement(menusidebar_view_1.default, { headData: headData, tailData: pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
-        return (React.createElement(globalbar_view_1.default, { onSelect: () => this.props.push(homepage.route), titleStyle: { cursor: 'pointer' }, title: globalbar.title, iconElementLeft: menuiconView },
+        let menuiconView = React.createElement(MenuIconView, { onSelect: (e) => { this.handleMenuSidebarToggle(e); }, color: theme.palette.alternateTextColor });
+        let menuSidebarView = React.createElement(MenuSidebarView, { headData: headData, tailData: pagetargets, onSelect: this.doMenuTransition, width: 300, docked: false, disableSwipeToOpen: true, onRequestChange: open => this.setState({ menusidebaropen: open, }), open: this.state.menusidebaropen });
+        return (React.createElement(GlobalBarView, { onSelect: () => this.props.push(homepage.route), titleStyle: { cursor: 'pointer' }, title: globalbar.title, iconElementLeft: menuiconView },
             taglineView,
             contactView,
             menuSidebarView));
@@ -65,7 +70,7 @@ function mapStateToProps(state) {
         homepage: pages.homepage,
     };
 }
-GlobalBarController = react_redux_1.connect(mapStateToProps, {
-    push: react_router_redux_1.push,
+GlobalBarController = connect(mapStateToProps, {
+    push,
 })(GlobalBarController);
-exports.default = GlobalBarController;
+export default GlobalBarController;

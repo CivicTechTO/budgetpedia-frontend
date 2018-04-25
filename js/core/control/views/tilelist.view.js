@@ -1,9 +1,10 @@
+// copyright (c) 2016 Henrik Bechmann, Toronto, MIT Licence
+// tilelist.controller.tsx
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const scrollcontrols_view_1 = require("./scrollcontrols.view");
-const tile_view_1 = require("./tile.view");
-const hashanchorwrapper_view_1 = require("./hashanchorwrapper.view");
+import * as React from 'react';
+import ScrollControlsView from './scrollcontrols.view';
+import TileView from "./tile.view";
+import HashAnchorWrapper from './hashanchorwrapper.view';
 class TileListController extends React.Component {
     constructor() {
         super(...arguments);
@@ -31,8 +32,9 @@ class TileListController extends React.Component {
         }
         let tiledata = [...primarytiledata, ...secondarytiledata];
         let tiles = tiledata.map(function (data) {
-            return (React.createElement(tile_view_1.default, { key: data.id, content: data.content, route: data.route, imageStyle: data.imageStyle, onSelect: onSelect }));
+            return (React.createElement(TileView, { key: data.id, content: data.content, route: data.route, imageStyle: data.imageStyle, onSelect: onSelect }));
         });
+        // 152    102    103   #986667 
         return (React.createElement("article", { style: {
                 position: 'relative',
                 margin: '0 16px',
@@ -47,13 +49,13 @@ class TileListController extends React.Component {
                     padding: '8px 16px',
                     zIndex: 2,
                 } },
-                React.createElement(hashanchorwrapper_view_1.default, { tag: 'h2', title: title, style: {
+                React.createElement(HashAnchorWrapper, { tag: 'h2', title: title, style: {
                         display: 'inline-block',
                         color: 'white',
                         verticalAlign: 'bottom',
                         marginRight: '8px'
                     } })),
-            React.createElement(scrollcontrols_view_1.default, { scroller: this.state.scroller },
+            React.createElement(ScrollControlsView, { scroller: this.state.scroller },
                 React.createElement("div", { style: style, ref: el => { this.scroller = el; } },
                     React.createElement("div", { style: {
                             display: 'block',
@@ -62,4 +64,4 @@ class TileListController extends React.Component {
                         } }, tiles)))));
     }
 }
-exports.default = TileListController;
+export default TileListController;
