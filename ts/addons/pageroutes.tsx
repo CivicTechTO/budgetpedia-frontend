@@ -11,17 +11,57 @@ import PageController from '../core/control/page.controller'
 
 import About from './pages/about'
 import Deputations from './pages/deputations'
-import Explorer from './explorer/explore'
-import Communities from './pages/communities'
-import SocialMedia from './pages/socialmedia'
-import Newsletter from './pages/newsletter'
-import Resources from './pages/resources'
-import Teams from './pages/teams'
-import Stories from './pages/stories'
-import Announcements from './pages/announcements'
-import Pathways from './pages/pathways'
+// import Explorer from './explorer/explorer'
+// import Communities from './pages/communities'
+// import SocialMedia from './pages/socialmedia'
+// import Newsletter from './pages/newsletter'
+// import Resources from './pages/resources'
+// import Teams from './pages/teams'
+// import Stories from './pages/stories'
+// import Announcements from './pages/announcements'
+// import Pathways from './pages/pathways'
 
 import Loadable from 'react-loadable';
+
+const Loading = () => <div>Loading...</div>;
+
+const Explorer = Loadable({
+  loader: () => import(/* webpackChunkName: "Explorer" */'./explorer/explorer'),
+  loading: Loading,
+});
+
+const Communities = Loadable({
+    loader:import(/* Communities: "lodash" */'./pages/communities'),
+  loading: Loading,
+});
+const SocialMedia = Loadable({
+    loader:import(/* webpackChunkName: "SocialMedia" */ './pages/socialmedia'),
+  loading: Loading,
+});
+const Newsletter = Loadable({
+    loader:import( /* webpackChunkName: "Newsletter" */'./pages/newsletter'),
+  loading: Loading,
+});
+const Resources = Loadable({
+    loader:import( /* webpackChunkName: "Resources" */'./pages/resources'),
+  loading: Loading,
+});
+const Teams = Loadable({
+    loader:import( /* webpackChunkName: "Teams" */'./pages/teams'),
+  loading: Loading,
+});
+const Stories = Loadable({
+    loader:import(/* webpackChunkName: "Stories" */ './pages/stories'),
+  loading: Loading,
+});
+const Announcements = Loadable({
+    loader:import( /* webpackChunkName: "Announcements" */'./pages/announcements'),
+  loading: Loading,
+});
+const Pathways = Loadable({
+    loader:import( /* webpackChunkName: "Pathways" */'./pages/pathways'),
+  loading: Loading,
+});
 
 let routedata = [
     { path: "/about", component: About },

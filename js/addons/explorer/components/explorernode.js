@@ -343,4 +343,4 @@ class ExplorerNode extends Component {
                 tabobject));
     }
 }
-export { ExplorerNode };
+export default ExplorerNode;

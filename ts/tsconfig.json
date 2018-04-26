@@ -11,6 +11,6 @@
         "noLib": false,
         "preserveConstEnums": true,
         "importHelpers":true,
-        "suppressImplicitAnyIndexErrors": true
-    }
+        "suppressImplicitAnyIndexErrors": true,
+        "allowSyntheticDefaultImports": true    }
 }

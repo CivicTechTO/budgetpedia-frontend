@@ -49,14 +49,26 @@ import Toggle from 'material-ui/Toggle'
 import LinearProgress from 'material-ui/LinearProgress'
 import {toastr} from 'react-redux-toastr'
 
+import Loadable from 'react-loadable';
+
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
 let ReactGA = require('react-ga')
 var { Chart } = require('../../../forked_modules/react-google-charts/Chart.js')
 
-import ExplorerBranch from './components/explorerbranch'
-import SearchDialog from './components/searchdialog'
+// import ExplorerBranch from './components/explorerbranch'
+// import SearchDialog from './components/searchdialog'
 
+const Loading = () => <div>Loading...</div>;
+
+const ExplorerBranch = Loadable({
+  loader: () => import(/* webpackChunkName: "ExplorerBranch" */'./components/explorerbranch'),
+  loading: Loading,
+});
+const SearchDialog = Loadable({
+  loader: () => import(/* webpackChunkName: "SearchDialog" */'./components/searchdialog'),
+  loading: Loading,
+});
 // import * as Actions from '../../core/actions/actions'
 import * as ExplorerActions from './actions'
 import BudgetBranch from './classes/branch.class'

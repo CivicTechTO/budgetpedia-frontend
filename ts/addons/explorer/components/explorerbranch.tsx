@@ -63,7 +63,16 @@ import {
     BranchSettings,
 } from '../modules/interfaces'
 
-import { ExplorerNode } from './explorernode'
+// import { ExplorerNode } from './explorernode'
+
+import Loadable from 'react-loadable';
+
+const Loading = () => <div>Loading...</div>;
+
+const ExplorerNode = Loadable({
+  loader: () => import(/* webpackChunkName: "ExplorerNode" */'./explorernode'),
+  loading: Loading,
+});
 
 import { DatasetConfig, ViewpointData } from '../classes/databaseapi'
 
@@ -1778,7 +1787,7 @@ class ExplorerBranch extends Component<ExplorerBranchProps, ExplorerBranchState>
             }
             >
 
-            <div style={{padding:"3px",fontStyle:'italic'}} >Internal Budget</div>
+            <div style={{padding:"3px",fontStyle:'italic'}} >Operating Cash Budget</div>
             <MenuItem value={'FUNCTIONAL'} primaryText={this.taxonomychoices.FUNCTIONAL}/>
             <MenuItem value={'STRUCTURAL'} primaryText={this.taxonomychoices.STRUCTURAL}/>
             <div style={{padding:"3px",fontStyle:'italic'}}>Audited Actual</div>

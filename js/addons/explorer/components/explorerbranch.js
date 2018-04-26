@@ -44,7 +44,13 @@ let ReactGA = require('react-ga');
 // ------------------------[ modules ]-----------------------------
 import { onChartComponentSelection, } from '../modules/onchartcomponentselection';
 import getBudgetNode from '../modules/getbudgetnode';
-import { ExplorerNode } from './explorernode';
+// import { ExplorerNode } from './explorernode'
+import Loadable from 'react-loadable';
+const Loading = () => React.createElement("div", null, "Loading...");
+const ExplorerNode = Loadable({
+    loader: () => import(/* webpackChunkName: "ExplorerNode" */ './explorernode'),
+    loading: Loading,
+});
 import { branchTypes as branchActionTypes } from '../actions';
 import BudgetBranch from '../classes/branch.class';
 import * as Utilities from '../modules/utilities';
@@ -1299,7 +1305,7 @@ class ExplorerBranch extends Component {
                 React.createElement(DropDownMenu, { value: branchDeclaration.viewpoint, onChange: (e, index, value) => {
                         branch.selectViewpoint(value);
                     } },
-                    React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Internal Budget"),
+                    React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Operating Cash Budget"),
                     React.createElement(MenuItem, { value: 'FUNCTIONAL', primaryText: this.taxonomychoices.FUNCTIONAL }),
                     React.createElement(MenuItem, { value: 'STRUCTURAL', primaryText: this.taxonomychoices.STRUCTURAL }),
                     React.createElement("div", { style: { padding: "3px", fontStyle: 'italic' } }, "Audited Actual"),

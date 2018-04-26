@@ -1,22 +1,23 @@
 // webpack.config.js
-// var webpack = require('webpack');
+var webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
-
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   devtool: 'eval',
   // This will be our app's entry point (webpack will look for it in the 'src' directory due to the modulesDirectory setting below). Feel free to change as desired.
-  entry: [
-    'index.tsx',
-  ],
+  entry: {
+    main:'index.tsx',
+    // explorer:'./ts/addons/explorer/explorer.tsx'
+  },
   // Output the bundled JS to dist/app.js
   output: {
     filename: '[name].bundle.js',
-    chunkFilename: '../dist/[name].bundle.js',
-    path: __dirname + '/dist',
-    publicPath: '/'
+    // chunkFilename: '[name].bundle.js',
+    path: '/Users/henrikbechmann/Servers/budgetpedia/www/budgetpedia.ca/dist',
+    publicPath: '/dist/'
   },
   resolve: {
     // Look for modules in .ts(x) files first, then .js(x)
@@ -40,13 +41,25 @@ module.exports = {
       }
     ]
   },
+  // optimization: {
+  //   splitChunks: {
+  //       cacheGroups: {
+  //           commons: { test: /[\\/]node_modules[\\/]/, name: "vendors", chunks: "all" }
+  //       }
+  //   }
+  // },
   plugins: [
     // Set up the notifier plugin - you can remove this (or set alwaysNotify false) if desired
     new WebpackNotifierPlugin(
       { 
         alwaysNotify: true,
         title:'Code splitting'
-      }
-    ),
+      },
+      // new BundleAnalyzerPlugin()
+    )
   ]
 };
+
+
+
+

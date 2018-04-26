@@ -34,6 +34,17 @@ import {
 } from '../modules/interfaces'
 
 import ExplorerCell from './explorercell'
+
+// TODO: timing conflice with cell class
+// import Loadable from 'react-loadable';
+
+// const Loading = () => <div>Loading...</div>;
+
+// const ExplorerCell = Loadable({
+//   loader: () => import(/* webpackChunkName: "ExplorerCell" */'./explorercell'),
+//   loading: Loading,
+// });
+
 import BudgetNode from '../classes/node.class'
 import BudgetCell from '../classes/cell.class'
 import { nodeTypes as nodeActionTypes} from '../actions'
@@ -483,5 +494,5 @@ class ExplorerNode extends Component<ExplorerNodeProps, {nodeCells: BudgetCell[]
     }
 }
 
-export { ExplorerNode }
+export default ExplorerNode
 
