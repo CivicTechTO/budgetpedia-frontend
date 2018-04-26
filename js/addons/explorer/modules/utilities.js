@@ -28,22 +28,25 @@
     TODO: prove these assumptions!
 
 */
-export const filterActionsForUpdate = (nextProps, component, show = false) => {
+const filterActionsForUpdate = (nextProps, component, show = false) => {
     let componentName = component.constructor.name;
     let instance, text, targetType;
     switch (componentName) {
+        case 'explorerbranch_ExplorerBranch':
         case 'ExplorerBranch':
             let { budgetBranch } = nextProps;
             instance = budgetBranch;
             text = 'BRANCH';
             targetType = 'branch';
             break;
+        case 'explorernode_ExplorerNode':
         case 'ExplorerNode':
             let { budgetNode } = nextProps;
             instance = budgetNode;
             text = 'NODE';
             targetType = 'node';
             break;
+        case 'explorercell_ExplorerCell':
         case 'ExplorerCell':
             let { budgetCell } = nextProps;
             instance = budgetCell;
@@ -51,7 +54,7 @@ export const filterActionsForUpdate = (nextProps, component, show = false) => {
             targetType = 'cell';
             break;
         default:
-            throw Error('unexpected component called filterActionsForUpdate');
+            throw Error(componentName + ':unexpected component called filterActionsForUpdate');
     }
     let { declarationData } = nextProps;
     let { generation } = declarationData;
@@ -153,3 +156,9 @@ export const hashCode = string => {
     }
     return hash;
 };
+let Utilities = {
+    hashCode: hashCode,
+    filterActionsForUpdate,
+    ColorBrightness,
+};
+export default Utilities;

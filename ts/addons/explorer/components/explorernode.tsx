@@ -51,7 +51,7 @@ import { nodeTypes as nodeActionTypes} from '../actions'
 
 import { MappedNodeActions as ExplorerNodeActions } from '../explorer'
 
-import * as Utilities from '../modules/utilities'
+import Utilities from '../modules/utilities'
 
 interface ExplorerNodeProps {
     callbackid: string | number,

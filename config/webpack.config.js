@@ -10,7 +10,6 @@ module.exports = {
   // This will be our app's entry point (webpack will look for it in the 'src' directory due to the modulesDirectory setting below). Feel free to change as desired.
   entry: {
     main:'index.tsx',
-    // explorer:'./ts/addons/explorer/explorer.tsx'
   },
   // Output the bundled JS to dist/app.js
   output: {
@@ -41,13 +40,25 @@ module.exports = {
       }
     ]
   },
-  // optimization: {
-  //   splitChunks: {
-  //       cacheGroups: {
-  //           commons: { test: /[\\/]node_modules[\\/]/, name: "vendors", chunks: "all" }
-  //       }
-  //   }
-  // },
+  optimization: {
+    // runtimeChunk: 'single',
+    splitChunks: {
+       cacheGroups: {
+        vendor: {
+         test: /node_modules/,
+         chunks: 'initial',
+         name: 'vendor',
+         enforce: true
+        },
+        // utilities: {
+        //  test: '/ts/addons/exporer/modules/utilities.tsx',
+        //  chunks: 'initial',
+        //  name: 'utilities',
+        //  enforce: true
+        // }
+       }
+    },
+  },
   plugins: [
     // Set up the notifier plugin - you can remove this (or set alwaysNotify false) if desired
     new WebpackNotifierPlugin(

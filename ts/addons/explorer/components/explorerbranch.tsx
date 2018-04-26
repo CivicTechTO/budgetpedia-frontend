@@ -35,6 +35,8 @@ import {toastr} from 'react-redux-toastr'
 import { fadeIn, fadeOut  } from 'react-animations'
 import * as Radium from 'radium'
 
+import Utilities from '../modules/utilities'
+
 let { StyleRoot }  = Radium
 
 const animations = {
@@ -82,8 +84,6 @@ import BudgetCell from '../classes/cell.class'
 import BudgetBranch from '../classes/branch.class'
 
 import { MappedBranchActions as ExplorerBranchActions } from '../explorer'
-
-import * as Utilities from '../modules/utilities'
 
 export { ExplorerBranchActions }
 

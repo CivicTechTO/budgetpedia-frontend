@@ -17,7 +17,7 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import { TimeScope } from '../constants';
 import { cellTypes as cellActionTypes } from '../actions';
-import * as Utilities from '../modules/utilities';
+import Utilities from '../modules/utilities';
 import DataTable from './datatable';
 class ExplorerCell extends Component {
     constructor() {

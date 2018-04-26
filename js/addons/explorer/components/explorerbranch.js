@@ -27,6 +27,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { toastr } from 'react-redux-toastr';
 import { fadeIn, fadeOut } from 'react-animations';
 import * as Radium from 'radium';
+import Utilities from '../modules/utilities';
 let { StyleRoot } = Radium;
 const animations = {
     fadeIn: {
@@ -53,7 +54,6 @@ const ExplorerNode = Loadable({
 });
 import { branchTypes as branchActionTypes } from '../actions';
 import BudgetBranch from '../classes/branch.class';
-import * as Utilities from '../modules/utilities';
 // ------------------------[ class ]-----------------------------
 class ExplorerBranch extends Component {
     constructor() {

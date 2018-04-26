@@ -20,7 +20,7 @@ const animations = {
 };
 import ExplorerCell from './explorercell';
 import { nodeTypes as nodeActionTypes } from '../actions';
-import * as Utilities from '../modules/utilities';
+import Utilities from '../modules/utilities';
 class ExplorerNode extends Component {
     constructor() {
         super(...arguments);

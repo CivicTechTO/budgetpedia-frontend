@@ -25,7 +25,7 @@ import BudgetCell from '../classes/cell.class'
 import { TimeScope } from '../constants'
 import { cellTypes as cellActionTypes } from '../actions'
 
-import * as Utilities from '../modules/utilities'
+import Utilities from '../modules/utilities'
 import DataTable from './datatable'
 
 declare var google
