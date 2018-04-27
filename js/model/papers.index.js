@@ -77,6 +77,8 @@ there's quite a bit here already. See the <a href="#this-is-budgetpedia">content
 
 In short, we're at a good plateau. Now we're taking some time to regroup for the next phase of development.
 
+- Spring, 2018
+
 </div>
 
 <div style = "display:flex;justify-content:center;margin-top:24px;text-align:center">
