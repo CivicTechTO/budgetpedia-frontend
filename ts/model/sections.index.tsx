@@ -262,6 +262,10 @@ We're an independent, non-profit, volunteer organization based in Toronto, Canad
         children:[
             {
                 repo:'papers',
+                index:'budgetpediapremise',
+            },
+            {
+                repo:'papers',
                 index:'budgetpediaoverview',
             },
             {

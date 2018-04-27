@@ -1,5 +1,38 @@
 // papers.index.tsx
 
+let budgetpediapremise = {
+    controller:'paper',
+    index:'torontobudget',
+    description: 'toronto budget restatement',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'torontobudget',
+            description:'toronto budget restatement',
+            properties: {
+                markup:`
+## Budgetpedia - Our Premise
+
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
+
+<img style="width:100%" src = "/public/images/virtuouscircle.png" />
+
+It's a simple idea. Continuous improvement in budgets should support improvements in related
+areas. Our intention is to 
+- channel good ideas for budgeting into creation of more useful budgets 
+- disseminate budget information in the most usable forms possible
+- elaborate on topics that are of current concern
+
+</div>
+`,
+            }
+        }
+    ],    
+}
+
+
 let budgetpediaoverview = {
     controller:'paper',
     index:'torontobudget',
@@ -14,7 +47,7 @@ let budgetpediaoverview = {
             properties: {
                 markup:`
 
-## Budgetpedia - Where we're at, April 2018
+## Budgetpedia - Our Project's State of Play
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 Our aims are:
@@ -45,7 +78,7 @@ Also, we're working on
 6. making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
 there's quite a bit here already. See the <a href="#this-is-budgetpedia">contents</a> below.
 
-
+In short, we're at a good plateau. Now we're taking some time to regroup for the next phase of development.
 
 </div>
 
@@ -1702,6 +1735,7 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    budgetpediapremise,
     budgetpediaoverview,
     electionopinion,
     aboutbudgetpedia,
