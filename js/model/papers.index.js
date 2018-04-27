@@ -105,10 +105,10 @@ let electionopinion = {
             description: 'toronto budget restatement',
             properties: {
                 markup: `
-## Opinion: Possible Issues for the Toronto November Election 
+## Opinion: Current Issues 
 _by Henrik Bechmann April 1, 2018_ {style="color:gray;margin-top:-16px"}
 
-Here are some budget-related issues that I think could be raised for the upcoming election.
+Here are some budget-related issues that I think could use some attention.
 
 <div style = "display:flex;flex-flow:row wrap;justify-content:flex-start;align-items:flex-start">
 
