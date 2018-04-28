@@ -59,13 +59,13 @@ support informed debate about the budget
 On the first point, we've
 
 1. created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
-2. created a prototype of ancillary an [Toronto operating _activities_ budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
+2. created a prototype of ancillary a [Toronto operating _accrual_ budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
 3. started to understand Toronto's [capital investment strategy](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I)
 
 On the second point 
 
 4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4), and a 
-[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _activities_ budget design 
+[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _accrual_ budget design 
 ([slide deck](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR))for the Toronto budget committee.
 We're also starting to collect notes on concern (red flags showing up) about [Toronto's Financial Controls](https://drive.google.com/open?id=16V1SkA8VEZ4i76kfhy6ijeAGrxbUzZ--xzJrtSZhhJ0).
 
@@ -154,8 +154,8 @@ services not so much. See
 
 <div style = "display:flex;min-width:260px;flex:300px;">
 
-3. __An ancillary, activities-based (clearer, more transparent) budget is 
-achievable__. Main idea - switch to accrual based budgeting. 
+3. __An ancillary, accrual-based (clearer, more transparent) budget is 
+achievable__. 
 See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa) for details.
 
 </div>
@@ -163,7 +163,7 @@ See [discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6
 <div style = "display:flex;min-width:260px;flex:300px;text-align:center;align-items:flex-start">
 
 <img style="width:90%" src="/public/images/accrualbudget.png" /><br />
-<span style = "font-size:x-small;font-style:italic">Activities-based budgeting - alternative</span>
+<span style = "font-size:x-small;font-style:italic">Accrual-based budgeting - alternative</span>
 
 </div>
 
@@ -218,16 +218,16 @@ let torontobudget = {
             description:'toronto budget restatement',
             properties: {
                 markup:               
-`## The 2018 Toronto Budget: Our _Activities_ Based Prototype
+`## The 2018 Toronto Budget: Our _Accrual_ Based Prototype
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
 The current Toronto budget is cash based, which can be confusing in certain contexts,
-so we create an ancillary _activities_ based budget.
+so we create an ancillary _accrual_ based budget.
 
 For our latest thinking on this see the [discussion paper](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa/view). {style=margin-top:0}
 
-We restate the 2018 budget, using an _activities_ based model, commonly called an accrual based model. 
+We restate the 2018 budget, using an _accrual_ based model. 
 We think this can be a more conventional, clearer, presentation than
 the cash based model in certain contexts. This is our prototype.
 
