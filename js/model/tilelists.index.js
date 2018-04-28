@@ -19,7 +19,7 @@ let mainpages = {
             {
                 id: 7,
                 content: {
-                    title: `Budget Roadmap`,
+                    title: `Budget Process`,
                     subtitle: `About budget decisions`,
                     image: '../../public/icons/ic_map_48px.svg',
                     category: 'tools',
@@ -33,8 +33,8 @@ let mainpages = {
             {
                 id: 8,
                 content: {
-                    title: `Budgets`,
-                    subtitle: `About specific budgets`,
+                    title: `Budget Design`,
+                    subtitle: `About budget components`,
                     image: '../../public/icons/ic_attach_money_48px.svg',
                     category: 'tools',
                 },
@@ -75,8 +75,8 @@ let mainpages = {
             {
                 id: 17,
                 content: {
-                    title: `Overview`,
-                    subtitle: `Some quick context`,
+                    title: `Budget Context`,
+                    subtitle: `Some quick budget context`,
                     image: '../../public/icons/ic_wb_sunny_black_48px.svg',
                     category: 'support',
                 },

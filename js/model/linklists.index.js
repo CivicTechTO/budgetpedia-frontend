@@ -11,14 +11,14 @@ let toplinklist = {
                 prompt: "See information about Toronto's budget decision cycle at our",
                 icon: '/public/icons/ic_map_48px.svg',
                 target: '/roadmap/',
-                targetText: 'Budget Roadmap',
+                targetText: 'Budget Process',
                 suffix: 'page',
             },
             {
                 prompt: 'See budget details on our',
                 icon: '/public/icons/ic_attach_money_48px.svg',
                 target: '/budgets',
-                targetText: 'Budgets',
+                targetText: 'Budget Design',
                 suffix: 'page',
             },
             {
@@ -34,10 +34,10 @@ let toplinklist = {
                 targetText: 'Resources',
             },
             {
-                prompt: 'See our Toronto budgeting overview',
+                prompt: 'See our Toronto budgeting context notes',
                 icon: '/public/icons/ic_wb_sunny_black_48px.svg',
                 target: '/overview',
-                targetText: 'Overview',
+                targetText: 'Budget Context',
             },
             {
                 prompt: 'See our publications on our subsite',

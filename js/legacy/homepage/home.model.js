@@ -245,7 +245,7 @@ let toplinklistitems = [
         prompt: "See information about Toronto's budget decision schedule at our",
         icon: '/public/icons/ic_map_48px.svg',
         target: '/roadmap/',
-        targetText: 'Budget Roadmap',
+        targetText: 'Budget Process',
     },
     {
         prompt: 'Find related',
@@ -257,7 +257,7 @@ let toplinklistitems = [
         prompt: 'Toronto overview',
         icon: '/public/icons/ic_wb_sunny_black_48px.svg',
         target: '/overview',
-        targetText: 'Overview',
+        targetText: 'Budget Context',
     },
 ];
 let secondlinklistheader = 'Follow us:';

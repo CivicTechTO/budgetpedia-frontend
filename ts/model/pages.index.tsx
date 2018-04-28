@@ -81,7 +81,7 @@ let pages = {
         },
         tags:null,
         properties: {
-            title:'Toronto budgets',
+            title:'Toronto budget design',
             description: 'Summary of Toronto budgets',
         },
         children: [
@@ -130,7 +130,7 @@ let pages = {
         },
         tags:null,
         properties: {
-            title:'Toronto budget roadmap',
+            title:'Toronto budget process',
             description: 'Summary of Toronto budget processes over the years',
         },
         children: [

@@ -47,7 +47,7 @@ let overview = {
     type: 'section',
     tag: 'Top:Overview',
     properties: {
-        title: "Our Toronto Budgeting Overview",
+        title: "Our Toronto Budgeting Context",
         description: `
 This page gives a general overview of Toronto, and its budget design and process.
 `,
@@ -70,10 +70,10 @@ let budgets = {
         type: 'section',
         tag: 'Top:Budgets',
         properties: {
-            title: "Toronto Budgets",
+            title: "Toronto Budget Design",
             description: `
 <div style = "padding:16px;background-color:orange;text-align:center;border:3px ridge silver;border-radius:8px">
-This page is under active construction.
+This page is under construction.
 </div>
 
 This page is about how the Toronto budget is structured, and _could_ be structured, every year.
@@ -323,7 +323,7 @@ directly (resident support services).`,
             'paper:citybasics': `For detailed budget information, see our budget [explorer](/explorer).`,
             'paper:cityprocess': `For more information on the City of Toronto Budget Process, see the City of Toronto 
 [website](https://www.toronto.ca/city-government/budget-finances/city-budget/), 
-and our [Budget Roadmap](/roadmap) page.`,
+and our [Budget Process](/roadmap) page.`,
         },
         properties: {
             title: 'The Basics',
@@ -449,7 +449,7 @@ let roadmap = {
         anchor: 'header',
         description: 'header for roadmap page',
         type: 'section',
-        tag: 'Top:Roadmap',
+        tag: 'Top:Process',
         narrative: {
             'paper:cityprocess': `Here is a rough outline of how the process is currently set up.`,
         },
@@ -460,7 +460,7 @@ let roadmap = {
 see our [budgets](/budgets) page.`,
         },
         properties: {
-            title: "Budget Roadmap",
+            title: "Budget Process",
             description: `This page is about how the Toronto budget is created, and _could_ be created, every year.
 `,
         },

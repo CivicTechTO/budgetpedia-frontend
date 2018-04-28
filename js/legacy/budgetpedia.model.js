@@ -73,7 +73,7 @@ let pagetargets = [
     {
         id: 7,
         content: {
-            title: `Budget Roadmap`,
+            title: `Budget Process`,
             subtitle: `About budget decisions`,
             image: '../../public/icons/ic_map_48px.svg',
             category: 'tools',
@@ -87,7 +87,7 @@ let pagetargets = [
     {
         id: 8,
         content: {
-            title: `Budgets`,
+            title: `Budget Design`,
             subtitle: `About specific budgets`,
             image: '../../public/icons/ic_attach_money_48px.svg',
             category: 'tools',
@@ -129,7 +129,7 @@ let pagetargets = [
     {
         id: 100,
         content: {
-            title: `Overview`,
+            title: `Budget Context`,
             subtitle: `Toronto Overview`,
             image: '../../public/icons/ic_wb_sunny_black_48px.svg',
             category: 'support',
