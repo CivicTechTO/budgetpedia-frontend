@@ -257,7 +257,7 @@ let toplinklistitems = [
         prompt:'Find related',
         icon:'/public/icons/ic_library_books_48px.svg',
         target:'/resources',
-        targetText:'Resources',
+        targetText:'Budget Resources',
     },
     {
         prompt:'Toronto overview',

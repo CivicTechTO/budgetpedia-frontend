@@ -61,7 +61,7 @@ let mainpages = {
             {
                 id: 15,
                 content: {
-                    title: `Resources`,
+                    title: `Budget Resources`,
                     subtitle: `External websites`,
                     image: '../../public/icons/ic_library_books_48px.svg',
                     category: 'support',

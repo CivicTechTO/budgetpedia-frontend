@@ -31,7 +31,7 @@ let toplinklist = {
                 prompt: 'Find related',
                 icon: '/public/icons/ic_library_books_48px.svg',
                 target: '/resources',
-                targetText: 'Resources',
+                targetText: 'Budget Resources',
             },
             {
                 prompt: 'See our Toronto budgeting context notes',

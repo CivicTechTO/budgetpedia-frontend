@@ -81,7 +81,7 @@ This page is about how the Toronto budget is structured, and _could_ be structur
         },
         followup: {
             'card:budgetssummary': `This page is about the structure of Toronto budgets. For information about the budget process,
-see our [roadmap](/roadmap) page.`,
+see our [Budget Process](/roadmap) page.`,
         },
         children: [
             {
@@ -136,7 +136,7 @@ see our [roadmap](/roadmap) page.`,
         type: 'section',
         tag: 'Resources',
         properties: {
-            title: "Resources",
+            title: "Budget Resources",
             description: `This section lists the main documents made available by Toronto about the annual budgets.
 `,
         },
