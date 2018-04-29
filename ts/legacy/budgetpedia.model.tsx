@@ -88,20 +88,6 @@ let homepage = {
 // review apporpriateness of the following typescript type notation
 let pagetargets: Object[] = [
     {
-        id: 7,
-        content: {
-            title: `Budget Process`,
-            subtitle: `About budget decisions`,
-            image: '../../public/icons/ic_map_48px.svg',
-            category: 'tools',
-        },
-        index: 1,
-        tier:'primary',
-        route: '/roadmap/',
-        tag:'roadmap',
-        parent:'home',
-    },
-    {
         id: 8,
         content: {
             title: `Budget Design`,
@@ -113,6 +99,20 @@ let pagetargets: Object[] = [
         tier:'primary',
         route: '/budgets',
         tag:'budgets',
+        parent:'home',
+    },
+    {
+        id: 7,
+        content: {
+            title: `Budget Process`,
+            subtitle: `About budget decisions`,
+            image: '../../public/icons/ic_map_48px.svg',
+            category: 'tools',
+        },
+        index: 1,
+        tier:'primary',
+        route: '/roadmap/',
+        tag:'roadmap',
         parent:'home',
     },
     {
@@ -130,20 +130,6 @@ let pagetargets: Object[] = [
         parent:'home',
     },
     {
-        id: 15,
-        content: {
-            title: `Budget Resources`,
-            subtitle: `External websites`,
-            image: '../../public/icons/ic_library_books_48px.svg',
-            category: 'support',
-        },
-        index: 2,
-        tier:'primary',
-        route: '/resources',
-        tag:'resources',
-        parent:'home',
-    },
-    {
         id: 100,
         content: {
             title: `Budget Context`,
@@ -155,6 +141,20 @@ let pagetargets: Object[] = [
         tier:'primary',
         route: '/overview',
         tag:'overview',
+        parent:'home',
+    },
+    {
+        id: 15,
+        content: {
+            title: `Budget Resources`,
+            subtitle: `External websites`,
+            image: '../../public/icons/ic_library_books_48px.svg',
+            category: 'support',
+        },
+        index: 2,
+        tier:'primary',
+        route: '/resources',
+        tag:'resources',
         parent:'home',
     },
     {

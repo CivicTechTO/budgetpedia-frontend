@@ -8,17 +8,17 @@ let toplinklist = {
         header:'Browse our site:',
         items: [
             {
-                prompt:"See information about Toronto's budget decision cycle at our",
-                icon:'/public/icons/ic_map_48px.svg',
-                target:'/roadmap/',
-                targetText:'Budget Process',
-                suffix: 'page',
-            },
-            {
                 prompt:'See budget details on our',
                 icon:'/public/icons/ic_attach_money_48px.svg',
                 target:'/budgets',
                 targetText:'Budget Design',
+                suffix: 'page',
+            },
+            {
+                prompt:"See information about Toronto's budget decision cycle at our",
+                icon:'/public/icons/ic_map_48px.svg',
+                target:'/roadmap/',
+                targetText:'Budget Process',
                 suffix: 'page',
             },
             {
@@ -28,16 +28,16 @@ let toplinklist = {
                 targetText:'Budget Explorer',
             },
             {
-                prompt:'Find related',
-                icon:'/public/icons/ic_library_books_48px.svg',
-                target:'/resources',
-                targetText:'Budget Resources',
-            },
-            {
                 prompt:'See our Toronto budgeting context notes',
                 icon:'/public/icons/ic_wb_sunny_black_48px.svg',
                 target:'/overview',
                 targetText:'Budget Context',
+            },
+            {
+                prompt:'Find related',
+                icon:'/public/icons/ic_library_books_48px.svg',
+                target:'/resources',
+                targetText:'Budget Resources',
             },
             {
                 prompt:'See our publications on our subsite',
