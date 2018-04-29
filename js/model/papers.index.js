@@ -22,7 +22,7 @@ It's a simple idea. Continuous improvement in budgets should support improvement
 areas. Our intention is to 
 - channel good ideas for budgeting into creation of more useful budgets 
 - disseminate budget information in the most usable forms possible
-- elaborate on topics that are of current concern
+- elaborate on topics that are of current interest
 
 </div>
 `,
@@ -56,13 +56,13 @@ support informed debate about the budget
 On the first point, we've
 
 1. created a simplified [classification scheme](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) (taxonomy) of the services Toronto provides
-2. created a prototype of ancillary a [Toronto operating _accrual_ budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
+2. created a prototype of an ancillary [Toronto operating _management_ budget design](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
 3. started to understand Toronto's [capital investment strategy](https://drive.google.com/open?id=1f6nI7xsY_i0LcNMc_8vh_8VPpzJ9VN0I)
 
 On the second point 
 
 4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4), and a 
-[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _accrual_ budget design 
+[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _management_ budget design (accrual basis)
 ([slide deck](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR))for the Toronto budget committee.
 We're also starting to collect notes on concern (red flags showing up) about [Toronto's Financial Controls](https://drive.google.com/open?id=16V1SkA8VEZ4i76kfhy6ijeAGrxbUzZ--xzJrtSZhhJ0).
 
@@ -216,12 +216,13 @@ let torontobudget = {
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
 The current Toronto budget is cash based, which can be confusing in certain contexts,
-so we create an ancillary _accrual_ based budget.
+so we create an ancillary _accrual_ based budget designed more for day-to-day management purposes.
+We think both can live side by side quite comfortably.
 
 For our latest thinking on this see the [discussion paper](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa/view). {style=margin-top:0}
 
 We restate the 2018 budget, using an _accrual_ based model. 
-We think this can be a more conventional, clearer, presentation than
+We think this can be a more conventional, clearer, presentation for day-to-day operations than
 the cash based model in certain contexts. This is our prototype.
 
 Below is the expense budget. Its main feature is the _core operating budget_ -- about $8.5B --

@@ -6,9 +6,9 @@ let torontobudget = {
     anchor:'torontobudget',
     description:'header for overview page',
     type:'section',
-    tag:'An Ancillary Budget',
+    tag:'A Management Budget',
     properties:{
-        title:"An Ancillary Toronto Operating _Accrual_ Budget",
+        title:"An Ancillary Toronto Operating _Management_ Budget",
         description: 
 `
 Here is what we think is a more accessbile view of the Toronto budget.

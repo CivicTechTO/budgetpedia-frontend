@@ -34,17 +34,17 @@ let toplinklist = {
                 targetText: 'Budget Context',
             },
             {
-                prompt: 'Find related',
-                icon: '/public/icons/ic_library_books_48px.svg',
-                target: '/resources',
-                targetText: 'Budget Resources',
-            },
-            {
                 prompt: 'See our publications on our subsite',
                 icon: '/public/icons/ic_wb_sunny_black_48px.svg',
                 target: 'http://pubs.budgetpedia.ca',
                 targetText: 'pubs.budgetpedia.ca',
                 external: true,
+            },
+            {
+                prompt: 'Find related',
+                icon: '/public/icons/ic_library_books_48px.svg',
+                target: '/resources',
+                targetText: 'Budget Resources',
             },
         ],
     }
