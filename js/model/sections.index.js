@@ -45,7 +45,7 @@ let overview = {
     anchor: 'overview',
     description: 'header for overview page',
     type: 'section',
-    tag: 'Top:Overview',
+    tag: 'Top:Context',
     properties: {
         title: "Our Toronto Budgeting Context",
         description: `
@@ -68,7 +68,7 @@ let budgets = {
         anchor: 'header',
         description: 'header for budgets page',
         type: 'section',
-        tag: 'Top:Budgets',
+        tag: 'Top:Design',
         properties: {
             title: "Toronto Budget Design",
             description: `
