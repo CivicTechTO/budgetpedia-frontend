@@ -68,7 +68,7 @@ let mainpages = {
                 },
                 index: 3,
                 tier: 'primary',
-                route: '/overview',
+                route: '/context',
                 tag: 'overview',
                 parent: 'home',
             },

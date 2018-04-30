@@ -30,7 +30,7 @@ let toplinklist = {
             {
                 prompt:'See our Toronto budgeting context notes',
                 icon:'/public/icons/ic_wb_sunny_black_48px.svg',
-                target:'/overview',
+                target:'/context',
                 targetText:'Budget Context',
             },
             {

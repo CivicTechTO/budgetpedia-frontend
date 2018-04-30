@@ -31,7 +31,7 @@ import Announcements from './pages/announcements';
 import Pathways from './pages/pathways';
 let routedata = [
     { path: "/about", component: About },
-    { path: "/overview", component: PageController },
+    { path: "/context", component: PageController },
     { path: "/design", component: PageController },
     { path: "/roadmap", component: PageController },
     { path: "/deputations", component: Deputations },
