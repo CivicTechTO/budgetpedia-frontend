@@ -214,7 +214,6 @@ let torontobudget = {
                 markup: `## The 2018 Toronto Budget: Our _Accrual_ Based Prototype
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
-
 The current Toronto budget is cash based, which is useful for managing cash, but 
 which can be confusing in other contexts,
 so we create an ancillary _accrual_ based budget designed more for day-to-day management purposes.
@@ -231,12 +230,16 @@ which is the cost of staff, plus the rent, services, materials, supplies, etc re
 
 </div>
 
+<div>
+
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018expensebudget.png" />
     <figcaption style="font-size:x-small;color:#999;text-align:center">
 Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
     </figcaption>
 </figure>
+
+</div>
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
@@ -248,12 +251,16 @@ deliberately includes an operating surplus to provide money for capital investme
 
 </div>
 
+<div>
+
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018revenuebudget.png" />
     <figcaption style="font-size:x-small;color:#999;text-align:center">
 Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
     </figcaption>
 </figure>
+
+</div>
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
@@ -266,12 +273,16 @@ most of the fighting is about -- where to get it; how to spend it.
 
 </div>
 
+<div>
+
 <figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/2018distributionbudget.png" />
     <figcaption style="font-size:x-small;color:#999;text-align:center">
 Source: <a target = "_blank" href="https://docs.google.com/spreadsheets/d/1M9vF4S7gb72Na8vd0RdR6kUdwI46DPhEnJbn7GpSIT0/view#gid=1191626711" >Henrik Bechmann</a>
     </figcaption>
 </figure>
+
+</div>
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
