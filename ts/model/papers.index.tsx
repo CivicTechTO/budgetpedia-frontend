@@ -222,7 +222,8 @@ let torontobudget = {
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
-The current Toronto budget is cash based, which can be confusing in certain contexts,
+The current Toronto budget is cash based, which is useful for managing cash, but 
+which can be confusing in other contexts,
 so we create an ancillary _accrual_ based budget designed more for day-to-day management purposes.
 We think both can live side by side quite comfortably.
 
