@@ -214,12 +214,12 @@ let torontobudget = {
                 markup: `## The 2018 Toronto Budget: Our _Accrual_ Based Prototype
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
-The current Toronto budget is cash based, which is useful for managing cash, but 
-which can be confusing in other contexts,
-so we create an ancillary _accrual_ based budget designed more for day-to-day management purposes.
-We think both can live side by side quite comfortably.
 
-For our latest thinking on this see the [discussion paper](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa/view). {style=margin-top:0}
+The current Toronto budget is cash based, which is useful for managing cash, but 
+which can be confusing in other contexts, so we create an ancillary <em>accrual</em> based budget designed more for day-to-day management purposes.
+We think both can live side by side quite comfortably. {style=margin-top:0}
+
+For our latest thinking on this see the [discussion paper](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa/view).
 
 We restate the 2018 budget, using an _accrual_ based model. 
 We think this can be a more conventional, clearer, presentation for day-to-day operations than
