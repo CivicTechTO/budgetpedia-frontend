@@ -2,7 +2,7 @@
 let routes = {
     '/roadmap': 'roadmap',
     '/': 'home',
-    '/budgets': 'budgets',
+    '/design': 'budgets',
     '/overview': 'overview',
 };
 export default routes;

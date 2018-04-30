@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --config config/webpack.config.js",
-    "build": "webpack --mode production --config config/webpack.config.js"
+    "build": "webpack --mode production --config config/webpack.config.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -74,6 +75,7 @@
     "remove-markdown": "^0.2.2",
     "scriptjs": "^2.5.8",
     "scroll-to-element": "^2.0.0",
+    "server": "^1.0.18",
     "string": "^3.3.3",
     "valid-url": "^1.0.9"
   },

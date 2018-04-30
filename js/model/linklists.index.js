@@ -10,7 +10,7 @@ let toplinklist = {
             {
                 prompt: 'See budget details on our',
                 icon: '/public/icons/ic_attach_money_48px.svg',
-                target: '/budgets',
+                target: '/design',
                 targetText: 'Budget Design',
                 suffix: 'page',
             },

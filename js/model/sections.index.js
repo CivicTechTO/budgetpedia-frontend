@@ -454,10 +454,10 @@ let roadmap = {
             'paper:cityprocess': `Here is a rough outline of how the process is currently set up.`,
         },
         followup: {
-            "paper:cityprocess": `For information on specific City budgets, see our [Budgets](/budgets) page.
+            "paper:cityprocess": `For information on specific City budgets, see our [Budgets](/design) page.
 `,
             'card:roadmapsummary': `This page is about the creation process of Toronto budgets. For information about the budget structure,
-see our [budgets](/budgets) page.`,
+see our [budgets](/design) page.`,
         },
         properties: {
             title: "Budget Process",
