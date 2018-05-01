@@ -198,6 +198,7 @@ let pagetargets: Object[] = [
         route: '/about',
         tag:'about',
         parent:'home',
+        isDivider: true,
     },
     // {
     //     id: 16,

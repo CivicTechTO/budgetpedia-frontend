@@ -181,6 +181,7 @@ let pagetargets = [
         route: '/about',
         tag: 'about',
         parent: 'home',
+        isDivider: true,
     },
 ];
 let branchDefaults = {

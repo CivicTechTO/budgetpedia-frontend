@@ -15,6 +15,7 @@ interface Props {
         id:any, 
         content:any, 
         route:string,
+        isDivider?:boolean,
     }[],
     onSelect: Function,
     headData: {
@@ -43,6 +44,7 @@ class MenuSidebarView extends React.Component<Props, any> {
                 image = {menurow.content.image}
                 route = {menurow.route}
                 disabled = {menurow.content.disabled}
+                isDivider = {menurow.isDivider}
             />
 
         })

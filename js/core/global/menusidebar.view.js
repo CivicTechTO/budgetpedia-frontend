@@ -10,7 +10,7 @@ class MenuSidebarView extends React.Component {
         let tailtargets = this.props.tailData;
         // console.log('pagetargets',pagetargets)
         let menuitems = tailtargets.map(menurow => {
-            return React.createElement(MenuRowView, { onSelect: this.props.onSelect, key: menurow.id, primaryText: menurow.content.title, image: menurow.content.image, route: menurow.route, disabled: menurow.content.disabled });
+            return React.createElement(MenuRowView, { onSelect: this.props.onSelect, key: menurow.id, primaryText: menurow.content.title, image: menurow.content.image, route: menurow.route, disabled: menurow.content.disabled, isDivider: menurow.isDivider });
         });
         let { headData } = this.props;
         let { primaryText, image, route, disabled } = headData;

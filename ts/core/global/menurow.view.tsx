@@ -6,6 +6,7 @@
 import * as React from 'react'
 
 import MenuItem from 'material-ui/MenuItem'
+import Divider from 'material-ui/Divider'
 
 interface Props {
     route: string,
@@ -13,6 +14,7 @@ interface Props {
     primaryText: string,
     image: string,
     disabled?: boolean,
+    isDivider?: boolean,
 }
 
 export class MenuRowView extends React.Component<Props, any> {
@@ -26,8 +28,8 @@ export class MenuRowView extends React.Component<Props, any> {
     
     render() {
 
-        return (
-
+        return ([
+            this.props.isDivider?<Divider key="divider"/>:null,
             <MenuItem 
 
                 onClick={ this.pushHistory }
@@ -35,9 +37,9 @@ export class MenuRowView extends React.Component<Props, any> {
                 leftIcon = {<img src={this.props.image}/>}
                 disabled = {this.props.disabled?true:false}>
                 
-            </MenuItem>
+            </MenuItem>,
 
-        )
+        ])
     }
 }
 
