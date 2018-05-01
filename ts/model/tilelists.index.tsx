@@ -86,20 +86,20 @@ let mainpages = {
                 tag:'resources',
                 parent:'home',
             },
-            {
-                id: 14,
-                content: {
-                    title: `Activist Pathways`,
-                    subtitle: `How to make change`,
-                    image: '../../public/icons/ic_directions_walk_48px.svg',
-                    category: 'support',
-                },
-                index: 4,
-                tier:'primary',
-                route: '/pathways',
-                tag:'pathways',
-                parent:'home',
-            },
+            // {
+            //     id: 14,
+            //     content: {
+            //         title: `Activist Pathways`,
+            //         subtitle: `How to make change`,
+            //         image: '../../public/icons/ic_directions_walk_48px.svg',
+            //         category: 'support',
+            //     },
+            //     index: 4,
+            //     tier:'primary',
+            //     route: '/pathways',
+            //     tag:'pathways',
+            //     parent:'home',
+            // },
             {
                 id: 6,
                 content: {

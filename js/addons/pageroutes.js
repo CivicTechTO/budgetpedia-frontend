@@ -28,7 +28,7 @@ import Resources from './pages/resources';
 // import Teams from './pages/teams'
 import Stories from './pages/stories';
 // import Announcements from './pages/announcements'
-import Pathways from './pages/pathways';
+// import Pathways from './pages/pathways'
 let routedata = [
     { path: "/about", component: About },
     { path: "/context", component: PageController },
@@ -42,8 +42,6 @@ let routedata = [
     { path: "/resources", component: Resources },
     // { path: "/teams", component: Teams },
     { path: "/stories", component: Stories },
-    // { path: "/announcements", component: Announcements },
-    { path: "/pathways", component: Pathways },
 ];
 const pageroutes = routedata.map((item, index) => (React.createElement(Route, { key: 'pageroute' + index, path: item.path, component: item.component })));
 export default pageroutes;

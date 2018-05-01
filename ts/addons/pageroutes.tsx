@@ -44,7 +44,7 @@ import Stories from './pages/stories'
 
 // import Announcements from './pages/announcements'
 
-import Pathways from './pages/pathways'
+// import Pathways from './pages/pathways'
 
 let routedata = [
     { path: "/about", component: About },
@@ -60,7 +60,7 @@ let routedata = [
     // { path: "/teams", component: Teams },
     { path: "/stories", component: Stories },
     // { path: "/announcements", component: Announcements },
-    { path: "/pathways", component: Pathways },
+    // { path: "/pathways", component: Pathways },
 ]
 
 const pageroutes = routedata.map((item, index) => (
