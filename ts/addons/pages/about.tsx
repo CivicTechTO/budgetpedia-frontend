@@ -11,9 +11,6 @@ class About extends Component<any, any> {
     actAsExpander={true}
     showExpandableButton={true}
 />
-<CardText expandable>
-For a list of our teams and some of the people involved, see <a href="./teams">Our Teams</a>.
-</CardText>
 <CardText>
 For some more background, see the <a target="_blank" href="https://docs.google.com/presentation/d/1xZyJ6_wk4M6XP8DgrzyNi8oBvzvmzQyV6K23J0OwvZY">slide deck</a> that was used for out launch Nov 29, 2016, or the <a 
 target="_blank" href="https://www.youtube.com/watch?v=Wd7-g9ox-90">video</a> of that presentation.

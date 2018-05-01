@@ -25,9 +25,9 @@ import Communities from './pages/communities';
 import SocialMedia from './pages/socialmedia';
 import Newsletter from './pages/newsletter';
 import Resources from './pages/resources';
-import Teams from './pages/teams';
+// import Teams from './pages/teams'
 import Stories from './pages/stories';
-import Announcements from './pages/announcements';
+// import Announcements from './pages/announcements'
 import Pathways from './pages/pathways';
 let routedata = [
     { path: "/about", component: About },
@@ -40,9 +40,9 @@ let routedata = [
     { path: "/socialmedia", component: SocialMedia },
     { path: "/newsletter", component: Newsletter },
     { path: "/resources", component: Resources },
-    { path: "/teams", component: Teams },
+    // { path: "/teams", component: Teams },
     { path: "/stories", component: Stories },
-    { path: "/announcements", component: Announcements },
+    // { path: "/announcements", component: Announcements },
     { path: "/pathways", component: Pathways },
 ];
 const pageroutes = routedata.map((item, index) => (React.createElement(Route, { key: 'pageroute' + index, path: item.path, component: item.component })));
