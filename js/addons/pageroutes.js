@@ -5,7 +5,6 @@ import * as React from 'react';
 import { Route } from 'react-router-dom';
 import PageController from '../core/control/page.controller';
 import About from './pages/about';
-import Deputations from './pages/deputations';
 // import Explorer from './explorer/explorer'
 // import Communities from './pages/communities'
 // import SocialMedia from './pages/socialmedia'
@@ -21,9 +20,6 @@ const Explorer = Loadable({
     loader: () => import(/* webpackChunkName: "Explorer" */ './explorer/explorer'),
     loading: Loading,
 });
-import Communities from './pages/communities';
-import SocialMedia from './pages/socialmedia';
-import Newsletter from './pages/newsletter';
 import Resources from './pages/resources';
 // import Teams from './pages/teams'
 import Stories from './pages/stories';
@@ -34,11 +30,12 @@ let routedata = [
     { path: "/context", component: PageController },
     { path: "/design", component: PageController },
     { path: "/process", component: PageController },
-    { path: "/deputations", component: Deputations },
+    { path: "/tracker", component: PageController },
+    // { path: "/deputations", component: Deputations },
     { path: "/explorer", component: Explorer },
-    { path: "/communities", component: Communities },
-    { path: "/socialmedia", component: SocialMedia },
-    { path: "/newsletter", component: Newsletter },
+    // { path: "/communities", component: Communities },
+    // { path: "/socialmedia", component: SocialMedia },
+    // { path: "/newsletter", component: Newsletter },
     { path: "/resources", component: Resources },
     // { path: "/teams", component: Teams },
     { path: "/stories", component: Stories },

@@ -22,6 +22,13 @@ let toplinklist = {
                 suffix: 'page',
             },
             {
+                prompt:"Find information about specific budgets at our",
+                icon:'/public/icons/ic_assignment_48px.svg',
+                target:'/tracker/',
+                targetText:'Budget Tracker',
+                suffix: 'page',
+            },
+            {
                 prompt:'Explore the Toronto budget with our',
                 icon:'/public/icons/ic_explore_48px.svg',
                 target:'/explorer',

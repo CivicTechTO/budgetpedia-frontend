@@ -8,6 +8,43 @@
 // },
 // ===========================================================
 let pages = {
+    tracker: {
+        controller: 'page',
+        index: 'tracker',
+        type: 'page',
+        attribution: {
+            custodian: {
+                name: 'Henrik Bechmann',
+                link: 'mailto:henrik@budgetpedia.ca',
+            },
+            authority: null,
+            creator: null,
+            updater: null,
+            contact: {
+                name: 'mail@budgetpedia.ca',
+                link: 'mailto:mail@budgetpedia.ca',
+            },
+            dates: {
+                created: '01-05-2018',
+                updated: '01-05-2018',
+            },
+        },
+        tags: null,
+        properties: {
+            title: 'budgetpedia budget tracker',
+            description: 'Toronto budgetpedia tracker',
+        },
+        children: [
+            {
+                index: 'trackerheader',
+                repo: 'sections',
+            },
+            {
+                index: 'instances',
+                repo: 'sections',
+            },
+        ],
+    },
     home: {
         controller: 'page',
         index: 'home',

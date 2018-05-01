@@ -1,5 +1,80 @@
 // sections.index.tsx
 
+let contents = {
+    controller:'section',
+    index:'contents',
+    anchor:'contents',
+    description:'generic contents section',
+    type:'section',
+    tag:'Contents',
+    properties:{
+        // title:"Page Contents",
+    },
+    children:[
+        {
+            controller: 'section',
+            type:'toc',
+            index:'tableofcontents',
+            description:'page table of contents',
+        },
+    ],
+}
+
+let trackerheader = {
+    controller:'section',
+    index:'contents',
+    anchor:'contents',
+    description:'tracker header',
+    type:'section',
+    tag:'Top: Tracker',
+    properties:{
+        title:"Budget Tracker",
+        description:`Tracking budget information, events, and links`,
+    },
+    children:[
+        {
+            controller: 'section',
+            type:'toc',
+            index:'tableofcontents',
+            description:'page table of contents',
+        },
+    ],
+}
+
+let instances = {
+    controller:'section',
+    index:'budgets.instances',
+    anchor:'instances',
+    description:'instances for budgets page',
+    type:'section',
+    tag:'Instances',
+    properties:{
+        title:"Budget Instances",
+        description: 
+`Read about specific budgets and variants here.
+
+`,
+    },
+    children: [
+        {
+            repo:'papers',
+            index:'budget2018',
+        },
+        {
+            repo:'papers',
+            index:'budget2017',
+        },
+        {
+            repo:'papers',
+            index:'participatory',
+        },
+        {
+            repo:'papers',
+            index:'investinginto',
+        },
+    ],
+}
+
 let torontobudget = {
     controller:'section',
     index:'torontobudget',
@@ -11,7 +86,7 @@ let torontobudget = {
         title:"An Ancillary Toronto Operating _Management_ Budget",
         description: 
 `
-Here is what we think is a more accessbile view of the Toronto budget.
+Here is what we think is a more accessible view of the Toronto budget.
 `,
     },
     children:[
@@ -102,39 +177,6 @@ see our [Budget Process](/process) page.`,
                 type:'toc',
                 index:'tableofcontents',
                 description:'page table of contents',
-            },
-        ],
-    },
-    instances: {
-        controller:'section',
-        index:'budgets.instances',
-        anchor:'instances',
-        description:'instances for budgets page',
-        type:'section',
-        tag:'Instances',
-        properties:{
-            title:"Budget Instances",
-            description: 
-`Read about specific budgets and variants here.
-
-`,
-        },
-        children: [
-            {
-                repo:'papers',
-                index:'budget2018',
-            },
-            {
-                repo:'papers',
-                index:'budget2017',
-            },
-            {
-                repo:'papers',
-                index:'participatory',
-            },
-            {
-                repo:'papers',
-                index:'investinginto',
             },
         ],
     },
@@ -656,6 +698,9 @@ least some collaboration with front-line staff, or at least front-line managers.
 }
 
 let sections = {
+    instances,
+    trackerheader,
+    contents,
     aboutbudgetpedia,
     torontobudget,
     overview,

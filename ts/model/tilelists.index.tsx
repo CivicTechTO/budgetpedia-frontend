@@ -45,6 +45,20 @@ let mainpages = {
                 parent:'home',
             },
             {
+                id: 7,
+                content: {
+                    title: `Budget Tracker`,
+                    subtitle: `About specific budgets`,
+                    image: '../../public/icons/ic_assignment_48px.svg',
+                    category: 'tools',
+                },
+                index: 1,
+                tier:'primary',
+                route: '/tracker/',
+                tag:'roadmap',
+                parent:'home',
+            },
+            {
                 id: 9,
                 content: {
                     title: `Budget Explorer`,
