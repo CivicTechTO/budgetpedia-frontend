@@ -33,7 +33,7 @@ let routedata = [
     { path: "/about", component: About },
     { path: "/context", component: PageController },
     { path: "/design", component: PageController },
-    { path: "/roadmap", component: PageController },
+    { path: "/process", component: PageController },
     { path: "/deputations", component: Deputations },
     { path: "/explorer", component: Explorer },
     { path: "/communities", component: Communities },

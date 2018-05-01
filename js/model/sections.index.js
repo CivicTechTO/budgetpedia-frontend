@@ -81,7 +81,7 @@ This page is about how the Toronto budget is structured, and _could_ be structur
         },
         followup: {
             'card:budgetssummary': `This page is about the structure of Toronto budgets. For information about the budget process,
-see our [Budget Process](/roadmap) page.`,
+see our [Budget Process](/process) page.`,
         },
         children: [
             {
@@ -323,7 +323,7 @@ directly (resident support services).`,
             'paper:citybasics': `For detailed budget information, see our budget [explorer](/explorer).`,
             'paper:cityprocess': `For more information on the City of Toronto Budget Process, see the City of Toronto 
 [website](https://www.toronto.ca/city-government/budget-finances/city-budget/), 
-and our [Budget Process](/roadmap) page.`,
+and our [Budget Process](/process) page.`,
         },
         properties: {
             title: 'The Basics',

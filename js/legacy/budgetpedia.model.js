@@ -39,7 +39,7 @@ import theme from 'material-ui/styles/baseThemes/lightBaseTheme';
 /* ======================================== */
 import * as colors from 'material-ui/styles/colors';
 let globalbar = {
-    title: 'Budgetpedia v0.1.6',
+    title: 'Budgetpedia v0.1.7',
     contactAddress: 'mailto:mail@budgetpedia.ca',
     contactPrompt: 'mail@budgetpedia.ca',
     tagLine: 'Only about Toronto for now',
@@ -94,7 +94,7 @@ let pagetargets = [
         },
         index: 1,
         tier: 'primary',
-        route: '/roadmap/',
+        route: '/process/',
         tag: 'roadmap',
         parent: 'home',
     },

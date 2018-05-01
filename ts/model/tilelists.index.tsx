@@ -40,7 +40,7 @@ let mainpages = {
                 },
                 index: 1,
                 tier:'primary',
-                route: '/roadmap/',
+                route: '/process/',
                 tag:'roadmap',
                 parent:'home',
             },

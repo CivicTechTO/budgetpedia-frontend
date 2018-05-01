@@ -1,7 +1,7 @@
 // routes.repo.tsx
 
 let routes = {
-    '/roadmap':'roadmap',
+    '/process':'roadmap',
     '/':'home',
     '/design':'budgets',
     '/context':'overview',
