@@ -65,17 +65,20 @@ On the first point, we've
 On the second point 
 
 4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4), and a 
-[draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _management_ budget design (accrual basis)
-([slide deck](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR))for the Toronto budget committee.
-We're also starting to collect notes on concern (red flags showing up) about [Toronto's Financial Controls](https://drive.google.com/open?id=16V1SkA8VEZ4i76kfhy6ijeAGrxbUzZ--xzJrtSZhhJ0).
+5. [draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _management_ budget design (accrual basis)
+([slide deck](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR)) for the Toronto budget committee. 
+6. We've submitted a [proposal](https://drive.google.com/open?id=1md1V6H2v566TA3EUDUO8EwaeWAZ-z5vc)
+to the City's FPARS group for a supplemental trial open data operating budget spreadsheet.
+7. We're also starting to collect notes on concern (red flags showing up) about 
+[Toronto's Financial Controls](https://drive.google.com/open?id=16V1SkA8VEZ4i76kfhy6ijeAGrxbUzZ--xzJrtSZhhJ0).
 
 For both 
 
-5. we have an ongoing [research program](https://drive.google.com/open?id=1j4ylfNXSd3Ewqjt6eDSFVVNkBETE-AtN8TJDfGz-G-o).
+8. we have an ongoing [research program](https://drive.google.com/open?id=1j4ylfNXSd3Ewqjt6eDSFVVNkBETE-AtN8TJDfGz-G-o).
 
 Also, we're working on 
 
-6. making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
+9. making this website more useful (give us another year on that one -- hopefully summer 2019). Meanwhile
 there's quite a bit here already. See the <a href="#this-is-budgetpedia">contents</a> below.
 
 In short, we're at a good plateau. Now we're taking some time to regroup for the next phase of development.
