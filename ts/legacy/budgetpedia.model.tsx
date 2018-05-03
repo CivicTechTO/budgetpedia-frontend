@@ -90,6 +90,20 @@ let pagetargets: Object[] = [
     {
         id: 8,
         content: {
+            title: `Budget Basics`,
+            subtitle: `Basic Budget Descriptions`,
+            image: '../../public/icons/ic_school_48px.svg',
+            category: 'tools',
+        },
+        index: 1,
+        tier:'primary',
+        route: '/basics',
+        tag:'basics',
+        parent:'home',
+    },
+    {
+        id: 8,
+        content: {
             title: `Budget Design`,
             subtitle: `About specific budgets`,
             image: '../../public/icons/ic_attach_money_48px.svg',

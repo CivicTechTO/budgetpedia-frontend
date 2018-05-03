@@ -12,6 +12,43 @@
 
 
 let pages = {
+    basics:{
+        controller: 'page',
+        index: 'tracker',
+        type:'page',
+        attribution: {
+            custodian:{
+                name: 'Henrik Bechmann',
+                link: 'mailto:henrik@budgetpedia.ca',
+            },
+            authority:null,
+            creator:null,
+            updater:null,
+            contact:{
+                name:'mail@budgetpedia.ca',
+                link:'mailto:mail@budgetpedia.ca',
+            },
+            dates:{
+                created: '05-05-2018',
+                updated: '05-05-2018',
+            },
+        },
+        tags:null,
+        properties: {
+            title:'budgetpedia budget basics',
+            description: 'Toronto budget basics',
+        },
+        children: [
+            {
+                index:'basicsheader',
+                repo:'sections',
+            },
+            {
+                index:'budgettypes',
+                repo:'sections',
+            },
+        ],
+    },
     tracker:{
         controller: 'page',
         index: 'tracker',
@@ -125,10 +162,6 @@ let pages = {
             {
                 repo:'sections',
                 index:'budgets.header',
-            },
-            {
-                repo:'sections',
-                index:'budgets.instances',
             },
             {
                 repo:'sections',

@@ -20,6 +20,33 @@ let contents = {
     ],
 }
 
+let basicsheader = {
+    controller:'section',
+    index:'contents',
+    anchor:'contents',
+    description:'basics header',
+    type:'section',
+    tag:'Top: Basics',
+    properties:{
+        title:"Budget Basics",
+        description:`
+<div style = "padding:16px;background-color:orange;text-align:center;border:3px ridge silver;border-radius:8px">
+This page is under construction.
+</div>
+
+Basics about budgeting. A good place to get started.
+`,
+    },
+    children:[
+        {
+            controller: 'section',
+            type:'toc',
+            index:'tableofcontents',
+            description:'page table of contents',
+        },
+    ],
+}
+
 let trackerheader = {
     controller:'section',
     index:'contents',
@@ -41,9 +68,31 @@ let trackerheader = {
     ],
 }
 
+let budgettypes = {
+    controller:'section',
+    index:'budgettypes',
+    anchor:'budgettypes',
+    description:'types of budgets',
+    type:'section',
+    tag:'Types',
+    properties:{
+        title:"Budget Types",
+        description: 
+`Read about budget types here.
+
+`,
+    },
+    children: [
+        {
+            repo:'papers',
+            index:'basicbudgettypes',
+        },
+    ],
+}
+
 let instances = {
     controller:'section',
-    index:'budgets.instances',
+    index:'instances',
     anchor:'instances',
     description:'instances for budgets page',
     type:'section',
@@ -699,6 +748,8 @@ least some collaboration with front-line staff, or at least front-line managers.
 
 let sections = {
     instances,
+    basicsheader,
+    budgettypes,
     trackerheader,
     contents,
     aboutbudgetpedia,

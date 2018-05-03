@@ -1,7 +1,26 @@
 // papers.index.tsx
-let budgetpediapremise = {
+let basicbudgettypes = {
     controller: 'paper',
     index: 'torontobudget',
+    description: 'toronto budget types',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'basicbudgettypes',
+            description: 'toronto budget types',
+            properties: {
+                markup: `
+## Basic Budget Types
+`,
+            }
+        }
+    ],
+};
+let budgetpediapremise = {
+    controller: 'paper',
+    index: 'budgetpediapremise',
     description: 'toronto budget restatement',
     type: 'paper',
     children: [
@@ -1696,6 +1715,7 @@ two groups separately, taking more interest (presumably for political reasons) i
     ],
 };
 let papers = {
+    basicbudgettypes,
     budgetpediapremise,
     budgetpediaoverview,
     electionopinion,

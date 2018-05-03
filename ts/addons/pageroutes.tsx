@@ -52,6 +52,7 @@ let routedata = [
     { path: "/design", component: PageController },
     { path: "/process", component: PageController },
     { path: "/tracker", component: PageController },
+    { path: "/basics", component: PageController },
     // { path: "/deputations", component: Deputations },
     { path: "/explorer", component: Explorer },
     // { path: "/communities", component: Communities },
