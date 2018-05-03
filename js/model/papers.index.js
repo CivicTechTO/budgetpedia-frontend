@@ -13,6 +13,45 @@ let basicbudgettypes = {
             properties: {
                 markup: `
 ## Basic Budget Types
+
+A budget is an informed estimate of future spending and receipts.
+
+There are two basic budget types: an operating budget, and a capital budget.
+
+<figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/budgetbasics.png" />
+    <figcaption style="font-size:x-small;color:#999;text-align:center">
+        Basic budget types
+    </figcaption>
+</figure>
+
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
+
+These relate to the familiar _Statement of Revenues and Expenses_ and the _Balance Sheet_. Put
+another way, the operating budget relates to day-to-day expenses, which are continuous
+current activities, while the capital budget relates to relatively large investments which
+are intended to support plans for the future. Capital projects tend to happen in batches.{style=margin-top:0}
+
+</div>
+
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px;margin-top:24px">
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto;break-inside:avoid">
+    <img style="width:100%" src="/public/images/streetcarlineup.jpg" />
+    <figcaption style="font-size:x-small;color:#999;text-align:center">
+        Operating: King street car lineup
+    </figcaption>
+</figure>
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/yorkuniversitystation.jpg" />
+    <figcaption style="font-size:x-small;color:#999;text-align:center">
+        Capital: York University Station construction
+    </figcaption>
+</figure>
+
+</div>
+
 `,
             }
         }
