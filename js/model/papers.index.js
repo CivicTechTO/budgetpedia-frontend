@@ -28,7 +28,7 @@ There are two basic budget types: an operating budget, and a capital budget.
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
 These relate to the familiar _Statement of Revenues and Expenses_ and the _Balance Sheet_. Put
-another way, the operating budget relates to day-to-day expenses, which are continuous
+another way, the operating budget relates to day-to-day revenues and expenses, which are continuous
 current activities, while the capital budget relates to relatively large investments which
 are intended to support plans for the future. Capital projects tend to happen in batches.{style=margin-top:0}
 
@@ -50,6 +50,22 @@ are intended to support plans for the future. Capital projects tend to happen in
     </figcaption>
 </figure>
 
+</div>
+
+### Definitions
+
+<div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px;">
+<dl style="margin-top:0">
+<dt>Spending (expenditures)</dt>
+<dt>Receipts</dt>
+<dt>Revenues</dt>
+<dt>Expenses</dt>
+<dt>Surplus</dt>
+<dt>Assets</dt>
+<dt>Liabilities</dt>
+<dt>Net Worth</dt>
+
+</dl>
 </div>
 
 `,
