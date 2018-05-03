@@ -65,7 +65,7 @@ On the first point, we've
 On the second point 
 
 4. we've created an [advocacy platform](https://docs.google.com/document/d/1_JylWmhOGt7ghlh9BK8dau5_sxP40VixSaVb3oJ7ko4), and a 
-5. [draft proposal](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR) for an ancillary operating _management_ budget design (accrual basis)
+5. [draft proposal](https://drive.google.com/file/d/1sG25QhvePazO96Pcgkeetk6b-nSRqMFa) (same as #2) for an ancillary operating _management_ budget design (accrual basis)
 ([slide deck](https://drive.google.com/open?id=1kbCk5sA61eq_ttXgk8zLSwMxR5yMuujR)) for the Toronto budget committee. 
 6. We've submitted a [proposal](https://drive.google.com/open?id=1md1V6H2v566TA3EUDUO8EwaeWAZ-z5vc)
 to the City's FPARS group for a supplemental trial open data operating budget spreadsheet.
