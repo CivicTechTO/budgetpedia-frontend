@@ -43,6 +43,10 @@ let pages = {
                 index: 'budgettypes',
                 repo: 'sections',
             },
+            {
+                index: 'budgetflows',
+                repo: 'sections',
+            },
         ],
     },
     tracker: {

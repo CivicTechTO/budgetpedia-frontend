@@ -16,9 +16,9 @@ let basicbudgettypes = {
 
 A budget is an informed estimate of future spending and receipts.
 
-There are two basic budget types: an operating budget, and a capital budget.
+There are two basic budget types: an _operating budget_, and a _capital budget_.
 
-<figure style="width:100%;max-width:600px;margin:0 auto 32px auto">
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/budgetbasics.png" />
     <figcaption style="font-size:x-small;color:#999;text-align:center">
         Basic budget types
@@ -27,8 +27,8 @@ There are two basic budget types: an operating budget, and a capital budget.
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px">
 
-These relate to the familiar _Statement of Revenues and Expenses_ and the _Balance Sheet_. Put
-another way, the operating budget relates to day-to-day revenues and expenses, which are continuous
+These relate to the familiar _Statement of Revenues and Expenses_ and the _Balance Sheet_. The operating budget 
+relates to day-to-day revenues and expenses, which are continuous
 current activities, while the capital budget relates to relatively large investments which
 are intended to support plans for the future. Capital projects tend to happen in batches.{style=margin-top:0}
 
@@ -56,17 +56,120 @@ are intended to support plans for the future. Capital projects tend to happen in
 
 <div style = "columns:260px 2; column-rule:1px solid silver; column-gap:24px;">
 <dl style="margin-top:0">
-<dt>Spending (expenditures)</dt>
-<dt>Receipts</dt>
 <dt>Revenues</dt>
+<dd>Money earned</dd>
 <dt>Expenses</dt>
+<dd>Money spent in support of revenue</dd>
 <dt>Surplus</dt>
+<dd>The difference between revenue and expenses</dd>
 <dt>Assets</dt>
+<dd>Holdings of value, including financial assets and tangible assets</dd>
 <dt>Liabilities</dt>
+<dd>Money owed</dd>
 <dt>Net Worth</dt>
+<dd>The difference between assets and liabilities; often called accumulated surplus</dd>
+<dt>Spending (expenditures)</dt>
+<dd>Money going out for any reason (including expenses and any other reason such as debt repayment)</dd>
+<dt>Receipts</dt>
+<dd>Money coming in for any reason (including revenue and any other reason such as the proceeds from new debt)</dd>
 
 </dl>
 </div>
+
+`,
+            }
+        }
+    ],
+};
+let basicbudgetflows = {
+    controller: 'paper',
+    index: 'torontobudget',
+    description: 'toronto budget types',
+    type: 'paper',
+    children: [
+        {
+            controller: 'paper',
+            type: 'markupblock',
+            index: 'basicbudgettypes',
+            description: 'toronto budget types',
+            properties: {
+                markup: `
+## Money Flows and Categorizations
+
+Budgets are designed to plan and track actions through money flows. These flows are
+reported as categories.
+
+There are two kinds of categories:
+1. The sources of the flow, commonly called "accounts", or "cost elements" 
+by Toronto (even for revenues), where the money (or effort, or thing or service) comes _from_,
+like _Salaries and Benefits_ or _Materials & Supplies_.
+2. The targets of the flows, where the money (or effort, or thing or service) is _applied_, described as activities or 
+services (or sometimes organizational units), like _Protection Services_ or _Utilities_.
+
+Below, we use examples from our [Discussion Paper: A Management Budget Design for Toronto](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa).
+
+Here is an example of money flows summarized by source expense type categories.
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/2017CoreExpensesByCostElements.png" />
+</figure>
+
+Here is the exact same amount of money summarized instead by service categories, where the money is applied.
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/2017CoreExpenesByServiceCluster.png" />
+</figure>
+
+Either of these reports could be decomposed into more detailed groupings. The groupings
+chosen depend on what is useful to the readers.
+
+The art of budgeting is finding the groupings that make sense to readers, so that those
+readers can gain _insights_ into what's going on, the better to understand or manage the 
+activities that the budgets represent.
+
+### Accruals
+
+There is a special set of accounts which collect _estimates_ of costs instead of actual
+money. There are two main types of these in City budgets:
+- depreciation, to account for the theoretical wear and tear of tangible assets, based on an average 
+of useful life of the original cost, to allow for money to be put away for those costs for
+when they are needed.
+- anticipated pension costs, which are included in current costs to allow for money to be
+put away for those costs for when they are needed.
+
+### Core and General groupings
+
+In our _management budget_ we have two basic sets of groupings
+- core groupings (expenses and revenues) which are categories that apply directly to Toronto's
+divisions and agencies (like Police or Libraries)
+- general groupings that apply to the City overall
+
+Here is a high level view of the expense budget of the City.
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/2017ExpensesOperatingBudget.png" />
+</figure>
+
+The core expenses in this case are the staffing _Salaries and Benefits_ and the _directly
+consumed goods and services_ that are purchased to support those staff. Very easy to relate to.
+
+The general expenses are widely shared or don't directly support the staff. Direct subsidies for
+example are flow-through, and aren't used to support staff.
+
+### Granularity
+
+Toronto has about 13,000 cost centres, which are the lowest units of managed cost.
+Think a community centre, or even just a program inside a community centre. The same
+principles of budgeting (particularly the core expenses) could be applied to those just
+as well. At budgetpedia we hope to encourage the City to release this level of detail
+through Toronto's open data portal one day - [toronto.ca/open](http://toronto.ca/open).
+
+### Reserves
+
+The "Net Worth" or accumulated surplus isn't free money. It is methodically collected and 
+allocated to specific purposes by the City. One way of doing this is to identify _reserves_
+which are pools of money that are pre-allocated to particular purposes. See our discussion paper
+for details.
 
 `,
             }
@@ -1770,6 +1873,7 @@ two groups separately, taking more interest (presumably for political reasons) i
     ],
 };
 let papers = {
+    basicbudgetflows,
     basicbudgettypes,
     budgetpediapremise,
     budgetpediaoverview,

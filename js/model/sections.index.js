@@ -84,6 +84,26 @@ let budgettypes = {
         },
     ],
 };
+let budgetflows = {
+    controller: 'section',
+    index: 'budgetflows',
+    anchor: 'budgetflows',
+    description: 'budget flows',
+    type: 'section',
+    tag: 'Flows',
+    properties: {
+        title: "Budget Flows",
+        description: `This section is about budget flows and reporting categories.
+
+`,
+    },
+    children: [
+        {
+            repo: 'papers',
+            index: 'basicbudgetflows',
+        },
+    ],
+};
 let instances = {
     controller: 'section',
     index: 'instances',
@@ -680,6 +700,7 @@ let sections = {
     instances,
     basicsheader,
     budgettypes,
+    budgetflows,
     trackerheader,
     contents,
     aboutbudgetpedia,
