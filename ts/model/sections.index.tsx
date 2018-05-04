@@ -30,9 +30,6 @@ let basicsheader = {
     properties:{
         title:"Budget Basics",
         description:`
-<div style = "padding:16px;background-color:orange;text-align:center;border:3px ridge silver;border-radius:8px">
-This page is under construction.
-</div>
 
 Basics about budgeting. A good place to get started.
 `,
@@ -131,6 +128,30 @@ discipline to implement improvements for everyone.
         {
             repo:'papers',
             index:'basicbudgetuses',
+        },
+    ],
+}
+
+let budgetvariations = {
+    controller:'section',
+    index:'budgetvariaions',
+    anchor:'budgetvariations',
+    description:'variations of budgets',
+    type:'section',
+    tag:'Variations',
+    properties:{
+        title:"Budget Variations",
+        description: 
+`This is where things start to get tricky. If you're only interested in budget basics,
+feel free to stop reading here. If you're interested in the City of Toronto budget, keep
+reading.
+
+`,
+    },
+    children: [
+        {
+            repo:'papers',
+            index:'basicbudgetvariations',
         },
     ],
 }
@@ -393,7 +414,10 @@ let home = {
 <img style="width:100%" src="/public/images/Makerspace-4.jpg" />
 <span style="font-size:x-small;font-style:italic;">Innovative public service: a Toronto Library Makerspace program</span>
 </div>
-We're an independent, non-profit, volunteer organization based in Toronto, Canada.`,
+We're an independent, non-profit, volunteer organization based in Toronto, Canada.
+
+New to budgeting? See our [Budget Basics](/basics) page.
+`,
         },
         children:[
             {
@@ -792,6 +816,7 @@ least some collaboration with front-line staff, or at least front-line managers.
 }
 
 let sections = {
+    budgetvariations,
     budgetuses,
     instances,
     basicsheader,

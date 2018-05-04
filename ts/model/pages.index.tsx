@@ -55,6 +55,10 @@ let pages = {
                 index:'budgetuses',
                 repo:'sections',
             },
+            {
+                index:'budgetvariations',
+                repo:'sections',
+            },
         ],
     },
     tracker:{

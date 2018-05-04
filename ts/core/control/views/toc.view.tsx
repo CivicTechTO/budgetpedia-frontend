@@ -102,7 +102,7 @@ let ToCView = ({tocdata}) => {
             >
                 <div style = {styles.innerdiv as any}>
                     <HashAnchorHeader title = 'Page Contents' tag = 'h2' />
-                    <div style = {{columns:'2 300px'}} >
+                    <div style = {{columns:'2 300px',columnRule:'1px solid silver', columnGap:'24px'}} >
                         { toc }
                     </div>
 

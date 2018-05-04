@@ -69,7 +69,7 @@ let ToCView = ({ tocdata }) => {
             } },
             React.createElement("div", { style: styles.innerdiv },
                 React.createElement(HashAnchorHeader, { title: 'Page Contents', tag: 'h2' }),
-                React.createElement("div", { style: { columns: '2 300px' } }, toc),
+                React.createElement("div", { style: { columns: '2 300px', columnRule: '1px solid silver', columnGap: '24px' } }, toc),
                 React.createElement("div", { style: { clear: 'both' } })))));
 };
 export default ToCView;

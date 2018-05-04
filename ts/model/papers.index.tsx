@@ -1,5 +1,62 @@
 // papers.index.tsx
 
+let basicbudgetvariations = {
+    controller:'paper',
+    index:'budgetvariations',
+    description: 'toronto budget variations',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'basicbudgetvariations',
+            description:'toronto budget variations',
+            properties: {
+                markup:`
+## Cash-based budgeting
+
+The City of Toronto uses a so-called 'cash-basis' for budgeting, which intermingles non-operating (capital)
+cash outlays with operating expenses. For example a huge annual contribution to reserves (about $800M) is recorded
+for water services as an 'expenditure', and inter-mingled with normal water system expenses (about $400M). 
+This is to put money aside for upgrade of
+the water infrastructure. That's fine for tracking cash, but it obscures the costs of day-to-day operation
+of the service.
+
+We think it would be better to have reports that isolate normal day-to-day operations. To that end
+we've submitted a [proposal](https://drive.google.com/open?id=1md1V6H2v566TA3EUDUO8EwaeWAZ-z5vc) 
+to the City of Toronto to provide data, at least on a trial basis, to
+let us create the simpler, and easier to understand accrual-based accounting reports.
+
+## Other conflations
+
+We think it would be helpful if what we call _core operating expenses_ were isolated from other
+expenses. This is staffing costs and direct costs of _consumed_ goods and services to support staff.
+To do this, direct subsidies (income, housing, and child support) and outsourcing costs (waste) would 
+have to be isolated from their current expenditure summaries.
+
+## Unconventional practices
+
+The City of Toronto uses a number of unconventional practices that we know of.
+- capital staffing costs are included in _both_ operating and capital budgets. We think those costs
+should appear only in capital budgets.
+- contra-revenues (like discounts) are used to increase expenses rather than reduce revenues.
+- some program costs (like Parking Tag Enforcement & Operations) are included in Capital Accounts,
+rather than being listed with other programs.
+- Toronto Community Housing Corporation is not included in the budget (although housing subsidies are)
+although TCHC is fully consolidated into the audited statements.
+- Inter-Divisional Charges and Recoveries are double-counted in aggregate on expenditure and receipt sides
+of the budget. We think they should be netted out on the expense side.
+
+Our [proposal](https://drive.google.com/open?id=1md1V6H2v566TA3EUDUO8EwaeWAZ-z5vc) starts to address
+all of these issues. We think they could all be addressed without unduly inconveniencing councillors
+and staff who have become accustomed to the budget reports as they are, while offering much more value
+to a broader audience. 
+`,
+            }
+        }
+    ],    
+}
+
 let basicbudgetuses = {
     controller:'paper',
     index:'torontobudget',
@@ -18,7 +75,7 @@ let basicbudgetuses = {
 Budgets are, or should be, rooted in an organization's vision/mission/values/goals. Ideally,
 through a process of deliberation and collaboration, the people of Toronto should collectively
 imagine the combination of capital investments and design of services that will help everyone.
-This process is roughtly diagrammed in the Municipal Planning Model here:
+This process is roughly diagrammed in the Municipal Planning Model here:
 
 <figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/Municipal_Planning_Model.png" />
@@ -143,6 +200,8 @@ let basicbudgetflows = {
                 markup:`
 ## Money Flows and Categorizations
 
+### Categorization schemes
+
 Budgets are designed to plan and track actions through money flows. These flows are
 reported as categories.
 
@@ -182,7 +241,7 @@ comprehensive (but achievable) ancillary or alternate basis for designing Toront
 There is a special set of accounts which collect _estimates_ of costs instead of actual
 money. There are two main types of these in City budgets:
 - depreciation, to account for the theoretical wear and tear of tangible assets, based on an average 
-of useful life of the original cost, to allow for money to be put away for those costs for
+of the original cost over the useful life of the assets, to allow for money to be put away for those costs for
 when it is needed.
 - anticipated pension costs, which are included in current costs to allow for money to be
 put away for those costs for when it is needed.
@@ -1981,6 +2040,7 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    basicbudgetvariations,
     basicbudgetuses,
     basicbudgetflows,
     basicbudgettypes,
