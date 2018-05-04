@@ -128,7 +128,8 @@ chosen depend on what is useful to the readers.
 
 The art of budgeting is finding the groupings that make sense to readers, so that those
 readers can gain _insights_ into what's going on, the better to understand or manage the 
-activities that the budgets represent.
+activities that the budgets represent. See for example a [taxonomy](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) we developed for the 
+operating budget.
 
 ### Accruals
 
@@ -136,9 +137,9 @@ There is a special set of accounts which collect _estimates_ of costs instead of
 money. There are two main types of these in City budgets:
 - depreciation, to account for the theoretical wear and tear of tangible assets, based on an average 
 of useful life of the original cost, to allow for money to be put away for those costs for
-when they are needed.
+when it is needed.
 - anticipated pension costs, which are included in current costs to allow for money to be
-put away for those costs for when they are needed.
+put away for those costs for when it is needed.
 
 ### Core and General groupings
 
@@ -171,7 +172,8 @@ through Toronto's open data portal one day - [toronto.ca/open](http://toronto.ca
 
 The "Net Worth" or accumulated surplus isn't free money. It is methodically collected and 
 allocated to specific purposes by the City. One way of doing this is to identify _reserves_
-which are pools of money that are pre-allocated to particular purposes. See our discussion paper
+which are pools of money that are pre-allocated to particular purposes. See our 
+[discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa)
 for details.
 
 `,
