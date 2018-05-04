@@ -112,6 +112,29 @@ let budgetflows = {
     ],
 }
 
+let budgetuses = {
+    controller:'section',
+    index:'budgetuses',
+    anchor:'budgetuses',
+    description:'budget uses',
+    type:'section',
+    tag:'Uses',
+    properties:{
+        title:"Budget Uses",
+        description: 
+`But why? Answer: to plan, control, and communicate. Ultimately budgeting is a 
+discipline to implement improvements for everyone.
+
+`,
+    },
+    children: [
+        {
+            repo:'papers',
+            index:'basicbudgetuses',
+        },
+    ],
+}
+
 let instances = {
     controller:'section',
     index:'instances',
@@ -769,6 +792,7 @@ least some collaboration with front-line staff, or at least front-line managers.
 }
 
 let sections = {
+    budgetuses,
     instances,
     basicsheader,
     budgettypes,

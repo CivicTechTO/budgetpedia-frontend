@@ -1,5 +1,49 @@
 // papers.index.tsx
 
+let basicbudgetuses = {
+    controller:'paper',
+    index:'torontobudget',
+    description: 'toronto budget types',
+    type:'paper',
+    children: [
+        {
+            controller:'paper',
+            type:'markupblock',
+            index:'basicbudgettypes',
+            description:'toronto budget types',
+            properties: {
+                markup:`
+## Municipal Planning Model
+
+Budgets are, or should be, rooted in an organization's vision/mission/values/goals. Ideally,
+through a process of deliberation and collaboration, the people of Toronto should collectively
+imagine the combination of capital investments and design of services that will help everyone.
+This process is roughtly diagrammed in the Municipal Planning Model here:
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/Municipal_Planning_Model.png" />
+</figure>
+
+There are well established ways of doing this successfully.
+
+## The Management Virtuous Circle
+
+From a management standpoint, budgets are an important tool to keep everyone sharp, focussed
+on reality, and open to making adjustments. We represent this as a virtual circle:
+
+<figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
+    <img style="width:100%" src="/public/images/virtuouscircle.png" />
+</figure>
+
+The immediate block to a full implementation of these models (in our opinion) is the City of Toronto's
+inability to make granular data (to the cost centre level) readily available to all stakeholders. They're working on it,
+though we'd like to see more urgency and sharper management applied to the problem.
+
+`,
+            }
+        }
+    ],    
+}
 
 let basicbudgettypes = {
     controller:'paper',
@@ -129,7 +173,9 @@ chosen depend on what is useful to the readers.
 The art of budgeting is finding the groupings that make sense to readers, so that those
 readers can gain _insights_ into what's going on, the better to understand or manage the 
 activities that the budgets represent. See for example a [taxonomy](https://medium.com/budgetpedia/the-toronto-operating-budget-simplified-1138019ad430) we developed for the 
-operating budget.
+operating budget. See our 
+[discussion paper](https://drive.google.com/open?id=1sG25QhvePazO96Pcgkeetk6b-nSRqMFa) for a
+comprehensive (but achievable) ancillary or alternate basis for designing Toronto budget reports.
 
 ### Accruals
 
@@ -1935,6 +1981,7 @@ two groups separately, taking more interest (presumably for political reasons) i
 }
 
 let papers = {
+    basicbudgetuses,
     basicbudgetflows,
     basicbudgettypes,
     budgetpediapremise,
