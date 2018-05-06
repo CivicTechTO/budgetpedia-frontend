@@ -1591,10 +1591,9 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         </div>
         <div style = {{backgroundColor:"white"}}>
         <CardText>
-            Taking a tour?
-            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><Link to ='/context'>next page<span style= {{verticalAlign:'middle'}} className="material-icons">navigate_next</span></Link></button>
-            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><Link to = '/tracker'><span style= {{verticalAlign:'middle'}} className="material-icons">navigate_before</span>previous page</Link></button>
-            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><Link to = '/basics'><span style= {{verticalAlign:'middle'}} className="material-icons">first_page</span>start</Link></button>
+            Taking a tour? <Link to ='/context'>next page<span style= {{verticalAlign:'middle'}} className="material-icons">navigate_next</span></Link>
+            <Link to = '/tracker'><span style= {{verticalAlign:'middle'}} className="material-icons">navigate_before</span>previous page</Link>
+            <Link to = '/basics'><span style= {{verticalAlign:'middle'}} className="material-icons">first_page</span>start</Link>
         </CardText>
         </div>
         <Card 

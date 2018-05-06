@@ -32,8 +32,9 @@ let basicsheader = {
         description:`
 Basics about budgeting. A good place to get started.
 
-Taking a tour? <button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca">[next page](/design)<span style= "vertical-align:middle" class="material-icons">navigate_next</span></a></button>
-
+Taking a tour? 
+[next page](/design)
+<span style= "vertical-align:middle" class="material-icons">navigate_next</span>
 `,
     },
     children:[
@@ -59,10 +60,11 @@ let trackerheader = {
 Tracking budget information, events, and links
 
 Taking a tour?
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca">[next page](/explorer)<span style= "vertical-align:middle" class="material-icons">navigate_next</span></button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>[previous page](/process)</button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">first_page</span>[start](/basics)</button>
-
+[next page](/explorer)
+<span style= "vertical-align:middle" class="material-icons">navigate_next</span><span style= "vertical-align:middle" class="material-icons">navigate_before</span>
+[previous page](/process)
+<span style= "vertical-align:middle" class="material-icons">first_page</span>
+[start](/basics)
 `,
     },
     children:[
@@ -258,8 +260,10 @@ let overview = {
 This page gives a general overview of Toronto, and its budget design and process.
 
 Taking a tour?
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>[previous page](/explorer)</button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">first_page</span>[start](/basics)</button>
+<span style= "vertical-align:middle" class="material-icons">navigate_before</span>
+[previous page](/explorer)
+<span style= "vertical-align:middle" class="material-icons">first_page</span>
+[start](/basics)
 
 `,
     },
@@ -292,9 +296,11 @@ This page is under construction.
 This page is about how the Toronto budget is structured, and _could_ be structured, every year.
 
 Taking a tour? 
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca">[next page](/process)<span style= "vertical-align:middle" class="material-icons">navigate_next</span></button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>[previous page](/basics)</button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">first_page</span>[start](/basics)</button>
+[next page](/process)
+<span style= "vertical-align:middle" class="material-icons">navigate_next</span><span style= "vertical-align:middle" class="material-icons">navigate_before</span>
+[previous page](/basics)
+<span style= "vertical-align:middle" class="material-icons">first_page</span>
+[start](/basics)
 
 `,
         },
@@ -699,9 +705,11 @@ see our [budgets](/design) page.`,
 `This page is about how the Toronto budget is created, and _could_ be created, every year.
 
 Taking a tour?
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca">[next page](/tracker)<span style= "vertical-align:middle" class="material-icons">navigate_next</span></button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>[previous page](/design)</button>
-<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca">><span style= "vertical-align:middle" class="material-icons">first_page</span>[start](/basics)</button>
+[next page](/tracker)
+<span style= "vertical-align:middle" class="material-icons">navigate_next</span><span style= "vertical-align:middle" class="material-icons">navigate_before</span>
+[previous page](/design)
+<span style= "vertical-align:middle" class="material-icons">first_page</span>
+[start](/basics)
 
 `,
         },
