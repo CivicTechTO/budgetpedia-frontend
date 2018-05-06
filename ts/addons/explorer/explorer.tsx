@@ -1586,8 +1586,16 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         } >
         PLEASE READ NOTICES BELOW. Caution: This is an early version of the Budgetpedia Explorer. The data presented in these charts should be treated as approximations.
         There are numerous data source quality and continuity issues, the intake process has not been
-        validated, and the data presented has not been rigorously verified against source data.</div>
-
+        validated, and the data presented has not been rigorously verified against source data.
+        </div>
+        <div style = {{backgroundColor:"white"}}>
+        <CardText>
+            Taking a tour?
+            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><a style = {{verticalAlign:'middle',fontSize:'1.3em'}} href="/context">next page<span style= {{verticalAlign:'middle'}} className="material-icons">navigate_next</span></a></button>
+            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><a style = {{verticalAlign:'middle',fontSize:'1.3em'}} href="/tracker"><span style= {{verticalAlign:'middle'}} className="material-icons">navigate_before</span>previous page</a></button>
+            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><a style = {{verticalAlign:'middle',fontSize:'1.3em'}} href="/basics"><span style= {{verticalAlign:'middle'}} className="material-icons">first_page</span>start</a></button>
+        </CardText>
+        </div>
         <Card 
         >
 

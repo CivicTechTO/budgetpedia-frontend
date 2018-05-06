@@ -84,7 +84,7 @@ There are well established ways of doing this successfully.
 ## The Management Virtuous Circle
 
 From a management standpoint, budgets are an important tool to keep everyone sharp, focussed
-on reality, and open to making adjustments. We represent this as a virtual circle:
+on reality, and open to making adjustments. We represent this as a virtuous circle:
 
 <figure style="width:100%;max-width:300px;margin:0 auto 32px auto">
     <img style="width:100%" src="/public/images/virtuouscircle.png" />

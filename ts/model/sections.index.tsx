@@ -30,8 +30,10 @@ let basicsheader = {
     properties:{
         title:"Budget Basics",
         description:`
-
 Basics about budgeting. A good place to get started.
+
+Taking a tour? <button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/design">next page<span style= "vertical-align:middle" class="material-icons">navigate_next</span></a></button>
+
 `,
     },
     children:[
@@ -53,7 +55,15 @@ let trackerheader = {
     tag:'Top: Tracker',
     properties:{
         title:"Budget Tracker",
-        description:`Tracking budget information, events, and links`,
+        description:`
+Tracking budget information, events, and links
+
+Taking a tour?
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/explorer">next page<span style= "vertical-align:middle" class="material-icons">navigate_next</span></a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/process"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>previous page</a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/basics"><span style= "vertical-align:middle" class="material-icons">first_page</span>start</a></button>
+
+`,
     },
     children:[
         {
@@ -246,6 +256,11 @@ let overview = {
         description: 
 `
 This page gives a general overview of Toronto, and its budget design and process.
+
+Taking a tour?
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/explorer"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>previous page</a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/basics"><span style= "vertical-align:middle" class="material-icons">first_page</span>start</a></button>
+
 `,
     },
     children:[
@@ -275,6 +290,12 @@ This page is under construction.
 </div>
 
 This page is about how the Toronto budget is structured, and _could_ be structured, every year.
+
+Taking a tour? 
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/process">next page<span style= "vertical-align:middle" class="material-icons">navigate_next</span></a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/basics"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>previous page</a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/basics"><span style= "vertical-align:middle" class="material-icons">first_page</span>start</a></button>
+
 `,
         },
         followup: {
@@ -676,6 +697,12 @@ see our [budgets](/design) page.`,
             title:"Budget Process",
             description: 
 `This page is about how the Toronto budget is created, and _could_ be created, every year.
+
+Taking a tour?
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/tracker">next page<span style= "vertical-align:middle" class="material-icons">navigate_next</span></a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/design"><span style= "vertical-align:middle" class="material-icons">navigate_before</span>previous page</a></button>
+<button type="button" style = "vertical-align:middle;border-radius:6px;background-color:#cacaca"><a style = "vertical-align:middle;font-size:1.3em" href="/basics"><span style= "vertical-align:middle" class="material-icons">first_page</span>start</a></button>
+
 `,
         },
         children:[
