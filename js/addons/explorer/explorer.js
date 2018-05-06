@@ -42,6 +42,7 @@ import Divider from 'material-ui/Divider';
 import LinearProgress from 'material-ui/LinearProgress';
 import { toastr } from 'react-redux-toastr';
 import Loadable from 'react-loadable';
+import { Link } from 'react-router-dom';
 let uuid = require('node-uuid'); // use uuid.v4() for unique id
 let jsonpack = require('jsonpack');
 let ReactGA = require('react-ga');
@@ -1136,15 +1137,15 @@ let Explorer = class extends Component {
                 React.createElement(CardText, null,
                     "Taking a tour?",
                     React.createElement("button", { type: "button", style: { verticalAlign: "middle", borderRadius: "6px" } },
-                        React.createElement("a", { style: { verticalAlign: 'middle', fontSize: '1.3em' }, href: "/context" },
+                        React.createElement(Link, { to: '/context' },
                             "next page",
                             React.createElement("span", { style: { verticalAlign: 'middle' }, className: "material-icons" }, "navigate_next"))),
                     React.createElement("button", { type: "button", style: { verticalAlign: "middle", borderRadius: "6px" } },
-                        React.createElement("a", { style: { verticalAlign: 'middle', fontSize: '1.3em' }, href: "/tracker" },
+                        React.createElement(Link, { to: '/tracker' },
                             React.createElement("span", { style: { verticalAlign: 'middle' }, className: "material-icons" }, "navigate_before"),
                             "previous page")),
                     React.createElement("button", { type: "button", style: { verticalAlign: "middle", borderRadius: "6px" } },
-                        React.createElement("a", { style: { verticalAlign: 'middle', fontSize: '1.3em' }, href: "/basics" },
+                        React.createElement(Link, { to: '/basics' },
                             React.createElement("span", { style: { verticalAlign: 'middle' }, className: "material-icons" }, "first_page"),
                             "start")))),
             React.createElement(Card, null,

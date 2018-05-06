@@ -49,7 +49,8 @@ import Toggle from 'material-ui/Toggle'
 import LinearProgress from 'material-ui/LinearProgress'
 import {toastr} from 'react-redux-toastr'
 
-import Loadable from 'react-loadable';
+import Loadable from 'react-loadable'
+import { Link } from 'react-router-dom'
 
 let uuid = require('node-uuid') // use uuid.v4() for unique id
 let jsonpack = require('jsonpack')
@@ -1591,9 +1592,9 @@ let Explorer = class extends Component< ExplorerProps, ExplorerState >
         <div style = {{backgroundColor:"white"}}>
         <CardText>
             Taking a tour?
-            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><a style = {{verticalAlign:'middle',fontSize:'1.3em'}} href="/context">next page<span style= {{verticalAlign:'middle'}} className="material-icons">navigate_next</span></a></button>
-            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><a style = {{verticalAlign:'middle',fontSize:'1.3em'}} href="/tracker"><span style= {{verticalAlign:'middle'}} className="material-icons">navigate_before</span>previous page</a></button>
-            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><a style = {{verticalAlign:'middle',fontSize:'1.3em'}} href="/basics"><span style= {{verticalAlign:'middle'}} className="material-icons">first_page</span>start</a></button>
+            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><Link to ='/context'>next page<span style= {{verticalAlign:'middle'}} className="material-icons">navigate_next</span></Link></button>
+            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><Link to = '/tracker'><span style= {{verticalAlign:'middle'}} className="material-icons">navigate_before</span>previous page</Link></button>
+            <button type="button" style = {{verticalAlign:"middle",borderRadius:"6px"}}><Link to = '/basics'><span style= {{verticalAlign:'middle'}} className="material-icons">first_page</span>start</Link></button>
         </CardText>
         </div>
         <Card 
