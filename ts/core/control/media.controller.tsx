@@ -7,7 +7,7 @@ import * as React from 'react';
 
 import coreControllerComposer from './core.controller.composer'
 
-import { Timeline } from 'react-twitter-widgets'
+// import { Timeline } from 'react-twitter-widgets'
 
 class MediaControllerClass extends React.Component<any,any> {
 
@@ -44,23 +44,23 @@ class MediaControllerClass extends React.Component<any,any> {
 
         let componentType = null
 
-        switch (type) {
-            case 'timeline': {
-                componentType = Timeline
-                break
-            }
-            default: {
+        // switch (type) {
+        //     case 'timeline': {
+        //         componentType = Timeline
+        //         break
+        //     }
+        //     default: {
                 return <div key = {key}>Component type { type } not found in { controller } controller</div>
-            }
-        }
+        //     }
+        // }
 
-        properties.key = key
+        // properties.key = key
 
-        let output = React.createElement(componentType, properties, childcomponents)
+        // let output = React.createElement(componentType, properties, childcomponents)
 
-        output = this.toolkit.wrapComponent(output,wrapper,key)
+        // output = this.toolkit.wrapComponent(output,wrapper,key)
 
-        return output
+        // return output
     }
 
     emitComponent = (model, key) => {

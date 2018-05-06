@@ -3,7 +3,7 @@
 'use strict';
 import * as React from 'react';
 import coreControllerComposer from './core.controller.composer';
-import { Timeline } from 'react-twitter-widgets';
+// import { Timeline } from 'react-twitter-widgets'
 class MediaControllerClass extends React.Component {
     constructor(props) {
         super(props);
@@ -15,24 +15,24 @@ class MediaControllerClass extends React.Component {
             let { controller, index, wrapper, type, properties, children, } = component;
             let childcomponents = this.toolkit.getChildren(this, children);
             let componentType = null;
-            switch (type) {
-                case 'timeline': {
-                    componentType = Timeline;
-                    break;
-                }
-                default: {
-                    return React.createElement("div", { key: key },
-                        "Component type ",
-                        type,
-                        " not found in ",
-                        controller,
-                        " controller");
-                }
-            }
-            properties.key = key;
-            let output = React.createElement(componentType, properties, childcomponents);
-            output = this.toolkit.wrapComponent(output, wrapper, key);
-            return output;
+            // switch (type) {
+            //     case 'timeline': {
+            //         componentType = Timeline
+            //         break
+            //     }
+            //     default: {
+            return React.createElement("div", { key: key },
+                "Component type ",
+                type,
+                " not found in ",
+                controller,
+                " controller");
+            //     }
+            // }
+            // properties.key = key
+            // let output = React.createElement(componentType, properties, childcomponents)
+            // output = this.toolkit.wrapComponent(output,wrapper,key)
+            // return output
         };
         this.emitComponent = (model, key) => {
             let { controller } = model;

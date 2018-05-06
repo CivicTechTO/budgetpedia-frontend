@@ -5,7 +5,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
-import { Timeline } from 'react-twitter-widgets';
+// import { Timeline } from 'react-twitter-widgets'
 import TileList from "../../core/control/views/tilelist.view";
 import HtmlView from '../../core/control/views/html.view';
 import LinkList from '../../core/control/views/linklist.view';
@@ -36,15 +36,6 @@ let Home = class extends React.Component {
             React.createElement(NuggetList, { title: torontonuggettitle, nuggets: torontonuggetlist, image: '/public/images/city-people-faded2.jpg' }),
             React.createElement(NuggetList, { title: financenuggettitle, nuggets: financenuggetlist, image: '/public/images/cityscape-night.jpg' }),
             React.createElement(NuggetList, { title: financechangestitle, nuggets: financechangeslist, image: '/public/images/ttc-faded.jpg' }),
-            React.createElement("div", { style: { padding: '32px', backgroundColor: 'silver', marginBottom: '30px' } },
-                React.createElement("div", { style: { maxWidth: '600px', margin: '0 auto' } },
-                    React.createElement(Timeline, { dataSource: {
-                            sourceType: 'url',
-                            url: 'https://twitter.com/budgetpedia'
-                        }, options: {
-                            username: 'Budgetpedia',
-                            height: '400'
-                        } }))),
             React.createElement(TileList, { style: tileliststyle, tiles: pagetargets, onSelect: this.props.push, title: tilelisttitle }),
             React.createElement("div", { style: { backgroundColor: "#404244", padding: "8px", } },
                 React.createElement(Card, { style: footercardstyle },
@@ -52,6 +43,20 @@ let Home = class extends React.Component {
                         React.createElement(LinkList, { header: thirdlinklistheader, items: thirdlinklistitems }))))));
     }
 };
+// <div style = {{padding:'32px',backgroundColor:'silver',marginBottom:'30px'}} >
+//     <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
+//     <Timeline
+//         dataSource={{
+//           sourceType: 'url',
+//           url: 'https://twitter.com/budgetpedia'
+//         }}
+//         options={{
+//           username: 'Budgetpedia',
+//           height: '400'
+//         }}
+//       />
+//    </div>
+// </div>
 const mapStateToProps = ({ pages, resources }) => ({
     pagetargets: pages.pagetargets,
     theme: resources.theme,

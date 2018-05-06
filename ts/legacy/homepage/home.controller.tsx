@@ -9,7 +9,7 @@ import { push } from 'react-router-redux'
 
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 
-import { Timeline } from 'react-twitter-widgets'
+// import { Timeline } from 'react-twitter-widgets'
 
 import TileList from "../../core/control/views/tilelist.view"
 import HtmlView from '../../core/control/views/html.view'
@@ -113,20 +113,6 @@ let Home = class extends React.Component<any, any> {
                 />
 
                 {/* twitter */}
-                <div style = {{padding:'32px',backgroundColor:'silver',marginBottom:'30px'}} >
-                    <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
-                    <Timeline
-                        dataSource={{
-                          sourceType: 'url',
-                          url: 'https://twitter.com/budgetpedia'
-                        }}
-                        options={{
-                          username: 'Budgetpedia',
-                          height: '400'
-                        }}
-                      />
-                   </div>
-                </div>
 
                 {/* main pages tiles */}
                 <TileList
@@ -151,6 +137,22 @@ let Home = class extends React.Component<any, any> {
         )
     }
 }
+
+// <div style = {{padding:'32px',backgroundColor:'silver',marginBottom:'30px'}} >
+//     <div    style = {{maxWidth:'600px',margin:'0 auto'}}>
+//     <Timeline
+//         dataSource={{
+//           sourceType: 'url',
+//           url: 'https://twitter.com/budgetpedia'
+//         }}
+//         options={{
+//           username: 'Budgetpedia',
+//           height: '400'
+//         }}
+//       />
+//    </div>
+// </div>
+
 
 const mapStateToProps = ( { pages, resources } ) => 
 ({ 
