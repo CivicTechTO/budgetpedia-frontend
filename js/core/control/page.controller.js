@@ -20,6 +20,7 @@ class PageControllerClass extends React.Component {
         };
         this.toolkit = null;
         this.noToc = null;
+        this.hashlink = window.location.hash.substr(1);
         this.anchorCallback = () => {
             let self = this;
             if (self.noToc)
@@ -129,6 +130,17 @@ class PageControllerClass extends React.Component {
                 // setTimeout(() => {
                 //     console.log('model',this.state.model)
                 // })
+                // console.log('window.location',window.location)
+                if (this.hashlink) {
+                    let id = this.hashlink;
+                    this.hashlink = '';
+                    setTimeout(() => {
+                        const element = document.getElementById(id);
+                        // console.log('element',element)
+                        if (element)
+                            element.scrollIntoView();
+                    }, 500);
+                }
             }
             catch (e) {
                 console.log('error getting model', e);

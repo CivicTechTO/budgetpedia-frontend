@@ -97,7 +97,7 @@ class SheetView extends React.Component<any,any> {
       }
 
       this.state = {
-        editable: (window.location.hostname == 'budgetpedia'), //TODO temporary
+        editable: (window.location.hostname == 'budgetpedia' || window.location.hostname == 'localhost'), //TODO temporary
         editorState: startstate,
         editorReadonly: true,
         renderPluginTools:false,

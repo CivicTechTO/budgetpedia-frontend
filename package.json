@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development --config config/webpack.config.js",
     "build": "webpack --mode production --config config/webpack.config.js",
-    "start": "node server.js"
+    "server": "pushstate-server ./"
   },
   "author": "",
   "license": "ISC",

@@ -209,7 +209,7 @@ class SheetView extends React.Component {
             startstate = EditorState.createWithContent(convertFromRaw(draftdata));
         }
         this.state = {
-            editable: (window.location.hostname == 'budgetpedia'),
+            editable: (window.location.hostname == 'budgetpedia' || window.location.hostname == 'localhost'),
             editorState: startstate,
             editorReadonly: true,
             renderPluginTools: false,
